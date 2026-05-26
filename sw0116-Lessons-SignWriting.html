@@ -1,0 +1,1801 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>sw0116-Lessons-SignWriting</title>
+<meta name="generator" content="Docling HTML Serializer"/>
+<script type="module" src="https://unpkg.com/@sutton-signwriting/sgnw-components/dist/sgnw-components/sgnw-components.esm.js"></script>
+<style>
+    html {
+        background-color: #f5f5f5;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+    }
+    body {
+        display: grid;
+        grid-template-columns: 240px minmax(0, 800px);
+        gap: 2rem;
+        justify-content: center;
+        align-items: start;
+        padding: 2rem;
+        margin: 0;
+    }
+    .page {
+        background-color: white;
+        padding: 2rem;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        min-inline-size: 0;
+    }
+    .toc-sidebar {
+        position: sticky;
+        inset-block-start: 2rem;
+        align-self: start;
+        max-block-size: calc(100dvh - 4rem);
+        overflow-y: auto;
+        scrollbar-gutter: stable;
+        padding: 1rem;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .toc-sidebar h2 {
+        margin-top: 0;
+        font-size: 1.1em;
+    }
+    .toc-sidebar ol.toc {
+        padding-inline-start: 1.4em;
+        margin: 0;
+    }
+    .toc-sidebar ol.toc li {
+        margin-block: 0.25em;
+    }
+    @media (max-width: 900px) {
+        body {
+            grid-template-columns: minmax(0, 1fr);
+        }
+        .toc-sidebar {
+            position: static;
+            max-block-size: none;
+        }
+    }
+    h1, h2, h3, h4, h5, h6 {
+        color: #333;
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+    }
+    h1 {
+        font-size: 2em;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 0.3em;
+    }
+    table {
+        border-collapse: collapse;
+        margin: 1em 0;
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+    figure {
+        margin: 1.5em 0;
+        text-align: center;
+    }
+    figcaption {
+        color: #666;
+        font-style: italic;
+        margin-top: 0.5em;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    .img-wrap {
+        position: relative;
+        display: inline-block;
+        max-width: 100%;
+    }
+    sgnw-sign, fsw-sign, sgnw-symbol, fsw-symbol {
+        font-size: 48px;
+    }
+    .img-wrap > .img-badge {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        background: #d33;
+        color: #fff;
+        font: 600 12px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        padding: 4px 7px;
+        border-radius: 10px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+        z-index: 2;
+        pointer-events: none;
+    }
+    pre {
+        background-color: #f6f8fa;
+        border-radius: 3px;
+        padding: 1em;
+        overflow: auto;
+    }
+    code {
+        font-family: monospace;
+        background-color: #f6f8fa;
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+    }
+    pre code {
+        background-color: transparent;
+        padding: 0;
+    }
+    .formula {
+        text-align: center;
+        padding: 0.5em;
+        margin: 1em 0;
+        background-color: #f9f9f9;
+    }
+    .formula-not-decoded {
+        text-align: center;
+        padding: 0.5em;
+        margin: 1em 0;
+        background: repeating-linear-gradient(
+            45deg,
+            #f0f0f0,
+            #f0f0f0 10px,
+            #f9f9f9 10px,
+            #f9f9f9 20px
+        );
+    }
+    .page-break {
+        page-break-after: always;
+        border-top: 1px dashed #ccc;
+        margin: 2em 0;
+    }
+    .key-value-region {
+        background-color: #f9f9f9;
+        padding: 1em;
+        border-radius: 4px;
+        margin: 1em 0;
+    }
+    .key-value-region dt {
+        font-weight: bold;
+    }
+    .key-value-region dd {
+        margin-left: 1em;
+        margin-bottom: 0.5em;
+    }
+    .form-container {
+        border: 1px solid #ddd;
+        padding: 1em;
+        border-radius: 4px;
+        margin: 1em 0;
+    }
+    .form-item {
+        margin-bottom: 0.5em;
+    }
+    .image-classification {
+        font-size: 0.9em;
+        color: #666;
+        margin-top: 0.5em;
+    }
+    details.docling-meta {
+        margin: 0.5em 0;
+        font-size: 0.9em;
+        text-align: left;
+    }
+    figure details.docling-meta {
+        text-align: left;
+    }
+    details.docling-meta > summary {
+        cursor: pointer;
+        color: #555;
+        font-style: italic;
+        padding: 2px 6px;
+    }
+    .docling-meta-field {
+        background-color: #f0f0f0;
+        border-left: 3px solid #ccc;
+        padding: 6px 10px;
+        margin: 4px 0 4px 1em;
+        border-radius: 3px;
+        text-align: left;
+    }
+    .docling-meta-field-label {
+        font-weight: bold;
+        color: #444;
+    }
+    .docling-meta-field[data-meta-classification] {
+        text-align: left;
+    }
+    pre.docling-meta-code {
+        background-color: #1e1e1e;
+        color: #d4d4d4;
+        border-radius: 4px;
+        padding: 10px 12px;
+        margin: 6px 0;
+        overflow-x: auto;
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+        font-size: 0.85em;
+        line-height: 1.45;
+        white-space: pre;
+        tab-size: 4;
+    }
+    pre.docling-meta-code code {
+        background: transparent;
+        border: none;
+        padding: 0;
+        color: inherit;
+        font-family: inherit;
+        font-size: inherit;
+        display: block;
+        white-space: pre;
+    }
+</style>
+</head>
+<body>
+<nav class="toc-sidebar" data-no-print>
+<h2>Table of Contents</h2>
+<ol class="toc">
+<li><a href="#chapter-1">Introduction</a></li>
+<li><a href="#chapter-2">Viewpoints</a></li>
+<li><a href="#chapter-3">Hands</a></li>
+<li><a href="#chapter-4">Contact</a></li>
+<li><a href="#chapter-5">Finger Movement</a></li>
+<li><a href="#chapter-6">Straight Movement</a></li>
+<li><a href="#chapter-7">Curved Movement</a></li>
+<li><a href="#chapter-8">Axial Movement</a></li>
+<li><a href="#chapter-9">Circular Movement</a></li>
+<li><a href="#chapter-10">Face</a></li>
+<li><a href="#chapter-11">Head</a></li>
+<li><a href="#chapter-12">Body</a></li>
+<li><a href="#chapter-13">Dynamics</a></li>
+<li><a href="#chapter-14">Punctuation</a></li>
+<li><a href="#chapter-15">Writing Signs &amp; Sign Literature</a></li>
+</ol>
+</nav>
+<div class='page'>
+<h2>Lessons in SignWriting Textbook</h2>
+<p>First Edition published in 1990 Second Edition published in 1995 Third Edition published in 2002 Fourth Edition published in 2014 <strong>Web Edition 2026</strong></p>
+<p>Original content © 1990–2014 Valerie Sutton &amp; the Center for Sutton Movement Writing, Inc. Web edition © 2026 Nagish Inc. Both editions licensed under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+<p>The SignWriting System was first invented by Valerie Sutton in 1974.</p>
+<p>Cartoons by Frank Allen Paul Illustrations by Ida Candelaria &amp; Jayne Gunderson Photos of Hands &amp; Body Diagrams by Adam Frost</p>
+<p>Photos of Kevin Clark &amp; Lucinda O'Grady are captured from the Lessons In SignWriting Video Series DVD</p>
+<p>SignWriting web components by Stephen E. Slevinski, Jr</p>
+<h2 id="chapter-1">Chapter 1 — Introduction</h2>
+<h3>A Deaf Perspective</h3>
+<div class="contributor">
+<figure class="contributor-portrait">
+<img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000024_b30e1d128cbcc2ea99b7a54802061b2eae51ec0eaafac1ebcc39a8569864b58a.png" alt="Lucinda O'Grady Batch">
+<sgnw-sign sign="𝠀񂣱񆉁񌏁񍝁𝠃𝤡𝤷񌏁𝣴𝣴񍝁𝣴𝣴񂣱𝤌𝤕񆉁𝤋𝤬"></sgnw-sign>
+<figcaption>Lucinda O'Grady Batch</figcaption>
+</figure>
+<p>I am writing to tell you how strongly I feel about SignWriting and how much it can benefit Deaf people. I was born Deaf to a Deaf family and I am a native American Sign Language (ASL) user. I have been working with SignWriting since 1982. I was the first Deaf person to write articles in ASL, in SignWriting, for the SignWriter Newspaper. Later, Valerie Sutton and I established the Deaf Action Committee for SignWriting (the DAC) in 1988. I think it is very important to spread the word about SignWriting. ASL is a language in its own right, yet until the development of SignWriting, it was a language without a written form. When I found out about SignWriting I was thrilled to think that at last we would have a way to write our language. Deaf Americans are one of the very few linguistic minorities that are unable to get books teaching English in their native language. I feel that we can use SignWriting in order to learn English. Deaf people will benefit greatly from books explaining English grammar and idioms in written ASL. We can also use it to write down and preserve our stories, poetry and plays. As you know, there are many Deaf playwrights and poets, and up until now, they have not had a way to write the ASL in their literature. No matter what the project, SignWriting encourages us to read and write and I feel that is important. All of us hope that you will enjoy learning SignWriting. Your interest and support is a great help to our Deaf community.</p>
+<p>— Lucinda O'Grady Batch</p>
+</div>
+<div class="contributor">
+<figure class="contributor-portrait">
+<img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000026_c2a7c6a9e504dcf77e8c14730b99ab2e82e52bf66b381ab904d977968b2265dd.png" alt="Kevin Clark">
+<sgnw-sign sign="𝠃𝤝𝥈񁠨𝣲𝤡񈩣𝤎𝤠񌏁𝣴𝣵񍝁𝣴𝣵"></sgnw-sign>
+<figcaption>Kevin Clark</figcaption>
+</figure>
+<p>Kevin Clark is a Deaf native signer of American Sign Language and a member of the Deaf Action Committee for SignWriting. With Lucinda O'Grady Batch, he co-presented the Lessons in SignWriting Video Series, and his photographs appear throughout this textbook demonstrating the handshapes, signs, and facial cues described in the lessons.</p>
+</div>
+<h2 id="chapter-2">Chapter 2 — Viewpoints</h2>
+<p>SignWriting can be written from either the Receptive or the Expressive viewpoints. This book teaches reading and writing signs from the Expressive Viewpoint. The Expressive Viewpoint is now the standard in SignWriting publications. The Receptive Viewpoint is used occasionally when transcribing signs from videotape, or when recording foreign signs in shorthand. For more information on using the Receptive Viewpoint, refer to <a href="#chapter-15">Chapter 15</a>.</p>
+<div style="display:flex;gap:1.5em;align-items:stretch;flex-wrap:wrap">
+<div style="flex:1;min-width:280px;display:flex;flex-direction:column">
+<h2>Expressive Viewpoint</h2>
+<p>When you are signing to someone else, you see signs from your own point of view. This is called the Expressive Viewpoint.</p>
+<figure style="margin-top:auto"><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000055_e6943d6a07baa376b278a7709c12a5fb4b7e20e1dd21a6b026655d019c3600c4.png"></figure>
+</div>
+<div style="flex:1;min-width:280px;display:flex;flex-direction:column">
+<h2>Receptive Viewpoint</h2>
+<p>When someone is facing you, signing to you, you view the signs as an observer. The signer's right side is your left side. This is called the Receptive Viewpoint.</p>
+<figure style="margin-top:auto"><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000054_6acd93443c23083ad25d9808eeff555ee1c9127f638788eb9e6b4fc54ab6c1df.png"></figure>
+</div>
+</div><h2>The Expressive Viewpoint</h2>
+<p>Read and write signs as if you are looking at your own hands, from your own perspective.</p>
+<h2>Palm of Hand</h2>
+<p>When you see the palm of your hand, while you are signing, the symbol for the hand will be white, or hollow.</p>
+<p>The palm of the hand is always written with a white, hollow symbol.</p>
+<div style="display:flex;gap:1.5em;align-items:center;justify-content:center;flex-wrap:wrap">
+<figure style="flex:1;min-width:280px"><span style="position:relative;display:inline-block"><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000061_09c0070c414db0fb0342cf85d9320b847264b4950425165c7dd3c383c236607d.png"><sgnw-symbol symbol="񂇁" style="position:absolute;top:3%;right:1%;font-size:150px"></sgnw-symbol></span></figure>
+<figure style="flex:1;min-width:280px"><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000062_1f737881e77f2ab01df3de09be9cd5fdca012d703ee2c60a6cc00480e3cfc283.png"></figure>
+</div>
+<div style="display:flex;gap:1.5em;align-items:stretch;flex-wrap:wrap">
+<div style="flex:1;min-width:280px;display:flex;flex-direction:column">
+<h2>Side of Hand</h2>
+<p>When you see the side of your hand while you are signing, the symbol for the hand will be half black and half white.</p>
+<p>The white part of the symbol shows where the palm of the hand faces. The dark part represents the back of the hand.</p>
+<figure style="margin-top:auto"><span style="position:relative;display:inline-block"><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000063_91b54d4c1e30d2cf6040ea94b46ae76af18b4bfa4b3c007992efc9c6e1bde355.png"><sgnw-symbol symbol="񂇑" style="position:absolute;top:3%;right:1%;font-size:150px"></sgnw-symbol></span></figure>
+</div>
+<div style="flex:1;min-width:280px;display:flex;flex-direction:column">
+<h2>Back of Hand</h2>
+<p>When you see the back of your hand while you are signing, the symbol will be black, or filled-in.</p>
+<p>The back of the hand is always written with a black, filled-in symbol.</p>
+<figure style="margin-top:auto"><span style="position:relative;display:inline-block"><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000064_a4dc22a51134d73c58e6c44aac8e4cb5d156498ac0a1a9471bd67214eac06b07.png"><sgnw-symbol symbol="񂇡" style="position:absolute;top:3%;right:1%;font-size:150px"></sgnw-symbol></span></figure>
+</div>
+</div>
+<div style="display:flex;gap:1.5em;align-items:flex-start;flex-wrap:wrap">
+<div style="flex:1;min-width:280px">
+<h2>Left Side of Head</h2>
+<p>The head is written with a circle, viewed from the back. When the left hand is near the left side of the head, the symbol for the hand is placed to the left:</p>
+<figure><figcaption><div class="caption">know (hand on the left side)</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000065_0ecec8d0acb8bb38f529cc800fdfd1070cbdf2901826b8fbc29b8e5950666052.png"></figure>
+<p><em>Note: An asterisk means touch. Two asterisks mean touching two times.</em></p>
+</div>
+<div style="flex:1;min-width:280px">
+<h2>Right Side of Head</h2>
+<p>The head is written with a circle, viewed from the back. When the right hand is near the right side of the head, the symbol for the hand is placed to the right:</p>
+<figure><figcaption><div class="caption">know (hand on the right side)</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000066_7185a4410058228399c052888d7eaf4531bb8e2a42f8c28929fb4e2193e679d0.png"></figure>
+<p><em>Note: An asterisk means touch. Two asterisks mean touching two times.</em></p>
+</div>
+</div>
+<div style="display:flex;gap:1.5em;align-items:flex-start;flex-wrap:wrap">
+<div style="flex:1;min-width:280px">
+<h2>Left Side of Face</h2>
+<p>Pretend you can see through the back of the head. You are reading and writing how your face "feels" when you sign:</p>
+<figure><figcaption><div class="caption">know (mouth pushed up on left side)</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000067_63c9b023e4ecefdd047168eefcfb9882a5c0d27bc2216aeed7bdf7a9bd1552bb.png"></figure>
+</div>
+<div style="flex:1;min-width:280px">
+<h2>Right Side of Face</h2>
+<p>Pretend you can see through the back of the head. You are reading and writing how your face "feels" when you sign:</p>
+<figure><figcaption><div class="caption">know (mouth pushed up on right side)</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000068_4baeedd391ad3ed5bfe821ebbd1106312940428dc7f75f13a9bfa9e8df43ea9c.png"></figure>
+</div>
+</div>
+<figure><figcaption><div class="caption">know (mouth pushed up on the right side)</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000069_4d813a07ecb7130e71472f18655d8fe07ae960226ea0ad790f474044559e2c2c.png"></figure>
+<h2 id="chapter-3">Chapter 3 — Hands</h2>
+<h2>3 Basic Handshapes</h2>
+<div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:1.5em;align-items:center">
+<div>
+<h2>Closed Fist</h2>
+<p>When the fingertips touch the palm of the hand, it is called a Closed Fist.</p>
+<p>A Closed Fist is written with a square.</p>
+</div>
+<figure><sgnw-symbol symbol="񆄡"></sgnw-symbol></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000078_1e6269e098684a67d7a642e2a90844457f8f25909103a3389683082899a59853.png"></figure>
+<div>
+<h2>Open Fist</h2>
+<p>When the fingertips touch each other, it is called an Open Fist.</p>
+<p>An Open Fist is written with a circle.</p>
+</div>
+<figure><sgnw-symbol symbol="񂱁"></sgnw-symbol></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000079_735614923830a79c56e968d735bd3e8f3341b61cfb936b452dd734382c80ed62.png"></figure>
+<div>
+<h2>Flat Hand</h2>
+<p>When the fingers stretch straight up, and touch each other, it is called a Flat Hand.</p>
+<p>A Flat Hand is written with a rectangle, with a tip for the fingertips.</p>
+</div>
+<figure><sgnw-symbol symbol="񂇁"></sgnw-symbol></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000080_74ae1ac7d6eb32c7ee94f26bf4053e4599830738da157ad26acffa50e377950b.png"></figure>
+</div><h2>3 Basic Handshapes</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000082_d1569054e0e4c33943baf8aa2f66ef7b2d8defa357533f8d5f14e0b2882187ee.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000083_0b71b8e7ec8e2a271997dd26937bed3c3fb7e610ef9b66cb44573674b14f512a.png"></figure>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1em;justify-items:center;align-items:center">
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000084_6d28877a83a5e92b1be957258b52356d9187ffa7eb73c67da23b5dc2e3c8cf92_a.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000084_6d28877a83a5e92b1be957258b52356d9187ffa7eb73c67da23b5dc2e3c8cf92_b.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000084_6d28877a83a5e92b1be957258b52356d9187ffa7eb73c67da23b5dc2e3c8cf92_c.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000084_6d28877a83a5e92b1be957258b52356d9187ffa7eb73c67da23b5dc2e3c8cf92_d.png"></figure>
+</div>
+<div style="display:flex;gap:1.5em;flex-wrap:wrap">
+<div style="flex:1;min-width:280px">
+<h3>Closed Fist</h3>
+<p>Both the letter S and the number 1 in ASL are written with a square for the Closed Fist, since the fingertips touch the palm.</p>
+</div>
+<div style="flex:1;min-width:280px">
+<h3>Open Fist</h3>
+<p>Both the letter O and the letter D in ASL are written with a circle for the Open Fist, since the fingertips touch each other.</p>
+</div>
+</div>
+<h2>3 Basic Handshapes</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1em;justify-items:center;align-items:center">
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000085_c27e6ce4cfa91be09e3f248b161f35df3a5decdde9a8fd06cc18dedc138f86fb_a.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000085_c27e6ce4cfa91be09e3f248b161f35df3a5decdde9a8fd06cc18dedc138f86fb_b.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000085_c27e6ce4cfa91be09e3f248b161f35df3a5decdde9a8fd06cc18dedc138f86fb_c.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000085_c27e6ce4cfa91be09e3f248b161f35df3a5decdde9a8fd06cc18dedc138f86fb_d.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000085_c27e6ce4cfa91be09e3f248b161f35df3a5decdde9a8fd06cc18dedc138f86fb_e.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000085_c27e6ce4cfa91be09e3f248b161f35df3a5decdde9a8fd06cc18dedc138f86fb_f.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000085_c27e6ce4cfa91be09e3f248b161f35df3a5decdde9a8fd06cc18dedc138f86fb_g.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000085_c27e6ce4cfa91be09e3f248b161f35df3a5decdde9a8fd06cc18dedc138f86fb_h.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000085_c27e6ce4cfa91be09e3f248b161f35df3a5decdde9a8fd06cc18dedc138f86fb_i.png"></figure>
+</div>
+<h2>Add Lines for Fingers</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000086_06259f5a018a15c3b44b43bd1d1ab1b9ce3e1aecb859c8873cc574021f2fb33d.png"></figure>
+<h2>Closed Fist: Adding Fingers</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000087_a8af8671f4a51bffb85641b8d8be79461d2cffb6e9476d7a131050f14f36e487.png"></figure>
+<p>The fingertips touch the palm of the hand in the Closed Fist. If one finger sticks up, then one line extends from the square. If two fingers stick up, then two lines extend:</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000088_ca4ade9bf53e1e4a03ac893cd93264be4b528bd539052bae7a217ba5786ae4a4.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000089_d6c5909e78624a0761a0633fc7becb19cab7d34df335bd895c137f24ad6c47f6.png"></figure>
+<h2>Open Fist: Adding Fingers</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000090_4db19e0df5484c0bb939b31cf4a20e90c53540c570e413136102a1c4f8402bed.png"></figure>
+<p>The fingertips touch each other in the Open Fist. If one finger sticks up, then one line extends from the circle. If two fingers stick up, then two lines extend:</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000091_6350b115635dbcaf46072aa1b9e96b479b3684070d745e6e93dcf14f5156c6aa.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000092_36b1fa663ff4ebfcd2ccd829b5eecef5ab47f19ce79a80b380a14f927800c796.png"></figure>
+<h2>Flat Hand: Adding Fingers</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000093_c69f0a4b5537323e3c111deea68a9b324fcf604a5d75163d41fcfc8141156c40.png"></figure>
+<p>The fingers are straight together in the Flat Hand. If the thumb sticks out, then one line extends from the rectangle. If all five fingers spread, then five lines extend from the symbol:</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000094_b83115fca2c82df213a974d7be9e1825242bb299034366711140af5e5edc8ad1.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000095_31d260998e32551043eaf95b3f08ea60391b3552b2768b9c514a7a8158795313.png"></figure>
+<h2>Rootshapes</h2>
+<p>Like roots to a tree, Rootshapes provide the foundation for all hand symbols. Rootshapes are determined by the shape of the LOWEST finger in the handshape. For example, a square for a TIGHT Fist must have at least one finger touching the palm of the hand. A circle for an OPEN fist, has at least one finger close to the palm of the hand, but not touching the palm of the hand.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000096_5beac880f06b5057cddcd42d7172d82a1808c2efb3923880b0d62d7285879132.png"></figure>
+<ul>
+<li><strong>Rootshape: Tight Fist</strong> — at least 1 finger touches palm</li>
+<li><strong>Rootshape: Circle</strong> — at least 1 fingertip touches thumbtip in a curve, or at least 1 curved finger is close to palm of hand</li>
+<li><strong>Rootshape: Cup</strong> — at least 1 finger is curved at the Middle Joint &amp; Tip Joint. There is NO bend or curve at the Knuckle Joint.</li>
+<li><strong>Rootshape: Hinge</strong> — at least 1 finger bends at the Knuckle Joint, while the Middle Joint and Tip Joint lock completely straight.</li>
+<li><strong>Rootshape: Angle</strong> — the Hinge, with fingertips and thumb tip touching</li>
+<li><strong>Rootshape: Flat Thumb Across</strong> — thumb across palm, four fingers straight up with no bends</li>
+<li><strong>Rootshape: Flat</strong> — five fingers straight up with no bends</li>
+</ul>
+<h2>Action Fingers</h2>
+<p>Once the Rootshape is established, the lines for the fingers are attached. The finger lines are called Action Fingers. They extend from the root of the hand like branches on a tree. Action Fingers are more important than the Rootshape, because they are looked at first, just as observers look at the branches of a tree first. Readers focus on Action Fingers first, since they give meaning to the handshape.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000097_a92971628ef25be91b0c1eb7604d11ecfca1b307d2a775118f8260c83d5986b0.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000098_862f17312ef28ef7a5e2275f9277bfff7b604a76b79516d1caf224c0620fdbec.png"></figure>
+<h2>Palm Facing — Top View</h2>
+<p>The hand is parallel with the floor.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000099_aa5227ff7b8cd5120090b53be909b972a175e3faf5173ad13d5fe7709845c686.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000100_dcae2689c6595365fccb2638f27ca0c3d2f3a8d7a8ee8623ec3f147914360ebf.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000101_02ed5f5d1a249031c31489db57613e754932f9bffaafab6e7fd8c2f0edbb27c0.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000102_87de675ea894c90c433e3529b361141d5d7924b1a7b78908225f480bf118247f.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000103_db3d0aac211056fdb52731cab4ecdff666301d7420c78500bab682ac51370c4e.png"></figure>
+<h2>Palm Facing — Front View</h2>
+<p>The hand is parallel with the front wall.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000104_6c1a1bc8beb21c7d865bcc0efb90a41b2517e3581d49d3d88129c749c6e4fab2.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000105_bff47255d65e34c84f3922e02ab68059c637c8a48f762c0ce0db7c4f5912b737.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000106_248a79acc2c7a50b27d5f7ce14cabc426ae536c8795206416c35256e12ee3210.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000107_0c06861530e4302ea4ca0c7988c975719561193a8c46569990ca8909a6e2b5eb.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000108_8ca632426902a7dfda53dad01b748defaf779305d26905632d9286dacbd7994d.png"></figure>
+<h2>Palm Facing — Top View</h2>
+<p>The hand is parallel with the floor.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000109_e1e91b5f6e27e537b2e85a14616d33b476c4cd254ecf7806a9e096900bcb2212.png"></figure>
+<h2>Palm Facing — Front View</h2>
+<p>The hand is parallel with the front wall.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000110_47a8440f7074f550d80eb4c899db219511c309a63488f4cea0c8efb1b49da1de.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000111_a85f0423427013d4f6c8c5680069f69271f12dfad87ce34b6dc8af94f76969a0.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000112_14a072071da00aee1c288de58847e7e1315f712174042dfd8f16e93f91b5d701.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000113_5692d96a37b0919f4c111ed5ab43063c2d0c03cfb9aa4138b7ff79da3c5e6f1c.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000114_160bbde34ccc6251bb7d9bd252b122e99df665677f8081984835487313a5c54b.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000115_ec946a4fc80a80f03afd07c55a2a852bde66593b1118cf6454d72914d27d7824.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000116_c6cafa3b08defbb5d0d629afdcc19b89d33a53863156b7f92624fb72bcde9774.png"></figure>
+<h2>Palm Facing — Front View</h2>
+<p>The hand is parallel with the front wall.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000117_23cbe7c2476a9b771831014d43edffba4adfa732a40a420fdf5026623169fdfa.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000118_8c302f455ca02a538cfd22e098f6c8a45b7cba3285dcd0527b0d6869d112f3e9.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000119_7e154dd2909f0d6db0565d0835fe134f82bc442c1f949442ab2e3e5526fed21a.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000120_9484a4d3ced72795fa4ede63ef4a37378a3bfbd1caecc48bf5a2b2076671a331.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000121_f63c3b2e012598f02f465ea93e1c3380d1c1ec926f4a48aac560cefda9c8cbb4.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000122_b17bbb946e4fc796e26b1230e39659a8cd369dc2d436ef99b15416a0ffa38655.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000123_399c563c41270b328b77a68ffbbecbc99c3a166f21bf29bfcd51d084531baab3.png"></figure>
+<h2>Expressive Front View</h2>
+<p>Signs are written from the signer's expressive viewpoint. Imagine standing BEHIND the signer, copying what the signer does and feels.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000124_5f2e55f5a09c24277395111e5b71035983a4cc1fedcd87080076642104af0dc0.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000125_2b449e38f0ead362cd6f209c1069b7b82189c310f3bf638fb9bc208923d3030e.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000126_b9d231526ac4f4643e3af270cdff480b78ae6871014e8a15c4e8fbdf227f219b.png"></figure>
+<div style="display:flex;gap:1.5em;flex-wrap:wrap">
+<div style="flex:1;min-width:220px">
+<h3>Palm of Hand</h3>
+<p>The palm of the hand is written with a white or hollow symbol.</p>
+<p><strong>Front View — Parallel with Wall Plane:</strong> the hand is parallel to the Front Wall. The white symbol shows that the palm faces towards your body, towards the reader.</p>
+</div>
+<div style="flex:1;min-width:220px">
+<h3>Side of Hand</h3>
+<p>The side of the hand is written with a symbol that is half-white and half-dark. The half-white section shows the direction of the palm. The half-dark section represents the back of the hand.</p>
+<p><strong>Front View — Parallel with Wall Plane:</strong> the hand is parallel to the Front Wall. The thumb of the hand faces towards your body.</p>
+</div>
+<div style="flex:1;min-width:220px">
+<h3>Back of Hand</h3>
+<p>The back of the hand is written with a black or filled-in symbol.</p>
+<p><strong>Front View — Parallel with Wall Plane:</strong> the hand is parallel to the Front Wall. The black symbol shows that the back of the hand faces towards your body.</p>
+</div>
+</div>
+<h2>Expressive Top View</h2>
+<p>Signs are written from the signer's expressive viewpoint. Imagine looking down on the position of the signer, from a bird's eye view.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000127_b2de9e36fb11bdf012458447deca939d21f4f47723562d5a17cd5e449f8ef099.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000128_b4c8ca4b1497d66fa29e79f652e78ec2debfbfdcc3dd783b77870de4a5707f9e.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000129_6f551d3c65a3c6b8754d8be1a2e455d6e2fa4466bf5a634c50f037199993f080.png"></figure>
+<div style="display:flex;gap:1.5em;flex-wrap:wrap">
+<div style="flex:1;min-width:220px">
+<h3>Palm of Hand</h3>
+<p><strong>Top View — Parallel with Floor Plane:</strong> the hand is parallel to the floor. You are looking down at your palm from overhead. The white symbol has a space at the knuckle joint representing the Horizon Line. A hand symbol with the Horizon Line crossing over the knuckles means the hand is "parallel with the floor" read from the Top View.</p>
+</div>
+<div style="flex:1;min-width:220px">
+<h3>Side of Hand</h3>
+<p><strong>Top View — Parallel with Floor Plane:</strong> the hand is parallel to the floor. You are looking down at the side of your hand (your thumb) from overhead. The hand symbol has a space at the knuckle joint representing the Horizon Line.</p>
+</div>
+<div style="flex:1;min-width:220px">
+<h3>Back of Hand</h3>
+<p><strong>Top View — Parallel with Floor Plane:</strong> the hand is parallel to the floor. You are looking down at the back of your hand from overhead. The hand symbol has a space at the knuckle joint, representing the Horizon Line.</p>
+</div>
+</div>
+<h2>Hands Relate to Center</h2>
+<p>In the International SignWriting Alphabet, all hand symbols are designed to relate to the Center of the Body. Imagine a Center Line going down the center of your body. The Majority of Action Fingers are directed towards the center. Left hands are written to the left of the Center Line. Right hands are written to the right of the Center Line.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000130_3609b71eb55ac1196f1b19109944c907beb81c558d950f7cef80fdc512232d02.png"></figure>
+<h2>The Wall Plane</h2>
+<p>Hand symbols parallel to the Front Wall look the same whether they are far from the chest, close to or touching the chest, or behind the body. You can FEEL the position of the palm facing. It remains the same symbol no matter how close or far it is.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000131_344b8f56f49dd01f66fa7465fa1baa9408ebddfb77508c7640dd8aaa1dde1703.png"></figure>
+<h2>The Floor Plane</h2>
+<p>Hand symbols parallel to the Floor look the same whether they are high above the head, in the middle in front of your chest, or low at hip level. You can FEEL the position of the palm facing. It remains the same symbol no matter how high or low it is.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000132_083ff096ab602de180a021253b1696f90ab207f4d7fff1ecf2c3d2f23ff31683.png"></figure>
+<h2>Hands Pointing to the Side</h2>
+<p>Hand symbols with the fingers pointing to the side can be written from the Front View, parallel to the Front Wall Plane, or from the Top View, parallel to the Floor Plane. Both symbols are correct, since side-to-side can be seen from the Front View or the Top View. Choose to write the simpler symbols seen from the Front View, parallel to the Front Wall, since they are less complicated for quick reading:</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000133_dc11db088482b6cc031077c62c49a51a8f71c4317559311ed2cccb52b0021d78.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000134_0d58b1b1b663256a6eb78a7b9ae74e229df686025c620ce72b4445a09fc7b5a1.png"></figure>
+<div style="display:flex;gap:1.5em;flex-wrap:wrap">
+<div style="flex:1;min-width:260px">
+<h3>Choose the Front View</h3>
+<p>The Front View writes the palm of the hand with a white or hollow symbol.</p>
+<p><strong>Front View Is Easier to Read:</strong> when the fingers point to the side wall, it is best to write the symbol parallel to the Front Wall because the symbol is easier to read.</p>
+</div>
+<div style="flex:1;min-width:260px">
+<h3>Top View Is Correct but…</h3>
+<p>The Top View of the hand is written with a half-white half-dark symbol with the Horizon Line across the knuckles.</p>
+<p><strong>Top View Is Harder to Read:</strong> when the fingers point to the side wall, it is correct to write the symbol parallel to the Floor, but it is harder to read and therefore not recommended.</p>
+</div>
+</div>
+<h2>10 Groups of Hands</h2>
+<p>There are ten groups of hand symbols in the International SignWriting Alphabet. The hands are grouped according to which fingers are used. These ten groups are the beginning of the Sign Symbol Sequence, the order of symbols used to look up signs in SignWriting dictionaries by Sign-Symbols. Handshapes used in all signed languages are included. All ten groups are listed on the following pages. An easy way to remember these groups is to count from one to ten in American Sign Language (ASL).</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000135_d005ad2d2375c065829e0c15b415ca86569eed8b400f12c36df0868c51853469.png"></figure>
+<ul>
+<li><strong>Group 1:</strong> Index Finger</li>
+<li><strong>Group 2:</strong> Index &amp; Middle Fingers</li>
+<li><strong>Group 3:</strong> Index, Middle &amp; Thumb</li>
+<li><strong>Group 4:</strong> Four Fingers</li>
+<li><strong>Group 5:</strong> Five Fingers</li>
+<li><strong>Group 6:</strong> Baby Finger</li>
+<li><strong>Group 7:</strong> Ring Finger</li>
+<li><strong>Group 8:</strong> Middle Finger</li>
+<li><strong>Group 9:</strong> Index &amp; Thumb</li>
+<li><strong>Group 10:</strong> Thumb</li>
+</ul>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000136_8f5d03b7b86438ab462e7b5e54610dca2c2634448a3fb6e9750598ea1734cb07.png"></figure>
+<h2>Group 1 — Index Finger</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000137_328ebd58a3800d52bfea32167566296be46cf1d280529a0d1eae6a04af9d52f8.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000138_00141e4f5a4826f0ea6d55e0e5f9c9f741b3852e1db42ac77665a904a29feea8.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000139_3dcdb94eaa6dcd9b7ac2bc2041fd081c529cb98accb7134acf2e3af2d3c8713d.png"></figure>
+<ol>
+<li>Index</li>
+<li>Index on Circle</li>
+<li>Index on Cup</li>
+<li>Index on Oval</li>
+<li>Index on Hinge</li>
+<li>Index on Angle</li>
+<li>Index Bent</li>
+<li>Index Bent on Circle</li>
+<li>Index Bent on Fist Thumb Under</li>
+<li>Index Raised Knuckle</li>
+<li>Index Cup</li>
+<li>Index Hinge on Fist</li>
+<li>Index Hinge on Fist Low</li>
+<li>Index Hinge on Circle</li>
+</ol>
+<h2>Group 2 — Index &amp; Middle</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000140_0ebcd19b29316128972d32c34eda550d28bd3b5a8d983bd3e1466840b48e7a73.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000141_5dc6e2584b8ed444cb69cfa6d80375bc15f79cbdb7fe9bf5997e7d276efc9338.png"></figure>
+<ol start="15">
+<li>Index Middle</li>
+<li>Index Middle on Circle</li>
+<li>Index Middle Bent</li>
+<li>Index Middle Raised Knuckles</li>
+<li>Index Middle Hinge</li>
+<li>Index Up, Middle Hinge</li>
+<li>Index Hinge, Middle Up</li>
+<li>Index Middle Unit</li>
+<li>Index Middle Unit, Index Bent</li>
+<li>Index Middle Unit, Middle Bent</li>
+<li>Index Middle Unit, Cup</li>
+<li>Index Middle Unit, Hinge</li>
+<li>Index Middle Cross</li>
+<li>Index Middle Cross on Circle</li>
+<li>Middle Bent Over Index</li>
+<li>Index Bent Over Middle</li>
+</ol>
+<h2>Group 3 — Index, Middle &amp; Thumb</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000142_567248b287d08ef5bd5f589aecbee4f1b276ce34cb1cb9b8cf7bf2ed9b5d8f8b.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000143_2d898458c95c27b4485fd24564ac44aed51004b5d336fe2417138cfcd96f64b8.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000144_22b54e9a8a83808b519189d23940608a8b3602e86ad7671732a2a9c299580139.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000145_fe68b8a76afe68f1e3bf7fceb38b25f7a71ee832e886a506892a64ad1c1c7204.png"></figure>
+<ol start="31">
+<li>Index Middle Thumb</li>
+<li>Index Middle Straight, Thumb Bent</li>
+<li>Index Middle Thumb Hinge</li>
+<li>Thumb Between Index Middle Straight</li>
+<li>Index Middle Thumb Bent</li>
+<li>Index Middle Hinge Spread, Thumb Side</li>
+<li>Index Up, Middle Hinge, Thumb Side</li>
+<li>Index Up, Middle Hinge, Thumb Unit</li>
+<li>Index Hinge, Middle Up, Thumb Side</li>
+<li>Index Middle Bent, Thumb Straight</li>
+<li>Index Middle Thumb Cup</li>
+<li>Index Middle Up Spread, Thumb Forward</li>
+<li>Index Middle Thumb Circle</li>
+<li>Index Middle Thumb Hook</li>
+<li>Index Middle Unit, Thumb Side</li>
+<li>Index Middle Unit, Thumb Side Bent</li>
+<li>Index Middle Unit, Thumb Side Unit</li>
+<li>Index Middle Unit, Thumb Side Bent</li>
+<li>Middle Thumb Hook, Index Up</li>
+<li>Index Thumb Hook, Middle Up</li>
+<li>Index Middle Unit Hinge, Thumb Side</li>
+<li>Index Middle Cross, Thumb Side</li>
+<li>Index Middle Unit, Thumb Forward</li>
+<li>Index Middle Thumb, Unit Hinge</li>
+<li>Middle Thumb Cup, Index Up</li>
+<li>Index Thumb Cup, Middle Up</li>
+<li>Middle Thumb Circle, Index Up</li>
+<li>Index Middle Thumb, Angle Out</li>
+<li>Index Thumb Angle Out, Middle Up</li>
+<li>Index Thumb Angle In, Middle Up</li>
+<li>Index Middle Thumb, Angle</li>
+<li>Middle Thumb Angle Out, Index Up</li>
+<li>Middle Thumb Angle Out, Index Crossed</li>
+<li>Middle Thumb Angle, Index Up</li>
+<li>Index Thumb Hook, Middle Hinge</li>
+</ol>
+<h2>Group 4 — Four Fingers</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000146_611041dc88375c7ae12e288445dbe3a258fde6568354a4c3f1ca1f9ef8341a42.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000147_3505e0c197f0ba87b34afa4048b849703c19366c86065111173af2efb599a9db.png"></figure>
+<p>BaseSymbols 69–76: Four-finger handshapes (Index Middle Ring straight, bent, hinge and related variants).</p>
+<h2>Group 5 — Five Fingers</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000148_b5842e2dfddadc9bc38a5f001e2d391120ff65384bc394289097d09d89a705a2.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000149_b94f952908d019c34e3238ef005dffe28315498c6c61ad2ed3216aef1a480058.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000150_236336e8263f461e550d6f3ca374c57006c3acb5830c6565b3adf7d212b6abd0.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000151_ab2334dc73958b2131343949fe443b76de2361ae95f5f02c3e6acd573f0bf115.png"></figure>
+<ol start="77">
+<li>Five Fingers Spread</li>
+<li>Five Fingers Spread Heel</li>
+<li>Five Fingers Spread, Thumb Forward</li>
+<li>Five Fingers Spread, Four Bent Heel</li>
+<li>Five Fingers Spread Bent</li>
+<li>Five Fingers Spread Bent Heel</li>
+<li>Five Fingers Spread Cup Open</li>
+<li>Five Fingers Spread Cup</li>
+<li>Five Fingers Spread Oval</li>
+<li>Five Fingers Spread Hinge Open</li>
+<li>Five Fingers Spread Hinge</li>
+<li>Five Fingers Spread Hinge, Thumb Side</li>
+<li>Five Fingers Spread Hinge, No Thumb</li>
+<li>Five Fingers Spread Oval, Thumb Forward</li>
+<li>Flat</li>
+<li>Flat Heel</li>
+<li>Flat, Thumb Side</li>
+<li>Flat, Thumb Side Heel</li>
+<li>Flat, Thumb Bent</li>
+<li>Flat, Thumb Forward</li>
+<li>Flat Split Index, Thumb Side</li>
+<li>Flat Split Center</li>
+<li>Flat Split Center, Thumb Side</li>
+<li>Flat Split Center, Thumb Side Bent</li>
+<li>Flat Split Baby</li>
+<li>Claw, Thumb Side</li>
+<li>Claw, No Thumb</li>
+<li>Claw, Thumb Forward</li>
+<li>Flat, Between Palm Facings</li>
+<li>Hook</li>
+<li>Hook Curlicue</li>
+<li>Curlicue Open</li>
+<li>Cup Open</li>
+<li>Cup</li>
+<li>Cup, Thumb Side</li>
+<li>Cup, No Thumb</li>
+<li>Cup Open, Thumb Forward</li>
+<li>Cup, Thumb Forward</li>
+</ol>
+<figure><figcaption><div class="caption">Front View — Hands Parallel With The Wall</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000152_f709bac504c7baed94b0a7ed2c17d74cb0e0b423525e60f5a0a5b78e0cb5bf46.png"></figure>
+<figure><figcaption><div class="caption">Top View — Hands Parallel To The Floor</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000153_bbdcf9ea64f2b7878a80fdc297de5a87ebd2e30757aceb716c5434fbfb2626b8.png"></figure>
+<h2>Group 6 — Baby Finger</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000154_1a615f37fbcf4506fe6d5f3c3f32cddf130f17982b9dcf8d4f624976e30b266f.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000155_fb378362effa6e9f9c15d021f1c6b012950d67f061ea4c5e997fcaa8becea37f.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000156_49436a68462de85c482e658e92446e8a2b08ae1fff113fd4bbe59ec31dac62d6.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000157_63c8ed773f9672ae5e0f2c59a2bbdd0dc2f0dd59fa5261291f8037789b573bfd.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000158_dab2b39fae9d24991abcfe49d2b35ef5692d2b8bf4eaadf28a2b4c2d9aa9705c.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000159_b9566246de39cfa745da8928410eec4b7e47f28a6e8d29c31e094dc012d046c5.png"></figure>
+<ol start="135">
+<li>Index Middle Ring</li>
+<li>Index Middle Ring on Circle</li>
+<li>Index Middle Ring on Hinge</li>
+<li>Index Middle Ring on Angle</li>
+<li>Baby Hinge</li>
+<li>Index Middle Ring, Bent</li>
+<li>Index Middle Ring, Unit</li>
+<li>Index Middle Ring, Unit Hinge</li>
+<li>Baby Down</li>
+<li>Baby Down, Ripple Straight</li>
+<li>Baby Down, Ripple Curved</li>
+<li>Baby Down, Others Circle</li>
+<li>Baby Up</li>
+<li>Baby Up on Fist Thumb Under</li>
+<li>Baby Up on Circle</li>
+<li>Baby Up on Oval</li>
+<li>Baby Up on Angle</li>
+<li>Baby Raised Knuckle</li>
+<li>Baby Bent</li>
+<li>Baby Touches Thumb</li>
+<li>Baby Thumb</li>
+<li>Baby Thumb on Hinge</li>
+<li>Baby Index Thumb</li>
+<li>Baby Index Thumb on Hinge</li>
+<li>Baby Index Thumb, Index Thumb Angle Out</li>
+<li>Baby Index Thumb, Index Thumb Angle</li>
+<li>Baby Index</li>
+<li>Baby Index on Circle</li>
+<li>Baby Index on Hinge</li>
+<li>Baby Index on Angle</li>
+<li>Index Middle Baby</li>
+<li>Index Middle Baby on Circle</li>
+<li>Index Middle Baby on Hinge</li>
+<li>Ring Hinge</li>
+<li>Index Middle Baby on Angle</li>
+<li>Index Middle Cross with Baby</li>
+<li>Index Middle Cross with Baby on Circle</li>
+</ol>
+<h2>Group 7 — Ring Finger</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000160_8b735446ca4b2c255081be0fa385f4d49ebbc5e0753559dc7320e899e8fdde87.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000161_3b56e669f2bece28ed16daddde5e1cd7c4b8d68120e992d6409ac1e41ad50ab1.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000162_3607a012d6918160e601f186205d576bef837b495c5cc0407671a73d2f5f247d.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000163_e9e6ee090036fa5b07d4106365a463adc4bfa5106d1b380e458b231107a49fc6.png"></figure>
+<ol start="172">
+<li>Ring Down</li>
+<li>Ring Down, Index Thumb Hook, Middle Hinge</li>
+<li>Ring Down, Middle Thumb Angle, Index Cross</li>
+<li>Ring Up</li>
+<li>Ring Raised Knuckle</li>
+<li>Ring Baby</li>
+<li>Ring Baby on Circle</li>
+<li>Index Ring Baby</li>
+<li>Index Ring Baby on Curlicue</li>
+<li>Index Ring Baby on Hook In</li>
+<li>Index Ring Baby on Cup</li>
+<li>Index Ring Baby on Hinge</li>
+<li>Index Ring Baby on Angle Out</li>
+</ol>
+<h2>Group 8 — Middle Finger</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000164_0c55b63c6f21156254c7eee59d30417d786b4908aeeaa52e10a338a91e006591.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000165_c63451f72c8f3fef0a39848839f03450896ed9e60a21bca16eb3153a5e0a73d2.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000166_a157b0bfceb92e57cf738876d360ade06b444fad3050557e1d616e4d535e34a4.png"></figure>
+<ol start="199">
+<li>Middle Up</li>
+<li>Middle Ring Baby</li>
+<li>Middle Ring Baby on Circle</li>
+<li>Middle Ring Baby on Curlicue</li>
+<li>Middle Ring Baby on Cup</li>
+<li>Middle Ring Baby on Hinge</li>
+<li>Middle Ring Baby on Angle Out</li>
+<li>Middle Ring Baby on Angle In</li>
+<li>Middle Ring Baby on Angle</li>
+<li>Middle Ring Baby Bent</li>
+<li>Middle Ring Baby Unit on Claw</li>
+<li>Middle Ring Baby Unit on Claw Side</li>
+<li>Middle Ring Baby Unit on Hook Out</li>
+<li>Middle Ring Baby Unit on Hook In</li>
+</ol>
+<h2>Group 9 — Index &amp; Thumb</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000167_86e75d4112c4b0525b3f1041d980e0ca26c272ed0fccea6bc92247f95a1f089c.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000168_99f28ba065eae259ee4ea4eca5c875c3a3eb0943d62d2236d27f394a323c903f.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000169_8ba4114a00676db520edb104e54d462e93dd2a0acfeab9de33ef3bca987830c6.png"></figure>
+<ol start="219">
+<li>Index Thumb</li>
+<li>Index Hinge</li>
+<li>Index Thumb Side</li>
+<li>Index Thumb Side on Hinge</li>
+<li>Index Thumb Side, Thumb Diagonal</li>
+<li>Index Thumb Side, Thumb Unit</li>
+<li>Index Thumb Side, Thumb Bent</li>
+<li>Index Thumb Side, Index Bent</li>
+<li>Index Thumb Side, Both Bent</li>
+<li>Index Thumb Side, Index Hinge</li>
+<li>Index Thumb Forward, Index Straight</li>
+<li>Index Thumb Forward, Index Bent</li>
+<li>Index Thumb Hook</li>
+<li>Index Thumb Curlicue</li>
+<li>Index Thumb Curve, Thumb Inside</li>
+<li>Index Thumb Curve, Thumb Inside on Claw</li>
+<li>Index Thumb Curve, Thumb Under</li>
+<li>Index Thumb Oval</li>
+<li>Index Thumb Cup</li>
+<li>Index Thumb Cup Open</li>
+<li>Index Thumb Hinge Open</li>
+<li>Index Thumb Hinge Large</li>
+<li>Index Thumb Hinge</li>
+<li>Index Thumb Hinge Small</li>
+<li>Index Thumb Angle Out</li>
+<li>Index Thumb Angle In</li>
+<li>Index Thumb Angle</li>
+</ol>
+<figure><figcaption><div class="caption">Front View — Hands Parallel With The Wall</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000170_d1d5573de4d41dcaea0c4d444b1e7c80c3ba68890496c47ca91889c6c0112b49.png"></figure>
+<figure><figcaption><div class="caption">Top View — Hands Parallel To The Floor</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000171_3cf6cd4b59b325cee2a93a73ccc85267d41fb598c19a8c7738f74504a17f5a31.png"></figure>
+<h2>Group 10 — Thumb</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000172_f6b7953dae3a264b7b4fbebf68c04abe6bb173016b700cb1a94edfeec0282ff3.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000173_964c3a222ef85657f2c8ff0d1736f60a2cc9cc42b2f50e8ad52bd20c60ca4e37.png"></figure>
+<ol start="246">
+<li>Thumb</li>
+<li>Thumb Heel</li>
+<li>Thumb Side</li>
+<li>Thumb Up</li>
+<li>Thumb Bent</li>
+<li>Thumb Forward</li>
+<li>Thumb Between Index Middle</li>
+<li>Thumb Hinge</li>
+<li>Thumb Angle</li>
+<li>Thumb Curve</li>
+<li>Thumb Hook</li>
+<li>Thumb Curlicue</li>
+<li>Thumb Cup</li>
+<li>Thumb Cup Open</li>
+<li>Thumb Hinge Open</li>
+<li>Thumb Heel Variant</li>
+</ol>
+<h2>Two Ways to Write Thumb Towards Reader</h2>
+<p>The side view of the Thumb Hand can be written in two ways. The dot for the thumb projecting directly toward the reader is the official symbol of the ISWA 2010. But some writers choose to write a line for the thumb to the side, rather than the dot. The line for the thumb is always placed on the dark side of the symbol. Both methods mean the same thing and are correct.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000174_ad86980cb989410399a21ffa22a15c4e0ebae5664e1b3f06a20e3c43397fa746.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000175_11b723eb0881919055bcf860e106bd865f59cd859b93e3bdf06bf2edb9e4b646.png"></figure>
+<p><em>The American Manual Alphabet.</em></p>
+<h2>Heel of Hand or Top View?</h2>
+<p>Flat hands with the fingers pointing straight forward, with the arm parallel to the Floor Plane, can be written from a special viewpoint called the Heel of Hand "Wrist View", or from the traditional Top View.</p>
+<p><strong>Two Ways to Write The Same Handshape</strong> — Heel of Hand Wrist View …OR… Top View. Use either symbol.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000176_903bf11b2922bcd8e27cf94791fa751b39d8b8bf299b69bf06aba478c1962078.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000177_ad0cba10a7ea7be6b8e7257f4fb6d58ef5020cd6f9fa2211a19a7df35cb64b85.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000178_142dbd53e3da0692890fe999038053ba227bcea13ab7c724c3e5858800e98d0f.png"></figure>
+<h2>Heel of Hand or Top View?</h2>
+<p>Fists with the knuckles directed straight forward, with the arm parallel to the Floor Plane, can be written from a special viewpoint called the Heel of Hand "Wrist View", or from the traditional Top View.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000179_50053b91b4491e4757d0dcc8005415416365e27f1e90a39c7b378a1cf858d76c.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000180_77c3713f035c27502dc3cb9ae2f3b345c944dbfaf8bcbb360b1f99872866ce41.png"></figure>
+<h2>Finger Direction Is Meaningful</h2>
+<p>Two ways to write the same position: the Top View of the Back of the Hand can be written at a slant. Some writers feel this looks more like real life, because the fingers are directed down. Both angles are correct.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000181_59c56b1861aee5a64fb8d6cf4d12135084ac127dc45de66b28ba9939f2fba636.png"></figure>
+<h2>Action Fingers Directed Towards The Face</h2>
+<p>Finger direction relates to the Center of the Body. Action Fingers that bend at the knuckle joint in Angle, Hinge, Cup or Curve hand positions direct the fingers into the Center of the Body. The white palm shows the palm is facing the body, with a slight hint that the palm is slightly turned toward the Center too.</p>
+<p><strong>Fingers Are Directed Toward the Center</strong> — when the palm is facing the body.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000182_ad5e1796af3a7820d859f10328311845cb935f4461e13431cd1be6861199f8e0.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000183_ffa3243aab66669dd8f5fb687d5c0714510ad9597232776e5da392d468998e54.png"></figure>
+<p>Some ASL signs as examples: glass, oral, no-to-me, wolf, information, Jew, clown, going out, illness, lucky, prefer, birthday, eat, blow a kiss.</p>
+<h2>Action Fingers Directed Up</h2>
+<h3>Angle Hand Symbols</h3>
+<p>Point the tip of the angled fingers in meaningful directions.</p>
+<p>When writing Angle Hands, write the direction of the fingers based on what "feels correct" for the meaning of the sign. Then look at your palm. Where is the palm facing? If the palm is facing the ceiling, then it is parallel to the floor. It will be white with a space at the knuckle joint.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000184_ec8ed23df6470eb477ee1e9b639f8f24bbd96c2df43ba2b3ec5b4ac8e4c68c8f.png"></figure>
+<p><em>This sign can be found in: Cat in the Hat in ASL, page 1 — <a href="http://www.signbank.org/SignPuddle1.6/canvas.php?ui=1&amp;sgn=5&amp;sid=144">SignPuddle link</a>.</em></p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000185_cf3b0dbdae18d413b59a0be3981a2a3d4a716addd72bdb7d95cceb56f96690ad.png"></figure>
+<p>Some ASL signs as examples: Jewish, grow, soft, give to you, lose, money, poor, waste, gay, dissolve, twelve.</p>
+<h2>Action Fingers Directed Out (Away From The Body)</h2>
+<p>This is very rare. If the majority of Action Fingers are directed to the outside, away from the Center of the Body, as in the sign for FAIRY GODMOTHER in ASL, then it is written pointing out.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000186_f0b62675ce06512c2bf3d0a88713ea063645ea30b42cc4b5515bf9e45e587bf0.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000187_8845c43b4688b6219a57c007d7a30d956469bf9f90877e36870c365d3b564138.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000188_96236a2cbcdeff71a03180d6bed8ca147a557ec418113062bb5f8505eb5a6ced.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000189_163e93bb2d26f724d2214d0cd8f7aa686235b0aa672fd2f4b6a141e2f5e31078.png"></figure>
+<h2 id="chapter-4">Chapter 4 — Contact</h2>
+<h2>6 Contact Symbols</h2>
+<ol>
+<li>Touch</li>
+<li>Grasp</li>
+<li>Between</li>
+<li>Strike</li>
+<li>Brush</li>
+<li>Rub</li>
+</ol>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000191_41b8b7f814eee7e034deb032f121ad9595d5a0b6948a592bf49da34591a04c57.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000192_c313c6143f2ecfd7451966715e323a6de20560f0f54e21922b94f7673a8709e5.png"></figure>
+<h2>Touch</h2>
+<p>Touch Contact is written with an asterisk.</p>
+<p>Touch is defined as the hand gently contacting another part of the body.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000193_52bd4be415092fd9ceb3b64537f80c4b1f2a01e57109a248e876f86751654041.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000194_6299f4e770f761bec76812bb6d09246007368ebd497d63619fdc31a183e26045.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000195_2689b20946149a0f73e1614fc4f496304530df387fd0dd32691c9295d60a986e.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000196_25429115636afb17d2d44f0d5d205efa623aa25faf37c7859370b69879921358.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000197_4fda8a7b6966d42def86f061532896eb97dfa2b00670407b9b2443191bc157c2.png"></figure>
+<h2>Grasp</h2>
+<p>Grasp Contact is written with two crossed lines.</p>
+<p>Grasp is defined as the hand grasping or pinching a part of the body or a prop, such as clothing.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000198_51760779ab61282f7e2e6f768fe518bed57a40c1e642235620a1262a97033ee2.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000199_df3ab0dfaac79c737a0499172e775d3defecd6732e85702c546f87f7b00a5d1e.png"></figure>
+<h2>Between</h2>
+<p>Between Contact is written with a Contact Symbol between two lines.</p>
+<p>Between is defined as contacting between two fingers or other parts of the body.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000200_836361d392e5fedd73e4b63f14a17de49ff10a18e72a9f0ecd4d26b4feb3b951.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000201_102a33b3836ce343085fcfefd62543593ba6a1b480bbe51332f64250c076b7f6.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000202_80791d48e4a25b779f3b2889e5aba9c00150fd9e31e1975c397417443a054b0c.png"></figure>
+<h2>Strike</h2>
+<p>Strike Contact is written with two lines crossing two lines.</p>
+<p>Strike is defined as the hand contacting a surface with force.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000203_05a8878452e0a770fed3f152441dbfd1ce4a9a402d3ca365f2f98c5e9d77e9ac.png"></figure>
+<h2>Brush</h2>
+<p>Brush Contact is written with a circle with a dark dot in the center.</p>
+<p>Brush is defined as movement that first contacts and then moves OFF the surface.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000204_9a4f8251687cecdf0a749aaba1932afbeea42808a4d5a3f38b8594be0619f617.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000205_c9b0f38e857babfcdac62a38f1e63eca212c3d2b01079909db278128432c994b.png"></figure>
+<h2>Circular Rub</h2>
+<p>Circular Rub Contact is written with a spiral.</p>
+<p>Rub is defined as contact that moves, but stays ON the surface.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000206_b1e6ee86906f7edae7892163e90453d1f6ae5a14e2d430703d9ad2626c779efd.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000207_028a182e9bdf5326c7028e7b335cbc6a64733987a03d8587d867084e927d6097.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000208_8d1ba14353092de959a9c09db0814bf1111e9cf6836d76db1d78d0edf4c5fd1c.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000209_5a0ab595a864ce68ded87d2e63d28a3191f812b3ddef8415be799c129e0f6f18.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000210_98a23d9adc0c94d9864cfb58f88a2557efc5cf042621a44b23320236391d777a.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000211_b311de7fdf14854458e4700e4eaac45067af97272dd23172b7c9805fc0b9ba82.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000212_399cf012a2452eaccc4e0144e7baac266926d3b9209f3fde3b631bff4eacc7bd.png"></figure>
+<h2>Straight Rub</h2>
+<p>Straight Rub Contact is written with the same spiral symbol, but the spiral symbol is connected with a straight arrow.</p>
+<p>When the Rub Contact symbol is connected with an arrow, it rubs in a straight line (not in a circle). It stays ON the surface but moves in the direction of the arrow.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000213_6eeeffcca7cd02d6f75e2be05641662d8ca50c45ace8088ed200648f3db75257.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000214_9a059a5d4b7bbe51169045a204b6acadd6e3e969aecbaab4b909182fa669c260.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000215_3749c6154e06e4d5c424523a43a0c2be2101a007191bfa3e32905e4d5af35efa.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000216_3419dbc6b3c6c2ab3753d939be1b30f4cd67b3368f7aadac07d36cf378c364d2.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000217_c2f375af73e73e3c3f9a0c3848a7501fc4d576163f3e88bf72b5ed575565c24a.png"></figure>
+<h2 id="chapter-5">Chapter 5 — Finger Movement</h2>
+<h2>6 Finger Symbols</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000219_401360be1708815439a163439a056d8274448e22a3eb7f8666913c212ecba629.png"></figure>
+<ol>
+<li>Squeeze, Middle Joint Closes</li>
+<li>Flick, Middle Joint Opens</li>
+<li>Hinge, Knuckle Joint Closes</li>
+<li>Hinge, Knuckle Joint Opens</li>
+<li>Hinge, Knuckles Open &amp; Close Together</li>
+<li>Trill, Knuckles Open-Close Alternating</li>
+</ol>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000220_f89f059dd8fbda11b21db38a59b3b85227b2f95101ec7c44dcfc386db3ec144e.png"></figure>
+<div style="display:flex;gap:1.5em;flex-wrap:wrap">
+<figure style="flex:1;min-width:280px"><figcaption><div class="caption">Middle Joint — Squeeze &amp; Flick: Finger movements written with small dots.</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000221_3066073d4f241d224547259b54c0187b416b222f7029c740cedc88661b492733.png"></figure>
+<figure style="flex:1;min-width:280px"><figcaption><div class="caption">Knuckle Joint — Hinge &amp; Trill: Finger movements written with small arrows.</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000222_ad281e23f73bcca1475f0e9d7543551b327f203716f9a6b520ce182b3c894e15.png"></figure>
+</div>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000223_b8ba57a9b0c62338a931549c737f3f2fc599571d2a9a0a3f3ba39f6c291fc417.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000224_46280afe70460100a4e65b130fa46fbba1a2848d291829ed88390bc430e19eb8.png"></figure>
+<h2>Middle Joint Closes</h2>
+<p>When the middle joint of the finger squeezes tight (bends down or in), this closing finger movement is written with a dark dot.</p>
+<p>The dot is placed near the finger joint that does the squeezing. Two dots represent two squeezes.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000225_b0e347ec82710110cf73c64fbcc105fe90108719bf2c2e581b5e64956cebe917.png"></figure>
+<h2>Middle Joint Opens</h2>
+<p>When the middle joint of the finger flicks open (goes from bent to straight), this opening flicking movement is written with a hollow dot.</p>
+<p>The dot is placed near the finger that flicks. Two dots represent two flicks.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000226_87827d24baf8336ca1edbdd8e5b821ef76a4ddcc07f4f1ae128da53a09d906c7.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000227_8f6b43e9ec6fcff5bc96ce53f9b94fb05713cec1e7e88d07332585b93230b6bc.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000228_250427c484413abf48a0d1cb48c16d2bb7f5cc71c00bae59e192771460fdfe51.png"></figure>
+<h2>Knuckle Joint Closes</h2>
+<p>The middle joint of the finger locks, while the knuckle joint bends down, like the Hinge on a door. This closing knuckle movement is written with a small arrow that points down. The arrow pushes the fingers down. Two arrows mean 2 hinges.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000229_45c0dbd34d737d7386821e8752dfefcca50e37751b1e16f19ab37f03b78215c3.png"></figure>
+<h2>Knuckle Joint Opens</h2>
+<p>The middle joint of the finger locks, while the knuckle joint bends up, like the Hinge on a door. This opening knuckle movement is written with a small arrow that points up. The arrow pulls the fingers up. Two arrows mean 2 hinges up.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000230_03d2469cadc140d74d8174aca9ef2e17b0c910cb2e4850a5fab1bf655c495d26.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000231_433112fdfca89c850c12bcfc0542028056cac5bc955d3384cd93bb65e816e72b.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000232_2986f3e68e85a3a699abe2e7c6ea325bb679fbb7b2ff2de522ed30c350079152.png"></figure>
+<h2>Knuckle Joints Open-Close</h2>
+<p>The fingers move together in the same direction, as a unit. The knuckle-joints of the fingers open and close (bend up and down) together. This open-close knuckle movement is written with one row of small connected arrows pointing up and down.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000233_20c18c9e1effc1d27af6d9af016fa3419fed7c211e0bfb1dab76a1d80f59079e.png"></figure>
+<h2>Knuckle Joints Alternate</h2>
+<p>The fingers do not move together in a unit. Instead they hinge in opposite directions. One moves up, as the other moves down. This Alternating Finger Movement, also called Finger Trills, is written with two rows of small arrows pointing up and down.</p>
+<h2>Sequential Finger Movement</h2>
+<p>Specific finger-by-finger opening and closing.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000234_55111f3d09fa9a5e1593609ca6e8cd495391eebc97b78b5c0ae965fe1a99beae.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000235_9266ffd888f67f1f004ec1e3be04344d171b3e8b510d49841df951ba91c8dcb9.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000236_fc6d5ac2453064879dc0128b64dff48405f2cfa01e3535302ed646f8235c0e0b.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000237_d3c15e38bc59b8fc150c60c7f353fadbba446f80a5c05f37f4705ad6245999a4.png"></figure>
+<h2 id="chapter-6">Chapter 6 — Straight Movement</h2>
+<div style="display:flex;gap:1.5em;flex-wrap:wrap">
+<div style="flex:1;min-width:280px">
+<h2>Wall Plane</h2>
+<p>The Wall Plane is parallel with the front wall.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000239_68009795d0f8c3b607d50b41ee011c61c43ba2958018c445e96802007680c0bb.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000240_d28a3a8c6e144e28395926de40e3e724c4a81bc2003fe13bf81bed3cbf550fb1.png"></figure>
+</div>
+<div style="flex:1;min-width:280px">
+<h2>Floor Plane</h2>
+<p>The Floor Plane is parallel with the floor.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000241_d62140acf47ae0a2fb6cc1beff395eaa20744749d59996f341cff331084c59c8.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000242_d9bf9fbe59ffe20c473e95d7bbe574202b366a666da67f790d997412ca8236fc.png"></figure>
+</div>
+</div>
+<h2>Signing Space</h2>
+<p>Signing space is the area in which you move while you sign. It is the distance you can reach in front, below and above you. Signing space travels with you wherever you go.</p>
+<p>Think of your signing space like a room. It has a front and back wall and a floor and ceiling. It is divided into planes. A plane is an imaginary flat surface that dissects your signing space.</p>
+<p>There are two planes used in SignWriting: the Wall Plane and the Floor Plane. The Wall Plane is parallel with the front and back walls. The Floor Plane is parallel with the floor and ceiling. All movement symbols in SignWriting relate to these two planes.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000243_8654a50e336328db5d12c041000c6c405ecf994f3006fe6e733784cb65124461.png"></figure>
+<h2>Wall Plane</h2>
+<p>The Wall Plane cuts the body like a door, from side to side. Movement parallel with the Wall Plane is up and down. It is written with double-stemmed arrows.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000244_aec2986af0daf14b1a12e5ce7b7423edb6a176c953def3a537e83733bba919fd.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000245_38c8b43b4b1b2ac803b0d88e18f9a94b05d86f637b1d401123ece9c6ee80c30b.png"></figure>
+<h2>Floor Plane</h2>
+<p>The Floor Plane cuts the body like a tabletop, from front to back. Movement parallel with the Floor Plane is forward and back. It is written with single stemmed-arrows.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000246_e334df2513670021a376b48edff09877b00977f9ed6f0a05c3741fc1872d18a9.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000247_f72cafa48840e7e2440410c752578f29bee50521ece49f08b20dc66e2cddb7ba.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000248_7c2701812946009f9966b398d3ce736268aaed18ac88387dfa7964600bb10cb6.png"></figure>
+<h2>Up-Down Movement</h2>
+<p>Up-Down Movement is parallel with the Front Wall or your chest. It is written with double-stemmed arrows.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000249_040ad11c14b15ffc0d3d069e897d09e540ec9a1e1b213267ac1c1c3d4ad0ab58.png"></figure>
+<h2>Forward-Back Movement</h2>
+<p>Forward-Back Movement is parallel with the Floor or a table top. It is written with single-stemmed arrows.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000250_4df1e58847d32a2713e3b8e2cf80d097fc2d6dcc25645f1f178e111037e813fe.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000251_59879b0733aa81820d06f9ed726f55f8aa7d4a360fce127b9b5a035f0dc08a34.png"></figure>
+<div style="display:flex;gap:1.5em;flex-wrap:wrap">
+<div style="flex:1;min-width:280px">
+<h2>Movement With The Right Hand</h2>
+<p>A dark arrowhead.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000252_d41d9c6b599c88d1ffe9549012985de50e1d0f2886946a7435a1fe5bb4626bc4.png"></figure>
+</div>
+<div style="flex:1;min-width:280px">
+<h2>Movement With The Left Hand</h2>
+<p>A light arrowhead.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000253_b6ad1436d84d198c193e09adffcba044b23370c0ff5e31b464644d788628bb8e.png"></figure>
+</div>
+</div>
+<h2>Movement To The Side</h2>
+<p>Movement to the side can be viewed from either the Front View or the Top View. It can be written with either double-stemmed or single-stemmed arrows.</p>
+<div style="display:flex;gap:1.5em;flex-wrap:wrap">
+<figure style="flex:1;min-width:280px"><figcaption><div class="caption">Front View</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000254_7d6dd74223237abcc1063cd8707562251f6762bf8f36da1740d2fd71949a62bb.png"></figure>
+<figure style="flex:1;min-width:280px"><figcaption><div class="caption">Top View</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000255_21f4232b25cf511cafde6958b242cae1d00940ecc58c839f1f463638d6a597f1.png"></figure>
+</div>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000256_c95b85a9d2d34cba01dc93470027b22780d20df77ad1a2443224da6205ce780e.png"></figure>
+<h2>General Arrowhead Writes Overlapping Paths</h2>
+<p>When a right movement arrow writes ON TOP OF a left movement arrow, the two movement paths overlap each other. The two arrows blend together. The dark arrowhead and the light arrowhead become one arrowhead, called the General Arrowhead.</p>
+<p>Often the hands are contacting when moving in overlapping paths, but it is NOT ONLY for contacting hands. For example, two hands can be parallel, side by side, without contact, and then both move to the same side, so that the right arrow writes on top of the left arrow. This creates a General Arrowhead.</p>
+<h2>Do not confuse these arrows</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000257_abb0e854624e785174be12e59cfd87f9588b8559d002f9cfe8343992423ac048.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000258_84de79023fb0e950dda7888899bb296c9d92396d062a17998118e6aee3f66bd3.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000259_612c076a89856f05e7e5f3632bc487cb262974b52cb43e15ce90c4f64633439c.png"></figure>
+<h2>Straight Movement</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000260_f5140b325b4f3eb5da558a4b2c5c904cada62a0fa045748c3ad0f36ce7fbf822.png"></figure>
+<div style="display:flex;gap:1.5em;flex-wrap:wrap">
+<div style="flex:1;min-width:280px">
+<h2>Up or Down</h2>
+<p>A double-stemmed arrow means that the movement is straight up or down, parallel with the front wall. The movement is flat with the front of your body.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000261_397caa2774ab25cf914dfac4b19d9b4dbb1595d2fd9468210bd697775fa12fc0.png"></figure>
+</div>
+<div style="flex:1;min-width:280px">
+<h2>Forward or Back</h2>
+<p>A single-stemmed arrow means that the movement is forward or back, parallel with the floor. You are looking down, on top of the movement.</p>
+</div>
+</div>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000262_854a75cbffdc461a2628d496cb7effeb2493c9279f72ac13eee29c7779be34ba.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000263_1042d255ca594f3598123ea7e4e831a2848fbd09d924d33ddfb8b35f9f40e98b.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000264_df3847050606983380e2bc4146ffd9191d5eca84dbfb8c7e7e3588afb451264a.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000265_8ad3bcedfc8b8569f091e50f9899109e5ae8a9c9582bb838c055bd82fb87f56b.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000266_85bb596d86c1599fd7c2469a0a6f68c06c1b37b4bc65dcf8889c04eff83f1b01.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000267_46156142f452289c209dac56bb6fb3ea6561e805962d32eb95c774b88b98b003.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000268_497127d15c2e64053598a01b4445b1b61eaacb919f977775c4ea5505b46f769b.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000269_5af1b013c1c20960f5fdae5556fa31e3189da046223ae91fb51afc1dcf24f866.png"></figure>
+<h2>Up-Down Straight Movement</h2>
+<p>Up-Down movement is parallel with the Front Wall. It is written with double-stemmed arrows.</p>
+<ul>
+<li><strong>Wall-Plane-Straight</strong> — Movement From Elbow</li>
+<li><strong>Wall-Plane-Flex</strong> — Movement From Wrist</li>
+<li><strong>Wall-Plane-Double</strong> — Small, Quick Movement</li>
+<li><strong>Wall-Plane-Nod</strong> — Small, Quick Movement</li>
+<li><strong>Wall-Plane-Cross</strong> — Cross 1 Way, Then Other</li>
+<li><strong>Wall-Plane-Triple</strong> — Small, Quick Movement</li>
+<li><strong>Wall-Plane Nod-&amp;-A-Half</strong> — Small, Quick Movement</li>
+<li><strong>Wall-Plane-Rooftop</strong> — Diagonal-Straight</li>
+<li><strong>Wall-Plane-Corner</strong> — Straight-Corner</li>
+<li><strong>Wall-Plane-Check</strong> — Diagonal-Corner-Straight</li>
+<li><strong>Wall-Plane-Box</strong> — Straight-Corner-Straight</li>
+<li><strong>Wall-Plane-ZigZag</strong> — Straight-Corner-Diagonal</li>
+<li><strong>Wall-Plane-Peaks</strong> — Mountain Tops</li>
+<li><strong>Wall-Plane-Twist</strong> — Straight with Rotation</li>
+<li><strong>Wall-Plane-Twist-Twist</strong> — Straight with Rotation</li>
+<li><strong>Wall-Plane-Twist-Shake</strong> — Straight with Rotation</li>
+</ul>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000270_1255853511ef0a39c46407be7c2a67b9011eed1821840974db30031d3418e357.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000271_ea97d29c5cf60d5c3c29359b269c464725ef4f7814adf2bd413a6eb86eec958d.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000272_a8825f7670a5984412611c1c2f497414268ecbe931526ec6215d79224a9fddd2.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000273_ec50d4a7c5e213962b7475a273a14b7a77ddd0cc487883e2791a1ca56b3132b4.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000274_be8ee62db6d2df4ee0abc0654b1963313459003f1c3fd8cf7a7b0d6f4de38b9a.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000275_6c971e1df999b5c9052b95345e43e07203c6105fe682207f0aba8b4c2b62239d.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000276_97ef9d0b30238a1d8fc3c379ca44efa329c8a533d1ca9fddbdaa177e6df5938d.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000277_451fffc23e8ec1eede071664ad056e828d9fb399823f26ff4c48ce72c445bf6e.png"></figure>
+<h2>Up-Down Straight Arrows</h2>
+<p>Movement Parallel With The Front Wall.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000278_7e36a259e4a8fe38e93d95d16840da26c4ae83a246f921b61df24c7616981b53.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000279_9192c7ee21d80c441357298cbd5ef1e3b77c7236826580dc98a3c4e071dcfb05.png"></figure>
+<h2>Forward-Back Straight Movement</h2>
+<p>Forward-Back movement is parallel with the floor. It is written with single-stemmed arrows.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000280_13aa9ed184d948e54cdfe72734ae05083cd9c8396aed2235acc45bf1f6e69043.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000281_feb732d64f127ec425d121213f06d6132a4ca44e3ffc26dd0c449bd777034b5c.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000282_30eb34006c8f827e516342c76867a097f04c7f6ab4ffb86915c1f5df140a4f1b.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000283_422ebe5ca76e43db9ba270f8a8afda53e9cc17a203a5319b3c3cf70fd75734c1.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000284_cec881cc50887e8d2be76b7b59aceb09eecbda0835b85abdf825dfc4dbb65917.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000285_0424d58b9c5b6046757d013da10bb00d98fb081a3825a7d2bdd23014aafeb55c.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000286_b70967fd714ee3b875f3ebf76ea6f717aff97a71119bd9eef540c687adaa0628.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000287_0f71e633e60e7641dbc46b04b0f74e0f1a0f47459f1a6a26bb149219e1aff843.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000288_ab338b42a0b183c9b38d502debc1b3b8a35881b887491683b8754bc23a6c67cd.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000289_fa29cf14d103e394bd0efa4caac956de45420db6aef9b2cd0edf7d3553289972.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000290_07dcd6fd190509e557d44dfc6da6b18377dc0c3b788f6879c48dddfc5b723ba9.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000291_acafe5ff660d6bb489b0c3eb37a726ff0e9bc54defed5a72d32db68756992e37.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000292_5464ff9d5c507c8222fb0855d6605ad74a80911cedd274da0a8b02a1c75cf143.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000293_4dfd832db3371a1c2337a47b976292aa179e5e04dab639ad13523c6ed14cd5b6.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000294_3733bd10b04d1d93572315d6c473fe4ff412a6a1d8f6a51cf903a31f9454b84b.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000295_b2b190447d41670c3dd308f556608a3010e2afbe3fea6c54d7d21fec364c78ff.png"></figure>
+<table><tbody><tr><td>Floor-Plane-Straight Movement From Elbow</td><td>Floor-Plane-Corner Straight-Corner</td></tr><tr><td>Floor-Plane-Flex Movement From Wrist</td><td>Floor-Plane-Check Diagonal-Corner-Straight</td></tr><tr><td>Floor-Plane-Double Small, Quick Movement</td><td>Floor-Plane-Box Straight-Corner-Straight</td></tr><tr><td>Floor-Plane-Nod Small, Quick Movement</td><td>Floor-Plane-ZigZag Straight-Corner-Diagonal</td></tr><tr><td>Floor-Plane-Cross Cross 1 Way, Then Other</td><td>Floor-Plane-Peaks Mountain Tops</td></tr><tr><td>Floor-Plane-Triple Small, Quick Movement</td><td>Floor-Plane-Twist Straight with Rotation</td></tr><tr><td>Floor-Plane Nod-&amp;-A-Half Small, Quick Movement</td><td>Floor-Plane-Twist-Twist Straight with Rotation</td></tr><tr><td>Floor-Plane-Road-Bend Diagonal Straight</td><td>Floor-Plane-Twist-Shake Straight with Rotation</td></tr></tbody></table>
+<h2>Forward-Back Straight Arrows</h2>
+<p>Straight movement parallel with the floor.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000296_6cf4c347a7e9e284e6fe7692c4878c220f45dabc0d39fd952cea9d86e40a8096.png"></figure>
+<h2>Writing Movement On Diagonal Planes</h2>
+<p>Let's review what we have already learned.</p>
+<p>Writing movement is based on imaginary planes that cut space. The Plane that is parallel with the front wall, is called the Wall Plane. Up-Down Movement is parallel with the Wall Plane. It is written with double-stemmed arrows.</p>
+<p>Imagine a rocketship that travels straight up. Up Movement is written with double-stemmed arrows.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000297_15093551dba18f3a9284a8727b5fea9eeca81edbeda59cb2ff5b6d3af0e3dff5.png"></figure>
+<p>The Plane that is parallel with the floor, is called the Floor Plane. Forward-Back Movement is parallel with the Floor Plane. It is written with single-stemmed arrows. Imagine driving a car. Think of the line in the center of the road. Forward Movement is written with single-stemmed arrows.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000298_564fd09cd13e4b9a88981ff27cebc502a840b36bd9d5e6181e607a74d17e50fc.png"></figure>
+<h2>The Diagonal Plane</h2>
+<p>The Up-Diagonal Plane starts low at your feet and extends up towards the front wall. It is both forward and up. A horizontal bar means away from your chest. A dot means towards your chest.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000299_0f8f6e4e48e6cab3c768deb363f8c5f4c134782331133731ad3f068c20f54e3d.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000300_c1fadddd61a3f680f736d5b5ae8176dd10a28d63308bcb16fab20cbf88792bb4.png"></figure>
+<h2>Up-Forward Diagonal Movement</h2>
+<p>Imagine an airplane taking off, traveling toward the horizon. Up-Forward-Diagonal-Movement is written with a double-stemmed arrow. A horizontal line, representing the horizon, crosses the stemline.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000301_fc27d25e94b4a7cf1bd0e1b7bbc9d1223362c7618d96fe0d1ee6fcede2f6ea71.png"></figure>
+<h2>Down-Back Diagonal Movement</h2>
+<p>Imagine an airplane coming in for a landing, traveling towards you. Down-Back-Diagonal Movement is written with double-stemmed arrows. A dark dot is written on the stem of the arrow. The dot represents the nose of the plane as it is coming towards you.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000302_6f703443f33019670b5da8cb20a39495faf03d7ed36fa8a75194368384fb321c.png"></figure>
+<h2>Do Not Confuse These Arrows</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000303_083631c70b01a68236695315ab87ea40b664d7f994be44c6dcf643ffd706c020.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000304_277921798e594fee5105e61291bb89964d19a6d0ba37235f5c5053afc3f9c0f8.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000305_139d567fcee0f977aed460d419f1210f523b617a976501c8f71fd4e55020caff.png"></figure>
+<h2 id="chapter-7">Chapter 7 — Curved Movement</h2>
+<h2>Up-Down Curved Movement</h2>
+<p>Up-Down movement is parallel with the front wall. It is written with double-stemmed arrows.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000307_c0302ca83b292e4d77ed3dc296cf3a9bdefae6405dfee75f9c9b59289ac38a9d.png"></figure>
+<ol>
+<li>Curve Up-Side</li>
+<li>Curve Up-Up</li>
+<li>Curve Up-Down-Up</li>
+<li>Curve Up-Loop-Up</li>
+</ol>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000308_31ee56e5919ec2aef82e476ff478bd6b3b9fc7c32d0b1ab985167a384c460421.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000309_5b42e1bccc762691ddbe3143b577caa0ac8000a2aeacc666e1250697c9b9b048.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000310_b731fae18b38a2368d5562c77bf0b5b7e161133b7e305ca840f998f16d3e8b52.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000311_81dd2c30b8ba6d4ea10418141c31a954a97caebaf81e91fb9691ce457a998b1a.png"></figure>
+<h2>Up-Down Curved Arrows</h2>
+<p>The curves are parallel with the wall.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000312_387297035f4147a8eeb38acf74d5a0327aca027c6593c18af5a395d3c6f02630.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000313_b3f67e11add3120570a56edadf6fb233a0d56accf66f9cf0c518c7b97591ba06.png"></figure>
+<div style="display:flex;gap:1.5em;flex-wrap:wrap">
+<div style="flex:1;min-width:280px">
+<h2>Forward &amp; Over</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000314_e2012ddd215651456497adcd5ace79f5d98476223a02c683eed63de224a5fdb2.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000315_c7e6ebe1955f209c075f5631956a223a0096db62bce80deee8f3d71e1e972759.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000316_50f843d22d29d323472b42f0f2612d258846e99c593e7f30ec3f607e9ce69ee7.png"></figure>
+</div>
+<div style="flex:1;min-width:280px">
+<h2>Forward &amp; Under</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000317_ab0ce8d44fe8c648e3b0c3c12c4e2630b07795f6e105b835f9b88015b2617999.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000318_202ff4a8a702e085eb4db384daaa6a3c820fe8fe9e2b352876c9fc7d596e1224.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000319_97045235d8fae39abcad63ed3763b67f9bc5589d3af7173b1d8f0b00c8aa4e67.png"></figure>
+</div>
+</div>
+<div style="display:flex;gap:1.5em;flex-wrap:wrap">
+<div style="flex:1;min-width:280px">
+<h2>Forward &amp; Side</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000320_df88c740559cf07939897695aa478b6469014d970aa3310a01e7e13bddcbee91.png"></figure>
+</div>
+<div style="flex:1;min-width:280px">
+<h2>Back &amp; Side</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000321_d730a768f669550d7af529a7f0ad599b2fe68a081288a3dc0f49f98669072745.png"></figure>
+</div>
+</div>
+<h2>Side-Forward-Side or Side-Back-Side Curved Movement</h2>
+<p>Forward-Back movement is parallel with the floor. It is written with single-stemmed arrows.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000322_084a10dd3c572614e9d49ba40441da8bb7060bb666f2528330dc0d8c6aa80069.png"></figure>
+<div style="display:flex;gap:1.5em;flex-wrap:wrap">
+<div style="flex:1;min-width:280px">
+<h2>Side-Forward-Side</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000323_2bd52496c4a674682009401e57e22c3d6df40960eb341c083b6ddf2513df9eff.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000324_040769187f5bc09f88e5d3561618b5468a0664e9f645366bbc54606f067ef009.png"></figure>
+</div>
+<div style="flex:1;min-width:280px">
+<h2>Side-Back-Side</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000325_543511c6ef3b2b23d09b1545ae5f747641b0c3df8675e5e447e034797e5281b9.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000326_201c5b2cdf0a7141e17f6a5fd6910f14d73aabe805c3593d7a201960d939d35b.png"></figure>
+</div>
+</div>
+<h2>Forward-Back Curved Arrows</h2>
+<p>The curves are parallel with the floor.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000327_09469416980b8cfee9c0a1fdf4c1403a15ab1f5a0e630d90807a897826afc1d4.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000328_1d7ac4d8eb37ed2a3a357ea18825b63eb92c491f6e08be93e8f2f57e26027b47.png"></figure>
+<h2 id="chapter-8">Chapter 8 — Axial Movement</h2>
+<p>There are two types of Axial Movement:</p>
+<ol>
+<li>Rotation Movement of the Forearm</li>
+<li>Flexing Movement of the Wrist</li>
+</ol>
+<h2>Rotation</h2>
+<p>SignWriting includes symbols which show rotation movements made with your forearm. The forearm does not travel. It stays in one place and rotates.</p>
+<p>Rotation Symbols place a curved arrow on an "axis". The "axis-line" represents the forearm. The rotation revolves around this axis.</p>
+<p>A double-lined axis-line represents an axis that is parallel with the wall. The forearm is up and the rotation revolves around this up-down axis.</p>
+<h3>Forearm points upward, rotates</h3>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000330_ce0c5d640365d463a3fbb974968cffae1bc4979d604f72adb2b81e19923c4dca.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000331_f9bb5b0a8da0a023ff1356548cc36f99b786595ed6da523aa1b2f54f01617702.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000332_98d99fb7304d428caf061e47694821c9059eb7cd5f9c8d9d849c9263e6a54280.png"></figure>
+<p>Right forearm is up. Rotation describes the curve of the baby finger forward and side. The forearm does not travel, but stays in place (see note below).</p>
+<p>Right forearm is up. Rotation describes the curve of the thumb back towards the chest and then side. The forearm stays in place (see note below).</p>
+<p><em>Note: The two movements above are technically the same. The difference is the feeling of the baby finger or the feeling of the thumb leading the rotation. Some signs push and some signs pull. See Push-Pull Writing Rules.</em></p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000333_5fa15012a89572e0ad2a2111e88fdde79e5acb6be1cb2476984f34dc9b18ea08.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000334_0e50582cc7f751ac6331adf4b53e38b0fc69141fc8d78c3ba130b8fd3972555c.png"></figure>
+<p>Right forearm is up. Rotation describes the curve of the baby finger side, forward, and then side again. The forearm does not travel, but simply rotates in place.</p>
+<p>Right forearm is up. Rotation describes the curve of the thumb side, back and then side again. The forearm does not travel, but simply rotates in place.</p>
+<p>A single-lined "axis-line" represents an axis parallel with the floor. When the forearm is pointing forward, parallel with the floor, the "axis-line" is a single line pointing forward.</p>
+<h3>Forearm points forward, rotates</h3>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000335_4b23a52198bc6d167513483cf83bbbad436f875f361760be80caaf419fb94de1.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000336_cc353e6284c9f6d14bac838ec0f348a1df2ad81793ffa28262a92c2263d84c3a.png"></figure>
+<p>Right forearm is forward, parallel with the floor. Rotation describes the curve of the thumb up and side. The forearm does not travel, but stays in place.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000337_aa1e7bf90347317b525f7c94ed406d3bc066b09e3f3a9d62ecf58ad341d42fb9.png"></figure>
+<p>Right forearm is forward, parallel with the floor. Rotation describes the curve of the baby finger down and side. The forearm stays in place as it rotates.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000338_2c6f62e5b86bdc741dfdf3f35ef0ec2d8b2c5d102e9801fa7043916f81e118d2.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000339_8c90c69682efb6450a190f1e6dc24db792d63d179b7c34248e25bbc324096084.png"></figure>
+<p>Right forearm is forward, parallel with the floor. Rotation describes the curve of the baby finger side, down and side again.</p>
+<p>Right forearm is forward, parallel with the floor. Rotation describes the curve of the thumb side, up and side again.</p>
+<div style="display:flex;gap:1.5em;flex-wrap:wrap">
+<div style="flex:1;min-width:280px">
+<h3>Rotation, Forearm Up — Parallel with Front Wall</h3>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000340_f06ac3b74c6e0ed965756158673990614ba3e3012493c67a353fa3863a4b1240.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000341_bebc67c7b1abb4b135cf999c25275c71149bacaf966fe2fd6b1cf78188bd7827.png"></figure>
+<figure><figcaption><div class="caption">class · close · finish</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000342_6413c1611f802340598fb2a9dc002ab2f08e369250dfa363fae930b95a55e253.png"></figure>
+</div>
+<div style="flex:1;min-width:280px">
+<h3>Rotation, Forearm Forward — Parallel with Floor</h3>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000343_76a6c6584e604aa80baf41d2f532f6eab4f4e89dad6f8d0b297cb8d6657f8853.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000344_6929104067bbc54472aa009c10de196d56cf46543c19254f8c24fd244b3c73e6.png"></figure>
+<figure><figcaption><div class="caption">happen · break · dead</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000345_f1230813ad45d2c3739568a47a16f14322ae977efc53f963110a32ac67003206.png"></figure>
+</div>
+</div>
+<p>When the forearm is parallel with the floor, but pointing side, the "axis-line" is a single horizontal line pointing side.</p>
+<h3>Forearm points sideways, rotates</h3>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000346_02f2b06be9a6a8f87710e619d683ac24c44ed854bc07551d8441c33da5032b22.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000347_2b3f0a2fe6da3969f021db30e9e160112866c1cc9f770f68aae2d942a8b0ca0b.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000348_2913cbe71af38636959abacf975145a0bd3b4ad59536207a6af75cfe4680ff65.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000349_ab0f81fde130b9c424e0490a1026004008d17502033cce2b99c7f8b4f8a5edd6.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000350_2d0a8cabce83c248e0409bffd26c13a8757b4fc996f75577c698c9991b4f55e1.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000351_b921c86f3b18af57154b0fea68b7dce99a1074a7345de7511d2fbdec2f789afe.png"></figure>
+<p>Right forearm is side, parallel with the floor. Rotation describes the curve forward, up and over. The forearm does not travel, but stays in place as it rotates.</p>
+<p>Right forearm is side, parallel with the floor. Rotation describes the curve back, up and over. The forearm does not travel, but stays in one place as it rotates.</p>
+<p>Right forearm is side, parallel with the floor. Rotation describes the curve forward, down and under. The forearm does not travel, but stays in place.</p>
+<p>Right forearm is side, parallel with the floor. Rotation describes the curve back, down and under. The forearm does not travel, but stays in one place as it rotates.</p>
+<h3>Rotation, Forearm Side — Parallel with Floor</h3>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000352_f27a8e082edb9bb00959ed6a06028c4025b434c9c6a133e51b3dfe9d6806464f.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000353_71b0139e94b8d0dc45a85779400ef82a2a97f79c74024a6f6437bec402ef170f.png"></figure>
+<p>third · apple · begin · aerobics · baptism · broom</p>
+<div style="display:flex;gap:1.5em;flex-wrap:wrap">
+<div style="flex:1;min-width:280px">
+<h3>Side-Over &amp; Side-Down-Side Rotations</h3>
+<ol>
+<li>Side-Over — Single Rotation</li>
+<li>Side-Over — Double Rotation</li>
+<li>Side-Over — Alternating Rotation</li>
+<li>Side-Down-Side — Single Rotation</li>
+<li>Side-Down-Side — Double Rotation</li>
+<li>Side-Down-Side — Alternating Rotation</li>
+</ol>
+</div>
+<div style="flex:1;min-width:280px">
+<h3>Side-Under &amp; Side-Up-Side Rotations</h3>
+<ol>
+<li>Side-Under — Single Rotation</li>
+<li>Side-Under — Double Rotation</li>
+<li>Side-Under — Alternating Rotation</li>
+<li>Side-Up-Side — Single Rotation</li>
+<li>Side-Up-Side — Double Rotation</li>
+<li>Side-Up-Side — Alternating Rotation</li>
+</ol>
+</div>
+</div>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000354_f16d1e32c302fa27b77476b8f96c0b32e6985a0f0d2bcec48f0b0169805826ae.png"></figure>
+<figure><figcaption><div class="caption">apple · bald · weight</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000355_bfde7ef92c2af3e195492cf1fd8047e69a1c12509eec1bd76e7f4bd5b5cbd7aa.png"></figure>
+<h2>Forward-Side &amp; Back-Side Rotations</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000356_0f6ff8877a2dd00fa4f45b32d1ad798f3b9b54d44e29d336b6ad68cb67e682ae.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000357_86568179e2c58d096476d9da90482d04b1ff4aeaa17502a7e3953591d243aae4.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000358_d50807cf0613fb78e7bccbeab022292b899c7391047f5e3420f168ba5d975a86.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000359_e3c054898e6d4ddb8c5edb49d98f91931ccb5e5e86ee1c4876d6a7eeec2ce380.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000360_c07e681e35fd91f95ff8df718c97998172dd075b7a94f17cbcc20e2aafca5132.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000361_c6822f2fb2c3d0194ed3ed372b449df77a3fb156ff74bd3391c5048e3279c5f8.png"></figure>
+<h2>Side-Forward-Side &amp; Side-Back-Side Rotations</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000362_0fcb7cc8ca42ea567bf61e4fd14a1247d1058c9189e8f1f0e1d858f5589746f2.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000363_b4f254122bb5dd0717b8ad9c203a58f6ebbc3c0ec9350d43e3fda6b92aebb6a8.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000364_1c2c8f641f2ce44cdf33434c44a95c2c90b25b2d54d15dede38cffb309102781.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000365_df8e8c652fc3324fcd5233cdf52137c9458ba1ca81a8d18817da919d534e8ccc.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000366_f8119f2cec7f158d31da90c3273912a9ecc40daba33722f1bf62bcd7a8ea5d1a.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000367_7285d7d4543b2015f2ee5e5de8a0227f97efcadb7fad1d933fe61be24a677f23.png"></figure>
+<div style="display:flex;gap:1.5em;flex-wrap:wrap">
+<ol style="flex:1;min-width:280px">
+<li>Forward-Side — Single Rotation</li>
+<li>Forward-Side — Double Rotation</li>
+<li>Forward-Side — Alternating Rotation</li>
+<li>Back-Side — Single Rotation</li>
+<li>Back-Side — Double Rotation</li>
+<li>Back-Side — Alternating Rotation</li>
+</ol>
+<ol style="flex:1;min-width:280px">
+<li>Side-Forward-Side — Single Rotation</li>
+<li>Side-Forward-Side — Double Rotation</li>
+<li>Side-Forward-Side — Alternating Rotation</li>
+<li>Side-Back-Side — Single Rotation</li>
+<li>Side-Back-Side — Double Rotation</li>
+<li>Side-Back-Side — Alternating Rotation</li>
+</ol>
+</div>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000368_0ae648a34e5f1ba3ea976793d60a26ac50ece2bfd6e604da550bb72a7253cb94.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000369_27aa7849e034ea5ae51fb956bbf439a92f0794a9e25524b764db743a980bb3de.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000370_38907e1fde07b6c180ec09c818cb6a9fb3a2ea9cdce16a6c6fa83339f3edd3ec.png"></figure>
+<figure><figcaption><div class="caption">blue · comparison · books</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000371_d4b4122369ba7dac750402894ed5ad954fbe871257f6b452e18eac1ce00693a1.png"></figure>
+<h2>Traveling Rotation</h2>
+<p>A few movement symbols combine "traveling" movement with an added rotation. The forearm rotates as the arm moves in a specific direction. The rotation symbol is placed on the stem line of the arrow.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000372_ce0696dcb70e38709ebb69f19989dde56458edea1d7f4ea7307c6dca3c818522.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000373_ad866fca2713bfd8a117501916ce8047e1c353fc3cd695310f700a159ae0cebf.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000374_3e6eff7bd08b8572294787ce01d194d60eb92d1b2169efac088370208acff490.png"></figure>
+<ol>
+<li>Wall-Plane-Twist — Straight With Rotation</li>
+<li>Wall-Plane-Twist-Twist — Straight With Rotation</li>
+<li>Wall-Plane-Twist-Shake — Straight With Rotation</li>
+</ol>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000375_bfe28e5b09ed04f3f47d04c272d3aff4c688002e075326c24a7c699df8abf65d.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000376_7bd01b0e94eb2fd86afe850448bd0f710639dfeb43e4361897f3e3653194ee97.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000377_442fceead8c72dcc7f7c78225498e90537decaaac7a090a9ad49f0624ad93870.png"></figure>
+<h2>Shaking Rotation</h2>
+<p>Shaking Rotation does not define how many rotations you make. Instead, it is a fast, shaking motion. It can be written with or without an arrowhead. The dark and light arrowheads are needed at times, to show which arm is doing the shaking.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000378_b1f6674fb814ed2c79722b4d9a3d67676eab6327396692de26148820fb706062.png"></figure>
+<div style="display:flex;gap:1.5em;flex-wrap:wrap">
+<div style="flex:1;min-width:280px">
+<p><strong>Shaking Movement, Forearm Up or Down</strong> — Parallel with the Wall Plane</p>
+</div>
+<div style="flex:1;min-width:280px">
+<p><strong>Shaking Movement, Forearm Forward</strong> — Parallel with the Floor Plane</p>
+</div>
+</div>
+<ol>
+<li>Floor-Plane-Twist — Straight With Rotation</li>
+<li>Floor-Plane-Twist-Twist — Straight With Rotation</li>
+<li>Floor-Plane-Twist-Shake — Straight With Rotation</li>
+</ol>
+<h2>Wrist-Flexing Movement</h2>
+<p>The wrist remains stable while the hand moves in different directions. This flexing motion is written with a horizontal line cutting the wrist. The horizontal line represents the axis of motion. Small arrows point in the direction of the flexing motion. The arrows represent the direction of the hand as it moves.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000379_6eb2db5049639be6a0ae374ceb04e0d952daefa1d8bc8f034ab68b9cd284e09f.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000380_59e1bde9bb4b38d3f19e2a2fc2fb983fd725bd1a5158b1d6d79c7284e5a49e67.png"></figure>
+<h2 id="chapter-9">Chapter 9 — Circular Movement</h2>
+<h2>Arm Circles</h2>
+<p>Arm circles parallel to the Wall Plane are double-stemmed circles. Arrows mark exactly where the circular movement starts. When reading Circle Symbols, place your hand where the arrows are located on the circle, and then move in the direction of the arrows.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000382_4e2ac4681767075106e0b368be0bd3834cbc7ee6c78e657d04a797d762976616.png"></figure>
+<h2>Circular Movement</h2>
+<h2>Single Circles — Forward-Back (Sagittal &amp; Floor Planes)</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000383_831c0df6dfcb978ad25c06ee01abfea01c38b55404506b463e7dd432cdf871c1.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000384_705ae16739572d3902ebba838d47a09dc0c44d07a78da86dbf53ffb09abc1103.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000385_3bceb056ed45466a7ec34fa2473607007ced5d18616e1d36cb57386e2b136407.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000386_77e48dfee69c1511c587489bcc3c8d35104497726feec46e9281b2f24eeceeb1.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000387_710be66a679bbc43594295e00e66bd1e549dec0408fac67d6c24c403246fd2bc.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000388_09a9c171d8e4a451bc4aced8c62a37164b286503806d67835a95f8728dff619a.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000389_7f552c5f2a0932fc0141faa824f12086b6ee4ef07984e155771d3172f09c463e.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000390_1bcdc166dc0c158ace107dd7030d9f81425d2bfa878e066fa5d852c42f959255.png"></figure>
+<ol>
+<li>Forward-Back Circle Parallel with Side Wall</li>
+<li>Forward-Back Circle Left High Diagonal</li>
+<li>Forward-Back Circle Parallel with Floor</li>
+<li>Forward-Back Circle Left Low Diagonal</li>
+<li>Forward-Back Circle Parallel with Side Wall</li>
+<li>Forward-Back Circle Right Low Diagonal</li>
+<li>Forward-Back Circle Parallel with Floor</li>
+<li>Forward-Back Circle Right High Diagonal</li>
+</ol>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000391_6d1a433316cf10f9daa37b576b6d1ca3ad36d948075883a1ce8d01b19a7fc721.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000392_1fd1c298d41f307f87e72b00972e5a61953aede12cc59aac23c16935774cf3a6.png"></figure>
+<h2>Double Circles Forward-Back (Sagittal &amp; Floor Planes)</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000393_2a60e2acac7c47709264dca443c19666a86f279f78738ec582f8bbd7e895e959.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000394_e9cddc92144a153c4d4f01a61d803d5a6bb6db23c5b79955002a844e06e07588.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000395_0f8df08ad9250367c277ff07cf2acc77dde05e02117f82f7b229baf1ee27f5e5.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000396_dd210b8448a5df17a74ea45c3c43a2211152aac4557808ab08c16b8f94399049.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000397_da85f8eb973a66da0ae826985526933fa2d2df9c19de58ad878c068fbfc9af74.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000398_4af08b0f9e0599cd0ed9135394d2b5b216194a9923d090e488a47b0bb5244606.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000399_1a84bc5b0bf641b8f36b70962fa7b668b8071e142165084d2694e4fc565f988f.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000400_bbb76d35e2483f191ceeef7bc6e72fbde797ce4b30e6f56a2df0158d5371a4a3.png"></figure>
+<ol>
+<li>Forward-Back Circle Parallel with Side Wall</li>
+<li>Forward-Back Circle Left High Diagonal</li>
+<li>Forward-Back Circle Parallel with Floor</li>
+<li>Forward-Back Circle Left Low Diagonal</li>
+<li>Forward-Back Circle Parallel with Side Wall</li>
+<li>Forward-Back Circle Right Low Diagonal</li>
+<li>Forward-Back Circle Parallel with Floor</li>
+<li>Forward-Back Circle Right High Diagonal</li>
+</ol>
+<figure><figcaption><div class="caption">ideas · international · inferior</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000401_68c5e7e1505cce47af45c48f8b1d956336ca864b412fa896bc6eab401a0bfd6d.png"></figure>
+<h2>Wrist Circles</h2>
+<p>Wrist circles are written with solid lines. Arrows are placed outside the circle. When reading Wrist Circle Symbols, place your hand at the arrow, and then move in that direction.</p>
+<h2>Single Wrist Circles Side-To-Side — Parallel Wall Plane</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000402_ab90aa63ccd7568ba078c37b86e6fabcda900073bdbaf8ce120750c4a213a08c.png"></figure>
+<ol>
+<li>One Circle Starts High</li>
+<li>One Circle Starts High-Diagonal-Right</li>
+<li>One Circle Starts Right Side</li>
+<li>One Circle Starts Low-Diagonal-Right</li>
+<li>One Circle Starts Low</li>
+<li>One Circle Starts Low-Diagonal-Left</li>
+<li>One Circle Starts Left Side</li>
+<li>One Circle Starts High-Diagonal-Left</li>
+</ol>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000403_79178a4c960af15475327d859de7811469e2eefade08ad8f2ab100ec06ef36a0.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000404_616ef0e5459993c3092f9480424cfc95c03ad156081e024107ef41bdd90cb66e.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000405_c69093177af376be651c1ac460b4ff4367bb7eb954b276d47347947b778a4882.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000406_dfcadc35548c57f4bc3926f4fa040719976e21bd36635dd9e1bd3e5b7215c5b2.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000407_4e6617953114d5c4a6cbd397ab9d25f7535490e45ac2bffcd0071c206e2594df.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000408_b5814eba01a8e6e16bbcc75b825e9e30be0127d5c8e08cffebc4bad4a623f86f.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000409_ce8b2bac5941afcfa40d6df45db8536a660824f380656e271e983c778092cb26.png"></figure>
+<h2>Double Wrist Circles Side-To-Side — Parallel Wall Plane</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000410_cc8b2d8f5e77dab4e07ec003a30ce31f5bafd4e2007bdb32b05736ad25e07d9b.png"></figure>
+<ol>
+<li>Two Circles Start High</li>
+<li>Two Circles Start High-Diagonal-Right</li>
+<li>Two Circles Start Right Side</li>
+<li>Two Circles Start Low-Diagonal-Right</li>
+<li>Two Circles Start Low</li>
+<li>Two Circles Start Low-Diagonal-Left</li>
+<li>Two Circles Start Left Side</li>
+<li>Two Circles Start High-Diagonal-Left</li>
+</ol>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000411_0edb879659d40f159db9ef133523e8d7e356365e35016b2a09fdb38673939ca5.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000412_feb199551c7a0a5d2f7ef92e903ac42b548d5ce6a8aa6ca2e60e708b605508be.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000413_6612494e1d431c079d9b7b77cbd540e9fb55e0d4f27b3f94a4f64b8b189fb990.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000414_0fbae501f3c9b15255970cca8a4f25f40b217117db80307f95c9cd1597cd6c3d.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000415_69a04dfd9d52cba3079b0dd3e2f07579f727bf836c5c2d8dfbeb7ce7878bb836.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000416_4a552d33d0e46a97982b736bf813f8288216fa5c23fd3976df027ff86eca8422.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000417_1799c45b86363bac4b0732e3909ae024279b3a92587c10ec7e4d15c88d7bdc1b.png"></figure>
+<h2>Single Wrist Circles — Forward-Back (Sagittal &amp; Floor Planes)</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000418_5cdbe29596bf9c73f6bb8c1ae797ddff3b5a17f1be796f28c2abad2006d8bbe5.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000419_f66ff791993c9e4b3abc460eb97c8c238cf34a82753dfeda8c8b176c6096e9f1.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000420_5bdd169c16e3e6b43080bf0b8cbdad98c85f25bd73825807fd964a2f0505b657.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000421_6d005d8f7693ccaa60ac6d63ac5fcb9dd75974945f83d15ecc0198282d81a511.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000422_c99b0ab0be0552914766840e7dce1fa4b56fd2e04070b3bf84650394e07645d2.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000423_c522c5d2001f0d650f5a8bda486def873e23b6b2c98703fe4b40dc8a5c269862.png"></figure>
+<ol>
+<li>Forward-Back Circle Parallel with Side Wall</li>
+<li>Forward-Back Circle Parallel with Side Wall</li>
+<li>Forward-Back Circle Parallel with Side Wall</li>
+<li>Forward-Back Circle Parallel with Side Wall</li>
+<li>Forward-Back Circle Parallel with Floor</li>
+<li>Forward-Back Circle Parallel with Floor</li>
+</ol>
+<h2>Double Wrist Circles — Forward-Back (Sagittal &amp; Floor Planes)</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000424_592f3a203fa699779506901b2d5cd3a182fe3b5a398d20f9b81a732a23b26402.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000425_858b61443d6673fdae12afd3804823adfeff6f7ae4a1a20805714ac1412e3a28.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000426_0995867e42d97f52b210d6bd1bbdbd564d645444ad8f7753dc7ae69b88e11577.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000427_d0f8c3142307009104f3ff54eba1404cb6ae89ec763886811b176d412327a79c.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000428_b8750dd5345f10909f21e4775860e81764882dc094c947eeeaf098fa229c4ed0.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000429_9e3fe475592d88db91a1f9a67c90c6a6df816e0ef7cd79ba728e550b6eace843.png"></figure>
+<ol>
+<li>Forward-Back Circle Parallel with Side Wall</li>
+<li>Forward-Back Circle Parallel with Side Wall</li>
+<li>Forward-Back Circle Parallel with Side Wall</li>
+<li>Forward-Back Circle Parallel with Side Wall</li>
+<li>Forward-Back Circle Parallel with Floor</li>
+<li>Forward-Back Circle Parallel with Floor</li>
+</ol>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000430_50d089d12d2941dda97c83ada0574fef3d32bcef821e719cf89e7aa4448ecc8f.png"></figure>
+<figure><figcaption><div class="caption">who · hearing person · beautiful</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000431_f978f15fa489b4c0f6017a5006d9bfbbaf9fe4b2646525097dabd7b1206d438a.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000432_11015469f4c28ca2b75f6ef44f120a08e12a3a9bf1ad3409c737b8824398332f.png"></figure>
+<h2>Arm &amp; Wrist Circles</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000433_b7016cfe122ec5ed9c76fab863912209de7c9663e9b3ee473814ea0d3c3dc169.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000434_6833924b4bd57e21c529b218c594e845e4109c9b501f2d77607833cea94adb12.png"></figure>
+<h2 id="chapter-10">Chapter 10 — Face</h2>
+<h2>Facial Expressions</h2>
+<p>There are ten groups of facial expressions, including the forehead, eyebrows, eyes &amp; eyegaze, ears &amp; cheeks, breathing &amp; nose, mouth, tongue, teeth, chin and other parts.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000435_6bb40f0a58aa2f1ccbeb6d632d7998e64762cd8085110ff67dd26e836305bae3.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000436_f3f6a0ca6789fd17884550ee905cb891951d5f79214145d9326b8a04e18c5dc0.png"></figure>
+<h2>Eyes</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000437_aff354771fbeeb2430599489fbb419548c33fc37f241298939ac44c2645c50b2.png"></figure>
+<h2>Eyegaze</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000438_684ce2cd3ef09098cd94a179bcfe647195296c523eed7eac6e153f3206a12229.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000439_10a6a2046256e8f73ee622f2e6273f562fbf84f40d55e9a044da5906ff481fcf.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000440_2660faa4e0de6d662332c8b3762f2a564ec00fcd84dad7ce6ee07924a07f6318.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000441_4e01e1e918047033a22e19e0444439516b14d5beb787da7dd65ac3becf59844d.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000442_326813575bc685c262d26ac5a08aa2a85e7c1eca78e35c2e437175d9358271af.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000443_03d8d417e4a541ead8795e49589e9cc23a1a13b74f6ac42fc5e3e7ce21a24cb6.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000444_1d80fc72feeedc69198f4fddd930702c71abcb7ac540d84eb6bee23efef8a430.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000445_482d389f680b88074820e75b787aaf6f68323c60d5cf667f7602f44715cf5925.png"></figure>
+<ul>
+<li>Eyegaze Up</li>
+<li>Eyegaze Up-Diagonal</li>
+<li>Eyegaze Side</li>
+<li>Eyegaze Down-Diagonal</li>
+<li>Eyegaze Down</li>
+<li>Eyegaze Forward</li>
+<li>Eyegaze Forward-Diagonal</li>
+<li>Eyegaze Back</li>
+<li>Eyegaze Back-Diagonal</li>
+</ul>
+<h2>Ears</h2>
+<p>Right Ear · Left Ear</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000446_922dc21454c62d8f02e60dcd92940005fe9337e3ddb4cf3e92aeb138abd93731.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000447_7c4179c42f1bbb7688d052aa88a92c1b8679b1ed4b2d6f268ac92d69298f18e3.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000448_386c3c9637269f2bc0856bc263068ffe05bc404199c2a3766d43e3962de0f5ea.png"></figure>
+<h2>Cheeks &amp; Breathing &amp; Nose</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000449_e116c27aa0c58b6bdec0910ef1c5b25f9a226e0bdf0d9c945ce31a4b259e01cb.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000450_74b40a944d304a3a766c1cf86ddd7b51d2c9e0a167f8ccecd70ee89d50413c56.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000451_efc7bbe995b973dd3488e20ede3e6bf2beb18b0603864b990403599858583606.png"></figure>
+<h2>Mouth</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000452_2abefabd277de8b1c4669441f8127537ed5b2b1c6360c858c7ae6fbc4635fbb7.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000453_f0b1113aa7168991e59946324b33bf226b439de051c473a0f17dc1d2a24d53a3.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000454_edcd8e982ec1b92526edc3edf3465a6895395cf3d2c13565779a7954ca7292aa.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000455_12d820ca824cbaf5defc4e5d09b42cba027c478169d1d2c9ee76ab104c37743e.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000456_ffc2c55428f9335a77f25f77b3a67ad69e4ca79aec38d54edd64eb4dd82bf1c0.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000457_dbc0a7533ca65596d8948def151b673af7db2c752e1e8f580e096e83320fccfd.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000458_ca4b7f44031013f98be7ad92b8b8a48f1e6dbea52e111d920ff7d82eb4044a4b.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000459_7f2fed00f93ba431e64b489ef20085d693483fb749e3403372fdd65a2b81a5a2.png"></figure>
+<h2>Tongue</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000460_3a15047baa64c18411d7cd52bc82238c79831f6be6aaa8d32607f8ab98ab5d25.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000461_52d5d6ad3c7d7616bce1e8806f132ecbff357eb5f402156d70c5b76b48545b15.png"></figure>
+<h2>Teeth · Chin</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000462_af9d4e8c658083e2664126075aaa6f18fa29afe42b352983675d74535f82bae3.png"></figure>
+<h2>Chin (continued)</h2>
+<ul>
+<li>Chin Forward</li>
+<li>Chin Forward-Diagonal</li>
+<li>Chin Side</li>
+<li>Chin Back-Diagonal</li>
+<li>Chin Back</li>
+</ul>
+<h2>Other</h2>
+<p>Question · Face · Neck · Back of Head · Excited · Hair</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000463_8a3d28568c90f98dcfb93cd7a371bf4be7af7497c80445139ecacf27009628a0.png"></figure>
+<figure><figcaption><div class="caption">The Head</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000464_8c0844fc49294b74c37bba52f7aeb5d47a46d32a13bebdfce372f9cb6a3fe862.png"></figure>
+<h2 id="chapter-11">Chapter 11 — Head</h2>
+<h2>The Head</h2>
+<p>The Head can be seen from different viewpoints.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000466_eaee76c1587bfd627a0529be1ef8050a05d24a2789e9bbf6fb158267148ecd08.png"></figure>
+<h2>Rim of Head &amp; Face</h2>
+<p><strong>Front View — Rim of Front of Face</strong> · <strong>Back View — Rim of Back of Head</strong></p>
+<ul>
+<li>Rim Of Face Chin</li>
+<li>Rim Of Face Diagonal Low</li>
+<li>Rim Of Face Cheek</li>
+<li>Rim Of Face Diagonal High</li>
+<li>Rim Of Face High, Between Forehead and Top of Head</li>
+<li>Rim Back of Head Low (Above Neck)</li>
+<li>Rim Back of Head Diagonal Low</li>
+<li>Rim Back of Head Behind Ear</li>
+<li>Rim Back of Head Diagonal High</li>
+<li>Rim Back of Head High</li>
+</ul>
+<h2>Rim of Head &amp; Face — Top &amp; Side Views</h2>
+<ul>
+<li>Rim Top of Head Back</li>
+<li>Rim Top of Head Diagonal Back</li>
+<li>Rim Top of Head Side</li>
+<li>Rim Top of Head Diagonal Forward</li>
+<li>Rim Top of Head Forward</li>
+<li>Rim Side of Head Under Ear</li>
+<li>Rim Side of Head Diagonal Low</li>
+<li>Rim Side of Head Towards Nose</li>
+<li>Rim Side of Head Diagonal High</li>
+<li>Rim Side of Head Over Ear</li>
+<li>Rim Side of Head Towards Back</li>
+</ul>
+<p><strong>Top View — Rim of Top of Head</strong> · <strong>Side View — Rim of Side of Head</strong></p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000467_78906cc4235ae2bb5ed08cc1bbca0e29e147725b3de296896d5feffd995cce17.png"></figure>
+<h2>Rim of Head &amp; Face — Combined Views</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000468_0ad540e03a0d50ed5267314636cc35b0ec8ad2164a39f15dc1d843ec2b58172e.png"></figure>
+<h2>Head Movement</h2>
+<h3>Face-Direction Movement Symbols</h3>
+<p>The nose moves in the direction of the arrows. The neck bends and stretches as the nose moves.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000469_e56f09825135c62780b35615d6f3e0355afe16db174f91394de2f01ed7182f36.png"></figure>
+<h3>Head-Direction Movement Symbols</h3>
+<p>The entire head travels in the direction of the arrows. The nose remains straight, and the neck does not bend.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000470_a9f9a5985d7ab40a788493af0903afdfbe21484070ab344ec38abd201f084f07.png"></figure>
+<h2>Head Positions — Face Direction Lines</h2>
+<p>This is not movement. It is a stable position marking the direction of the nose and face, relating to the shoulders.</p>
+<ul>
+<li>Face Direction, Center</li>
+<li>Face Direction, Center, Tilt Right</li>
+<li>Face Direction, Center, Tilt Left</li>
+<li>Face Direction, Side Right, Center</li>
+<li>Face Direction, Side Left, Center</li>
+<li>Face Direction, Side Right, Tilt Right</li>
+<li>Face Direction, Side Right, Tilt Left</li>
+<li>Face Direction, Center Up</li>
+<li>Face Direction, Center Up, Tilt Right</li>
+<li>Face Direction, Side Right, Up</li>
+<li>Face Direction, Side Right, Up, Tilt Right</li>
+<li>Face Direction, Side Right, Up, Tilt Left</li>
+<li>Face Direction, Center Down</li>
+<li>Face Direction, Center Down, Tilt Right</li>
+<li>Face Direction, Side Right, Down</li>
+<li>Face Direction, Side Right, Down, Tilt Right</li>
+</ul>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000471_a4166753bcdbf57363c67ffb0f96af10f365dd2cbb7198802cd8ce73cdb5c60e.png"></figure>
+<h2 id="chapter-12">Chapter 12 — Body</h2>
+<h2>Shoulder Positions &amp; Movements</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000473_b1d55bdf14e91383512918d2235de7fa13f171ca8b7dfdccc223ebe50dd3cc91.png"></figure>
+<ul>
+<li>Right Shoulder Up (Position)</li>
+<li>Both Shoulders Up (Position)</li>
+<li>Right Shoulder Down (Position)</li>
+<li>Both Shoulders Down (Position)</li>
+<li>One Shoulder Up, One Shoulder Down (Position)</li>
+<li>Shoulder Moves Up</li>
+<li>Shoulder Moves Up-Diagonal</li>
+<li>Shoulder Moves Down-Diagonal</li>
+<li>Shoulder Moves Down</li>
+<li>Shoulder Moves Forward</li>
+<li>Shoulder Moves Forward-Diagonal</li>
+<li>Shoulder Moves Back-Diagonal</li>
+<li>Shoulder Moves Back</li>
+<li>Shoulder Moves Up &amp; Down</li>
+<li>Shoulder Moves Forward &amp; Back</li>
+</ul>
+<h2>Torso (Upper Body) Positions &amp; Movements</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000474_1dc2991792060f5d6766ce5f1cad3d175f5c299f2b938bc6f8f9130f0e463eed.png"></figure>
+<h2>Upper Body Tilts — Rocking Motion from the Hip Joint</h2>
+<p>The upper body tilts or rocks back and forth. The neck and torso do not bend. They remain straight, moving in a unit from the hip joints.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000475_963b00945cf0950b1ed8ab9020c0769915e17fb555e9b7bfcbfc1194bda40d91.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000476_ded704f927e0ce8836c0c50088ef9894441b2652cf2e1792bca8f655759ac514.png"></figure>
+<h2 id="chapter-13">Chapter 13 — Dynamics</h2>
+<h2>Dynamics Symbols</h2>
+<ol>
+<li><strong>Movement Dynamics</strong> are small symbols placed near movement arrows. They indicate movement that is fast, slow, smooth, tense, relaxed, simultaneous, alternating, and uneven-alternating.</li>
+<li><strong>Handshape Dynamics</strong> mark classifiers. They mark a hand that is held in one place for a long time.</li>
+<li><strong>Facial Dynamics</strong> show tense or relaxed facial muscles. The Tense Symbol is used for lips that press together, for raised cheeks, and for squeezed eyes.</li>
+<li><strong>Punctuation Dynamics</strong> show the speed, timing and quality of entire phrases and sentences.</li>
+<li><strong>Unit Dynamics</strong> marks the influence of one symbol on a whole group of signs. The Unit-Connecting Line is used to show one facial expression influencing several signs.</li>
+</ol>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000478_ec47e1f96633dc18fe5392fa0a0341ebc31314007c20ad13fe135b3213e5ebe6.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000479_3e63c7d735d8d3273a249e43537ab5cdec9064d4d32adc99921d9066b14f7cd3.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000480_d0b1fcf15f55d3110074b917cafa8333b6d1b9df66a3367aa14eb2aedbc0d3d3.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000481_8dbcb2c12d29ccd8ed7c6db020536fc195dff5e632ebb08d2674525c1261a324.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000482_1765ce7eece1e09f36411e2d7d67a10bbe396fb47060228ccadeba42c02b3664.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000483_e392b098b50287660ac740c81796868a4ad749a404213d7c34ef67bfeadb7008.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000484_5998ad3567f6c6fdc84b726dd2f206d57317a8e35db00f8a9856758c98b98b14.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000485_6915aa0b196c2a48ba5a95b65466092e1880abf51d52c32b5f80600f7916eca4.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000486_7e3ded4159da382d425f0ce6a5e1a2a8a9d13a8dd11526fcb3edbd04dc0ba6bc.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000487_e82a96cdcbc097f5f88e9d43d50045e95fd4d455b779bb89f43f65265107c6f9.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000488_b81a93eb8038137de22bcab2683bd6d46e729a586b020c1a34a43852d8c6b8f0.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000489_985963f7d0f6b83b65940857735f7c171eef04cf846e6de85a12834048eb9c55.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000490_ec4482f804e5bc5861eee4afe1d789051b78a0aeb76339d017fd3c5fe46de23b.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000491_8c64be53d53daca891476c14f6a34a66ab9eee15dfb2f88748851dcfe659db48.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000492_6d9462ae6a689c073a0ee547d1a671d79a8d48fa8739ab3a935eac81af150e89.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000493_25b5ab3a707039695089188dcc1b4d5ab51cf191b1ebefc917afced9a42f31d5.png"></figure>
+<h2>Movement Dynamics</h2>
+<ul>
+<li><strong>Simultaneous Line</strong> — Both hands move at the same time.</li>
+<li><strong>Alternating Lines</strong> — The right hand moves in one direction, while the left moves simultaneously in the opposite direction.</li>
+<li><strong>Un-Even Alternating</strong> — One Moves While The Other One Is Still. The right hand moves while the left remains still. Then the left moves while the right remains still.</li>
+<li>Fast Movement</li>
+<li>Fast Movement with Emphasis</li>
+<li>Tense Movement</li>
+<li>Tense Movement with Emphasis</li>
+<li>Relaxed Movement</li>
+<li>Relaxed Movement with Emphasis</li>
+<li>Slow Movement</li>
+<li>Smooth Movement</li>
+</ul>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000494_217c226e775a61054bcb83ab0117a25026a145ddf50e14f3831c05d8da589425.png"></figure>
+<h2>Facial Dynamics Related To Handshape Dynamics</h2>
+<p>Facial expressions are essential to writing Sign Language stories and literature. They mark grammar and emphasis. The Tense Lips symbol shows the dynamics of the lips tensing as the hand is established in space by a classifier. Tension on the lips and near the hands are oftentimes written together.</p>
+<p>Below: The Classifier for "bed" in American Sign Language, is written with a Tension Symbol under the handshape to mark the classifier. At the same time, the lips also tense, giving the feeling of "anchoring the classifier" in space.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000495_caa7da38b81322eecbf051ea2657146c961943a547a44e7daab58bec421932c8.png"></figure>
+<div style="display:flex;gap:1.5em;flex-wrap:wrap">
+<div style="flex:1;min-width:240px">
+<p>This bed is placed to the left side. It is established in the left space, to the left of the facial expression. The lips tense as the classifier is placed in space.</p>
+</div>
+<div style="flex:1;min-width:240px">
+<p>This bed is placed in the center. It is established in the center space, directly under the facial expression. The lips tense as the classifier is placed in space.</p>
+</div>
+<div style="flex:1;min-width:240px">
+<p>This bed is placed to the right side. It is established in the right space, to the right of the facial expression. The lips tense as the classifier is placed in space.</p>
+</div>
+</div>
+<h2>Unit Dynamics — Unit-Connecting Lines</h2>
+<p>Influence is written with a Unit-Connecting Line.</p>
+<p>The Unit-Connecting Line is useful for Sign Language researchers. It is used to show the influence of one facial expression on a group of signs.</p>
+<p>When one symbol influences a group of symbols or signs, the symbol that is influencing the group is written first. Then a line is written, like a bracket, connecting the symbol with the group it influences.</p>
+<p>When SignWriting is written vertically, the Unit Connecting Line is written to the side of the vertical column, as shown here. The Unit Line is grey or lighter than the signs.</p>
+<p>In Spain, the Unit Connecting Line is used for horizontal SignWriting literature. When writing horizontally, the Unit Connecting Line is written under or over the writing.</p>
+<p>In Sutton DanceWriting, the Unit-Connecting Line is used often to show the influence of one movement symbol on a group of other symbols. In SignWriting, it is rarely used for everyday use.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000496_aa861296836681040f1ae1e09ce86d6e8f97e2c5772b741c85128baf4a58e0b7.png"></figure>
+<figure><figcaption><div class="caption">Punctuation</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000497_0aeb7c05c2110ca55b4808176a6ebced804f3ca5ea045363ce19ac37c1ad5b57.png"></figure>
+<h2 id="chapter-14">Chapter 14 — Punctuation</h2>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000499_db5244b018b0bd2707f002957cee333f0015e1b04681e88bd383a010fbd69b84.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000500_5e57bcc400fb9c3fe7cd38fcb81e56f112ebe3f3ff24a9613e8096a495d873aa.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000501_1f1bff34392ea2e436799797cb7aa4749a294484036825062aa7cab7bb612af8.png"></figure>
+<h2>Punctuation</h2>
+<dl>
+<dt><strong>PAUSE</strong></dt><dd>Similar to a Comma in English.</dd>
+<dt><strong>END OF SENTENCE</strong></dt><dd>Similar to a Period in English.</dd>
+<dt><strong>PAUSE BEFORE END OF PHRASE</strong></dt><dd>Similar to a Semi-Colon in English.</dd>
+<dt><strong>QUESTIONING PAUSE BEFORE END OF PHRASE</strong></dt><dd>Similar to a Question Mark in English. When a sentence or phrase ends in a question, there is a slight pause at the end. The semi-colon symbol is used to write that pause at the end, but it must be combined with signs that write the grammatically necessary Facial Expressions and Head Movements that occur in sign languages when asking questions, including Head Forward and Eyebrows Up or Down.</dd>
+<dt><strong>PAUSE BEFORE LISTING ITEMS</strong></dt><dd>Similar to a Colon in English. This is used in the middle of a sentence, marking a new phrase that lists items 1, 2, 3 and so on.</dd>
+<dt><strong>PAUSE BEFORE &amp; AFTER A SUB-PHRASE</strong></dt><dd>Similar to Parentheses in English. Marks a second thought inside a sentence, starting with the curved-up symbol and ending in the curved-down parentheses.</dd>
+</dl>
+<h2>Punctuation Dynamics — Sign Language sentences with feeling</h2>
+<p>SignWriting, like other writing systems, has punctuation. A dark line at the end of a SignWriting sentence is the equivalent to a period in English. It marks the end of the sentence or phrase. Two lines represent a pause, or comma.</p>
+<p>SignWriting can add more feeling to sentences by adding Dynamics Symbols to the Punctuation.</p>
+<p>The Fast Symbol represents a sentence executed quickly, with speed. This is similar to an Exclamation Point in English.</p>
+<p>Slow, Smooth, Tense and Relaxed Dynamic Symbols can also be placed near Punctuation Symbols to give the feeling of slow, smooth, tense or relaxed sentences.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000502_05f209dab50a0f0d8ec02f956730759c86f731754f911a361eea123316a5c163.png"></figure>
+<figure><figcaption><div class="caption">English Translation: Writing ASL from the Deaf perspective.</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000503_3e9de5af3fe6774fa763488ec95a3629f7ea5b106d339fde8f8e534f7ebeb9bd.png"></figure>
+<figure><figcaption><div class="caption">English Translation: Where is the house?</div></figcaption><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000504_10f3d79a24a7264eed936fa0013a1d906bb117ccc59043c41a533c468f39373d.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000505_02de2981b4bf07507c609e8c86618c22744f032104d6c029720b949c7335489f.png"></figure>
+<p><strong>English Translation:</strong> Baby Bear asks 'Who are you?' Goldilocks saw the bears, became frightened, shot out of the house, and ran all the way home.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000506_353204b51c521c5e55cbe8f198d085a8c42b7139254c2d217a30fbcab2cea0bf.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000507_20fa6bbd4eedfead75c52a5b470b051cecb55c9596efa8a39e035de6170bf89e.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000508_7bcabe0ec22536a5ca0f0c81a1abd44b6c874b9ef43b49ebf4f51ec9a5837d08.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000509_7a39bfc46dd11be68ec2a0bf3a054253d4dae9741f741296e2acde2ac97c9cfb.png"></figure>
+<h2 id="chapter-15">Chapter 15 — Writing Signs &amp; Sign Literature</h2>
+<h2>Writing Signs</h2>
+<h2>SignSpelling Guideline 1 — First, write the Position of Contact</h2>
+<p>When starting to write a sign, ask yourself: "Is there a Position of Contact in this sign?". Are the hands contacting each other? Are the hands contacting the Face or Body? Write that Position of Contact first, which becomes the "Center of the Sign".</p>
+<p>When writing the Position of Contact, try to place the two contacting symbols as close to each other as possible. Try to make it look like it does in real life. There should be very little space between the two contacting symbols.</p>
+<p>SignSpellings revolve around the Position of Contact like a small universe. The Position of Contact is the Center of the Sign, and the Movement and Contact Symbols relate to that center.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000511_55813dacf3b462ec8a7b181a70336aaf13df05f0413252917c28c0346eba3a85.png"></figure>
+<p>The Position of Contact is important because it holds the meaning in a sign. The eye focuses on the Position of Contact when reading. The Position of Contact is like a unit.</p>
+<p>Writing the Position of Contact also creates smaller signs in width and height, which makes writing in vertical columns more centered and compact, making the columns themselves less wide.</p>
+<p>Writing the Position of Contact gives a visual picture of the sign. Since you can see the two hands are touching by their close placement, the single Touch Contact Star is rarely necessary. It is not wrong to write the single Touch Contact Star, but it is not necessary either. This simplifies the writing of signs.</p>
+<p>Double Touch Contact Stars are written no matter what, because Double Touch, or Touch-Touch, is a movement, not a position. It is only single Touch Contact Stars that can be eliminated.</p>
+<h2>SignSpelling Guideline 1 (continued)</h2>
+<p>The two contacting symbols, such as the Hands and Face, are written close to each other. Then Movement Symbols are placed nearby.</p>
+<p>Sometimes the entire sign is nothing but the Position of Contact, with no other symbols needed.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000512_730bce6050eefe7bb338b7b41e75cb3bd1a825bc28fc201d4e9c7be8c15344f2.png"></figure>
+<div style="display:flex;gap:1.5em;flex-wrap:wrap">
+<div style="flex:1;min-width:240px">
+<p><strong>CURTAINS (ASL)</strong> — Position of Contact / Beginning Handshapes are the Center of this Sign.</p>
+</div>
+<div style="flex:1;min-width:240px">
+<p><strong>MEET (ASL)</strong> — Position of Contact is the Center of this Sign.</p>
+</div>
+<div style="flex:1;min-width:240px">
+<p><strong>YOU (ASL)</strong> — Beginning Handshape is the Center of this Sign.</p>
+</div>
+<div style="flex:1;min-width:240px">
+<p><strong>SEE (ASL)</strong> — Beginning Handshape is the Center of this Sign.</p>
+</div>
+</div>
+<p>The beginning handshape is in the middle of space. The movement symbol "drags the handshape" in the direction of the arrow.</p>
+<h2>SignSpelling Guideline 2 — Every Sign Has A Center</h2>
+<p>Every sign has a Center, like a little universe (the Sun is the center and the planets rotate around it). The Center of the Sign gives the sign focus for the reader. It is an Anchor, that grabs your attention.</p>
+<ol>
+<li>The Position of Contact is usually the Center of the Sign.</li>
+<li>If there is NO contact, then the Beginning Position is the Center.</li>
+<li>Movement Symbols relate to the Center like planets rotating around the Sun in 8 possible directions.</li>
+</ol>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000513_6ffefeda3b39f32dbccf99477bdf4a4f6d4e3dfe377daa36f9c0370f3575ff68.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000514_309dd90a10a38cc11221aa8fcaad411948037dc97f895df67c8db4236d2c3d6d.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000515_e859d4c96b4a3a2d1af0a010aa22e3767b211269a2008f37507d774fe0d78d5c.png"></figure>
+<h2>SignSpelling Guideline 3 — Step-by-Step Writing Process</h2>
+<ol>
+<li>The Position of Contact is written first. It is the Center of the sign.</li>
+<li>There are 8 possible placements of Movement Symbols around the Center. The arrows PULL or DRAG the hands in the direction of the arrow. Imagine a Movement wheel with 8 spokes.</li>
+<li>Choose the arrow from the Movement Wheel.</li>
+</ol>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000516_3c318a41eaaae9dab300ef7dd4973d4a078cfe5d8d0b3b2e718cddd55dc8b2ae.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000517_3834b29d3d2a920bb13576f6c8721cd26221c59e49c4fcad6809d1c59b0a1867.png"></figure>
+<h3>Straight UP</h3>
+<p>If the movement is straight UP, choose the UP arrow. Keep the UP arrow in the same spatial-relationship to the CENTER as it was when all the other arrows were in the Wheel. The UP arrow, in other words, is always placed ABOVE the CENTER of the sign, pulling it UP.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000518_9652f975cdf557c1bff26ebfc2cf37dce9c2b0c343474b8a928d0b1c750d3c7b.png"></figure>
+<h3>Straight FORWARD</h3>
+<p>If the movement is straight FORWARD, choose the FORWARD arrow. Keep the FORWARD arrow in the same spatial-relationship to the CENTER as it was when all the other arrows were in the Wheel.</p>
+<p>The FORWARD arrow, in other words, is always placed ABOVE the CENTER of the sign, pulling it FORWARD.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000519_73e85414262ac6e9ae35d82c12844b5bc996105635f1f0a04b543332180b6a35.png"></figure>
+<h3>FORWARD-DIAGONAL</h3>
+<p>If the movement is FORWARD-DIAGONAL, choose the FORWARD-DIAGONAL arrow. Keep the FORWARD-DIAGONAL arrow in the same spatial-relationship to the CENTER as it was when all the other arrows were in the Wheel.</p>
+<p>The FORWARD-DIAGONAL arrow is always placed above and to the diagonal.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000520_7fd9028ddf777dd8a2c7b1a96e7a5b38167a8980f923d94ba87f188253664974.png"></figure>
+<p>The Back Arrow is placed BELOW the Center. This means the movement is coming straight back towards your chest.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000521_ce98ce73ddfb9b60181cf7a38fbfa018d7adfd53824f8afe337357b99079aa2e.png"></figure>
+<h3>CURVED</h3>
+<p>If the movement is CURVED, choose the CURVE arrow needed. Keep the CURVED arrow in the same spatial-relationship to the CENTER as it was when all the other arrows were in the Wheel.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000522_f8b16ae2bb467ace22f873c535d119a65dc299b34fd8f0ebb155aa017bad2db5.png"></figure>
+<h3>ROTATION ARROW</h3>
+<p>If the movement is a ROTATION ARROW, choose the ROTATION ARROW needed. Keep the ROTATION ARROW in the same spatial-relationship to the CENTER as it was when all the other arrows were in the Wheel.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000523_69af05e4151ae6c6a05f57ec5b43a310342debd0176044bc4a692bcbd5bc673d.png"></figure>
+<p>If the curve of the Rotation Arrow is curved down, it is usually placed under the hands. If the curve of the Rotation Arrow is curved up, then it is usually placed above the hands.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000524_4b8630e5555006638fd43c621cfa59eddf01e0a6e1683ac138e442fff1806151.png"></figure>
+<h3>EXCEPTION — Three ASL Signs that are exceptions</h3>
+<p>Occasionally arrows can collide with other symbols, such as the Facial Circle or the Shoulder Line. When this happens there is no choice but to place the Movement Arrow a little to the side to avoid the collision. This happens mostly when contacting the Face. If the Facial Circle had not been there, these signs would be written without the collision adjustment.</p>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000525_434d6570e57fd5f6ef48f9a20aabcc186451a9a1cefcf4af8cd062012a80e571.png"></figure>
+<figure><img src="docling-out/sw0116-Lessons-SignWriting_artifacts/image_000526_facc2be14302a3cd604ee4c3c0617f802a40ce7dc14574c201ceb59e39de06e6.png"></figure>
+</div>
+<script>
+document.querySelectorAll('img').forEach((el, i) => {
+  const wrap = document.createElement('span');
+  wrap.className = 'img-wrap';
+  el.parentNode.insertBefore(wrap, el);
+  wrap.appendChild(el);
+  const badge = document.createElement('span');
+  badge.className = 'img-badge';
+  badge.textContent = i + 1;
+  wrap.appendChild(badge);
+});
+</script>
+</body>
+</html>
