@@ -1,2 +1,7 @@
 .bak/
 .DS_Store
+node_modules/
+dist/
+scripts/.venv/
+scripts/__pycache__/
+*.tsbuildinfo

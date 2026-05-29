@@ -1,0 +1,89 @@
+{
+  "finger-huh": {
+    "word": "huh?",
+    "illustration": "/figures/finger/finger-huh-illustration.png",
+    "sign": "/figures/finger/finger-huh-sign.png",
+    "video": "/videos/whatsthatsign/finger-huh/finger-huh.mp4",
+    "confirmed": true,
+    "swu": "𝠀񀉡񋽁񀀇񆤁𝠃𝤔𝤙񀉡𝣿𝣿񆤁𝣹𝣴"
+  },
+  "finger-milk": {
+    "word": "milk",
+    "illustration": "/figures/finger/finger-milk-illustration.png",
+    "sign": "/figures/finger/finger-milk-sign.png",
+    "video": "/videos/whatsthatsign/finger-milk/finger-milk.mp4",
+    "confirmed": true,
+    "swu": "𝠀񆅡񋽁񀀇񆤁𝠃𝤏𝤔񆅡𝣿𝤅񆤁𝣽𝣸"
+  },
+  "finger-eleven": {
+    "word": "eleven",
+    "illustration": "/figures/finger/finger-eleven-illustration.png",
+    "sign": "/figures/finger/finger-eleven-sign.png",
+    "swu": "𝠃𝤒𝤛񀀁𝣻𝣽񆫡𝤀𝣲",
+    "video": "/videos/whatsthatsign/finger-eleven/finger-eleven.mp4",
+    "confirmed": true
+  },
+  "finger-understand": {
+    "word": "understand",
+    "illustration": "/figures/finger/finger-understand-illustration.png",
+    "sign": "/figures/finger/finger-understand-sign.png",
+    "video": "/videos/whatsthatsign/finger-understand/finger-understand.mp4",
+    "confirmed": true,
+    "swu": "𝠀񀀁񌀈񀀇񆫡𝠃𝤰𝤘񋾡𝣴𝣵񀀁𝤙𝣟񆫡𝤞𝣔"
+  },
+  "finger-twenty": {
+    "word": "twenty",
+    "illustration": "/figures/finger/finger-twenty-illustration.png",
+    "sign": "/figures/finger/finger-twenty-sign.png",
+    "video": "/videos/whatsthatsign/finger-twenty/finger-twenty.mp4",
+    "confirmed": true,
+    "swu": "𝠀񅮡񋽁񀀇񆱵𝠃𝤗𝤓񅮡𝣺𝤄񆱵𝣶𝣺"
+  },
+  "finger-boy": {
+    "word": "boy",
+    "illustration": "/figures/finger/finger-boy-illustration.png",
+    "sign": "/figures/finger/finger-boy-sign.png",
+    "video": "/videos/whatsthatsign/finger-boy/finger-boy.mp4",
+    "confirmed": true,
+    "swu": "𝠀񃇱񌀈񀀇񆱥𝠃𝤭𝤘񋾡𝣴𝣵񃇱𝤔𝣹񆱥𝤕𝣯"
+  },
+  "finger-send": {
+    "word": "send",
+    "illustration": "/figures/finger/finger-send-illustration.png",
+    "sign": "/figures/finger/finger-send-sign.png"
+  },
+  "finger-send-send": {
+    "word": "send-send",
+    "illustration": "/figures/finger/finger-send-send-illustration.png",
+    "sign": "/figures/finger/finger-send-send-sign.png"
+  },
+  "finger-goodbye": {
+    "word": "goodbye",
+    "illustration": "/figures/finger/finger-goodbye-illustration.png",
+    "sign": "/figures/finger/finger-goodbye-sign.png"
+  },
+  "finger-why": {
+    "word": "why",
+    "illustration": "/figures/finger/finger-why-illustration.png",
+    "sign": "/figures/finger/finger-why-sign.png",
+    "swu": "𝠃𝤴𝤘񋾡𝣴𝣵񄧸𝤛𝣺񆲅𝤑𝣮",
+    "video": "/videos/whatsthatsign/finger-why/finger-why.mp4",
+    "confirmed": true
+  },
+  "finger-fingerspell": {
+    "word": "fingerspell",
+    "illustration": "/figures/finger/finger-fingerspell-illustration.png",
+    "sign": "/figures/finger/finger-fingerspell-sign.png",
+    "video": "/videos/whatsthatsign/finger-fingerspell/finger-fingerspell.mp4",
+    "confirmed": true,
+    "swu": "𝠀񁳑񋽁񀀇񆷱񈗧𝠃𝤚𝤞񁳑𝣲𝣿񆷱𝣳𝣯񈗧𝤋𝤌"
+  },
+  "finger-typing": {
+    "word": "typing",
+    "illustration": "/figures/finger/finger-typing-illustration.png",
+    "sign": "/figures/finger/finger-typing-sign.png",
+    "video": "/videos/whatsthatsign/finger-typing/finger-typing.mp4",
+    "confirmed": true,
+    "swu": "𝠀񁳑񋽁񁳙񋽁񏀇񆷱񆷱𝠃𝤦𝤞񁳑𝤎𝣿񁳙𝣧𝣿񆷱𝤏𝣯񆷱𝣨𝣯"
+  }
+}

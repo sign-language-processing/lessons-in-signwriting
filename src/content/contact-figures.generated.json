@@ -1,0 +1,148 @@
+{
+  "more": {
+    "word": "more",
+    "illustration": "/figures/contact/more-illustration.png",
+    "sign": "/figures/contact/more-sign.png",
+    "video": "/videos/whatsthatsign/more/more.mp4",
+    "confirmed": true,
+    "swu": "𝠀񃇱񋽁񃇹񋽁񆞇񆉁𝠃𝤠𝤕񃇱𝤇𝤆񃇹𝣬𝤆񆉁𝣻𝣸"
+  },
+  "school": {
+    "word": "school",
+    "illustration": "/figures/contact/school-illustration.png",
+    "sign": "/figures/contact/school-sign.png",
+    "video": "/videos/whatsthatsign/school/school.mp4",
+    "confirmed": true,
+    "swu": "𝠀񂈒񋽁񂇺񋽁񆞁񆉁𝠃𝤙𝤙񂇺𝤂𝣴񂈒𝣴𝣴񆉁𝣻𝤎"
+  },
+  "dating": {
+    "word": "dating",
+    "sign": "/figures/contact/dating-sign.png",
+    "video": "/videos/whatsthatsign/dating/dating.mp4",
+    "confirmed": true,
+    "swu": "𝠀񀁱񋽁񀁹񋽁񆞇񆉁𝠃𝤗𝤜񀁱𝤇𝣱񀁹𝣵𝣱񆉁𝣻𝤑"
+  },
+  "deaf": {
+    "word": "deaf",
+    "sign": "/figures/contact/deaf-sign.png",
+    "video": "/videos/whatsthatsign/deaf/deaf.mp4",
+    "confirmed": true,
+    "swu": "𝠀񀀒񌀇񀀇񆇡񆿄񌀆񆇡𝠃𝤭𝤣񋾡𝣴𝣵񀀒𝤘𝤅񆇡𝤈𝤘"
+  },
+  "grasp-earring": {
+    "word": "earring",
+    "illustration": "/figures/contact/grasp-earring-illustration.png",
+    "sign": "/figures/contact/grasp-earring-sign.png"
+  },
+  "grasp-congratulations": {
+    "word": "congratulations",
+    "illustration": "/figures/contact/grasp-congratulations-illustration.png",
+    "sign": "/figures/contact/grasp-congratulations-sign.png"
+  },
+  "between-disappear": {
+    "word": "disappear",
+    "illustration": "/figures/contact/between-disappear-illustration.png",
+    "sign": "/figures/contact/between-disappear-sign.png",
+    "video": "/videos/whatsthatsign/between-disappear/between-disappear.mp4",
+    "confirmed": true,
+    "swu": "𝠀񀀡񋽁񁲛񋽁񆞇񆊡񆿅𝠃𝤠𝤢񁲛𝣬𝣬񀀡𝤇𝣲񆊡𝤎𝣪񆿅𝤈𝤓"
+  },
+  "between-america": {
+    "word": "america",
+    "illustration": "/figures/contact/between-america-illustration.png",
+    "sign": "/figures/contact/between-america-sign.png",
+    "video": "/videos/whatsthatsign/between-america/between-america.mp4",
+    "confirmed": true,
+    "swu": "𝠀񁳂񋽁񁳊񋽁񆞇񆊡񋛓𝠃𝤟𝤢񁳂𝤅𝣪񁳊𝣮𝣭񆊡𝣿𝤂񋛓𝣼𝤒"
+  },
+  "strike-hit": {
+    "word": "hit",
+    "illustration": "/figures/contact/strike-hit-illustration.png",
+    "sign": "/figures/contact/strike-hit-sign.png"
+  },
+  "strike-clap": {
+    "word": "clap",
+    "illustration": "/figures/contact/strike-clap-illustration.png",
+    "sign": "/figures/contact/strike-clap-sign.png",
+    "video": "/videos/whatsthatsign/strike-clap/strike-clap.mp4",
+    "confirmed": true,
+    "swu": "𝠀񂈒񋽁񂇺񋽁񆞁񆒁𝠃𝤡𝤘񂇺𝣬𝣴񂈒𝣴𝤁񆒁𝤅𝣻"
+  },
+  "brush-excuse-me": {
+    "word": "excuse me",
+    "illustration": "/figures/contact/brush-excuse-me-illustration.png",
+    "sign": "/figures/contact/brush-excuse-me-sign.png"
+  },
+  "brush-monthly": {
+    "word": "monthly",
+    "illustration": "/figures/contact/brush-monthly-illustration.png",
+    "sign": "/figures/contact/brush-monthly-sign.png",
+    "video": "/videos/whatsthatsign/brush-monthly/brush-monthly.mp4",
+    "confirmed": true,
+    "swu": "𝠀񀀃񋽁񀀩񋽁񆞕񆕁񇆥𝠃𝤜𝤟񀀩𝣱𝣮񀀃𝣹𝣰񆕁𝤉𝤂񇆥𝤃𝤑"
+  },
+  "brush-monthly-2": {
+    "word": "monthly",
+    "sign": "/figures/contact/brush-monthly-2-sign.png",
+    "video": "/videos/whatsthatsign/brush-monthly-2/brush-monthly-2.mp4",
+    "confirmed": true,
+    "swu": "𝠀񀀃񋽁񀀩񋽁񆞕񆕁񇆥𝠃𝤜𝤟񀀩𝣱𝣮񀀃𝣹𝣰񆕁𝤉𝤂񇆥𝤃𝤑"
+  },
+  "brush-easy": {
+    "word": "easy",
+    "sign": "/figures/contact/brush-easy-sign.png",
+    "video": "/videos/whatsthatsign/brush-easy/brush-easy.mp4",
+    "confirmed": true,
+    "swu": "𝠀񂇃񋽁񂇋񋽁񆞑񆕁񈟅𝠃𝤜𝤜񂇃𝤁𝣱񂇋𝣱𝣵񆕁𝤇𝤀񈟅𝤀𝤎"
+  },
+  "brush-excuse-me-2": {
+    "word": "excuse me",
+    "sign": "/figures/contact/brush-excuse-me-2-sign.png"
+  },
+  "circular-coffee": {
+    "word": "coffee",
+    "illustration": "/figures/contact/circular-coffee-illustration.png",
+    "sign": "/figures/contact/circular-coffee-sign.png",
+    "video": "/videos/whatsthatsign/circular-coffee/circular-coffee.mp4",
+    "confirmed": true,
+    "swu": "𝠀񆅡񋽁񆅩񋽁񆞁񆙡񋟳𝠃𝤖𝤖񆅡𝤇𝣶񆅩𝣾𝤇񆙡𝣶𝣶"
+  },
+  "circular-chocolate": {
+    "word": "chocolate",
+    "illustration": "/figures/contact/circular-chocolate-illustration.png",
+    "sign": "/figures/contact/circular-chocolate-sign.png",
+    "video": "/videos/whatsthatsign/circular-chocolate/circular-chocolate.mp4",
+    "confirmed": true,
+    "swu": "𝠀񂤁񋽁񆄻񋽁񆞁񆙡񋟳𝠃𝤖𝤙񆄻𝣷𝤊񂤁𝣶𝣴񆙡𝤉𝣺"
+  },
+  "straight-nice": {
+    "word": "nice",
+    "illustration": "/figures/contact/straight-nice-illustration.png",
+    "sign": "/figures/contact/straight-nice-sign.png",
+    "video": "/videos/whatsthatsign/straight-nice/straight-nice.mp4",
+    "confirmed": true,
+    "swu": "𝠀񂈒񋽁񂇺񋽁񆞁񆙡񈗨𝠃𝤙𝤞񂇺𝤂𝤇񂈒𝣳𝤇񆙡𝣿𝣻񈗨𝤌𝣮"
+  },
+  "straight-eager": {
+    "word": "eager",
+    "illustration": "/figures/contact/straight-eager-illustration.png",
+    "sign": "/figures/contact/straight-eager-sign.png",
+    "video": "/videos/whatsthatsign/straight-eager/straight-eager.mp4",
+    "confirmed": true,
+    "swu": "𝠀񂈁񋽁񂈉񋽁񆞇񆙡񈩡񈩵𝠃𝤰𝤤񂈁𝤇𝤉񂈉𝣹𝤉񆙡𝣿𝣹񈩡𝤈𝣩񈩵𝣜𝣩"
+  },
+  "rub-temperature": {
+    "word": "temperature",
+    "sign": "/figures/contact/rub-temperature-sign.png",
+    "video": "/videos/whatsthatsign/rub-temperature/rub-temperature.mp4",
+    "confirmed": true,
+    "swu": "𝠀񀀓񋽁񀀙񋽁񆞕񆙡񇑅𝠃𝤞𝤡񀀙𝣲𝣬񀀓𝣯𝣮񆙡𝤄𝤀񇑅𝣷𝤐"
+  },
+  "rub-coffee": {
+    "word": "coffee",
+    "sign": "/figures/contact/rub-coffee-sign.png",
+    "video": "/videos/whatsthatsign/rub-coffee/rub-coffee.mp4",
+    "confirmed": true,
+    "swu": "𝠀񆅡񋽁񆅩񋽁񆞁񆙡񋟳𝠃𝤖𝤖񆅡𝤇𝣶񆅩𝣾𝤇񆙡𝣶𝣶"
+  }
+}

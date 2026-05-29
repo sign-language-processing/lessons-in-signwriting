@@ -1,0 +1,92 @@
+{
+  "ch6-monthly": {
+    "word": "monthly",
+    "sign": "/figures/ch6/ch6-monthly-sign.png",
+    "video": "/videos/whatsthatsign/ch6-monthly/ch6-monthly.mp4",
+    "swu": "𝠀񀀃񋽁񀀩񋽁񆞕񆕁񇆥𝠃𝤜𝤟񀀩𝣱𝣮񀀃𝣹𝣰񆕁𝤉𝤂񇆥𝤃𝤑",
+    "illustration": "/figures/ch6/ch6-monthly-illustration.png",
+    "confirmed": true
+  },
+  "ch6-disappear": {
+    "word": "disappear",
+    "sign": "/figures/ch6/ch6-disappear-sign.png",
+    "video": "/videos/whatsthatsign/ch6-disappear/ch6-disappear.mp4",
+    "swu": "𝠀񀀡񋽁񁲛񋽁񆞇񆊡񆿅𝠃𝤠𝤢񁲛𝣬𝣬񀀡𝤇𝣲񆊡𝤎𝣪񆿅𝤈𝤓",
+    "illustration": "/figures/ch6/ch6-disappear-illustration.png",
+    "confirmed": true
+  },
+  "ch6-excuse-me": {
+    "word": "excuse me",
+    "sign": "/figures/ch6/ch6-excuse-me-sign.png",
+    "video": "/videos/whatsthatsign/ch6-excuse-me/ch6-excuse-me.mp4",
+    "swu": "𝠀񃃡񋽁񂇺񋽁񆞁񆕁񈗨𝠃𝤡𝤚񂇺𝣫𝣾񃃡𝣲𝤋񆕁𝤉𝣿񈗨𝤔𝣳",
+    "illustration": "/figures/ch6/ch6-excuse-me-illustration.png",
+    "confirmed": true
+  },
+  "ch6-eager": {
+    "word": "eager",
+    "sign": "/figures/ch6/ch6-eager-sign.png",
+    "video": "/videos/whatsthatsign/ch6-eager/ch6-eager.mp4",
+    "swu": "𝠀񂈁񋽁񂈉񋽁񆞇񆙡񈩡񈩵𝠃𝤰𝤤񂈁𝤇𝤉񂈉𝣹𝤉񆙡𝣿𝣹񈩡𝤈𝣩񈩵𝣜𝣩",
+    "illustration": "/figures/ch6/ch6-eager-illustration.png",
+    "confirmed": true
+  },
+  "ch6-exam-test": {
+    "word": "exam, test",
+    "sign": "/figures/ch6/ch6-exam-test-sign.png",
+    "illustration": "/figures/ch6/ch6-exam-test-illustration.png"
+  },
+  "ch6-house": {
+    "word": "house",
+    "sign": "/figures/ch6/ch6-house-sign.png",
+    "video": "/videos/whatsthatsign/ch6-house/ch6-house.mp4",
+    "swu": "𝠀񂇒񋽁񂇚񋽁񆞇񆇡񇔅񇔝𝠃𝤫𝤝񂇒𝤇𝣯񂇚𝣮𝣯񇔅𝤚𝤄񇔝𝣡𝤄",
+    "illustration": "/figures/ch6/ch6-house-illustration.png",
+    "confirmed": true
+  },
+  "ch6-system": {
+    "word": "system",
+    "sign": "/figures/ch6/ch6-system-sign.png",
+    "illustration": "/figures/ch6/ch6-system-illustration.png"
+  },
+  "ch6-square": {
+    "word": "square",
+    "sign": "/figures/ch6/ch6-square-sign.png",
+    "video": "/videos/whatsthatsign/ch6-square/ch6-square.mp4",
+    "swu": "𝠀񀁒񋽁񀁚񋽁񆞇񆇡񇣃񇣛񆇡𝠃𝤥𝤢񀁒𝤇𝣪񀁚𝣨𝣪񇙕𝤋𝤁񇘣𝤆𝤏񇙝𝣱𝤁񇘻𝣱𝤏",
+    "illustration": "/figures/ch6/ch6-square-illustration.png",
+    "confirmed": true
+  },
+  "ch6-hello": {
+    "word": "hello",
+    "sign": "/figures/ch6/ch6-hello-sign.png",
+    "video": "/videos/whatsthatsign/ch6-hello/ch6-hello.mp4",
+    "swu": "𝠀񂇒񌀈񀀇񆇡񈗡𝠃𝤧𝤘񋾡𝣴𝣵񂇒𝤐𝣹񈗡𝤎𝣧",
+    "illustration": "/figures/ch6/ch6-hello-illustration.png",
+    "confirmed": true
+  },
+  "ch6-nothing": {
+    "word": "nothing",
+    "sign": "/figures/ch6/ch6-nothing-sign.png",
+    "video": "/videos/whatsthatsign/ch6-nothing/ch6-nothing.mp4",
+    "swu": "𝠀񄵡񋽁񄵩񋽁񏀇񈩣񈩷𝠃𝤥𝤫񄵡𝤏𝣡񄵩𝣧𝣡񈩣𝤑𝤃񈩷𝣭𝤃",
+    "illustration": "/figures/ch6/ch6-nothing-illustration.png",
+    "confirmed": true
+  },
+  "ch6-right": {
+    "word": "right (direction)",
+    "sign": "/figures/ch6/ch6-right-sign.png",
+    "video": "/videos/whatsthatsign/ch6-right/ch6-right.mp4",
+    "swu": "𝠀񀁂񋽁񀀋񋽁񆞁񆇡𝠃𝤗𝤜񀀋𝣹𝤍񀁂𝣵𝣱",
+    "illustration": "/figures/ch6/ch6-right-illustration.png",
+    "confirmed": true
+  },
+  "ch6-ask-question": {
+    "word": "ask a question",
+    "sign": "/figures/ch6/ch6-ask-question-sign.png",
+    "video": "/videos/whatsthatsign/ch6-ask-question/ch6-ask-question.mp4",
+    "swu": "𝠀񀀡񋽁񀀇񈗡񀉡𝠃𝤑𝤬񀀡𝤂𝤎񈗡𝤃𝣾񀉡𝣼𝣡",
+    "illustration": "/figures/ch6/ch6-ask-question-illustration.png",
+    "confirmed": true
+  }
+}

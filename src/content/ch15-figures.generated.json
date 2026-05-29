@@ -1,0 +1,92 @@
+{
+  "ch15-correct": {
+    "illustration": "/figures/ch15/ch15-correct.png"
+  },
+  "ch15-incorrect": {
+    "illustration": "/figures/ch15/ch15-incorrect.png"
+  },
+  "ch15-correct-grid": {
+    "illustration": "/figures/ch15/ch15-correct-grid.png"
+  },
+  "ch15-movement-wheel-intro": {
+    "illustration": "/figures/ch15/ch15-movement-wheel-intro.png"
+  },
+  "ch15-step-contact": {
+    "illustration": "/figures/ch15/ch15-step-contact.png"
+  },
+  "ch15-step-wheel": {
+    "illustration": "/figures/ch15/ch15-step-wheel.png"
+  },
+  "ch15-up": {
+    "illustration": "/figures/ch15/ch15-up.png"
+  },
+  "ch15-forward": {
+    "illustration": "/figures/ch15/ch15-forward.png"
+  },
+  "ch15-forward-diagonal": {
+    "illustration": "/figures/ch15/ch15-forward-diagonal.png"
+  },
+  "ch15-back": {
+    "illustration": "/figures/ch15/ch15-back.png"
+  },
+  "ch15-curve-chart": {
+    "illustration": "/figures/ch15/ch15-curve-chart.png"
+  },
+  "ch15-rotation": {
+    "illustration": "/figures/ch15/ch15-rotation.png"
+  },
+  "ch15-rotation-placement": {
+    "illustration": "/figures/ch15/ch15-rotation-placement.png"
+  },
+  "ch15-exception-without-circle": {
+    "illustration": "/figures/ch15/ch15-exception-without-circle.png"
+  },
+  "ch15-meet": {
+    "word": "meet",
+    "sign": "/figures/ch15/ch15-meet-sign.png",
+    "video": "/videos/whatsthatsign/ch15-meet/ch15-meet.mp4",
+    "swu": "𝠀񀀑񋽁񀀙񋽁񆞇񆇡𝠃𝤖𝤕񀀑𝤇𝣷񀀙𝣷𝣷"
+  },
+  "ch15-see": {
+    "word": "see",
+    "sign": "/figures/ch15/ch15-see-sign.png",
+    "video": "/videos/whatsthatsign/ch15-see/ch15-see.mp4",
+    "swu": "𝠀񀕁񌞑񀀇񆇡񈗡𝠃𝤥𝤣񋾡𝣴𝣵񀕁𝤐𝤅񈗡𝤗𝣲"
+  },
+  "ch15-curtains": {
+    "word": "curtains",
+    "sign": "/figures/ch15/ch15-curtains-sign.png",
+    "video": "/videos/whatsthatsign/ch15-curtains/ch15-curtains.mp4",
+    "swu": "𝠀񁦡񋽁񁦩񋽁񏀇񆿅񆿕𝠃𝤪𝤟񁦡𝤔𝣭񁦩𝣣𝣭񆿅𝤖𝤐񆿕𝣩𝤐"
+  },
+  "ch15-you": {
+    "word": "you",
+    "sign": "/figures/ch15/ch15-you-sign.png",
+    "video": "/videos/whatsthatsign/ch15-you/ch15-you.mp4",
+    "swu": "𝠀񀁁񋽁񀀇񈗡񌏁𝠃𝤘𝥎񀁁𝣿𝤰񈗡𝣿𝤠񌏁𝣴𝣵"
+  },
+  "ch15-help": {
+    "word": "help all of you",
+    "sign": "/figures/ch15/ch15-help-sign.png",
+    "video": "/videos/whatsthatsign/ch15-help/ch15-help.mp4",
+    "swu": "𝠀񅰡񋽁񂇸񋽁񆞁񆉁𝠃𝤛𝤙񂇸𝤄𝣻񅰡𝣽𝣴񆉁𝣲𝤎"
+  },
+  "ch15-really": {
+    "word": "really",
+    "sign": "/figures/ch15/ch15-really-sign.png",
+    "video": "/videos/whatsthatsign/ch15-really/ch15-really.mp4",
+    "swu": "𝠀񀀑񍛡񀀇񆇡񈗡𝠃𝤚𝤯񍘡𝣴𝣵񀀑𝣸𝤑񈗡𝤌𝤚"
+  },
+  "ch15-not": {
+    "word": "not",
+    "sign": "/figures/ch15/ch15-not-sign.png",
+    "video": "/videos/whatsthatsign/ch15-not/ch15-not.mp4",
+    "swu": "𝠀񅰡񏆅񀀇񆕁񈗡𝠃𝤧𝤱񋾡𝣴𝣵񅰡𝣿𝤙񆕁𝤚𝤞񈗡𝤙𝤋"
+  },
+  "ch15-good": {
+    "word": "good",
+    "sign": "/figures/ch15/ch15-good-sign.png",
+    "video": "/videos/whatsthatsign/ch15-good/ch15-good.mp4",
+    "swu": "𝠀񂇁񌀅񀀇񆇡񆿅𝠃𝤘𝥀񋾡𝣴𝣵񂇁𝤀𝤓񆿅𝣿𝤱"
+  }
+}
