@@ -5,11 +5,12 @@ import { HandshapeExamples } from "../components/HandshapeExamples";
 import { HandshapeExplorer } from "../components/HandshapeExplorer";
 import { HeelViewCard } from "../components/HeelView";
 import { Grid } from "../components/Layout";
-import { SgnwSymbol } from "../components/Sgnw";
+import { SgnwSign, SgnwSymbol } from "../components/Sgnw";
+import { asset } from "../lib/asset";
 import { YouTubeVideo } from "../components/YouTubeVideo";
 import { TRANSCRIPT_2, VIDEO_CREDITS } from "../content/videos";
 
-const ART = "/docling-out/sw0116-Lessons-SignWriting_artifacts";
+const ART = asset("/docling-out/sw0116-Lessons-SignWriting_artifacts");
 
 const CAT_IN_HAT_VP =
   "𝠃𝥩𝤘񆿄𝤪𝣙񌏁𝣴𝣵񃇲𝤮𝣃񀂁𝥊𝢤񁻒𝤒𝣙񋦦𝥕𝢝 𝠃𝤢𝥉񌖡𝣴𝣴񂱑𝤒𝤹񂱙𝣬𝤹񈙁𝤒𝤗񈙑𝣬𝤗񎁑𝣴𝣴 񏌁𝣢𝤂 𝠃𝥞𝤗񌕁𝣴𝣴񁻒𝤖𝣣񃇲𝥃𝢿񇀨𝤫𝣕 𝠃𝤼𝤳񌕁𝣴𝣴񁶑𝤢𝣽񁶙𝣐𝣼񇆥𝤢𝤥񇆵𝣏𝤥 𝠃𝤶𝥑񌕁𝣴𝣴񎁑𝣴𝣴񁻱𝤞𝤂񁻹𝣗𝤂񃈗𝤡𝤸񃈟𝣚𝤸񇆥𝤝𝤦񇆵𝣑𝤧 𝠃𝤣𝥢񀁒𝤅𝤬񀁚𝣨𝤻񆕁𝤁𝥄񆿅𝤁𝥓񌕁𝣴𝣴񎁑𝣴𝣴 𝠃𝤲𝥢񎁑𝣴𝣴񌕁𝣴𝣴񃨁𝤐𝤟񃨉𝣤𝤟񉴽𝣟𝤺񉴥𝤛𝤺 񏊡𝣡𝤂 𝠃𝤻𝥆񌏁𝣴𝣴񍘡𝣴𝣴񎂡𝣴𝣴񁳀𝣑𝤗񆿕𝣠𝤷񎥁𝣯𝤓񆿅𝤠𝤵񁲸𝤠𝤗 𝠃𝤞𝥘񀠺𝣯𝤿񎁁𝣴𝣴񆿅𝤇𝤩񀠲𝤃𝤽񌓡𝣴𝣴 𝠃𝤲𝥘񎁁𝣴𝣴񌓡𝣴𝣴񂤩𝣹𝥄񃈳𝤅𝤩񆊱𝤐𝥁 𝠃𝤯𝥘񂇒𝤇𝤤񂇚𝣯𝤤񌓡𝣴𝣴񇕥𝤛𝤹񇕽𝣠𝤺 񏊡𝣡𝤂 𝠃𝤾𝥓񌖡𝣴𝣴񍪡𝣴𝣴񎲬𝤕𝤼񂇸𝤧𝤫񎴇𝣗𝥌񂈗𝣺𝥇񉖣𝣩𝤟 𝠃𝤤𝥐񌕁𝣴𝣴񍤡𝣴𝣴񆄱𝤕𝤢񆄹𝣩𝤢񈟃𝤖𝤵񈟗𝣫𝤴 𝠃𝤶𝥑񌕁𝣴𝣴񍤡𝣴𝣴񁻱𝤞𝤂񁻹𝣗𝤂񃈗𝤡𝤸񃈟𝣚𝤸񇆥𝤝𝤦񇆵𝣑𝤧 񏌁𝣢𝤂";
@@ -53,7 +54,7 @@ function ThumbWritingTable() {
               <SgnwSymbol symbol={row.dot} size={56} />
             </td>
             <td>
-              <img src={row.hand} alt="hand pose" />
+              <img src={asset(row.hand)} alt="hand pose" />
             </td>
             <td>
               {typeof row.line === "string" ? (
@@ -320,8 +321,6 @@ const IMG = {
     "image_000182_ad5e1796af3a7820d859f10328311845cb935f4461e13431cd1be6861199f8e0.png",
   toUp1:
     "image_000184_ec8ed23df6470eb477ee1e9b639f8f24bbd96c2df43ba2b3ec5b4ac8e4c68c8f.png",
-  toOut1:
-    "image_000186_f0b62675ce06512c2bf3d0a88713ea063645ea30b42cc4b5515bf9e45e587bf0.png",
 };
 
 export function Ch3Hands() {
@@ -830,7 +829,20 @@ export function Ch3Hands() {
         the outside, away from the Center of the Body, as in the sign for FAIRY
         GODMOTHER in ASL, then it is written pointing out.
       </p>
-      <Figure src={IMG.toOut1} />
+      <figure style={{ textAlign: "center" }}>
+        <SgnwSign sign="𝠃𝥮𝤣񌏁𝣳𝣵񍝁𝣳𝣵񎣡𝣱𝤟񃀒𝤗𝤉񃀚𝣛𝤉񈗧𝤶𝤎񈗳𝣅𝤏񃀑𝢤𝤎񃀙𝥌𝤎񆲅𝥘𝤄񆲅𝢝𝤃" />
+        <figcaption>
+          Action fingers directed to the outside in the sign for "Fairy
+          Godmother" —{" "}
+          <a
+            href="https://signwriting.org/library/children/cinderella/cind10.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            signwriting.org
+          </a>
+        </figcaption>
+      </figure>
     </>
   );
 }

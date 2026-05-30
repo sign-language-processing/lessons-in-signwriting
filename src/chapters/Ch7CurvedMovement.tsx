@@ -7,8 +7,6 @@ const IMG = {
     "image_000304_277921798e594fee5105e61291bb89964d19a6d0ba37235f5c5053afc3f9c0f8.png",
   coverPhoto2:
     "image_000305_139d567fcee0f977aed460d419f1210f523b617a976501c8f71fd4e55020caff.png",
-  coverLabel:
-    "image_000306_20b650d243e51bd69963e27dae21a0c518be59aab16a2e60678281f5629cacb5.png",
   upSide:
     "image_000307_c0302ca83b292e4d77ed3dc296cf3a9bdefae6405dfee75f9c9b59289ac38a9d.png",
   upUp:
@@ -57,10 +55,9 @@ export function Ch7CurvedMovement() {
       <Row>
         <Col>
           <Figure src={IMG.coverPhoto1} />
-          <Figure src={IMG.coverPhoto2} />
         </Col>
         <Col>
-          <Figure src={IMG.coverLabel} />
+          <Figure src={IMG.coverPhoto2} />
         </Col>
       </Row>
 

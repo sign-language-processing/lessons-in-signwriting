@@ -1,5 +1,6 @@
 import { Figure } from "../components/Figure";
 import { Grid, Row } from "../components/Layout";
+import { SgnwSign } from "../components/Sgnw";
 import { SignFigure } from "../components/SignFigure";
 
 const D = "/figures/ch15";
@@ -234,10 +235,11 @@ export function Ch15WritingSigns() {
         <SignFigure slug="ch15-good" />
       </Grid>
       <p>If the Facial Circle had not been there, these signs would be written like this:</p>
-      <Figure
-        src={`${D}/ch15-exception-without-circle.png`}
-        alt="The three exception signs rewritten without the Facial Circle"
-      />
+      <Grid columns="repeat(3, 1fr)">
+        <SgnwSign sign="𝠃𝤎𝤛񀀑𝣿𝣽񈗡𝤀𝣱" />
+        <SgnwSign sign="𝠃𝤎𝤥񅰡𝣿𝤍񆕁𝤁𝣻񈗡𝤀𝣨" />
+        <SgnwSign sign="𝠃𝤒𝤛񂇂𝣻𝤄񈗡𝣾𝣱" />
+      </Grid>
     </>
   );
 }

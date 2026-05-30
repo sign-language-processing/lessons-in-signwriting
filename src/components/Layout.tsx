@@ -20,13 +20,15 @@ export function Row({
 /** A column for use inside a stretched <Row>. The trailing <figure> auto-pushes to the bottom. */
 export function Col({
   children,
+  className,
   style,
 }: {
   children: ReactNode;
+  className?: string;
   style?: CSSProperties;
 }) {
   return (
-    <div className="col" style={style}>
+    <div className={className ? `col ${className}` : "col"} style={style}>
       {children}
     </div>
   );

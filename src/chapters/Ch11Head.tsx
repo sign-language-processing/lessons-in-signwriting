@@ -8,12 +8,17 @@ const IMG = {
   faceDirectionMovement: "/figures/ch11/ch11-face-direction-movement.png",
   headDirectionMovement: "/figures/ch11/ch11-head-direction-movement.png",
   faceDirectionLines: "/figures/ch11/ch11-face-direction-lines.png",
+  headPhoto: "/figures/ch11/ch11-head-photo.png",
 };
 
 export function Ch11Head() {
   return (
     <>
       <h2 id="chapter-11">Chapter 11 — Head</h2>
+      <Figure
+        src={IMG.headPhoto}
+        alt="A signer touching her cheek to show the location of the head"
+      />
 
       <h2>The Head</h2>
       <p>The Head can be seen from different viewpoints:</p>

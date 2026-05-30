@@ -1,4 +1,5 @@
 import { SignFigure } from "../components/SignFigure";
+import { asset } from "../lib/asset";
 
 type Item = { symbol: string; label: string };
 
@@ -10,7 +11,7 @@ function SymbolList({ heading, sub, items }: { heading: string; sub: string; ite
       <ol className="ch9-list">
         {items.map((item) => (
           <li className="ch9-item" key={item.label}>
-            <img className="ch9-item__symbol" src={item.symbol} alt="" />
+            <img className="ch9-item__symbol" src={asset(item.symbol)} alt="" />
             <span className="ch9-item__label">{item.label}</span>
           </li>
         ))}

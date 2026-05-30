@@ -47,13 +47,6 @@ export function Ch10Face() {
 
       <h3>Chin (continued) · Other</h3>
       <Figure src={`${FIG}/ch10-chin-other.png`} />
-
-      <h3>The Head</h3>
-      <Figure
-        src={`${FIG}/ch10-head-photo.png`}
-        alt="A signer touching her cheek to show the location of the head"
-      />
-      <Figure src={`${FIG}/ch10-head-sign.png`} caption="The Head" />
     </>
   );
 }

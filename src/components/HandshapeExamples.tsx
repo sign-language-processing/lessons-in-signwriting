@@ -15,8 +15,8 @@ export function HandshapeExamples({ set }: HandshapeExamplesProps) {
     <ul className="handshape-examples">
       {SETS[set]?.map((example) => (
         <li key={`${example.word}-${example.swu}`}>
-          <SgnwSign sign={example.swu} video={example.video} size={36} />
           <figcaption>{example.word}</figcaption>
+          <SgnwSign sign={example.swu} video={example.video} size={36} />
         </li>
       ))}
     </ul>

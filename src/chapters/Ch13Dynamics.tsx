@@ -1,8 +1,9 @@
 import { Figure } from "../components/Figure";
 import { SignFigure } from "../components/SignFigure";
 import { Row } from "../components/Layout";
+import { asset } from "../lib/asset";
 
-const FIG = "/figures/ch13";
+const FIG = asset("/figures/ch13");
 
 const MOVEMENT_SYMBOLS = [
   {

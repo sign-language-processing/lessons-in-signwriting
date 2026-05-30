@@ -75,18 +75,21 @@
     "word": "really",
     "sign": "/figures/ch15/ch15-really-sign.png",
     "video": "/videos/whatsthatsign/ch15-really/ch15-really.mp4",
-    "swu": "𝠀񀀑񍛡񀀇񆇡񈗡𝠃𝤚𝤯񍘡𝣴𝣵񀀑𝣸𝤑񈗡𝤌𝤚"
+    "swu": "𝠀񀀑񍛡񀀇񆇡񈗡𝠃𝤚𝤯񍘡𝣴𝣵񀀑𝣸𝤑񈗡𝤌𝤚",
+    "confirmed": true
   },
   "ch15-not": {
     "word": "not",
     "sign": "/figures/ch15/ch15-not-sign.png",
     "video": "/videos/whatsthatsign/ch15-not/ch15-not.mp4",
-    "swu": "𝠀񅰡񏆅񀀇񆕁񈗡𝠃𝤧𝤱񋾡𝣴𝣵񅰡𝣿𝤙񆕁𝤚𝤞񈗡𝤙𝤋"
+    "swu": "𝠀񅰡񏆅񀀇񆕁񈗡𝠃𝤧𝤱񋾡𝣴𝣵񅰡𝣿𝤙񆕁𝤚𝤞񈗡𝤙𝤋",
+    "confirmed": true
   },
   "ch15-good": {
     "word": "good",
     "sign": "/figures/ch15/ch15-good-sign.png",
     "video": "/videos/whatsthatsign/ch15-good/ch15-good.mp4",
-    "swu": "𝠀񂇁񌀅񀀇񆇡񆿅𝠃𝤘𝥀񋾡𝣴𝣵񂇁𝤀𝤓񆿅𝣿𝤱"
+    "swu": "𝠃𝤥𝤩񋾡𝣴𝣵񂇂𝤀𝤒񈗡𝤗𝤎",
+    "confirmed": true
   }
 }

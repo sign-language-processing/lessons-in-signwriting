@@ -1,4 +1,5 @@
 import { SgnwSign } from "../components/Sgnw";
+import { asset } from "../lib/asset";
 
 const VALERIE_IMG =
   "image_000011_1738bb5aa2102114bff889f8c476e8e655ab9eb25cfa21890a469f23d56110ef.png";
@@ -12,7 +13,7 @@ const KEVIN_IMG =
   "image_000016_8b33582f66ff71f5f93269139bb77797b3d9829fc91ab2b68f555b073d0016db_kevin.png";
 const LUCINDA_SIGN = "𝠀񂣱񆉁񌏁񍝁𝠃𝤡𝤷񌏁𝣴𝣴񍝁𝣴𝣴񂣱𝤌𝤕񆉁𝤋𝤬";
 const KEVIN_SIGN = "𝠃𝤝𝥈񁠨𝣲𝤡񈩣𝤎𝤠񌏁𝣴𝣵񍝁𝣴𝣵";
-const ART = "/docling-out/sw0116-Lessons-SignWriting_artifacts";
+const ART = asset("/docling-out/sw0116-Lessons-SignWriting_artifacts");
 
 export function Ch1Introduction() {
   return (
@@ -41,22 +42,6 @@ export function Ch1Introduction() {
         Lessons In SignWriting Video Series DVD
       </p>
       <p>SignWriting web components by Stephen E. Slevinski, Jr</p>
-
-      <h3>Plan</h3>
-      <ol>
-        <li>
-          Completely transform the PDF to a modern web document (extract /
-          replace images, layout, etc.).
-        </li>
-        <li>
-          Include features such as SignWriting symbols being supported with
-          hand images, a 3D hand viewer, a fingerspelling utility, a mouthing
-          utility, and each SignWriting sign hovering to play a video of that
-          sign performed.
-        </li>
-        <li>YouTube videos embedded.</li>
-        <li>Multilingual support (English, Portuguese, etc.).</li>
-      </ol>
 
       <h3>Contributors</h3>
       <p>

@@ -1,4 +1,6 @@
-const BASE = "/textbook/heel-views";
+import { asset } from "../lib/asset";
+
+const BASE = asset("/textbook/heel-views");
 
 export type HeelViewCardProps = {
   photo: string;

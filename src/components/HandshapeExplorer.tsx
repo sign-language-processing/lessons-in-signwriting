@@ -1,8 +1,9 @@
 import { Fragment, useState, type CSSProperties } from "react";
+import { asset } from "../lib/asset";
 import { fillVariants, symbolToKey } from "../lib/handImage";
 import { SgnwSymbol } from "./Sgnw";
 
-const ART = "/docling-out/sw0116-Lessons-SignWriting_artifacts";
+const ART = asset("/docling-out/sw0116-Lessons-SignWriting_artifacts");
 
 type Shape = {
   name: string;

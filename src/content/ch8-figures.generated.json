@@ -39,19 +39,22 @@
     "word": "third",
     "sign": "/figures/ch8/ch8-third-sign.png",
     "video": "/videos/whatsthatsign/ch8-third/ch8-third.mp4",
-    "swu": "𝠀񀮁񋽁񀀇񈗥񋵡𝠃𝤒𝤣񀮁𝣻𝣪񈗥𝣼𝤌񋵡𝣾𝤞"
+    "swu": "𝠃𝤕𝤡񀭒𝣷𝤃񊤡𝣻𝣫",
+    "confirmed": true
   },
   "ch8-apple": {
     "word": "apple",
     "sign": "/figures/ch8/ch8-apple-sign.png",
     "video": "/videos/whatsthatsign/ch8-apple/ch8-apple.mp4",
-    "swu": "𝠀񀉓񌀆񀀇񆙡񊦁𝠃𝥅𝤠񋾡𝣴𝣵񀉓𝤕𝤑񊦁𝤝𝣵"
+    "swu": "𝠀񀉓񌀆񀀇񆙡񊦁𝠃𝥅𝤠񋾡𝣴𝣵񀉓𝤕𝤑񊦁𝤝𝣵",
+    "confirmed": true
   },
   "ch8-begin": {
     "word": "begin",
     "sign": "/figures/ch8/ch8-begin-sign.png",
     "video": "/videos/whatsthatsign/ch8-begin/ch8-begin.mp4",
-    "swu": "𝠀񀀓񋽁񁳊񋽁񆞇񆜡񊤡𝠃𝤠𝤡񁳊𝣬𝤆񀀓𝣻𝤉񆜡𝣭𝣲񊤡𝤆𝣫"
+    "swu": "𝠀񀀓񋽁񁳊񋽁񆞇񆜡񊤡𝠃𝤠𝤡񁳊𝣬𝤆񀀓𝣻𝤉񆜡𝣭𝣲񊤡𝤆𝣫",
+    "confirmed": true
   },
   "ch8-blue": {
     "word": "blue",

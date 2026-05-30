@@ -3,6 +3,7 @@ import { Col, Row } from "../components/Layout";
 import { SgnwSign, SgnwSymbol } from "../components/Sgnw";
 import { YouTubeVideo } from "../components/YouTubeVideo";
 import { TRANSCRIPT_1, VIDEO_CREDITS } from "../content/videos";
+import { asset } from "../lib/asset";
 
 const KNOW_LEFT_SIGN = "𝠃𝤘𝤘񋾡𝣴𝣵񂇚𝣝𝣹񆇡𝣲𝣭";
 const KNOW_RIGHT_SIGN = "𝠃𝤯𝤘񋾡𝣴𝣵񂇒𝤘𝣹񆇡𝤐𝣭";
@@ -43,7 +44,7 @@ const OVERLAY_STYLE: React.CSSProperties = {
 };
 const OVERLAY_SIZE = 150;
 
-const ART = "/docling-out/sw0116-Lessons-SignWriting_artifacts";
+const ART = asset("/docling-out/sw0116-Lessons-SignWriting_artifacts");
 
 /** Head drawing with the asymmetric face overlaid in the empty top corner. */
 function FaceOverHead({ mirror }: { mirror: boolean }) {
@@ -207,14 +208,14 @@ export function Ch2Viewpoints() {
           <h3>Left Side of Head</h3>
           <SgnwSign
             sign={KNOW_LEFT_SIGN}
-            video="/videos/know/know.webm"
+            video="/videos/know/know.mp4"
             videoMirror
           />
           <Figure src={IMG.headDrawingLeft} />
         </Col>
         <Col>
           <h3>Right Side of Head</h3>
-          <SgnwSign sign={KNOW_RIGHT_SIGN} video="/videos/know/know.webm" />
+          <SgnwSign sign={KNOW_RIGHT_SIGN} video="/videos/know/know.mp4" />
           <Figure src={IMG.headDrawingRight} />
         </Col>
       </Row>

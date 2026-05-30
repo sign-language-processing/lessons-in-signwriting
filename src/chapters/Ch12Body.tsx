@@ -1,4 +1,5 @@
 import { figures } from "../content/figures";
+import { asset } from "../lib/asset";
 
 const SHOULDER_ITEMS = [
   "ch12-shoulder-shoulders",
@@ -41,7 +42,7 @@ function SymbolRow({ slug }: { slug: string }) {
   return (
     <div className="ch12-ref__row">
       <span className="ch12-ref__symbol">
-        <img src={fig.illustration} alt="" />
+        <img src={asset(fig.illustration)} alt="" />
       </span>
       <span className="ch12-ref__label">{fig.word}</span>
     </div>
@@ -65,12 +66,12 @@ export function Ch12Body() {
       <figure className="ch12-cover">
         <img
           className="ch12-cover__photo"
-          src="/figures/ch12/ch12-cover-photo.png"
+          src={asset("/figures/ch12/ch12-cover-photo.png")}
           alt="A signer raising both shoulders to demonstrate body movement"
         />
         <img
           className="ch12-cover__glyph"
-          src="/figures/ch12/ch12-the-body-glyph.png"
+          src={asset("/figures/ch12/ch12-the-body-glyph.png")}
           alt="The SignWriting symbol for the body"
         />
       </figure>
@@ -89,7 +90,7 @@ export function Ch12Body() {
       </p>
       <figure className="ch12-tilts">
         <img
-          src="/figures/ch12/ch12-upper-body-tilts.png"
+          src={asset("/figures/ch12/ch12-upper-body-tilts.png")}
           alt="Grid of circle-and-arrow symbols showing every direction the upper body tilts and rocks from the hip joint"
         />
       </figure>

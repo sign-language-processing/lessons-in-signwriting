@@ -73,20 +73,26 @@
     "illustration": "/figures/ch6/ch6-nothing-illustration.png",
     "confirmed": true
   },
-  "ch6-right": {
-    "word": "right (direction)",
-    "sign": "/figures/ch6/ch6-right-sign.png",
-    "video": "/videos/whatsthatsign/ch6-right/ch6-right.mp4",
-    "swu": "𝠀񀁂񋽁񀀋񋽁񆞁񆇡𝠃𝤗𝤜񀀋𝣹𝤍񀁂𝣵𝣱",
-    "illustration": "/figures/ch6/ch6-right-illustration.png",
-    "confirmed": true
-  },
   "ch6-ask-question": {
     "word": "ask a question",
     "sign": "/figures/ch6/ch6-ask-question-sign.png",
     "video": "/videos/whatsthatsign/ch6-ask-question/ch6-ask-question.mp4",
     "swu": "𝠀񀀡񋽁񀀇񈗡񀉡𝠃𝤑𝤬񀀡𝤂𝤎񈗡𝤃𝣾񀉡𝣼𝣡",
     "illustration": "/figures/ch6/ch6-ask-question-illustration.png",
+    "confirmed": true
+  },
+  "ch6-follow": {
+    "word": "follow",
+    "sign": "/figures/ch6/ch6-follow-sign.png",
+    "video": "/videos/whatsthatsign/ch6-follow/ch6-follow.mp4",
+    "swu": "𝠀񅰡񋽁񅰩񋽁񆞕񆇡񈘁𝠃𝤔𝤞񅰩𝣹𝣾񅰡𝤅𝤆񈘁𝤁𝣮",
+    "confirmed": true
+  },
+  "ch6-plan": {
+    "word": "plan",
+    "sign": "/figures/ch6/ch6-plan-sign.png",
+    "video": "/videos/whatsthatsign/ch6-plan/ch6-plan.mp4",
+    "swu": "𝠀񂈁񋽁񂈉񋽁񏀇񈘇𝠃𝤢𝤔񂈁𝤂𝣹񂈉𝣫𝣹񈘇𝤓𝤁",
     "confirmed": true
   }
 }

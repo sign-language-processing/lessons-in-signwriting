@@ -1,6 +1,7 @@
 import { Figure } from "../components/Figure";
 import { FingerExplorer } from "../components/FingerExplorer";
 import { Col, Row } from "../components/Layout";
+import { asset } from "../lib/asset";
 
 const IMG = {
   middleJointIntro:
@@ -37,7 +38,7 @@ export function Ch5FingerMovement() {
       <p>Specific finger-by-finger opening and closing.</p>
       <div className="seq-grid">
         <figure className="seq-cell">
-          <img src="/figures/finger/seq-name-sign.png" alt="a name sign" />
+          <img src={asset("/figures/finger/seq-name-sign.png")} alt="a name sign" />
           <figcaption>a name sign</figcaption>
           <p>
             Just follow the arrows. The movement starts at the stem of the
@@ -47,14 +48,14 @@ export function Ch5FingerMovement() {
           </p>
         </figure>
         <div className="seq-cell">
-          <img src="/figures/finger/seq-closes.png" alt="" />
+          <img src={asset("/figures/finger/seq-closes.png")} alt="" />
           <h3>Sequential Finger Movement That Closes</h3>
           <p className="seq-sub">From The Middle Joint</p>
           <p>…very specific finger-by-finger closing of the fingers…</p>
           <p>Exact details of which finger closes first, second and third.</p>
         </div>
         <figure className="seq-cell">
-          <img src="/figures/finger/seq-few.png" alt="FEW" />
+          <img src={asset("/figures/finger/seq-few.png")} alt="FEW" />
           <figcaption>
             <strong>FEW</strong>
             <br />

@@ -1,5 +1,6 @@
 import { Sidebar } from "./components/Sidebar";
 import { SymbolDialogProvider } from "./components/SymbolDialogContext";
+import { asset } from "./lib/asset";
 import { Ch1Introduction } from "./chapters/Ch1Introduction";
 import { Ch2Viewpoints } from "./chapters/Ch2Viewpoints";
 import { Ch3Hands } from "./chapters/Ch3Hands";
@@ -39,7 +40,7 @@ export function App() {
       </div>
       <aside className="pdf-debug" data-no-print aria-label="Source PDF (for debugging)">
         <iframe
-          src="/pdfjs/web/viewer.html?file=/sw0116-Lessons-SignWriting.pdf"
+          src={`${asset("/pdfjs/web/viewer.html")}?file=${asset("/sw0116-Lessons-SignWriting.pdf")}`}
           title="Source PDF"
         />
       </aside>

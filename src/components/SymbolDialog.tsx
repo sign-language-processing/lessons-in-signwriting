@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { asset } from "../lib/asset";
 import { fillVariants, handImageForKey } from "../lib/handImage";
 
 export type SymbolDialogProps = {
@@ -133,7 +134,7 @@ export function SymbolDialog({ openKey, onClose }: SymbolDialogProps) {
                 ></sgnw-symbol>
                 {img ? (
                   <img
-                    src={img}
+                    src={asset(img)}
                     alt={FILL_LABELS[i]}
                     style={{ maxHeight: 100, maxWidth: "100%", width: "auto", height: "auto" }}
                   />

@@ -1,8 +1,7 @@
 import { useRef, useState, type CSSProperties } from "react";
 import { figures as FIGURES } from "../content/figures";
+import { asset } from "../lib/asset";
 import { SgnwSign } from "./Sgnw";
-
-const LIVE_SIGN_SIZE = 72;
 
 const POPOVER_HEIGHT = 200;
 const POPOVER_GAP = 8;
@@ -52,11 +51,11 @@ export function SignFigure({ slug }: SignFigureProps) {
   return (
     <figure className="sign-figure">
       {fig.illustration && (
-        <img className="sign-figure__illustration" src={fig.illustration} alt="" />
+        <img className="sign-figure__illustration" src={asset(fig.illustration)} alt="" />
       )}
       {confirmed ? (
         <span className="sign-figure__sign">
-          <SgnwSign sign={fig.swu as string} video={fig.video} size={LIVE_SIGN_SIZE} />
+          <SgnwSign sign={fig.swu as string} video={fig.video} />
         </span>
       ) : (
         <span
@@ -70,7 +69,7 @@ export function SignFigure({ slug }: SignFigureProps) {
           onBlur={matched ? closePopover : undefined}
           tabIndex={matched ? 0 : undefined}
         >
-          <img src={fig.sign} alt={fig.word} />
+          <img src={asset(fig.sign)} alt={fig.word} />
           {matched && placement !== "hidden" && (
             <span
               className="sign-figure__popover"
@@ -79,7 +78,7 @@ export function SignFigure({ slug }: SignFigureProps) {
             >
               <sgnw-sign sign={fig.swu}></sgnw-sign>
               {fig.video && (
-                <video src={fig.video} autoPlay loop muted playsInline />
+                <video src={asset(fig.video)} autoPlay loop muted playsInline />
               )}
             </span>
           )}

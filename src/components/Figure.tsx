@@ -1,4 +1,5 @@
 import { useState, type CSSProperties, type ReactNode } from "react";
+import { asset } from "../lib/asset";
 
 const ARTIFACTS = "docling-out/sw0116-Lessons-SignWriting_artifacts";
 
@@ -25,10 +26,9 @@ export function Figure({
   imgStyle,
   overlay,
 }: FigureProps) {
-  const finalSrc =
-    src.startsWith("http") || src.startsWith("/")
-      ? src
-      : `/${ARTIFACTS}/${src}`;
+  const finalSrc = asset(
+    src.startsWith("http") || src.startsWith("/") ? src : `/${ARTIFACTS}/${src}`,
+  );
 
   const [copied, setCopied] = useState(false);
   const handleDoubleClick = async () => {

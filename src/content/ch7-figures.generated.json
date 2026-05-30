@@ -18,32 +18,37 @@
     "illustration": "/figures/ch7/ch7-shape-illustration.png",
     "sign": "/figures/ch7/ch7-shape-sign.png",
     "video": "/videos/whatsthatsign/ch7-shape/ch7-shape.mp4",
-    "swu": "𝠀񅳁񋽁񅳉񋽁񏀇񉥥񉥽𝠃𝤟𝤟񅳁𝤋𝣭񅳉𝣮𝣭񉥥𝤑𝣿񉥽𝣮𝣿"
+    "swu": "𝠀񅳁񋽁񅳉񋽁񏀇񉥥񉥽𝠃𝤟𝤟񅳁𝤋𝣭񅳉𝣮𝣭񉥥𝤑𝣿񉥽𝣮𝣿",
+    "confirmed": true
   },
   "ch7-spaghetti": {
     "word": "spaghetti",
     "illustration": "/figures/ch7/ch7-spaghetti-illustration.png",
     "sign": "/figures/ch7/ch7-spaghetti-sign.png",
     "video": "/videos/whatsthatsign/ch7-spaghetti/ch7-spaghetti.mp4",
-    "swu": "𝠀񃛂񋽁񃛊񋽁񏀇񉟫񉟳𝠃𝥁𝤓񃛂𝤋𝤀񃛊𝣨𝤀񉟫𝤢𝣹񉟳𝣌𝣹"
+    "swu": "𝠀񃛂񋽁񃛊񋽁񏀇񉟫񉟳𝠃𝥁𝤓񃛂𝤋𝤀񃛊𝣨𝤀񉟫𝤢𝣹񉟳𝣌𝣹",
+    "confirmed": true
   },
   "ch7-across": {
     "word": "across",
     "sign": "/figures/ch7/ch7-across-sign.png",
     "video": "/videos/whatsthatsign/ch7-across/ch7-across.mp4",
-    "swu": "𝠀񂇑񋽁񂇛񋽁񏀅񊒡𝠃𝤚𝤡񂇑𝤁𝤆񂇛𝣳𝣸񊒡𝤇𝣫"
+    "swu": "𝠀񂇑񋽁񂇛񋽁񏀅񊒡𝠃𝤚𝤡񂇑𝤁𝤆񂇛𝣳𝣸񊒡𝤇𝣫",
+    "confirmed": true
   },
   "ch7-grandmother": {
     "word": "grandmother",
     "sign": "/figures/ch7/ch7-grandmother-sign.png",
     "video": "/videos/whatsthatsign/ch7-grandmother/ch7-grandmother.mp4",
-    "swu": "𝠀񁲨񌀅񀀇񆇡񊕢𝠃𝤶𝤩񋾡𝣴𝣵񁲨𝤊𝤎񊕢𝤜𝣳"
+    "swu": "𝠀񁲨񌀅񀀇񆇡񊕢𝠃𝤶𝤩񋾡𝣴𝣵񁲨𝤊𝤎񊕢𝤜𝣳",
+    "confirmed": true
   },
   "ch7-allow": {
     "word": "allow",
     "sign": "/figures/ch7/ch7-allow-sign.png",
     "video": "/videos/whatsthatsign/ch7-allow/ch7-allow.mp4",
-    "swu": "𝠀񂈁񋽁񂈉񋽁񏀇񊻁񊻒𝠃𝤤𝤡񂈁𝤐𝣫񂈉𝣱𝣫񊻁𝤊𝤊񊻒𝣩𝤊"
+    "swu": "𝠀񂈁񋽁񂈉񋽁񏀇񊻁񊻒𝠃𝤤𝤡񂈁𝤐𝣫񂈉𝣱𝣫񊻁𝤊𝤊񊻒𝣩𝤊",
+    "confirmed": true
   },
   "ch7-announce": {
     "word": "announce",

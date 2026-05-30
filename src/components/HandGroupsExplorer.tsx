@@ -1,8 +1,9 @@
 import { useState, type CSSProperties } from "react";
 import { HAND_GROUPS, type HandExample, type HandGroup } from "../lib/handGroups";
+import { asset } from "../lib/asset";
 import { SgnwSign, SgnwSymbol } from "./Sgnw";
 
-const ART = "/docling-out/sw0116-Lessons-SignWriting_artifacts";
+const ART = asset("/docling-out/sw0116-Lessons-SignWriting_artifacts");
 
 function copyOnDoubleClick(src: string) {
   return () => {

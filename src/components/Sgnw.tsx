@@ -1,4 +1,5 @@
 import { useRef, useState, type CSSProperties } from "react";
+import { asset } from "../lib/asset";
 import { handImageFor, symbolToKey } from "../lib/handImage";
 import { useSymbolDialog } from "./SymbolDialogContext";
 
@@ -109,7 +110,7 @@ export function SgnwSymbol({ symbol, size, className, style }: SgnwSymbolProps) 
       <sgnw-symbol symbol={symbol} style={symbolStyle}></sgnw-symbol>
       {placement !== "hidden" && (
         <img
-          src={handImage}
+          src={asset(handImage)}
           alt=""
           style={{
             position: "absolute",
@@ -220,7 +221,7 @@ export function SgnwSign({
       <sgnw-sign sign={sign} style={mergedStyle}></sgnw-sign>
       {placement !== "hidden" && (
         <video
-          src={video}
+          src={asset(video)}
           autoPlay
           loop
           muted
