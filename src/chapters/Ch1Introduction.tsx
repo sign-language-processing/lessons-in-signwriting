@@ -56,7 +56,7 @@ export function Ch1Introduction() {
         </figure>
         <figure className="contributor-portrait">
           <img src={`${ART}/${ADAM_IMG}`} alt="Adam Frost" />
-          <SgnwSign sign={ADAM_SIGN} />
+          <SgnwSign sign={ADAM_SIGN} video="/videos/names/adam.mp4" />
           <figcaption>Adam Frost</figcaption>
         </figure>
         <figure className="contributor-portrait">
