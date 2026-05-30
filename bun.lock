@@ -15,7 +15,6 @@
         "three": "^0.184.0",
       },
       "devDependencies": {
-        "@stencil/core": "^2.17.0",
         "@types/react": "^19.0.0",
         "@types/react-dom": "^19.0.0",
         "@types/three": "^0.184.1",
@@ -213,8 +212,6 @@
     "@rollup/rollup-win32-x64-gnu": ["@rollup/rollup-win32-x64-gnu@4.60.4", "", { "os": "win32", "cpu": "x64" }, "sha512-DRS4G7mi9lJxqEDezIkKCaUIKCrLUUDCUaCsTPCi/rtqaC6D/jjwslMQyiDU50Ka0JKpeXeRBFBAXwArY52vBw=="],
 
     "@rollup/rollup-win32-x64-msvc": ["@rollup/rollup-win32-x64-msvc@4.60.4", "", { "os": "win32", "cpu": "x64" }, "sha512-QVTUovf40zgTqlFVrKA1uXMVvU2QWEFWfAH8Wdc48IxLvrJMQVMBRjuQyUpzZCDkakImib9eVazbWlC6ksWtJw=="],
-
-    "@stencil/core": ["@stencil/core@2.22.3", "", { "bin": { "stencil": "bin/stencil" } }, "sha512-kmVA0M/HojwsfkeHsifvHVIYe4l5tin7J5+DLgtl8h6WWfiMClND5K3ifCXXI2ETDNKiEk21p6jql3Fx9o2rng=="],
 
     "@sutton-signwriting/core": ["@sutton-signwriting/core@2.0.1", "", {}, "sha512-+0m8XQV3QrMGdb1Le3/xibv8Sp1iMcu3p5A+U76PCUWsj4i+TVAyvCYIQ3obUgqe1qUKvANn+3o+1quySOdtbA=="],
 
