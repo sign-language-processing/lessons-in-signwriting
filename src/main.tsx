@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./styles.css";
 import { App } from "./App";
 import { asset } from "./lib/asset";
+import { AUTHORING } from "./lib/devMode";
 import { setupScrollPersist } from "./lib/scrollPersist";
 
 // Load Stencil's prebuilt lazy bundle from /public via a module script tag. It
@@ -15,7 +16,7 @@ const sgnwLoader = document.createElement("script");
 sgnwLoader.type = "module";
 sgnwLoader.src = asset("/vendor/sgnw-components/sgnw-components.esm.js");
 document.head.appendChild(sgnwLoader);
-setupScrollPersist();
+if (AUTHORING) setupScrollPersist();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

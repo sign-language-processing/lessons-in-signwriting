@@ -1,6 +1,7 @@
 import { useRef, useState, type CSSProperties } from "react";
 import { figures as FIGURES } from "../content/figures";
 import { asset } from "../lib/asset";
+import { AUTHORING } from "../lib/devMode";
 import { SgnwSign } from "./Sgnw";
 
 const POPOVER_HEIGHT = 200;
@@ -25,7 +26,9 @@ export function SignFigure({ slug }: SignFigureProps) {
 
   if (!fig) return null;
   const confirmed = Boolean(fig.confirmed && fig.swu);
-  const matched = !confirmed && Boolean(fig.swu);
+  // "Candidate" signs (matched to a sign but not yet confirmed) are an authoring
+  // affordance — in release they fall back to the plain extracted image.
+  const matched = AUTHORING && !confirmed && Boolean(fig.swu);
 
   const openPopover = () => {
     const el = signRef.current;

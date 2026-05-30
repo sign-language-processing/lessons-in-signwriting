@@ -1,5 +1,6 @@
 import { useState, type CSSProperties, type ReactNode } from "react";
 import { asset } from "../lib/asset";
+import { AUTHORING } from "../lib/devMode";
 
 const ARTIFACTS = "docling-out/sw0116-Lessons-SignWriting_artifacts";
 
@@ -51,8 +52,8 @@ export function Figure({
       <span
         className="img-wrap"
         style={wrapStyle}
-        onDoubleClick={handleDoubleClick}
-        title="Double-click to copy image path"
+        onDoubleClick={AUTHORING ? handleDoubleClick : undefined}
+        title={AUTHORING ? "Double-click to copy image path" : undefined}
       >
         <img src={finalSrc} alt={alt ?? ""} style={imgStyle} />
         {overlay}

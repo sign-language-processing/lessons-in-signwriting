@@ -1,6 +1,7 @@
 import { useState, type CSSProperties } from "react";
 import { HAND_GROUPS, type HandExample, type HandGroup } from "../lib/handGroups";
 import { asset } from "../lib/asset";
+import { AUTHORING } from "../lib/devMode";
 import { SgnwSign, SgnwSymbol } from "./Sgnw";
 
 const ART = asset("/docling-out/sw0116-Lessons-SignWriting_artifacts");
@@ -30,8 +31,8 @@ function ExampleCell({ example }: { example: HandExample }) {
         src={src}
         alt={example.word}
         loading="lazy"
-        onDoubleClick={copyOnDoubleClick(src)}
-        title="Double-click to copy image path"
+        onDoubleClick={AUTHORING ? copyOnDoubleClick(src) : undefined}
+        title={AUTHORING ? "Double-click to copy image path" : undefined}
       />
       <figcaption>{example.word}</figcaption>
     </li>
