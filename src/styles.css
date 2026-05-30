@@ -8,11 +8,17 @@ body {
 }
 #root {
   display: grid;
-  grid-template-columns: 240px minmax(0, 800px) 500px;
+  grid-template-columns: 240px minmax(0, 800px);
   gap: 2rem;
   justify-content: center;
   align-items: start;
   padding: 2rem;
+}
+/* Authoring builds add a third column for the source PDF panel. */
+@media (min-width: 1401px) {
+  html.authoring #root {
+    grid-template-columns: 240px minmax(0, 800px) 500px;
+  }
 }
 .page {
   background-color: white;

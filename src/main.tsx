@@ -16,7 +16,10 @@ const sgnwLoader = document.createElement("script");
 sgnwLoader.type = "module";
 sgnwLoader.src = asset("/vendor/sgnw-components/sgnw-components.esm.js");
 document.head.appendChild(sgnwLoader);
-if (AUTHORING) setupScrollPersist();
+if (AUTHORING) {
+  document.documentElement.classList.add("authoring");
+  setupScrollPersist();
+}
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
