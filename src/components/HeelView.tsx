@@ -1,36 +1,42 @@
+import { Fragment } from "react";
 import { asset } from "../lib/asset";
 
 const BASE = asset("/textbook/heel-views");
 
-export type HeelViewCardProps = {
+export type HeelRow = {
   photo: string;
-  /** Optional second photo (e.g. the "top view" companion in image 176). */
+  /** Optional companion photo (e.g. the Top-View pose alongside the Wrist-View pose). */
   altPhoto?: string;
   symbolL: string;
   symbolR: string;
 };
 
-const LABEL = "Heel of Hand Wrist View …OR… Top View";
-
-export function HeelViewCard({
-  photo,
-  altPhoto,
-  symbolL,
-  symbolR,
-}: HeelViewCardProps) {
+/**
+ * A handshape that can be written two equivalent ways — the Heel of Hand
+ * "Wrist View" or the traditional Top View. Laid out as a grid table so the
+ * two column headings appear once instead of repeating per row, and every row
+ * shares the same photo / Wrist-View / Top-View columns.
+ */
+export function HeelViewTable({ rows }: { rows: HeelRow[] }) {
   return (
-    <div className="heel-view">
-      <img className="heel-view__photo" src={`${BASE}/${photo}`} alt="" />
-      <div className="heel-view__symbols">
-        <div className="heel-view__label">{LABEL}</div>
-        <div className="heel-view__pair">
-          <img src={`${BASE}/${symbolL}`} alt="Heel of Hand Wrist View symbol" />
-          <img src={`${BASE}/${symbolR}`} alt="Top View symbol" />
-        </div>
-      </div>
-      {altPhoto ? (
-        <img className="heel-view__photo" src={`${BASE}/${altPhoto}`} alt="" />
-      ) : null}
+    <div className="heel-table">
+      <span className="heel-table__head" />
+      <span className="heel-table__head">Heel of Hand · Wrist View</span>
+      <span className="heel-table__head">Top View</span>
+      {rows.map((r) => (
+        <Fragment key={r.photo}>
+          <div className="heel-table__photos">
+            <img src={`${BASE}/${r.photo}`} alt="" />
+            {r.altPhoto ? <img src={`${BASE}/${r.altPhoto}`} alt="" /> : null}
+          </div>
+          <img
+            className="heel-table__sym"
+            src={`${BASE}/${r.symbolL}`}
+            alt="Heel of Hand Wrist View symbol"
+          />
+          <img className="heel-table__sym" src={`${BASE}/${r.symbolR}`} alt="Top View symbol" />
+        </Fragment>
+      ))}
     </div>
   );
 }

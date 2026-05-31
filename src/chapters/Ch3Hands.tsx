@@ -4,7 +4,7 @@ import { Fingerspelling } from "../components/Fingerspelling";
 import { HandGroupsExplorer } from "../components/HandGroupsExplorer";
 import { HandshapeExamples } from "../components/HandshapeExamples";
 import { HandshapeExplorer } from "../components/HandshapeExplorer";
-import { HeelViewCard } from "../components/HeelView";
+import { HeelViewTable } from "../components/HeelView";
 import { Grid } from "../components/Layout";
 import { SgnwSign, SgnwSymbol } from "../components/Sgnw";
 import { asset } from "../lib/asset";
@@ -738,34 +738,34 @@ export function Ch3Hands() {
         called the Heel of Hand "Wrist View", or from the traditional Top View.
       </p>
       <p>
-        <strong>Two Ways to Write The Same Handshape</strong> — Heel of Hand
-        Wrist View …OR… Top View. Use either symbol.
+        <strong>Two Ways to Write The Same Handshape</strong> — use either
+        symbol.
       </p>
-      <HeelViewCard
-        photo="person-176-a.png"
-        altPhoto="person-176-b.png"
-        symbolL="symbol-176-L.png"
-        symbolR="symbol-176-R.png"
-      />
-      <HeelViewCard
-        photo="person-177.png"
-        symbolL="symbol-177-L.png"
-        symbolR="symbol-177-R.png"
-      />
-      <HeelViewCard
-        photo="person-178-a.png"
-        symbolL="symbol-178-a-L.png"
-        symbolR="symbol-178-a-R.png"
-      />
-      <HeelViewCard
-        photo="person-178-b.png"
-        symbolL="symbol-178-b-L.png"
-        symbolR="symbol-178-b-R.png"
-      />
-      <HeelViewCard
-        photo="person-178-c.png"
-        symbolL="symbol-178-c-L.png"
-        symbolR="symbol-178-c-R.png"
+      <HeelViewTable
+        rows={[
+          {
+            photo: "person-176-a.png",
+            altPhoto: "person-176-b.png",
+            symbolL: "symbol-176-L.png",
+            symbolR: "symbol-176-R.png",
+          },
+          { photo: "person-177.png", symbolL: "symbol-177-L.png", symbolR: "symbol-177-R.png" },
+          {
+            photo: "person-178-a.png",
+            symbolL: "symbol-178-a-L.png",
+            symbolR: "symbol-178-a-R.png",
+          },
+          {
+            photo: "person-178-b.png",
+            symbolL: "symbol-178-b-L.png",
+            symbolR: "symbol-178-b-R.png",
+          },
+          {
+            photo: "person-178-c.png",
+            symbolL: "symbol-178-c-L.png",
+            symbolR: "symbol-178-c-R.png",
+          },
+        ]}
       />
 
       <h2>Heel of Hand or Top View?</h2>
@@ -774,15 +774,11 @@ export function Ch3Hands() {
         parallel to the Floor Plane, can be written from a special viewpoint
         called the Heel of Hand "Wrist View", or from the traditional Top View.
       </p>
-      <HeelViewCard
-        photo="person-179.png"
-        symbolL="symbol-179-L.png"
-        symbolR="symbol-179-R.png"
-      />
-      <HeelViewCard
-        photo="person-180.png"
-        symbolL="symbol-180-L.png"
-        symbolR="symbol-180-R.png"
+      <HeelViewTable
+        rows={[
+          { photo: "person-179.png", symbolL: "symbol-179-L.png", symbolR: "symbol-179-R.png" },
+          { photo: "person-180.png", symbolL: "symbol-180-L.png", symbolR: "symbol-180-R.png" },
+        ]}
       />
 
       <h2>Finger Direction Is Meaningful</h2>
