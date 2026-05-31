@@ -532,7 +532,9 @@ export function Ch3Hands() {
       <Grid columns="1fr 2fr" gap="1.5em" align="center">
         <Figure src={IMG.expFront1} style={{ margin: 0 }} />
         <div>
-          <h3 style={{ marginTop: 0 }}>Palm of Hand</h3>
+          <h3 style={{ marginTop: 0 }}>
+            Palm of Hand <sgnw-symbol symbol="񂇁"></sgnw-symbol>
+          </h3>
           <p>The palm of the hand is written with a white or hollow symbol.</p>
           <p>
             <strong>Front View — Parallel with Wall Plane:</strong> the hand is
@@ -543,7 +545,9 @@ export function Ch3Hands() {
 
         <Figure src={IMG.expFront2} style={{ margin: 0 }} />
         <div>
-          <h3 style={{ marginTop: 0 }}>Side of Hand</h3>
+          <h3 style={{ marginTop: 0 }}>
+            Side of Hand <sgnw-symbol symbol="񂇑"></sgnw-symbol>
+          </h3>
           <p>
             The side of the hand is written with a symbol that is half-white
             and half-dark. The half-white section shows the direction of the
@@ -558,7 +562,9 @@ export function Ch3Hands() {
 
         <Figure src={IMG.expFront3} style={{ margin: 0 }} />
         <div>
-          <h3 style={{ marginTop: 0 }}>Back of Hand</h3>
+          <h3 style={{ marginTop: 0 }}>
+            Back of Hand <sgnw-symbol symbol="񂇡"></sgnw-symbol>
+          </h3>
           <p>
             The back of the hand is written with a black or filled-in symbol.
           </p>
@@ -578,7 +584,9 @@ export function Ch3Hands() {
       <Grid columns="1fr 2fr" gap="1.5em" align="center">
         <Figure src={IMG.expTop1} style={{ margin: 0 }} />
         <div>
-          <h3 style={{ marginTop: 0 }}>Palm of Hand</h3>
+          <h3 style={{ marginTop: 0 }}>
+            Palm of Hand <sgnw-symbol symbol="񂇱"></sgnw-symbol>
+          </h3>
           <p>
             <strong>Top View — Parallel with Floor Plane:</strong> the hand is
             parallel to the floor. You are looking down at your palm from
@@ -591,7 +599,9 @@ export function Ch3Hands() {
 
         <Figure src={IMG.expTop2} style={{ margin: 0 }} />
         <div>
-          <h3 style={{ marginTop: 0 }}>Side of Hand</h3>
+          <h3 style={{ marginTop: 0 }}>
+            Side of Hand <sgnw-symbol symbol="񂈁"></sgnw-symbol>
+          </h3>
           <p>
             <strong>Top View — Parallel with Floor Plane:</strong> the hand is
             parallel to the floor. You are looking down at the side of your
@@ -602,7 +612,9 @@ export function Ch3Hands() {
 
         <Figure src={IMG.expTop3} style={{ margin: 0 }} />
         <div>
-          <h3 style={{ marginTop: 0 }}>Back of Hand</h3>
+          <h3 style={{ marginTop: 0 }}>
+            Back of Hand <sgnw-symbol symbol="񂈑"></sgnw-symbol>
+          </h3>
           <p>
             <strong>Top View — Parallel with Floor Plane:</strong> the hand is
             parallel to the floor. You are looking down at the back of your
