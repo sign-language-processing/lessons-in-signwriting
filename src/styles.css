@@ -426,8 +426,8 @@ fsw-symbol {
   margin-block: 1.5em;
 }
 .action-tree__svg {
-  width: 180px;
-  height: 216px;
+  width: auto;
+  height: 200px;
 }
 .action-tree__svg path {
   fill: none;
@@ -450,8 +450,22 @@ fsw-symbol {
   }
 }
 .action-tree__symbol {
-  display: flex;
-  justify-content: center;
+  position: relative;
+  width: 130px;
+  height: 200px;
+}
+.action-tree__glyph {
+  position: absolute;
+  /* Bottom-left anchored so every stage lines up with the widest (last)
+     symbol — the rootshape stays put while Action Fingers extend up and out. */
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.action-tree__glyph.is-active {
+  opacity: 1;
 }
 .action-tree__text p {
   margin-block: 0.35em;
