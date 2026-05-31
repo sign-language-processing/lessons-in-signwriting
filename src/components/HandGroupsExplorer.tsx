@@ -1,16 +1,9 @@
 import { useState, type CSSProperties } from "react";
 import { HAND_GROUPS, type HandExample, type HandGroup } from "../lib/handGroups";
 import { asset } from "../lib/asset";
-import { AUTHORING } from "../lib/devMode";
 import { SgnwSign, SgnwSymbol } from "./Sgnw";
 
 const ART = asset("/docling-out/sw0116-Lessons-SignWriting_artifacts");
-
-function copyOnDoubleClick(src: string) {
-  return () => {
-    void navigator.clipboard?.writeText(src).catch(() => {});
-  };
-}
 
 function ExampleCell({ example }: { example: HandExample }) {
   if (example.placeholder) {
@@ -27,13 +20,7 @@ function ExampleCell({ example }: { example: HandExample }) {
   const src = `${ART}/${example.file}`;
   return (
     <li>
-      <img
-        src={src}
-        alt={example.word}
-        loading="lazy"
-        onDoubleClick={AUTHORING ? copyOnDoubleClick(src) : undefined}
-        title={AUTHORING ? "Double-click to copy image path" : undefined}
-      />
+      <img src={src} alt={example.word} loading="lazy" />
       <figcaption>{example.word}</figcaption>
     </li>
   );

@@ -1,6 +1,5 @@
-import { useState, type CSSProperties, type ReactNode } from "react";
+import { type CSSProperties, type ReactNode } from "react";
 import { asset } from "../lib/asset";
-import { AUTHORING } from "../lib/devMode";
 
 const ARTIFACTS = "docling-out/sw0116-Lessons-SignWriting_artifacts";
 
@@ -31,17 +30,6 @@ export function Figure({
     src.startsWith("http") || src.startsWith("/") ? src : `/${ARTIFACTS}/${src}`,
   );
 
-  const [copied, setCopied] = useState(false);
-  const handleDoubleClick = async () => {
-    try {
-      await navigator.clipboard.writeText(finalSrc);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1200);
-    } catch {
-      // ignore — clipboard may be unavailable (insecure context, etc.)
-    }
-  };
-
   return (
     <figure style={style}>
       {caption && (
@@ -49,15 +37,9 @@ export function Figure({
           <div className="caption">{caption}</div>
         </figcaption>
       )}
-      <span
-        className="img-wrap"
-        style={wrapStyle}
-        onDoubleClick={AUTHORING ? handleDoubleClick : undefined}
-        title={AUTHORING ? "Double-click to copy image path" : undefined}
-      >
+      <span className="img-wrap" style={wrapStyle}>
         <img src={finalSrc} alt={alt ?? ""} style={imgStyle} />
         {overlay}
-        {copied && <span className="img-copied">Copied</span>}
       </span>
     </figure>
   );

@@ -4,6 +4,7 @@ import { SymbolDialogProvider } from "./components/SymbolDialogContext";
 import { asset } from "./lib/asset";
 import { AUTHORING } from "./lib/devMode";
 import { setupHeadingAnchors } from "./lib/headingAnchors";
+import { setupImageCopy } from "./lib/imageCopy";
 import { Ch1Introduction } from "./chapters/Ch1Introduction";
 import { Ch2Viewpoints } from "./chapters/Ch2Viewpoints";
 import { Ch3Hands } from "./chapters/Ch3Hands";
@@ -25,6 +26,11 @@ export function App() {
 
   useEffect(() => {
     if (pageRef.current) setupHeadingAnchors(pageRef.current);
+  }, []);
+
+  useEffect(() => {
+    if (!AUTHORING) return;
+    return setupImageCopy();
   }, []);
 
   return (
