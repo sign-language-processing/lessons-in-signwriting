@@ -8,7 +8,7 @@ const D = "/figures/ch15";
 export function Ch15WritingSigns() {
   return (
     <>
-      <h2 id="chapter-15">Chapter 15 — Writing Signs &amp; Sign Literature</h2>
+      <h2 id="chapter-15">Chapter 15 — Writing Signs</h2>
 
       <h2>Writing Signs</h2>
       <h3>SignSpelling Guideline 1 — First, write the Position of Contact</h3>

@@ -13,7 +13,7 @@ export const CHAPTERS = [
   { id: "chapter-12", title: "Body" },
   { id: "chapter-13", title: "Dynamics" },
   { id: "chapter-14", title: "Punctuation" },
-  { id: "chapter-15", title: "Writing Signs & Sign Literature" },
+  { id: "chapter-15", title: "Writing Signs" },
 ] as const;
 
 export type ChapterId = (typeof CHAPTERS)[number]["id"];
