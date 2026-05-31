@@ -1,7 +1,9 @@
+import { useEffect, useRef } from "react";
 import { Sidebar } from "./components/Sidebar";
 import { SymbolDialogProvider } from "./components/SymbolDialogContext";
 import { asset } from "./lib/asset";
 import { AUTHORING } from "./lib/devMode";
+import { setupHeadingAnchors } from "./lib/headingAnchors";
 import { Ch1Introduction } from "./chapters/Ch1Introduction";
 import { Ch2Viewpoints } from "./chapters/Ch2Viewpoints";
 import { Ch3Hands } from "./chapters/Ch3Hands";
@@ -19,10 +21,16 @@ import { Ch14Punctuation } from "./chapters/Ch14Punctuation";
 import { Ch15WritingSigns } from "./chapters/Ch15WritingSigns";
 
 export function App() {
+  const pageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (pageRef.current) setupHeadingAnchors(pageRef.current);
+  }, []);
+
   return (
     <SymbolDialogProvider>
       <Sidebar />
-      <div className="page">
+      <div className="page" ref={pageRef}>
         <Ch1Introduction />
         <Ch2Viewpoints />
         <Ch3Hands />

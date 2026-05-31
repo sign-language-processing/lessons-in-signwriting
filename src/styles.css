@@ -806,6 +806,27 @@ fsw-symbol {
   justify-content: center;
 }
 
+.page :is(h1, h2, h3) {
+  scroll-margin-top: 1rem;
+}
+.heading-anchor {
+  margin-inline-start: 0.35em;
+  opacity: 0;
+  color: #94a3b8;
+  text-decoration: none;
+  vertical-align: middle;
+  transition:
+    opacity 0.15s ease,
+    color 0.15s ease;
+}
+.page :is(h1, h2, h3):hover > .heading-anchor,
+.heading-anchor:focus-visible {
+  opacity: 1;
+}
+.heading-anchor:hover {
+  color: #2563eb;
+}
+
 .heel-table {
   display: grid;
   grid-template-columns: minmax(150px, 1.6fr) 1fr 1fr;
