@@ -435,18 +435,48 @@ fsw-symbol {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: action-tree-grow 0.7s ease-out forwards;
+  /* `both` keeps the 0% state during the start delay, so an ungrown branch is
+     fully transparent instead of showing a round-cap dot at its base. */
+  animation: action-tree-grow 0.7s ease-out both;
 }
 @keyframes action-tree-grow {
-  to {
+  0% {
+    stroke-dashoffset: 1;
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
     stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+.action-tree__leaf {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: action-leaf-pop 0.45s ease-out both;
+}
+@keyframes action-leaf-pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 @media (prefers-reduced-motion: reduce) {
   .action-tree__svg path {
     animation: none;
     stroke-dashoffset: 0;
+  }
+  .action-tree__leaf {
+    animation: none;
   }
 }
 .action-tree__symbol {
@@ -461,7 +491,6 @@ fsw-symbol {
   bottom: 0;
   left: 0;
   opacity: 0;
-  transition: opacity 0.35s ease;
   pointer-events: none;
 }
 .action-tree__glyph.is-active {

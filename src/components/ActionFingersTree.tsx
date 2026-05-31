@@ -43,11 +43,35 @@ const TWIGS: Branch[] = [
 
 const BRANCHES: Branch[] = [...TRUNK, ...BOUGHS, ...LIMBS, ...TWIGS];
 
+// Foliage clumps that pop in once the branches have grown, near the twig tips.
+type Leaf = { cx: number; cy: number; rx: number; ry: number; fill: string; delay: number };
+
+const GREEN = "#5a9e3a";
+const GREEN_DK = "#3f7d28";
+
+const LEAVES: Leaf[] = [
+  { cx: 32, cy: 80, rx: 9, ry: 7, fill: GREEN, delay: 3.7 },
+  { cx: 40, cy: 90, rx: 8, ry: 6, fill: GREEN_DK, delay: 3.75 },
+  { cx: 64, cy: 73, rx: 9, ry: 7, fill: GREEN, delay: 3.8 },
+  { cx: 175, cy: 80, rx: 9, ry: 7, fill: GREEN, delay: 3.7 },
+  { cx: 167, cy: 90, rx: 8, ry: 6, fill: GREEN_DK, delay: 3.75 },
+  { cx: 137, cy: 73, rx: 9, ry: 7, fill: GREEN, delay: 3.8 },
+  { cx: 64, cy: 67, rx: 8, ry: 6, fill: GREEN_DK, delay: 3.85 },
+  { cx: 88, cy: 64, rx: 9, ry: 7, fill: GREEN, delay: 3.9 },
+  { cx: 136, cy: 64, rx: 9, ry: 7, fill: GREEN, delay: 3.9 },
+  { cx: 112, cy: 62, rx: 8, ry: 6, fill: GREEN_DK, delay: 3.95 },
+  { cx: 100, cy: 72, rx: 9, ry: 7, fill: GREEN, delay: 4.0 },
+  { cx: 50, cy: 76, rx: 7, ry: 6, fill: GREEN, delay: 4.05 },
+  { cx: 122, cy: 74, rx: 7, ry: 6, fill: GREEN_DK, delay: 4.05 },
+  { cx: 152, cy: 82, rx: 7, ry: 6, fill: GREEN, delay: 4.1 },
+  { cx: 78, cy: 70, rx: 7, ry: 6, fill: GREEN_DK, delay: 4.1 },
+];
+
 // Symbols add one Action Finger per bough; index = stage. Times (ms) match the
 // trunk start and the three bough delays above.
 const SYMBOLS = ["񆄡", "񀀁", "񀕁", "񀭁"];
 const STAGE_AT = [0, 700, 1300, 1900];
-const CYCLE_MS = 5500;
+const CYCLE_MS = 6000;
 
 export function ActionFingersTree() {
   const [cycle, setCycle] = useState(0);
@@ -79,7 +103,7 @@ export function ActionFingersTree() {
   return (
     <div className="action-tree" data-no-print>
       {/* key remount restarts the staggered grow animation each cycle */}
-      <svg key={cycle} className="action-tree__svg" viewBox="26 62 150 184" aria-hidden="true">
+      <svg key={cycle} className="action-tree__svg" viewBox="20 50 172 200" aria-hidden="true">
         {BRANCHES.map((b) => (
           <path
             key={b.d}
@@ -87,6 +111,18 @@ export function ActionFingersTree() {
             pathLength={1}
             strokeWidth={b.width}
             style={{ animationDelay: `${b.delay}s` }}
+          />
+        ))}
+        {LEAVES.map((l) => (
+          <ellipse
+            key={`${l.cx}-${l.cy}`}
+            className="action-tree__leaf"
+            cx={l.cx}
+            cy={l.cy}
+            rx={l.rx}
+            ry={l.ry}
+            fill={l.fill}
+            style={{ animationDelay: `${l.delay}s` }}
           />
         ))}
       </svg>
