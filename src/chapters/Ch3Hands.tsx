@@ -1,3 +1,4 @@
+import { ActionFingersTree } from "../components/ActionFingersTree";
 import { Figure } from "../components/Figure";
 import { Fingerspelling } from "../components/Fingerspelling";
 import { HandGroupsExplorer } from "../components/HandGroupsExplorer";
@@ -128,8 +129,6 @@ const IMG = {
     "image_000093_c69f0a4b5537323e3c111deea68a9b324fcf604a5d75163d41fcfc8141156c40.png",
   flatAdd1:
     "image_000094_b83115fca2c82df213a974d7be9e1825242bb299034366711140af5e5edc8ad1.png",
-  actionFingers1:
-    "image_000097_a92971628ef25be91b0c1eb7604d11ecfca1b307d2a775118f8260c83d5986b0.png",
   actionFingers2:
     "image_000098_862f17312ef28ef7a5e2275f9277bfff7b604a76b79516d1caf224c0620fdbec.png",
   // Index Hand — Front View (page 39 split from image_000098)
@@ -498,7 +497,7 @@ export function Ch3Hands() {
         observers look at the branches of a tree first. Readers focus on Action
         Fingers first, since they give meaning to the handshape.
       </p>
-      <Figure src={IMG.actionFingers1} />
+      <ActionFingersTree />
 
       <h2>Adding Fingers</h2>
       <p>

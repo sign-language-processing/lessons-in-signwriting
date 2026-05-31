@@ -418,6 +418,53 @@ fsw-symbol {
   justify-items: center;
 }
 
+.action-tree {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  gap: 1.5em;
+  margin-block: 1.5em;
+}
+.action-tree__svg {
+  width: 180px;
+  height: 216px;
+}
+.action-tree__svg path {
+  fill: none;
+  stroke: #6b4423;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: action-tree-grow 0.7s ease-out forwards;
+}
+@keyframes action-tree-grow {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .action-tree__svg path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+.action-tree__symbol {
+  display: flex;
+  justify-content: center;
+}
+.action-tree__text p {
+  margin-block: 0.35em;
+}
+@media (max-width: 640px) {
+  .action-tree {
+    grid-template-columns: auto 1fr;
+  }
+  .action-tree__symbol {
+    grid-column: 1 / -1;
+  }
+}
+
 .confuse-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
