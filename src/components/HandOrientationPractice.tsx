@@ -114,18 +114,19 @@ export function HandOrientationPractice({
       aria-labelledby="practice-title"
       onClose={onClose}
     >
-      <form method="dialog" className="practice-close-form">
-        <button type="submit" aria-label="Close" className="practice-close">
-          ×
-        </button>
-      </form>
+      <div className="practice-body">
+        <form method="dialog" className="practice-close-form">
+          <button type="submit" aria-label="Close" className="practice-close">
+            ×
+          </button>
+        </form>
 
-      <h2 id="practice-title">Hand Orientation Practice</h2>
-      <p className="practice-prompt">
-        Match each <strong>{name}</strong> symbol to its photo.
-      </p>
+        <h2 id="practice-title">Hand Orientation Practice</h2>
+        <p className="practice-prompt">
+          Match each <strong>{name}</strong> symbol to its photo.
+        </p>
 
-      <div className="practice-board" aria-hidden={solved}>
+        <div className="practice-board" aria-hidden={solved}>
         <div className="practice-column">
           {round.pairs.map((pair) => (
             <button
@@ -176,14 +177,15 @@ export function HandOrientationPractice({
         </div>
       )}
 
-      <div className="practice-actions">
-        <button
-          type="button"
-          className="practice-next"
-          onClick={() => start(randomPracticeBase(round.base))}
-        >
-          {solved ? "Next handshape →" : "Skip →"}
-        </button>
+        <div className="practice-actions">
+          <button
+            type="button"
+            className="practice-next"
+            onClick={() => start(randomPracticeBase(round.base))}
+          >
+            {solved ? "Next handshape →" : "Skip →"}
+          </button>
+        </div>
       </div>
     </dialog>
   );
