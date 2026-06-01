@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Sidebar } from "./components/Sidebar";
+import { PracticeProvider } from "./components/PracticeContext";
 import { SymbolDialogProvider } from "./components/SymbolDialogContext";
 import { asset } from "./lib/asset";
 import { AUTHORING } from "./lib/devMode";
@@ -34,33 +35,35 @@ export function App() {
   }, []);
 
   return (
-    <SymbolDialogProvider>
-      <Sidebar />
-      <div className="page" ref={pageRef}>
-        <Ch1Introduction />
-        <Ch2Viewpoints />
-        <Ch3Hands />
-        <Ch4Contact />
-        <Ch5FingerMovement />
-        <Ch6StraightMovement />
-        <Ch7CurvedMovement />
-        <Ch8AxialMovement />
-        <Ch9CircularMovement />
-        <Ch10Face />
-        <Ch11Head />
-        <Ch12Body />
-        <Ch13Dynamics />
-        <Ch14Punctuation />
-        <Ch15WritingSigns />
-      </div>
-      {AUTHORING && (
-        <aside className="pdf-debug" data-no-print aria-label="Source PDF (for debugging)">
-          <iframe
-            src={`${asset("/pdfjs/web/viewer.html")}?file=${asset("/sw0116-Lessons-SignWriting.pdf")}`}
-            title="Source PDF"
-          />
-        </aside>
-      )}
-    </SymbolDialogProvider>
+    <PracticeProvider>
+      <SymbolDialogProvider>
+        <Sidebar />
+        <div className="page" ref={pageRef}>
+          <Ch1Introduction />
+          <Ch2Viewpoints />
+          <Ch3Hands />
+          <Ch4Contact />
+          <Ch5FingerMovement />
+          <Ch6StraightMovement />
+          <Ch7CurvedMovement />
+          <Ch8AxialMovement />
+          <Ch9CircularMovement />
+          <Ch10Face />
+          <Ch11Head />
+          <Ch12Body />
+          <Ch13Dynamics />
+          <Ch14Punctuation />
+          <Ch15WritingSigns />
+        </div>
+        {AUTHORING && (
+          <aside className="pdf-debug" data-no-print aria-label="Source PDF (for debugging)">
+            <iframe
+              src={`${asset("/pdfjs/web/viewer.html")}?file=${asset("/sw0116-Lessons-SignWriting.pdf")}`}
+              title="Source PDF"
+            />
+          </aside>
+        )}
+      </SymbolDialogProvider>
+    </PracticeProvider>
   );
 }

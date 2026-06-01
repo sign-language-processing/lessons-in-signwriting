@@ -6,6 +6,8 @@ import {
   handImageForRotation,
   isWristViewKey,
 } from "../lib/handImage";
+import { isPracticeBase } from "../lib/practiceHands";
+import { usePractice } from "./PracticeContext";
 
 export type SymbolDialogProps = {
   /** The symbol key that was clicked. When non-null, the dialog opens. */
@@ -24,6 +26,7 @@ const FILL_LABELS = [
 
 export function SymbolDialog({ openKey, onClose }: SymbolDialogProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const practice = usePractice();
 
   useEffect(() => {
     const dlg = dialogRef.current;
@@ -108,6 +111,19 @@ export function SymbolDialog({ openKey, onClose }: SymbolDialogProps) {
             variant{variants.length === 1 ? "" : "s"} at rotation{" "}
             <code>{openKey[5]}</code>
           </p>
+        )}
+        {openKey && isPracticeBase(openKey.slice(1, 4)) && (
+          <button
+            type="button"
+            className="practice-launch__button"
+            onClick={() => {
+              const base = openKey.slice(1, 4);
+              onClose();
+              practice.open(base);
+            }}
+          >
+            🤚 Practice this handshape
+          </button>
         )}
         <div
           style={{

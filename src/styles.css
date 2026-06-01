@@ -1410,3 +1410,203 @@ fsw-symbol {
   border-radius: 4px;
   white-space: nowrap;
 }
+
+/* Hand Orientation Practice */
+.practice-launch {
+  margin: 2em 0;
+  padding: 1.25em;
+  border: 1px solid #e2e2e2;
+  border-radius: 12px;
+  background: #f7f9fc;
+  text-align: center;
+}
+
+.practice-launch__button {
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 0.7em 1.4em;
+  border: none;
+  border-radius: 999px;
+  background: #2f6fe0;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(47, 111, 224, 0.3);
+}
+
+.practice-launch__button:hover {
+  background: #245bc0;
+}
+
+.practice-launch__hint {
+  margin: 0.75em 0 0;
+  color: #666;
+  font-size: 0.92rem;
+}
+
+.practice-dialog {
+  box-sizing: border-box;
+  padding: 1.75rem;
+  border: none;
+  border-radius: 16px;
+  inline-size: min(560px, 95vw);
+  max-block-size: 90vh;
+  position: relative;
+}
+
+.practice-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.practice-dialog h2 {
+  margin: 0 2rem 0 0;
+}
+
+.practice-prompt {
+  margin: 0.35em 0 1.25em;
+  color: #555;
+}
+
+.practice-close-form {
+  margin: 0;
+}
+
+.practice-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.practice-board {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.practice-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.practice-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 84px;
+  padding: 0.4rem;
+  border: 2px solid #dcdfe5;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  transition:
+    border-color 0.12s ease,
+    background 0.12s ease,
+    transform 0.12s ease;
+}
+
+.practice-tile img {
+  max-height: 76px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+.practice-tile:hover:not(:disabled) {
+  border-color: #b8c0cc;
+}
+
+.practice-tile.is-selected {
+  border-color: #2f6fe0;
+  background: #eef4ff;
+  box-shadow: 0 0 0 3px rgba(47, 111, 224, 0.18);
+}
+
+.practice-tile.is-matched {
+  border-color: #2f9e57;
+  background: #effaf1;
+  cursor: default;
+  opacity: 0.55;
+}
+
+.practice-tile.is-wrong {
+  border-color: #e0584f;
+  background: #fdeceb;
+  animation: practice-shake 0.4s;
+}
+
+@keyframes practice-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+.practice-result {
+  margin-top: 1.25rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  background: #effaf1;
+  border: 1px solid #b7e3c4;
+  text-align: center;
+}
+
+.practice-result__title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.practice-result__detail {
+  margin: 0.25em 0 0;
+  color: #555;
+}
+
+.practice-actions {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.practice-next {
+  font-weight: 600;
+  padding: 0.6em 1.2em;
+  border: 1px solid #2f6fe0;
+  border-radius: 999px;
+  background: white;
+  color: #2f6fe0;
+  cursor: pointer;
+}
+
+.practice-next:hover {
+  background: #eef4ff;
+}
+
+@media (max-width: 640px) {
+  .practice-dialog {
+    inline-size: 100vw;
+    max-inline-size: 100vw;
+    block-size: 100dvh;
+    max-block-size: 100dvh;
+    margin: 0;
+    border-radius: 0;
+    overflow-y: auto;
+  }
+
+  .practice-board {
+    gap: 0.75rem;
+  }
+
+  .practice-tile {
+    min-height: 72px;
+  }
+}

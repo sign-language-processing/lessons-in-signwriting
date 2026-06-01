@@ -7,6 +7,7 @@ import { HandshapeExamples } from "../components/HandshapeExamples";
 import { HandshapeExplorer } from "../components/HandshapeExplorer";
 import { HeelViewTable } from "../components/HeelView";
 import { Grid } from "../components/Layout";
+import { usePractice } from "../components/PracticeContext";
 import { SgnwSign, SgnwSymbol } from "../components/Sgnw";
 import { asset } from "../lib/asset";
 import { YouTubeVideo } from "../components/YouTubeVideo";
@@ -322,6 +323,7 @@ const IMG = {
 };
 
 export function Ch3Hands() {
+  const practice = usePractice();
   return (
     <>
       <h2 id="chapter-3">Chapter 3 — Hands</h2>
@@ -622,6 +624,19 @@ export function Ch3Hands() {
           </p>
         </div>
       </Grid>
+
+      <div className="practice-launch" data-no-print>
+        <button
+          type="button"
+          className="practice-launch__button"
+          onClick={() => practice.open()}
+        >
+          🤚 Hand Orientation Practice
+        </button>
+        <p className="practice-launch__hint">
+          Match each handshape symbol to the photo of the hand it represents.
+        </p>
+      </div>
 
       <h2>Hands Relate to Center</h2>
       <p>
