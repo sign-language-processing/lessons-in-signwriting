@@ -129,6 +129,7 @@ body {
 @media (max-width: 900px) {
   #root {
     grid-template-columns: minmax(0, 1fr);
+    padding: 0;
   }
   .toc-sidebar {
     position: static;
