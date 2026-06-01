@@ -184,15 +184,22 @@ section. They ship in release (not authoring-gated) and reuse the shared
 
 ### Rootshape mapping (`scripts/build_rootshapes.py`)
 
-Maps each eligible hand base → one of seven rootshapes, written to
-`src/content/rootshapes.generated.json` (`{roots, bases}`; debug scores in
-`scripts/rootshapes_debug.json`). Re-runnable: `python scripts/build_rootshapes.py`
-(`--force` re-asks the LLM, `--no-llm` uses the deterministic fallback). Order of
-authority: (1) the ISWA base **name** keyword ("Index on Angle" → Angle, bare
-name → Tight Fist) covers most bases; (2) for keyword-less names (Oval, Claw,
-Hook, Curlicue, Flat split) a cached `claude -p` call decides, given the seven
-book definitions plus a glyph-overlap convolution hint. The convolution
-(rendered with the `signwriting` Python lib, rootshape-glyph coverage within the
-base glyph) is a weak signal alone — rootshape glyphs overlap heavily — so it's
-only an LLM tiebreak hint. The `scripts/.venv` needs `signwriting` (+ `regex`)
-alongside PIL/numpy/scipy.
+Maps eligible hand bases → one of seven rootshapes, written to
+`src/content/rootshapes.generated.json` (`{roots, bases}`; per-base scores +
+the unresolved list in `scripts/rootshapes_debug.json`). Re-runnable:
+`python scripts/build_rootshapes.py`. A base is mapped **only when two rules
+agree** (no LLM — it was too error-prone):
+
+- **Rule 1 — convolution.** Render the base glyph and each rootshape glyph
+  (`signwriting` lib), bottom-center align, and measure inclusion
+  `|rootshape ∩ base| / |rootshape|` (does the base contain the whole
+  rootshape?). The best-covered rootshape is rule 1's answer.
+- **Rule 2 — name keyword.** Only the five unambiguous ISWA keywords count:
+  Fist, Circle, Cup, Hinge, Angle.
+
+Convolution alone is unreliable (rootshape glyphs overlap heavily, so it
+over-predicts Circle and can't separate Angle from Hinge), which is why a name
+keyword must confirm it. The game quizzes only the resolved bases. Everything
+unresolved (no keyword, or rules disagree) is left unmapped and printed for
+manual follow-up. The `scripts/.venv` needs `signwriting` (+ `regex`) alongside
+PIL/numpy/scipy.

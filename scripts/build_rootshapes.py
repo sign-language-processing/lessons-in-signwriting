@@ -1,34 +1,30 @@
 #!/usr/bin/env python
 """Build the hand-base -> rootshape mapping used by the Rootshape practice game.
 
-Each of the 261 ISWA hand bases is assigned one of the seven rootshapes the book
-defines (Tight Fist, Circle, Cup, Hinge, Angle, Flat Thumb Across, Flat).
+Each eligible ISWA hand base is assigned one of the seven rootshapes the book
+defines (Tight Fist, Circle, Cup, Hinge, Angle, Flat Thumb Across, Flat) only
+when two independent rules agree:
 
-Strategy, in order of authority:
-  1. Name keyword. ISWA base names encode the rootshape ("Index on Angle" is the
-     Angle rootshape, "Index on Cup" is Cup, a bare "Index" is the Tight Fist).
-     This is authoritative and covers most bases.
-  2. claude -p. Names without a rootshape keyword (Oval, Claw, Hook, Curlicue,
-     and the Flat vs Flat-Thumb-Across split) are resolved by the LLM, which is
-     given the seven book definitions plus the rendered-glyph convolution scores
-     as visual evidence. Answers are cached so re-runs are incremental.
+  Rule 1 - convolution. Render the base glyph and each rootshape glyph (with the
+    `signwriting` visualizer), bottom-center aligned, and measure inclusion:
+    coverage = |rootshape ∩ base| / |rootshape| (does the base contain the whole
+    rootshape?). The best-covered rootshape is rule 1's answer.
 
-A convolution coverage score (how much of each rootshape glyph is contained in
-the base glyph, rendered with the `signwriting` visualizer) is computed for every
-base and stored alongside the mapping for transparency. It is a weak signal on
-its own (rootshape glyphs overlap heavily) so it is used only as an LLM hint.
+  Rule 2 - name keyword. ISWA names encode the rootshape; we trust only the five
+    unambiguous keywords: Fist, Circle, Cup, Hinge, Angle.
 
-Re-run any time: `python scripts/build_rootshapes.py` (add --force to re-ask the
-LLM for cached bases, --no-llm to use the deterministic fallback only).
+A base is mapped only when it has a name keyword AND convolution's top rootshape
+is the same one. Everything else is left unmapped and reported (no LLM guessing).
+
+Output: src/content/rootshapes.generated.json ({roots, bases}); per-base scores,
+sources, and the unresolved list go to scripts/rootshapes_debug.json. Re-runnable:
+`python scripts/build_rootshapes.py`.
 """
 
 from __future__ import annotations
 
-import argparse
 import json
 import re
-import subprocess
-import sys
 from pathlib import Path
 
 import numpy as np
@@ -39,37 +35,45 @@ ROOT = HERE.parent
 NAMES_TS = ROOT / "src/lib/baseSymbolNames.ts"
 OUT = ROOT / "src/content/rootshapes.generated.json"
 DEBUG_OUT = HERE / "rootshapes_debug.json"
-CACHE = HERE / "rootshapes_llm_cache.json"
 
-# name, reference glyph key (fill 0, rotation 0), book definition
+# name, reference glyph key (fill 0, rotation 0)
 ROOT_DEFS = [
-    ("Tight Fist", "S20300", "at least one finger touches the palm of the hand"),
-    ("Circle", "S17600",
-     "a fingertip touches the thumbtip in a curve, or a curved finger is close "
-     "to the palm; closed loops such as ovals also count"),
-    ("Cup", "S16d00",
-     "fingers are curved at the middle and tip joints with no bend at the knuckle"),
-    ("Hinge", "S17d00",
-     "fingers bend at the knuckle joint while the middle and tip joints stay "
-     "completely straight"),
-    ("Angle", "S18500", "the hinge, with the fingertips and thumb tip touching"),
-    ("Flat Thumb Across", "S14700",
-     "the thumb lies across the palm and four fingers point straight up with no "
-     "bends"),
-    ("Flat", "S15a00", "five fingers point straight up with no bends"),
+    ("Tight Fist", "S20300"),
+    ("Circle", "S17600"),
+    ("Cup", "S16d00"),
+    ("Hinge", "S17d00"),
+    ("Angle", "S18500"),
+    ("Flat Thumb Across", "S14700"),
+    ("Flat", "S15a00"),
 ]
 ROOT_NAMES = [r[0] for r in ROOT_DEFS]
+
+# Rule 2: name-keyword -> rootshape. ISWA names encode the rootshape; some use
+# a non-canonical word that we normalize (Curlicue→Circle, Hook→Angle,
+# Claw→Hinge). When a name has an "on X" suffix, X is the rootshape (e.g.
+# "Index Hinge on Circle" is Circle — the "Hinge" only describes the finger), so
+# the suffix is checked before the bare keywords.
+NAME_KEYWORDS = [
+    ("angle", "Angle"),
+    ("hinge", "Hinge"),
+    ("cup", "Cup"),
+    ("circle", "Circle"),
+    ("curlicue", "Circle"),
+    ("hook", "Angle"),
+    ("claw", "Hinge"),
+    ("fist", "Tight Fist"),
+]
+KEYWORD_MAP = dict(NAME_KEYWORDS)
 
 WRIST_VIEW = {"14d", "14f", "151", "15c", "15e", "1f6", "204"}
 INCOMPLETE = {"15b"}
 
-CANVAS = (260, 260)
-SHIFT = range(-14, 15, 2)
+CANVAS = (300, 300)
+SHIFT = range(-26, 27, 2)
 
 
 def load_names() -> dict[str, str]:
-    text = NAMES_TS.read_text()
-    return dict(re.findall(r'"([0-9a-f]{3})":\s*"([^"]+)"', text))
+    return dict(re.findall(r'"([0-9a-f]{3})":\s*"([^"]+)"', NAMES_TS.read_text()))
 
 
 def is_eligible(base: str) -> bool:
@@ -81,25 +85,14 @@ def is_eligible(base: str) -> bool:
 
 
 def name_root(name: str) -> str | None:
-    """Authoritative rootshape from the ISWA name, or None when keyword-less."""
     n = name.lower()
-    if "angle" in n:
-        return "Angle"
-    if "hinge" in n:
-        return "Hinge"
-    if "cup" in n:
-        return "Cup"
-    if "circle" in n:
-        return "Circle"
-    if "oval" in n or any(k in n for k in ("claw", "hook", "curlicue", "curve")):
-        return None
-    if "four fingers" in n:
-        return "Flat Thumb Across"
-    if "five fingers" in n or "flat" in n:
-        return "Flat"
-    # A bare "spread" (e.g. "Index Middle Up Spread") only means the raised
-    # fingers fan apart — the base is still a Tight Fist.
-    return "Tight Fist"
+    on = re.search(r"\bon (\w+)", n)
+    if on and on.group(1) in KEYWORD_MAP:
+        return KEYWORD_MAP[on.group(1)]
+    for keyword, root in NAME_KEYWORDS:
+        if keyword in n:
+            return root
+    return None
 
 
 def render_mask(key: str) -> np.ndarray:
@@ -123,7 +116,8 @@ def render_mask(key: str) -> np.ndarray:
     return out
 
 
-def coverage(base_mask: np.ndarray, root_mask: np.ndarray) -> float:
+def inclusion(base_mask: np.ndarray, root_mask: np.ndarray) -> float:
+    """Best |root ∩ base| / |root| over small translations — does base include root?"""
     total = root_mask.sum()
     if total == 0:
         return 0.0
@@ -135,136 +129,60 @@ def coverage(base_mask: np.ndarray, root_mask: np.ndarray) -> float:
     return round(float(best), 3)
 
 
-def conv_scores(base: str, root_masks: dict[str, np.ndarray]) -> dict[str, float]:
-    base_mask = render_mask(f"S{base}00")
-    return {name: coverage(base_mask, mask) for name, mask in root_masks.items()}
-
-
-def ask_llm(bases: list[tuple[str, str, dict[str, float]]]) -> dict[str, str]:
-    """One batched claude -p call mapping keyword-less names to a rootshape."""
-    defs = "\n".join(f"- {name}: {desc}" for name, _, desc in ROOT_DEFS)
-    rows = []
-    for base, name, scores in bases:
-        top = sorted(scores.items(), key=lambda kv: -kv[1])[:3]
-        hint = ", ".join(f"{n} {v}" for n, v in top)
-        rows.append(f'{base}\t{name}\t(glyph-overlap hint: {hint})')
-    listing = "\n".join(rows)
-    prompt = f"""You are an expert in Valerie Sutton's SignWriting. Each ISWA hand \
-symbol is built on exactly one of seven rootshapes:
-{defs}
-
-Assign the single best rootshape to each handshape below. The third column is a \
-weak glyph-overlap hint (higher = more contained); use it only to break ties. \
-Reply with ONLY a JSON object mapping the 3-hex base to the exact rootshape name \
-(one of: {", ".join(ROOT_NAMES)}). No prose.
-
-{listing}"""
-    proc = subprocess.run(
-        ["claude", "-p", prompt], capture_output=True, text=True, timeout=600
-    )
-    if proc.returncode != 0:
-        raise RuntimeError(f"claude -p failed: {proc.stderr[:300]}")
-    match = re.search(r"\{.*\}", proc.stdout, re.S)
-    if not match:
-        raise RuntimeError(f"no JSON in claude output: {proc.stdout[:300]}")
-    raw = json.loads(match.group(0))
-    result = {}
-    for base, root in raw.items():
-        if root not in ROOT_NAMES:
-            raise RuntimeError(f"claude returned unknown rootshape {root!r} for {base}")
-        result[base] = root
-    return result
-
-
-FALLBACK = {  # deterministic resolution for keyword-less names, --no-llm
-    "oval": "Circle",
-    "curlicue": "Circle",
-    "claw": "Cup",
-    "hook": "Cup",
-    "curve": "Cup",
-}
-
-
-def fallback_root(name: str) -> str:
-    n = name.lower()
-    for keyword, root in FALLBACK.items():
-        if keyword in n:
-            return root
-    return "Cup"
-
-
 def main() -> None:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--force", action="store_true", help="re-ask the LLM for cached bases")
-    parser.add_argument("--no-llm", action="store_true", help="skip claude, use the deterministic fallback")
-    args = parser.parse_args()
-
     names = load_names()
-    bases = [b for b in names if is_eligible(b)]
-    bases.sort(key=lambda b: int(b, 16))
+    bases = sorted((b for b in names if is_eligible(b)), key=lambda b: int(b, 16))
 
-    print(f"rendering {len(ROOT_DEFS)} rootshape references…", file=sys.stderr)
-    root_masks = {name: render_mask(key) for name, key, _ in ROOT_DEFS}
+    print(f"rendering {len(ROOT_DEFS)} rootshape references…")
+    root_masks = {name: render_mask(key) for name, key in ROOT_DEFS}
 
-    print(f"classifying {len(bases)} bases by name + convolution…", file=sys.stderr)
-    scores = {b: conv_scores(b, root_masks) for b in bases}
-
-    cache = json.loads(CACHE.read_text()) if CACHE.exists() else {}
-
+    print(f"classifying {len(bases)} bases by convolution + name…")
     mapping: dict[str, str] = {}
-    sources: dict[str, str] = {}
-    pending: list[tuple[str, str, dict[str, float]]] = []
-    for b in bases:
-        root = name_root(names[b])
-        if root is not None:
-            mapping[b] = root
-            sources[b] = "name"
-        elif not args.force and b in cache:
-            mapping[b] = cache[b]
-            sources[b] = "llm-cached"
-        else:
-            pending.append((b, names[b], scores[b]))
+    debug: dict[str, dict] = {}
+    unresolved: list[dict] = []
 
-    if pending:
-        if args.no_llm:
-            for b, name, _ in pending:
-                mapping[b] = fallback_root(name)
-                sources[b] = "fallback"
+    disagreements: list[dict] = []
+    for b in bases:
+        base_mask = render_mask(f"S{b}00")
+        scores = {name: inclusion(base_mask, mask) for name, mask in root_masks.items()}
+        conv = max(scores, key=scores.__getitem__)  # rule 1 (verification)
+        nroot = name_root(names[b])  # rule 2 (authoritative when present)
+
+        agree = nroot is not None and conv == nroot
+        debug[b] = {"name": names[b], "name_root": nroot, "conv": conv,
+                    "agree": agree, "scores": scores}
+
+        if nroot is not None:
+            mapping[b] = nroot
+            if not agree:
+                disagreements.append({"base": b, "name": names[b],
+                                      "name_root": nroot, "conv": conv,
+                                      "conv_score": scores[conv]})
         else:
-            print(f"asking claude -p to resolve {len(pending)} keyword-less names…", file=sys.stderr)
-            resolved = ask_llm(pending)
-            for b, name, _ in pending:
-                root = resolved.get(b) or fallback_root(name)
-                mapping[b] = root
-                sources[b] = "llm" if b in resolved else "fallback"
-                cache[b] = root
-            CACHE.write_text(json.dumps(cache, indent=2, ensure_ascii=False) + "\n")
+            unresolved.append({"base": b, "name": names[b], "conv": conv,
+                               "conv_score": scores[conv]})
 
     OUT.write_text(
-        json.dumps(
-            {"roots": ROOT_NAMES, "bases": {b: mapping[b] for b in bases}},
-            indent=2,
-            ensure_ascii=False,
-        )
-        + "\n"
+        json.dumps({"roots": ROOT_NAMES, "bases": mapping}, indent=2, ensure_ascii=False) + "\n"
     )
     DEBUG_OUT.write_text(
-        json.dumps(
-            {b: {"name": names[b], "source": sources[b], "scores": scores[b]} for b in bases},
-            indent=2,
-            ensure_ascii=False,
-        )
-        + "\n"
+        json.dumps({"resolved": mapping, "unresolved": unresolved,
+                    "disagreements": disagreements, "all": debug},
+                   indent=2, ensure_ascii=False) + "\n"
     )
 
     counts: dict[str, int] = {}
-    src_counts: dict[str, int] = {}
-    for b in bases:
-        counts[mapping[b]] = counts.get(mapping[b], 0) + 1
-        src_counts[sources[b]] = src_counts.get(sources[b], 0) + 1
-    print(f"\nwrote {OUT.relative_to(ROOT)} ({len(bases)} bases)")
+    for root in mapping.values():
+        counts[root] = counts.get(root, 0) + 1
+    print(f"\nmapped {len(mapping)}/{len(bases)} bases by name keyword")
     print("by rootshape:", dict(sorted(counts.items(), key=lambda kv: -kv[1])))
-    print("by source:   ", src_counts)
+
+    print(f"\n--- UNMAPPED: no name keyword ({len(unresolved)}) ---")
+    for u in unresolved:
+        print(f'  {u["base"]}  {u["name"]:42s}  (conv guess: {u["conv"]} {u["conv_score"]})')
+    print(f"\n--- MAPPED BUT CONVOLUTION DISAGREES ({len(disagreements)}) ---")
+    for u in disagreements:
+        print(f'  {u["base"]}  {u["name"]:42s}  name={u["name_root"]:11s} conv={u["conv"]} ({u["conv_score"]})')
 
 
 if __name__ == "__main__":
