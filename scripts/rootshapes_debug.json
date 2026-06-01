@@ -1,34 +1,58 @@
 {
-  "resolved": {
+  "bases": {
+    "100": "Tight Fist",
     "101": "Circle",
     "102": "Cup",
+    "103": "Hinge",
     "104": "Hinge",
     "105": "Angle",
+    "106": "Tight Fist",
     "107": "Circle",
     "108": "Tight Fist",
+    "109": "Circle",
     "10a": "Cup",
     "10b": "Tight Fist",
     "10c": "Tight Fist",
     "10d": "Circle",
+    "10e": "Tight Fist",
     "10f": "Circle",
+    "110": "Tight Fist",
+    "111": "Tight Fist",
     "112": "Hinge",
     "113": "Hinge",
     "114": "Hinge",
+    "115": "Tight Fist",
+    "116": "Tight Fist",
+    "117": "Tight Fist",
     "118": "Cup",
     "119": "Hinge",
+    "11a": "Tight Fist",
     "11b": "Circle",
+    "11c": "Circle",
+    "11d": "Circle",
+    "11e": "Tight Fist",
     "11f": "Circle",
+    "120": "Tight Fist",
+    "121": "Tight Fist",
+    "122": "Tight Fist",
     "123": "Hinge",
     "124": "Hinge",
     "125": "Hinge",
     "126": "Hinge",
+    "127": "Tight Fist",
     "128": "Cup",
     "129": "Circle",
     "12a": "Angle",
     "12b": "Hinge",
+    "12c": "Tight Fist",
+    "12d": "Circle",
+    "12e": "Tight Fist",
+    "12f": "Tight Fist",
     "130": "Angle",
     "131": "Angle",
     "132": "Hinge",
+    "133": "Circle",
+    "134": "Tight Fist",
     "135": "Cup",
     "136": "Cup",
     "137": "Cup",
@@ -44,15 +68,34 @@
     "141": "Angle",
     "142": "Angle",
     "143": "Hinge",
+    "144": "Flat Thumb Across",
+    "145": "Flat Thumb Across",
     "146": "Hinge",
+    "147": "Flat Thumb Across",
+    "148": "Circle",
     "149": "Hinge",
+    "14a": "Tight Fist",
     "14b": "Hinge",
+    "14c": "Circle",
+    "14e": "Cup",
+    "150": "Cup",
+    "152": "Cup",
     "153": "Cup",
     "154": "Cup",
     "155": "Hinge",
+    "156": "Cup",
     "157": "Hinge",
     "158": "Hinge",
     "159": "Hinge",
+    "15a": "Flat",
+    "15d": "Flat",
+    "15f": "Flat",
+    "160": "Flat",
+    "161": "Flat",
+    "162": "Flat",
+    "163": "Flat",
+    "164": "Flat",
+    "165": "Flat",
     "166": "Hinge",
     "167": "Hinge",
     "168": "Hinge",
@@ -70,6 +113,10 @@
     "174": "Circle",
     "175": "Circle",
     "176": "Circle",
+    "177": "Hinge",
+    "178": "Angle",
+    "179": "Cup",
+    "17a": "Hinge",
     "17b": "Hinge",
     "17c": "Hinge",
     "17d": "Hinge",
@@ -81,32 +128,59 @@
     "183": "Hinge",
     "184": "Hinge",
     "185": "Angle",
+    "186": "Tight Fist",
     "187": "Circle",
     "188": "Hinge",
     "189": "Angle",
     "18a": "Hinge",
+    "18b": "Circle",
+    "18c": "Tight Fist",
     "18d": "Hinge",
+    "18e": "Tight Fist",
+    "18f": "Circle",
+    "190": "Tight Fist",
     "191": "Circle",
+    "192": "Circle",
     "193": "Tight Fist",
     "194": "Circle",
+    "195": "Cup",
     "196": "Angle",
+    "197": "Circle",
+    "198": "Tight Fist",
+    "199": "Circle",
+    "19a": "Circle",
     "19b": "Hinge",
+    "19c": "Circle",
     "19d": "Hinge",
     "19e": "Angle",
     "19f": "Angle",
+    "1a0": "Tight Fist",
     "1a1": "Circle",
     "1a2": "Hinge",
     "1a3": "Angle",
+    "1a4": "Tight Fist",
     "1a5": "Circle",
     "1a6": "Hinge",
     "1a7": "Hinge",
     "1a8": "Angle",
+    "1a9": "Circle",
     "1aa": "Circle",
+    "1ab": "Circle",
     "1ac": "Hinge",
     "1ad": "Angle",
+    "1ae": "Circle",
+    "1af": "Circle",
+    "1b0": "Circle",
     "1b1": "Circle",
+    "1b2": "Cup",
     "1b3": "Angle",
+    "1b4": "Circle",
+    "1b5": "Tight Fist",
+    "1b6": "Tight Fist",
+    "1b7": "Circle",
+    "1b8": "Circle",
     "1b9": "Angle",
+    "1ba": "Tight Fist",
     "1bb": "Circle",
     "1bc": "Circle",
     "1bd": "Angle",
@@ -116,9 +190,16 @@
     "1c1": "Hinge",
     "1c2": "Angle",
     "1c3": "Angle",
+    "1c4": "Circle",
     "1c5": "Hinge",
+    "1c6": "Tight Fist",
     "1c7": "Circle",
+    "1c8": "Circle",
+    "1c9": "Circle",
     "1ca": "Angle",
+    "1cb": "Circle",
+    "1cc": "Circle",
+    "1cd": "Tight Fist",
     "1ce": "Circle",
     "1cf": "Circle",
     "1d0": "Cup",
@@ -126,17 +207,28 @@
     "1d2": "Angle",
     "1d3": "Angle",
     "1d4": "Angle",
+    "1d5": "Circle",
     "1d6": "Hinge",
     "1d7": "Hinge",
     "1d8": "Angle",
     "1d9": "Angle",
     "1da": "Angle",
     "1db": "Hinge",
+    "1dc": "Tight Fist",
     "1dd": "Hinge",
+    "1de": "Circle",
+    "1df": "Tight Fist",
+    "1e0": "Tight Fist",
+    "1e1": "Tight Fist",
+    "1e2": "Tight Fist",
     "1e3": "Hinge",
+    "1e4": "Tight Fist",
+    "1e5": "Tight Fist",
     "1e6": "Angle",
     "1e7": "Circle",
+    "1e8": "Tight Fist",
     "1e9": "Hinge",
+    "1ea": "Circle",
     "1eb": "Circle",
     "1ec": "Cup",
     "1ed": "Cup",
@@ -147,9 +239,22 @@
     "1f2": "Angle",
     "1f3": "Angle",
     "1f4": "Angle",
+    "1f5": "Tight Fist",
+    "1f7": "Circle",
+    "1f8": "Tight Fist",
+    "1f9": "Circle",
+    "1fa": "Tight Fist",
+    "1fb": "Tight Fist",
+    "1fc": "Tight Fist",
+    "1fd": "Tight Fist",
+    "1fe": "Circle",
+    "1ff": "Circle",
+    "200": "Circle",
+    "201": "Tight Fist",
+    "202": "Tight Fist",
     "203": "Tight Fist"
   },
-  "unresolved": [
+  "conv_only": [
     {
       "base": "100",
       "name": "Index",
@@ -159,8 +264,8 @@
     {
       "base": "103",
       "name": "Index on Oval",
-      "conv": "Cup",
-      "conv_score": 0.78
+      "conv": "Hinge",
+      "conv_score": 0.792
     },
     {
       "base": "106",
@@ -171,8 +276,8 @@
     {
       "base": "109",
       "name": "Index Raised Knuckle",
-      "conv": "Tight Fist",
-      "conv_score": 0.902
+      "conv": "Circle",
+      "conv_score": 0.972
     },
     {
       "base": "10e",
@@ -190,7 +295,7 @@
       "base": "111",
       "name": "Index Middle Raised Knuckles",
       "conv": "Tight Fist",
-      "conv_score": 0.951
+      "conv_score": 1.0
     },
     {
       "base": "115",
@@ -202,13 +307,13 @@
       "base": "116",
       "name": "Index Middle Unit, Index Bent",
       "conv": "Tight Fist",
-      "conv_score": 0.951
+      "conv_score": 0.994
     },
     {
       "base": "117",
       "name": "Index Middle Unit, Middle Bent",
       "conv": "Tight Fist",
-      "conv_score": 0.951
+      "conv_score": 0.994
     },
     {
       "base": "11a",
@@ -219,26 +324,26 @@
     {
       "base": "11c",
       "name": "Middle Bent Over Index",
-      "conv": "Tight Fist",
-      "conv_score": 0.951
+      "conv": "Circle",
+      "conv_score": 0.97
     },
     {
       "base": "11d",
       "name": "Index Bent Over Middle",
-      "conv": "Tight Fist",
-      "conv_score": 1.0
+      "conv": "Circle",
+      "conv_score": 0.972
     },
     {
       "base": "11e",
       "name": "Index Middle Thumb",
       "conv": "Tight Fist",
-      "conv_score": 1.0
+      "conv_score": 0.982
     },
     {
       "base": "120",
       "name": "Index Middle Straight, Thumb Bent",
-      "conv": "Circle",
-      "conv_score": 0.972
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "121",
@@ -249,14 +354,14 @@
     {
       "base": "122",
       "name": "Index Middle Thumb Bent",
-      "conv": "Circle",
-      "conv_score": 0.972
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "127",
       "name": "Index Middle Up Spread, Thumb Forward",
       "conv": "Tight Fist",
-      "conv_score": 1.0
+      "conv_score": 0.997
     },
     {
       "base": "12c",
@@ -267,44 +372,44 @@
     {
       "base": "12d",
       "name": "Index Middle Unit, Thumb Side",
-      "conv": "Tight Fist",
-      "conv_score": 1.0
+      "conv": "Circle",
+      "conv_score": 0.983
     },
     {
       "base": "12e",
       "name": "Index Middle Unit, Thumb Side Unit",
-      "conv": "Circle",
-      "conv_score": 0.972
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "12f",
       "name": "Index Middle Unit, Thumb Side Bent",
-      "conv": "Circle",
-      "conv_score": 0.972
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "133",
       "name": "Index Middle Cross, Thumb Side",
       "conv": "Circle",
-      "conv_score": 0.961
+      "conv_score": 0.964
     },
     {
       "base": "134",
       "name": "Index Middle Unit, Thumb Forward",
       "conv": "Tight Fist",
-      "conv_score": 1.0
+      "conv_score": 0.997
     },
     {
       "base": "144",
       "name": "Four Fingers",
-      "conv": "Tight Fist",
-      "conv_score": 0.929
+      "conv": "Flat Thumb Across",
+      "conv_score": 0.98
     },
     {
       "base": "145",
       "name": "Four Fingers Bent",
-      "conv": "Tight Fist",
-      "conv_score": 0.876
+      "conv": "Flat Thumb Across",
+      "conv_score": 0.962
     },
     {
       "base": "147",
@@ -316,7 +421,7 @@
       "base": "148",
       "name": "Four Fingers Unit Split",
       "conv": "Circle",
-      "conv_score": 0.933
+      "conv_score": 0.928
     },
     {
       "base": "14a",
@@ -328,31 +433,31 @@
       "base": "14c",
       "name": "Five Fingers Spread",
       "conv": "Circle",
-      "conv_score": 0.803
+      "conv_score": 0.81
     },
     {
       "base": "14e",
       "name": "Five Fingers Spread, Four Bent",
       "conv": "Cup",
-      "conv_score": 0.824
+      "conv_score": 0.835
     },
     {
       "base": "150",
       "name": "Five Fingers Spread Bent",
-      "conv": "Circle",
-      "conv_score": 0.803
+      "conv": "Cup",
+      "conv_score": 0.836
     },
     {
       "base": "152",
       "name": "Five Fingers Spread, Thumb Forward",
       "conv": "Cup",
-      "conv_score": 0.698
+      "conv_score": 0.793
     },
     {
       "base": "156",
       "name": "Five Fingers Spread Oval",
       "conv": "Cup",
-      "conv_score": 0.808
+      "conv_score": 0.877
     },
     {
       "base": "15a",
@@ -364,7 +469,7 @@
       "base": "15d",
       "name": "Flat, Thumb Side",
       "conv": "Flat",
-      "conv_score": 0.959
+      "conv_score": 0.982
     },
     {
       "base": "15f",
@@ -376,73 +481,73 @@
       "base": "160",
       "name": "Flat, Thumb Forward",
       "conv": "Flat",
-      "conv_score": 1.0
+      "conv_score": 0.999
     },
     {
       "base": "161",
       "name": "Flat Split Index, Thumb Side",
       "conv": "Flat",
-      "conv_score": 0.929
+      "conv_score": 0.92
     },
     {
       "base": "162",
       "name": "Flat Split Center",
       "conv": "Flat",
-      "conv_score": 0.918
+      "conv_score": 0.899
     },
     {
       "base": "163",
       "name": "Flat Split Center, Thumb Side",
       "conv": "Flat",
-      "conv_score": 0.918
+      "conv_score": 0.911
     },
     {
       "base": "164",
       "name": "Flat Split Center, Thumb Side Bent",
       "conv": "Flat",
-      "conv_score": 0.918
+      "conv_score": 0.911
     },
     {
       "base": "165",
       "name": "Flat Split Baby",
       "conv": "Flat",
-      "conv_score": 0.918
+      "conv_score": 0.969
     },
     {
       "base": "177",
       "name": "Oval",
-      "conv": "Cup",
-      "conv_score": 0.78
+      "conv": "Hinge",
+      "conv_score": 0.792
     },
     {
       "base": "178",
       "name": "Oval, Thumb Side",
-      "conv": "Hinge",
-      "conv_score": 0.738
+      "conv": "Angle",
+      "conv_score": 0.742
     },
     {
       "base": "179",
       "name": "Oval, No Thumb",
       "conv": "Cup",
-      "conv_score": 0.775
+      "conv_score": 0.75
     },
     {
       "base": "17a",
       "name": "Oval, Thumb Forward",
-      "conv": "Cup",
-      "conv_score": 0.786
+      "conv": "Hinge",
+      "conv_score": 0.831
     },
     {
       "base": "186",
       "name": "Index Middle Ring",
-      "conv": "Circle",
-      "conv_score": 0.972
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "18b",
       "name": "Index Middle Ring, Bent",
-      "conv": "Tight Fist",
-      "conv_score": 0.884
+      "conv": "Circle",
+      "conv_score": 0.924
     },
     {
       "base": "18c",
@@ -460,109 +565,109 @@
       "base": "18f",
       "name": "Baby Down, Ripple Straight",
       "conv": "Circle",
-      "conv_score": 0.624
+      "conv_score": 0.691
     },
     {
       "base": "190",
       "name": "Baby Down, Ripple Curved",
-      "conv": "Circle",
+      "conv": "Tight Fist",
       "conv_score": 0.972
     },
     {
       "base": "192",
       "name": "Baby Up",
       "conv": "Circle",
-      "conv_score": 0.916
+      "conv_score": 0.931
     },
     {
       "base": "195",
       "name": "Baby Up on Oval",
       "conv": "Cup",
-      "conv_score": 0.797
+      "conv_score": 0.775
     },
     {
       "base": "197",
       "name": "Baby Raised Knuckle",
       "conv": "Circle",
-      "conv_score": 0.787
+      "conv_score": 0.916
     },
     {
       "base": "198",
       "name": "Baby Bent",
       "conv": "Tight Fist",
-      "conv_score": 0.951
+      "conv_score": 0.973
     },
     {
       "base": "199",
       "name": "Baby Touches Thumb",
-      "conv": "Tight Fist",
-      "conv_score": 1.0
+      "conv": "Circle",
+      "conv_score": 0.976
     },
     {
       "base": "19a",
       "name": "Baby Thumb",
-      "conv": "Tight Fist",
-      "conv_score": 0.853
+      "conv": "Circle",
+      "conv_score": 0.966
     },
     {
       "base": "19c",
       "name": "Baby Index Thumb",
       "conv": "Circle",
-      "conv_score": 0.888
+      "conv_score": 0.96
     },
     {
       "base": "1a0",
       "name": "Baby Index",
-      "conv": "Circle",
-      "conv_score": 0.888
+      "conv": "Tight Fist",
+      "conv_score": 0.969
     },
     {
       "base": "1a4",
       "name": "Index Middle Baby",
-      "conv": "Circle",
-      "conv_score": 0.972
+      "conv": "Tight Fist",
+      "conv_score": 0.962
     },
     {
       "base": "1a9",
       "name": "Index Middle Cross with Baby",
-      "conv": "Tight Fist",
-      "conv_score": 0.933
+      "conv": "Circle",
+      "conv_score": 0.962
     },
     {
       "base": "1ab",
       "name": "Ring Down",
       "conv": "Circle",
-      "conv_score": 0.865
+      "conv_score": 0.936
     },
     {
       "base": "1ae",
       "name": "Ring Up",
-      "conv": "Tight Fist",
-      "conv_score": 0.884
+      "conv": "Circle",
+      "conv_score": 0.953
     },
     {
       "base": "1af",
       "name": "Ring Raised Knuckle",
-      "conv": "Tight Fist",
-      "conv_score": 0.902
+      "conv": "Circle",
+      "conv_score": 0.972
     },
     {
       "base": "1b0",
       "name": "Ring Baby",
-      "conv": "Tight Fist",
-      "conv_score": 0.933
+      "conv": "Circle",
+      "conv_score": 0.938
     },
     {
       "base": "1b2",
       "name": "Ring Baby on Oval",
       "conv": "Cup",
-      "conv_score": 0.808
+      "conv_score": 0.805
     },
     {
       "base": "1b4",
       "name": "Ring Middle",
-      "conv": "Tight Fist",
-      "conv_score": 0.933
+      "conv": "Circle",
+      "conv_score": 0.954
     },
     {
       "base": "1b5",
@@ -574,31 +679,31 @@
       "base": "1b6",
       "name": "Ring Middle Raised Knuckles",
       "conv": "Tight Fist",
-      "conv_score": 0.951
+      "conv_score": 1.0
     },
     {
       "base": "1b7",
       "name": "Ring Index",
-      "conv": "Tight Fist",
-      "conv_score": 0.764
+      "conv": "Circle",
+      "conv_score": 0.921
     },
     {
       "base": "1b8",
       "name": "Ring Thumb",
       "conv": "Circle",
-      "conv_score": 0.904
+      "conv_score": 0.959
     },
     {
       "base": "1ba",
       "name": "Index Ring Baby",
-      "conv": "Circle",
-      "conv_score": 0.972
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "1c4",
       "name": "Middle Down",
       "conv": "Circle",
-      "conv_score": 0.91
+      "conv_score": 0.932
     },
     {
       "base": "1c6",
@@ -609,38 +714,38 @@
     {
       "base": "1c8",
       "name": "Middle Raised Knuckle",
-      "conv": "Tight Fist",
-      "conv_score": 0.902
+      "conv": "Circle",
+      "conv_score": 0.972
     },
     {
       "base": "1c9",
       "name": "Middle Up, Thumb Side",
       "conv": "Circle",
-      "conv_score": 0.961
+      "conv_score": 0.964
     },
     {
       "base": "1cb",
       "name": "Middle Thumb Baby",
       "conv": "Circle",
-      "conv_score": 0.904
+      "conv_score": 0.961
     },
     {
       "base": "1cc",
       "name": "Middle Baby",
       "conv": "Circle",
-      "conv_score": 0.916
+      "conv_score": 0.959
     },
     {
       "base": "1cd",
       "name": "Middle Ring Baby",
-      "conv": "Circle",
-      "conv_score": 0.972
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "1d5",
       "name": "Middle Ring Baby Bent",
       "conv": "Circle",
-      "conv_score": 0.949
+      "conv_score": 0.983
     },
     {
       "base": "1dc",
@@ -652,19 +757,19 @@
       "base": "1de",
       "name": "Index Thumb Side, Thumb Diagonal",
       "conv": "Circle",
-      "conv_score": 0.949
+      "conv_score": 0.955
     },
     {
       "base": "1df",
       "name": "Index Thumb Side, Thumb Unit",
-      "conv": "Circle",
-      "conv_score": 0.972
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "1e0",
       "name": "Index Thumb Side, Thumb Bent",
       "conv": "Tight Fist",
-      "conv_score": 1.0
+      "conv_score": 0.966
     },
     {
       "base": "1e1",
@@ -675,32 +780,32 @@
     {
       "base": "1e2",
       "name": "Index Thumb Side, Both Bent",
-      "conv": "Circle",
-      "conv_score": 0.972
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "1e4",
       "name": "Index Thumb Forward, Index Straight",
       "conv": "Tight Fist",
-      "conv_score": 1.0
+      "conv_score": 0.998
     },
     {
       "base": "1e5",
       "name": "Index Thumb Forward, Index Bent",
       "conv": "Tight Fist",
-      "conv_score": 1.0
+      "conv_score": 0.998
     },
     {
       "base": "1e8",
       "name": "Index Thumb Curve, Thumb Inside",
-      "conv": "Circle",
-      "conv_score": 0.994
+      "conv": "Tight Fist",
+      "conv_score": 0.984
     },
     {
       "base": "1ea",
       "name": "Index Thumb Curve, Thumb Under",
-      "conv": "Tight Fist",
-      "conv_score": 0.951
+      "conv": "Circle",
+      "conv_score": 0.977
     },
     {
       "base": "1f5",
@@ -711,26 +816,26 @@
     {
       "base": "1f7",
       "name": "Thumb Side Diagonal",
-      "conv": "Tight Fist",
-      "conv_score": 0.951
+      "conv": "Circle",
+      "conv_score": 0.959
     },
     {
       "base": "1f8",
       "name": "Thumb Side Unit",
-      "conv": "Circle",
-      "conv_score": 0.972
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "1f9",
       "name": "Thumb Side Bent",
-      "conv": "Tight Fist",
-      "conv_score": 0.907
+      "conv": "Circle",
+      "conv_score": 0.937
     },
     {
       "base": "1fa",
       "name": "Thumb Forward",
       "conv": "Tight Fist",
-      "conv_score": 1.0
+      "conv_score": 0.998
     },
     {
       "base": "1fb",
@@ -753,20 +858,20 @@
     {
       "base": "1fe",
       "name": "Thumb Under Two Fingers",
-      "conv": "Tight Fist",
-      "conv_score": 1.0
+      "conv": "Circle",
+      "conv_score": 0.961
     },
     {
       "base": "1ff",
       "name": "Thumb Over Two Fingers",
-      "conv": "Tight Fist",
-      "conv_score": 0.933
+      "conv": "Circle",
+      "conv_score": 0.96
     },
     {
       "base": "200",
       "name": "Thumb Under Three Fingers",
-      "conv": "Tight Fist",
-      "conv_score": 1.0
+      "conv": "Circle",
+      "conv_score": 0.97
     },
     {
       "base": "201",
@@ -778,7 +883,7 @@
       "base": "202",
       "name": "Thumb Over Four Raised Knuckles",
       "conv": "Tight Fist",
-      "conv_score": 0.902
+      "conv_score": 0.975
     }
   ],
   "disagreements": [
@@ -787,28 +892,14 @@
       "name": "Index on Angle",
       "name_root": "Angle",
       "conv": "Hinge",
-      "conv_score": 0.772
+      "conv_score": 0.827
     },
     {
       "base": "10a",
       "name": "Index Cup",
       "name_root": "Cup",
-      "conv": "Tight Fist",
-      "conv_score": 1.0
-    },
-    {
-      "base": "10b",
-      "name": "Index Hinge on Fist",
-      "name_root": "Tight Fist",
       "conv": "Circle",
-      "conv_score": 0.899
-    },
-    {
-      "base": "10c",
-      "name": "Index Hinge on Fist Low",
-      "name_root": "Tight Fist",
-      "conv": "Circle",
-      "conv_score": 0.972
+      "conv_score": 0.966
     },
     {
       "base": "112",
@@ -829,462 +920,448 @@
       "name": "Index Hinge, Middle Up",
       "name_root": "Hinge",
       "conv": "Circle",
-      "conv_score": 0.972
+      "conv_score": 0.973
     },
     {
       "base": "118",
       "name": "Index Middle Unit, Cup",
       "name_root": "Cup",
-      "conv": "Tight Fist",
-      "conv_score": 1.0
+      "conv": "Circle",
+      "conv_score": 0.96
     },
     {
       "base": "119",
       "name": "Index Middle Unit, Hinge",
       "name_root": "Hinge",
       "conv": "Circle",
-      "conv_score": 0.882
+      "conv_score": 0.947
     },
     {
       "base": "123",
       "name": "Index Middle Hinge Spread, Thumb Side",
       "name_root": "Hinge",
       "conv": "Tight Fist",
-      "conv_score": 1.0
+      "conv_score": 0.982
     },
     {
       "base": "124",
       "name": "Index Up, Middle Hinge, Thumb Side",
       "name_root": "Hinge",
-      "conv": "Tight Fist",
-      "conv_score": 1.0
+      "conv": "Circle",
+      "conv_score": 0.984
     },
     {
       "base": "125",
       "name": "Index Up, Middle Hinge, Thumb Unit",
       "name_root": "Hinge",
-      "conv": "Circle",
-      "conv_score": 0.972
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "126",
       "name": "Index Hinge, Middle Up, Thumb Side",
       "name_root": "Hinge",
-      "conv": "Tight Fist",
-      "conv_score": 1.0
+      "conv": "Circle",
+      "conv_score": 0.984
     },
     {
       "base": "128",
       "name": "Index Middle Thumb Cup",
       "name_root": "Cup",
-      "conv": "Circle",
-      "conv_score": 0.916
+      "conv": "Tight Fist",
+      "conv_score": 0.975
+    },
+    {
+      "base": "129",
+      "name": "Index Middle Thumb Circle",
+      "name_root": "Circle",
+      "conv": "Tight Fist",
+      "conv_score": 0.969
     },
     {
       "base": "12a",
       "name": "Index Middle Thumb Hook",
       "name_root": "Angle",
       "conv": "Circle",
-      "conv_score": 0.978
+      "conv_score": 0.975
     },
     {
       "base": "12b",
       "name": "Index Middle Thumb Hinge",
       "name_root": "Hinge",
-      "conv": "Circle",
-      "conv_score": 0.972
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "130",
       "name": "Middle Thumb Hook, Index Up",
       "name_root": "Angle",
-      "conv": "Circle",
-      "conv_score": 0.955
+      "conv": "Tight Fist",
+      "conv_score": 0.991
     },
     {
       "base": "131",
       "name": "Index Thumb Hook, Middle Up",
       "name_root": "Angle",
-      "conv": "Circle",
-      "conv_score": 0.994
+      "conv": "Tight Fist",
+      "conv_score": 0.988
     },
     {
       "base": "132",
       "name": "Index Middle Unit Hinge, Thumb Side",
       "name_root": "Hinge",
       "conv": "Circle",
-      "conv_score": 0.831
+      "conv_score": 0.956
     },
     {
       "base": "135",
       "name": "Index Middle Unit Cup, Thumb Forward",
       "name_root": "Cup",
-      "conv": "Circle",
-      "conv_score": 0.944
+      "conv": "Tight Fist",
+      "conv_score": 0.994
     },
     {
       "base": "136",
       "name": "Middle Thumb Cup, Index Up",
       "name_root": "Cup",
       "conv": "Tight Fist",
-      "conv_score": 1.0
+      "conv_score": 0.98
     },
     {
       "base": "137",
       "name": "Index Thumb Cup, Middle Up",
       "name_root": "Cup",
       "conv": "Tight Fist",
-      "conv_score": 0.902
+      "conv_score": 0.975
+    },
+    {
+      "base": "138",
+      "name": "Middle Thumb Circle, Index Up",
+      "name_root": "Circle",
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "139",
       "name": "Middle Thumb Circle, Index Hinge",
       "name_root": "Hinge",
-      "conv": "Circle",
-      "conv_score": 0.983
+      "conv": "Tight Fist",
+      "conv_score": 0.977
     },
     {
       "base": "13a",
       "name": "Index Thumb Angle Out, Middle Up",
       "name_root": "Angle",
       "conv": "Circle",
-      "conv_score": 1.0
+      "conv_score": 0.983
     },
     {
       "base": "13b",
       "name": "Index Thumb Angle In, Middle Up",
       "name_root": "Angle",
+      "conv": "Circle",
+      "conv_score": 0.967
+    },
+    {
+      "base": "13c",
+      "name": "Index Thumb Circle, Middle Up",
+      "name_root": "Circle",
       "conv": "Tight Fist",
-      "conv_score": 0.951
+      "conv_score": 0.965
     },
     {
       "base": "13d",
       "name": "Index Middle Thumb, Unit Hinge",
       "name_root": "Hinge",
-      "conv": "Circle",
-      "conv_score": 0.983
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "13e",
       "name": "Index Middle Thumb, Angle Out",
       "name_root": "Angle",
-      "conv": "Circle",
-      "conv_score": 0.989
+      "conv": "Tight Fist",
+      "conv_score": 0.987
     },
     {
       "base": "13f",
       "name": "Index Middle Thumb, Angle",
       "name_root": "Angle",
-      "conv": "Circle",
-      "conv_score": 0.983
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "140",
       "name": "Middle Thumb Angle Out, Index Up",
       "name_root": "Angle",
-      "conv": "Circle",
-      "conv_score": 0.989
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "141",
       "name": "Middle Thumb Angle Out, Index Crossed",
       "name_root": "Angle",
-      "conv": "Circle",
-      "conv_score": 0.983
+      "conv": "Tight Fist",
+      "conv_score": 0.994
     },
     {
       "base": "142",
       "name": "Middle Thumb Angle, Index Up",
       "name_root": "Angle",
-      "conv": "Circle",
-      "conv_score": 0.983
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "143",
       "name": "Index Thumb Hook, Middle Hinge",
       "name_root": "Hinge",
-      "conv": "Circle",
-      "conv_score": 0.978
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "146",
       "name": "Four Fingers Hinge",
       "name_root": "Hinge",
-      "conv": "Flat Thumb Across",
-      "conv_score": 0.782
+      "conv": "Circle",
+      "conv_score": 0.807
     },
     {
       "base": "149",
       "name": "Four Fingers Unit Claw",
       "name_root": "Hinge",
       "conv": "Cup",
-      "conv_score": 0.83
+      "conv_score": 0.847
     },
     {
       "base": "155",
       "name": "Five Fingers Spread Hinge Open",
       "name_root": "Hinge",
       "conv": "Cup",
-      "conv_score": 0.742
+      "conv_score": 0.788
     },
     {
       "base": "157",
       "name": "Five Fingers Spread Hinge",
       "name_root": "Hinge",
-      "conv": "Flat Thumb Across",
-      "conv_score": 0.782
+      "conv": "Circle",
+      "conv_score": 0.802
     },
     {
       "base": "158",
       "name": "Five Fingers Spread Hinge, Thumb Side",
       "name_root": "Hinge",
       "conv": "Circle",
-      "conv_score": 0.815
+      "conv_score": 0.832
     },
     {
       "base": "159",
       "name": "Five Fingers Spread Hinge, No Thumb",
       "name_root": "Hinge",
       "conv": "Circle",
-      "conv_score": 0.781
+      "conv_score": 0.798
     },
     {
       "base": "166",
       "name": "Claw",
       "name_root": "Hinge",
       "conv": "Cup",
-      "conv_score": 0.896
+      "conv_score": 0.923
     },
     {
       "base": "167",
       "name": "Claw, Thumb Side",
       "name_root": "Hinge",
       "conv": "Cup",
-      "conv_score": 0.786
+      "conv_score": 0.833
     },
     {
       "base": "168",
       "name": "Claw, No Thumb",
       "name_root": "Hinge",
       "conv": "Cup",
-      "conv_score": 0.83
+      "conv_score": 0.847
     },
     {
       "base": "169",
       "name": "Claw, Thumb Forward",
       "name_root": "Hinge",
       "conv": "Cup",
-      "conv_score": 0.83
+      "conv_score": 0.902
     },
     {
       "base": "16a",
       "name": "Hook Curlicue",
       "name_root": "Circle",
       "conv": "Angle",
-      "conv_score": 0.716
+      "conv_score": 0.866
     },
     {
       "base": "16b",
       "name": "Hook",
       "name_root": "Angle",
       "conv": "Cup",
-      "conv_score": 0.83
-    },
-    {
-      "base": "16e",
-      "name": "Cup Open, Thumb Side",
-      "name_root": "Cup",
-      "conv": "Circle",
-      "conv_score": 0.646
+      "conv_score": 0.847
     },
     {
       "base": "17b",
       "name": "Hinge Open",
       "name_root": "Hinge",
       "conv": "Cup",
-      "conv_score": 0.582
+      "conv_score": 0.679
     },
     {
       "base": "17c",
       "name": "Hinge Open, Thumb Forward",
       "name_root": "Hinge",
       "conv": "Cup",
-      "conv_score": 0.681
+      "conv_score": 0.7
     },
     {
       "base": "17f",
       "name": "Hinge Open, Thumb Side",
       "name_root": "Hinge",
       "conv": "Cup",
-      "conv_score": 0.621
-    },
-    {
-      "base": "180",
-      "name": "Hinge, Thumb Side",
-      "name_root": "Hinge",
-      "conv": "Angle",
-      "conv_score": 0.749
+      "conv_score": 0.636
     },
     {
       "base": "181",
       "name": "Hinge Open, No Thumb",
       "name_root": "Hinge",
       "conv": "Cup",
-      "conv_score": 0.588
+      "conv_score": 0.58
     },
     {
       "base": "183",
       "name": "Hinge, Thumb Side Touches Index",
       "name_root": "Hinge",
       "conv": "Angle",
-      "conv_score": 0.867
+      "conv_score": 0.879
     },
     {
       "base": "184",
       "name": "Hinge, Thumb Between Middle Ring",
       "name_root": "Hinge",
       "conv": "Angle",
-      "conv_score": 0.763
+      "conv_score": 0.861
     },
     {
       "base": "188",
       "name": "Index Middle Ring on Hinge",
       "name_root": "Hinge",
       "conv": "Cup",
-      "conv_score": 0.659
+      "conv_score": 0.725
     },
     {
       "base": "189",
       "name": "Index Middle Ring on Angle",
       "name_root": "Angle",
-      "conv": "Circle",
-      "conv_score": 0.64
+      "conv": "Cup",
+      "conv_score": 0.705
     },
     {
       "base": "18a",
       "name": "Baby Hinge",
       "name_root": "Hinge",
       "conv": "Cup",
-      "conv_score": 0.731
+      "conv_score": 0.701
     },
     {
       "base": "18d",
       "name": "Index Middle Ring, Unit Hinge",
       "name_root": "Hinge",
+      "conv": "Circle",
+      "conv_score": 0.953
+    },
+    {
+      "base": "191",
+      "name": "Baby Down, Others Circle",
+      "name_root": "Circle",
       "conv": "Tight Fist",
-      "conv_score": 0.933
+      "conv_score": 0.972
     },
     {
       "base": "193",
       "name": "Baby Up on Fist Thumb Under",
       "name_root": "Tight Fist",
       "conv": "Circle",
-      "conv_score": 0.916
-    },
-    {
-      "base": "19b",
-      "name": "Baby Thumb on Hinge",
-      "name_root": "Hinge",
-      "conv": "Angle",
-      "conv_score": 0.773
-    },
-    {
-      "base": "19d",
-      "name": "Baby Index Thumb on Hinge",
-      "name_root": "Hinge",
-      "conv": "Angle",
-      "conv_score": 0.725
+      "conv_score": 0.938
     },
     {
       "base": "19e",
       "name": "Baby Index Thumb, Index Thumb Angle Out",
       "name_root": "Angle",
-      "conv": "Circle",
-      "conv_score": 0.904
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "19f",
       "name": "Baby Index Thumb, Index Thumb Angle",
       "name_root": "Angle",
       "conv": "Circle",
-      "conv_score": 0.91
+      "conv_score": 0.977
     },
     {
       "base": "1a6",
       "name": "Index Middle Baby on Hinge",
       "name_root": "Hinge",
       "conv": "Cup",
-      "conv_score": 0.698
+      "conv_score": 0.714
     },
     {
       "base": "1a7",
       "name": "Ring Hinge",
       "name_root": "Hinge",
       "conv": "Cup",
-      "conv_score": 0.681
-    },
-    {
-      "base": "1a8",
-      "name": "Index Middle Baby on Angle",
-      "name_root": "Angle",
-      "conv": "Circle",
-      "conv_score": 0.725
+      "conv_score": 0.677
     },
     {
       "base": "1ac",
       "name": "Ring Down, Index Thumb Hook, Middle Hinge",
       "name_root": "Hinge",
-      "conv": "Circle",
-      "conv_score": 0.927
+      "conv": "Tight Fist",
+      "conv_score": 0.976
     },
     {
       "base": "1ad",
       "name": "Ring Down, Middle Thumb Angle, Index Cross",
       "name_root": "Angle",
-      "conv": "Circle",
-      "conv_score": 0.927
+      "conv": "Tight Fist",
+      "conv_score": 0.982
     },
     {
       "base": "1b9",
       "name": "Ring Thumb Hook",
       "name_root": "Angle",
-      "conv": "Tight Fist",
-      "conv_score": 1.0
+      "conv": "Circle",
+      "conv_score": 0.961
     },
     {
       "base": "1bd",
       "name": "Index Ring Baby on Hook Out",
       "name_root": "Angle",
       "conv": "Circle",
-      "conv_score": 0.64
+      "conv_score": 0.739
     },
     {
       "base": "1be",
       "name": "Index Ring Baby on Hook In",
       "name_root": "Angle",
       "conv": "Cup",
-      "conv_score": 0.775
+      "conv_score": 0.766
     },
     {
       "base": "1bf",
       "name": "Index Ring Baby on Hook Under",
       "name_root": "Angle",
       "conv": "Cup",
-      "conv_score": 0.769
+      "conv_score": 0.744
     },
     {
-      "base": "1c2",
-      "name": "Index Ring Baby on Angle Out",
-      "name_root": "Angle",
-      "conv": "Hinge",
-      "conv_score": 0.757
-    },
-    {
-      "base": "1c3",
-      "name": "Index Ring Baby on Angle",
-      "name_root": "Angle",
-      "conv": "Hinge",
-      "conv_score": 0.723
+      "base": "1c5",
+      "name": "Middle Hinge",
+      "name_root": "Hinge",
+      "conv": "Cup",
+      "conv_score": 0.682
     },
     {
       "base": "1ca",
@@ -1294,60 +1371,60 @@
       "conv_score": 1.0
     },
     {
+      "base": "1d1",
+      "name": "Middle Ring Baby on Hinge",
+      "name_root": "Hinge",
+      "conv": "Cup",
+      "conv_score": 0.751
+    },
+    {
       "base": "1d3",
       "name": "Middle Ring Baby on Angle In",
       "name_root": "Angle",
       "conv": "Hinge",
-      "conv_score": 0.811
+      "conv_score": 0.792
     },
     {
       "base": "1d4",
       "name": "Middle Ring Baby on Angle",
       "name_root": "Angle",
-      "conv": "Hinge",
-      "conv_score": 0.738
+      "conv": "Cup",
+      "conv_score": 0.757
     },
     {
       "base": "1d7",
       "name": "Middle Ring Baby Unit on Claw Side",
       "name_root": "Hinge",
       "conv": "Circle",
-      "conv_score": 0.629
+      "conv_score": 0.613
     },
     {
       "base": "1d8",
       "name": "Middle Ring Baby Unit on Hook Out",
       "name_root": "Angle",
-      "conv": "Cup",
-      "conv_score": 0.709
+      "conv": "Circle",
+      "conv_score": 0.715
     },
     {
       "base": "1d9",
       "name": "Middle Ring Baby Unit on Hook In",
       "name_root": "Angle",
       "conv": "Cup",
-      "conv_score": 0.747
+      "conv_score": 0.743
     },
     {
       "base": "1da",
       "name": "Middle Ring Baby Unit on Hook",
       "name_root": "Angle",
       "conv": "Cup",
-      "conv_score": 0.714
+      "conv_score": 0.721
     },
     {
       "base": "1db",
       "name": "Index Hinge",
       "name_root": "Hinge",
       "conv": "Cup",
-      "conv_score": 0.599
-    },
-    {
-      "base": "1dd",
-      "name": "Index Thumb Side on Hinge",
-      "name_root": "Hinge",
-      "conv": "Angle",
-      "conv_score": 0.754
+      "conv_score": 0.671
     },
     {
       "base": "1e3",
@@ -1360,78 +1437,92 @@
       "base": "1e6",
       "name": "Index Thumb Hook",
       "name_root": "Angle",
-      "conv": "Tight Fist",
-      "conv_score": 1.0
+      "conv": "Circle",
+      "conv_score": 0.974
     },
     {
       "base": "1e7",
       "name": "Index Thumb Curlicue",
       "name_root": "Circle",
       "conv": "Tight Fist",
-      "conv_score": 1.0
+      "conv_score": 0.974
     },
     {
       "base": "1e9",
       "name": "Index Thumb Curve, Thumb Inside on Claw",
       "name_root": "Hinge",
       "conv": "Cup",
-      "conv_score": 0.841
+      "conv_score": 0.854
+    },
+    {
+      "base": "1eb",
+      "name": "Index Thumb Circle",
+      "name_root": "Circle",
+      "conv": "Tight Fist",
+      "conv_score": 0.967
     },
     {
       "base": "1ec",
       "name": "Index Thumb Cup",
       "name_root": "Cup",
       "conv": "Tight Fist",
-      "conv_score": 1.0
+      "conv_score": 0.96
     },
     {
       "base": "1ed",
       "name": "Index Thumb Cup Open",
       "name_root": "Cup",
-      "conv": "Circle",
-      "conv_score": 0.955
+      "conv": "Tight Fist",
+      "conv_score": 0.959
     },
     {
       "base": "1ee",
       "name": "Index Thumb Hinge Open",
       "name_root": "Hinge",
-      "conv": "Circle",
-      "conv_score": 0.972
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "1ef",
       "name": "Index Thumb Hinge Large",
       "name_root": "Hinge",
-      "conv": "Circle",
-      "conv_score": 0.972
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "1f0",
       "name": "Index Thumb Hinge",
       "name_root": "Hinge",
-      "conv": "Circle",
-      "conv_score": 0.972
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "1f1",
       "name": "Index Thumb Hinge Small",
       "name_root": "Hinge",
-      "conv": "Circle",
-      "conv_score": 0.972
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     },
     {
       "base": "1f2",
       "name": "Index Thumb Angle Out",
       "name_root": "Angle",
-      "conv": "Tight Fist",
-      "conv_score": 0.889
+      "conv": "Circle",
+      "conv_score": 0.956
+    },
+    {
+      "base": "1f3",
+      "name": "Index Thumb Angle In",
+      "name_root": "Angle",
+      "conv": "Circle",
+      "conv_score": 0.979
     },
     {
       "base": "1f4",
       "name": "Index Thumb Angle",
       "name_root": "Angle",
-      "conv": "Circle",
-      "conv_score": 0.989
+      "conv": "Tight Fist",
+      "conv_score": 1.0
     }
   ],
   "all": {
@@ -1439,1317 +1530,1317 @@
       "name": "Index",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.725,
+        "Circle": 0.982,
+        "Cup": 0.737,
         "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.801,
-        "Flat": 0.636
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.819,
+        "Flat": 0.674
       }
     },
     "101": {
       "name": "Index on Circle",
       "name_root": "Circle",
       "conv": "Circle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.813,
-        "Circle": 0.972,
-        "Cup": 0.676,
-        "Hinge": 0.621,
-        "Angle": 0.692,
-        "Flat Thumb Across": 0.699,
-        "Flat": 0.609
+        "Tight Fist": 0.86,
+        "Circle": 0.994,
+        "Cup": 0.673,
+        "Hinge": 0.645,
+        "Angle": 0.702,
+        "Flat Thumb Across": 0.73,
+        "Flat": 0.617
       }
     },
     "102": {
       "name": "Index on Cup",
       "name_root": "Cup",
       "conv": "Cup",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.52,
-        "Circle": 0.5,
-        "Cup": 0.626,
-        "Hinge": 0.553,
-        "Angle": 0.521,
-        "Flat Thumb Across": 0.492,
-        "Flat": 0.435
+        "Tight Fist": 0.621,
+        "Circle": 0.606,
+        "Cup": 0.753,
+        "Hinge": 0.663,
+        "Angle": 0.608,
+        "Flat Thumb Across": 0.563,
+        "Flat": 0.507
       }
     },
     "103": {
       "name": "Index on Oval",
       "name_root": null,
-      "conv": "Cup",
-      "agree": false,
+      "conv": "Hinge",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.707,
-        "Circle": 0.685,
-        "Cup": 0.78,
-        "Hinge": 0.757,
-        "Angle": 0.754,
-        "Flat Thumb Across": 0.594,
-        "Flat": 0.544
+        "Tight Fist": 0.732,
+        "Circle": 0.701,
+        "Cup": 0.751,
+        "Hinge": 0.792,
+        "Angle": 0.741,
+        "Flat Thumb Across": 0.618,
+        "Flat": 0.553
       }
     },
     "104": {
       "name": "Index on Hinge",
       "name_root": "Hinge",
       "conv": "Hinge",
-      "agree": true,
+      "source": "both",
       "scores": {
         "Tight Fist": 0.72,
-        "Circle": 0.657,
-        "Cup": 0.703,
+        "Circle": 0.679,
+        "Cup": 0.74,
         "Hinge": 0.971,
-        "Angle": 0.796,
-        "Flat Thumb Across": 0.598,
-        "Flat": 0.527
+        "Angle": 0.826,
+        "Flat Thumb Across": 0.61,
+        "Flat": 0.549
       }
     },
     "105": {
       "name": "Index on Angle",
       "name_root": "Angle",
       "conv": "Hinge",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.68,
-        "Circle": 0.669,
-        "Cup": 0.637,
-        "Hinge": 0.772,
-        "Angle": 0.758,
-        "Flat Thumb Across": 0.568,
-        "Flat": 0.493
+        "Tight Fist": 0.715,
+        "Circle": 0.721,
+        "Cup": 0.721,
+        "Hinge": 0.827,
+        "Angle": 0.816,
+        "Flat Thumb Across": 0.61,
+        "Flat": 0.546
       }
     },
     "106": {
       "name": "Index Bent",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.725,
+        "Circle": 0.982,
+        "Cup": 0.737,
         "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.823,
-        "Flat": 0.694
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.838,
+        "Flat": 0.734
       }
     },
     "107": {
       "name": "Index Bent on Circle",
       "name_root": "Circle",
       "conv": "Circle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.813,
-        "Circle": 0.961,
-        "Cup": 0.687,
-        "Hinge": 0.617,
-        "Angle": 0.701,
-        "Flat Thumb Across": 0.711,
-        "Flat": 0.663
+        "Tight Fist": 0.864,
+        "Circle": 0.994,
+        "Cup": 0.675,
+        "Hinge": 0.648,
+        "Angle": 0.704,
+        "Flat Thumb Across": 0.756,
+        "Flat": 0.683
       }
     },
     "108": {
       "name": "Index Bent on Fist Thumb Under",
       "name_root": "Tight Fist",
       "conv": "Tight Fist",
-      "agree": true,
+      "source": "both",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.725,
+        "Circle": 0.982,
+        "Cup": 0.737,
         "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.823,
-        "Flat": 0.694
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.838,
+        "Flat": 0.734
       }
     },
     "109": {
       "name": "Index Raised Knuckle",
       "name_root": null,
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.902,
-        "Circle": 0.893,
-        "Cup": 0.703,
-        "Hinge": 0.68,
-        "Angle": 0.664,
-        "Flat Thumb Across": 0.789,
-        "Flat": 0.609
+        "Tight Fist": 0.969,
+        "Circle": 0.972,
+        "Cup": 0.758,
+        "Hinge": 0.769,
+        "Angle": 0.781,
+        "Flat Thumb Across": 0.865,
+        "Flat": 0.703
       }
     },
     "10a": {
       "name": "Index Cup",
       "name_root": "Cup",
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "name",
       "scores": {
-        "Tight Fist": 1.0,
+        "Tight Fist": 0.961,
         "Circle": 0.966,
-        "Cup": 0.725,
-        "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.801,
-        "Flat": 0.67
+        "Cup": 0.716,
+        "Hinge": 0.76,
+        "Angle": 0.777,
+        "Flat Thumb Across": 0.806,
+        "Flat": 0.7
       }
     },
     "10b": {
       "name": "Index Hinge on Fist",
       "name_root": "Tight Fist",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.836,
-        "Circle": 0.899,
-        "Cup": 0.698,
-        "Hinge": 0.65,
-        "Angle": 0.697,
-        "Flat Thumb Across": 0.759,
-        "Flat": 0.65
+        "Tight Fist": 0.977,
+        "Circle": 0.975,
+        "Cup": 0.741,
+        "Hinge": 0.775,
+        "Angle": 0.787,
+        "Flat Thumb Across": 0.831,
+        "Flat": 0.704
       }
     },
     "10c": {
       "name": "Index Hinge on Fist Low",
       "name_root": "Tight Fist",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.933,
-        "Circle": 0.972,
-        "Cup": 0.753,
-        "Hinge": 0.757,
-        "Angle": 0.801,
-        "Flat Thumb Across": 0.801,
-        "Flat": 0.687
+        "Tight Fist": 0.969,
+        "Circle": 0.969,
+        "Cup": 0.72,
+        "Hinge": 0.764,
+        "Angle": 0.781,
+        "Flat Thumb Across": 0.818,
+        "Flat": 0.688
       }
     },
     "10d": {
       "name": "Index Hinge on Circle",
       "name_root": "Circle",
       "conv": "Circle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.813,
-        "Circle": 0.966,
-        "Cup": 0.687,
-        "Hinge": 0.617,
-        "Angle": 0.701,
-        "Flat Thumb Across": 0.695,
-        "Flat": 0.626
+        "Tight Fist": 0.87,
+        "Circle": 0.99,
+        "Cup": 0.678,
+        "Hinge": 0.653,
+        "Angle": 0.706,
+        "Flat Thumb Across": 0.739,
+        "Flat": 0.645
       }
     },
     "10e": {
       "name": "Index Middle",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.747,
+        "Circle": 0.982,
+        "Cup": 0.768,
         "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.868,
-        "Flat": 0.724
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.878,
+        "Flat": 0.75
       }
     },
     "10f": {
       "name": "Index Middle on Circle",
       "name_root": "Circle",
       "conv": "Circle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.822,
-        "Circle": 0.972,
-        "Cup": 0.703,
-        "Hinge": 0.626,
-        "Angle": 0.697,
-        "Flat Thumb Across": 0.774,
-        "Flat": 0.694
+        "Tight Fist": 0.876,
+        "Circle": 0.994,
+        "Cup": 0.714,
+        "Hinge": 0.661,
+        "Angle": 0.713,
+        "Flat Thumb Across": 0.8,
+        "Flat": 0.702
       }
     },
     "110": {
       "name": "Index Middle Bent",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.736,
+        "Circle": 0.984,
+        "Cup": 0.751,
         "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.853,
-        "Flat": 0.755
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.865,
+        "Flat": 0.785
       }
     },
     "111": {
       "name": "Index Middle Raised Knuckles",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.951,
-        "Circle": 0.933,
-        "Cup": 0.819,
-        "Hinge": 0.733,
-        "Angle": 0.716,
-        "Flat Thumb Across": 0.895,
-        "Flat": 0.721
+        "Tight Fist": 1.0,
+        "Circle": 0.989,
+        "Cup": 0.865,
+        "Hinge": 0.786,
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.945,
+        "Flat": 0.781
       }
     },
     "112": {
       "name": "Index Middle Hinge",
       "name_root": "Hinge",
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "name",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.758,
+        "Circle": 0.983,
+        "Cup": 0.779,
         "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.902,
-        "Flat": 0.759
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.906,
+        "Flat": 0.783
       }
     },
     "113": {
       "name": "Index Up, Middle Hinge",
       "name_root": "Hinge",
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "name",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.747,
+        "Circle": 0.985,
+        "Cup": 0.77,
         "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.895,
-        "Flat": 0.759
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.899,
+        "Flat": 0.788
       }
     },
     "114": {
       "name": "Index Hinge, Middle Up",
       "name_root": "Hinge",
       "conv": "Circle",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.933,
-        "Circle": 0.972,
-        "Cup": 0.764,
-        "Hinge": 0.757,
-        "Angle": 0.801,
-        "Flat Thumb Across": 0.857,
-        "Flat": 0.789
+        "Tight Fist": 0.971,
+        "Circle": 0.973,
+        "Cup": 0.743,
+        "Hinge": 0.766,
+        "Angle": 0.781,
+        "Flat Thumb Across": 0.874,
+        "Flat": 0.783
       }
     },
     "115": {
       "name": "Index Middle Unit",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.731,
+        "Circle": 0.983,
+        "Cup": 0.749,
         "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.85,
-        "Flat": 0.714
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.865,
+        "Flat": 0.753
       }
     },
     "116": {
       "name": "Index Middle Unit, Index Bent",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.951,
-        "Circle": 0.933,
-        "Cup": 0.736,
-        "Hinge": 0.733,
-        "Angle": 0.716,
-        "Flat Thumb Across": 0.85,
-        "Flat": 0.745
+        "Tight Fist": 0.994,
+        "Circle": 0.982,
+        "Cup": 0.805,
+        "Hinge": 0.78,
+        "Angle": 0.793,
+        "Flat Thumb Across": 0.896,
+        "Flat": 0.808
       }
     },
     "117": {
       "name": "Index Middle Unit, Middle Bent",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.951,
-        "Circle": 0.933,
-        "Cup": 0.736,
-        "Hinge": 0.733,
-        "Angle": 0.716,
-        "Flat Thumb Across": 0.85,
-        "Flat": 0.752
+        "Tight Fist": 0.994,
+        "Circle": 0.982,
+        "Cup": 0.8,
+        "Hinge": 0.78,
+        "Angle": 0.793,
+        "Flat Thumb Across": 0.896,
+        "Flat": 0.817
       }
     },
     "118": {
       "name": "Index Middle Unit, Cup",
       "name_root": "Cup",
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "name",
       "scores": {
-        "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.725,
-        "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.85,
-        "Flat": 0.752
+        "Tight Fist": 0.957,
+        "Circle": 0.96,
+        "Cup": 0.717,
+        "Hinge": 0.756,
+        "Angle": 0.773,
+        "Flat Thumb Across": 0.847,
+        "Flat": 0.765
       }
     },
     "119": {
       "name": "Index Middle Unit, Hinge",
       "name_root": "Hinge",
       "conv": "Circle",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.836,
-        "Circle": 0.882,
-        "Cup": 0.731,
-        "Hinge": 0.65,
-        "Angle": 0.697,
-        "Flat Thumb Across": 0.831,
-        "Flat": 0.694
+        "Tight Fist": 0.938,
+        "Circle": 0.947,
+        "Cup": 0.781,
+        "Hinge": 0.741,
+        "Angle": 0.754,
+        "Flat Thumb Across": 0.895,
+        "Flat": 0.754
       }
     },
     "11a": {
       "name": "Index Middle Cross",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.753,
+        "Circle": 0.984,
+        "Cup": 0.791,
         "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.902,
-        "Flat": 0.776
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.913,
+        "Flat": 0.774
       }
     },
     "11b": {
       "name": "Index Middle Cross on Circle",
       "name_root": "Circle",
       "conv": "Circle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.84,
-        "Circle": 0.961,
-        "Cup": 0.698,
-        "Hinge": 0.631,
-        "Angle": 0.678,
-        "Flat Thumb Across": 0.801,
-        "Flat": 0.704
+        "Tight Fist": 0.857,
+        "Circle": 0.997,
+        "Cup": 0.712,
+        "Hinge": 0.653,
+        "Angle": 0.705,
+        "Flat Thumb Across": 0.818,
+        "Flat": 0.731
       }
     },
     "11c": {
       "name": "Middle Bent Over Index",
       "name_root": null,
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.951,
-        "Circle": 0.927,
-        "Cup": 0.725,
-        "Hinge": 0.733,
-        "Angle": 0.716,
-        "Flat Thumb Across": 0.857,
-        "Flat": 0.738
+        "Tight Fist": 0.964,
+        "Circle": 0.97,
+        "Cup": 0.766,
+        "Hinge": 0.764,
+        "Angle": 0.777,
+        "Flat Thumb Across": 0.899,
+        "Flat": 0.784
       }
     },
     "11d": {
       "name": "Index Bent Over Middle",
       "name_root": null,
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.753,
-        "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.883,
-        "Flat": 0.796
+        "Tight Fist": 0.963,
+        "Circle": 0.972,
+        "Cup": 0.75,
+        "Hinge": 0.763,
+        "Angle": 0.777,
+        "Flat Thumb Across": 0.877,
+        "Flat": 0.792
       }
     },
     "11e": {
       "name": "Index Middle Thumb",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 1.0,
-        "Circle": 0.983,
-        "Cup": 0.758,
-        "Hinge": 0.786,
-        "Angle": 0.777,
-        "Flat Thumb Across": 0.861,
-        "Flat": 0.711
+        "Tight Fist": 0.982,
+        "Circle": 0.98,
+        "Cup": 0.759,
+        "Hinge": 0.771,
+        "Angle": 0.785,
+        "Flat Thumb Across": 0.866,
+        "Flat": 0.74
       }
     },
     "11f": {
       "name": "Index Middle Thumb on Circle",
       "name_root": "Circle",
       "conv": "Circle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.844,
-        "Circle": 0.966,
-        "Cup": 0.709,
-        "Hinge": 0.636,
-        "Angle": 0.706,
-        "Flat Thumb Across": 0.767,
-        "Flat": 0.68
+        "Tight Fist": 0.89,
+        "Circle": 0.992,
+        "Cup": 0.737,
+        "Hinge": 0.671,
+        "Angle": 0.723,
+        "Flat Thumb Across": 0.81,
+        "Flat": 0.714
       }
     },
     "120": {
       "name": "Index Middle Straight, Thumb Bent",
       "name_root": null,
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.942,
-        "Circle": 0.972,
-        "Cup": 0.758,
-        "Hinge": 0.757,
-        "Angle": 0.801,
-        "Flat Thumb Across": 0.868,
-        "Flat": 0.745
+        "Tight Fist": 1.0,
+        "Circle": 0.985,
+        "Cup": 0.772,
+        "Hinge": 0.786,
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.878,
+        "Flat": 0.75
       }
     },
     "121": {
       "name": "Index Middle Bent, Thumb Straight",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.978,
-        "Cup": 0.736,
+        "Circle": 0.987,
+        "Cup": 0.754,
         "Hinge": 0.786,
-        "Angle": 0.773,
-        "Flat Thumb Across": 0.853,
-        "Flat": 0.755
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.865,
+        "Flat": 0.785
       }
     },
     "122": {
       "name": "Index Middle Thumb Bent",
       "name_root": null,
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.942,
-        "Circle": 0.972,
-        "Cup": 0.764,
-        "Hinge": 0.757,
-        "Angle": 0.801,
-        "Flat Thumb Across": 0.846,
-        "Flat": 0.779
+        "Tight Fist": 1.0,
+        "Circle": 0.987,
+        "Cup": 0.754,
+        "Hinge": 0.786,
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.865,
+        "Flat": 0.785
       }
     },
     "123": {
       "name": "Index Middle Hinge Spread, Thumb Side",
       "name_root": "Hinge",
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 1.0,
-        "Circle": 0.983,
-        "Cup": 0.769,
-        "Hinge": 0.786,
-        "Angle": 0.777,
-        "Flat Thumb Across": 0.898,
-        "Flat": 0.752
+        "Tight Fist": 0.982,
+        "Circle": 0.981,
+        "Cup": 0.775,
+        "Hinge": 0.77,
+        "Angle": 0.785,
+        "Flat Thumb Across": 0.899,
+        "Flat": 0.77
       }
     },
     "124": {
       "name": "Index Up, Middle Hinge, Thumb Side",
       "name_root": "Hinge",
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "name",
       "scores": {
-        "Tight Fist": 1.0,
-        "Circle": 0.983,
+        "Tight Fist": 0.981,
+        "Circle": 0.984,
         "Cup": 0.764,
-        "Hinge": 0.786,
-        "Angle": 0.777,
-        "Flat Thumb Across": 0.895,
-        "Flat": 0.755
+        "Hinge": 0.77,
+        "Angle": 0.785,
+        "Flat Thumb Across": 0.893,
+        "Flat": 0.777
       }
     },
     "125": {
       "name": "Index Up, Middle Hinge, Thumb Unit",
       "name_root": "Hinge",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.951,
-        "Circle": 0.972,
-        "Cup": 0.775,
-        "Hinge": 0.806,
-        "Angle": 0.806,
-        "Flat Thumb Across": 0.891,
-        "Flat": 0.786
+        "Tight Fist": 1.0,
+        "Circle": 0.985,
+        "Cup": 0.777,
+        "Hinge": 0.811,
+        "Angle": 0.825,
+        "Flat Thumb Across": 0.899,
+        "Flat": 0.788
       }
     },
     "126": {
       "name": "Index Hinge, Middle Up, Thumb Side",
       "name_root": "Hinge",
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "name",
       "scores": {
-        "Tight Fist": 1.0,
-        "Circle": 0.983,
-        "Cup": 0.747,
-        "Hinge": 0.786,
-        "Angle": 0.777,
-        "Flat Thumb Across": 0.876,
-        "Flat": 0.772
+        "Tight Fist": 0.981,
+        "Circle": 0.984,
+        "Cup": 0.756,
+        "Hinge": 0.77,
+        "Angle": 0.785,
+        "Flat Thumb Across": 0.877,
+        "Flat": 0.789
       }
     },
     "127": {
       "name": "Index Middle Up Spread, Thumb Forward",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.747,
-        "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.868,
-        "Flat": 0.724
+        "Tight Fist": 0.997,
+        "Circle": 0.979,
+        "Cup": 0.765,
+        "Hinge": 0.783,
+        "Angle": 0.796,
+        "Flat Thumb Across": 0.876,
+        "Flat": 0.748
       }
     },
     "128": {
       "name": "Index Middle Thumb Cup",
       "name_root": "Cup",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.893,
-        "Circle": 0.916,
-        "Cup": 0.758,
-        "Hinge": 0.825,
-        "Angle": 0.787,
-        "Flat Thumb Across": 0.801,
-        "Flat": 0.667
+        "Tight Fist": 0.975,
+        "Circle": 0.967,
+        "Cup": 0.813,
+        "Hinge": 0.842,
+        "Angle": 0.797,
+        "Flat Thumb Across": 0.841,
+        "Flat": 0.706
       }
     },
     "129": {
       "name": "Index Middle Thumb Circle",
       "name_root": "Circle",
-      "conv": "Circle",
-      "agree": true,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.947,
-        "Circle": 0.983,
-        "Cup": 0.775,
-        "Hinge": 0.806,
-        "Angle": 0.872,
-        "Flat Thumb Across": 0.835,
-        "Flat": 0.673
+        "Tight Fist": 0.969,
+        "Circle": 0.964,
+        "Cup": 0.773,
+        "Hinge": 0.796,
+        "Angle": 0.847,
+        "Flat Thumb Across": 0.832,
+        "Flat": 0.692
       }
     },
     "12a": {
       "name": "Index Middle Thumb Hook",
       "name_root": "Angle",
       "conv": "Circle",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.942,
-        "Circle": 0.978,
-        "Cup": 0.753,
+        "Tight Fist": 0.973,
+        "Circle": 0.975,
+        "Cup": 0.778,
         "Hinge": 0.816,
-        "Angle": 0.858,
-        "Flat Thumb Across": 0.835,
-        "Flat": 0.673
+        "Angle": 0.84,
+        "Flat Thumb Across": 0.836,
+        "Flat": 0.692
       }
     },
     "12b": {
       "name": "Index Middle Thumb Hinge",
       "name_root": "Hinge",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.96,
-        "Circle": 0.972,
-        "Cup": 0.769,
-        "Hinge": 0.922,
-        "Angle": 0.934,
-        "Flat Thumb Across": 0.789,
-        "Flat": 0.612
+        "Tight Fist": 1.0,
+        "Circle": 0.982,
+        "Cup": 0.758,
+        "Hinge": 0.94,
+        "Angle": 0.93,
+        "Flat Thumb Across": 0.811,
+        "Flat": 0.625
       }
     },
     "12c": {
       "name": "Thumb Between Index Middle Straight",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.775,
-        "Hinge": 0.917,
-        "Angle": 0.915,
-        "Flat Thumb Across": 0.789,
-        "Flat": 0.612
+        "Circle": 0.989,
+        "Cup": 0.789,
+        "Hinge": 0.923,
+        "Angle": 0.935,
+        "Flat Thumb Across": 0.837,
+        "Flat": 0.646
       }
     },
     "12d": {
       "name": "Index Middle Unit, Thumb Side",
       "name_root": null,
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 1.0,
+        "Tight Fist": 0.981,
         "Circle": 0.983,
-        "Cup": 0.747,
-        "Hinge": 0.786,
-        "Angle": 0.777,
-        "Flat Thumb Across": 0.85,
-        "Flat": 0.714
+        "Cup": 0.735,
+        "Hinge": 0.769,
+        "Angle": 0.785,
+        "Flat Thumb Across": 0.851,
+        "Flat": 0.741
       }
     },
     "12e": {
       "name": "Index Middle Unit, Thumb Side Unit",
       "name_root": null,
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.951,
-        "Circle": 0.972,
-        "Cup": 0.758,
-        "Hinge": 0.806,
-        "Angle": 0.806,
-        "Flat Thumb Across": 0.835,
-        "Flat": 0.745
+        "Tight Fist": 1.0,
+        "Circle": 0.983,
+        "Cup": 0.764,
+        "Hinge": 0.81,
+        "Angle": 0.825,
+        "Flat Thumb Across": 0.865,
+        "Flat": 0.753
       }
     },
     "12f": {
       "name": "Index Middle Unit, Thumb Side Bent",
       "name_root": null,
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.942,
-        "Circle": 0.972,
-        "Cup": 0.758,
-        "Hinge": 0.757,
-        "Angle": 0.801,
-        "Flat Thumb Across": 0.835,
-        "Flat": 0.745
+        "Tight Fist": 1.0,
+        "Circle": 0.986,
+        "Cup": 0.753,
+        "Hinge": 0.786,
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.865,
+        "Flat": 0.753
       }
     },
     "130": {
       "name": "Middle Thumb Hook, Index Up",
       "name_root": "Angle",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.933,
-        "Circle": 0.955,
-        "Cup": 0.808,
-        "Hinge": 0.743,
-        "Angle": 0.773,
-        "Flat Thumb Across": 0.887,
-        "Flat": 0.813
+        "Tight Fist": 0.991,
+        "Circle": 0.987,
+        "Cup": 0.849,
+        "Hinge": 0.777,
+        "Angle": 0.791,
+        "Flat Thumb Across": 0.923,
+        "Flat": 0.841
       }
     },
     "131": {
       "name": "Index Thumb Hook, Middle Up",
       "name_root": "Angle",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.969,
-        "Circle": 0.994,
-        "Cup": 0.786,
-        "Hinge": 0.801,
-        "Angle": 0.867,
-        "Flat Thumb Across": 0.861,
-        "Flat": 0.745
+        "Tight Fist": 0.988,
+        "Circle": 0.988,
+        "Cup": 0.775,
+        "Hinge": 0.819,
+        "Angle": 0.857,
+        "Flat Thumb Across": 0.867,
+        "Flat": 0.75
       }
     },
     "132": {
       "name": "Index Middle Unit Hinge, Thumb Side",
       "name_root": "Hinge",
       "conv": "Circle",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.804,
-        "Circle": 0.831,
-        "Cup": 0.703,
-        "Hinge": 0.66,
-        "Angle": 0.64,
-        "Flat Thumb Across": 0.805,
-        "Flat": 0.67
+        "Tight Fist": 0.933,
+        "Circle": 0.956,
+        "Cup": 0.767,
+        "Hinge": 0.731,
+        "Angle": 0.745,
+        "Flat Thumb Across": 0.894,
+        "Flat": 0.754
       }
     },
     "133": {
       "name": "Index Middle Cross, Thumb Side",
       "name_root": null,
       "conv": "Circle",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.951,
-        "Circle": 0.961,
-        "Cup": 0.742,
-        "Hinge": 0.733,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.846,
-        "Flat": 0.759
+        "Tight Fist": 0.943,
+        "Circle": 0.964,
+        "Cup": 0.749,
+        "Hinge": 0.746,
+        "Angle": 0.759,
+        "Flat Thumb Across": 0.893,
+        "Flat": 0.758
       }
     },
     "134": {
       "name": "Index Middle Unit, Thumb Forward",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.731,
-        "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.85,
-        "Flat": 0.714
+        "Tight Fist": 0.997,
+        "Circle": 0.98,
+        "Cup": 0.746,
+        "Hinge": 0.783,
+        "Angle": 0.796,
+        "Flat Thumb Across": 0.862,
+        "Flat": 0.751
       }
     },
     "135": {
       "name": "Index Middle Unit Cup, Thumb Forward",
       "name_root": "Cup",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.893,
-        "Circle": 0.944,
-        "Cup": 0.714,
-        "Hinge": 0.704,
-        "Angle": 0.749,
-        "Flat Thumb Across": 0.801,
-        "Flat": 0.656
+        "Tight Fist": 0.994,
+        "Circle": 0.981,
+        "Cup": 0.76,
+        "Hinge": 0.788,
+        "Angle": 0.801,
+        "Flat Thumb Across": 0.85,
+        "Flat": 0.725
       }
     },
     "136": {
       "name": "Middle Thumb Cup, Index Up",
       "name_root": "Cup",
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.78,
-        "Hinge": 0.917,
-        "Angle": 0.839,
-        "Flat Thumb Across": 0.793,
-        "Flat": 0.663
+        "Tight Fist": 0.98,
+        "Circle": 0.969,
+        "Cup": 0.795,
+        "Hinge": 0.897,
+        "Angle": 0.851,
+        "Flat Thumb Across": 0.803,
+        "Flat": 0.666
       }
     },
     "137": {
       "name": "Index Thumb Cup, Middle Up",
       "name_root": "Cup",
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.902,
-        "Circle": 0.893,
-        "Cup": 0.731,
-        "Hinge": 0.748,
-        "Angle": 0.673,
-        "Flat Thumb Across": 0.801,
-        "Flat": 0.68
+        "Tight Fist": 0.975,
+        "Circle": 0.964,
+        "Cup": 0.795,
+        "Hinge": 0.841,
+        "Angle": 0.797,
+        "Flat Thumb Across": 0.866,
+        "Flat": 0.725
       }
     },
     "138": {
       "name": "Middle Thumb Circle, Index Up",
       "name_root": "Circle",
-      "conv": "Circle",
-      "agree": true,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.947,
+        "Tight Fist": 1.0,
         "Circle": 0.983,
-        "Cup": 0.775,
-        "Hinge": 0.811,
+        "Cup": 0.751,
+        "Hinge": 0.831,
         "Angle": 0.877,
-        "Flat Thumb Across": 0.801,
-        "Flat": 0.639
+        "Flat Thumb Across": 0.819,
+        "Flat": 0.674
       }
     },
     "139": {
       "name": "Middle Thumb Circle, Index Hinge",
       "name_root": "Hinge",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.951,
-        "Circle": 0.983,
-        "Cup": 0.78,
-        "Hinge": 0.816,
-        "Angle": 0.877,
-        "Flat Thumb Across": 0.797,
-        "Flat": 0.616
+        "Tight Fist": 0.977,
+        "Circle": 0.973,
+        "Cup": 0.744,
+        "Hinge": 0.805,
+        "Angle": 0.851,
+        "Flat Thumb Across": 0.804,
+        "Flat": 0.625
       }
     },
     "13a": {
       "name": "Index Thumb Angle Out, Middle Up",
       "name_root": "Angle",
       "conv": "Circle",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.96,
-        "Circle": 1.0,
-        "Cup": 0.791,
-        "Hinge": 0.854,
-        "Angle": 0.924,
-        "Flat Thumb Across": 0.853,
-        "Flat": 0.701
+        "Tight Fist": 0.973,
+        "Circle": 0.983,
+        "Cup": 0.748,
+        "Hinge": 0.851,
+        "Angle": 0.903,
+        "Flat Thumb Across": 0.852,
+        "Flat": 0.707
       }
     },
     "13b": {
       "name": "Index Thumb Angle In, Middle Up",
       "name_root": "Angle",
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.951,
-        "Circle": 0.916,
-        "Cup": 0.769,
-        "Hinge": 0.859,
-        "Angle": 0.858,
-        "Flat Thumb Across": 0.808,
-        "Flat": 0.684
+        "Tight Fist": 0.941,
+        "Circle": 0.967,
+        "Cup": 0.78,
+        "Hinge": 0.833,
+        "Angle": 0.874,
+        "Flat Thumb Across": 0.859,
+        "Flat": 0.719
       }
     },
     "13c": {
       "name": "Index Thumb Circle, Middle Up",
       "name_root": "Circle",
-      "conv": "Circle",
-      "agree": true,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.902,
-        "Circle": 0.927,
-        "Cup": 0.78,
-        "Hinge": 0.796,
-        "Angle": 0.848,
-        "Flat Thumb Across": 0.808,
-        "Flat": 0.684
+        "Tight Fist": 0.965,
+        "Circle": 0.965,
+        "Cup": 0.745,
+        "Hinge": 0.807,
+        "Angle": 0.853,
+        "Flat Thumb Across": 0.851,
+        "Flat": 0.706
       }
     },
     "13d": {
       "name": "Index Middle Thumb, Unit Hinge",
       "name_root": "Hinge",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.96,
+        "Tight Fist": 1.0,
         "Circle": 0.983,
-        "Cup": 0.78,
-        "Hinge": 0.883,
-        "Angle": 0.91,
-        "Flat Thumb Across": 0.789,
-        "Flat": 0.612
+        "Cup": 0.764,
+        "Hinge": 0.901,
+        "Angle": 0.909,
+        "Flat Thumb Across": 0.811,
+        "Flat": 0.625
       }
     },
     "13e": {
       "name": "Index Middle Thumb, Angle Out",
       "name_root": "Angle",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.978,
-        "Circle": 0.989,
-        "Cup": 0.775,
-        "Hinge": 0.883,
-        "Angle": 0.943,
-        "Flat Thumb Across": 0.789,
-        "Flat": 0.612
+        "Tight Fist": 0.987,
+        "Circle": 0.98,
+        "Cup": 0.745,
+        "Hinge": 0.892,
+        "Angle": 0.935,
+        "Flat Thumb Across": 0.804,
+        "Flat": 0.62
       }
     },
     "13f": {
       "name": "Index Middle Thumb, Angle",
       "name_root": "Angle",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.964,
+        "Tight Fist": 1.0,
         "Circle": 0.983,
-        "Cup": 0.769,
-        "Hinge": 0.845,
-        "Angle": 0.91,
-        "Flat Thumb Across": 0.789,
-        "Flat": 0.612
+        "Cup": 0.75,
+        "Hinge": 0.864,
+        "Angle": 0.909,
+        "Flat Thumb Across": 0.811,
+        "Flat": 0.625
       }
     },
     "140": {
       "name": "Middle Thumb Angle Out, Index Up",
       "name_root": "Angle",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.956,
+        "Tight Fist": 1.0,
         "Circle": 0.989,
-        "Cup": 0.769,
-        "Hinge": 0.883,
-        "Angle": 0.938,
-        "Flat Thumb Across": 0.801,
-        "Flat": 0.636
+        "Cup": 0.751,
+        "Hinge": 0.894,
+        "Angle": 0.936,
+        "Flat Thumb Across": 0.819,
+        "Flat": 0.674
       }
     },
     "141": {
       "name": "Middle Thumb Angle Out, Index Crossed",
       "name_root": "Angle",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.956,
-        "Circle": 0.983,
-        "Cup": 0.758,
-        "Hinge": 0.874,
-        "Angle": 0.915,
-        "Flat Thumb Across": 0.805,
-        "Flat": 0.622
+        "Tight Fist": 0.994,
+        "Circle": 0.986,
+        "Cup": 0.755,
+        "Hinge": 0.89,
+        "Angle": 0.92,
+        "Flat Thumb Across": 0.827,
+        "Flat": 0.647
       }
     },
     "142": {
       "name": "Middle Thumb Angle, Index Up",
       "name_root": "Angle",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.96,
-        "Circle": 0.983,
-        "Cup": 0.758,
-        "Hinge": 0.883,
-        "Angle": 0.924,
-        "Flat Thumb Across": 0.801,
-        "Flat": 0.639
+        "Tight Fist": 1.0,
+        "Circle": 0.986,
+        "Cup": 0.738,
+        "Hinge": 0.892,
+        "Angle": 0.913,
+        "Flat Thumb Across": 0.819,
+        "Flat": 0.674
       }
     },
     "143": {
       "name": "Index Thumb Hook, Middle Hinge",
       "name_root": "Hinge",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.969,
-        "Circle": 0.978,
-        "Cup": 0.764,
-        "Hinge": 0.874,
-        "Angle": 0.919,
-        "Flat Thumb Across": 0.801,
-        "Flat": 0.646
+        "Tight Fist": 1.0,
+        "Circle": 0.984,
+        "Cup": 0.748,
+        "Hinge": 0.89,
+        "Angle": 0.918,
+        "Flat Thumb Across": 0.819,
+        "Flat": 0.674
       }
     },
     "144": {
       "name": "Four Fingers",
       "name_root": null,
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Flat Thumb Across",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.929,
-        "Circle": 0.921,
-        "Cup": 0.879,
-        "Hinge": 0.743,
-        "Angle": 0.777,
-        "Flat Thumb Across": 0.902,
-        "Flat": 0.837
+        "Tight Fist": 0.928,
+        "Circle": 0.952,
+        "Cup": 0.903,
+        "Hinge": 0.771,
+        "Angle": 0.779,
+        "Flat Thumb Across": 0.98,
+        "Flat": 0.88
       }
     },
     "145": {
       "name": "Four Fingers Bent",
       "name_root": null,
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Flat Thumb Across",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.876,
-        "Circle": 0.865,
-        "Cup": 0.874,
-        "Hinge": 0.772,
-        "Angle": 0.791,
-        "Flat Thumb Across": 0.85,
-        "Flat": 0.803
+        "Tight Fist": 0.91,
+        "Circle": 0.937,
+        "Cup": 0.887,
+        "Hinge": 0.795,
+        "Angle": 0.802,
+        "Flat Thumb Across": 0.962,
+        "Flat": 0.874
       }
     },
     "146": {
       "name": "Four Fingers Hinge",
       "name_root": "Hinge",
-      "conv": "Flat Thumb Across",
-      "agree": false,
+      "conv": "Circle",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.733,
-        "Circle": 0.781,
-        "Cup": 0.775,
-        "Hinge": 0.68,
-        "Angle": 0.645,
-        "Flat Thumb Across": 0.782,
-        "Flat": 0.769
+        "Tight Fist": 0.734,
+        "Circle": 0.807,
+        "Cup": 0.787,
+        "Hinge": 0.676,
+        "Angle": 0.674,
+        "Flat Thumb Across": 0.767,
+        "Flat": 0.762
       }
     },
     "147": {
       "name": "Four Fingers Unit",
       "name_root": null,
       "conv": "Flat Thumb Across",
-      "agree": false,
+      "source": "convolution",
       "scores": {
         "Tight Fist": 0.933,
-        "Circle": 0.938,
-        "Cup": 0.857,
+        "Circle": 0.958,
+        "Cup": 0.873,
         "Hinge": 0.757,
-        "Angle": 0.735,
+        "Angle": 0.767,
         "Flat Thumb Across": 1.0,
-        "Flat": 0.796
+        "Flat": 0.791
       }
     },
     "148": {
       "name": "Four Fingers Unit Split",
       "name_root": null,
       "conv": "Circle",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.924,
-        "Circle": 0.933,
-        "Cup": 0.758,
-        "Hinge": 0.748,
-        "Angle": 0.725,
-        "Flat Thumb Across": 0.872,
-        "Flat": 0.707
+        "Tight Fist": 0.896,
+        "Circle": 0.928,
+        "Cup": 0.778,
+        "Hinge": 0.733,
+        "Angle": 0.743,
+        "Flat Thumb Across": 0.865,
+        "Flat": 0.731
       }
     },
     "149": {
       "name": "Four Fingers Unit Claw",
       "name_root": "Hinge",
       "conv": "Cup",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.613,
-        "Circle": 0.646,
-        "Cup": 0.83,
-        "Hinge": 0.665,
-        "Angle": 0.716,
-        "Flat Thumb Across": 0.602,
-        "Flat": 0.544
+        "Tight Fist": 0.676,
+        "Circle": 0.663,
+        "Cup": 0.847,
+        "Hinge": 0.738,
+        "Angle": 0.734,
+        "Flat Thumb Across": 0.613,
+        "Flat": 0.555
       }
     },
     "14a": {
       "name": "Four Fingers Unit Bent",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.725,
+        "Circle": 0.982,
+        "Cup": 0.737,
         "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.789,
-        "Flat": 0.612
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.811,
+        "Flat": 0.625
       }
     },
     "14b": {
       "name": "Four Fingers Unit Hinge",
       "name_root": "Hinge",
       "conv": "Hinge",
-      "agree": true,
+      "source": "both",
       "scores": {
         "Tight Fist": 0.658,
-        "Circle": 0.646,
-        "Cup": 0.687,
+        "Circle": 0.661,
+        "Cup": 0.723,
         "Hinge": 0.874,
-        "Angle": 0.815,
-        "Flat Thumb Across": 0.541,
-        "Flat": 0.449
+        "Angle": 0.839,
+        "Flat Thumb Across": 0.556,
+        "Flat": 0.472
       }
     },
     "14c": {
       "name": "Five Fingers Spread",
       "name_root": null,
       "conv": "Circle",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.733,
-        "Circle": 0.803,
-        "Cup": 0.802,
-        "Hinge": 0.694,
-        "Angle": 0.664,
-        "Flat Thumb Across": 0.778,
-        "Flat": 0.779
+        "Tight Fist": 0.719,
+        "Circle": 0.81,
+        "Cup": 0.809,
+        "Hinge": 0.685,
+        "Angle": 0.679,
+        "Flat Thumb Across": 0.777,
+        "Flat": 0.772
       }
     },
     "14e": {
       "name": "Five Fingers Spread, Four Bent",
       "name_root": null,
       "conv": "Cup",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.751,
-        "Circle": 0.809,
-        "Cup": 0.824,
-        "Hinge": 0.738,
-        "Angle": 0.711,
-        "Flat Thumb Across": 0.782,
-        "Flat": 0.762
+        "Tight Fist": 0.741,
+        "Circle": 0.815,
+        "Cup": 0.835,
+        "Hinge": 0.73,
+        "Angle": 0.73,
+        "Flat Thumb Across": 0.783,
+        "Flat": 0.767
       }
     },
     "150": {
       "name": "Five Fingers Spread Bent",
       "name_root": null,
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Cup",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.738,
-        "Circle": 0.803,
-        "Cup": 0.797,
-        "Hinge": 0.728,
-        "Angle": 0.701,
-        "Flat Thumb Across": 0.774,
-        "Flat": 0.755
+        "Tight Fist": 0.742,
+        "Circle": 0.826,
+        "Cup": 0.836,
+        "Hinge": 0.731,
+        "Angle": 0.731,
+        "Flat Thumb Across": 0.783,
+        "Flat": 0.766
       }
     },
     "152": {
       "name": "Five Fingers Spread, Thumb Forward",
       "name_root": null,
       "conv": "Cup",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.627,
-        "Circle": 0.663,
-        "Cup": 0.698,
-        "Hinge": 0.563,
-        "Angle": 0.583,
-        "Flat Thumb Across": 0.677,
-        "Flat": 0.694
+        "Tight Fist": 0.683,
+        "Circle": 0.739,
+        "Cup": 0.793,
+        "Hinge": 0.662,
+        "Angle": 0.655,
+        "Flat Thumb Across": 0.726,
+        "Flat": 0.739
       }
     },
     "153": {
       "name": "Five Fingers Spread Cup",
       "name_root": "Cup",
       "conv": "Cup",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.547,
-        "Circle": 0.556,
-        "Cup": 0.61,
-        "Hinge": 0.5,
-        "Angle": 0.493,
-        "Flat Thumb Across": 0.56,
-        "Flat": 0.571
+        "Tight Fist": 0.679,
+        "Circle": 0.706,
+        "Cup": 0.8,
+        "Hinge": 0.613,
+        "Angle": 0.624,
+        "Flat Thumb Across": 0.682,
+        "Flat": 0.655
       }
     },
     "154": {
       "name": "Five Fingers Spread Cup Open",
       "name_root": "Cup",
       "conv": "Cup",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.689,
+        "Tight Fist": 0.66,
         "Circle": 0.691,
-        "Cup": 0.753,
-        "Hinge": 0.626,
-        "Angle": 0.626,
-        "Flat Thumb Across": 0.677,
-        "Flat": 0.656
+        "Cup": 0.774,
+        "Hinge": 0.611,
+        "Angle": 0.615,
+        "Flat Thumb Across": 0.661,
+        "Flat": 0.662
       }
     },
     "155": {
       "name": "Five Fingers Spread Hinge Open",
       "name_root": "Hinge",
       "conv": "Cup",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.667,
-        "Circle": 0.674,
-        "Cup": 0.742,
-        "Hinge": 0.612,
-        "Angle": 0.611,
-        "Flat Thumb Across": 0.665,
-        "Flat": 0.636
+        "Tight Fist": 0.654,
+        "Circle": 0.689,
+        "Cup": 0.788,
+        "Hinge": 0.625,
+        "Angle": 0.602,
+        "Flat Thumb Across": 0.668,
+        "Flat": 0.657
       }
     },
     "156": {
       "name": "Five Fingers Spread Oval",
       "name_root": null,
       "conv": "Cup",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.702,
-        "Circle": 0.725,
-        "Cup": 0.808,
-        "Hinge": 0.675,
-        "Angle": 0.654,
-        "Flat Thumb Across": 0.707,
-        "Flat": 0.629
+        "Tight Fist": 0.748,
+        "Circle": 0.733,
+        "Cup": 0.877,
+        "Hinge": 0.677,
+        "Angle": 0.64,
+        "Flat Thumb Across": 0.743,
+        "Flat": 0.64
       }
     },
     "157": {
       "name": "Five Fingers Spread Hinge",
       "name_root": "Hinge",
-      "conv": "Flat Thumb Across",
-      "agree": false,
+      "conv": "Circle",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.733,
-        "Circle": 0.781,
-        "Cup": 0.775,
-        "Hinge": 0.68,
-        "Angle": 0.645,
-        "Flat Thumb Across": 0.782,
-        "Flat": 0.769
+        "Tight Fist": 0.73,
+        "Circle": 0.802,
+        "Cup": 0.782,
+        "Hinge": 0.672,
+        "Angle": 0.671,
+        "Flat Thumb Across": 0.764,
+        "Flat": 0.759
       }
     },
     "158": {
       "name": "Five Fingers Spread Hinge, Thumb Side",
       "name_root": "Hinge",
       "conv": "Circle",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.769,
-        "Circle": 0.815,
-        "Cup": 0.742,
-        "Hinge": 0.68,
-        "Angle": 0.649,
-        "Flat Thumb Across": 0.752,
-        "Flat": 0.711
+        "Tight Fist": 0.762,
+        "Circle": 0.832,
+        "Cup": 0.777,
+        "Hinge": 0.679,
+        "Angle": 0.677,
+        "Flat Thumb Across": 0.773,
+        "Flat": 0.737
       }
     },
     "159": {
       "name": "Five Fingers Spread Hinge, No Thumb",
       "name_root": "Hinge",
       "conv": "Circle",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.742,
-        "Circle": 0.781,
-        "Cup": 0.742,
-        "Hinge": 0.68,
-        "Angle": 0.645,
-        "Flat Thumb Across": 0.737,
-        "Flat": 0.707
+        "Tight Fist": 0.728,
+        "Circle": 0.798,
+        "Cup": 0.775,
+        "Hinge": 0.675,
+        "Angle": 0.673,
+        "Flat Thumb Across": 0.746,
+        "Flat": 0.73
       }
     },
     "15a": {
       "name": "Flat",
       "name_root": null,
       "conv": "Flat",
-      "agree": false,
+      "source": "convolution",
       "scores": {
         "Tight Fist": 0.8,
-        "Circle": 0.837,
-        "Cup": 0.846,
-        "Hinge": 0.67,
+        "Circle": 0.869,
+        "Cup": 0.849,
+        "Hinge": 0.699,
         "Angle": 0.701,
         "Flat Thumb Across": 0.88,
         "Flat": 1.0
@@ -2759,29 +2850,29 @@
       "name": "Flat, Thumb Side",
       "name_root": null,
       "conv": "Flat",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.84,
-        "Circle": 0.86,
-        "Cup": 0.846,
-        "Hinge": 0.67,
-        "Angle": 0.701,
-        "Flat Thumb Across": 0.891,
-        "Flat": 0.959
+        "Tight Fist": 0.852,
+        "Circle": 0.906,
+        "Cup": 0.851,
+        "Hinge": 0.702,
+        "Angle": 0.706,
+        "Flat Thumb Across": 0.911,
+        "Flat": 0.982
       }
     },
     "15f": {
       "name": "Flat, Thumb Bent",
       "name_root": null,
       "conv": "Flat",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.853,
-        "Circle": 0.871,
-        "Cup": 0.846,
-        "Hinge": 0.67,
-        "Angle": 0.701,
-        "Flat Thumb Across": 0.891,
+        "Tight Fist": 0.841,
+        "Circle": 0.884,
+        "Cup": 0.839,
+        "Hinge": 0.692,
+        "Angle": 0.693,
+        "Flat Thumb Across": 0.888,
         "Flat": 0.959
       }
     },
@@ -2789,179 +2880,179 @@
       "name": "Flat, Thumb Forward",
       "name_root": null,
       "conv": "Flat",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.8,
-        "Circle": 0.837,
-        "Cup": 0.846,
-        "Hinge": 0.67,
-        "Angle": 0.701,
-        "Flat Thumb Across": 0.88,
-        "Flat": 1.0
+        "Tight Fist": 0.799,
+        "Circle": 0.868,
+        "Cup": 0.847,
+        "Hinge": 0.698,
+        "Angle": 0.7,
+        "Flat Thumb Across": 0.879,
+        "Flat": 0.999
       }
     },
     "161": {
       "name": "Flat Split Index, Thumb Side",
       "name_root": null,
       "conv": "Flat",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.836,
-        "Circle": 0.86,
-        "Cup": 0.846,
-        "Hinge": 0.675,
-        "Angle": 0.701,
-        "Flat Thumb Across": 0.887,
-        "Flat": 0.929
+        "Tight Fist": 0.811,
+        "Circle": 0.869,
+        "Cup": 0.833,
+        "Hinge": 0.688,
+        "Angle": 0.689,
+        "Flat Thumb Across": 0.866,
+        "Flat": 0.92
       }
     },
     "162": {
       "name": "Flat Split Center",
       "name_root": null,
       "conv": "Flat",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.8,
-        "Circle": 0.837,
-        "Cup": 0.846,
-        "Hinge": 0.67,
-        "Angle": 0.701,
-        "Flat Thumb Across": 0.872,
-        "Flat": 0.918
+        "Tight Fist": 0.775,
+        "Circle": 0.849,
+        "Cup": 0.832,
+        "Hinge": 0.688,
+        "Angle": 0.689,
+        "Flat Thumb Across": 0.849,
+        "Flat": 0.899
       }
     },
     "163": {
       "name": "Flat Split Center, Thumb Side",
       "name_root": null,
       "conv": "Flat",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.84,
-        "Circle": 0.871,
-        "Cup": 0.846,
-        "Hinge": 0.67,
-        "Angle": 0.701,
-        "Flat Thumb Across": 0.883,
-        "Flat": 0.918
+        "Tight Fist": 0.825,
+        "Circle": 0.889,
+        "Cup": 0.837,
+        "Hinge": 0.692,
+        "Angle": 0.693,
+        "Flat Thumb Across": 0.88,
+        "Flat": 0.911
       }
     },
     "164": {
       "name": "Flat Split Center, Thumb Side Bent",
       "name_root": null,
       "conv": "Flat",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.844,
-        "Circle": 0.86,
-        "Cup": 0.846,
-        "Hinge": 0.67,
-        "Angle": 0.701,
-        "Flat Thumb Across": 0.883,
-        "Flat": 0.918
+        "Tight Fist": 0.834,
+        "Circle": 0.884,
+        "Cup": 0.836,
+        "Hinge": 0.692,
+        "Angle": 0.693,
+        "Flat Thumb Across": 0.881,
+        "Flat": 0.911
       }
     },
     "165": {
       "name": "Flat Split Baby",
       "name_root": null,
       "conv": "Flat",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.836,
-        "Circle": 0.837,
-        "Cup": 0.78,
-        "Hinge": 0.665,
-        "Angle": 0.649,
-        "Flat Thumb Across": 0.88,
-        "Flat": 0.918
+        "Tight Fist": 0.862,
+        "Circle": 0.902,
+        "Cup": 0.856,
+        "Hinge": 0.706,
+        "Angle": 0.71,
+        "Flat Thumb Across": 0.914,
+        "Flat": 0.969
       }
     },
     "166": {
       "name": "Claw",
       "name_root": "Hinge",
       "conv": "Cup",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.644,
-        "Circle": 0.646,
-        "Cup": 0.896,
-        "Hinge": 0.684,
-        "Angle": 0.716,
-        "Flat Thumb Across": 0.639,
-        "Flat": 0.571
+        "Tight Fist": 0.689,
+        "Circle": 0.663,
+        "Cup": 0.923,
+        "Hinge": 0.757,
+        "Angle": 0.734,
+        "Flat Thumb Across": 0.66,
+        "Flat": 0.583
       }
     },
     "167": {
       "name": "Claw, Thumb Side",
       "name_root": "Hinge",
       "conv": "Cup",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.613,
-        "Circle": 0.663,
-        "Cup": 0.786,
-        "Hinge": 0.665,
-        "Angle": 0.682,
-        "Flat Thumb Across": 0.605,
-        "Flat": 0.534
+        "Tight Fist": 0.677,
+        "Circle": 0.72,
+        "Cup": 0.833,
+        "Hinge": 0.746,
+        "Angle": 0.768,
+        "Flat Thumb Across": 0.639,
+        "Flat": 0.572
       }
     },
     "168": {
       "name": "Claw, No Thumb",
       "name_root": "Hinge",
       "conv": "Cup",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.613,
-        "Circle": 0.646,
-        "Cup": 0.83,
-        "Hinge": 0.665,
-        "Angle": 0.716,
-        "Flat Thumb Across": 0.602,
-        "Flat": 0.544
+        "Tight Fist": 0.676,
+        "Circle": 0.663,
+        "Cup": 0.847,
+        "Hinge": 0.738,
+        "Angle": 0.734,
+        "Flat Thumb Across": 0.613,
+        "Flat": 0.555
       }
     },
     "169": {
       "name": "Claw, Thumb Forward",
       "name_root": "Hinge",
       "conv": "Cup",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.644,
-        "Circle": 0.646,
-        "Cup": 0.83,
+        "Tight Fist": 0.676,
+        "Circle": 0.663,
+        "Cup": 0.902,
         "Hinge": 0.757,
-        "Angle": 0.678,
-        "Flat Thumb Across": 0.654,
-        "Flat": 0.551
+        "Angle": 0.734,
+        "Flat Thumb Across": 0.66,
+        "Flat": 0.583
       }
     },
     "16a": {
       "name": "Hook Curlicue",
       "name_root": "Circle",
       "conv": "Angle",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.631,
-        "Circle": 0.663,
-        "Cup": 0.692,
-        "Hinge": 0.612,
-        "Angle": 0.716,
-        "Flat Thumb Across": 0.564,
-        "Flat": 0.493
+        "Tight Fist": 0.785,
+        "Circle": 0.793,
+        "Cup": 0.849,
+        "Hinge": 0.763,
+        "Angle": 0.866,
+        "Flat Thumb Across": 0.71,
+        "Flat": 0.604
       }
     },
     "16b": {
       "name": "Hook",
       "name_root": "Angle",
       "conv": "Cup",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.72,
-        "Circle": 0.775,
-        "Cup": 0.83,
-        "Hinge": 0.67,
-        "Angle": 0.806,
-        "Flat Thumb Across": 0.677,
+        "Tight Fist": 0.761,
+        "Circle": 0.764,
+        "Cup": 0.847,
+        "Hinge": 0.748,
+        "Angle": 0.808,
+        "Flat Thumb Across": 0.686,
         "Flat": 0.599
       }
     },
@@ -2969,89 +3060,89 @@
       "name": "Cup Open",
       "name_root": "Cup",
       "conv": "Cup",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.529,
-        "Circle": 0.551,
-        "Cup": 0.714,
-        "Hinge": 0.553,
-        "Angle": 0.564,
-        "Flat Thumb Across": 0.523,
-        "Flat": 0.483
+        "Tight Fist": 0.552,
+        "Circle": 0.593,
+        "Cup": 0.739,
+        "Hinge": 0.63,
+        "Angle": 0.581,
+        "Flat Thumb Across": 0.545,
+        "Flat": 0.498
       }
     },
     "16d": {
       "name": "Cup",
       "name_root": "Cup",
       "conv": "Cup",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.587,
-        "Circle": 0.629,
+        "Tight Fist": 0.589,
+        "Circle": 0.636,
         "Cup": 1.0,
-        "Hinge": 0.621,
-        "Angle": 0.664,
-        "Flat Thumb Across": 0.586,
-        "Flat": 0.524
+        "Hinge": 0.647,
+        "Angle": 0.628,
+        "Flat Thumb Across": 0.606,
+        "Flat": 0.53
       }
     },
     "16e": {
       "name": "Cup Open, Thumb Side",
       "name_root": "Cup",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Cup",
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.587,
-        "Circle": 0.646,
-        "Cup": 0.637,
-        "Hinge": 0.568,
-        "Angle": 0.531,
-        "Flat Thumb Across": 0.515,
-        "Flat": 0.463
+        "Tight Fist": 0.595,
+        "Circle": 0.664,
+        "Cup": 0.675,
+        "Hinge": 0.576,
+        "Angle": 0.555,
+        "Flat Thumb Across": 0.523,
+        "Flat": 0.462
       }
     },
     "16f": {
       "name": "Cup, Thumb Side",
       "name_root": "Cup",
       "conv": "Cup",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.556,
-        "Circle": 0.59,
-        "Cup": 0.714,
-        "Hinge": 0.597,
-        "Angle": 0.578,
-        "Flat Thumb Across": 0.515,
-        "Flat": 0.452
+        "Tight Fist": 0.615,
+        "Circle": 0.668,
+        "Cup": 0.884,
+        "Hinge": 0.667,
+        "Angle": 0.675,
+        "Flat Thumb Across": 0.587,
+        "Flat": 0.528
       }
     },
     "170": {
       "name": "Cup Open, No Thumb",
       "name_root": "Cup",
       "conv": "Cup",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.529,
-        "Circle": 0.584,
-        "Cup": 0.681,
-        "Hinge": 0.534,
-        "Angle": 0.564,
-        "Flat Thumb Across": 0.5,
-        "Flat": 0.469
+        "Tight Fist": 0.542,
+        "Circle": 0.619,
+        "Cup": 0.682,
+        "Hinge": 0.592,
+        "Angle": 0.566,
+        "Flat Thumb Across": 0.524,
+        "Flat": 0.478
       }
     },
     "171": {
       "name": "Cup, No Thumb",
       "name_root": "Cup",
       "conv": "Cup",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.587,
-        "Circle": 0.629,
-        "Cup": 0.907,
-        "Hinge": 0.612,
-        "Angle": 0.664,
-        "Flat Thumb Across": 0.538,
+        "Tight Fist": 0.588,
+        "Circle": 0.636,
+        "Cup": 0.883,
+        "Hinge": 0.632,
+        "Angle": 0.629,
+        "Flat Thumb Across": 0.557,
         "Flat": 0.497
       }
     },
@@ -3059,2175 +3150,2175 @@
       "name": "Cup Open, Thumb Forward",
       "name_root": "Cup",
       "conv": "Cup",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.556,
-        "Circle": 0.59,
-        "Cup": 0.736,
-        "Hinge": 0.578,
-        "Angle": 0.564,
-        "Flat Thumb Across": 0.538,
-        "Flat": 0.497
+        "Tight Fist": 0.604,
+        "Circle": 0.626,
+        "Cup": 0.743,
+        "Hinge": 0.679,
+        "Angle": 0.572,
+        "Flat Thumb Across": 0.57,
+        "Flat": 0.505
       }
     },
     "173": {
       "name": "Cup, Thumb Forward",
       "name_root": "Cup",
       "conv": "Cup",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.556,
-        "Circle": 0.584,
-        "Cup": 0.797,
-        "Hinge": 0.587,
-        "Angle": 0.578,
-        "Flat Thumb Across": 0.568,
-        "Flat": 0.5
+        "Tight Fist": 0.549,
+        "Circle": 0.613,
+        "Cup": 0.837,
+        "Hinge": 0.573,
+        "Angle": 0.568,
+        "Flat Thumb Across": 0.583,
+        "Flat": 0.494
       }
     },
     "174": {
       "name": "Curlicue Open",
       "name_root": "Circle",
       "conv": "Circle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.827,
-        "Circle": 0.86,
-        "Cup": 0.676,
-        "Hinge": 0.65,
-        "Angle": 0.664,
-        "Flat Thumb Across": 0.692,
-        "Flat": 0.561
+        "Tight Fist": 0.859,
+        "Circle": 0.974,
+        "Cup": 0.678,
+        "Hinge": 0.659,
+        "Angle": 0.7,
+        "Flat Thumb Across": 0.734,
+        "Flat": 0.595
       }
     },
     "175": {
       "name": "Curlicue",
       "name_root": "Circle",
       "conv": "Circle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.698,
-        "Circle": 0.758,
-        "Cup": 0.637,
-        "Hinge": 0.607,
-        "Angle": 0.588,
-        "Flat Thumb Across": 0.632,
-        "Flat": 0.517
+        "Tight Fist": 0.724,
+        "Circle": 0.802,
+        "Cup": 0.646,
+        "Hinge": 0.617,
+        "Angle": 0.598,
+        "Flat Thumb Across": 0.652,
+        "Flat": 0.531
       }
     },
     "176": {
       "name": "Circle",
       "name_root": "Circle",
       "conv": "Circle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.764,
+        "Tight Fist": 0.829,
         "Circle": 1.0,
-        "Cup": 0.615,
-        "Hinge": 0.568,
-        "Angle": 0.63,
-        "Flat Thumb Across": 0.628,
-        "Flat": 0.507
+        "Cup": 0.671,
+        "Hinge": 0.626,
+        "Angle": 0.681,
+        "Flat Thumb Across": 0.702,
+        "Flat": 0.573
       }
     },
     "177": {
       "name": "Oval",
       "name_root": null,
-      "conv": "Cup",
-      "agree": false,
+      "conv": "Hinge",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.707,
-        "Circle": 0.685,
-        "Cup": 0.78,
-        "Hinge": 0.752,
-        "Angle": 0.749,
-        "Flat Thumb Across": 0.575,
-        "Flat": 0.493
+        "Tight Fist": 0.732,
+        "Circle": 0.702,
+        "Cup": 0.751,
+        "Hinge": 0.792,
+        "Angle": 0.741,
+        "Flat Thumb Across": 0.61,
+        "Flat": 0.505
       }
     },
     "178": {
       "name": "Oval, Thumb Side",
       "name_root": null,
-      "conv": "Hinge",
-      "agree": false,
+      "conv": "Angle",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.662,
-        "Circle": 0.713,
-        "Cup": 0.731,
-        "Hinge": 0.738,
-        "Angle": 0.72,
-        "Flat Thumb Across": 0.545,
-        "Flat": 0.463
+        "Tight Fist": 0.661,
+        "Circle": 0.706,
+        "Cup": 0.732,
+        "Hinge": 0.728,
+        "Angle": 0.742,
+        "Flat Thumb Across": 0.557,
+        "Flat": 0.472
       }
     },
     "179": {
       "name": "Oval, No Thumb",
       "name_root": null,
       "conv": "Cup",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.644,
-        "Circle": 0.657,
-        "Cup": 0.775,
-        "Hinge": 0.689,
-        "Angle": 0.739,
-        "Flat Thumb Across": 0.53,
-        "Flat": 0.463
+        "Tight Fist": 0.665,
+        "Circle": 0.671,
+        "Cup": 0.75,
+        "Hinge": 0.734,
+        "Angle": 0.732,
+        "Flat Thumb Across": 0.56,
+        "Flat": 0.474
       }
     },
     "17a": {
       "name": "Oval, Thumb Forward",
       "name_root": null,
-      "conv": "Cup",
-      "agree": false,
+      "conv": "Hinge",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.698,
-        "Circle": 0.669,
-        "Cup": 0.786,
-        "Hinge": 0.786,
-        "Angle": 0.744,
-        "Flat Thumb Across": 0.568,
-        "Flat": 0.49
+        "Tight Fist": 0.727,
+        "Circle": 0.693,
+        "Cup": 0.764,
+        "Hinge": 0.831,
+        "Angle": 0.739,
+        "Flat Thumb Across": 0.606,
+        "Flat": 0.501
       }
     },
     "17b": {
       "name": "Hinge Open",
       "name_root": "Hinge",
       "conv": "Cup",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.52,
-        "Circle": 0.534,
-        "Cup": 0.582,
-        "Hinge": 0.524,
-        "Angle": 0.488,
-        "Flat Thumb Across": 0.485,
-        "Flat": 0.412
+        "Tight Fist": 0.591,
+        "Circle": 0.651,
+        "Cup": 0.679,
+        "Hinge": 0.627,
+        "Angle": 0.603,
+        "Flat Thumb Across": 0.547,
+        "Flat": 0.51
       }
     },
     "17c": {
       "name": "Hinge Open, Thumb Forward",
       "name_root": "Hinge",
       "conv": "Cup",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.6,
-        "Circle": 0.601,
-        "Cup": 0.681,
-        "Hinge": 0.641,
-        "Angle": 0.588,
-        "Flat Thumb Across": 0.526,
-        "Flat": 0.476
+        "Tight Fist": 0.611,
+        "Circle": 0.626,
+        "Cup": 0.7,
+        "Hinge": 0.679,
+        "Angle": 0.577,
+        "Flat Thumb Across": 0.551,
+        "Flat": 0.485
       }
     },
     "17d": {
       "name": "Hinge",
       "name_root": "Hinge",
       "conv": "Hinge",
-      "agree": true,
+      "source": "both",
       "scores": {
         "Tight Fist": 0.72,
-        "Circle": 0.657,
-        "Cup": 0.703,
+        "Circle": 0.679,
+        "Cup": 0.74,
         "Hinge": 1.0,
-        "Angle": 0.815,
-        "Flat Thumb Across": 0.586,
-        "Flat": 0.469
+        "Angle": 0.845,
+        "Flat Thumb Across": 0.602,
+        "Flat": 0.5
       }
     },
     "17e": {
       "name": "Hinge Small",
       "name_root": "Hinge",
       "conv": "Hinge",
-      "agree": true,
+      "source": "both",
       "scores": {
         "Tight Fist": 0.733,
-        "Circle": 0.713,
-        "Cup": 0.698,
-        "Hinge": 0.893,
-        "Angle": 0.829,
-        "Flat Thumb Across": 0.598,
-        "Flat": 0.476
+        "Circle": 0.725,
+        "Cup": 0.723,
+        "Hinge": 0.892,
+        "Angle": 0.858,
+        "Flat Thumb Across": 0.612,
+        "Flat": 0.505
       }
     },
     "17f": {
       "name": "Hinge Open, Thumb Side",
       "name_root": "Hinge",
       "conv": "Cup",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.516,
-        "Circle": 0.567,
-        "Cup": 0.621,
-        "Hinge": 0.471,
-        "Angle": 0.464,
-        "Flat Thumb Across": 0.526,
-        "Flat": 0.517
+        "Tight Fist": 0.523,
+        "Circle": 0.597,
+        "Cup": 0.636,
+        "Hinge": 0.491,
+        "Angle": 0.473,
+        "Flat Thumb Across": 0.54,
+        "Flat": 0.529
       }
     },
     "180": {
       "name": "Hinge, Thumb Side",
       "name_root": "Hinge",
-      "conv": "Angle",
-      "agree": false,
+      "conv": "Hinge",
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.569,
-        "Circle": 0.612,
-        "Cup": 0.648,
-        "Hinge": 0.733,
-        "Angle": 0.749,
-        "Flat Thumb Across": 0.466,
-        "Flat": 0.401
+        "Tight Fist": 0.645,
+        "Circle": 0.701,
+        "Cup": 0.7,
+        "Hinge": 0.845,
+        "Angle": 0.836,
+        "Flat Thumb Across": 0.546,
+        "Flat": 0.464
       }
     },
     "181": {
       "name": "Hinge Open, No Thumb",
       "name_root": "Hinge",
       "conv": "Cup",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.444,
-        "Circle": 0.511,
-        "Cup": 0.588,
-        "Hinge": 0.447,
-        "Angle": 0.436,
-        "Flat Thumb Across": 0.477,
-        "Flat": 0.476
+        "Tight Fist": 0.423,
+        "Circle": 0.498,
+        "Cup": 0.58,
+        "Hinge": 0.431,
+        "Angle": 0.421,
+        "Flat Thumb Across": 0.462,
+        "Flat": 0.463
       }
     },
     "182": {
       "name": "Hinge, No Thumb",
       "name_root": "Hinge",
       "conv": "Hinge",
-      "agree": true,
+      "source": "both",
       "scores": {
         "Tight Fist": 0.658,
-        "Circle": 0.646,
-        "Cup": 0.687,
+        "Circle": 0.661,
+        "Cup": 0.723,
         "Hinge": 0.874,
-        "Angle": 0.815,
-        "Flat Thumb Across": 0.541,
-        "Flat": 0.449
+        "Angle": 0.839,
+        "Flat Thumb Across": 0.556,
+        "Flat": 0.472
       }
     },
     "183": {
       "name": "Hinge, Thumb Side Touches Index",
       "name_root": "Hinge",
       "conv": "Angle",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.711,
-        "Circle": 0.753,
-        "Cup": 0.72,
-        "Hinge": 0.791,
-        "Angle": 0.867,
-        "Flat Thumb Across": 0.579,
-        "Flat": 0.5
+        "Tight Fist": 0.744,
+        "Circle": 0.776,
+        "Cup": 0.708,
+        "Hinge": 0.853,
+        "Angle": 0.879,
+        "Flat Thumb Across": 0.629,
+        "Flat": 0.519
       }
     },
     "184": {
       "name": "Hinge, Thumb Between Middle Ring",
       "name_root": "Hinge",
       "conv": "Angle",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.707,
-        "Circle": 0.725,
-        "Cup": 0.632,
-        "Hinge": 0.738,
-        "Angle": 0.763,
-        "Flat Thumb Across": 0.575,
-        "Flat": 0.459
+        "Tight Fist": 0.773,
+        "Circle": 0.794,
+        "Cup": 0.716,
+        "Hinge": 0.803,
+        "Angle": 0.861,
+        "Flat Thumb Across": 0.653,
+        "Flat": 0.546
       }
     },
     "185": {
       "name": "Angle",
       "name_root": "Angle",
       "conv": "Angle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.72,
-        "Circle": 0.747,
-        "Cup": 0.769,
-        "Hinge": 0.835,
+        "Tight Fist": 0.755,
+        "Circle": 0.763,
+        "Cup": 0.742,
+        "Hinge": 0.872,
         "Angle": 1.0,
-        "Flat Thumb Across": 0.583,
-        "Flat": 0.503
+        "Flat Thumb Across": 0.629,
+        "Flat": 0.518
       }
     },
     "186": {
       "name": "Index Middle Ring",
       "name_root": null,
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.933,
-        "Circle": 0.972,
-        "Cup": 0.83,
-        "Hinge": 0.757,
-        "Angle": 0.801,
-        "Flat Thumb Across": 0.925,
-        "Flat": 0.823
+        "Tight Fist": 1.0,
+        "Circle": 0.988,
+        "Cup": 0.828,
+        "Hinge": 0.786,
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.921,
+        "Flat": 0.807
       }
     },
     "187": {
       "name": "Index Middle Ring on Circle",
       "name_root": "Circle",
       "conv": "Circle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.791,
-        "Circle": 0.921,
-        "Cup": 0.698,
-        "Hinge": 0.621,
-        "Angle": 0.645,
-        "Flat Thumb Across": 0.752,
-        "Flat": 0.673
+        "Tight Fist": 0.826,
+        "Circle": 0.985,
+        "Cup": 0.72,
+        "Hinge": 0.622,
+        "Angle": 0.672,
+        "Flat Thumb Across": 0.803,
+        "Flat": 0.735
       }
     },
     "188": {
       "name": "Index Middle Ring on Hinge",
       "name_root": "Hinge",
       "conv": "Cup",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.587,
-        "Circle": 0.596,
-        "Cup": 0.659,
-        "Hinge": 0.573,
-        "Angle": 0.611,
-        "Flat Thumb Across": 0.579,
-        "Flat": 0.582
+        "Tight Fist": 0.635,
+        "Circle": 0.65,
+        "Cup": 0.725,
+        "Hinge": 0.645,
+        "Angle": 0.632,
+        "Flat Thumb Across": 0.618,
+        "Flat": 0.606
       }
     },
     "189": {
       "name": "Index Middle Ring on Angle",
       "name_root": "Angle",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Cup",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.631,
-        "Circle": 0.64,
-        "Cup": 0.637,
-        "Hinge": 0.602,
-        "Angle": 0.63,
-        "Flat Thumb Across": 0.609,
-        "Flat": 0.582
+        "Tight Fist": 0.642,
+        "Circle": 0.671,
+        "Cup": 0.705,
+        "Hinge": 0.626,
+        "Angle": 0.652,
+        "Flat Thumb Across": 0.624,
+        "Flat": 0.592
       }
     },
     "18a": {
       "name": "Baby Hinge",
       "name_root": "Hinge",
       "conv": "Cup",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.618,
-        "Circle": 0.674,
-        "Cup": 0.731,
-        "Hinge": 0.631,
-        "Angle": 0.645,
-        "Flat Thumb Across": 0.628,
-        "Flat": 0.636
+        "Tight Fist": 0.6,
+        "Circle": 0.679,
+        "Cup": 0.701,
+        "Hinge": 0.633,
+        "Angle": 0.611,
+        "Flat Thumb Across": 0.617,
+        "Flat": 0.625
       }
     },
     "18b": {
       "name": "Index Middle Ring, Bent",
       "name_root": null,
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.884,
-        "Circle": 0.882,
-        "Cup": 0.72,
-        "Hinge": 0.704,
-        "Angle": 0.682,
-        "Flat Thumb Across": 0.861,
-        "Flat": 0.762
+        "Tight Fist": 0.885,
+        "Circle": 0.924,
+        "Cup": 0.752,
+        "Hinge": 0.726,
+        "Angle": 0.735,
+        "Flat Thumb Across": 0.868,
+        "Flat": 0.792
       }
     },
     "18c": {
       "name": "Index Middle Ring, Unit",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.764,
+        "Circle": 0.984,
+        "Cup": 0.807,
         "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.895,
-        "Flat": 0.81
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.907,
+        "Flat": 0.816
       }
     },
     "18d": {
       "name": "Index Middle Ring, Unit Hinge",
       "name_root": "Hinge",
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.933,
-        "Circle": 0.921,
-        "Cup": 0.797,
-        "Hinge": 0.728,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.85,
-        "Flat": 0.769
+        "Tight Fist": 0.93,
+        "Circle": 0.953,
+        "Cup": 0.8,
+        "Hinge": 0.754,
+        "Angle": 0.764,
+        "Flat Thumb Across": 0.92,
+        "Flat": 0.779
       }
     },
     "18e": {
       "name": "Baby Down",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.978,
-        "Cup": 0.78,
+        "Circle": 0.986,
+        "Cup": 0.807,
         "Hinge": 0.786,
-        "Angle": 0.782,
-        "Flat Thumb Across": 0.895,
-        "Flat": 0.81
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.907,
+        "Flat": 0.816
       }
     },
     "18f": {
       "name": "Baby Down, Ripple Straight",
       "name_root": null,
       "conv": "Circle",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.542,
-        "Circle": 0.624,
-        "Cup": 0.604,
-        "Hinge": 0.495,
-        "Angle": 0.521,
-        "Flat Thumb Across": 0.549,
-        "Flat": 0.531
+        "Tight Fist": 0.607,
+        "Circle": 0.691,
+        "Cup": 0.648,
+        "Hinge": 0.573,
+        "Angle": 0.582,
+        "Flat Thumb Across": 0.608,
+        "Flat": 0.593
       }
     },
     "190": {
       "name": "Baby Down, Ripple Curved",
       "name_root": null,
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.951,
-        "Circle": 0.972,
-        "Cup": 0.764,
+        "Tight Fist": 0.972,
+        "Circle": 0.967,
+        "Cup": 0.76,
         "Hinge": 0.772,
-        "Angle": 0.81,
-        "Flat Thumb Across": 0.861,
-        "Flat": 0.803
+        "Angle": 0.784,
+        "Flat Thumb Across": 0.864,
+        "Flat": 0.792
       }
     },
     "191": {
       "name": "Baby Down, Others Circle",
       "name_root": "Circle",
-      "conv": "Circle",
-      "agree": true,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.947,
-        "Circle": 0.983,
-        "Cup": 0.791,
-        "Hinge": 0.806,
-        "Angle": 0.872,
-        "Flat Thumb Across": 0.891,
-        "Flat": 0.752
+        "Tight Fist": 0.972,
+        "Circle": 0.969,
+        "Cup": 0.78,
+        "Hinge": 0.798,
+        "Angle": 0.847,
+        "Flat Thumb Across": 0.886,
+        "Flat": 0.77
       }
     },
     "192": {
       "name": "Baby Up",
       "name_root": null,
       "conv": "Circle",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.893,
-        "Circle": 0.916,
-        "Cup": 0.709,
-        "Hinge": 0.743,
-        "Angle": 0.782,
-        "Flat Thumb Across": 0.741,
-        "Flat": 0.571
+        "Tight Fist": 0.91,
+        "Circle": 0.931,
+        "Cup": 0.677,
+        "Hinge": 0.753,
+        "Angle": 0.77,
+        "Flat Thumb Across": 0.75,
+        "Flat": 0.579
       }
     },
     "193": {
       "name": "Baby Up on Fist Thumb Under",
       "name_root": "Tight Fist",
       "conv": "Circle",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.893,
-        "Circle": 0.916,
-        "Cup": 0.709,
-        "Hinge": 0.743,
-        "Angle": 0.782,
-        "Flat Thumb Across": 0.741,
-        "Flat": 0.571
+        "Tight Fist": 0.916,
+        "Circle": 0.938,
+        "Cup": 0.685,
+        "Hinge": 0.759,
+        "Angle": 0.776,
+        "Flat Thumb Across": 0.756,
+        "Flat": 0.583
       }
     },
     "194": {
       "name": "Baby Up on Circle",
       "name_root": "Circle",
       "conv": "Circle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.858,
-        "Circle": 0.933,
-        "Cup": 0.698,
-        "Hinge": 0.684,
-        "Angle": 0.739,
-        "Flat Thumb Across": 0.692,
-        "Flat": 0.558
+        "Tight Fist": 0.849,
+        "Circle": 0.973,
+        "Cup": 0.674,
+        "Hinge": 0.688,
+        "Angle": 0.736,
+        "Flat Thumb Across": 0.711,
+        "Flat": 0.568
       }
     },
     "195": {
       "name": "Baby Up on Oval",
       "name_root": null,
       "conv": "Cup",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.698,
-        "Circle": 0.674,
-        "Cup": 0.797,
-        "Hinge": 0.748,
-        "Angle": 0.744,
-        "Flat Thumb Across": 0.632,
-        "Flat": 0.558
+        "Tight Fist": 0.712,
+        "Circle": 0.693,
+        "Cup": 0.775,
+        "Hinge": 0.757,
+        "Angle": 0.715,
+        "Flat Thumb Across": 0.643,
+        "Flat": 0.548
       }
     },
     "196": {
       "name": "Baby Up on Angle",
       "name_root": "Angle",
       "conv": "Angle",
-      "agree": true,
+      "source": "both",
       "scores": {
         "Tight Fist": 0.747,
-        "Circle": 0.77,
-        "Cup": 0.742,
+        "Circle": 0.772,
+        "Cup": 0.781,
         "Hinge": 0.874,
-        "Angle": 0.886,
-        "Flat Thumb Across": 0.669,
-        "Flat": 0.554
+        "Angle": 0.876,
+        "Flat Thumb Across": 0.682,
+        "Flat": 0.582
       }
     },
     "197": {
       "name": "Baby Raised Knuckle",
       "name_root": null,
       "conv": "Circle",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.756,
-        "Circle": 0.787,
-        "Cup": 0.687,
-        "Hinge": 0.636,
-        "Angle": 0.654,
-        "Flat Thumb Across": 0.643,
-        "Flat": 0.531
+        "Tight Fist": 0.908,
+        "Circle": 0.916,
+        "Cup": 0.689,
+        "Hinge": 0.754,
+        "Angle": 0.763,
+        "Flat Thumb Across": 0.772,
+        "Flat": 0.601
       }
     },
     "198": {
       "name": "Baby Bent",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.951,
-        "Circle": 0.927,
-        "Cup": 0.687,
-        "Hinge": 0.772,
-        "Angle": 0.754,
-        "Flat Thumb Across": 0.748,
-        "Flat": 0.602
+        "Tight Fist": 0.973,
+        "Circle": 0.969,
+        "Cup": 0.723,
+        "Hinge": 0.799,
+        "Angle": 0.814,
+        "Flat Thumb Across": 0.799,
+        "Flat": 0.64
       }
     },
     "199": {
       "name": "Baby Touches Thumb",
       "name_root": null,
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 1.0,
-        "Circle": 0.983,
-        "Cup": 0.802,
-        "Hinge": 0.83,
-        "Angle": 0.829,
-        "Flat Thumb Across": 0.842,
-        "Flat": 0.701
+        "Tight Fist": 0.97,
+        "Circle": 0.976,
+        "Cup": 0.785,
+        "Hinge": 0.8,
+        "Angle": 0.812,
+        "Flat Thumb Across": 0.844,
+        "Flat": 0.697
       }
     },
     "19a": {
       "name": "Baby Thumb",
       "name_root": null,
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.853,
-        "Circle": 0.843,
-        "Cup": 0.654,
-        "Hinge": 0.704,
-        "Angle": 0.682,
-        "Flat Thumb Across": 0.669,
-        "Flat": 0.537
+        "Tight Fist": 0.958,
+        "Circle": 0.966,
+        "Cup": 0.742,
+        "Hinge": 0.784,
+        "Angle": 0.812,
+        "Flat Thumb Across": 0.778,
+        "Flat": 0.602
       }
     },
     "19b": {
       "name": "Baby Thumb on Hinge",
       "name_root": "Hinge",
-      "conv": "Angle",
-      "agree": false,
+      "conv": "Hinge",
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.596,
-        "Circle": 0.635,
-        "Cup": 0.687,
-        "Hinge": 0.762,
-        "Angle": 0.773,
-        "Flat Thumb Across": 0.526,
-        "Flat": 0.473
+        "Tight Fist": 0.657,
+        "Circle": 0.707,
+        "Cup": 0.735,
+        "Hinge": 0.858,
+        "Angle": 0.849,
+        "Flat Thumb Across": 0.59,
+        "Flat": 0.514
       }
     },
     "19c": {
       "name": "Baby Index Thumb",
       "name_root": null,
       "conv": "Circle",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.844,
-        "Circle": 0.888,
-        "Cup": 0.687,
-        "Hinge": 0.704,
-        "Angle": 0.692,
-        "Flat Thumb Across": 0.711,
-        "Flat": 0.595
+        "Tight Fist": 0.955,
+        "Circle": 0.96,
+        "Cup": 0.737,
+        "Hinge": 0.79,
+        "Angle": 0.81,
+        "Flat Thumb Across": 0.784,
+        "Flat": 0.66
       }
     },
     "19d": {
       "name": "Baby Index Thumb on Hinge",
       "name_root": "Hinge",
-      "conv": "Angle",
-      "agree": false,
+      "conv": "Hinge",
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.578,
-        "Circle": 0.669,
-        "Cup": 0.676,
-        "Hinge": 0.704,
-        "Angle": 0.725,
-        "Flat Thumb Across": 0.541,
-        "Flat": 0.51
+        "Tight Fist": 0.6,
+        "Circle": 0.665,
+        "Cup": 0.694,
+        "Hinge": 0.764,
+        "Angle": 0.738,
+        "Flat Thumb Across": 0.558,
+        "Flat": 0.527
       }
     },
     "19e": {
       "name": "Baby Index Thumb, Index Thumb Angle Out",
       "name_root": "Angle",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.902,
-        "Circle": 0.904,
-        "Cup": 0.731,
-        "Hinge": 0.786,
-        "Angle": 0.82,
-        "Flat Thumb Across": 0.767,
-        "Flat": 0.619
+        "Tight Fist": 1.0,
+        "Circle": 0.999,
+        "Cup": 0.78,
+        "Hinge": 0.909,
+        "Angle": 0.951,
+        "Flat Thumb Across": 0.855,
+        "Flat": 0.679
       }
     },
     "19f": {
       "name": "Baby Index Thumb, Index Thumb Angle",
       "name_root": "Angle",
       "conv": "Circle",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.853,
-        "Circle": 0.91,
-        "Cup": 0.714,
-        "Hinge": 0.738,
-        "Angle": 0.791,
-        "Flat Thumb Across": 0.774,
-        "Flat": 0.599
+        "Tight Fist": 0.972,
+        "Circle": 0.977,
+        "Cup": 0.768,
+        "Hinge": 0.885,
+        "Angle": 0.911,
+        "Flat Thumb Across": 0.849,
+        "Flat": 0.673
       }
     },
     "1a0": {
       "name": "Baby Index",
       "name_root": null,
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.791,
-        "Circle": 0.888,
-        "Cup": 0.654,
-        "Hinge": 0.626,
-        "Angle": 0.678,
-        "Flat Thumb Across": 0.707,
-        "Flat": 0.588
+        "Tight Fist": 0.969,
+        "Circle": 0.962,
+        "Cup": 0.709,
+        "Hinge": 0.758,
+        "Angle": 0.776,
+        "Flat Thumb Across": 0.792,
+        "Flat": 0.652
       }
     },
     "1a1": {
       "name": "Baby Index on Circle",
       "name_root": "Circle",
       "conv": "Circle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.836,
-        "Circle": 0.933,
-        "Cup": 0.676,
-        "Hinge": 0.641,
-        "Angle": 0.701,
-        "Flat Thumb Across": 0.692,
-        "Flat": 0.578
+        "Tight Fist": 0.888,
+        "Circle": 0.987,
+        "Cup": 0.695,
+        "Hinge": 0.685,
+        "Angle": 0.742,
+        "Flat Thumb Across": 0.735,
+        "Flat": 0.614
       }
     },
     "1a2": {
       "name": "Baby Index on Hinge",
       "name_root": "Hinge",
       "conv": "Hinge",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.68,
-        "Circle": 0.635,
-        "Cup": 0.698,
+        "Tight Fist": 0.679,
+        "Circle": 0.656,
+        "Cup": 0.744,
         "Hinge": 0.917,
-        "Angle": 0.735,
-        "Flat Thumb Across": 0.605,
-        "Flat": 0.537
+        "Angle": 0.764,
+        "Flat Thumb Across": 0.614,
+        "Flat": 0.569
       }
     },
     "1a3": {
       "name": "Baby Index on Angle",
       "name_root": "Angle",
       "conv": "Angle",
-      "agree": true,
+      "source": "both",
       "scores": {
         "Tight Fist": 0.707,
-        "Circle": 0.742,
-        "Cup": 0.703,
-        "Hinge": 0.791,
-        "Angle": 0.806,
-        "Flat Thumb Across": 0.628,
-        "Flat": 0.548
+        "Circle": 0.729,
+        "Cup": 0.735,
+        "Hinge": 0.798,
+        "Angle": 0.816,
+        "Flat Thumb Across": 0.636,
+        "Flat": 0.582
       }
     },
     "1a4": {
       "name": "Index Middle Baby",
       "name_root": null,
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.942,
-        "Circle": 0.972,
-        "Cup": 0.775,
-        "Hinge": 0.772,
-        "Angle": 0.815,
-        "Flat Thumb Across": 0.861,
-        "Flat": 0.741
+        "Tight Fist": 0.962,
+        "Circle": 0.959,
+        "Cup": 0.751,
+        "Hinge": 0.77,
+        "Angle": 0.782,
+        "Flat Thumb Across": 0.862,
+        "Flat": 0.733
       }
     },
     "1a5": {
       "name": "Index Middle Baby on Circle",
       "name_root": "Circle",
       "conv": "Circle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.876,
-        "Circle": 0.978,
-        "Cup": 0.736,
-        "Hinge": 0.68,
-        "Angle": 0.749,
-        "Flat Thumb Across": 0.774,
-        "Flat": 0.68
+        "Tight Fist": 0.88,
+        "Circle": 0.963,
+        "Cup": 0.761,
+        "Hinge": 0.697,
+        "Angle": 0.746,
+        "Flat Thumb Across": 0.785,
+        "Flat": 0.687
       }
     },
     "1a6": {
       "name": "Index Middle Baby on Hinge",
       "name_root": "Hinge",
       "conv": "Cup",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.662,
-        "Circle": 0.652,
-        "Cup": 0.698,
-        "Hinge": 0.675,
-        "Angle": 0.64,
-        "Flat Thumb Across": 0.643,
-        "Flat": 0.595
+        "Tight Fist": 0.653,
+        "Circle": 0.664,
+        "Cup": 0.714,
+        "Hinge": 0.685,
+        "Angle": 0.673,
+        "Flat Thumb Across": 0.642,
+        "Flat": 0.621
       }
     },
     "1a7": {
       "name": "Ring Hinge",
       "name_root": "Hinge",
       "conv": "Cup",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.609,
-        "Circle": 0.663,
-        "Cup": 0.681,
-        "Hinge": 0.675,
-        "Angle": 0.635,
-        "Flat Thumb Across": 0.594,
-        "Flat": 0.578
+        "Tight Fist": 0.585,
+        "Circle": 0.652,
+        "Cup": 0.677,
+        "Hinge": 0.65,
+        "Angle": 0.627,
+        "Flat Thumb Across": 0.584,
+        "Flat": 0.577
       }
     },
     "1a8": {
       "name": "Index Middle Baby on Angle",
       "name_root": "Angle",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Angle",
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.68,
-        "Circle": 0.725,
-        "Cup": 0.681,
-        "Hinge": 0.689,
-        "Angle": 0.706,
-        "Flat Thumb Across": 0.662,
-        "Flat": 0.602
+        "Tight Fist": 0.673,
+        "Circle": 0.698,
+        "Cup": 0.72,
+        "Hinge": 0.687,
+        "Angle": 0.739,
+        "Flat Thumb Across": 0.657,
+        "Flat": 0.63
       }
     },
     "1a9": {
       "name": "Index Middle Cross with Baby",
       "name_root": null,
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.933,
-        "Circle": 0.921,
-        "Cup": 0.775,
-        "Hinge": 0.743,
-        "Angle": 0.782,
-        "Flat Thumb Across": 0.831,
-        "Flat": 0.759
+        "Tight Fist": 0.956,
+        "Circle": 0.962,
+        "Cup": 0.784,
+        "Hinge": 0.775,
+        "Angle": 0.785,
+        "Flat Thumb Across": 0.907,
+        "Flat": 0.772
       }
     },
     "1aa": {
       "name": "Index Middle Cross with Baby on Circle",
       "name_root": "Circle",
       "conv": "Circle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.876,
-        "Circle": 0.966,
-        "Cup": 0.731,
-        "Hinge": 0.684,
-        "Angle": 0.706,
-        "Flat Thumb Across": 0.82,
-        "Flat": 0.711
+        "Tight Fist": 0.877,
+        "Circle": 0.993,
+        "Cup": 0.741,
+        "Hinge": 0.686,
+        "Angle": 0.731,
+        "Flat Thumb Across": 0.826,
+        "Flat": 0.732
       }
     },
     "1ab": {
       "name": "Ring Down",
       "name_root": null,
       "conv": "Circle",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.836,
-        "Circle": 0.865,
-        "Cup": 0.72,
-        "Hinge": 0.694,
-        "Angle": 0.716,
-        "Flat Thumb Across": 0.774,
-        "Flat": 0.704
+        "Tight Fist": 0.894,
+        "Circle": 0.936,
+        "Cup": 0.711,
+        "Hinge": 0.736,
+        "Angle": 0.742,
+        "Flat Thumb Across": 0.822,
+        "Flat": 0.738
       }
     },
     "1ac": {
       "name": "Ring Down, Index Thumb Hook, Middle Hinge",
       "name_root": "Hinge",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.924,
-        "Circle": 0.927,
-        "Cup": 0.753,
-        "Hinge": 0.864,
-        "Angle": 0.896,
-        "Flat Thumb Across": 0.763,
-        "Flat": 0.622
+        "Tight Fist": 0.976,
+        "Circle": 0.966,
+        "Cup": 0.736,
+        "Hinge": 0.878,
+        "Angle": 0.905,
+        "Flat Thumb Across": 0.798,
+        "Flat": 0.656
       }
     },
     "1ad": {
       "name": "Ring Down, Middle Thumb Angle, Index Cross",
       "name_root": "Angle",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.907,
-        "Circle": 0.927,
-        "Cup": 0.747,
-        "Hinge": 0.864,
-        "Angle": 0.891,
-        "Flat Thumb Across": 0.767,
-        "Flat": 0.622
+        "Tight Fist": 0.982,
+        "Circle": 0.968,
+        "Cup": 0.75,
+        "Hinge": 0.88,
+        "Angle": 0.92,
+        "Flat Thumb Across": 0.805,
+        "Flat": 0.637
       }
     },
     "1ae": {
       "name": "Ring Up",
       "name_root": null,
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.884,
-        "Circle": 0.865,
-        "Cup": 0.725,
-        "Hinge": 0.718,
-        "Angle": 0.744,
-        "Flat Thumb Across": 0.729,
-        "Flat": 0.626
+        "Tight Fist": 0.929,
+        "Circle": 0.953,
+        "Cup": 0.715,
+        "Hinge": 0.747,
+        "Angle": 0.761,
+        "Flat Thumb Across": 0.828,
+        "Flat": 0.668
       }
     },
     "1af": {
       "name": "Ring Raised Knuckle",
       "name_root": null,
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.902,
-        "Circle": 0.893,
-        "Cup": 0.709,
-        "Hinge": 0.68,
-        "Angle": 0.664,
-        "Flat Thumb Across": 0.797,
-        "Flat": 0.626
+        "Tight Fist": 0.969,
+        "Circle": 0.972,
+        "Cup": 0.8,
+        "Hinge": 0.769,
+        "Angle": 0.781,
+        "Flat Thumb Across": 0.891,
+        "Flat": 0.704
       }
     },
     "1b0": {
       "name": "Ring Baby",
       "name_root": null,
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.933,
-        "Circle": 0.921,
-        "Cup": 0.725,
-        "Hinge": 0.728,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.782,
-        "Flat": 0.687
+        "Tight Fist": 0.919,
+        "Circle": 0.938,
+        "Cup": 0.707,
+        "Hinge": 0.741,
+        "Angle": 0.754,
+        "Flat Thumb Across": 0.82,
+        "Flat": 0.68
       }
     },
     "1b1": {
       "name": "Ring Baby on Circle",
       "name_root": "Circle",
       "conv": "Circle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.849,
-        "Circle": 0.972,
-        "Cup": 0.703,
-        "Hinge": 0.67,
-        "Angle": 0.706,
-        "Flat Thumb Across": 0.714,
-        "Flat": 0.612
+        "Tight Fist": 0.864,
+        "Circle": 0.993,
+        "Cup": 0.701,
+        "Hinge": 0.687,
+        "Angle": 0.73,
+        "Flat Thumb Across": 0.748,
+        "Flat": 0.641
       }
     },
     "1b2": {
       "name": "Ring Baby on Oval",
       "name_root": null,
       "conv": "Cup",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.702,
-        "Circle": 0.674,
-        "Cup": 0.808,
-        "Hinge": 0.757,
-        "Angle": 0.749,
-        "Flat Thumb Across": 0.662,
-        "Flat": 0.616
+        "Tight Fist": 0.731,
+        "Circle": 0.707,
+        "Cup": 0.805,
+        "Hinge": 0.793,
+        "Angle": 0.741,
+        "Flat Thumb Across": 0.69,
+        "Flat": 0.625
       }
     },
     "1b3": {
       "name": "Ring Baby on Angle",
       "name_root": "Angle",
       "conv": "Angle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.747,
-        "Circle": 0.781,
-        "Cup": 0.742,
-        "Hinge": 0.82,
-        "Angle": 0.834,
-        "Flat Thumb Across": 0.703,
-        "Flat": 0.609
+        "Tight Fist": 0.721,
+        "Circle": 0.748,
+        "Cup": 0.775,
+        "Hinge": 0.816,
+        "Angle": 0.825,
+        "Flat Thumb Across": 0.686,
+        "Flat": 0.611
       }
     },
     "1b4": {
       "name": "Ring Middle",
       "name_root": null,
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.933,
-        "Circle": 0.921,
+        "Tight Fist": 0.923,
+        "Circle": 0.954,
         "Cup": 0.747,
-        "Hinge": 0.728,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.816,
-        "Flat": 0.745
+        "Hinge": 0.746,
+        "Angle": 0.757,
+        "Flat Thumb Across": 0.882,
+        "Flat": 0.747
       }
     },
     "1b5": {
       "name": "Ring Middle Unit",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.742,
+        "Circle": 0.984,
+        "Cup": 0.78,
         "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.868,
-        "Flat": 0.752
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.887,
+        "Flat": 0.762
       }
     },
     "1b6": {
       "name": "Ring Middle Raised Knuckles",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.951,
-        "Circle": 0.933,
-        "Cup": 0.841,
-        "Hinge": 0.733,
-        "Angle": 0.716,
-        "Flat Thumb Across": 0.91,
-        "Flat": 0.735
+        "Tight Fist": 1.0,
+        "Circle": 0.989,
+        "Cup": 0.903,
+        "Hinge": 0.786,
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.967,
+        "Flat": 0.78
       }
     },
     "1b7": {
       "name": "Ring Index",
       "name_root": null,
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.764,
-        "Circle": 0.742,
-        "Cup": 0.648,
-        "Hinge": 0.631,
-        "Angle": 0.645,
-        "Flat Thumb Across": 0.635,
-        "Flat": 0.565
+        "Tight Fist": 0.893,
+        "Circle": 0.921,
+        "Cup": 0.678,
+        "Hinge": 0.708,
+        "Angle": 0.724,
+        "Flat Thumb Across": 0.802,
+        "Flat": 0.666
       }
     },
     "1b8": {
       "name": "Ring Thumb",
       "name_root": null,
       "conv": "Circle",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.902,
-        "Circle": 0.904,
-        "Cup": 0.725,
-        "Hinge": 0.723,
-        "Angle": 0.744,
-        "Flat Thumb Across": 0.733,
-        "Flat": 0.622
+        "Tight Fist": 0.935,
+        "Circle": 0.959,
+        "Cup": 0.71,
+        "Hinge": 0.741,
+        "Angle": 0.755,
+        "Flat Thumb Across": 0.822,
+        "Flat": 0.668
       }
     },
     "1b9": {
       "name": "Ring Thumb Hook",
       "name_root": "Angle",
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "name",
       "scores": {
-        "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.769,
-        "Hinge": 0.786,
+        "Tight Fist": 0.954,
+        "Circle": 0.961,
+        "Cup": 0.78,
+        "Hinge": 0.753,
         "Angle": 0.768,
-        "Flat Thumb Across": 0.891,
-        "Flat": 0.759
+        "Flat Thumb Across": 0.894,
+        "Flat": 0.749
       }
     },
     "1ba": {
       "name": "Index Ring Baby",
       "name_root": null,
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.933,
-        "Circle": 0.972,
-        "Cup": 0.753,
-        "Hinge": 0.757,
+        "Tight Fist": 1.0,
+        "Circle": 0.982,
+        "Cup": 0.749,
+        "Hinge": 0.789,
         "Angle": 0.801,
-        "Flat Thumb Across": 0.827,
-        "Flat": 0.687
+        "Flat Thumb Across": 0.841,
+        "Flat": 0.697
       }
     },
     "1bb": {
       "name": "Index Ring Baby on Circle",
       "name_root": "Circle",
       "conv": "Circle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.804,
-        "Circle": 0.876,
-        "Cup": 0.714,
-        "Hinge": 0.68,
-        "Angle": 0.73,
-        "Flat Thumb Across": 0.692,
-        "Flat": 0.612
+        "Tight Fist": 0.872,
+        "Circle": 0.982,
+        "Cup": 0.697,
+        "Hinge": 0.724,
+        "Angle": 0.768,
+        "Flat Thumb Across": 0.763,
+        "Flat": 0.679
       }
     },
     "1bc": {
       "name": "Index Ring Baby on Curlicue",
       "name_root": "Circle",
       "conv": "Circle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.747,
-        "Circle": 0.848,
-        "Cup": 0.725,
-        "Hinge": 0.67,
-        "Angle": 0.706,
-        "Flat Thumb Across": 0.692,
-        "Flat": 0.599
+        "Tight Fist": 0.777,
+        "Circle": 0.827,
+        "Cup": 0.764,
+        "Hinge": 0.697,
+        "Angle": 0.705,
+        "Flat Thumb Across": 0.717,
+        "Flat": 0.633
       }
     },
     "1bd": {
       "name": "Index Ring Baby on Hook Out",
       "name_root": "Angle",
       "conv": "Circle",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.627,
-        "Circle": 0.64,
-        "Cup": 0.582,
-        "Hinge": 0.568,
-        "Angle": 0.578,
-        "Flat Thumb Across": 0.605,
-        "Flat": 0.578
+        "Tight Fist": 0.715,
+        "Circle": 0.739,
+        "Cup": 0.728,
+        "Hinge": 0.657,
+        "Angle": 0.669,
+        "Flat Thumb Across": 0.685,
+        "Flat": 0.663
       }
     },
     "1be": {
       "name": "Index Ring Baby on Hook In",
       "name_root": "Angle",
       "conv": "Cup",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.653,
-        "Circle": 0.68,
-        "Cup": 0.775,
-        "Hinge": 0.67,
-        "Angle": 0.72,
-        "Flat Thumb Across": 0.628,
-        "Flat": 0.65
+        "Tight Fist": 0.672,
+        "Circle": 0.694,
+        "Cup": 0.766,
+        "Hinge": 0.717,
+        "Angle": 0.717,
+        "Flat Thumb Across": 0.655,
+        "Flat": 0.656
       }
     },
     "1bf": {
       "name": "Index Ring Baby on Hook Under",
       "name_root": "Angle",
       "conv": "Cup",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.658,
-        "Circle": 0.685,
-        "Cup": 0.769,
-        "Hinge": 0.675,
-        "Angle": 0.725,
-        "Flat Thumb Across": 0.632,
-        "Flat": 0.65
+        "Tight Fist": 0.646,
+        "Circle": 0.667,
+        "Cup": 0.744,
+        "Hinge": 0.681,
+        "Angle": 0.686,
+        "Flat Thumb Across": 0.63,
+        "Flat": 0.636
       }
     },
     "1c0": {
       "name": "Index Ring Baby on Cup",
       "name_root": "Cup",
       "conv": "Cup",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.502,
-        "Circle": 0.511,
-        "Cup": 0.692,
-        "Hinge": 0.539,
-        "Angle": 0.502,
-        "Flat Thumb Across": 0.538,
-        "Flat": 0.531
+        "Tight Fist": 0.598,
+        "Circle": 0.588,
+        "Cup": 0.814,
+        "Hinge": 0.639,
+        "Angle": 0.585,
+        "Flat Thumb Across": 0.602,
+        "Flat": 0.598
       }
     },
     "1c1": {
       "name": "Index Ring Baby on Hinge",
       "name_root": "Hinge",
       "conv": "Hinge",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.644,
-        "Circle": 0.635,
-        "Cup": 0.676,
-        "Hinge": 0.714,
-        "Angle": 0.673,
-        "Flat Thumb Across": 0.628,
-        "Flat": 0.592
+        "Tight Fist": 0.645,
+        "Circle": 0.664,
+        "Cup": 0.706,
+        "Hinge": 0.716,
+        "Angle": 0.711,
+        "Flat Thumb Across": 0.631,
+        "Flat": 0.618
       }
     },
     "1c2": {
       "name": "Index Ring Baby on Angle Out",
       "name_root": "Angle",
-      "conv": "Hinge",
-      "agree": false,
+      "conv": "Angle",
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.693,
-        "Circle": 0.73,
-        "Cup": 0.681,
-        "Hinge": 0.757,
-        "Angle": 0.735,
-        "Flat Thumb Across": 0.669,
-        "Flat": 0.612
+        "Tight Fist": 0.696,
+        "Circle": 0.728,
+        "Cup": 0.717,
+        "Hinge": 0.753,
+        "Angle": 0.763,
+        "Flat Thumb Across": 0.675,
+        "Flat": 0.646
       }
     },
     "1c3": {
       "name": "Index Ring Baby on Angle",
       "name_root": "Angle",
-      "conv": "Hinge",
-      "agree": false,
+      "conv": "Angle",
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.667,
-        "Circle": 0.702,
-        "Cup": 0.676,
-        "Hinge": 0.723,
-        "Angle": 0.701,
+        "Tight Fist": 0.663,
+        "Circle": 0.691,
+        "Cup": 0.714,
+        "Hinge": 0.726,
+        "Angle": 0.727,
         "Flat Thumb Across": 0.647,
-        "Flat": 0.602
+        "Flat": 0.627
       }
     },
     "1c4": {
       "name": "Middle Down",
       "name_root": null,
       "conv": "Circle",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.893,
-        "Circle": 0.91,
-        "Cup": 0.709,
-        "Hinge": 0.728,
-        "Angle": 0.711,
-        "Flat Thumb Across": 0.793,
-        "Flat": 0.711
+        "Tight Fist": 0.891,
+        "Circle": 0.932,
+        "Cup": 0.708,
+        "Hinge": 0.725,
+        "Angle": 0.732,
+        "Flat Thumb Across": 0.798,
+        "Flat": 0.713
       }
     },
     "1c5": {
       "name": "Middle Hinge",
       "name_root": "Hinge",
-      "conv": "Hinge",
-      "agree": true,
+      "conv": "Cup",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.556,
-        "Circle": 0.607,
-        "Cup": 0.61,
-        "Hinge": 0.636,
-        "Angle": 0.597,
-        "Flat Thumb Across": 0.538,
-        "Flat": 0.541
+        "Tight Fist": 0.574,
+        "Circle": 0.635,
+        "Cup": 0.682,
+        "Hinge": 0.679,
+        "Angle": 0.655,
+        "Flat Thumb Across": 0.564,
+        "Flat": 0.565
       }
     },
     "1c6": {
       "name": "Middle Up",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.731,
+        "Circle": 0.984,
+        "Cup": 0.748,
         "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.842,
-        "Flat": 0.694
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.86,
+        "Flat": 0.704
       }
     },
     "1c7": {
       "name": "Middle Up on Circle",
       "name_root": "Circle",
       "conv": "Circle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.853,
-        "Circle": 0.978,
-        "Cup": 0.72,
-        "Hinge": 0.65,
-        "Angle": 0.697,
-        "Flat Thumb Across": 0.759,
-        "Flat": 0.653
+        "Tight Fist": 0.835,
+        "Circle": 0.988,
+        "Cup": 0.676,
+        "Hinge": 0.633,
+        "Angle": 0.682,
+        "Flat Thumb Across": 0.754,
+        "Flat": 0.651
       }
     },
     "1c8": {
       "name": "Middle Raised Knuckle",
       "name_root": null,
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.902,
-        "Circle": 0.893,
-        "Cup": 0.725,
-        "Hinge": 0.68,
-        "Angle": 0.664,
-        "Flat Thumb Across": 0.805,
-        "Flat": 0.626
+        "Tight Fist": 0.969,
+        "Circle": 0.972,
+        "Cup": 0.806,
+        "Hinge": 0.769,
+        "Angle": 0.781,
+        "Flat Thumb Across": 0.899,
+        "Flat": 0.704
       }
     },
     "1c9": {
       "name": "Middle Up, Thumb Side",
       "name_root": null,
       "conv": "Circle",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.951,
-        "Circle": 0.961,
-        "Cup": 0.731,
-        "Hinge": 0.733,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.801,
-        "Flat": 0.694
+        "Tight Fist": 0.94,
+        "Circle": 0.964,
+        "Cup": 0.709,
+        "Hinge": 0.743,
+        "Angle": 0.759,
+        "Flat Thumb Across": 0.842,
+        "Flat": 0.691
       }
     },
     "1ca": {
       "name": "Middle Thumb Hook",
       "name_root": "Angle",
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "name",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.764,
+        "Circle": 0.985,
+        "Cup": 0.814,
         "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.891,
-        "Flat": 0.765
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.908,
+        "Flat": 0.779
       }
     },
     "1cb": {
       "name": "Middle Thumb Baby",
       "name_root": null,
       "conv": "Circle",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.902,
-        "Circle": 0.904,
-        "Cup": 0.725,
-        "Hinge": 0.723,
-        "Angle": 0.744,
-        "Flat Thumb Across": 0.763,
-        "Flat": 0.656
+        "Tight Fist": 0.936,
+        "Circle": 0.961,
+        "Cup": 0.717,
+        "Hinge": 0.75,
+        "Angle": 0.76,
+        "Flat Thumb Across": 0.847,
+        "Flat": 0.695
       }
     },
     "1cc": {
       "name": "Middle Baby",
       "name_root": null,
       "conv": "Circle",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.884,
-        "Circle": 0.916,
-        "Cup": 0.753,
-        "Hinge": 0.748,
-        "Angle": 0.777,
-        "Flat Thumb Across": 0.805,
-        "Flat": 0.69
+        "Tight Fist": 0.95,
+        "Circle": 0.959,
+        "Cup": 0.718,
+        "Hinge": 0.755,
+        "Angle": 0.768,
+        "Flat Thumb Across": 0.847,
+        "Flat": 0.695
       }
     },
     "1cd": {
       "name": "Middle Ring Baby",
       "name_root": null,
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.942,
-        "Circle": 0.972,
-        "Cup": 0.775,
-        "Hinge": 0.772,
-        "Angle": 0.815,
-        "Flat Thumb Across": 0.868,
-        "Flat": 0.735
+        "Tight Fist": 1.0,
+        "Circle": 0.985,
+        "Cup": 0.786,
+        "Hinge": 0.797,
+        "Angle": 0.809,
+        "Flat Thumb Across": 0.884,
+        "Flat": 0.754
       }
     },
     "1ce": {
       "name": "Middle Ring Baby on Circle",
       "name_root": "Circle",
       "conv": "Circle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.747,
-        "Circle": 0.86,
-        "Cup": 0.72,
-        "Hinge": 0.655,
-        "Angle": 0.673,
-        "Flat Thumb Across": 0.714,
-        "Flat": 0.639
+        "Tight Fist": 0.853,
+        "Circle": 0.982,
+        "Cup": 0.712,
+        "Hinge": 0.683,
+        "Angle": 0.725,
+        "Flat Thumb Across": 0.785,
+        "Flat": 0.698
       }
     },
     "1cf": {
       "name": "Middle Ring Baby on Curlicue",
       "name_root": "Circle",
       "conv": "Circle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.729,
-        "Circle": 0.787,
-        "Cup": 0.714,
-        "Hinge": 0.65,
-        "Angle": 0.635,
-        "Flat Thumb Across": 0.684,
-        "Flat": 0.619
+        "Tight Fist": 0.742,
+        "Circle": 0.814,
+        "Cup": 0.734,
+        "Hinge": 0.662,
+        "Angle": 0.646,
+        "Flat Thumb Across": 0.706,
+        "Flat": 0.636
       }
     },
     "1d0": {
       "name": "Middle Ring Baby on Cup",
       "name_root": "Cup",
       "conv": "Cup",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.516,
-        "Circle": 0.522,
-        "Cup": 0.753,
-        "Hinge": 0.539,
-        "Angle": 0.545,
-        "Flat Thumb Across": 0.553,
-        "Flat": 0.548
+        "Tight Fist": 0.582,
+        "Circle": 0.585,
+        "Cup": 0.827,
+        "Hinge": 0.622,
+        "Angle": 0.565,
+        "Flat Thumb Across": 0.603,
+        "Flat": 0.579
       }
     },
     "1d1": {
       "name": "Middle Ring Baby on Hinge",
       "name_root": "Hinge",
-      "conv": "Hinge",
-      "agree": true,
+      "conv": "Cup",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.658,
-        "Circle": 0.663,
-        "Cup": 0.714,
-        "Hinge": 0.728,
-        "Angle": 0.687,
-        "Flat Thumb Across": 0.65,
-        "Flat": 0.595
+        "Tight Fist": 0.654,
+        "Circle": 0.683,
+        "Cup": 0.751,
+        "Hinge": 0.735,
+        "Angle": 0.72,
+        "Flat Thumb Across": 0.657,
+        "Flat": 0.627
       }
     },
     "1d2": {
       "name": "Middle Ring Baby on Angle Out",
       "name_root": "Angle",
       "conv": "Angle",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.707,
-        "Circle": 0.747,
-        "Cup": 0.72,
-        "Hinge": 0.772,
-        "Angle": 0.773,
-        "Flat Thumb Across": 0.692,
-        "Flat": 0.626
+        "Tight Fist": 0.705,
+        "Circle": 0.762,
+        "Cup": 0.758,
+        "Hinge": 0.763,
+        "Angle": 0.786,
+        "Flat Thumb Across": 0.7,
+        "Flat": 0.656
       }
     },
     "1d3": {
       "name": "Middle Ring Baby on Angle In",
       "name_root": "Angle",
       "conv": "Hinge",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.653,
-        "Circle": 0.68,
-        "Cup": 0.714,
-        "Hinge": 0.811,
-        "Angle": 0.754,
-        "Flat Thumb Across": 0.65,
-        "Flat": 0.595
+        "Tight Fist": 0.658,
+        "Circle": 0.709,
+        "Cup": 0.752,
+        "Hinge": 0.792,
+        "Angle": 0.763,
+        "Flat Thumb Across": 0.664,
+        "Flat": 0.632
       }
     },
     "1d4": {
       "name": "Middle Ring Baby on Angle",
       "name_root": "Angle",
-      "conv": "Hinge",
-      "agree": false,
+      "conv": "Cup",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.68,
-        "Circle": 0.719,
-        "Cup": 0.714,
-        "Hinge": 0.738,
-        "Angle": 0.716,
-        "Flat Thumb Across": 0.669,
-        "Flat": 0.609
+        "Tight Fist": 0.673,
+        "Circle": 0.724,
+        "Cup": 0.757,
+        "Hinge": 0.736,
+        "Angle": 0.745,
+        "Flat Thumb Across": 0.673,
+        "Flat": 0.637
       }
     },
     "1d5": {
       "name": "Middle Ring Baby Bent",
       "name_root": null,
       "conv": "Circle",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.769,
-        "Circle": 0.949,
-        "Cup": 0.654,
-        "Hinge": 0.675,
-        "Angle": 0.711,
-        "Flat Thumb Across": 0.695,
-        "Flat": 0.646
+        "Tight Fist": 0.839,
+        "Circle": 0.983,
+        "Cup": 0.707,
+        "Hinge": 0.729,
+        "Angle": 0.771,
+        "Flat Thumb Across": 0.776,
+        "Flat": 0.701
       }
     },
     "1d6": {
       "name": "Middle Ring Baby Unit on Claw",
       "name_root": "Hinge",
       "conv": "Hinge",
-      "agree": true,
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.671,
-        "Circle": 0.64,
-        "Cup": 0.654,
-        "Hinge": 0.684,
-        "Angle": 0.588,
-        "Flat Thumb Across": 0.628,
-        "Flat": 0.537
+        "Tight Fist": 0.677,
+        "Circle": 0.668,
+        "Cup": 0.695,
+        "Hinge": 0.698,
+        "Angle": 0.62,
+        "Flat Thumb Across": 0.643,
+        "Flat": 0.563
       }
     },
     "1d7": {
       "name": "Middle Ring Baby Unit on Claw Side",
       "name_root": "Hinge",
       "conv": "Circle",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.564,
-        "Circle": 0.629,
-        "Cup": 0.599,
-        "Hinge": 0.558,
-        "Angle": 0.531,
-        "Flat Thumb Across": 0.519,
-        "Flat": 0.507
+        "Tight Fist": 0.541,
+        "Circle": 0.613,
+        "Cup": 0.61,
+        "Hinge": 0.543,
+        "Angle": 0.53,
+        "Flat Thumb Across": 0.517,
+        "Flat": 0.496
       }
     },
     "1d8": {
       "name": "Middle Ring Baby Unit on Hook Out",
       "name_root": "Angle",
-      "conv": "Cup",
-      "agree": false,
+      "conv": "Circle",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.658,
-        "Circle": 0.708,
-        "Cup": 0.709,
-        "Hinge": 0.612,
-        "Angle": 0.678,
-        "Flat Thumb Across": 0.605,
-        "Flat": 0.578
+        "Tight Fist": 0.684,
+        "Circle": 0.715,
+        "Cup": 0.714,
+        "Hinge": 0.656,
+        "Angle": 0.674,
+        "Flat Thumb Across": 0.64,
+        "Flat": 0.597
       }
     },
     "1d9": {
       "name": "Middle Ring Baby Unit on Hook In",
       "name_root": "Angle",
       "conv": "Cup",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.627,
-        "Circle": 0.674,
-        "Cup": 0.747,
-        "Hinge": 0.602,
-        "Angle": 0.659,
-        "Flat Thumb Across": 0.579,
-        "Flat": 0.561
+        "Tight Fist": 0.681,
+        "Circle": 0.699,
+        "Cup": 0.743,
+        "Hinge": 0.693,
+        "Angle": 0.693,
+        "Flat Thumb Across": 0.622,
+        "Flat": 0.586
       }
     },
     "1da": {
       "name": "Middle Ring Baby Unit on Hook",
       "name_root": "Angle",
       "conv": "Cup",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.644,
-        "Circle": 0.685,
-        "Cup": 0.714,
-        "Hinge": 0.597,
-        "Angle": 0.701,
-        "Flat Thumb Across": 0.586,
-        "Flat": 0.565
+        "Tight Fist": 0.678,
+        "Circle": 0.7,
+        "Cup": 0.721,
+        "Hinge": 0.653,
+        "Angle": 0.707,
+        "Flat Thumb Across": 0.622,
+        "Flat": 0.576
       }
     },
     "1db": {
       "name": "Index Hinge",
       "name_root": "Hinge",
       "conv": "Cup",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.52,
-        "Circle": 0.584,
-        "Cup": 0.599,
-        "Hinge": 0.568,
-        "Angle": 0.583,
-        "Flat Thumb Across": 0.474,
-        "Flat": 0.463
+        "Tight Fist": 0.583,
+        "Circle": 0.649,
+        "Cup": 0.671,
+        "Hinge": 0.668,
+        "Angle": 0.645,
+        "Flat Thumb Across": 0.541,
+        "Flat": 0.521
       }
     },
     "1dc": {
       "name": "Index Thumb Side",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.978,
-        "Cup": 0.731,
+        "Circle": 0.986,
+        "Cup": 0.738,
         "Hinge": 0.786,
-        "Angle": 0.773,
-        "Flat Thumb Across": 0.801,
-        "Flat": 0.636
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.819,
+        "Flat": 0.674
       }
     },
     "1dd": {
       "name": "Index Thumb Side on Hinge",
       "name_root": "Hinge",
-      "conv": "Angle",
-      "agree": false,
+      "conv": "Hinge",
+      "source": "both",
       "scores": {
-        "Tight Fist": 0.596,
-        "Circle": 0.64,
-        "Cup": 0.681,
-        "Hinge": 0.743,
-        "Angle": 0.754,
-        "Flat Thumb Across": 0.523,
-        "Flat": 0.483
+        "Tight Fist": 0.635,
+        "Circle": 0.687,
+        "Cup": 0.711,
+        "Hinge": 0.795,
+        "Angle": 0.768,
+        "Flat Thumb Across": 0.566,
+        "Flat": 0.519
       }
     },
     "1de": {
       "name": "Index Thumb Side, Thumb Diagonal",
       "name_root": null,
       "conv": "Circle",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.933,
-        "Circle": 0.949,
-        "Cup": 0.714,
-        "Hinge": 0.757,
-        "Angle": 0.744,
+        "Tight Fist": 0.94,
+        "Circle": 0.955,
+        "Cup": 0.701,
+        "Hinge": 0.743,
+        "Angle": 0.759,
         "Flat Thumb Across": 0.801,
-        "Flat": 0.636
+        "Flat": 0.657
       }
     },
     "1df": {
       "name": "Index Thumb Side, Thumb Unit",
       "name_root": null,
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.947,
-        "Circle": 0.972,
-        "Cup": 0.753,
-        "Hinge": 0.801,
-        "Angle": 0.801,
-        "Flat Thumb Across": 0.793,
-        "Flat": 0.663
+        "Tight Fist": 1.0,
+        "Circle": 0.982,
+        "Cup": 0.738,
+        "Hinge": 0.813,
+        "Angle": 0.827,
+        "Flat Thumb Across": 0.819,
+        "Flat": 0.674
       }
     },
     "1e0": {
       "name": "Index Thumb Side, Thumb Bent",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.736,
-        "Hinge": 0.786,
-        "Angle": 0.777,
-        "Flat Thumb Across": 0.801,
-        "Flat": 0.636
+        "Tight Fist": 0.966,
+        "Circle": 0.962,
+        "Cup": 0.714,
+        "Hinge": 0.757,
+        "Angle": 0.775,
+        "Flat Thumb Across": 0.802,
+        "Flat": 0.66
       }
     },
     "1e1": {
       "name": "Index Thumb Side, Index Bent",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.978,
-        "Cup": 0.731,
+        "Circle": 0.986,
+        "Cup": 0.738,
         "Hinge": 0.786,
-        "Angle": 0.773,
-        "Flat Thumb Across": 0.823,
-        "Flat": 0.694
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.838,
+        "Flat": 0.734
       }
     },
     "1e2": {
       "name": "Index Thumb Side, Both Bent",
       "name_root": null,
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.942,
-        "Circle": 0.972,
-        "Cup": 0.753,
-        "Hinge": 0.757,
-        "Angle": 0.801,
-        "Flat Thumb Across": 0.812,
-        "Flat": 0.728
+        "Tight Fist": 1.0,
+        "Circle": 0.985,
+        "Cup": 0.738,
+        "Hinge": 0.786,
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.838,
+        "Flat": 0.734
       }
     },
     "1e3": {
       "name": "Index Thumb Side, Index Hinge",
       "name_root": "Hinge",
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "name",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.978,
-        "Cup": 0.731,
+        "Circle": 0.986,
+        "Cup": 0.738,
         "Hinge": 0.786,
-        "Angle": 0.773,
-        "Flat Thumb Across": 0.801,
-        "Flat": 0.663
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.819,
+        "Flat": 0.695
       }
     },
     "1e4": {
       "name": "Index Thumb Forward, Index Straight",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.725,
-        "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.801,
-        "Flat": 0.636
+        "Tight Fist": 0.998,
+        "Circle": 0.98,
+        "Cup": 0.735,
+        "Hinge": 0.785,
+        "Angle": 0.798,
+        "Flat Thumb Across": 0.817,
+        "Flat": 0.672
       }
     },
     "1e5": {
       "name": "Index Thumb Forward, Index Bent",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.725,
-        "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.823,
-        "Flat": 0.694
+        "Tight Fist": 0.998,
+        "Circle": 0.98,
+        "Cup": 0.735,
+        "Hinge": 0.785,
+        "Angle": 0.798,
+        "Flat Thumb Across": 0.837,
+        "Flat": 0.733
       }
     },
     "1e6": {
       "name": "Index Thumb Hook",
       "name_root": "Angle",
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "name",
       "scores": {
-        "Tight Fist": 1.0,
-        "Circle": 0.972,
-        "Cup": 0.753,
-        "Hinge": 0.835,
-        "Angle": 0.853,
-        "Flat Thumb Across": 0.793,
-        "Flat": 0.663
+        "Tight Fist": 0.968,
+        "Circle": 0.974,
+        "Cup": 0.729,
+        "Hinge": 0.804,
+        "Angle": 0.847,
+        "Flat Thumb Across": 0.802,
+        "Flat": 0.665
       }
     },
     "1e7": {
       "name": "Index Thumb Curlicue",
       "name_root": "Circle",
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.742,
-        "Hinge": 0.864,
-        "Angle": 0.872,
-        "Flat Thumb Across": 0.793,
-        "Flat": 0.643
+        "Tight Fist": 0.974,
+        "Circle": 0.967,
+        "Cup": 0.725,
+        "Hinge": 0.841,
+        "Angle": 0.871,
+        "Flat Thumb Across": 0.798,
+        "Flat": 0.638
       }
     },
     "1e8": {
       "name": "Index Thumb Curve, Thumb Inside",
       "name_root": null,
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.973,
-        "Circle": 0.994,
+        "Tight Fist": 0.984,
+        "Circle": 0.98,
         "Cup": 0.775,
-        "Hinge": 0.845,
-        "Angle": 0.91,
-        "Flat Thumb Across": 0.801,
-        "Flat": 0.619
+        "Hinge": 0.854,
+        "Angle": 0.907,
+        "Flat Thumb Across": 0.809,
+        "Flat": 0.636
       }
     },
     "1e9": {
       "name": "Index Thumb Curve, Thumb Inside on Claw",
       "name_root": "Hinge",
       "conv": "Cup",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.724,
-        "Circle": 0.736,
-        "Cup": 0.841,
-        "Hinge": 0.743,
-        "Angle": 0.73,
-        "Flat Thumb Across": 0.695,
-        "Flat": 0.718
+        "Tight Fist": 0.728,
+        "Circle": 0.758,
+        "Cup": 0.854,
+        "Hinge": 0.748,
+        "Angle": 0.769,
+        "Flat Thumb Across": 0.702,
+        "Flat": 0.739
       }
     },
     "1ea": {
       "name": "Index Thumb Curve, Thumb Under",
       "name_root": null,
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.951,
-        "Circle": 0.944,
-        "Cup": 0.698,
-        "Hinge": 0.796,
-        "Angle": 0.815,
-        "Flat Thumb Across": 0.752,
-        "Flat": 0.605
+        "Tight Fist": 0.975,
+        "Circle": 0.977,
+        "Cup": 0.736,
+        "Hinge": 0.822,
+        "Angle": 0.861,
+        "Flat Thumb Across": 0.802,
+        "Flat": 0.643
       }
     },
     "1eb": {
       "name": "Index Thumb Circle",
       "name_root": "Circle",
-      "conv": "Circle",
-      "agree": true,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.947,
-        "Circle": 0.983,
-        "Cup": 0.775,
-        "Hinge": 0.806,
-        "Angle": 0.872,
-        "Flat Thumb Across": 0.797,
-        "Flat": 0.616
+        "Tight Fist": 0.967,
+        "Circle": 0.967,
+        "Cup": 0.736,
+        "Hinge": 0.809,
+        "Angle": 0.854,
+        "Flat Thumb Across": 0.804,
+        "Flat": 0.627
       }
     },
     "1ec": {
       "name": "Index Thumb Cup",
       "name_root": "Cup",
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "name",
       "scores": {
-        "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.791,
-        "Hinge": 0.864,
-        "Angle": 0.787,
-        "Flat Thumb Across": 0.793,
-        "Flat": 0.629
+        "Tight Fist": 0.96,
+        "Circle": 0.955,
+        "Cup": 0.778,
+        "Hinge": 0.824,
+        "Angle": 0.788,
+        "Flat Thumb Across": 0.789,
+        "Flat": 0.622
       }
     },
     "1ed": {
       "name": "Index Thumb Cup Open",
       "name_root": "Cup",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.942,
-        "Circle": 0.955,
-        "Cup": 0.725,
-        "Hinge": 0.752,
-        "Angle": 0.73,
-        "Flat Thumb Across": 0.789,
-        "Flat": 0.626
+        "Tight Fist": 0.959,
+        "Circle": 0.959,
+        "Cup": 0.722,
+        "Hinge": 0.807,
+        "Angle": 0.774,
+        "Flat Thumb Across": 0.793,
+        "Flat": 0.619
       }
     },
     "1ee": {
       "name": "Index Thumb Hinge Open",
       "name_root": "Hinge",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.956,
-        "Circle": 0.972,
-        "Cup": 0.758,
-        "Hinge": 0.811,
+        "Tight Fist": 1.0,
+        "Circle": 0.982,
+        "Cup": 0.745,
+        "Hinge": 0.837,
         "Angle": 0.82,
-        "Flat Thumb Across": 0.789,
-        "Flat": 0.612
+        "Flat Thumb Across": 0.811,
+        "Flat": 0.625
       }
     },
     "1ef": {
       "name": "Index Thumb Hinge Large",
       "name_root": "Hinge",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.951,
-        "Circle": 0.972,
-        "Cup": 0.764,
-        "Hinge": 0.913,
-        "Angle": 0.886,
-        "Flat Thumb Across": 0.789,
-        "Flat": 0.612
+        "Tight Fist": 1.0,
+        "Circle": 0.982,
+        "Cup": 0.75,
+        "Hinge": 0.922,
+        "Angle": 0.884,
+        "Flat Thumb Across": 0.811,
+        "Flat": 0.625
       }
     },
     "1f0": {
       "name": "Index Thumb Hinge",
       "name_root": "Hinge",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.951,
-        "Circle": 0.972,
-        "Cup": 0.753,
-        "Hinge": 0.845,
-        "Angle": 0.886,
-        "Flat Thumb Across": 0.789,
-        "Flat": 0.612
+        "Tight Fist": 1.0,
+        "Circle": 0.982,
+        "Cup": 0.737,
+        "Hinge": 0.864,
+        "Angle": 0.884,
+        "Flat Thumb Across": 0.811,
+        "Flat": 0.625
       }
     },
     "1f1": {
       "name": "Index Thumb Hinge Small",
       "name_root": "Hinge",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.956,
-        "Circle": 0.972,
-        "Cup": 0.753,
-        "Hinge": 0.845,
-        "Angle": 0.886,
-        "Flat Thumb Across": 0.789,
-        "Flat": 0.612
+        "Tight Fist": 1.0,
+        "Circle": 0.982,
+        "Cup": 0.737,
+        "Hinge": 0.864,
+        "Angle": 0.884,
+        "Flat Thumb Across": 0.811,
+        "Flat": 0.625
       }
     },
     "1f2": {
       "name": "Index Thumb Angle Out",
       "name_root": "Angle",
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.889,
-        "Circle": 0.865,
-        "Cup": 0.703,
-        "Hinge": 0.806,
-        "Angle": 0.853,
-        "Flat Thumb Across": 0.699,
-        "Flat": 0.537
+        "Tight Fist": 0.928,
+        "Circle": 0.956,
+        "Cup": 0.713,
+        "Hinge": 0.835,
+        "Angle": 0.907,
+        "Flat Thumb Across": 0.752,
+        "Flat": 0.583
       }
     },
     "1f3": {
       "name": "Index Thumb Angle In",
       "name_root": "Angle",
-      "conv": "Angle",
-      "agree": true,
+      "conv": "Circle",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.858,
-        "Circle": 0.871,
-        "Cup": 0.747,
-        "Hinge": 0.879,
-        "Angle": 0.905,
-        "Flat Thumb Across": 0.707,
-        "Flat": 0.575
+        "Tight Fist": 0.977,
+        "Circle": 0.979,
+        "Cup": 0.742,
+        "Hinge": 0.896,
+        "Angle": 0.94,
+        "Flat Thumb Across": 0.792,
+        "Flat": 0.614
       }
     },
     "1f4": {
       "name": "Index Thumb Angle",
       "name_root": "Angle",
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "name",
       "scores": {
-        "Tight Fist": 0.956,
-        "Circle": 0.989,
-        "Cup": 0.769,
-        "Hinge": 0.874,
-        "Angle": 0.929,
-        "Flat Thumb Across": 0.789,
-        "Flat": 0.612
+        "Tight Fist": 1.0,
+        "Circle": 0.988,
+        "Cup": 0.747,
+        "Hinge": 0.892,
+        "Angle": 0.927,
+        "Flat Thumb Across": 0.811,
+        "Flat": 0.625
       }
     },
     "1f5": {
       "name": "Thumb",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.978,
-        "Cup": 0.731,
+        "Circle": 0.986,
+        "Cup": 0.738,
         "Hinge": 0.786,
-        "Angle": 0.773,
-        "Flat Thumb Across": 0.789,
-        "Flat": 0.612
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.811,
+        "Flat": 0.625
       }
     },
     "1f7": {
       "name": "Thumb Side Diagonal",
       "name_root": null,
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.951,
-        "Circle": 0.91,
-        "Cup": 0.714,
-        "Hinge": 0.757,
-        "Angle": 0.749,
-        "Flat Thumb Across": 0.748,
-        "Flat": 0.578
+        "Tight Fist": 0.957,
+        "Circle": 0.959,
+        "Cup": 0.708,
+        "Hinge": 0.746,
+        "Angle": 0.77,
+        "Flat Thumb Across": 0.785,
+        "Flat": 0.609
       }
     },
     "1f8": {
       "name": "Thumb Side Unit",
       "name_root": null,
-      "conv": "Circle",
-      "agree": false,
+      "conv": "Tight Fist",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.947,
-        "Circle": 0.972,
-        "Cup": 0.753,
-        "Hinge": 0.801,
-        "Angle": 0.801,
-        "Flat Thumb Across": 0.789,
-        "Flat": 0.612
+        "Tight Fist": 1.0,
+        "Circle": 0.982,
+        "Cup": 0.737,
+        "Hinge": 0.812,
+        "Angle": 0.826,
+        "Flat Thumb Across": 0.811,
+        "Flat": 0.625
       }
     },
     "1f9": {
       "name": "Thumb Side Bent",
       "name_root": null,
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.907,
-        "Circle": 0.871,
+        "Tight Fist": 0.924,
+        "Circle": 0.937,
         "Cup": 0.692,
-        "Hinge": 0.709,
-        "Angle": 0.73,
-        "Flat Thumb Across": 0.711,
-        "Flat": 0.578
+        "Hinge": 0.731,
+        "Angle": 0.751,
+        "Flat Thumb Across": 0.78,
+        "Flat": 0.605
       }
     },
     "1fa": {
       "name": "Thumb Forward",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.725,
-        "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.789,
-        "Flat": 0.612
+        "Tight Fist": 0.998,
+        "Circle": 0.98,
+        "Cup": 0.735,
+        "Hinge": 0.785,
+        "Angle": 0.798,
+        "Flat Thumb Across": 0.809,
+        "Flat": 0.623
       }
     },
     "1fb": {
       "name": "Thumb Between Index Middle",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.742,
+        "Circle": 0.983,
+        "Cup": 0.774,
         "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.85,
-        "Flat": 0.667
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.869,
+        "Flat": 0.68
       }
     },
     "1fc": {
       "name": "Thumb Between Middle Ring",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.747,
+        "Circle": 0.987,
+        "Cup": 0.784,
         "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.85,
-        "Flat": 0.667
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.87,
+        "Flat": 0.68
       }
     },
     "1fd": {
       "name": "Thumb Between Ring Baby",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.736,
+        "Circle": 0.982,
+        "Cup": 0.774,
         "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.838,
-        "Flat": 0.667
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.864,
+        "Flat": 0.68
       }
     },
     "1fe": {
       "name": "Thumb Under Two Fingers",
       "name_root": null,
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.764,
-        "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.857,
-        "Flat": 0.673
+        "Tight Fist": 0.954,
+        "Circle": 0.961,
+        "Cup": 0.748,
+        "Hinge": 0.752,
+        "Angle": 0.767,
+        "Flat Thumb Across": 0.851,
+        "Flat": 0.665
       }
     },
     "1ff": {
       "name": "Thumb Over Two Fingers",
       "name_root": null,
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.933,
-        "Circle": 0.893,
-        "Cup": 0.681,
-        "Hinge": 0.714,
-        "Angle": 0.697,
-        "Flat Thumb Across": 0.771,
-        "Flat": 0.595
+        "Tight Fist": 0.952,
+        "Circle": 0.96,
+        "Cup": 0.745,
+        "Hinge": 0.75,
+        "Angle": 0.765,
+        "Flat Thumb Across": 0.849,
+        "Flat": 0.664
       }
     },
     "200": {
       "name": "Thumb Under Three Fingers",
       "name_root": null,
-      "conv": "Tight Fist",
-      "agree": false,
+      "conv": "Circle",
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.802,
-        "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.887,
-        "Flat": 0.701
+        "Tight Fist": 0.959,
+        "Circle": 0.97,
+        "Cup": 0.791,
+        "Hinge": 0.758,
+        "Angle": 0.772,
+        "Flat Thumb Across": 0.88,
+        "Flat": 0.692
       }
     },
     "201": {
       "name": "Thumb Under Four Fingers",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.725,
+        "Circle": 0.982,
+        "Cup": 0.737,
         "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.789,
-        "Flat": 0.612
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.811,
+        "Flat": 0.625
       }
     },
     "202": {
       "name": "Thumb Over Four Raised Knuckles",
       "name_root": null,
       "conv": "Tight Fist",
-      "agree": false,
+      "source": "convolution",
       "scores": {
-        "Tight Fist": 0.902,
-        "Circle": 0.893,
-        "Cup": 0.813,
-        "Hinge": 0.738,
-        "Angle": 0.725,
-        "Flat Thumb Across": 0.846,
-        "Flat": 0.67
+        "Tight Fist": 0.975,
+        "Circle": 0.972,
+        "Cup": 0.943,
+        "Hinge": 0.807,
+        "Angle": 0.826,
+        "Flat Thumb Across": 0.959,
+        "Flat": 0.796
       }
     },
     "203": {
       "name": "Fist",
       "name_root": "Tight Fist",
       "conv": "Tight Fist",
-      "agree": true,
+      "source": "both",
       "scores": {
         "Tight Fist": 1.0,
-        "Circle": 0.966,
-        "Cup": 0.725,
+        "Circle": 0.982,
+        "Cup": 0.737,
         "Hinge": 0.786,
-        "Angle": 0.768,
-        "Flat Thumb Across": 0.789,
-        "Flat": 0.612
+        "Angle": 0.799,
+        "Flat Thumb Across": 0.811,
+        "Flat": 0.625
       }
     }
   }

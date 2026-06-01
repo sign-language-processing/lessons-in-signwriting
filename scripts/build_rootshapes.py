@@ -28,7 +28,20 @@ import re
 from pathlib import Path
 
 import numpy as np
-from signwriting.visualizer.visualize import signwriting_to_image
+from PIL import ImageFont
+from scipy.signal import fftconvolve
+from signwriting.visualizer import visualize as _viz
+
+# The visualizer hardcodes the Sutton font at 30px, which renders ~16px glyphs —
+# far too coarse for shape comparison (the outline boundary is ~10% of pixels,
+# so a rootshape isn't a clean pixel-subset of the bases that contain it).
+# Render ~8x larger for precise masks.
+_RENDER_PX = 240
+_viz.get_font = lambda name: ImageFont.truetype(
+    str(Path(_viz.__file__).parent / f"{name}.ttf"), _RENDER_PX
+)
+_viz.get_symbol_size.cache_clear()
+from signwriting.visualizer.visualize import signwriting_to_image  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -68,10 +81,6 @@ KEYWORD_MAP = dict(NAME_KEYWORDS)
 WRIST_VIEW = {"14d", "14f", "151", "15c", "15e", "1f6", "204"}
 INCOMPLETE = {"15b"}
 
-CANVAS = (300, 300)
-SHIFT = range(-26, 27, 2)
-
-
 def load_names() -> dict[str, str]:
     return dict(re.findall(r'"([0-9a-f]{3})":\s*"([^"]+)"', NAMES_TS.read_text()))
 
@@ -96,37 +105,33 @@ def name_root(name: str) -> str | None:
 
 
 def render_mask(key: str) -> np.ndarray:
-    img = signwriting_to_image(
-        f"M500x500{key}500x500",
-        trust_box=False,
-        antialiasing=False,
-        line_color=(0, 0, 0, 255),
-        fill_color=(0, 0, 0, 255),
+    """Tight boolean mask of the solid-black glyph (line + fill both black)."""
+    arr = np.array(
+        signwriting_to_image(
+            f"M500x500{key}500x500",
+            trust_box=False,
+            antialiasing=False,
+            line_color=(0, 0, 0, 255),
+            fill_color=(0, 0, 0, 255),
+        )
     )
-    arr = np.array(img)
-    glyph = arr[:, :, 3] > 32 if arr.shape[-1] == 4 else (arr[:, :, 0] < 128)
-    h, w = CANVAS
-    out = np.zeros((h, w), bool)
-    gh, gw = glyph.shape
-    if gh > h or gw > w:
-        glyph = glyph[max(0, gh - h):, max(0, (gw - w) // 2):][:h, :w]
-        gh, gw = glyph.shape
-    y0, x0 = h - gh, (w - gw) // 2
-    out[y0:y0 + gh, x0:x0 + gw] = glyph
-    return out
+    return arr[:, :, 3] > 32 if arr.shape[-1] == 4 else (arr[:, :, 0] < 128)
 
 
 def inclusion(base_mask: np.ndarray, root_mask: np.ndarray) -> float:
-    """Best |root ∩ base| / |root| over small translations — does base include root?"""
+    """Max |root ∩ base| / |root| over *all* translations (full-shift convolution).
+
+    Does the base glyph contain the whole rootshape glyph at its best alignment?
+    Computed as the peak of the cross-correlation, so the rootshape is free to
+    slide anywhere within the base.
+    """
     total = root_mask.sum()
     if total == 0:
         return 0.0
-    best = 0.0
-    for dy in SHIFT:
-        for dx in SHIFT:
-            shifted = np.roll(np.roll(root_mask, dy, 0), dx, 1)
-            best = max(best, (shifted & base_mask).sum() / total)
-    return round(float(best), 3)
+    corr = fftconvolve(
+        base_mask.astype(np.float32), root_mask[::-1, ::-1].astype(np.float32)
+    )
+    return round(float(corr.max()) / total, 3)
 
 
 def main() -> None:
@@ -139,48 +144,53 @@ def main() -> None:
     print(f"classifying {len(bases)} bases by convolution + name…")
     mapping: dict[str, str] = {}
     debug: dict[str, dict] = {}
-    unresolved: list[dict] = []
-
+    conv_only: list[dict] = []
     disagreements: list[dict] = []
+
     for b in bases:
         base_mask = render_mask(f"S{b}00")
         scores = {name: inclusion(base_mask, mask) for name, mask in root_masks.items()}
-        conv = max(scores, key=scores.__getitem__)  # rule 1 (verification)
+        conv = max(scores, key=scores.__getitem__)  # rule 1
         nroot = name_root(names[b])  # rule 2 (authoritative when present)
-
-        agree = nroot is not None and conv == nroot
-        debug[b] = {"name": names[b], "name_root": nroot, "conv": conv,
-                    "agree": agree, "scores": scores}
 
         if nroot is not None:
             mapping[b] = nroot
-            if not agree:
-                disagreements.append({"base": b, "name": names[b],
-                                      "name_root": nroot, "conv": conv,
-                                      "conv_score": scores[conv]})
+            source = "both" if conv == nroot else "name"
         else:
-            unresolved.append({"base": b, "name": names[b], "conv": conv,
-                               "conv_score": scores[conv]})
+            mapping[b] = conv
+            source = "convolution"
+
+        debug[b] = {"name": names[b], "name_root": nroot, "conv": conv,
+                    "source": source, "scores": scores}
+        if source == "name":
+            disagreements.append({"base": b, "name": names[b], "name_root": nroot,
+                                  "conv": conv, "conv_score": scores[conv]})
+        elif source == "convolution":
+            conv_only.append({"base": b, "name": names[b], "conv": conv,
+                              "conv_score": scores[conv]})
 
     OUT.write_text(
         json.dumps({"roots": ROOT_NAMES, "bases": mapping}, indent=2, ensure_ascii=False) + "\n"
     )
     DEBUG_OUT.write_text(
-        json.dumps({"resolved": mapping, "unresolved": unresolved,
+        json.dumps({"bases": mapping, "conv_only": conv_only,
                     "disagreements": disagreements, "all": debug},
                    indent=2, ensure_ascii=False) + "\n"
     )
 
     counts: dict[str, int] = {}
-    for root in mapping.values():
-        counts[root] = counts.get(root, 0) + 1
-    print(f"\nmapped {len(mapping)}/{len(bases)} bases by name keyword")
+    src_counts: dict[str, int] = {}
+    for b in bases:
+        counts[mapping[b]] = counts.get(mapping[b], 0) + 1
+        src_counts[debug[b]["source"]] = src_counts.get(debug[b]["source"], 0) + 1
+    print(f"\nmapped {len(mapping)}/{len(bases)} bases")
     print("by rootshape:", dict(sorted(counts.items(), key=lambda kv: -kv[1])))
+    print("by source:   ", src_counts, "(both = name keyword confirmed by convolution)")
 
-    print(f"\n--- UNMAPPED: no name keyword ({len(unresolved)}) ---")
-    for u in unresolved:
-        print(f'  {u["base"]}  {u["name"]:42s}  (conv guess: {u["conv"]} {u["conv_score"]})')
-    print(f"\n--- MAPPED BUT CONVOLUTION DISAGREES ({len(disagreements)}) ---")
+    print(f"\n--- ASSIGNED BY CONVOLUTION ONLY (no name keyword) ({len(conv_only)}) ---")
+    for u in conv_only:
+        print(f'  {u["base"]}  {u["name"]:42s}  -> {u["conv"]} ({u["conv_score"]})')
+    print(f"\n--- NAME vs CONVOLUTION DISAGREE (name wins) ({len(disagreements)}) ---")
     for u in disagreements:
         print(f'  {u["base"]}  {u["name"]:42s}  name={u["name_root"]:11s} conv={u["conv"]} ({u["conv_score"]})')
 

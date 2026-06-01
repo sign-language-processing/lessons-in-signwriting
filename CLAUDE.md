@@ -184,22 +184,27 @@ section. They ship in release (not authoring-gated) and reuse the shared
 
 ### Rootshape mapping (`scripts/build_rootshapes.py`)
 
-Maps eligible hand bases → one of seven rootshapes, written to
-`src/content/rootshapes.generated.json` (`{roots, bases}`; per-base scores +
-the unresolved list in `scripts/rootshapes_debug.json`). Re-runnable:
-`python scripts/build_rootshapes.py`. A base is mapped **only when two rules
-agree** (no LLM — it was too error-prone):
+Maps every eligible hand base → one of seven rootshapes, written to
+`src/content/rootshapes.generated.json` (`{roots, bases}`; per-base scores,
+convolution-only assignments, and name/convolution disagreements in
+`scripts/rootshapes_debug.json`). Re-runnable: `python scripts/build_rootshapes.py`
+(no LLM — it was too error-prone). Two rules:
 
-- **Rule 1 — convolution.** Render the base glyph and each rootshape glyph
-  (`signwriting` lib), bottom-center align, and measure inclusion
-  `|rootshape ∩ base| / |rootshape|` (does the base contain the whole
-  rootshape?). The best-covered rootshape is rule 1's answer.
-- **Rule 2 — name keyword.** Only the five unambiguous ISWA keywords count:
-  Fist, Circle, Cup, Hinge, Angle.
+- **Rule 1 — convolution.** Render the base glyph and each rootshape glyph with
+  the `signwriting` visualizer (monkeypatched to ~240px — the default 30px
+  renders ~16px glyphs, too coarse), then measure inclusion: the max of
+  `|rootshape ∩ base| / |rootshape|` over **all** translations (peak of the
+  FFT cross-correlation) — does the base contain the whole rootshape? The
+  best-covered rootshape is rule 1's answer.
+- **Rule 2 — name keyword.** The ISWA name, when it carries a rootshape keyword,
+  is authoritative. Parse the `on X` suffix first ("Index Hinge on Circle" is
+  Circle — "Hinge" only describes the finger), then bare keywords: Fist, Circle,
+  Cup, Hinge, Angle, plus normalizations Curlicue→Circle, Hook→Angle, Claw→Hinge.
 
-Convolution alone is unreliable (rootshape glyphs overlap heavily, so it
-over-predicts Circle and can't separate Angle from Hinge), which is why a name
-keyword must confirm it. The game quizzes only the resolved bases. Everything
-unresolved (no keyword, or rules disagree) is left unmapped and printed for
-manual follow-up. The `scripts/.venv` needs `signwriting` (+ `regex`) alongside
-PIL/numpy/scipy.
+A base is mapped by its name keyword when it has one, otherwise by convolution.
+Convolution is reliable for the clear shapes (fist, flat, four-fingers) but
+still confuses Angle↔Hinge (near-identical glyphs) and over-predicts Circle on
+some single-raised-finger hands, so the name wins on conflict. The debug file
+lists convolution-only assignments and name/convolution disagreements for
+review. The `scripts/.venv` needs `signwriting` (+ `regex`, `scipy`) alongside
+PIL/numpy.
