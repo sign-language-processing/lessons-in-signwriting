@@ -746,23 +746,23 @@ export function Ch3Hands() {
           {
             photo: "person-176-a.png",
             altPhoto: "person-176-b.png",
-            symbolL: "symbol-176-L.png",
+            symbolL: "񂊕",
             symbolR: "񂈑",
           },
-          { photo: "person-177.png", symbolL: "symbol-177-L.png", symbolR: "񂌱" },
+          { photo: "person-177.png", symbolL: "񂍕", symbolR: "񂌱" },
           {
             photo: "person-178-a.png",
-            symbolL: "symbol-178-a-L.png",
+            symbolL: "񁳵",
             symbolR: "񁳑",
           },
           {
             photo: "person-178-b.png",
-            symbolL: "symbol-178-b-L.png",
+            symbolL: "񁹵",
             symbolR: "񁹑",
           },
           {
             photo: "person-178-c.png",
-            symbolL: "symbol-178-c-L.png",
+            symbolL: "񁶵",
             symbolR: "񁶑",
           },
         ]}
@@ -776,8 +776,8 @@ export function Ch3Hands() {
       </p>
       <HeelViewTable
         rows={[
-          { photo: "person-179.png", symbolL: "symbol-179-L.png", symbolR: "symbol-179-R.png" },
-          { photo: "person-180.png", symbolL: "symbol-180-L.png", symbolR: "symbol-180-R.png" },
+          { photo: "person-179.png", symbolL: "񆆕", symbolR: "񆅱" },
+          { photo: "person-180.png", symbolL: "񅱕", symbolR: "񅰱" },
         ]}
       />
 
