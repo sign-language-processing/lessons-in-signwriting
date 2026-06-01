@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { asset } from "../lib/asset";
+import { SgnwSymbol } from "./Sgnw";
 
 const BASE = asset("/textbook/heel-views");
 
@@ -7,9 +8,21 @@ export type HeelRow = {
   photo: string;
   /** Optional companion photo (e.g. the Top-View pose alongside the Wrist-View pose). */
   altPhoto?: string;
+  /** Each symbol is either a `.png` filename under /textbook/heel-views or a live SWU character. */
   symbolL: string;
   symbolR: string;
 };
+
+function Sym({ value, alt }: { value: string; alt: string }) {
+  if (value.endsWith(".png")) {
+    return <img className="heel-table__sym" src={`${BASE}/${value}`} alt={alt} />;
+  }
+  return (
+    <span className="heel-table__sym">
+      <SgnwSymbol symbol={value} size={72} />
+    </span>
+  );
+}
 
 /**
  * A handshape that can be written two equivalent ways — the Heel of Hand
@@ -29,12 +42,8 @@ export function HeelViewTable({ rows }: { rows: HeelRow[] }) {
             <img src={`${BASE}/${r.photo}`} alt="" />
             {r.altPhoto ? <img src={`${BASE}/${r.altPhoto}`} alt="" /> : null}
           </div>
-          <img
-            className="heel-table__sym"
-            src={`${BASE}/${r.symbolL}`}
-            alt="Heel of Hand Wrist View symbol"
-          />
-          <img className="heel-table__sym" src={`${BASE}/${r.symbolR}`} alt="Top View symbol" />
+          <Sym value={r.symbolL} alt="Heel of Hand Wrist View symbol" />
+          <Sym value={r.symbolR} alt="Top View symbol" />
         </Fragment>
       ))}
     </div>

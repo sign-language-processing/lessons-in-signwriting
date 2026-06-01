@@ -747,23 +747,23 @@ export function Ch3Hands() {
             photo: "person-176-a.png",
             altPhoto: "person-176-b.png",
             symbolL: "symbol-176-L.png",
-            symbolR: "symbol-176-R.png",
+            symbolR: "񂈑",
           },
-          { photo: "person-177.png", symbolL: "symbol-177-L.png", symbolR: "symbol-177-R.png" },
+          { photo: "person-177.png", symbolL: "symbol-177-L.png", symbolR: "񂌱" },
           {
             photo: "person-178-a.png",
             symbolL: "symbol-178-a-L.png",
-            symbolR: "symbol-178-a-R.png",
+            symbolR: "񁳑",
           },
           {
             photo: "person-178-b.png",
             symbolL: "symbol-178-b-L.png",
-            symbolR: "symbol-178-b-R.png",
+            symbolR: "񁹑",
           },
           {
             photo: "person-178-c.png",
             symbolL: "symbol-178-c-L.png",
-            symbolR: "symbol-178-c-R.png",
+            symbolR: "񁶑",
           },
         ]}
       />
