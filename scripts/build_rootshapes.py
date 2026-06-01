@@ -95,8 +95,10 @@ def name_root(name: str) -> str | None:
         return None
     if "four fingers" in n:
         return "Flat Thumb Across"
-    if "five fingers" in n or "spread" in n or "flat" in n:
+    if "five fingers" in n or "flat" in n:
         return "Flat"
+    # A bare "spread" (e.g. "Index Middle Up Spread") only means the raised
+    # fingers fan apart — the base is still a Tight Fist.
     return "Tight Fist"
 
 
