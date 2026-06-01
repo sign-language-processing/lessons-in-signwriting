@@ -23,13 +23,14 @@ sources, and the unresolved list go to scripts/rootshapes_debug.json. Re-runnabl
 
 from __future__ import annotations
 
+import base64
+import io
 import json
 import re
 from pathlib import Path
 
 import numpy as np
-from PIL import ImageFont
-from scipy.signal import fftconvolve
+from PIL import Image, ImageFont
 from signwriting.visualizer import visualize as _viz
 
 # The visualizer hardcodes the Sutton font at 30px, which renders ~16px glyphs —
@@ -48,6 +49,7 @@ ROOT = HERE.parent
 NAMES_TS = ROOT / "src/lib/baseSymbolNames.ts"
 OUT = ROOT / "src/content/rootshapes.generated.json"
 DEBUG_OUT = HERE / "rootshapes_debug.json"
+REPORT_OUT = HERE / "rootshapes_report.html"
 
 # name, reference glyph key (fill 0, rotation 0)
 ROOT_DEFS = [
@@ -80,6 +82,11 @@ KEYWORD_MAP = dict(NAME_KEYWORDS)
 
 WRIST_VIEW = {"14d", "14f", "151", "15c", "15e", "1f6", "204"}
 INCOMPLETE = {"15b"}
+
+# A convolution score at/above this means the base fully contains the rootshape,
+# which is treated as definitive (convolution wins even over the name keyword).
+CONV_WINS = 0.999
+
 
 def load_names() -> dict[str, str]:
     return dict(re.findall(r'"([0-9a-f]{3})":\s*"([^"]+)"', NAMES_TS.read_text()))
@@ -118,20 +125,118 @@ def render_mask(key: str) -> np.ndarray:
     return arr[:, :, 3] > 32 if arr.shape[-1] == 4 else (arr[:, :, 0] < 128)
 
 
-def inclusion(base_mask: np.ndarray, root_mask: np.ndarray) -> float:
-    """Max |root ∩ base| / |root| over *all* translations (full-shift convolution).
+_PAD = 10
+_SHIFT = range(-6, 7, 2)
 
-    Does the base glyph contain the whole rootshape glyph at its best alignment?
-    Computed as the peak of the cross-correlation, so the rootshape is free to
-    slide anywhere within the base.
+
+def inclusion(base_mask: np.ndarray, root_mask: np.ndarray) -> float:
+    """Max |root ∩ base| / |root| with the rootshape anchored at the bottom.
+
+    Rootshapes sit at the bottom of the glyph, so the template is bottom-aligned
+    (not free to slide up into the fingers) and tried at both the bottom-left and
+    bottom-right of the base, with a small ± tolerance. Returns the best coverage
+    — does the base contain the whole rootshape at its base curve?
     """
     total = root_mask.sum()
     if total == 0:
         return 0.0
-    corr = fftconvolve(
-        base_mask.astype(np.float32), root_mask[::-1, ::-1].astype(np.float32)
-    )
-    return round(float(corr.max()) / total, 3)
+    bh, bw = base_mask.shape
+    rh, rw = root_mask.shape
+    h = max(bh, rh) + 2 * _PAD
+    w = max(bw, rw) + 2 * _PAD
+    base = np.zeros((h, w), bool)
+    base_x = _PAD
+    base[h - _PAD - bh:h - _PAD, base_x:base_x + bw] = base_mask
+    best = 0.0
+    for x0 in (base_x, base_x + bw - rw):  # bottom-left, bottom-right anchor
+        for dy in _SHIFT:
+            for dx in _SHIFT:
+                y, x = h - _PAD - rh + dy, x0 + dx
+                if y < 0 or x < 0 or y + rh > h or x + rw > w:
+                    continue
+                placed = np.zeros((h, w), bool)
+                placed[y:y + rh, x:x + rw] = root_mask
+                cov = (placed & base).sum() / total
+                if cov > best:
+                    best = cov
+    return round(float(best), 3)
+
+
+def glyph_data_uri(key: str, height: int = 64) -> str:
+    """A trimmed PNG data URI of the symbol (black outline, white fill) for HTML."""
+    img = signwriting_to_image(
+        f"M500x500{key}500x500", trust_box=False, antialiasing=True,
+        line_color=(0, 0, 0, 255), fill_color=(255, 255, 255, 255),
+    ).convert("RGBA")
+    bg = Image.new("RGBA", img.size, (255, 255, 255, 255))
+    img = Image.alpha_composite(bg, img).convert("RGB")
+    if img.height:
+        img = img.resize((max(1, img.width * height // img.height), height))
+    buf = io.BytesIO()
+    img.save(buf, "PNG")
+    return "data:image/png;base64," + base64.b64encode(buf.getvalue()).decode()
+
+
+REASON = {
+    "both": "convolution + name agree",
+    "name": "name keyword (convolution differed, &lt;{thr})",
+    "conv>name": "convolution ≥{thr} (overrode name)",
+    "convolution": "convolution only — no name keyword",
+}
+SECTIONS = [
+    ("convolution", "Convolution only — no name keyword (review these)"),
+    ("name", "Name keyword wins — convolution disagreed"),
+    ("conv>name", "Convolution overrode the name keyword"),
+    ("both", "Convolution + name agree (confident)"),
+]
+SOURCE_COLOR = {"convolution": "#fff3cd", "name": "#e7f0ff",
+                "conv>name": "#fde2e1", "both": "#e6f6ea"}
+
+
+def write_report(bases, names, debug, root_keys):
+    glyph_cache = {}
+
+    def glyph(key):
+        if key not in glyph_cache:
+            glyph_cache[key] = glyph_data_uri(key)
+        return glyph_cache[key]
+
+    rows_by_source: dict[str, list[str]] = {s: [] for s, _ in SECTIONS}
+    for b in bases:
+        d = debug[b]
+        src = d["source"]
+        reason = REASON[src].format(thr=CONV_WINS)
+        if src in ("name", "both", "conv>name"):
+            reason += f" · name said {d['name_root']}, convolution {d['conv']} ({d['scores'][d['conv']]})"
+        else:
+            reason += f" · convolution {d['conv']} ({d['scores'][d['conv']]})"
+        root = d["conv"] if src in ("conv>name", "convolution") else d["name_root"]
+        rows_by_source[src].append(
+            f'<tr style="background:{SOURCE_COLOR[src]}">'
+            f'<td><img src="{glyph(f"S{b}00")}" height="56"></td>'
+            f'<td><code>{b}</code></td>'
+            f'<td>{names[b]}</td>'
+            f'<td><img src="{glyph(root_keys[root])}" height="40"> <b>{root}</b></td>'
+            f'<td>{reason}</td></tr>'
+        )
+
+    parts = [
+        "<!doctype html><meta charset=utf-8><title>Rootshape report</title>",
+        "<style>body{font:14px system-ui;margin:2rem;max-width:1100px}"
+        "table{border-collapse:collapse;width:100%;margin-bottom:2.5rem}"
+        "td,th{border:1px solid #ddd;padding:6px 10px;text-align:left;vertical-align:middle}"
+        "th{background:#f2f2f2}h2{margin-top:2rem}code{font-size:1.1em}</style>",
+        "<h1>Rootshape predictions</h1>",
+    ]
+    for src, title in SECTIONS:
+        rows = rows_by_source[src]
+        parts.append(f"<h2>{title} ({len(rows)})</h2>")
+        parts.append(
+            "<table><tr><th>Shape</th><th>Id</th><th>Name</th>"
+            "<th>Predicted rootshape</th><th>Reason</th></tr>"
+            + "".join(rows) + "</table>"
+        )
+    REPORT_OUT.write_text("".join(parts))
 
 
 def main() -> None:
@@ -146,37 +251,54 @@ def main() -> None:
     debug: dict[str, dict] = {}
     conv_only: list[dict] = []
     disagreements: list[dict] = []
+    conv_over_name: list[dict] = []
 
     for b in bases:
         base_mask = render_mask(f"S{b}00")
         scores = {name: inclusion(base_mask, mask) for name, mask in root_masks.items()}
         conv = max(scores, key=scores.__getitem__)  # rule 1
-        nroot = name_root(names[b])  # rule 2 (authoritative when present)
+        conv_score = scores[conv]
+        nroot = name_root(names[b])  # rule 2
 
-        if nroot is not None:
-            mapping[b] = nroot
-            source = "both" if conv == nroot else "name"
-        else:
+        if nroot is None:
+            # No name signal — trust convolution.
             mapping[b] = conv
             source = "convolution"
+        elif conv == nroot:
+            mapping[b] = nroot
+            source = "both"
+        elif conv_score >= CONV_WINS and conv != "Tight Fist":
+            # Full containment of a *discriminative* rootshape is definitive and
+            # beats the name. Tight Fist is excluded: its square is a sub-shape
+            # of most closed hands (52/253 contain it), so a 1.0 there is not
+            # evidence of the rootshape — the named finger action is.
+            mapping[b] = conv
+            source = "conv>name"
+        else:
+            mapping[b] = nroot
+            source = "name"
 
         debug[b] = {"name": names[b], "name_root": nroot, "conv": conv,
                     "source": source, "scores": scores}
+        entry = {"base": b, "name": names[b], "name_root": nroot,
+                 "conv": conv, "conv_score": conv_score}
         if source == "name":
-            disagreements.append({"base": b, "name": names[b], "name_root": nroot,
-                                  "conv": conv, "conv_score": scores[conv]})
+            disagreements.append(entry)
+        elif source == "conv>name":
+            conv_over_name.append(entry)
         elif source == "convolution":
-            conv_only.append({"base": b, "name": names[b], "conv": conv,
-                              "conv_score": scores[conv]})
+            conv_only.append(entry)
 
     OUT.write_text(
         json.dumps({"roots": ROOT_NAMES, "bases": mapping}, indent=2, ensure_ascii=False) + "\n"
     )
     DEBUG_OUT.write_text(
         json.dumps({"bases": mapping, "conv_only": conv_only,
-                    "disagreements": disagreements, "all": debug},
-                   indent=2, ensure_ascii=False) + "\n"
+                    "disagreements": disagreements, "conv_over_name": conv_over_name,
+                    "all": debug}, indent=2, ensure_ascii=False) + "\n"
     )
+    print(f"writing {REPORT_OUT.name}…")
+    write_report(bases, names, debug, dict(ROOT_DEFS))
 
     counts: dict[str, int] = {}
     src_counts: dict[str, int] = {}
@@ -187,12 +309,15 @@ def main() -> None:
     print("by rootshape:", dict(sorted(counts.items(), key=lambda kv: -kv[1])))
     print("by source:   ", src_counts, "(both = name keyword confirmed by convolution)")
 
+    print(f"\n--- CONVOLUTION ≥{CONV_WINS} OVERRODE A NAME KEYWORD ({len(conv_over_name)}) ---")
+    for u in conv_over_name:
+        print(f'  {u["base"]}  {u["name"]:42s}  name said {u["name_root"]:11s} -> conv {u["conv"]} ({u["conv_score"]})')
+    print(f"\n--- NAME vs CONVOLUTION DISAGREE, name wins (conv <{CONV_WINS}) ({len(disagreements)}) ---")
+    for u in disagreements:
+        print(f'  {u["base"]}  {u["name"]:42s}  name={u["name_root"]:11s} conv={u["conv"]} ({u["conv_score"]})')
     print(f"\n--- ASSIGNED BY CONVOLUTION ONLY (no name keyword) ({len(conv_only)}) ---")
     for u in conv_only:
         print(f'  {u["base"]}  {u["name"]:42s}  -> {u["conv"]} ({u["conv_score"]})')
-    print(f"\n--- NAME vs CONVOLUTION DISAGREE (name wins) ({len(disagreements)}) ---")
-    for u in disagreements:
-        print(f'  {u["base"]}  {u["name"]:42s}  name={u["name_root"]:11s} conv={u["conv"]} ({u["conv_score"]})')
 
 
 if __name__ == "__main__":
