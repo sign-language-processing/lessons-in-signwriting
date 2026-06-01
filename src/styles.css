@@ -1615,3 +1615,104 @@ fsw-symbol {
     min-height: 72px;
   }
 }
+
+/* Rootshape Practice */
+.rootshape-difficulty {
+  display: inline-flex;
+  gap: 0;
+  margin-bottom: 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.rootshape-difficulty button {
+  border: none;
+  background: white;
+  padding: 0.35em 1.1em;
+  font: inherit;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+}
+
+.rootshape-difficulty button.is-active {
+  background: #2f6fe0;
+  color: white;
+}
+
+.rootshape-stimulus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+  min-height: 200px;
+}
+
+.rootshape-stimulus img {
+  height: 200px;
+  width: auto;
+  max-width: 100%;
+  border: 1px solid #e2e2e2;
+  border-radius: 12px;
+  background: white;
+}
+
+.rootshape-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+}
+
+.rootshape-option {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.85rem;
+  border: 2px solid #dcdfe5;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  transition:
+    border-color 0.12s ease,
+    background 0.12s ease;
+}
+
+.rootshape-option sgnw-symbol {
+  flex: 0 0 auto;
+  min-width: 40px;
+  text-align: center;
+}
+
+.rootshape-option:hover:not(:disabled) {
+  border-color: #b8c0cc;
+}
+
+.rootshape-option.is-correct {
+  border-color: #2f9e57;
+  background: #effaf1;
+}
+
+.rootshape-option.is-wrong {
+  border-color: #e0584f;
+  background: #fdeceb;
+  animation: practice-shake 0.4s;
+}
+
+@media (max-width: 640px) {
+  .rootshape-options {
+    grid-template-columns: 1fr;
+  }
+
+  .rootshape-stimulus img {
+    height: 150px;
+  }
+
+  .rootshape-stimulus sgnw-symbol {
+    font-size: 80px !important;
+  }
+}

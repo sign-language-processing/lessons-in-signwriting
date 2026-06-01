@@ -8,6 +8,7 @@ import { HandshapeExplorer } from "../components/HandshapeExplorer";
 import { HeelViewTable } from "../components/HeelView";
 import { Grid } from "../components/Layout";
 import { usePractice } from "../components/PracticeContext";
+import { RootShapePractice } from "../components/RootShapePractice";
 import { SgnwSign, SgnwSymbol } from "../components/Sgnw";
 import { asset } from "../lib/asset";
 import { YouTubeVideo } from "../components/YouTubeVideo";
@@ -488,6 +489,8 @@ export function Ch3Hands() {
           <strong>Flat</strong> — five fingers straight up with no bends
         </p>
       </Grid>
+
+      <RootShapePractice />
 
       <h2>Action Fingers</h2>
       <p>

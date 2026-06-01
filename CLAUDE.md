@@ -165,3 +165,34 @@ Example clips come from the **whatsthatsign** dataset and are regenerable:
    `src/lib/handGroups.ts`. Missing-fill slots get `{ word: "", placeholder: true }`.
 
 Requires `gsutil` and `ffmpeg` on PATH.
+
+## Practice games
+
+Interactive drills launched from a button (the `.practice-launch` card) after a
+section. They ship in release (not authoring-gated) and reuse the shared
+`.practice-dialog` shell (viewport-centered, full-screen on mobile).
+
+- **Hand Orientation Practice** (after "Expressive Top View") — `HandOrientationPractice`
+  + `PracticeContext` + `lib/practiceHands.ts`. Match a handshape's six fill
+  symbols to its six orientation photos. Also launchable from `SymbolDialog`
+  ("Practice this handshape"). Eligible bases = all hands minus the seven Wrist
+  View bases and `15b` (missing photos).
+- **Rootshape Practice** (after "Rootshapes") — `RootShapePractice` +
+  `lib/rootShapes.ts`. Show a hand photo; pick which of the seven rootshapes it
+  grows from. Samples **uniformly over rootshapes** (so rare ones like Flat
+  Thumb Across appear as often as Tight Fist).
+
+### Rootshape mapping (`scripts/build_rootshapes.py`)
+
+Maps each eligible hand base → one of seven rootshapes, written to
+`src/content/rootshapes.generated.json` (`{roots, bases}`; debug scores in
+`scripts/rootshapes_debug.json`). Re-runnable: `python scripts/build_rootshapes.py`
+(`--force` re-asks the LLM, `--no-llm` uses the deterministic fallback). Order of
+authority: (1) the ISWA base **name** keyword ("Index on Angle" → Angle, bare
+name → Tight Fist) covers most bases; (2) for keyword-less names (Oval, Claw,
+Hook, Curlicue, Flat split) a cached `claude -p` call decides, given the seven
+book definitions plus a glyph-overlap convolution hint. The convolution
+(rendered with the `signwriting` Python lib, rootshape-glyph coverage within the
+base glyph) is a weak signal alone — rootshape glyphs overlap heavily — so it's
+only an LLM tiebreak hint. The `scripts/.venv` needs `signwriting` (+ `regex`)
+alongside PIL/numpy/scipy.
