@@ -1,5 +1,6 @@
 import { ActionFingersTree } from "../components/ActionFingersTree";
 import { Figure } from "../components/Figure";
+import { FingerDirectionGrid } from "../components/FingerDirectionGrid";
 import { Fingerspelling } from "../components/Fingerspelling";
 import { HandGroupsExplorer } from "../components/HandGroupsExplorer";
 import { HandshapeExamples } from "../components/HandshapeExamples";
@@ -314,8 +315,6 @@ const IMG = {
     "image_000172_f6b7953dae3a264b7b4fbebf68c04abe6bb173016b700cb1a94edfeec0282ff3.png",
   g10b:
     "image_000173_964c3a222ef85657f2c8ff0d1736f60a2cc9cc42b2f50e8ad52bd20c60ca4e37.png",
-  slant:
-    "image_000181_59c56b1861aee5a64fb8d6cf4d12135084ac127dc45de66b28ba9939f2fba636.png",
   toFace1:
     "image_000182_ad5e1796af3a7820d859f10328311845cb935f4461e13431cd1be6861199f8e0.png",
   toUp1:
@@ -788,7 +787,7 @@ export function Ch3Hands() {
         real life, because the fingers are directed down. Both angles are
         correct.
       </p>
-      <Figure src={IMG.slant} />
+      <FingerDirectionGrid />
 
       <h2>Action Fingers Directed Towards The Face</h2>
       <p>
