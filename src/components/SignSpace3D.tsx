@@ -651,7 +651,10 @@ const STEPS: { layer: Layer; view: View; title: string; body: ReactNode }[] = [
   },
 ];
 
-const ROSE_RADIUS_PX = 225;
+// Rose ring radius as a fraction of the (square) scene size, so the buttons
+// scale with the canvas instead of forming an oversized circle on small screens.
+const ROSE_RADIUS_FACTOR = 0.3;
+const ROSE_RADIUS_FALLBACK_PX = 225;
 
 // Arrowhead variants are laid out by hand: right-hand is the base glyph, the
 // left-hand one sits 0x10 above it, and the both-hands one 0x20 above.
@@ -673,12 +676,26 @@ function RoseOverlay({
   side: Side;
   onSelect: (angle: number) => void;
 }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [radius, setRadius] = useState(ROSE_RADIUS_FALLBACK_PX);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new ResizeObserver(() => {
+      const size = Math.min(el.clientWidth, el.clientHeight);
+      if (size > 0) setRadius(size * ROSE_RADIUS_FACTOR);
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="scene3d__rose" data-no-print>
+    <div className="scene3d__rose" ref={ref} data-no-print>
       {items.map(({ symbol, angle, label }) => {
         const rad = (angle * Math.PI) / 180;
-        const dx = ROSE_RADIUS_PX * Math.cos(rad);
-        const dy = -ROSE_RADIUS_PX * Math.sin(rad);
+        const dx = radius * Math.cos(rad);
+        const dy = -radius * Math.sin(rad);
         const isActive = active === angle;
         return (
           <button
