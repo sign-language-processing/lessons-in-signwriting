@@ -3,6 +3,26 @@ import { convert } from "@sutton-signwriting/core";
 const HAND_PHOTOS_PER_BASE = 6;
 
 /**
+ * Heel-of-hand "Wrist View" bases (the 7 in the grid) that exist only at fill 1
+ * and vary by rotation instead. Their hover/dialog photos are rotation-indexed,
+ * and their symbol-variants dialog shows just that single fill.
+ */
+export const WRIST_VIEW_BASES = new Set([
+  "14d",
+  "14f",
+  "151",
+  "15c",
+  "15e",
+  "1f6",
+  "204",
+]);
+
+/** True for keys whose base is a fill-1-only Wrist View base. */
+export function isWristViewKey(key: string): boolean {
+  return WRIST_VIEW_BASES.has(key.slice(1, 4));
+}
+
+/**
  * For a SignWriting symbol character, return the path to its corresponding
  * 3d-hands-benchmark photo, or null if the symbol is not in the Hands
  * category (the dataset only covers category 01).

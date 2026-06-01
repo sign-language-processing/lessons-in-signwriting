@@ -1,6 +1,11 @@
 import { useEffect, useRef } from "react";
 import { asset } from "../lib/asset";
-import { fillVariants, handImageForKey } from "../lib/handImage";
+import {
+  fillVariants,
+  handImageForKey,
+  handImageForRotation,
+  isWristViewKey,
+} from "../lib/handImage";
 
 export type SymbolDialogProps = {
   /** The symbol key that was clicked. When non-null, the dialog opens. */
@@ -50,7 +55,12 @@ export function SymbolDialog({ openKey, onClose }: SymbolDialogProps) {
     return () => dlg.removeEventListener("click", handler);
   }, []);
 
-  const variants = openKey ? fillVariants(openKey) : [];
+  const wristView = !!openKey && isWristViewKey(openKey);
+  const variants = openKey
+    ? wristView
+      ? fillVariants(openKey).filter((v) => v.key[4] === openKey[4])
+      : fillVariants(openKey)
+    : [];
 
   return (
     <dialog
@@ -94,8 +104,9 @@ export function SymbolDialog({ openKey, onClose }: SymbolDialogProps) {
         </h2>
         {openKey && (
           <p style={{ color: "#666", marginTop: 0 }}>
-            Base: <code>{openKey.slice(0, 4)}</code> · 6 fill variants at
-            rotation <code>{openKey[5]}</code>
+            Base: <code>{openKey.slice(0, 4)}</code> · {variants.length} fill
+            variant{variants.length === 1 ? "" : "s"} at rotation{" "}
+            <code>{openKey[5]}</code>
           </p>
         )}
         <div
@@ -106,8 +117,8 @@ export function SymbolDialog({ openKey, onClose }: SymbolDialogProps) {
             marginBlock: "1rem",
           }}
         >
-          {variants.map(({ key, swu }, i) => {
-            const img = handImageForKey(key);
+          {variants.map(({ key, swu }) => {
+            const img = wristView ? handImageForRotation(swu) : handImageForKey(key);
             const isSelected = key === openKey;
             return (
               <div
@@ -135,7 +146,7 @@ export function SymbolDialog({ openKey, onClose }: SymbolDialogProps) {
                 {img ? (
                   <img
                     src={asset(img)}
-                    alt={FILL_LABELS[i]}
+                    alt={FILL_LABELS[Number(key[4])]}
                     style={{ maxHeight: 100, maxWidth: "100%", width: "auto", height: "auto" }}
                   />
                 ) : (
