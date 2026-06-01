@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { asset } from "../lib/asset";
+import { handImageForRotation } from "../lib/handImage";
 import { SgnwSymbol } from "./Sgnw";
 
 const BASE = asset("/textbook/heel-views");
@@ -13,13 +14,26 @@ export type HeelRow = {
   symbolR: string;
 };
 
-function Sym({ value, alt }: { value: string; alt: string }) {
+function Sym({
+  value,
+  alt,
+  rotationView = false,
+}: {
+  value: string;
+  alt: string;
+  /** Wrist-view symbols index their hover photo by rotation, not fill. */
+  rotationView?: boolean;
+}) {
   if (value.endsWith(".png")) {
     return <img className="heel-table__sym" src={`${BASE}/${value}`} alt={alt} />;
   }
   return (
     <span className="heel-table__sym">
-      <SgnwSymbol symbol={value} size={72} />
+      <SgnwSymbol
+        symbol={value}
+        size={72}
+        handImage={rotationView ? handImageForRotation(value) : undefined}
+      />
     </span>
   );
 }
@@ -42,7 +56,7 @@ export function HeelViewTable({ rows }: { rows: HeelRow[] }) {
             <img src={`${BASE}/${r.photo}`} alt="" />
             {r.altPhoto ? <img src={`${BASE}/${r.altPhoto}`} alt="" /> : null}
           </div>
-          <Sym value={r.symbolL} alt="Heel of Hand Wrist View symbol" />
+          <Sym value={r.symbolL} alt="Heel of Hand Wrist View symbol" rotationView />
           <Sym value={r.symbolR} alt="Top View symbol" />
         </Fragment>
       ))}

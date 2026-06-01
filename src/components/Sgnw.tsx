@@ -13,6 +13,8 @@ export type SgnwSymbolProps = {
   size?: number | string;
   className?: string;
   style?: CSSProperties;
+  /** Override the hover hand photo (e.g. rotation-indexed for wrist-view symbols). */
+  handImage?: string | null;
 };
 
 /**
@@ -23,12 +25,19 @@ export type SgnwSymbolProps = {
  * Hand-category symbols (symid starts with "01-") show a hover popover with
  * the matching 3d-hands-benchmark photograph.
  */
-export function SgnwSymbol({ symbol, size, className, style }: SgnwSymbolProps) {
+export function SgnwSymbol({
+  symbol,
+  size,
+  className,
+  style,
+  handImage: handImageOverride,
+}: SgnwSymbolProps) {
   const [placement, setPlacement] = useState<"hidden" | "above" | "below">(
     "hidden",
   );
   const wrapperRef = useRef<HTMLSpanElement>(null);
-  const handImage = handImageFor(symbol);
+  const handImage =
+    handImageOverride !== undefined ? handImageOverride : handImageFor(symbol);
 
   const openPopover = () => {
     const el = wrapperRef.current;
