@@ -1287,7 +1287,10 @@ fsw-symbol {
 
 .signspace-section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* minmax(0,1fr) so a column can shrink below the 3D canvas's intrinsic pixel
+     width — otherwise R3F's baked canvas size forces the section wider than the
+     viewport and it never reflows on small screens. */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 2em;
   align-items: start;
   margin-block: 2em;
@@ -1295,15 +1298,20 @@ fsw-symbol {
 .signspace-section__text h2 {
   margin-top: 0;
 }
+.signspace-section__text img {
+  max-width: 100%;
+  height: auto;
+}
 .signspace-section__viewer .scene3d {
   margin: 0;
+  max-width: 100%;
 }
 .signspace-section__viewer .scene3d__canvas {
   height: 360px;
 }
 @media (max-width: 900px) {
   .signspace-section {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
