@@ -7,6 +7,8 @@ export type RootShape = { name: string; swu: string };
 export const ROOT_SHAPES: RootShape[] = [
   { name: "Tight Fist", swu: "񆄡" },
   { name: "Circle", swu: "񂱁" },
+  { name: "Oval", swu: "񂲡" },
+  { name: "Curlicue", swu: "񂯡" },
   { name: "Cup", swu: "񂣡" },
   { name: "Hinge", swu: "񂻡" },
   { name: "Angle", swu: "񃇡" },

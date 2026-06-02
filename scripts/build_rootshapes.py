@@ -55,6 +55,8 @@ REPORT_OUT = HERE / "rootshapes_report.html"
 ROOT_DEFS = [
     ("Tight Fist", "S20300"),
     ("Circle", "S17600"),
+    ("Oval", "S17700"),
+    ("Curlicue", "S17500"),
     ("Cup", "S16d00"),
     ("Hinge", "S17d00"),
     ("Angle", "S18500"),
@@ -63,17 +65,18 @@ ROOT_DEFS = [
 ]
 ROOT_NAMES = [r[0] for r in ROOT_DEFS]
 
-# Rule 2: name-keyword -> rootshape. ISWA names encode the rootshape; some use
-# a non-canonical word that we normalize (Curlicue→Circle, Hook→Angle,
-# Claw→Hinge). When a name has an "on X" suffix, X is the rootshape (e.g.
-# "Index Hinge on Circle" is Circle — the "Hinge" only describes the finger), so
-# the suffix is checked before the bare keywords.
+# Rule 2: name-keyword -> rootshape. ISWA names encode the rootshape; Hook and
+# Claw are normalized (Hook→Angle, Claw→Hinge). When a name has an "on X"
+# suffix, X is the rootshape (e.g. "Index Hinge on Circle" is Circle — the
+# "Hinge" only describes the finger), so the suffix is checked before the bare
+# keywords.
 NAME_KEYWORDS = [
     ("angle", "Angle"),
     ("hinge", "Hinge"),
     ("cup", "Cup"),
     ("circle", "Circle"),
-    ("curlicue", "Circle"),
+    ("oval", "Oval"),
+    ("curlicue", "Curlicue"),
     ("hook", "Angle"),
     ("claw", "Hinge"),
     ("fist", "Tight Fist"),
