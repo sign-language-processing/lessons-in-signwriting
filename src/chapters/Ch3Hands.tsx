@@ -458,6 +458,18 @@ export function Ch3Hands() {
           curve, or at least 1 curved finger is close to palm of hand
         </p>
 
+        <SgnwSymbol symbol="񂲡" style={{ justifySelf: "center" }} />
+        <p style={{ margin: 0 }}>
+          <strong>Oval</strong> — fingertip and thumbtip touch in a longer,
+          narrower closed curve than the Circle
+        </p>
+
+        <SgnwSymbol symbol="񂯡" style={{ justifySelf: "center" }} />
+        <p style={{ margin: 0 }}>
+          <strong>Curlicue</strong> — the fingers curl inward toward the palm in
+          a tight spiral
+        </p>
+
         <SgnwSymbol symbol="񂣡" style={{ justifySelf: "center" }} />
         <p style={{ margin: 0 }}>
           <strong>Cup</strong> — at least 1 finger is curved at the Middle
@@ -487,6 +499,12 @@ export function Ch3Hands() {
         <SgnwSymbol symbol="񂇁" style={{ justifySelf: "center" }} />
         <p style={{ margin: 0 }}>
           <strong>Flat</strong> — five fingers straight up with no bends
+        </p>
+
+        <SgnwSymbol symbol="񂊑" style={{ justifySelf: "center" }} />
+        <p style={{ margin: 0 }}>
+          <strong>Flat Heel</strong> — the Flat hand seen from the heel, written
+          from the Wrist (heel-of-hand) View
         </p>
       </Grid>
 
