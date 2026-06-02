@@ -1,22 +1,27 @@
 import { Figure } from "../components/Figure";
 import { Col, Row } from "../components/Layout";
+import { SgnwSymbol } from "../components/Sgnw";
 import { SignFigure } from "../components/SignFigure";
+import { WallPlaneCurves3D } from "../components/SignSpace3D";
+
+function SymbolFigure({ symbol, caption }: { symbol: string; caption: string }) {
+  return (
+    <figure>
+      <figcaption>
+        <div className="caption">{caption}</div>
+      </figcaption>
+      <span className="img-wrap">
+        <SgnwSymbol symbol={symbol} size={96} />
+      </span>
+    </figure>
+  );
+}
 
 const IMG = {
   coverPhoto1:
     "image_000304_277921798e594fee5105e61291bb89964d19a6d0ba37235f5c5053afc3f9c0f8.png",
   coverPhoto2:
     "image_000305_139d567fcee0f977aed460d419f1210f523b617a976501c8f71fd4e55020caff.png",
-  upSide:
-    "image_000307_c0302ca83b292e4d77ed3dc296cf3a9bdefae6405dfee75f9c9b59289ac38a9d.png",
-  upUp:
-    "image_000308_31ee56e5919ec2aef82e476ff478bd6b3b9fc7c32d0b1ab985167a384c460421.png",
-  upDownUp:
-    "image_000309_5b42e1bccc762691ddbe3143b577caa0ac8000a2aeacc666e1250697c9b9b048.png",
-  upLoopUp:
-    "image_000310_b731fae18b38a2368d5562c77bf0b5b7e161133b7e305ca840f998f16d3e8b52.png",
-  upDownRose:
-    "image_000311_81dd2c30b8ba6d4ea10418141c31a954a97caebaf81e91fb9691ce457a998b1a.png",
   forwardOverPage:
     "image_000313_b3f67e11add3120570a56edadf6fb233a0d56accf66f9cf0c518c7b97591ba06.png",
   forwardOverDiagonals:
@@ -68,22 +73,18 @@ export function Ch7CurvedMovement() {
       </p>
       <Row stretch>
         <Col>
-          <Figure src={IMG.upSide} caption="1. Curve Up-Side" />
-          <Figure src={IMG.upUp} caption="2. Curve Up-Up" />
+          <SymbolFigure symbol="񉌋" caption="1. Curve Up-Side" />
+          <SymbolFigure symbol="񉛋" caption="2. Curve Up-Up" />
         </Col>
         <Col>
-          <Figure src={IMG.upDownUp} caption="3. Curve Up-Down-Up" />
-          <Figure src={IMG.upLoopUp} caption="4. Curve Up-Loop-Up" />
+          <SymbolFigure symbol="񉥧" caption="3. Curve Up-Down-Up" />
+          <SymbolFigure symbol="񉟫" caption="4. Curve Up-Loop-Up" />
         </Col>
       </Row>
-      <Figure src={IMG.upDownRose} />
+      <WallPlaneCurves3D />
 
       <h2>Up-Down Curved Arrows</h2>
       <p>The curves are parallel with the wall.</p>
-      <div className="examples-row">
-        <SignFigure slug="ch7-drive" />
-        <SignFigure slug="ch7-but" />
-      </div>
       <div className="examples-row">
         <SignFigure slug="ch7-shape" />
         <SignFigure slug="ch7-spaghetti" />
@@ -155,19 +156,9 @@ export function Ch7CurvedMovement() {
       <p>The curves are parallel with the floor.</p>
       <div className="examples-row">
         <SignFigure slug="ch7-across" />
-        <SignFigure slug="ch7-we" />
-      </div>
-      <div className="examples-row">
         <SignFigure slug="ch7-grandmother" />
-        <SignFigure slug="ch7-us" />
-      </div>
-      <div className="examples-row">
         <SignFigure slug="ch7-allow" />
         <SignFigure slug="ch7-workshop" />
-      </div>
-      <div className="examples-row">
-        <SignFigure slug="ch7-announce" />
-        <SignFigure slug="ch7-area" />
       </div>
     </>
   );

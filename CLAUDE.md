@@ -96,11 +96,11 @@ site can ship while transcription continues.
   *authoring only*,
 - **plain** → the extracted image.
 
-To confirm a sign: download its whatsthatsign clip
-(`https://www.whatsthatsign.com/videos/<urlencoded-swu>.mov`), center-crop to a
-720×720 mp4 like the pipeline below, drop it at the manifest's `video` path,
-set `swu`, and add `"confirmed": true`. Edit the generated JSON with a script
-(not by hand) so the plane-1/plane-4 SWU codepoints stay intact.
+To confirm a sign: set its `swu` and `"confirmed": true`, then point `video` at
+the signbox-FSW clip (see the pipeline below — run `download_whatsthatsign.mjs`
+to fetch it from the bucket, or `rewrite_video_refs.mjs` to recompute the path
+from `swu`). Edit the generated JSON with a script (not by hand) so the
+plane-1/plane-4 SWU codepoints stay intact.
 
 ## SignWriting components: always use the `<SgnwSymbol>` / `<SgnwSign>` wrappers
 
@@ -110,9 +110,15 @@ behaviour the bare elements don't:
 
 - `<SgnwSymbol>` — for a hand-category symbol (symid `01-…`, via
   `handImageFor`) it renders dark-blue, shows the matching 3D-hands photo on
-  hover/focus, and opens the fill-variant dialog on click. A raw
-  `<sgnw-symbol>` renders a plain black glyph with none of this, so if a hand
-  symbol isn't blue/hoverable, you almost certainly used the bare element.
+  hover/focus, and opens the fill-variant dialog on click. For any other symbol
+  the whatsthatsign dictionary has an example for (via `exampleForSymbol` /
+  `lib/symbolExamples.ts`), it renders **dark-green** and the hover popover shows
+  that example sign (`<sgnw-sign>`) plus its clip — hover-only, no click. A
+  symbol with neither renders a plain black glyph, same as the bare
+  `<sgnw-symbol>`. So a content symbol that should be blue/green but isn't was
+  almost certainly written as the bare element — switch it to `<SgnwSymbol>`.
+  (Genuine UI controls that are themselves buttons/tiles — the practice games,
+  symbol dialog grid, tab bars — stay raw on purpose.)
 - `<SgnwSign>` — accepts an optional `video` prop; with it the sign turns
   dark-blue and reveals a hover video popover (`videoMirror` flips it). Both
   wrappers default to the global 48px font-size; pass `size` to override.
@@ -144,27 +150,48 @@ chrome marked `data-no-print` is hidden. **Interactive components must expand
 all states in print** — anything that shows one of several states at a time
 (tabs, panel selectors, hover popovers) should render every state sequentially.
 
-## whatsthatsign pipeline (hand-group examples + sign matching)
+## whatsthatsign pipeline (example clips)
 
-Example clips come from the **whatsthatsign** dataset and are regenerable:
+Example clips come from the **whatsthatsign** dataset and are regenerable.
+
+**Naming.** Every clip is named by its **signbox FSW** — the layout half of the
+FSW string, from the first `M`/`L`/`B`/`R` box marker (the leading `A…` query
+prefix is dropped so two encodings of the same physical sign compare equal):
+`public/videos/whatsthatsign/M509x527S10020494x473S16d20492x507.mp4`. The
+filename *is* the sign, so a reference always resolves to the right clip. FSW is
+ASCII (≤155 bytes here) — raw-Unicode SWU filenames hit `EILSEQ` on macOS and
+url-encoded SWU blows past the 255-byte limit, so FSW signbox is the safe form.
+Helpers live in `scripts/whatsthatsign_lib.mjs` (`signboxFsw`, `canonFromSwu`,
+`loadIndex`).
 
 1. **Index.** `scripts/whatsthatsign_index.csv` — committed dataset index. Each
    row has the dataset-relative `file` and an `extra` JSON whose `sign_fsw`
    holds the FSW. FSW symbols are `SBBBFR` — 3-hex base (`100`–`204` is a hand),
    1-digit fill `0`–`5`, 1-hex rotation.
-2. **Select.** `scripts/build_hand_examples.py` picks one sign per fill 0..5 per
-   group (root base at rotation 0 preferred; ties → short, single, lowercase).
-   A `null` slot is a genuinely missing fill (kept as a placeholder).
-3. **Download + crop.** `scripts/download_hand_example_videos.py` runs
-   `gsutil cp gs://sign-external-datasets/whatsthatsign/<file>`, center-crops
-   1280×720 → 720×720
+2. **Download + crop all clips.** `bun scripts/download_whatsthatsign.mjs`
+   `gsutil -m cp`s the whole bucket, center-crops each 1280×720 source to a
+   720×720 square
    (`ffmpeg -vf crop=720:720:280:0 -c:v libx264 -pix_fmt yuv420p -movflags +faststart -an`),
-   writes `public/videos/whatsthatsign/<slug>/<slug>.mp4`.
-4. **Wire up.** Convert `fsw` → SWU (`@sutton-signwriting/core` `convert.fsw2swu`)
-   and place `{ word, sign, video }` into the group's array in
-   `src/lib/handGroups.ts`. Missing-fill slots get `{ word: "", placeholder: true }`.
+   and writes `<signbox-fsw>.mp4`. Idempotent — reruns fetch only what's missing.
+3. **Reference by sign.** Manifests/`handGroups.ts` carry a sign's SWU (`swu` or
+   `sign`) plus a `video` path. `bun scripts/rewrite_video_refs.mjs [--apply]`
+   recomputes every `video` from the entry's SWU → `<signbox-fsw>.mp4`. A clip
+   that isn't in the bucket (a few were pulled from whatsthatsign.com directly)
+   is flagged so its existing local file can be copied to the FSW name.
+4. **Hand-group wiring.** Place `{ word, sign, video }` into the group's array in
+   `src/lib/handGroups.ts` (`video` = the signbox-FSW path); missing-fill slots
+   get `{ word: "", placeholder: true }`. `scripts/build_hand_examples.py` still
+   helps pick one sign per fill 0..5 per group (root base at rotation 0
+   preferred; ties → short, single, lowercase).
 
 Requires `gsutil` and `ffmpeg` on PATH.
+
+**Per-symbol examples.** `bun scripts/build_symbol_examples.mjs` scans the index
+and writes `src/content/symbol-examples.generated.json` — a lookup from a symbol
+(at full `SbbbFR`, `SbbbF`, or `Sbbb` granularity) to an example sign's signbox
+FSW. `lib/symbolExamples.ts` reads it so `<SgnwSymbol>` can show a green
+dictionary example for non-hand symbols. Symbols absent from the dataset (many
+complex movement arrows, e.g. Wall Plane Corner) have no example and stay plain.
 
 ## Practice games
 

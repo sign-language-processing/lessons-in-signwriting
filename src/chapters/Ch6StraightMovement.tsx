@@ -1,5 +1,6 @@
 import { Figure } from "../components/Figure";
 import { Col, Row } from "../components/Layout";
+import { SgnwSymbol } from "../components/Sgnw";
 import { SignFigure } from "../components/SignFigure";
 import {
   DiagonalPlane3D,
@@ -29,7 +30,7 @@ const WALL_MOVES: Move[] = [
   { symbol: "񇭡", name: "Wall Plane Peaks", desc: "Mountain Tops" },
   { symbol: "񇰡", name: "Wall Plane Twist", desc: "Straight with Rotation" },
   { symbol: "񇲁", name: "Wall Plane Twist Twist", desc: "Straight with Rotation" },
-  { symbol: "񉉁", name: "Wall Plane Twist Shake", desc: "Straight with Rotation" },
+  { symbol: "񇳡", name: "Wall Plane Twist Shake", desc: "Straight with Rotation" },
 ];
 
 const FLOOR_MOVES: Move[] = [
@@ -65,7 +66,7 @@ function MovementList({ items }: { items: Move[] }) {
     <ul className="movement-list">
       {items.map(({ symbol, name, desc }) => (
         <li key={name}>
-          <sgnw-symbol symbol={symbol}></sgnw-symbol>
+          <SgnwSymbol symbol={symbol} className="movement-list__symbol" />
           <span>
             <strong>{name}</strong> — {desc}
           </span>
@@ -158,7 +159,7 @@ export function Ch6StraightMovement() {
       <Row stretch>
         <Col>
           <h2>
-            Up or Down <sgnw-symbol symbol="񇉡"></sgnw-symbol>
+            Up or Down <SgnwSymbol symbol="񇉡" />
           </h2>
           <p>
             A double-stemmed arrow means that the movement is straight up or
@@ -172,7 +173,7 @@ export function Ch6StraightMovement() {
         </Col>
         <Col className="col--divided">
           <h2>
-            Forward or Back <sgnw-symbol symbol="񈢁"></sgnw-symbol>
+            Forward or Back <SgnwSymbol symbol="񈢁" />
           </h2>
           <p>
             A single-stemmed arrow means that the movement is forward or back,
@@ -271,7 +272,7 @@ export function Ch6StraightMovement() {
       <Row stretch>
         <Col>
           <h2>
-            Up-Forward Diagonal Movement <sgnw-symbol symbol="񇿡"></sgnw-symbol>
+            Up-Forward Diagonal Movement <SgnwSymbol symbol="񇿡" />
           </h2>
           <p>
             Imagine an airplane taking off, traveling toward the horizon.
@@ -282,7 +283,7 @@ export function Ch6StraightMovement() {
         </Col>
         <Col className="col--divided">
           <h2>
-            Down-Back Diagonal Movement <sgnw-symbol symbol="񈅥"></sgnw-symbol>
+            Down-Back Diagonal Movement <SgnwSymbol symbol="񈅥" />
           </h2>
           <p>
             Imagine an airplane coming in for a landing, traveling towards you.
@@ -298,7 +299,7 @@ export function Ch6StraightMovement() {
       <div className="confuse-grid">
         {CONFUSE.map(({ symbol, label }) => (
           <div className="confuse-cell" key={label}>
-            <sgnw-symbol symbol={symbol}></sgnw-symbol>
+            <SgnwSymbol symbol={symbol} />
             <span>{label}</span>
           </div>
         ))}

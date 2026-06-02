@@ -549,15 +549,19 @@ fsw-symbol {
   font-weight: 700;
 }
 
+/* A two-column grid, not CSS multicol: a multicol container fragments
+   absolutely-positioned descendants across the column gap, which split the
+   <SgnwSymbol> hover popover into "half on the left, half on the right". */
 .movement-list {
   list-style: none;
   padding-inline-start: 0;
-  columns: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   column-gap: 2.5em;
 }
 @media (max-width: 640px) {
   .movement-list {
-    columns: 1;
+    grid-template-columns: 1fr;
   }
 }
 .movement-list li {
@@ -565,12 +569,19 @@ fsw-symbol {
   align-items: center;
   gap: 0.85em;
   margin-block: 0.4em;
-  break-inside: avoid;
 }
 .movement-list sgnw-symbol {
-  flex: 0 0 2.5em;
   font-size: 30px;
   line-height: 1;
+  text-align: center;
+}
+/* The fixed-width column applies to the symbol's flex item, which is the
+   <SgnwSymbol> wrapper (a span) for dictionary-matched symbols and the bare
+   <sgnw-symbol> otherwise. The basis is in px, not em: the bare element and the
+   wrapper span have different font-sizes, so an em basis would resolve to
+   different widths and misalign green vs. plain rows. */
+.movement-list__symbol {
+  flex: 0 0 75px;
   text-align: center;
 }
 

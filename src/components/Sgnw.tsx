@@ -1,10 +1,26 @@
 import { useRef, useState, type CSSProperties } from "react";
 import { asset } from "../lib/asset";
 import { handImageFor, symbolToKey } from "../lib/handImage";
+import { exampleForSymbol } from "../lib/symbolExamples";
 import { useSymbolDialog } from "./SymbolDialogContext";
 
 const POPOVER_HEIGHT = 200;
+const DICT_POPOVER_HEIGHT = 320;
 const POPOVER_GAP = 8;
+
+const POPOVER_BOX: CSSProperties = {
+  position: "absolute",
+  left: "50%",
+  transform: "translateX(-50%)",
+  maxWidth: "90vw",
+  background: "white",
+  border: "1px solid #ccc",
+  boxShadow: "0 6px 24px rgba(0,0,0,0.3)",
+  padding: 8,
+  borderRadius: 6,
+  zIndex: 100,
+  pointerEvents: "none",
+};
 
 export type SgnwSymbolProps = {
   /** A single SignWriting symbol character (e.g. "񂇁"). */
@@ -22,8 +38,11 @@ export type SgnwSymbolProps = {
  * @sutton-signwriting/sgnw-components. Renders a single SignWriting symbol
  * that is selectable as live text.
  *
- * Hand-category symbols (symid starts with "01-") show a hover popover with
- * the matching 3d-hands-benchmark photograph.
+ * Hand-category symbols (symid starts with "01-") render dark-blue and show a
+ * hover popover with the matching 3d-hands-benchmark photograph (click opens
+ * the fill-variant dialog). Any other symbol that the whatsthatsign dictionary
+ * has an example sign for renders dark-green and shows that sign plus its clip
+ * on hover. Symbols with neither render plain.
  */
 export function SgnwSymbol({
   symbol,
@@ -36,8 +55,13 @@ export function SgnwSymbol({
     "hidden",
   );
   const wrapperRef = useRef<HTMLSpanElement>(null);
+  const dialog = useSymbolDialog();
+
   const handImage =
     handImageOverride !== undefined ? handImageOverride : handImageFor(symbol);
+  // Non-hand symbols have no photo; offer a dictionary example sign instead.
+  const example = handImage ? null : exampleForSymbol(symbol);
+  const popoverHeight = handImage ? POPOVER_HEIGHT : DICT_POPOVER_HEIGHT;
 
   const openPopover = () => {
     const el = wrapperRef.current;
@@ -48,7 +72,7 @@ export function SgnwSymbol({
     const rect = el.getBoundingClientRect();
     const spaceAbove = rect.top;
     const spaceBelow = window.innerHeight - rect.bottom;
-    const needed = POPOVER_HEIGHT + POPOVER_GAP;
+    const needed = popoverHeight + POPOVER_GAP;
     // Prefer above if it fits, otherwise below; if neither fits, pick whichever has more room.
     if (spaceAbove >= needed) setPlacement("above");
     else if (spaceBelow >= needed) setPlacement("below");
@@ -62,11 +86,15 @@ export function SgnwSymbol({
   // effect on the rendered glyph.
   const symbolStyle: CSSProperties = {
     ...(size === undefined ? {} : { fontSize: size }),
-    ...(handImage ? { color: "darkblue" } : {}),
+    ...(handImage
+      ? { color: "darkblue" }
+      : example
+        ? { color: "darkgreen" }
+        : {}),
   };
 
-  if (!handImage) {
-    // No photo available — render the bare custom element with caller styles.
+  if (!handImage && !example) {
+    // No photo and no dictionary example — render the bare custom element.
     return (
       <sgnw-symbol
         symbol={symbol}
@@ -76,20 +104,19 @@ export function SgnwSymbol({
     );
   }
 
-  const dialog = useSymbolDialog();
   const handleClick = () => {
+    if (!handImage) return; // dictionary examples are hover-only
     const key = symbolToKey(symbol);
     if (key) dialog.open(key);
   };
 
   // Wrapper carries caller positioning (e.g. `position: absolute; top: 3%;
   // right: 1%` for overlays). Defaults to `position: relative; display:
-  // inline-block` so the absolute hover popover anchors correctly. Cursor
-  // pointer signals that the symbol is clickable.
+  // inline-block` so the absolute hover popover anchors correctly.
   const wrapperStyle: CSSProperties = {
     display: "inline-block",
     position: "relative",
-    cursor: "pointer",
+    cursor: handImage ? "pointer" : "help",
     ...style,
   };
   const popoverPosition: CSSProperties =
@@ -107,37 +134,54 @@ export function SgnwSymbol({
       onFocus={openPopover}
       onBlur={closePopover}
       onClick={handleClick}
-      role="button"
+      role={handImage ? "button" : undefined}
       tabIndex={0}
       onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
+        if (handImage && (e.key === "Enter" || e.key === " ")) {
           e.preventDefault();
           handleClick();
         }
       }}
     >
       <sgnw-symbol symbol={symbol} style={symbolStyle}></sgnw-symbol>
-      {placement !== "hidden" && (
+      {placement !== "hidden" && handImage && (
         <img
           src={asset(handImage)}
           alt=""
           style={{
-            position: "absolute",
-            left: "50%",
-            transform: "translateX(-50%)",
+            ...POPOVER_BOX,
             ...popoverPosition,
             height: POPOVER_HEIGHT,
             width: "auto",
-            maxWidth: "90vw",
-            background: "white",
-            border: "1px solid #ccc",
-            boxShadow: "0 6px 24px rgba(0,0,0,0.3)",
-            padding: 8,
-            borderRadius: 6,
-            zIndex: 100,
-            pointerEvents: "none",
           }}
         />
+      )}
+      {placement !== "hidden" && !handImage && example && (
+        <span
+          style={{
+            ...POPOVER_BOX,
+            ...popoverPosition,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 8,
+          }}
+        >
+          <sgnw-sign sign={example.sign} style={{ fontSize: 56 }}></sgnw-sign>
+          <video
+            src={asset(example.video)}
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{
+              height: 200,
+              width: "auto",
+              maxWidth: "90vw",
+              borderRadius: 4,
+            }}
+          />
+        </span>
       )}
     </span>
   );

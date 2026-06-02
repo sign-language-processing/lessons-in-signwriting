@@ -12,7 +12,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { CameraControls, Edges, Grid, useAnimations, useGLTF } from "@react-three/drei";
 import CameraControlsImpl from "camera-controls";
 import { SkeletonUtils } from "three-stdlib";
-import { Box3, DoubleSide, type Material, Mesh, type Object3D, Quaternion, Vector3 } from "three";
+import { Box3, DoubleSide, Group, type Material, Mesh, type Object3D, Quaternion, Vector3 } from "three";
 import { asset } from "../lib/asset";
 
 const AVATAR_URL = asset("/models/remy.glb");
@@ -50,6 +50,21 @@ const FLOOR_ROSE: { symbol: string; angle: number; label: string }[] = [
   { symbol: "񈗦", angle: 315, label: "Backward Diagonal" },
   { symbol: "񈗧", angle: 0, label: "Right" },
   { symbol: "񈗨", angle: 45, label: "Forward Diagonal" },
+];
+
+// Wall-plane CURVED movement directions: the curved counterpart of WALL_ROSE.
+// All one curve (base S288) in its eight mirrored rotations, placed tangentially
+// around the ring — the setup is rotated 90° CCW from the glyphs' own pointing
+// direction (the curve that points right sits at the top). Shown symbol-only.
+const WALL_CURVE_ROSE: { symbol: string; angle: number }[] = [
+  { symbol: "񉌍", angle: 0 },
+  { symbol: "񉌌", angle: 45 },
+  { symbol: "񉌋", angle: 90 },
+  { symbol: "񉌊", angle: 135 },
+  { symbol: "񉌉", angle: 180 },
+  { symbol: "񉌐", angle: 225 },
+  { symbol: "񉌏", angle: 270 },
+  { symbol: "񉌎", angle: 315 },
 ];
 
 const LAYER_COLOR: Record<Layer, string> = {
@@ -117,6 +132,9 @@ const _target = new Vector3();
 const _qRot = new Quaternion();
 const _qWorld = new Quaternion();
 const _qParent = new Quaternion();
+const _traceA = new Vector3();
+const _traceB = new Vector3();
+const _UP = new Vector3(0, 1, 0);
 
 // The elbow bends toward this world direction (down and back), so the pole
 // stays stable as the wrist target moves around the wall plane.
@@ -153,8 +171,19 @@ const GESTURE_HOLD = 0.5;
 const GESTURE_BACK = 0.5;
 const GESTURE_TOTAL = GESTURE_OUT + GESTURE_HOLD + GESTURE_BACK;
 // How far the hand travels from neutral on a gesture, as a fraction of arm
-// length (capped to stay reachable). Used by the Up-Down / Forward-Back scenes.
-const GESTURE_REACH = 0.42;
+// length (clamped to the arm's length by the IK). Used by the Up-Down /
+// Forward-Back scenes.
+const GESTURE_REACH = 0.45;
+// Radius (m) of the circle the curved-movement scene draws at, and traces, the
+// wrist around. Shared by WristCircle (the drawn ring) and driveArmCurve.
+const WRIST_CIRCLE_R = 0.2;
+// Raise the wrist circle (and the arc it traces) this far above the resting
+// wrist, so it sits a little higher over the signing area.
+const WRIST_CIRCLE_LIFT = 0.1;
+// Each rose button owns one of the circle's eight pieces. The pieces are 90°
+// wide (±this from the button angle), so neighbours overlap — a fuller, more
+// legible sweep of the curve than tight non-overlapping 45° slices.
+const CURVE_ARC_HALF = 45;
 
 type Gesture = { angle: number; id: number };
 
@@ -177,6 +206,20 @@ function aimBoneAt(bone: Object3D, pivot: Vector3, child: Object3D, targetPoint:
     bone.quaternion.copy(_qParent.invert().multiply(_qWorld));
   } else {
     bone.quaternion.copy(_qWorld);
+  }
+  bone.updateMatrixWorld(true);
+}
+
+// Force a bone to a fixed world orientation (used to keep the hand's facing
+// steady while the shoulder/elbow move the wrist), converting through the
+// parent so the local quaternion lands the requested world rotation.
+function setWorldQuaternion(bone: Object3D, q: Quaternion) {
+  const parent = bone.parent;
+  if (parent) {
+    parent.getWorldQuaternion(_qParent);
+    bone.quaternion.copy(_qParent.invert().multiply(q));
+  } else {
+    bone.quaternion.copy(q);
   }
   bone.updateMatrixWorld(true);
 }
@@ -215,29 +258,69 @@ function solveArmTwoBone(chain: ArmChain, target: Vector3, l1: number, l2: numbe
 // Pose one arm: build its forward-tilted neutral, blend toward the gesture
 // target by `mix` (0 = neutral, 1 = full reach), then solve. `angle` null holds
 // neutral. Driven per arm so a "both" gesture moves the two hands in parallel.
-function driveArm(rig: ArmRig, plane: Plane, angle: number | null, mix: number) {
-  const { chain, shoulder0: s0, upper, fore } = rig;
+// The forward-tilted rest position of the wrist: the centre of the wrist circle
+// and where every gesture starts and ends.
+function neutralWrist(rig: ArmRig, out: Vector3): Vector3 {
+  const { shoulder0: s0, upper, fore } = rig;
   const elbowFwd = Math.min(upper * 0.9, ELBOW_FORWARD);
   const elbowDrop = Math.sqrt(Math.max(0, upper * upper - elbowFwd * elbowFwd));
-  const fwd = elbowFwd + fore;
-  _neutral.set(s0.x, s0.y - elbowDrop, s0.z + fwd);
+  return out.set(s0.x, s0.y - elbowDrop, s0.z + fore + elbowFwd);
+}
+
+function driveArm(rig: ArmRig, plane: Plane, angle: number | null, mix: number) {
+  const { chain, upper, fore } = rig;
+  neutralWrist(rig, _neutral);
   _target.copy(_neutral);
 
   if (angle !== null && mix > 0) {
-    const reachCap = (upper + fore) * 0.95;
-    // Worst-case in-plane direction the neutral already extends toward: down for
-    // the wall plane (Y), forward for the floor plane (Z). Cap reach so even
-    // that extreme stays reachable and never clamps off-axis.
-    const ndotw = plane === "floor" ? fwd : elbowDrop;
-    const baseDistSq = elbowDrop * elbowDrop + fwd * fwd;
-    const maxReach =
-      -ndotw + Math.sqrt(Math.max(0, ndotw * ndotw - baseDistSq + reachCap * reachCap));
-    const reach = Math.max(0, Math.min((upper + fore) * GESTURE_REACH, maxReach));
+    // Reach a fraction of arm length in the rose direction. We don't cap to the
+    // uniform always-reachable radius (which is small — the arm rests nearly
+    // extended); solveArmTwoBone clamps an over-long target to the arm's length,
+    // so extreme directions stop at full extension instead, a far larger move.
+    const reach = (upper + fore) * GESTURE_REACH;
     (plane === "floor" ? floorDirection : roseDirection)(angle, _dir);
     _dest.copy(_neutral).addScaledVector(_dir, reach);
     _target.lerpVectors(_neutral, _dest, mix);
   }
   solveArmTwoBone(chain, _target, upper, fore);
+}
+
+// Trace one 45° piece of the wrist circle, the curved movement the symbol draws.
+// `t` is the gesture's elapsed time: reach out from the circle centre to the arc
+// start (button angle + half), trace clockwise (decreasing angle) through the
+// button angle to the end (angle − half), then return to centre. roseDirection
+// places the arc in the wall plane in the back-view frame, so from the back the
+// top button runs top-left → top → top-right.
+function driveArmCurve(rig: ArmRig, angle: number, t: number, hold?: Quaternion) {
+  const { chain, upper, fore } = rig;
+  neutralWrist(rig, _neutral);
+  // Arc points sit on the circle centred LIFT above the resting wrist; the
+  // out/back phases still lerp to the true rest so the hand never jumps.
+  const cx = _neutral.x;
+  const cy = _neutral.y + WRIST_CIRCLE_LIFT;
+  const cz = _neutral.z;
+  const start = angle + CURVE_ARC_HALF;
+  const end = angle - CURVE_ARC_HALF;
+  if (t < GESTURE_OUT) {
+    roseDirection(start, _dir);
+    _dest.set(cx, cy, cz).addScaledVector(_dir, WRIST_CIRCLE_R);
+    _target.lerpVectors(_neutral, _dest, smoothstep(t / GESTURE_OUT));
+  } else if (t < GESTURE_OUT + GESTURE_HOLD) {
+    const k = smoothstep((t - GESTURE_OUT) / GESTURE_HOLD);
+    roseDirection(start + (end - start) * k, _dir);
+    _target.set(cx, cy, cz).addScaledVector(_dir, WRIST_CIRCLE_R);
+  } else if (t < GESTURE_TOTAL) {
+    roseDirection(end, _dir);
+    _dest.set(cx, cy, cz).addScaledVector(_dir, WRIST_CIRCLE_R);
+    _target.lerpVectors(_dest, _neutral, smoothstep((t - GESTURE_OUT - GESTURE_HOLD) / GESTURE_BACK));
+  } else {
+    _target.copy(_neutral);
+  }
+  solveArmTwoBone(chain, _target, upper, fore);
+  // Keep the hand's facing constant: the shoulder/elbow move the wrist along the
+  // arc, the wrist absorbs the swing instead of the hand spinning (which the
+  // incremental aim would otherwise accumulate as axial roll).
+  if (hold) setWorldQuaternion(chain.hand, hold);
 }
 
 function Avatar({
@@ -246,12 +329,16 @@ function Avatar({
   xray,
   side = "right",
   plane = "wall",
+  circle = false,
+  motion = "reach",
 }: {
   onMeasure: (m: Measure) => void;
   arm?: { gesture: Gesture | null };
   xray?: boolean;
   side?: Side;
   plane?: Plane;
+  circle?: boolean;
+  motion?: "reach" | "curve";
 }) {
   const { scene } = useGLTF(AVATAR_URL);
   const { animations } = useGLTF(IDLE_URL);
@@ -263,6 +350,18 @@ function Avatar({
   const rigs = useRef<Record<Hand, ArmRig> | null>(null);
   const playing = useRef<{ angle: number; id: number; start: number } | null>(null);
   const startedId = useRef<number | null>(null);
+  // Wrist circles (one per hand) and the side they were last snapped to. The
+  // circle anchors to the active hand's resting wrist once, then stays put.
+  const circleRef = useRef<Record<Hand, Group | null>>({ right: null, left: null });
+  const highlightRef = useRef<Record<Hand, Mesh | null>>({ right: null, left: null });
+  const traceRef = useRef<Record<Hand, Mesh | null>>({ right: null, left: null });
+  const circleSide = useRef<Side | null>(null);
+  // The hand's resting world orientation, recorded each idle frame and held
+  // during a curve gesture so the hand keeps its facing as the wrist moves.
+  const restHandQuat = useRef<Record<Hand, Quaternion>>({
+    right: new Quaternion(),
+    left: new Quaternion(),
+  });
   // Per-instance material clones, so toggling x-ray here can't affect the
   // other viewers (SkeletonUtils.clone shares material references by default).
   const ownMats = useRef<Material[]>([]);
@@ -347,9 +446,11 @@ function Avatar({
   }, [xray]);
 
   // Switching hands clears any in-flight gesture so the newly idle arm is
-  // released back to the breathing animation instead of freezing in place.
+  // released back to the breathing animation instead of freezing in place, and
+  // re-arms the wrist circle to snap onto the newly active hand.
   useEffect(() => {
     playing.current = null;
+    circleSide.current = null;
   }, [side]);
 
   // Runs after the mixer's own useFrame (registered earlier), so the IK pose
@@ -380,11 +481,106 @@ function Avatar({
 
     const hands: Hand[] = side === "both" ? ["right", "left"] : [side];
     for (const h of hands) {
-      driveArm(rigs.current[h], plane, angle, mix);
+      if (motion === "curve") {
+        if (p) {
+          driveArmCurve(rigs.current[h], p.angle, now - p.start, restHandQuat.current[h]);
+        } else {
+          driveArm(rigs.current[h], plane, null, 0);
+          rigs.current[h].chain.hand.getWorldQuaternion(restHandQuat.current[h]);
+        }
+      } else {
+        driveArm(rigs.current[h], plane, angle, mix);
+      }
+    }
+
+    // Snap each wrist circle to the active hand once, while the arm is at rest
+    // (mix 0), then leave it; it does not track the hand during a gesture.
+    if (circle && circleSide.current !== side && mix === 0) {
+      for (const h of ["right", "left"] as Hand[]) {
+        const node = circleRef.current[h];
+        if (!node) continue;
+        const on = hands.includes(h);
+        node.visible = on;
+        if (on) {
+          rigs.current[h].chain.hand.getWorldPosition(node.position);
+          node.position.y += WRIST_CIRCLE_LIFT;
+        }
+      }
+      circleSide.current = side;
+    }
+
+    // Light up the slice being traced for the duration of the gesture. The
+    // 90°-wide base arc (geometry-angle 0…90°) is rotated so it covers the
+    // wrist's path: screen angle α ↦ geometry angle 180−α, so the slice
+    // [A−45, A+45] lands at [135−A, 225−A] → rotation.z = 135−A.
+    if (circle) {
+      for (const h of ["right", "left"] as Hand[]) {
+        const hl = highlightRef.current[h];
+        if (!hl) continue;
+        const show = motion === "curve" && !!p && hands.includes(h);
+        hl.visible = show;
+        if (show) hl.rotation.z = ((135 - p!.angle) * Math.PI) / 180;
+      }
+    }
+
+    // Trace the straight movement: a line from the wrist's rest position to its
+    // current position, drawn while the gesture plays. Its direction (and the
+    // wall/floor colour) make the plane of movement clear. A unit-height
+    // cylinder is positioned at the segment midpoint, scaled to its length, and
+    // aimed along it.
+    if (motion === "reach") {
+      for (const h of ["right", "left"] as Hand[]) {
+        const line = traceRef.current[h];
+        if (!line) continue;
+        if (!p || !hands.includes(h)) {
+          line.visible = false;
+          continue;
+        }
+        neutralWrist(rigs.current[h], _traceA);
+        rigs.current[h].chain.hand.getWorldPosition(_traceB);
+        _dir.subVectors(_traceB, _traceA);
+        const len = _dir.length();
+        if (len < 1e-3) {
+          line.visible = false;
+          continue;
+        }
+        line.visible = true;
+        line.position.copy(_traceA).addScaledVector(_dir, 0.5);
+        line.quaternion.setFromUnitVectors(_UP, _dir.divideScalar(len));
+        line.scale.set(1, len, 1);
+      }
     }
   });
 
-  return <primitive object={model} />;
+  return (
+    <>
+      <primitive object={model} />
+      {circle && (
+        <>
+          <group ref={(g) => void (circleRef.current.right = g)} visible={false}>
+            <WristCircle />
+            <HighlightArc meshRef={(m) => void (highlightRef.current.right = m)} />
+          </group>
+          <group ref={(g) => void (circleRef.current.left = g)} visible={false}>
+            <WristCircle />
+            <HighlightArc meshRef={(m) => void (highlightRef.current.left = m)} />
+          </group>
+        </>
+      )}
+      {arm && motion === "reach" && (
+        <>
+          <mesh ref={(m) => void (traceRef.current.right = m)} visible={false}>
+            <cylinderGeometry args={[0.008, 0.008, 1, 8]} />
+            <meshBasicMaterial color={LAYER_COLOR[plane ?? "wall"]} />
+          </mesh>
+          <mesh ref={(m) => void (traceRef.current.left = m)} visible={false}>
+            <cylinderGeometry args={[0.008, 0.008, 1, 8]} />
+            <meshBasicMaterial color={LAYER_COLOR[plane ?? "wall"]} />
+          </mesh>
+        </>
+      )}
+    </>
+  );
 }
 useGLTF.preload(AVATAR_URL);
 useGLTF.preload(IDLE_URL);
@@ -408,6 +604,43 @@ function WallPlane({ dims }: { dims: Dims }) {
       <planeGeometry args={[dims.width * 2, dims.height * 2]} />
       <meshStandardMaterial color={LAYER_COLOR.wall} transparent opacity={0.28} side={DoubleSide} />
       <Edges color={LAYER_COLOR.wall} />
+    </mesh>
+  );
+}
+
+// A small circle (radius 0.2 m) in the wall-plane orientation, drawn around the
+// active hand's wrist: a faint transparent fill with a crisp red (wall-plane)
+// edge. Avatar positions it at the wrist; it stays put as the arm gestures.
+function WristCircle() {
+  const R = 0.2;
+  return (
+    <>
+      <mesh>
+        <circleGeometry args={[R, 64]} />
+        <meshBasicMaterial
+          color={LAYER_COLOR.wall}
+          transparent
+          opacity={0.08}
+          side={DoubleSide}
+        />
+      </mesh>
+      <mesh>
+        <ringGeometry args={[R - 0.01, R, 64]} />
+        <meshBasicMaterial color={LAYER_COLOR.wall} side={DoubleSide} />
+      </mesh>
+    </>
+  );
+}
+
+// A bold 90° arc of the wrist circle, rotated (in Avatar) to the slice being
+// traced and shown only during the gesture — it lights up the path the wrist
+// follows. The base arc spans geometry-angle 0…90°; Avatar sets rotation.z.
+function HighlightArc({ meshRef }: { meshRef: (m: Mesh | null) => void }) {
+  const R = WRIST_CIRCLE_R;
+  return (
+    <mesh ref={meshRef} visible={false} position={[0, 0, 0.002]}>
+      <ringGeometry args={[R - 0.03, R, 64, 1, 0, Math.PI / 2]} />
+      <meshBasicMaterial color={LAYER_COLOR.wall} side={DoubleSide} />
     </mesh>
   );
 }
@@ -505,6 +738,8 @@ function SignScene({
   side,
   plane,
   frame,
+  circle,
+  motion,
   overlay,
 }: {
   layer: Layer;
@@ -516,6 +751,8 @@ function SignScene({
   side?: Side;
   plane?: Plane;
   frame?: "red" | "green";
+  circle?: boolean;
+  motion?: "reach" | "curve";
   overlay?: ReactNode;
 }) {
   const [measure, setMeasure] = useState<Measure | null>(null);
@@ -569,7 +806,15 @@ function SignScene({
             locked={locked}
           />
           <Suspense fallback={null}>
-            <Avatar onMeasure={setMeasure} arm={arm} xray={xray} side={side} plane={plane} />
+            <Avatar
+              onMeasure={setMeasure}
+              arm={arm}
+              xray={xray}
+              side={side}
+              plane={plane}
+              circle={circle}
+              motion={motion}
+            />
           </Suspense>
           {layer === "box" && dims && <SigningSpaceBox dims={dims} />}
           {layer === "wall" && dims && <WallPlane dims={dims} />}
@@ -674,7 +919,7 @@ function RoseOverlay({
   side,
   onSelect,
 }: {
-  items: { symbol: string; angle: number; label: string }[];
+  items: { symbol: string; angle: number; label?: string }[];
   active: number | null;
   side: Side;
   onSelect: (angle: number) => void;
@@ -713,7 +958,7 @@ function RoseOverlay({
             <span className="scene3d__rose-badge">
               <sgnw-symbol symbol={handSymbol(symbol, side)}></sgnw-symbol>
             </span>
-            <span className="scene3d__rose-label">{label}</span>
+            {label && <span className="scene3d__rose-label">{label}</span>}
           </button>
         );
       })}
@@ -820,6 +1065,34 @@ export function WallPlaneArrows3D() {
           <ViewToggle view={view} onChange={setView} />
           <HandToggle side={side} onChange={setSide} />
           <RoseOverlay items={WALL_ROSE} active={active} side={side} onSelect={trigger} />
+        </>
+      }
+    />
+  );
+}
+
+export function WallPlaneCurves3D() {
+  const { gesture, active, side, setSide, trigger } = useArmGesture();
+  const [view, setView] = useState<"front" | "back">("front");
+
+  return (
+    <SignScene
+      layer="none"
+      view={view}
+      locked
+      square
+      frame="red"
+      plane="wall"
+      circle
+      motion="curve"
+      arm={{ gesture }}
+      xray={view === "back"}
+      side={side}
+      overlay={
+        <>
+          <ViewToggle view={view} onChange={setView} />
+          <HandToggle side={side} onChange={setSide} />
+          <RoseOverlay items={WALL_CURVE_ROSE} active={active} side={side} onSelect={trigger} />
         </>
       }
     />

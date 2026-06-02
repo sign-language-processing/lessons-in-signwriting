@@ -28,8 +28,9 @@ export function Ch1Introduction() {
       </p>
       <p>
         Original content © 1990–2014 Valerie Sutton &amp; the Center for Sutton
-        Movement Writing, Inc. Interactive edition © 2026 Nagish Inc. Both editions
-        licensed under{" "}
+        Movement Writing, Inc., licensed under{" "}
+        <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+        Interactive edition © 2026 Nagish Inc., also licensed under{" "}
         <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
       </p>
       <p>The SignWriting System was first invented by Valerie Sutton in 1974.</p>

@@ -2,70 +2,73 @@
   "ch8-class": {
     "word": "class",
     "sign": "/figures/ch8/ch8-class-sign.png",
-    "video": "/videos/whatsthatsign/ch8-class/ch8-class.mp4",
-    "swu": "𝠀񂣱񋽁񂣹񋽁񏀇񋎧񋎿𝠃𝤜𝤞񂣱𝤋𝤊񂣹𝣰𝤊񋎧𝤈𝣮񋎿𝣰𝣮"
+    "video": "/videos/whatsthatsign/M522x524S16d10505x504S16d18478x504S2df06502x476S2df1e478x476.mp4",
+    "swu": "𝠀񂣱񋽁񂣹񋽁񏀇񋎧񋎿𝠃𝤜𝤞񂣱𝤋𝤊񂣹𝣰𝤊񋎧𝤈𝣮񋎿𝣰𝣮",
+    "confirmed": true
   },
   "ch8-finish": {
     "word": "finish",
     "sign": "/figures/ch8/ch8-finish-sign.png",
-    "video": "/videos/whatsthatsign/ch8-finish/ch8-finish.mp4",
+    "video": "/videos/whatsthatsign/M531x531S14c30506x469S14c38470x469S2a204508x503S2a21c470x503.mp4",
     "swu": "𝠀񁲱񋽁񁲹񋽁񏀇񉳅񉳝𝠃𝤥𝤥񁲱𝤌𝣧񁲹𝣨𝣧񉳅𝤎𝤉񉳝𝣨𝤉"
   },
   "ch8-close": {
     "word": "close",
     "sign": "/figures/ch8/ch8-close-sign.png",
-    "video": "/videos/whatsthatsign/ch8-close/ch8-close.mp4",
+    "video": "/videos/whatsthatsign/M516x522S15a02489x496S15a0a485x510S22a04498x478.mp4",
     "swu": "𝠀񂇃񋽁񂇋񋽁񆞁񆿅񆇡𝠃𝤖𝤜񂇃𝣻𝤂񂇋𝣷𝤐񆿅𝤄𝣰"
   },
   "ch8-happen": {
     "word": "happen",
     "sign": "/figures/ch8/ch8-happen-sign.png",
-    "video": "/videos/whatsthatsign/ch8-happen/ch8-happen.mp4",
-    "swu": "𝠀񀀱񋽁񀀹񋽁񏀇񉳁񉳙𝠃𝤢𝤣񀀱𝤏𝤅񀀹𝣯𝤅񉳁𝤋𝣪񉳙𝣫𝣪"
+    "video": "/videos/whatsthatsign/M528x529S10030509x499S10038477x499S2a200505x472S2a218473x472.mp4",
+    "swu": "𝠀񀀱񋽁񀀹񋽁񏀇񉳁񉳙𝠃𝤢𝤣񀀱𝤏𝤅񀀹𝣯𝤅񉳁𝤋𝣪񉳙𝣫𝣪",
+    "confirmed": true
   },
   "ch8-dead": {
     "word": "dead",
     "sign": "/figures/ch8/ch8-dead-sign.png",
-    "video": "/videos/whatsthatsign/ch8-dead/ch8-dead.mp4",
-    "swu": "𝠀񂈑񋽁񀀇񉳉𝠃𝤘𝤜񂈑𝣵𝤁񉳉𝤁𝣰"
+    "video": "/videos/whatsthatsign/M518x522S15a50483x495S2a208495x478.mp4",
+    "swu": "𝠀񂈑񋽁񀀇񉳉𝠃𝤘𝤜񂈑𝣵𝤁񉳉𝤁𝣰",
+    "confirmed": true
   },
   "ch8-break": {
     "word": "break",
     "sign": "/figures/ch8/ch8-break-sign.png",
-    "video": "/videos/whatsthatsign/ch8-break/ch8-break.mp4",
+    "video": "/videos/whatsthatsign/M527x521S14c0a473x480S15a50495x494S20700509x485.mp4",
     "swu": "𝠀񂈑񋽁񁲋񋽁񆞇񆊡𝠃𝤡𝤛񁲋𝣫𝣲񂈑𝤁𝤀񆊡𝤏𝣷"
   },
   "ch8-third": {
     "word": "third",
     "sign": "/figures/ch8/ch8-third-sign.png",
-    "video": "/videos/whatsthatsign/ch8-third/ch8-third.mp4",
+    "video": "/videos/whatsthatsign/M515x527S11e11485x497S2c300489x473.mp4",
     "swu": "𝠃𝤕𝤡񀭒𝣷𝤃񊤡𝣻𝣫",
     "confirmed": true
   },
   "ch8-apple": {
     "word": "apple",
     "sign": "/figures/ch8/ch8-apple-sign.png",
-    "video": "/videos/whatsthatsign/ch8-apple/ch8-apple.mp4",
+    "video": "/videos/whatsthatsign/M563x526S2ff00482x483S10612515x511S2c400523x483.mp4",
     "swu": "𝠀񀉓񌀆񀀇񆙡񊦁𝠃𝥅𝤠񋾡𝣴𝣵񀉓𝤕𝤑񊦁𝤝𝣵",
     "confirmed": true
   },
   "ch8-begin": {
     "word": "begin",
     "sign": "/figures/ch8/ch8-begin-sign.png",
-    "video": "/videos/whatsthatsign/ch8-begin/ch8-begin.mp4",
+    "video": "/videos/whatsthatsign/M526x527S14c49474x500S10012489x503S21300475x480S2c300500x473.mp4",
     "swu": "𝠀񀀓񋽁񁳊񋽁񆞇񆜡񊤡𝠃𝤠𝤡񁳊𝣬𝤆񀀓𝣻𝤉񆜡𝣭𝣲񊤡𝤆𝣫",
     "confirmed": true
   },
   "ch8-blue": {
     "word": "blue",
     "sign": "/figures/ch8/ch8-blue-sign.png",
-    "video": "/videos/whatsthatsign/ch8-blue/ch8-blue.mp4",
+    "video": "/videos/whatsthatsign/M511x523S14710492x501S2df08490x478.mp4",
     "swu": "𝠀񁪱񋽁񀀇񋎩𝠃𝤑𝤝񁪱𝣾𝤇񋎩𝣼𝣰"
   },
   "ch8-yes-yes": {
     "word": "yes-yes",
     "sign": "/figures/ch8/ch8-yes-yes-sign.png",
-    "video": "/videos/whatsthatsign/ch8-yes-yes/ch8-yes-yes.mp4",
+    "video": "/videos/whatsthatsign/M513x519S20350493x482S23004488x501.mp4",
     "swu": "𝠀񆅱񋽁񀀇񇈅𝠃𝤓𝤙񆅱𝣿𝣴񇈅𝣺𝤇"
   },
   "ch8-flag": {
@@ -75,19 +78,19 @@
   "ch8-chat": {
     "word": "chat",
     "sign": "/figures/ch8/ch8-chat-sign.png",
-    "video": "/videos/whatsthatsign/ch8-chat/ch8-chat.mp4",
+    "video": "/videos/whatsthatsign/M534x525S14c47507x476S14c4f467x476S23004505x507S23014472x507.mp4",
     "swu": "𝠀񁳈񋽁񁳐񋽁񏀇񇈅񇈕𝠃𝤨𝤟񁳈𝤍𝣮񁳐𝣥𝣮񇈅𝤋𝤍񇈕𝣪𝤍"
   },
   "ch8-before": {
     "word": "before",
     "sign": "/figures/ch8/ch8-before-sign.png",
-    "video": "/videos/whatsthatsign/ch8-before/ch8-before.mp4",
+    "video": "/videos/whatsthatsign/M541x523S36d00479x492S15a00528x477S26504527x508.mp4",
     "swu": "𝠀񂇁񏇨񀀇񈗥𝠃𝤯𝤝񎣡𝣱𝣾񂇁𝤢𝣯񈗥𝤡𝤎"
   },
   "ch8-basketball": {
     "word": "basketball",
     "sign": "/figures/ch8/ch8-basketball-sign.png",
-    "video": "/videos/whatsthatsign/ch8-basketball/ch8-basketball.mp4",
+    "video": "/videos/whatsthatsign/M537x527S14e10511x474S14e18463x474S23000512x509S23010463x508.mp4",
     "swu": "𝠀񁵑񋽁񁵙񋽁񏀇񇈁񇈑𝠃𝤫𝤡񁵑𝤑𝣬񁵙𝣡𝣬񇈁𝤒𝤏񇈑𝣡𝤎"
   },
   "ch8-aerobics": {
@@ -101,7 +104,7 @@
   "ch8-broom": {
     "word": "broom",
     "sign": "/figures/ch8/ch8-broom-sign.png",
-    "video": "/videos/whatsthatsign/ch8-broom/ch8-broom.mp4",
+    "video": "/videos/whatsthatsign/M522x530S15a41499x502S15a36483x518S20e00484x501S2880e479x486S2880e479x471.mp4",
     "swu": "𝠀񂈂񋽁񂇷񋽁񆞁񆕁񉌏񉌏𝠃𝤜𝤤񂈂𝤅𝤈񂇷𝣵𝤘񆕁𝣶𝤇񉌏𝣱𝣸񉌏𝣱𝣩"
   },
   "ch8-bald": {
@@ -111,7 +114,7 @@
   "ch8-weight": {
     "word": "weight",
     "sign": "/figures/ch8/ch8-weight-sign.png",
-    "video": "/videos/whatsthatsign/ch8-weight/ch8-weight.mp4",
+    "video": "/videos/whatsthatsign/M523x524S11541496x476S11549477x483S23004498x506.mp4",
     "swu": "𝠀񀠢񋽁񀠪񋽁񆞁񆇡񇈅𝠃𝤝𝤞񀠢𝤂𝣮񀠪𝣯𝣵񇈅𝤄𝤌"
   }
 }
