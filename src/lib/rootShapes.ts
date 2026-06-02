@@ -1,3 +1,4 @@
+import { convert } from "@sutton-signwriting/core";
 import rootOf from "../content/rootshapes.json";
 
 export type RootShape = { name: string; swu: string };
@@ -32,6 +33,15 @@ export function rootSymbolFor(symbol: string): string | undefined {
 export function rootNameFor(symbol: string): string | undefined {
   const root = ROOT_OF[symbol];
   return root ? NAME_BY_SWU.get(root) : undefined;
+}
+
+/** The rootshape (symbol + name) for any hand symbol key (SXXXFR), or undefined. */
+export function rootForKey(key: string): RootShape | undefined {
+  if (key.length !== 6 || key[0] !== "S") return undefined;
+  const swu = convert.key2swu(`S${key.slice(1, 4)}00`);
+  const rootSwu = ROOT_OF[swu];
+  const name = rootSwu ? NAME_BY_SWU.get(rootSwu) : undefined;
+  return rootSwu && name ? { name, swu: rootSwu } : undefined;
 }
 
 const SYMBOLS_BY_ROOT: Record<string, string[]> = {};

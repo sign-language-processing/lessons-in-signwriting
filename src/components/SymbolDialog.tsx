@@ -7,6 +7,7 @@ import {
   isWristViewKey,
 } from "../lib/handImage";
 import { isPracticeBase } from "../lib/practiceHands";
+import { rootForKey } from "../lib/rootShapes";
 import { usePractice } from "./PracticeContext";
 
 export type SymbolDialogProps = {
@@ -64,6 +65,7 @@ export function SymbolDialog({ openKey, onClose }: SymbolDialogProps) {
       ? fillVariants(openKey).filter((v) => v.key[4] === openKey[4])
       : fillVariants(openKey)
     : [];
+  const root = openKey ? rootForKey(openKey) : undefined;
 
   return (
     <dialog
@@ -110,6 +112,21 @@ export function SymbolDialog({ openKey, onClose }: SymbolDialogProps) {
             Base: <code>{openKey.slice(0, 4)}</code> · {variants.length} fill
             variant{variants.length === 1 ? "" : "s"} at rotation{" "}
             <code>{openKey[5]}</code>
+          </p>
+        )}
+        {root && (
+          <p
+            style={{
+              color: "#666",
+              marginTop: 0,
+              display: "flex",
+              alignItems: "center",
+              gap: "0.4rem",
+            }}
+          >
+            Rootshape:{" "}
+            <sgnw-symbol symbol={root.swu} style={{ fontSize: 32 }}></sgnw-symbol>
+            <strong>{root.name}</strong>
           </p>
         )}
         {openKey && isPracticeBase(openKey.slice(1, 4)) && (
