@@ -152,6 +152,9 @@ const GESTURE_OUT = 0.5;
 const GESTURE_HOLD = 0.5;
 const GESTURE_BACK = 0.5;
 const GESTURE_TOTAL = GESTURE_OUT + GESTURE_HOLD + GESTURE_BACK;
+// How far the hand travels from neutral on a gesture, as a fraction of arm
+// length (capped to stay reachable). Used by the Up-Down / Forward-Back scenes.
+const GESTURE_REACH = 0.42;
 
 type Gesture = { angle: number; id: number };
 
@@ -229,7 +232,7 @@ function driveArm(rig: ArmRig, plane: Plane, angle: number | null, mix: number) 
     const baseDistSq = elbowDrop * elbowDrop + fwd * fwd;
     const maxReach =
       -ndotw + Math.sqrt(Math.max(0, ndotw * ndotw - baseDistSq + reachCap * reachCap));
-    const reach = Math.max(0, Math.min((upper + fore) * 0.28, maxReach));
+    const reach = Math.max(0, Math.min((upper + fore) * GESTURE_REACH, maxReach));
     (plane === "floor" ? floorDirection : roseDirection)(angle, _dir);
     _dest.copy(_neutral).addScaledVector(_dir, reach);
     _target.lerpVectors(_neutral, _dest, mix);
