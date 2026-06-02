@@ -108,25 +108,31 @@ export function SymbolDialog({ openKey, onClose }: SymbolDialogProps) {
           Symbol variants
         </h2>
         {openKey && (
-          <p style={{ color: "#666", marginTop: 0 }}>
-            Base: <code>{openKey.slice(0, 4)}</code> · {variants.length} fill
-            variant{variants.length === 1 ? "" : "s"} at rotation{" "}
-            <code>{openKey[5]}</code>
-          </p>
-        )}
-        {root && (
           <p
             style={{
               color: "#666",
               marginTop: 0,
               display: "flex",
               alignItems: "center",
+              flexWrap: "wrap",
               gap: "0.4rem",
             }}
           >
-            Rootshape:{" "}
-            <sgnw-symbol symbol={root.swu} style={{ fontSize: 32 }}></sgnw-symbol>
-            <strong>{root.name}</strong>
+            <span>
+              Base: <code>{openKey.slice(0, 4)}</code> · {variants.length} fill
+              variant{variants.length === 1 ? "" : "s"} at rotation{" "}
+              <code>{openKey[5]}</code>
+            </span>
+            {root && (
+              <>
+                <span>· Rootshape:</span>
+                <sgnw-symbol
+                  symbol={root.swu}
+                  style={{ fontSize: 32 }}
+                ></sgnw-symbol>
+                <strong>{root.name}</strong>
+              </>
+            )}
           </p>
         )}
         {openKey && isPracticeBase(openKey.slice(1, 4)) && (
