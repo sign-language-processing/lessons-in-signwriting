@@ -77,8 +77,11 @@
     "14a": "Tight Fist",
     "14b": "Hinge",
     "14c": "Cup",
+    "14d": "Tight Fist",
     "14e": "Cup",
+    "14f": "Tight Fist",
     "150": "Cup",
+    "151": "Tight Fist",
     "152": "Cup",
     "153": "Cup",
     "154": "Cup",
@@ -88,7 +91,10 @@
     "158": "Hinge",
     "159": "Hinge",
     "15a": "Flat",
+    "15b": "Flat",
+    "15c": "Tight Fist",
     "15d": "Flat",
+    "15e": "Tight Fist",
     "15f": "Flat",
     "160": "Flat",
     "161": "Flat",
@@ -240,6 +246,7 @@
     "1f3": "Angle",
     "1f4": "Angle",
     "1f5": "Tight Fist",
+    "1f6": "Tight Fist",
     "1f7": "Circle",
     "1f8": "Tight Fist",
     "1f9": "Circle",
@@ -252,7 +259,8 @@
     "200": "Circle",
     "201": "Tight Fist",
     "202": "Tight Fist",
-    "203": "Tight Fist"
+    "203": "Tight Fist",
+    "204": "Tight Fist"
   },
   "conv_only": [
     {
@@ -466,6 +474,13 @@
       "conv_score": 0.809
     },
     {
+      "base": "14d",
+      "name": "Five Fingers Spread Heel",
+      "name_root": null,
+      "conv": "Tight Fist",
+      "conv_score": 0.0
+    },
+    {
       "base": "14e",
       "name": "Five Fingers Spread, Four Bent",
       "name_root": null,
@@ -473,11 +488,25 @@
       "conv_score": 0.831
     },
     {
+      "base": "14f",
+      "name": "Five Fingers Spread, Four Bent Heel",
+      "name_root": null,
+      "conv": "Tight Fist",
+      "conv_score": 0.0
+    },
+    {
       "base": "150",
       "name": "Five Fingers Spread Bent",
       "name_root": null,
       "conv": "Cup",
       "conv_score": 0.832
+    },
+    {
+      "base": "151",
+      "name": "Five Fingers Spread Bent Heel",
+      "name_root": null,
+      "conv": "Tight Fist",
+      "conv_score": 0.0
     },
     {
       "base": "152",
@@ -501,11 +530,32 @@
       "conv_score": 1.0
     },
     {
+      "base": "15b",
+      "name": "Flat, Between Palm Facings",
+      "name_root": null,
+      "conv": "Flat",
+      "conv_score": 1.0
+    },
+    {
+      "base": "15c",
+      "name": "Flat Heel",
+      "name_root": null,
+      "conv": "Tight Fist",
+      "conv_score": 0.0
+    },
+    {
       "base": "15d",
       "name": "Flat, Thumb Side",
       "name_root": null,
       "conv": "Flat",
       "conv_score": 0.982
+    },
+    {
+      "base": "15e",
+      "name": "Flat, Thumb Side Heel",
+      "name_root": null,
+      "conv": "Tight Fist",
+      "conv_score": 0.0
     },
     {
       "base": "15f",
@@ -905,6 +955,13 @@
       "name_root": null,
       "conv": "Tight Fist",
       "conv_score": 1.0
+    },
+    {
+      "base": "1f6",
+      "name": "Thumb Heel",
+      "name_root": null,
+      "conv": "Tight Fist",
+      "conv_score": 0.0
     },
     {
       "base": "1f7",
@@ -2801,6 +2858,21 @@
         "Flat": 0.584
       }
     },
+    "14d": {
+      "name": "Five Fingers Spread Heel",
+      "name_root": null,
+      "conv": "Tight Fist",
+      "source": "convolution",
+      "scores": {
+        "Tight Fist": 0.0,
+        "Circle": 0.0,
+        "Cup": 0.0,
+        "Hinge": 0.0,
+        "Angle": 0.0,
+        "Flat Thumb Across": 0.0,
+        "Flat": 0.0
+      }
+    },
     "14e": {
       "name": "Five Fingers Spread, Four Bent",
       "name_root": null,
@@ -2816,6 +2888,21 @@
         "Flat": 0.511
       }
     },
+    "14f": {
+      "name": "Five Fingers Spread, Four Bent Heel",
+      "name_root": null,
+      "conv": "Tight Fist",
+      "source": "convolution",
+      "scores": {
+        "Tight Fist": 0.0,
+        "Circle": 0.0,
+        "Cup": 0.0,
+        "Hinge": 0.0,
+        "Angle": 0.0,
+        "Flat Thumb Across": 0.0,
+        "Flat": 0.0
+      }
+    },
     "150": {
       "name": "Five Fingers Spread Bent",
       "name_root": null,
@@ -2829,6 +2916,21 @@
         "Angle": 0.626,
         "Flat Thumb Across": 0.645,
         "Flat": 0.548
+      }
+    },
+    "151": {
+      "name": "Five Fingers Spread Bent Heel",
+      "name_root": null,
+      "conv": "Tight Fist",
+      "source": "convolution",
+      "scores": {
+        "Tight Fist": 0.0,
+        "Circle": 0.0,
+        "Cup": 0.0,
+        "Hinge": 0.0,
+        "Angle": 0.0,
+        "Flat Thumb Across": 0.0,
+        "Flat": 0.0
       }
     },
     "152": {
@@ -2966,6 +3068,36 @@
         "Flat": 1.0
       }
     },
+    "15b": {
+      "name": "Flat, Between Palm Facings",
+      "name_root": null,
+      "conv": "Flat",
+      "source": "convolution",
+      "scores": {
+        "Tight Fist": 0.8,
+        "Circle": 0.85,
+        "Cup": 0.685,
+        "Hinge": 0.337,
+        "Angle": 0.309,
+        "Flat Thumb Across": 0.88,
+        "Flat": 1.0
+      }
+    },
+    "15c": {
+      "name": "Flat Heel",
+      "name_root": null,
+      "conv": "Tight Fist",
+      "source": "convolution",
+      "scores": {
+        "Tight Fist": 0.0,
+        "Circle": 0.0,
+        "Cup": 0.0,
+        "Hinge": 0.0,
+        "Angle": 0.0,
+        "Flat Thumb Across": 0.0,
+        "Flat": 0.0
+      }
+    },
     "15d": {
       "name": "Flat, Thumb Side",
       "name_root": null,
@@ -2979,6 +3111,21 @@
         "Angle": 0.381,
         "Flat Thumb Across": 0.911,
         "Flat": 0.982
+      }
+    },
+    "15e": {
+      "name": "Flat, Thumb Side Heel",
+      "name_root": null,
+      "conv": "Tight Fist",
+      "source": "convolution",
+      "scores": {
+        "Tight Fist": 0.0,
+        "Circle": 0.0,
+        "Cup": 0.0,
+        "Hinge": 0.0,
+        "Angle": 0.0,
+        "Flat Thumb Across": 0.0,
+        "Flat": 0.0
       }
     },
     "15f": {
@@ -5246,6 +5393,21 @@
         "Flat": 0.625
       }
     },
+    "1f6": {
+      "name": "Thumb Heel",
+      "name_root": null,
+      "conv": "Tight Fist",
+      "source": "convolution",
+      "scores": {
+        "Tight Fist": 0.0,
+        "Circle": 0.0,
+        "Cup": 0.0,
+        "Hinge": 0.0,
+        "Angle": 0.0,
+        "Flat Thumb Across": 0.0,
+        "Flat": 0.0
+      }
+    },
     "1f7": {
       "name": "Thumb Side Diagonal",
       "name_root": null,
@@ -5439,6 +5601,21 @@
         "Angle": 0.411,
         "Flat Thumb Across": 0.811,
         "Flat": 0.625
+      }
+    },
+    "204": {
+      "name": "Fist Heel",
+      "name_root": "Tight Fist",
+      "conv": "Tight Fist",
+      "source": "both",
+      "scores": {
+        "Tight Fist": 0.0,
+        "Circle": 0.0,
+        "Cup": 0.0,
+        "Hinge": 0.0,
+        "Angle": 0.0,
+        "Flat Thumb Across": 0.0,
+        "Flat": 0.0
       }
     }
   }

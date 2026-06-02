@@ -24,9 +24,9 @@ sources, and the unresolved list go to scripts/rootshapes_debug.json. Re-runnabl
 from __future__ import annotations
 
 import base64
-import io
 import json
 import re
+import tempfile
 from pathlib import Path
 
 import numpy as np
@@ -170,30 +170,25 @@ def glyph_data_uri(key: str, height: int = 64) -> str:
     ).convert("RGBA")
     bg = Image.new("RGBA", img.size, (255, 255, 255, 255))
     img = Image.alpha_composite(bg, img).convert("RGB")
-    if img.height:
+    if img.width and img.height:
         img = img.resize((max(1, img.width * height // img.height), height))
-    buf = io.BytesIO()
-    img.save(buf, "PNG")
-    return "data:image/png;base64," + base64.b64encode(buf.getvalue()).decode()
+    else:
+        img = Image.new("RGB", (height, height), (255, 255, 255))
+    with tempfile.NamedTemporaryFile(suffix=".png") as tmp:
+        img.save(tmp.name, "PNG")
+        data = Path(tmp.name).read_bytes()
+    return "data:image/png;base64," + base64.b64encode(data).decode()
 
 
-REASON = {
-    "both": "convolution + name agree",
-    "name": "name keyword (convolution differed, &lt;{thr})",
-    "conv>name": "convolution ≥{thr} (overrode name)",
-    "convolution": "convolution only — no name keyword",
-}
-SECTIONS = [
-    ("convolution", "Convolution only — no name keyword (review these)"),
-    ("name", "Name keyword wins — convolution disagreed"),
-    ("conv>name", "Convolution overrode the name keyword"),
-    ("both", "Convolution + name agree (confident)"),
-]
 SOURCE_COLOR = {"convolution": "#fff3cd", "name": "#e7f0ff",
                 "conv>name": "#fde2e1", "both": "#e6f6ea"}
+SOURCE_LABEL = {"convolution": "convolution (no name keyword)",
+                "name": "name keyword", "conv>name": "convolution ≥ threshold",
+                "both": "name + convolution agree"}
 
 
-def write_report(bases, names, debug, root_keys):
+def write_report(bases, names, debug, root_keys, eligible):
+    """One flat table of every hand base, sorted by id, for manual review."""
     glyph_cache = {}
 
     def glyph(key):
@@ -201,59 +196,60 @@ def write_report(bases, names, debug, root_keys):
             glyph_cache[key] = glyph_data_uri(key)
         return glyph_cache[key]
 
-    rows_by_source: dict[str, list[str]] = {s: [] for s, _ in SECTIONS}
+    rows = []
     for b in bases:
         d = debug[b]
         src = d["source"]
-        reason = REASON[src].format(thr=CONV_WINS)
-        if src in ("name", "both", "conv>name"):
-            reason += f" · name said {d['name_root']}, convolution {d['conv']} ({d['scores'][d['conv']]})"
-        else:
-            reason += f" · convolution {d['conv']} ({d['scores'][d['conv']]})"
-        root = d["conv"] if src in ("conv>name", "convolution") else d["name_root"]
-        rows_by_source[src].append(
+        pred = d["conv"] if src in ("conv>name", "convolution") else d["name_root"]
+        note = "" if b in eligible else " <small>· not in game</small>"
+        rows.append(
             f'<tr style="background:{SOURCE_COLOR[src]}">'
             f'<td><img src="{glyph(f"S{b}00")}" height="56"></td>'
             f'<td><code>{b}</code></td>'
-            f'<td>{names[b]}</td>'
-            f'<td><img src="{glyph(root_keys[root])}" height="40"> <b>{root}</b></td>'
-            f'<td>{reason}</td></tr>'
+            f'<td>{names[b]}{note}</td>'
+            f'<td><img src="{glyph(root_keys[pred])}" height="40"> <b>{pred}</b></td>'
+            f'<td>{SOURCE_LABEL[src]} · conv {d["conv"]} ({d["scores"][d["conv"]]})</td>'
+            f'<td></td></tr>'
         )
 
-    parts = [
-        "<!doctype html><meta charset=utf-8><title>Rootshape report</title>",
-        "<style>body{font:14px system-ui;margin:2rem;max-width:1100px}"
-        "table{border-collapse:collapse;width:100%;margin-bottom:2.5rem}"
+    html = (
+        "<!doctype html><meta charset=utf-8><title>Rootshape review</title>"
+        "<style>body{font:14px system-ui;margin:2rem;max-width:1150px}"
+        "table{border-collapse:collapse;width:100%}"
         "td,th{border:1px solid #ddd;padding:6px 10px;text-align:left;vertical-align:middle}"
-        "th{background:#f2f2f2}h2{margin-top:2rem}code{font-size:1.1em}</style>",
-        "<h1>Rootshape predictions</h1>",
-    ]
-    for src, title in SECTIONS:
-        rows = rows_by_source[src]
-        parts.append(f"<h2>{title} ({len(rows)})</h2>")
-        parts.append(
-            "<table><tr><th>Shape</th><th>Id</th><th>Name</th>"
-            "<th>Predicted rootshape</th><th>Reason</th></tr>"
-            + "".join(rows) + "</table>"
-        )
-    REPORT_OUT.write_text("".join(parts))
+        "th{background:#f2f2f2;position:sticky;top:0}code{font-size:1.15em}"
+        "small{color:#999}</style>"
+        f"<h1>Rootshape review — all {len(bases)} hand bases</h1>"
+        "<p>Predicted rootshape is a suggestion; the last column is yours to mark "
+        "corrections. Row color = how it was predicted (yellow convolution-only, "
+        "blue name, green agree, red convolution-over-name).</p>"
+        "<table><tr><th>Shape</th><th>Id</th><th>Name</th>"
+        "<th>Predicted</th><th>How</th><th>Correct?</th></tr>"
+        + "".join(rows) + "</table>"
+    )
+    REPORT_OUT.write_text(html)
 
 
 def main() -> None:
     names = load_names()
-    bases = sorted((b for b in names if is_eligible(b)), key=lambda b: int(b, 16))
+    # Every hand base (100–204), for the review report.
+    all_bases = sorted(
+        (b for b in names if 0x100 <= int(b, 16) <= 0x204), key=lambda b: int(b, 16)
+    )
+    # The subset the practice game can quiz (drops wrist-view + photo-less 15b).
+    bases = [b for b in all_bases if is_eligible(b)]
 
     print(f"rendering {len(ROOT_DEFS)} rootshape references…")
     root_masks = {name: render_mask(key) for name, key in ROOT_DEFS}
 
-    print(f"classifying {len(bases)} bases by convolution + name…")
+    print(f"classifying {len(all_bases)} hand bases by convolution + name…")
     mapping: dict[str, str] = {}
     debug: dict[str, dict] = {}
     conv_only: list[dict] = []
     disagreements: list[dict] = []
     conv_over_name: list[dict] = []
 
-    for b in bases:
+    for b in all_bases:
         base_mask = render_mask(f"S{b}00")
         scores = {name: inclusion(base_mask, mask) for name, mask in root_masks.items()}
         conv = max(scores, key=scores.__getitem__)  # rule 1
@@ -290,7 +286,8 @@ def main() -> None:
             conv_only.append(entry)
 
     OUT.write_text(
-        json.dumps({"roots": ROOT_NAMES, "bases": mapping}, indent=2, ensure_ascii=False) + "\n"
+        json.dumps({"roots": ROOT_NAMES, "bases": {b: mapping[b] for b in bases}},
+                   indent=2, ensure_ascii=False) + "\n"
     )
     DEBUG_OUT.write_text(
         json.dumps({"bases": mapping, "conv_only": conv_only,
@@ -298,14 +295,14 @@ def main() -> None:
                     "all": debug}, indent=2, ensure_ascii=False) + "\n"
     )
     print(f"writing {REPORT_OUT.name}…")
-    write_report(bases, names, debug, dict(ROOT_DEFS))
+    write_report(all_bases, names, debug, dict(ROOT_DEFS), set(bases))
 
     counts: dict[str, int] = {}
     src_counts: dict[str, int] = {}
     for b in bases:
         counts[mapping[b]] = counts.get(mapping[b], 0) + 1
         src_counts[debug[b]["source"]] = src_counts.get(debug[b]["source"], 0) + 1
-    print(f"\nmapped {len(mapping)}/{len(bases)} bases")
+    print(f"\nmapped {len(bases)} game bases (report covers all {len(all_bases)})")
     print("by rootshape:", dict(sorted(counts.items(), key=lambda kv: -kv[1])))
     print("by source:   ", src_counts, "(both = name keyword confirmed by convolution)")
 
