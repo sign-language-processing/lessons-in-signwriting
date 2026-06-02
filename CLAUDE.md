@@ -178,33 +178,17 @@ section. They ship in release (not authoring-gated) and reuse the shared
   ("Practice this handshape"). Eligible bases = all hands minus the seven Wrist
   View bases and `15b` (missing photos).
 - **Rootshape Practice** (after "Rootshapes") — `RootShapePractice` +
-  `lib/rootShapes.ts`. Show a hand photo; pick which of the seven rootshapes it
-  grows from. Samples **uniformly over rootshapes** (so rare ones like Flat
-  Thumb Across appear as often as Tight Fist).
+  `lib/rootShapes.ts`. Show a hand photo; pick which of the ten rootshapes it
+  grows from (Tight Fist, Circle, Oval, Curlicue, Cup, Hinge, Angle, Flat Thumb
+  Across, Flat, Flat Heel). Easy mode also shows the SignWriting symbol. Samples
+  **uniformly over rootshapes** (so rare ones appear as often as common ones).
 
-### Rootshape mapping (`scripts/build_rootshapes.py`)
+### Rootshape mapping
 
-Maps every eligible hand base → one of seven rootshapes, written to
-`src/content/rootshapes.generated.json` (`{roots, bases}`; per-base scores,
-convolution-only assignments, and name/convolution disagreements in
-`scripts/rootshapes_debug.json`). Re-runnable: `python scripts/build_rootshapes.py`
-(no LLM — it was too error-prone). Two rules:
-
-- **Rule 1 — convolution.** Render the base glyph and each rootshape glyph with
-  the `signwriting` visualizer (monkeypatched to ~240px — the default 30px
-  renders ~16px glyphs, too coarse), then measure inclusion: the max of
-  `|rootshape ∩ base| / |rootshape|` over **all** translations (peak of the
-  FFT cross-correlation) — does the base contain the whole rootshape? The
-  best-covered rootshape is rule 1's answer.
-- **Rule 2 — name keyword.** The ISWA name, when it carries a rootshape keyword,
-  is authoritative. Parse the `on X` suffix first ("Index Hinge on Circle" is
-  Circle — "Hinge" only describes the finger), then bare keywords: Fist, Circle,
-  Cup, Hinge, Angle, plus normalizations Curlicue→Circle, Hook→Angle, Claw→Hinge.
-
-A base is mapped by its name keyword when it has one, otherwise by convolution.
-Convolution is reliable for the clear shapes (fist, flat, four-fingers) but
-still confuses Angle↔Hinge (near-identical glyphs) and over-predicts Circle on
-some single-raised-finger hands, so the name wins on conflict. The debug file
-lists convolution-only assignments and name/convolution disagreements for
-review. The `scripts/.venv` needs `signwriting` (+ `regex`, `scipy`) alongside
-PIL/numpy.
+`src/content/rootshapes.json` is the hand-curated source of truth: a flat
+`{ handshape-symbol → rootshape-symbol }` map (SWU characters, default
+fill/rotation) covering all 261 hand bases. `lib/rootShapes.ts` reads it; the
+ten rootshape names/symbols live in `ROOT_SHAPES` there. To change a mapping,
+edit the JSON (or `ROOT_SHAPES` to add/rename a rootshape) — no build step. (An
+earlier convolution+name script that auto-predicted the map was removed once the
+map was reviewed by hand.)

@@ -1,9 +1,8 @@
-import { convert } from "@sutton-signwriting/core";
-import rootshapeData from "../content/rootshapes.generated.json";
+import rootOf from "../content/rootshapes.json";
 
 export type RootShape = { name: string; swu: string };
 
-/** The seven rootshapes, in the order the book introduces them. */
+/** The ten rootshapes, in the order the book introduces them. */
 export const ROOT_SHAPES: RootShape[] = [
   { name: "Tight Fist", swu: "񆄡" },
   { name: "Circle", swu: "񂱁" },
@@ -17,36 +16,40 @@ export const ROOT_SHAPES: RootShape[] = [
   { name: "Flat Heel", swu: "񂊑" },
 ];
 
-const BASES = rootshapeData.bases as Record<string, string>;
+const NAME_BY_SWU = new Map(ROOT_SHAPES.map((r) => [r.swu, r.name]));
 
-/** Hand bases that have a rootshape assignment (the practice-eligible set). */
-export const ROOT_SHAPE_BASES: string[] = Object.keys(BASES);
+// Hand-curated map: a handshape symbol (default fill/rotation) → its rootshape
+// symbol. The single source of truth — see src/content/rootshapes.json.
+const ROOT_OF = rootOf as Record<string, string>;
 
-const BASES_BY_ROOT: Record<string, string[]> = {};
-for (const [base, root] of Object.entries(BASES)) {
-  (BASES_BY_ROOT[root] ??= []).push(base);
+/** Every handshape symbol that has a rootshape (the practice pool). */
+export const PRACTICE_SYMBOLS: string[] = Object.keys(ROOT_OF);
+
+export function rootSymbolFor(symbol: string): string | undefined {
+  return ROOT_OF[symbol];
 }
 
-export function rootShapeForBase(base: string): string | undefined {
-  return BASES[base.toLowerCase()];
+export function rootNameFor(symbol: string): string | undefined {
+  const root = ROOT_OF[symbol];
+  return root ? NAME_BY_SWU.get(root) : undefined;
 }
 
-/** The SWU glyph for a base at its default fill/rotation. */
-export function baseSymbol(base: string): string {
-  return convert.key2swu(`S${base.toLowerCase()}00`);
+const SYMBOLS_BY_ROOT: Record<string, string[]> = {};
+for (const [symbol, root] of Object.entries(ROOT_OF)) {
+  (SYMBOLS_BY_ROOT[root] ??= []).push(symbol);
 }
 
 /**
- * Sample uniformly over rootshapes (not over bases), so a rare rootshape like
- * Flat Thumb Across (6 bases) appears as often as Tight Fist (82). Picks a
- * random rootshape, then a random base within it.
+ * Sample uniformly over rootshapes (not over handshapes), so a rare rootshape
+ * like Flat Thumb Across appears as often as Tight Fist. Picks a random
+ * rootshape, then a random handshape within it.
  */
-export function randomRootShapeBase(exclude?: string): string {
-  const roots = ROOT_SHAPES.map((r) => r.name).filter(
-    (name) => (BASES_BY_ROOT[name]?.length ?? 0) > 0,
+export function randomPracticeSymbol(exclude?: string): string {
+  const roots = ROOT_SHAPES.map((r) => r.swu).filter(
+    (swu) => (SYMBOLS_BY_ROOT[swu]?.length ?? 0) > 0,
   );
   const root = roots[Math.floor(Math.random() * roots.length)]!;
-  let pool = BASES_BY_ROOT[root]!;
-  if (exclude && pool.length > 1) pool = pool.filter((b) => b !== exclude);
+  let pool = SYMBOLS_BY_ROOT[root]!;
+  if (exclude && pool.length > 1) pool = pool.filter((s) => s !== exclude);
   return pool[Math.floor(Math.random() * pool.length)]!;
 }

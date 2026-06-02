@@ -1,31 +1,29 @@
 import { useEffect, useRef, useState } from "react";
 import { asset } from "../lib/asset";
 import { baseSymbolName } from "../lib/baseSymbolNames";
-import { handImageForKey } from "../lib/handImage";
+import { handImageForKey, symbolToKey } from "../lib/handImage";
 import {
-  baseSymbol,
   ROOT_SHAPES,
-  randomRootShapeBase,
-  rootShapeForBase,
+  randomPracticeSymbol,
+  rootNameFor,
 } from "../lib/rootShapes";
 
 type Difficulty = "easy" | "hard";
 
 type Round = {
-  base: string;
-  photo: string;
   symbol: string;
+  photo: string;
   name: string;
   answer: string;
 };
 
-function buildRound(base: string): Round {
+function buildRound(symbol: string): Round {
+  const key = symbolToKey(symbol);
   return {
-    base,
-    photo: handImageForKey(`S${base}00`) ?? "",
-    symbol: baseSymbol(base),
-    name: baseSymbolName(base) ?? "this handshape",
-    answer: rootShapeForBase(base) ?? ROOT_SHAPES[0]!.name,
+    symbol,
+    photo: (key && handImageForKey(key)) || "",
+    name: (key && baseSymbolName(key)) || "this handshape",
+    answer: rootNameFor(symbol) ?? ROOT_SHAPES[0]!.name,
   };
 }
 
@@ -35,13 +33,13 @@ export function RootShapePractice() {
   const [chosen, setChosen] = useState<string | null>(null);
   const [difficulty, setDifficulty] = useState<Difficulty>("easy");
 
-  function start(base: string) {
-    setRound(buildRound(base));
+  function start(symbol: string) {
+    setRound(buildRound(symbol));
     setChosen(null);
   }
 
   function open() {
-    start(randomRootShapeBase());
+    start(randomPracticeSymbol());
     dialogRef.current?.showModal();
   }
 
@@ -156,7 +154,7 @@ export function RootShapePractice() {
               <button
                 type="button"
                 className="practice-next"
-                onClick={() => start(randomRootShapeBase(round.base))}
+                onClick={() => start(randomPracticeSymbol(round.symbol))}
               >
                 {answered ? "Next hand →" : "Skip →"}
               </button>
