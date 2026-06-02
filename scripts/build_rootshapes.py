@@ -188,7 +188,11 @@ SOURCE_LABEL = {"convolution": "convolution (no name keyword)",
 
 
 def write_report(bases, names, debug, root_keys, eligible):
-    """One flat table of every hand base, sorted by id, for manual review."""
+    """One flat table of every hand base, with a per-row rootshape selector.
+
+    Choices persist to localStorage; an Export button logs/copies the full
+    {base: rootshape} object reflecting the current selections.
+    """
     glyph_cache = {}
 
     def glyph(key):
@@ -196,36 +200,96 @@ def write_report(bases, names, debug, root_keys, eligible):
             glyph_cache[key] = glyph_data_uri(key)
         return glyph_cache[key]
 
+    predicted = {}
     rows = []
     for b in bases:
         d = debug[b]
         src = d["source"]
         pred = d["conv"] if src in ("conv>name", "convolution") else d["name_root"]
+        predicted[b] = pred
         note = "" if b in eligible else " <small>· not in game</small>"
+        options = "".join(
+            f'<option{" selected" if r == pred else ""}>{r}</option>'
+            for r in ROOT_NAMES
+        )
         rows.append(
-            f'<tr style="background:{SOURCE_COLOR[src]}">'
+            f'<tr data-base="{b}" style="background:{SOURCE_COLOR[src]}">'
             f'<td><img src="{glyph(f"S{b}00")}" height="56"></td>'
             f'<td><code>{b}</code></td>'
             f'<td>{names[b]}{note}</td>'
             f'<td><img src="{glyph(root_keys[pred])}" height="40"> <b>{pred}</b></td>'
             f'<td>{SOURCE_LABEL[src]} · conv {d["conv"]} ({d["scores"][d["conv"]]})</td>'
-            f'<td></td></tr>'
+            f'<td><select data-base="{b}">{options}</select></td></tr>'
         )
+
+    script = """
+const PREDICTED = %s;
+const KEY = "rootshapeChoices";
+const stored = JSON.parse(localStorage.getItem(KEY) || "{}");
+const choices = {};
+for (const b in PREDICTED) choices[b] = stored[b] || PREDICTED[b];
+
+function refreshRow(b) {
+  const row = document.querySelector(`tr[data-base="${b}"]`);
+  row.classList.toggle("changed", choices[b] !== PREDICTED[b]);
+}
+function save() { localStorage.setItem(KEY, JSON.stringify(choices)); }
+function updateCount() {
+  const n = Object.keys(choices).filter(b => choices[b] !== PREDICTED[b]).length;
+  document.getElementById("count").textContent = n;
+}
+
+for (const sel of document.querySelectorAll("select[data-base]")) {
+  const b = sel.dataset.base;
+  sel.value = choices[b];
+  refreshRow(b);
+  sel.addEventListener("change", () => {
+    choices[b] = sel.value; save(); refreshRow(b); updateCount();
+  });
+}
+updateCount();
+
+document.getElementById("export").addEventListener("click", async () => {
+  const json = JSON.stringify(choices, null, 2);
+  console.log(json);
+  try { await navigator.clipboard.writeText(json); } catch (e) {}
+  document.getElementById("out").textContent = json;
+});
+document.getElementById("reset").addEventListener("click", () => {
+  if (!confirm("Reset all selections to the predictions?")) return;
+  localStorage.removeItem(KEY);
+  for (const b in PREDICTED) choices[b] = PREDICTED[b];
+  for (const sel of document.querySelectorAll("select[data-base]")) {
+    sel.value = choices[sel.dataset.base]; refreshRow(sel.dataset.base);
+  }
+  updateCount();
+});
+""" % json.dumps(predicted, ensure_ascii=False)
 
     html = (
         "<!doctype html><meta charset=utf-8><title>Rootshape review</title>"
         "<style>body{font:14px system-ui;margin:2rem;max-width:1150px}"
         "table{border-collapse:collapse;width:100%}"
         "td,th{border:1px solid #ddd;padding:6px 10px;text-align:left;vertical-align:middle}"
-        "th{background:#f2f2f2;position:sticky;top:0}code{font-size:1.15em}"
-        "small{color:#999}</style>"
+        "th{background:#f2f2f2;position:sticky;top:0;z-index:1}code{font-size:1.15em}"
+        "small{color:#999}tr.changed{outline:3px solid #d33;outline-offset:-3px}"
+        "tr.changed td:nth-child(6){font-weight:700}"
+        ".bar{position:sticky;top:0;background:#fff;padding:.75rem 0;z-index:2;"
+        "border-bottom:1px solid #ddd;margin-bottom:1rem}"
+        ".bar button{font:inherit;font-weight:600;padding:.4em 1em;margin-right:.5em;cursor:pointer}"
+        "#out{white-space:pre-wrap;background:#f6f8fa;border:1px solid #ddd;border-radius:6px;"
+        "padding:1rem;max-height:240px;overflow:auto;margin-top:.5rem}select{font:inherit}</style>"
         f"<h1>Rootshape review — all {len(bases)} hand bases</h1>"
-        "<p>Predicted rootshape is a suggestion; the last column is yours to mark "
-        "corrections. Row color = how it was predicted (yellow convolution-only, "
-        "blue name, green agree, red convolution-over-name).</p>"
+        '<div class="bar"><button id="export">Export (log + copy)</button>'
+        '<button id="reset">Reset to predictions</button>'
+        '<span><b id="count">0</b> overrides</span><div id="out"></div></div>'
+        "<p>Pick the correct rootshape per row; changes save automatically and "
+        "survive refresh. Overridden rows get a red outline. Row color = how it was "
+        "predicted (yellow convolution-only, blue name, green agree, red conv-over-name).</p>"
         "<table><tr><th>Shape</th><th>Id</th><th>Name</th>"
         "<th>Predicted</th><th>How</th><th>Correct?</th></tr>"
         + "".join(rows) + "</table>"
+        f"<script>{script}</script>"
     )
     REPORT_OUT.write_text(html)
 
