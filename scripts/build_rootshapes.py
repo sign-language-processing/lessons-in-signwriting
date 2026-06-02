@@ -62,6 +62,7 @@ ROOT_DEFS = [
     ("Angle", "S18500"),
     ("Flat Thumb Across", "S14700"),
     ("Flat", "S15a00"),
+    ("Flat Heel", "S15c10"),
 ]
 ROOT_NAMES = [r[0] for r in ROOT_DEFS]
 
@@ -79,6 +80,7 @@ NAME_KEYWORDS = [
     ("curlicue", "Curlicue"),
     ("hook", "Angle"),
     ("claw", "Hinge"),
+    ("heel", "Flat Heel"),
     ("fist", "Tight Fist"),
 ]
 KEYWORD_MAP = dict(NAME_KEYWORDS)

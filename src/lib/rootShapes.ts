@@ -14,6 +14,7 @@ export const ROOT_SHAPES: RootShape[] = [
   { name: "Angle", swu: "񃇡" },
   { name: "Flat Thumb Across", swu: "񁪡" },
   { name: "Flat", swu: "񂇁" },
+  { name: "Flat Heel", swu: "񂊑" },
 ];
 
 const BASES = rootshapeData.bases as Record<string, string>;
