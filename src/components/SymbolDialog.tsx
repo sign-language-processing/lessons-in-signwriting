@@ -104,9 +104,32 @@ export function SymbolDialog({ openKey, onClose }: SymbolDialogProps) {
             ×
           </button>
         </form>
-        <h2 id="symbol-dialog-title" style={{ marginTop: 0 }}>
-          Symbol variants
-        </h2>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "0.75rem",
+            marginRight: "2rem",
+          }}
+        >
+          <h2 id="symbol-dialog-title" style={{ margin: 0 }}>
+            Symbol variants
+          </h2>
+          {openKey && isPracticeBase(openKey.slice(1, 4)) && (
+            <button
+              type="button"
+              className="practice-launch__button"
+              onClick={() => {
+                const base = openKey.slice(1, 4);
+                onClose();
+                practice.open(base);
+              }}
+            >
+              🤚 Practice this handshape
+            </button>
+          )}
+        </div>
         {openKey && (
           <p
             style={{
@@ -134,19 +157,6 @@ export function SymbolDialog({ openKey, onClose }: SymbolDialogProps) {
               </>
             )}
           </p>
-        )}
-        {openKey && isPracticeBase(openKey.slice(1, 4)) && (
-          <button
-            type="button"
-            className="practice-launch__button"
-            onClick={() => {
-              const base = openKey.slice(1, 4);
-              onClose();
-              practice.open(base);
-            }}
-          >
-            🤚 Practice this handshape
-          </button>
         )}
         <div
           style={{
