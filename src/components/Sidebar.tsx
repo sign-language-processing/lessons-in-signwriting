@@ -1,5 +1,4 @@
 import { CHAPTERS } from "../chapters/registry";
-import { PlanButton } from "./PlanButton";
 
 export function Sidebar() {
   return (
@@ -12,7 +11,6 @@ export function Sidebar() {
           </li>
         ))}
       </ol>
-      <PlanButton />
     </nav>
   );
 }
