@@ -602,5 +602,186 @@
       "Lado-Atrás-Lado — Rotación Doble",
       "Lado-Atrás-Lado — Rotación Alterna"
     ]
+  },
+  "ch6": {
+    "wallHeading": "Plano de la Pared",
+    "wallIntro": "El Plano de la Pared es paralelo a la pared frontal.",
+    "floorHeading": "Plano del Suelo",
+    "floorIntro": "El Plano del Suelo es paralelo al suelo.",
+    "generalHeading": "La Punta de Flecha General Escribe Trayectorias Superpuestas",
+    "gen1": "Cuando una flecha de movimiento derecha se escribe ENCIMA de una flecha de movimiento izquierda, las dos trayectorias de movimiento se superponen. Las dos flechas se fusionan. La punta de flecha oscura y la punta de flecha clara se convierten en una sola, llamada Punta de Flecha General.",
+    "gen2": "A menudo las manos están en contacto al moverse en trayectorias superpuestas, pero NO es SOLO para manos en contacto. Por ejemplo, dos manos pueden estar paralelas, lado a lado, sin contacto, y luego ambas se mueven hacia el mismo lado, de modo que la flecha derecha se escribe encima de la flecha izquierda. Esto crea una Punta de Flecha General.",
+    "upDownHeading": "Movimiento Arriba-Abajo",
+    "upDownIntro": "El Movimiento Arriba-Abajo es paralelo a la Pared Frontal o a tu pecho. Se escribe con flechas de doble tallo. El movimiento con la mano derecha usa una punta de flecha oscura; el movimiento con la mano izquierda usa una punta de flecha clara. <strong>¡Recuerda!</strong> El SignWriting se escribe desde el punto de vista expresivo, así que es más correcto verlo desde atrás.",
+    "fwBackHeading": "Movimiento Adelante-Atrás",
+    "fwBackIntro": "El Movimiento Adelante-Atrás es paralelo al Suelo o a la superficie de una mesa. Se escribe con flechas de tallo simple. El movimiento con la mano derecha usa una punta de flecha oscura; el movimiento con la mano izquierda usa una punta de flecha clara.",
+    "sideHeading": "Movimiento hacia el Lado",
+    "sideIntro": "El movimiento hacia el lado puede verse desde la Vista Frontal o la Vista Superior. Puede escribirse con flechas de doble tallo o de tallo simple.",
+    "upOrDownHeading": "Arriba o Abajo",
+    "upOrDownIntro": "Una flecha de doble tallo significa que el movimiento es recto hacia arriba o hacia abajo, paralelo a la pared frontal. El movimiento es plano respecto al frente de tu cuerpo.",
+    "fwOrBackHeading": "Adelante o Atrás",
+    "fwOrBackIntro": "Una flecha de tallo simple significa que el movimiento es hacia adelante o hacia atrás, paralelo al suelo. Estás mirando hacia abajo, sobre el movimiento.",
+    "upDownStraightHeading": "Movimiento Recto Arriba-Abajo",
+    "upDownStraightIntro": "El movimiento Arriba-Abajo es paralelo a la Pared Frontal. Se escribe con flechas de doble tallo.",
+    "examplesHeading": "Ejemplos",
+    "fwBackStraightHeading": "Movimiento Recto Adelante-Atrás",
+    "fwBackStraightIntro": "El movimiento Adelante-Atrás es paralelo al suelo. Se escribe con flechas de tallo simple.",
+    "fwBackArrowsHeading": "Flechas Rectas Adelante-Atrás",
+    "fwBackArrowsIntro": "Movimiento recto paralelo al suelo.",
+    "recapHeading": "Repaso Rápido",
+    "recap1": "Repasemos lo que ya hemos aprendido.",
+    "recap2": "Escribir el movimiento se basa en planos imaginarios que cortan el espacio. El plano paralelo a la pared frontal se llama Plano de la Pared. El Movimiento Arriba-Abajo es paralelo al Plano de la Pared. Se escribe con flechas de doble tallo.",
+    "recap3": "El plano paralelo al suelo se llama Plano del Suelo. El Movimiento Adelante-Atrás es paralelo al Plano del Suelo. Se escribe con flechas de tallo simple.",
+    "recap4": "Imagina un cohete que viaja recto hacia arriba. El Movimiento hacia Arriba se escribe con flechas de doble tallo.",
+    "recap5": "Imagina que conduces un coche. Piensa en la línea del centro del camino. El Movimiento hacia Adelante se escribe con flechas de tallo simple.",
+    "diagonalHeading": "El/Los Plano(s) Diagonal(es)",
+    "diag1": "El espacio también se divide por planos diagonales. El Plano Diagonal Superior comienza abajo, en tus pies, y se extiende hacia arriba hacia la pared frontal. Es a la vez hacia adelante y hacia arriba.",
+    "fwBackDiagHeading": "Diagonal hacia Adelante o hacia Atrás",
+    "diag2": "Una barra horizontal significa lejos de tu pecho. Un punto significa hacia tu pecho.",
+    "upFwDiagHeading": "Movimiento Diagonal Arriba-Adelante",
+    "upFwDiagIntro": "Imagina un avión despegando, viajando hacia el horizonte. El Movimiento Diagonal Arriba-Adelante se escribe con una flecha de doble tallo. Una línea horizontal, que representa el horizonte, cruza la línea del tallo.",
+    "downBackDiagHeading": "Movimiento Diagonal Abajo-Atrás",
+    "downBackDiagIntro": "Imagina un avión aterrizando, viajando hacia ti. El Movimiento Diagonal Abajo-Atrás se escribe con flechas de doble tallo. Un punto oscuro se escribe en el tallo de la flecha. El punto representa la nariz del avión cuando viene hacia ti.",
+    "confuseHeading": "No Confundas Estas Flechas",
+    "confuse": [
+      "Arriba",
+      "Diagonal Arriba-Adelante",
+      "Adelante",
+      "Abajo",
+      "Diagonal Abajo-Atrás",
+      "Atrás"
+    ],
+    "wallMoves": [
+      {
+        "name": "Plano de la Pared Recto",
+        "desc": "Movimiento desde el Codo"
+      },
+      {
+        "name": "Plano de la Pared Flexión",
+        "desc": "Movimiento desde la Muñeca"
+      },
+      {
+        "name": "Plano de la Pared Doble",
+        "desc": "Movimiento Pequeño y Rápido"
+      },
+      {
+        "name": "Plano de la Pared Asentimiento",
+        "desc": "Movimiento Pequeño y Rápido"
+      },
+      {
+        "name": "Plano de la Pared Cruz",
+        "desc": "Cruza hacia un Lado, Luego hacia el Otro"
+      },
+      {
+        "name": "Plano de la Pared Triple",
+        "desc": "Movimiento Pequeño y Rápido"
+      },
+      {
+        "name": "Plano de la Pared Asentimiento y Medio",
+        "desc": "Movimiento Pequeño y Rápido"
+      },
+      {
+        "name": "Plano de la Pared Tejado",
+        "desc": "Diagonal-Recto"
+      },
+      {
+        "name": "Plano de la Pared Esquina",
+        "desc": "Recto-Esquina"
+      },
+      {
+        "name": "Plano de la Pared Marca",
+        "desc": "Diagonal-Esquina-Recto"
+      },
+      {
+        "name": "Plano de la Pared Caja",
+        "desc": "Recto-Esquina-Recto"
+      },
+      {
+        "name": "Plano de la Pared Zigzag",
+        "desc": "Recto-Esquina-Diagonal"
+      },
+      {
+        "name": "Plano de la Pared Picos",
+        "desc": "Cimas de Montaña"
+      },
+      {
+        "name": "Plano de la Pared Torsión",
+        "desc": "Recto con Rotación"
+      },
+      {
+        "name": "Plano de la Pared Torsión Doble",
+        "desc": "Recto con Rotación"
+      },
+      {
+        "name": "Plano de la Pared Torsión con Sacudida",
+        "desc": "Recto con Rotación"
+      }
+    ],
+    "floorMoves": [
+      {
+        "name": "Plano del Suelo Recto",
+        "desc": "Movimiento desde el Codo"
+      },
+      {
+        "name": "Plano del Suelo Flexión",
+        "desc": "Movimiento desde la Muñeca"
+      },
+      {
+        "name": "Plano del Suelo Doble",
+        "desc": "Movimiento Pequeño y Rápido"
+      },
+      {
+        "name": "Plano del Suelo Asentimiento",
+        "desc": "Movimiento Pequeño y Rápido"
+      },
+      {
+        "name": "Plano del Suelo Cruz",
+        "desc": "Cruza hacia un Lado, Luego hacia el Otro"
+      },
+      {
+        "name": "Plano del Suelo Triple",
+        "desc": "Movimiento Pequeño y Rápido"
+      },
+      {
+        "name": "Plano del Suelo Asentimiento y Medio",
+        "desc": "Movimiento Pequeño y Rápido"
+      },
+      {
+        "name": "Plano del Suelo Curva del Camino",
+        "desc": "Diagonal Recto"
+      },
+      {
+        "name": "Plano del Suelo Esquina",
+        "desc": "Recto-Esquina"
+      },
+      {
+        "name": "Plano del Suelo Marca",
+        "desc": "Diagonal-Esquina-Recto"
+      },
+      {
+        "name": "Plano del Suelo Caja",
+        "desc": "Recto-Esquina-Recto"
+      },
+      {
+        "name": "Plano del Suelo Zigzag",
+        "desc": "Recto-Esquina-Diagonal"
+      },
+      {
+        "name": "Plano del Suelo Picos",
+        "desc": "Cimas de Montaña"
+      },
+      {
+        "name": "Plano del Suelo Torsión",
+        "desc": "Recto con Rotación"
+      },
+      {
+        "name": "Plano del Suelo Torsión Doble",
+        "desc": "Recto con Rotación"
+      },
+      {
+        "name": "Plano del Suelo Torsión con Sacudida",
+        "desc": "Recto con Rotación"
+      }
+    ]
   }
 }

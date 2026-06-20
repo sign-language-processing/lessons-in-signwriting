@@ -602,5 +602,186 @@
       "Lado-Trás-Lado — Rotação Dupla",
       "Lado-Trás-Lado — Rotação Alternada"
     ]
+  },
+  "ch6": {
+    "wallHeading": "Plano da Parede",
+    "wallIntro": "O Plano da Parede é paralelo à parede frontal.",
+    "floorHeading": "Plano do Chão",
+    "floorIntro": "O Plano do Chão é paralelo ao chão.",
+    "generalHeading": "A Ponta de Seta Geral Escreve Trajetórias Sobrepostas",
+    "gen1": "Quando uma seta de movimento da direita é escrita POR CIMA de uma seta de movimento da esquerda, as duas trajetórias de movimento se sobrepõem. As duas setas se fundem. A ponta de seta escura e a ponta de seta clara se tornam uma só, chamada de Ponta de Seta Geral.",
+    "gen2": "Muitas vezes as mãos estão em contato ao se moverem em trajetórias sobrepostas, mas isso NÃO é APENAS para mãos em contato. Por exemplo, duas mãos podem estar paralelas, lado a lado, sem contato, e então ambas se movem para o mesmo lado, de modo que a seta da direita seja escrita por cima da seta da esquerda. Isso cria uma Ponta de Seta Geral.",
+    "upDownHeading": "Movimento Cima-Baixo",
+    "upDownIntro": "O Movimento Cima-Baixo é paralelo à Parede Frontal ou ao seu peito. Ele é escrito com setas de haste dupla. O movimento com a mão direita usa uma ponta de seta escura; o movimento com a mão esquerda usa uma ponta de seta clara. <strong>Lembre-se!</strong> O SignWriting é escrito do ponto de vista expressivo, então é mais correto observá-lo por trás.",
+    "fwBackHeading": "Movimento Frente-Trás",
+    "fwBackIntro": "O Movimento Frente-Trás é paralelo ao Chão ou ao tampo de uma mesa. Ele é escrito com setas de haste simples. O movimento com a mão direita usa uma ponta de seta escura; o movimento com a mão esquerda usa uma ponta de seta clara.",
+    "sideHeading": "Movimento para o Lado",
+    "sideIntro": "O movimento para o lado pode ser visto tanto da Vista Frontal quanto da Vista Superior. Pode ser escrito com setas de haste dupla ou de haste simples.",
+    "upOrDownHeading": "Cima ou Baixo",
+    "upOrDownIntro": "Uma seta de haste dupla significa que o movimento é reto para cima ou para baixo, paralelo à parede frontal. O movimento é plano em relação à frente do seu corpo.",
+    "fwOrBackHeading": "Frente ou Trás",
+    "fwOrBackIntro": "Uma seta de haste simples significa que o movimento é para frente ou para trás, paralelo ao chão. Você está olhando de cima, sobre o movimento.",
+    "upDownStraightHeading": "Movimento Reto Cima-Baixo",
+    "upDownStraightIntro": "O movimento Cima-Baixo é paralelo à Parede Frontal. Ele é escrito com setas de haste dupla.",
+    "examplesHeading": "Exemplos",
+    "fwBackStraightHeading": "Movimento Reto Frente-Trás",
+    "fwBackStraightIntro": "O movimento Frente-Trás é paralelo ao chão. Ele é escrito com setas de haste simples.",
+    "fwBackArrowsHeading": "Setas Retas Frente-Trás",
+    "fwBackArrowsIntro": "Movimento reto paralelo ao chão.",
+    "recapHeading": "Revisão Rápida",
+    "recap1": "Vamos revisar o que já aprendemos.",
+    "recap2": "Escrever o movimento se baseia em planos imaginários que cortam o espaço. O plano paralelo à parede frontal é chamado de Plano da Parede. O Movimento Cima-Baixo é paralelo ao Plano da Parede. Ele é escrito com setas de haste dupla.",
+    "recap3": "O plano paralelo ao chão é chamado de Plano do Chão. O Movimento Frente-Trás é paralelo ao Plano do Chão. Ele é escrito com setas de haste simples.",
+    "recap4": "Imagine um foguete que viaja reto para cima. O Movimento para Cima é escrito com setas de haste dupla.",
+    "recap5": "Imagine dirigir um carro. Pense na linha no centro da estrada. O Movimento para Frente é escrito com setas de haste simples.",
+    "diagonalHeading": "O(s) Plano(s) Diagonal(is)",
+    "diag1": "O espaço também é dividido por planos diagonais. O Plano Diagonal Superior começa embaixo, nos seus pés, e se estende para cima em direção à parede frontal. Ele é ao mesmo tempo para frente e para cima.",
+    "fwBackDiagHeading": "Diagonal para Frente ou para Trás",
+    "diag2": "Uma barra horizontal significa para longe do seu peito. Um ponto significa em direção ao seu peito.",
+    "upFwDiagHeading": "Movimento Diagonal Cima-Frente",
+    "upFwDiagIntro": "Imagine um avião decolando, viajando em direção ao horizonte. O Movimento Diagonal Cima-Frente é escrito com uma seta de haste dupla. Uma linha horizontal, representando o horizonte, cruza a linha da haste.",
+    "downBackDiagHeading": "Movimento Diagonal Baixo-Trás",
+    "downBackDiagIntro": "Imagine um avião pousando, viajando em sua direção. O Movimento Diagonal Baixo-Trás é escrito com setas de haste dupla. Um ponto escuro é escrito na haste da seta. O ponto representa o nariz do avião conforme ele vem em sua direção.",
+    "confuseHeading": "Não Confunda Estas Setas",
+    "confuse": [
+      "Cima",
+      "Diagonal Cima-Frente",
+      "Frente",
+      "Baixo",
+      "Diagonal Baixo-Trás",
+      "Trás"
+    ],
+    "wallMoves": [
+      {
+        "name": "Plano da Parede Reto",
+        "desc": "Movimento a Partir do Cotovelo"
+      },
+      {
+        "name": "Plano da Parede Flexão",
+        "desc": "Movimento a Partir do Pulso"
+      },
+      {
+        "name": "Plano da Parede Duplo",
+        "desc": "Movimento Pequeno e Rápido"
+      },
+      {
+        "name": "Plano da Parede Aceno",
+        "desc": "Movimento Pequeno e Rápido"
+      },
+      {
+        "name": "Plano da Parede Cruz",
+        "desc": "Cruza para um Lado, Depois para o Outro"
+      },
+      {
+        "name": "Plano da Parede Triplo",
+        "desc": "Movimento Pequeno e Rápido"
+      },
+      {
+        "name": "Plano da Parede Aceno e Meio",
+        "desc": "Movimento Pequeno e Rápido"
+      },
+      {
+        "name": "Plano da Parede Telhado",
+        "desc": "Diagonal-Reto"
+      },
+      {
+        "name": "Plano da Parede Canto",
+        "desc": "Reto-Canto"
+      },
+      {
+        "name": "Plano da Parede Tique",
+        "desc": "Diagonal-Canto-Reto"
+      },
+      {
+        "name": "Plano da Parede Caixa",
+        "desc": "Reto-Canto-Reto"
+      },
+      {
+        "name": "Plano da Parede Ziguezague",
+        "desc": "Reto-Canto-Diagonal"
+      },
+      {
+        "name": "Plano da Parede Picos",
+        "desc": "Topos de Montanha"
+      },
+      {
+        "name": "Plano da Parede Torção",
+        "desc": "Reto com Rotação"
+      },
+      {
+        "name": "Plano da Parede Torção Dupla",
+        "desc": "Reto com Rotação"
+      },
+      {
+        "name": "Plano da Parede Torção com Tremor",
+        "desc": "Reto com Rotação"
+      }
+    ],
+    "floorMoves": [
+      {
+        "name": "Plano do Chão Reto",
+        "desc": "Movimento a Partir do Cotovelo"
+      },
+      {
+        "name": "Plano do Chão Flexão",
+        "desc": "Movimento a Partir do Pulso"
+      },
+      {
+        "name": "Plano do Chão Duplo",
+        "desc": "Movimento Pequeno e Rápido"
+      },
+      {
+        "name": "Plano do Chão Aceno",
+        "desc": "Movimento Pequeno e Rápido"
+      },
+      {
+        "name": "Plano do Chão Cruz",
+        "desc": "Cruza para um Lado, Depois para o Outro"
+      },
+      {
+        "name": "Plano do Chão Triplo",
+        "desc": "Movimento Pequeno e Rápido"
+      },
+      {
+        "name": "Plano do Chão Aceno e Meio",
+        "desc": "Movimento Pequeno e Rápido"
+      },
+      {
+        "name": "Plano do Chão Curva da Estrada",
+        "desc": "Diagonal Reto"
+      },
+      {
+        "name": "Plano do Chão Canto",
+        "desc": "Reto-Canto"
+      },
+      {
+        "name": "Plano do Chão Tique",
+        "desc": "Diagonal-Canto-Reto"
+      },
+      {
+        "name": "Plano do Chão Caixa",
+        "desc": "Reto-Canto-Reto"
+      },
+      {
+        "name": "Plano do Chão Ziguezague",
+        "desc": "Reto-Canto-Diagonal"
+      },
+      {
+        "name": "Plano do Chão Picos",
+        "desc": "Topos de Montanha"
+      },
+      {
+        "name": "Plano do Chão Torção",
+        "desc": "Reto com Rotação"
+      },
+      {
+        "name": "Plano do Chão Torção Dupla",
+        "desc": "Reto com Rotação"
+      },
+      {
+        "name": "Plano do Chão Torção com Tremor",
+        "desc": "Reto com Rotação"
+      }
+    ]
   }
 }
