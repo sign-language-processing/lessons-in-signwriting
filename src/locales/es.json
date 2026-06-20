@@ -120,5 +120,47 @@
     "positionsHeading": "Posiciones de la Cabeza",
     "faceLinesHeading": "Líneas de Dirección del Rostro",
     "faceLinesIntro": "Esto no es movimiento — es una posición estable. La barra horizontal son los hombros; el tallo marca la dirección hacia donde apuntan la nariz y el rostro, en relación con los hombros. Un símbolo escribe la nariz apuntando hacia arriba o hacia abajo; el otro añade una inclinación de la cabeza. Haz clic para ver todas las posiciones."
+  },
+  "ch14": {
+    "punctuation": [
+      {
+        "term": "PAUSA",
+        "english": "similar a la coma en español"
+      },
+      {
+        "term": "FIN DE ORACIÓN",
+        "english": "similar al punto en español"
+      },
+      {
+        "term": "PAUSA ANTES DEL FIN DE LA FRASE",
+        "english": "similar al punto y coma en español"
+      },
+      {
+        "term": "PAUSA INTERROGATIVA ANTES DEL FIN DE LA FRASE",
+        "english": "similar al signo de interrogación en español",
+        "detail": "Cuando una oración o frase termina en una pregunta, hay una leve pausa al final. El símbolo de punto y coma se usa para escribir esa pausa al final, pero debe combinarse con signos que escriben las Expresiones Faciales y los Movimientos de Cabeza gramaticalmente necesarios que ocurren en las lenguas de señas al hacer preguntas, incluyendo Cabeza hacia Adelante y Cejas hacia Arriba o hacia Abajo."
+      },
+      {
+        "term": "PAUSA ANTES DE ENUMERAR ELEMENTOS",
+        "english": "similar a los dos puntos en español",
+        "detail": "Se usa en medio de una oración, marcando una nueva frase que enumera los elementos 1, 2, 3 y así sucesivamente."
+      },
+      {
+        "term": "PAUSA ANTES Y DESPUÉS DE UNA SUBFRASE",
+        "english": "similar a los paréntesis en español",
+        "detail": "Marca un segundo pensamiento dentro de una oración, comenzando con el símbolo curvado hacia arriba y terminando en el paréntesis curvado hacia abajo."
+      }
+    ],
+    "dynamicsHeading": "Dinámica de la Puntuación",
+    "dynamicsSubtitle": "¡Oraciones en lengua de señas con sentimiento!",
+    "dyn1": "El SignWriting, como otros sistemas de escritura, tiene puntuación. Una línea oscura al final de una oración en SignWriting equivale al punto en español. Marca el final de la oración o frase. Dos líneas representan una pausa, o coma.",
+    "dyn2": "El SignWriting puede añadir más sentimiento a las oraciones agregando Símbolos de Dinámica a la puntuación.",
+    "dyn3": "El Símbolo de Rápido representa una oración ejecutada rápidamente, con velocidad. Es similar al signo de exclamación en español.",
+    "dyn4": "Los Símbolos de Dinámica Lento, Suave, Tenso y Relajado también pueden colocarse cerca de los Símbolos de Puntuación para dar la sensación de oraciones lentas, suaves, tensas o relajadas.",
+    "readingHeading": "Ejemplos de Lectura",
+    "readingIntro": "Puntuación en contexto, escrita en columnas verticales de SignWriting. Las líneas de Punto y Pausa cierran cada pensamiento; las anotaciones marcan las Expresiones Faciales, los Movimientos de Cabeza y la Dinámica que transmiten el significado.",
+    "cap1": "Traducción: Escribir ASL desde la perspectiva Sorda.",
+    "cap2": "Traducción: ¿Dónde está la casa?",
+    "cap3": "Traducción: El Osito pregunta “¿Quién eres?” Ricitos de Oro vio a los osos, se asustó, salió disparada de la casa y corrió todo el camino a casa."
   }
 }

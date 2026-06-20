@@ -120,5 +120,47 @@
     "positionsHeading": "Head Positions",
     "faceLinesHeading": "Face Direction Lines",
     "faceLinesIntro": "This is not movement — it is a stable position. The horizontal bar is the shoulders; the stem marks the direction the nose and face point, relating to the shoulders. One symbol writes the nose pointing up or down; the other adds a head tilt. Click to see every position."
+  },
+  "ch14": {
+    "punctuation": [
+      {
+        "term": "PAUSE",
+        "english": "similar to a Comma in English"
+      },
+      {
+        "term": "END OF SENTENCE",
+        "english": "similar to a Period in English"
+      },
+      {
+        "term": "PAUSE BEFORE END OF PHRASE",
+        "english": "similar to a Semi-Colon in English"
+      },
+      {
+        "term": "QUESTIONING PAUSE BEFORE END OF PHRASE",
+        "english": "similar to a Question Mark in English",
+        "detail": "When a sentence or phrase ends in a question, there is a slight pause at the end. The semi-colon symbol is used to write that pause at the end, but it must be combined with signs that write the grammatically necessary Facial Expressions and Head Movements that occur in sign languages when asking questions, including Head Forward and Eyebrows Up or Down."
+      },
+      {
+        "term": "PAUSE BEFORE LISTING ITEMS",
+        "english": "similar to a Colon in English",
+        "detail": "This is used in the middle of a sentence, marking a new phrase that lists items 1, 2, 3 and so on."
+      },
+      {
+        "term": "PAUSE BEFORE & AFTER A SUB-PHRASE",
+        "english": "similar to Parentheses in English",
+        "detail": "Marks a second thought inside a sentence, starting with the curved-up symbol and ending in the curved-down parentheses."
+      }
+    ],
+    "dynamicsHeading": "Punctuation Dynamics",
+    "dynamicsSubtitle": "Sign Language sentences with feeling!",
+    "dyn1": "SignWriting, like other writing systems, has punctuation. A dark line at the end of a SignWriting sentence is the equivalent to a period in English. It marks the end of the sentence or phrase. Two lines represent a pause, or comma.",
+    "dyn2": "SignWriting can add more feeling to sentences by adding Dynamics Symbols to the Punctuation.",
+    "dyn3": "The Fast Symbol represents a sentence executed quickly, with speed. This is similar to an Exclamation Point in English.",
+    "dyn4": "Slow, Smooth, Tense and Relaxed Dynamic Symbols can also be placed near Punctuation Symbols to give the feeling of slow, smooth, tense or relaxed sentences.",
+    "readingHeading": "Reading Examples",
+    "readingIntro": "Punctuation in context, written in vertical SignWriting columns. The Period and Pause lines close each thought; the annotations mark the Facial Expressions, Head Movements and Dynamics that carry the meaning.",
+    "cap1": "English Translation: Writing ASL from the Deaf perspective.",
+    "cap2": "English Translation: Where is the house?",
+    "cap3": "English Translation: Baby Bear asks “Who are you?” Goldilocks saw the bears, became frightened, shot out of the house, and ran all the way home."
   }
 }

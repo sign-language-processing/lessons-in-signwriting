@@ -120,5 +120,47 @@
     "positionsHeading": "Posições da Cabeça",
     "faceLinesHeading": "Linhas de Direção do Rosto",
     "faceLinesIntro": "Isto não é movimento — é uma posição estável. A barra horizontal são os ombros; a haste marca a direção para onde o nariz e o rosto apontam, em relação aos ombros. Um símbolo escreve o nariz apontando para cima ou para baixo; o outro acrescenta uma inclinação da cabeça. Clique para ver todas as posições."
+  },
+  "ch14": {
+    "punctuation": [
+      {
+        "term": "PAUSA",
+        "english": "semelhante à vírgula em português"
+      },
+      {
+        "term": "FIM DE FRASE",
+        "english": "semelhante ao ponto final em português"
+      },
+      {
+        "term": "PAUSA ANTES DO FIM DA ORAÇÃO",
+        "english": "semelhante ao ponto e vírgula em português"
+      },
+      {
+        "term": "PAUSA INTERROGATIVA ANTES DO FIM DA ORAÇÃO",
+        "english": "semelhante ao ponto de interrogação em português",
+        "detail": "Quando uma frase ou oração termina com uma pergunta, há uma leve pausa no final. O símbolo de ponto e vírgula é usado para escrever essa pausa no final, mas deve ser combinado com sinais que escrevem as Expressões Faciais e os Movimentos de Cabeça gramaticalmente necessários que ocorrem nas línguas de sinais ao fazer perguntas, incluindo Cabeça para Frente e Sobrancelhas para Cima ou para Baixo."
+      },
+      {
+        "term": "PAUSA ANTES DE LISTAR ITENS",
+        "english": "semelhante aos dois-pontos em português",
+        "detail": "Usado no meio de uma frase, marcando uma nova oração que lista os itens 1, 2, 3 e assim por diante."
+      },
+      {
+        "term": "PAUSA ANTES E DEPOIS DE UMA SUB-ORAÇÃO",
+        "english": "semelhante aos parênteses em português",
+        "detail": "Marca um segundo pensamento dentro de uma frase, começando com o símbolo curvado para cima e terminando no parêntese curvado para baixo."
+      }
+    ],
+    "dynamicsHeading": "Dinâmica da Pontuação",
+    "dynamicsSubtitle": "Frases em língua de sinais com sentimento!",
+    "dyn1": "O SignWriting, como outros sistemas de escrita, tem pontuação. Uma linha escura no fim de uma frase em SignWriting equivale ao ponto final em português. Ela marca o fim da frase ou oração. Duas linhas representam uma pausa, ou vírgula.",
+    "dyn2": "O SignWriting pode acrescentar mais sentimento às frases adicionando Símbolos de Dinâmica à pontuação.",
+    "dyn3": "O Símbolo de Rápido representa uma frase executada rapidamente, com velocidade. É semelhante ao ponto de exclamação em português.",
+    "dyn4": "Os Símbolos de Dinâmica Lento, Suave, Tenso e Relaxado também podem ser colocados perto dos Símbolos de Pontuação para dar a sensação de frases lentas, suaves, tensas ou relaxadas.",
+    "readingHeading": "Exemplos de Leitura",
+    "readingIntro": "Pontuação em contexto, escrita em colunas verticais de SignWriting. As linhas de Ponto Final e Pausa encerram cada pensamento; as anotações marcam as Expressões Faciais, os Movimentos de Cabeça e a Dinâmica que carregam o significado.",
+    "cap1": "Tradução: Escrevendo ASL a partir da perspectiva Surda.",
+    "cap2": "Tradução: Onde fica a casa?",
+    "cap3": "Tradução: O Ursinho pergunta “Quem é você?” Cachinhos Dourados viu os ursos, ficou assustada, disparou para fora da casa e correu todo o caminho até em casa."
   }
 }
