@@ -32,7 +32,10 @@ void i18n
       lookupLocalStorage: "lang",
     },
     interpolation: { escapeValue: false },
-    react: { useSuspense: false },
+    react: {
+      useSuspense: false,
+      transKeepBasicHtmlNodesFor: ["br", "strong", "i", "p", "em"],
+    },
   });
 
 const syncHtmlLang = (lng: string) => {
