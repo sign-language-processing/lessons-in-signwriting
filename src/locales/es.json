@@ -296,5 +296,76 @@
       "36b": "Cabello",
       "36c": "Emocionado"
     }
+  },
+  "ch13": {
+    "caption": "Los símbolos de dinámica marcan la velocidad, el tiempo y la calidad del movimiento, las configuraciones de mano, los rostros y frases enteras.",
+    "dynSymbolsHeading": "Símbolos de Dinámica",
+    "categories": [
+      "La <strong>Dinámica de Movimiento</strong> son pequeños símbolos colocados cerca de las flechas de movimiento. Indican un movimiento rápido, lento, suave, tenso, relajado, simultáneo, alterno y alterno-desigual.",
+      "La <strong>Dinámica de las Configuraciones de Mano</strong> marca <strong>clasificadores</strong>. Marca una mano que se mantiene en un lugar durante mucho tiempo.",
+      "La <strong>Dinámica Facial</strong> muestra los músculos faciales tensos o relajados. El Símbolo de Tensión se usa para los labios que se aprietan, para las mejillas elevadas y para los ojos apretados.",
+      "La <strong>Dinámica de la Puntuación</strong> muestra la velocidad, el tiempo y la calidad de frases y oraciones enteras.",
+      "La <strong>Dinámica de Unidad</strong> marca la influencia de un símbolo sobre todo un grupo de signos. La Línea de Conexión de Unidad se usa para mostrar una expresión facial que influye en varios signos."
+    ],
+    "movementHeading": "Dinámica de Movimiento",
+    "movement": [
+      {
+        "title": "Línea Simultánea",
+        "body": "Ambas manos se mueven al mismo tiempo."
+      },
+      {
+        "title": "Líneas Alternas",
+        "body": "La mano derecha se mueve en una dirección, mientras la izquierda se mueve simultáneamente en la dirección opuesta."
+      },
+      {
+        "title": "Alternancia Desigual — Una se Mueve Mientras la Otra Está Quieta",
+        "body": "La mano derecha se mueve mientras la izquierda permanece quieta. Luego la izquierda se mueve mientras la derecha permanece quieta."
+      },
+      {
+        "title": "Movimiento Lento"
+      },
+      {
+        "title": "Movimiento Suave"
+      },
+      {
+        "title": "Movimiento Rápido"
+      },
+      {
+        "title": "Movimiento Rápido con Énfasis"
+      },
+      {
+        "title": "Movimiento Tenso"
+      },
+      {
+        "title": "Movimiento Tenso con Énfasis"
+      },
+      {
+        "title": "Movimiento Relajado"
+      },
+      {
+        "title": "Movimiento Relajado con Énfasis"
+      }
+    ],
+    "classifiersHeading": "Dinámica de las Configuraciones de Mano — Escribir Clasificadores",
+    "cl1": "Los <strong>clasificadores</strong> se escriben con la configuración de mano, más un <strong>Marcador de Clasificador</strong>. El Marcador de Clasificador es un Símbolo de Tensión. Se coloca debajo de la configuración de mano.",
+    "cl2": "En esta oración, Ricitos de Oro ve un tazón de avena. El tazón se establece en el espacio mediante una sensación de tensión, un poco como la sensación de colocar algo sobre una mesa. Ancla la imagen visual de un tazón en el espacio. El Símbolo de Tensión marca esa sensación. Siempre se coloca debajo de las configuraciones de mano.",
+    "cl3": "Una vez establecido el clasificador, una mano continúa marcándolo, mantenida en la misma posición, mientras la otra mano hace otros signos. El Símbolo de Tensión permanece debajo de la mano que <strong>marca el clasificador</strong>.",
+    "cl4": "Ricitos de Oro está hablando de la avena. Dice que ve el tazón y luego come la avena de él. ¡Pero la avena está demasiado <strong>caliente</strong>!!",
+    "facialHeading": "Dinámica Facial Relacionada con la Dinámica de las Configuraciones de Mano",
+    "fac1": "Las <strong>expresiones faciales</strong> son esenciales para escribir historias y literatura en lengua de señas. Marcan la gramática y el énfasis. El símbolo de Labios Tensos muestra la dinámica de los labios al tensarse cuando la mano se establece en el espacio mediante un clasificador. La tensión en los labios y cerca de las manos suele escribirse en conjunto.",
+    "fac2": "<strong>Abajo:</strong> El clasificador de \"cama\" en la Lengua de Señas Americana se escribe con un Símbolo de Tensión debajo de la configuración de mano para marcar el clasificador. Al mismo tiempo, los labios también se tensan, dando la sensación de \"anclar el clasificador\" en el espacio.",
+    "bedPlacements": [
+      "Esta cama se coloca del lado izquierdo. Se establece en el espacio izquierdo, a la izquierda de la expresión facial. Los labios se tensan al colocar el clasificador en el espacio.",
+      "Esta cama se coloca en el centro. Se establece en el espacio central, directamente debajo de la expresión facial. Los labios se tensan al colocar el clasificador en el espacio.",
+      "Esta cama se coloca del lado derecho. Se establece en el espacio derecho, a la derecha de la expresión facial. Los labios se tensan al colocar el clasificador en el espacio."
+    ],
+    "bedComplete": "El clasificador de \"cama\", por sí solo, es un signo completo en la Lengua de Señas Americana:",
+    "unitHeading": "Dinámica de Unidad — Líneas de Conexión de Unidad",
+    "u1": "La influencia se escribe con una Línea de Conexión de Unidad.",
+    "u2": "La Línea de Conexión de Unidad es útil para los investigadores de lengua de señas. Se usa para mostrar la influencia de una expresión facial sobre un grupo de signos.",
+    "u3": "Cuando un símbolo influye en un grupo de símbolos o signos, el símbolo que influye en el grupo se escribe primero. Luego se escribe una línea, como un corchete, que conecta el símbolo con el grupo al que influye.",
+    "u4": "Cuando el SignWriting se escribe verticalmente, la Línea de Conexión de Unidad se escribe al lado de la columna vertical, como se muestra aquí. La Línea de Unidad es gris o más clara que los signos.",
+    "u5": "En España, la Línea de Conexión de Unidad se usa en la literatura horizontal de SignWriting. Al escribir horizontalmente, la Línea de Conexión de Unidad se escribe debajo o encima de la escritura.",
+    "u6": "En la Escritura de Danza de Sutton (Sutton DanceWriting), la Línea de Conexión de Unidad se usa con frecuencia para mostrar la influencia de un símbolo de movimiento sobre un grupo de otros símbolos. En el SignWriting, rara vez se usa en el día a día."
   }
 }

@@ -296,5 +296,76 @@
       "36b": "Cabelo",
       "36c": "Empolgado"
     }
+  },
+  "ch13": {
+    "caption": "Os símbolos de dinâmica marcam a velocidade, o tempo e a qualidade do movimento, das configurações de mão, dos rostos e de frases inteiras.",
+    "dynSymbolsHeading": "Símbolos de Dinâmica",
+    "categories": [
+      "A <strong>Dinâmica de Movimento</strong> são pequenos símbolos colocados perto das setas de movimento. Eles indicam movimento rápido, lento, suave, tenso, relaxado, simultâneo, alternado e alternado-desigual.",
+      "A <strong>Dinâmica das Configurações de Mão</strong> marca <strong>classificadores</strong>. Marca uma mão mantida em um lugar por muito tempo.",
+      "A <strong>Dinâmica Facial</strong> mostra os músculos faciais tensos ou relaxados. O Símbolo de Tensão é usado para lábios que se comprimem, para bochechas elevadas e para olhos apertados.",
+      "A <strong>Dinâmica da Pontuação</strong> mostra a velocidade, o tempo e a qualidade de frases e orações inteiras.",
+      "A <strong>Dinâmica de Unidade</strong> marca a influência de um símbolo sobre todo um grupo de sinais. A Linha de Conexão de Unidade é usada para mostrar uma expressão facial influenciando vários sinais."
+    ],
+    "movementHeading": "Dinâmica de Movimento",
+    "movement": [
+      {
+        "title": "Linha Simultânea",
+        "body": "Ambas as mãos se movem ao mesmo tempo."
+      },
+      {
+        "title": "Linhas Alternadas",
+        "body": "A mão direita se move em uma direção, enquanto a esquerda se move simultaneamente na direção oposta."
+      },
+      {
+        "title": "Alternância Desigual — Uma se Move Enquanto a Outra Fica Parada",
+        "body": "A mão direita se move enquanto a esquerda permanece parada. Depois a esquerda se move enquanto a direita permanece parada."
+      },
+      {
+        "title": "Movimento Lento"
+      },
+      {
+        "title": "Movimento Suave"
+      },
+      {
+        "title": "Movimento Rápido"
+      },
+      {
+        "title": "Movimento Rápido com Ênfase"
+      },
+      {
+        "title": "Movimento Tenso"
+      },
+      {
+        "title": "Movimento Tenso com Ênfase"
+      },
+      {
+        "title": "Movimento Relaxado"
+      },
+      {
+        "title": "Movimento Relaxado com Ênfase"
+      }
+    ],
+    "classifiersHeading": "Dinâmica das Configurações de Mão — Escrevendo Classificadores",
+    "cl1": "Os <strong>classificadores</strong> são escritos com a configuração de mão, mais um <strong>Marcador de Classificador</strong>. O Marcador de Classificador é um Símbolo de Tensão. Ele é colocado sob a configuração de mão.",
+    "cl2": "Nesta frase, Cachinhos Dourados vê uma tigela de mingau. A tigela é estabelecida no espaço por uma sensação de tensão, um pouco como a sensação de colocar algo sobre uma mesa. Isso ancora a imagem visual de uma tigela no espaço. O Símbolo de Tensão marca essa sensação. Ele é sempre colocado sob as configurações de mão.",
+    "cl3": "Uma vez estabelecido o classificador, uma mão continua a marcá-lo, mantida na mesma posição, enquanto a outra mão faz outros sinais. O Símbolo de Tensão permanece sob a mão que <strong>marca o classificador</strong>.",
+    "cl4": "Cachinhos Dourados está falando sobre o mingau. Ela diz que vê a tigela e depois come o mingau dela. Mas o mingau está <strong>quente</strong> demais!!",
+    "facialHeading": "Dinâmica Facial Relacionada à Dinâmica das Configurações de Mão",
+    "fac1": "As <strong>expressões faciais</strong> são essenciais para escrever histórias e literatura em língua de sinais. Elas marcam a gramática e a ênfase. O símbolo de Lábios Tensos mostra a dinâmica dos lábios se contraindo conforme a mão é estabelecida no espaço por um classificador. A tensão nos lábios e perto das mãos é frequentemente escrita em conjunto.",
+    "fac2": "<strong>Abaixo:</strong> O classificador de \"cama\" na Língua de Sinais Americana é escrito com um Símbolo de Tensão sob a configuração de mão para marcar o classificador. Ao mesmo tempo, os lábios também se contraem, dando a sensação de \"ancorar o classificador\" no espaço.",
+    "bedPlacements": [
+      "Esta cama é colocada do lado esquerdo. Ela é estabelecida no espaço esquerdo, à esquerda da expressão facial. Os lábios se contraem conforme o classificador é colocado no espaço.",
+      "Esta cama é colocada no centro. Ela é estabelecida no espaço central, diretamente abaixo da expressão facial. Os lábios se contraem conforme o classificador é colocado no espaço.",
+      "Esta cama é colocada do lado direito. Ela é estabelecida no espaço direito, à direita da expressão facial. Os lábios se contraem conforme o classificador é colocado no espaço."
+    ],
+    "bedComplete": "O classificador de \"cama\", sozinho, é um sinal completo na Língua de Sinais Americana:",
+    "unitHeading": "Dinâmica de Unidade — Linhas de Conexão de Unidade",
+    "u1": "A influência é escrita com uma Linha de Conexão de Unidade.",
+    "u2": "A Linha de Conexão de Unidade é útil para pesquisadores de língua de sinais. Ela é usada para mostrar a influência de uma expressão facial sobre um grupo de sinais.",
+    "u3": "Quando um símbolo influencia um grupo de símbolos ou sinais, o símbolo que influencia o grupo é escrito primeiro. Depois, escreve-se uma linha, como um colchete, conectando o símbolo ao grupo que ele influencia.",
+    "u4": "Quando o SignWriting é escrito verticalmente, a Linha de Conexão de Unidade é escrita ao lado da coluna vertical, como mostrado aqui. A Linha de Unidade é cinza ou mais clara que os sinais.",
+    "u5": "Na Espanha, a Linha de Conexão de Unidade é usada na literatura horizontal de SignWriting. Ao escrever horizontalmente, a Linha de Conexão de Unidade é escrita abaixo ou acima da escrita.",
+    "u6": "Na Escrita de Dança de Sutton (Sutton DanceWriting), a Linha de Conexão de Unidade é usada com frequência para mostrar a influência de um símbolo de movimento sobre um grupo de outros símbolos. No SignWriting, ela raramente é usada no dia a dia."
   }
 }
