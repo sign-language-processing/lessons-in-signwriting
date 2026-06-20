@@ -29,6 +29,19 @@ const isMovement = (key) => {
   return v >= MOVEMENT_LO && v <= MOVEMENT_HI;
 };
 
+// Forward/Back curve arrows (S2b7–S2d4) read differently per rotation: a sign
+// only demonstrates the symbol if its rotation is in the same facing group.
+// Group A = {0,1,2,7}, group B = {3,4,5,6}; 8–f mirror back via `& 7`. For these
+// bases we emit a base+group key ("Sbbb.A") instead of the rotation-blind base.
+const [CURVE_LO, CURVE_HI] = [0x2b7, 0x2d4];
+const ROT_GROUP_A = new Set([0, 1, 2, 7]);
+const curveGroupKey = (key) => {
+  const v = baseValue(key);
+  if (v < CURVE_LO || v > CURVE_HI) return null;
+  const rot = parseInt(key.slice(5), 16) & 7;
+  return `${key.slice(0, 4)}.${ROT_GROUP_A.has(rot) ? "A" : "B"}`;
+};
+
 const csv = parseCSV(fs.readFileSync(CSV, "utf8"));
 const header = csv[0];
 const textIdx = header.indexOf("text");
@@ -50,8 +63,13 @@ for (let r = 1; r < csv.length; r++) {
     const otherArrows = movementBases.filter((b) => b !== targetBase).length;
     const score = otherArrows * 1e6 + symbols.length * 1e3 + word.length;
     consider(key, fsw, score); // full SbbbFR
-    consider(key.slice(0, 5), fsw, score); // base + fill
-    consider(key.slice(0, 4), fsw, score); // base
+    const groupKey = curveGroupKey(key);
+    if (groupKey) {
+      consider(groupKey, fsw, score); // base + rotation group (curve arrows)
+    } else {
+      consider(key.slice(0, 5), fsw, score); // base + fill
+      consider(key.slice(0, 4), fsw, score); // base
+    }
   }
 }
 

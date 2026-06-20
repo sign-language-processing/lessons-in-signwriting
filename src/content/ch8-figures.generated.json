@@ -10,13 +10,8 @@
     "word": "finish",
     "sign": "/figures/ch8/ch8-finish-sign.png",
     "video": "/videos/whatsthatsign/M531x531S14c30506x469S14c38470x469S2a204508x503S2a21c470x503.mp4",
-    "swu": "𝠀񁲱񋽁񁲹񋽁񏀇񉳅񉳝𝠃𝤥𝤥񁲱𝤌𝣧񁲹𝣨𝣧񉳅𝤎𝤉񉳝𝣨𝤉"
-  },
-  "ch8-close": {
-    "word": "close",
-    "sign": "/figures/ch8/ch8-close-sign.png",
-    "video": "/videos/whatsthatsign/M516x522S15a02489x496S15a0a485x510S22a04498x478.mp4",
-    "swu": "𝠀񂇃񋽁񂇋񋽁񆞁񆿅񆇡𝠃𝤖𝤜񂇃𝣻𝤂񂇋𝣷𝤐񆿅𝤄𝣰"
+    "swu": "𝠀񁲱񋽁񁲹񋽁񏀇񉳅񉳝𝠃𝤥𝤥񁲱𝤌𝣧񁲹𝣨𝣧񉳅𝤎𝤉񉳝𝣨𝤉",
+    "confirmed": true
   },
   "ch8-happen": {
     "word": "happen",
@@ -31,12 +26,6 @@
     "video": "/videos/whatsthatsign/M518x522S15a50483x495S2a208495x478.mp4",
     "swu": "𝠀񂈑񋽁񀀇񉳉𝠃𝤘𝤜񂈑𝣵𝤁񉳉𝤁𝣰",
     "confirmed": true
-  },
-  "ch8-break": {
-    "word": "break",
-    "sign": "/figures/ch8/ch8-break-sign.png",
-    "video": "/videos/whatsthatsign/M527x521S14c0a473x480S15a50495x494S20700509x485.mp4",
-    "swu": "𝠀񂈑񋽁񁲋񋽁񆞇񆊡𝠃𝤡𝤛񁲋𝣫𝣲񂈑𝤁𝤀񆊡𝤏𝣷"
   },
   "ch8-third": {
     "word": "third",
@@ -61,15 +50,16 @@
   },
   "ch8-blue": {
     "word": "blue",
-    "sign": "/figures/ch8/ch8-blue-sign.png",
+    "swu": "𝠀񁪱񋽁񀀇񋎩𝠃𝤑𝤝񁪱𝣾𝤇񋎩𝣼𝣰",
     "video": "/videos/whatsthatsign/M511x523S14710492x501S2df08490x478.mp4",
-    "swu": "𝠀񁪱񋽁񀀇񋎩𝠃𝤑𝤝񁪱𝣾𝤇񋎩𝣼𝣰"
+    "confirmed": true
   },
   "ch8-yes-yes": {
     "word": "yes-yes",
     "sign": "/figures/ch8/ch8-yes-yes-sign.png",
     "video": "/videos/whatsthatsign/M513x519S20350493x482S23004488x501.mp4",
-    "swu": "𝠀񆅱񋽁񀀇񇈅𝠃𝤓𝤙񆅱𝣿𝣴񇈅𝣺𝤇"
+    "swu": "𝠀񆅱񋽁񀀇񇈅𝠃𝤓𝤙񆅱𝣿𝣴񇈅𝣺𝤇",
+    "confirmed": true
   },
   "ch8-flag": {
     "word": "flag",
@@ -79,42 +69,122 @@
     "word": "chat",
     "sign": "/figures/ch8/ch8-chat-sign.png",
     "video": "/videos/whatsthatsign/M534x525S14c47507x476S14c4f467x476S23004505x507S23014472x507.mp4",
-    "swu": "𝠀񁳈񋽁񁳐񋽁񏀇񇈅񇈕𝠃𝤨𝤟񁳈𝤍𝣮񁳐𝣥𝣮񇈅𝤋𝤍񇈕𝣪𝤍"
-  },
-  "ch8-before": {
-    "word": "before",
-    "sign": "/figures/ch8/ch8-before-sign.png",
-    "video": "/videos/whatsthatsign/M541x523S36d00479x492S15a00528x477S26504527x508.mp4",
-    "swu": "𝠀񂇁񏇨񀀇񈗥𝠃𝤯𝤝񎣡𝣱𝣾񂇁𝤢𝣯񈗥𝤡𝤎"
+    "swu": "𝠀񁳈񋽁񁳐񋽁񏀇񇈅񇈕𝠃𝤨𝤟񁳈𝤍𝣮񁳐𝣥𝣮񇈅𝤋𝤍񇈕𝣪𝤍",
+    "confirmed": true
   },
   "ch8-basketball": {
     "word": "basketball",
     "sign": "/figures/ch8/ch8-basketball-sign.png",
     "video": "/videos/whatsthatsign/M537x527S14e10511x474S14e18463x474S23000512x509S23010463x508.mp4",
-    "swu": "𝠀񁵑񋽁񁵙񋽁񏀇񇈁񇈑𝠃𝤫𝤡񁵑𝤑𝣬񁵙𝣡𝣬񇈁𝤒𝤏񇈑𝣡𝤎"
+    "swu": "𝠀񁵑񋽁񁵙񋽁񏀇񇈁񇈑𝠃𝤫𝤡񁵑𝤑𝣬񁵙𝣡𝣬񇈁𝤒𝤏񇈑𝣡𝤎",
+    "confirmed": true
   },
-  "ch8-aerobics": {
-    "word": "aerobics",
-    "sign": "/figures/ch8/ch8-aerobics-sign.png"
+  "ch8-open": {
+    "word": "open",
+    "swu": "𝠀񁫁񋽁񁫉񋽁񆞇񆇡񋎥𝠃𝤢𝤓񁫁𝣻𝣹񁫉𝣫𝣹񋎥𝤍𝣾",
+    "video": "/videos/whatsthatsign/M528x513S14720489x487S14728473x487S2df04507x492.mp4",
+    "confirmed": true
   },
-  "ch8-baptism": {
-    "word": "baptism",
-    "sign": "/figures/ch8/ch8-baptism-sign.png"
+  "ch8-scoop": {
+    "word": "scoop",
+    "swu": "𝠀񅠁񋽁񀀇񉳁𝠃𝤝𝤛񅠁𝤆𝤆񉳁𝣰𝣱",
+    "video": "/videos/whatsthatsign/M523x521S1ea40500x500S2a200478x479.mp4",
+    "confirmed": true
   },
-  "ch8-broom": {
-    "word": "broom",
-    "sign": "/figures/ch8/ch8-broom-sign.png",
-    "video": "/videos/whatsthatsign/M522x530S15a41499x502S15a36483x518S20e00484x501S2880e479x486S2880e479x471.mp4",
-    "swu": "𝠀񂈂񋽁񂇷񋽁񆞁񆕁񉌏񉌏𝠃𝤜𝤤񂈂𝤅𝤈񂇷𝣵𝤘񆕁𝣶𝤇񉌏𝣱𝣸񉌏𝣱𝣩"
+  "ch8-clown": {
+    "word": "clown",
+    "swu": "𝠀񁾁񍋁񀀇񉶁𝠃𝤵𝤢񍉡𝣴𝣵񁾁𝤉𝤄񉶁𝤜𝣾",
+    "video": "/videos/whatsthatsign/M547x528S33100482x483S15400503x498S2a400522x492.mp4",
+    "confirmed": true
   },
-  "ch8-bald": {
-    "word": "bald",
-    "sign": "/figures/ch8/ch8-bald-sign.png"
+  "ch8-knife": {
+    "word": "knife",
+    "swu": "𝠀񀠢񋽁񀠪񋽁񆞁񆕁񉴥𝠃𝤦𝤢񀠢𝣺𝣫񀠪𝣧𝣲񉴥𝤏𝣺",
+    "video": "/videos/whatsthatsign/M532x528S11541488x473S11549469x480S2a304509x488.mp4",
+    "confirmed": true
   },
-  "ch8-weight": {
-    "word": "weight",
-    "sign": "/figures/ch8/ch8-weight-sign.png",
-    "video": "/videos/whatsthatsign/M523x524S11541496x476S11549477x483S23004498x506.mp4",
-    "swu": "𝠀񀠢񋽁񀠪񋽁񆞁񆇡񇈅𝠃𝤝𝤞񀠢𝤂𝣮񀠪𝣯𝣵񇈅𝤄𝤌"
+  "ch8-egg": {
+    "word": "egg",
+    "swu": "𝠀񀠢񋽁񀠪񋽁񆞁񆕁񉴥񉴽𝠃𝤟𝤭񀠢𝤄𝣠񀠪𝣱𝣧񉴥𝤈𝣾񉴽𝣮𝤅",
+    "video": "/videos/whatsthatsign/M525x539S11541498x462S11549479x469S2a304502x492S2a31c476x499.mp4",
+    "confirmed": true
+  },
+  "ch8-music": {
+    "word": "music",
+    "swu": "𝠀񂈁񏉣񂇻񋽁񉶅𝠃𝤨𝤞񎴇𝣭𝤗񂇻𝤍𝤒񂈁𝤃𝣰񉶅𝣥𝣮",
+    "video": "/videos/whatsthatsign/M534x524S37806475x517S15a3a507x512S15a40497x478S2a404467x476.mp4",
+    "confirmed": true
+  },
+  "ch8-party": {
+    "word": "party",
+    "swu": "𝠀񃨁񋽁񃨉񋽁񏀇񉶅񉶕𝠃𝤦𝤥񃨁𝤊𝣨񃨉𝣦𝣨񉶅𝤋𝤁񉶕𝣧𝤁",
+    "video": "/videos/whatsthatsign/M532x531S19a40504x470S19a48468x470S2a404505x495S2a414469x495.mp4",
+    "confirmed": true
+  },
+  "ch8-first": {
+    "word": "first",
+    "swu": "𝠀񀀒񋽁񀀇񊤡𝠃𝤓𝤡񀀒𝣹𝤃񊤡𝣹𝣫",
+    "video": "/videos/whatsthatsign/M513x527S10011487x497S2c300487x473.mp4",
+    "confirmed": true
+  },
+  "ch8-cow": {
+    "word": "cow",
+    "swu": "𝠀񃧡񌀈񀀇񆇡񊦁𝠃𝤶𝤘񋾡𝣴𝣵񃧡𝤕𝣴񊦁𝤎𝣚",
+    "video": "/videos/whatsthatsign/M548x518S2ff00482x483S19a20515x482S2c400508x456.mp4",
+    "confirmed": true
+  },
+  "ch8-key": {
+    "word": "key",
+    "swu": "𝠀񀉓񋽁񂈉񋽁񆞇񆙡񊧡𝠃𝤡𝤛񂈉𝣫𝣽񀉓𝣸𝤌񊧡𝣹𝣲",
+    "video": "/videos/whatsthatsign/M527x521S15a48473x491S10612486x506S2c500487x480.mp4",
+    "confirmed": true
+  },
+  "ch8-sell": {
+    "word": "sell",
+    "swu": "𝠀񃈂񋽁񃈊񋽁񏀇񊻁񊻒𝠃𝤫𝤝񃈂𝤐𝤊񃈊𝣢𝤊񊻁𝤈𝣯񊻒𝣫𝣯",
+    "video": "/videos/whatsthatsign/M537x523S18521510x504S18529464x504S2d200502x477S2d211473x477.mp4",
+    "confirmed": true
+  },
+  "ch8-store": {
+    "word": "store",
+    "swu": "𝠀񃈂񋽁񃈊񋽁񏀇񊼡񊼲𝠃𝤱𝤝񃈂𝤐𝤊񃈊𝣢𝤊񊼡𝤊𝣯񊼲𝣜𝣯",
+    "video": "/videos/whatsthatsign/M543x523S18521510x504S18529464x504S2d300504x477S2d311458x477.mp4",
+    "confirmed": true
+  },
+  "ch8-walk": {
+    "word": "walk",
+    "swu": "𝠀񂈑񋽁񂈙񋽁񏀇񊾁񊾒𝠃𝤶𝤬񂈑𝤏𝣵񂈙𝣯𝣠񊾁𝤋𝤕񊾒𝣖𝤁",
+    "video": "/videos/whatsthatsign/M548x538S15a50509x483S15a58477x462S2d400505x515S2d411452x495.mp4",
+    "confirmed": true
+  },
+  "ch8-flower": {
+    "word": "flower",
+    "swu": "𝠀񃇸񍋁񀀇񆇡񋎡񆇡𝠃𝤛𝤰񍉡𝣴𝣵񃇸𝤈𝤈񋎡𝣺𝤛",
+    "video": "/videos/whatsthatsign/M521x542S33100482x483S18517502x502S2df00488x521.mp4",
+    "confirmed": true
+  },
+  "ch8-fruit": {
+    "word": "fruit",
+    "swu": "𝠀񄵑񌀆񀀇񆙡񋐁𝠃𝤪𝤛񋾡𝣴𝣵񄵑𝤔𝣽񋐁𝤔𝣝",
+    "video": "/videos/whatsthatsign/M536x521S2ff00482x483S1ce10514x491S2e000514x459.mp4",
+    "confirmed": true
+  },
+  "ch8-door": {
+    "word": "door",
+    "swu": "𝠀񁫁񋽁񁫉񋽁񆞇񆉁񋐅𝠃𝤢𝤖񁫁𝣻𝣷񁫉𝣫𝣷񋐅𝤍𝣺",
+    "video": "/videos/whatsthatsign/M528x516S14720489x485S14728473x485S2e004507x488.mp4",
+    "confirmed": true
+  },
+  "ch8-cheese": {
+    "word": "cheese",
+    "swu": "𝠀񁳒񋽁񂇺񋽁񆞁񆙡񋑩𝠃𝤛𝤤񂇺𝤄𝤍񁳒𝣲𝤈񋑩𝣿𝣨",
+    "video": "/videos/whatsthatsign/M521x530S15a39498x507S14c51480x502S2e108493x470.mp4",
+    "confirmed": true
+  },
+  "ch8-green": {
+    "word": "green",
+    "swu": "𝠀񅨑񋽁񀀇񋎩𝠃𝤖𝤚񅨑𝣷𝤋񋎩𝤁𝣲",
+    "video": "/videos/whatsthatsign/M516x520S1f010485x505S2df08495x480.mp4",
+    "confirmed": true
   }
 }

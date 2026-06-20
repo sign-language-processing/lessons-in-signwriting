@@ -24,7 +24,7 @@ const DEFAULT_ZOOM = 1.5;
 const FALLBACK_TARGET_Y = AVATAR_HEIGHT / 2;
 
 type Layer = "box" | "wall" | "floor" | "diagonal" | "diagonal-down" | "none";
-type View = "34" | "top" | "front" | "back";
+type View = "34" | "top" | "front" | "back" | "side";
 type Plane = "wall" | "floor";
 
 // Wall-plane movement directions (8 around a circle), CCW from straight up.
@@ -65,6 +65,30 @@ const WALL_CURVE_ROSE: { symbol: string; angle: number }[] = [
   { symbol: "񉌐", angle: 225 },
   { symbol: "񉌏", angle: 270 },
   { symbol: "񉌎", angle: 315 },
+];
+
+// Forward-Over / Back-Over curves, shown in a side-profile scene: three arcs
+// over the top (forward, rotations 2/0/7) and three under (back, rotations
+// 6/5/3). Laid out 3 across the top of the ring and 3 across the bottom; the
+// left button leans 45° left, middle goes straight, right leans 45° right.
+const OVER_ROSE: { symbol: string; angle: number }[] = [
+  { symbol: "񊒣", angle: 135 },
+  { symbol: "񊒡", angle: 90 },
+  { symbol: "񊒨", angle: 45 },
+  { symbol: "񊒧", angle: 225 },
+  { symbol: "񊒦", angle: 270 },
+  { symbol: "񊒤", angle: 315 },
+];
+
+// The Forward-Under / Back-Under counterpart (Floor curve base S2c6): same six
+// directions, but the arc dips down under instead of arcing up over.
+const UNDER_ROSE: { symbol: string; angle: number }[] = [
+  { symbol: "񊩃", angle: 135 },
+  { symbol: "񊩁", angle: 90 },
+  { symbol: "񊩈", angle: 45 },
+  { symbol: "񊩇", angle: 225 },
+  { symbol: "񊩆", angle: 270 },
+  { symbol: "񊩄", angle: 315 },
 ];
 
 const LAYER_COLOR: Record<Layer, string> = {
@@ -134,6 +158,7 @@ const _qWorld = new Quaternion();
 const _qParent = new Quaternion();
 const _traceA = new Vector3();
 const _traceB = new Vector3();
+const _base = new Vector3();
 const _UP = new Vector3(0, 1, 0);
 
 // The elbow bends toward this world direction (down and back), so the pole
@@ -174,6 +199,17 @@ const GESTURE_TOTAL = GESTURE_OUT + GESTURE_HOLD + GESTURE_BACK;
 // length (clamped to the arm's length by the IK). Used by the Up-Down /
 // Forward-Back scenes.
 const GESTURE_REACH = 0.45;
+// The over-arc adds an upward bulge on top of its forward travel, so its peak
+// sits farther from the shoulder than a straight reach of the same distance.
+// A smaller fraction keeps the whole semicircle inside the arm's reach instead
+// of clipping flat where the IK clamps to full extension.
+const OVER_REACH = 0.4;
+// Retract the arc's near end this far back toward the chest (fraction of arm
+// length) so the forward sweep starts from a pulled-in pose, freeing reach for
+// the full semicircle instead of clipping at extension.
+const OVER_START_BACK = 0.2;
+// How far the left/right buttons lean the forward direction off straight ahead.
+const OVER_LEAN_DEG = 70;
 // Radius (m) of the circle the curved-movement scene draws at, and traces, the
 // wrist around. Shared by WristCircle (the drawn ring) and driveArmCurve.
 const WRIST_CIRCLE_R = 0.2;
@@ -323,6 +359,71 @@ function driveArmCurve(rig: ArmRig, angle: number, t: number, hold?: Quaternion)
   if (hold) setWorldQuaternion(chain.hand, hold);
 }
 
+// Place a point on the forward "over" half-circle. The arc starts at the
+// resting wrist `p0`, bulges up, and ends a forward distance D = 2R away along
+// `dir` at the same height. u ∈ [0,1] runs start→end.
+function overArcPoint(
+  p0: Vector3,
+  dir: Vector3,
+  r: number,
+  u: number,
+  vy: number,
+  out: Vector3,
+): Vector3 {
+  return out
+    .copy(p0)
+    .addScaledVector(dir, r * (1 - Math.cos(Math.PI * u)))
+    .addScaledVector(_UP, vy * r * Math.sin(Math.PI * u));
+}
+
+// Drive one arm through a Forward-Over (or Back-Over) half-circle. The hand
+// travels the same forward distance as the Forward-Back reach, but over a
+// semicircular arc instead of a straight line. `angle` is the rose-button angle:
+// the lower half (sin < 0) reverses the traversal (back-over, starting from the
+// extended hand), and the horizontal lean (cos) deviates the forward direction
+// 45° to the signer's left or right.
+// The over-arc's near end: the resting wrist pulled back toward the chest, so
+// the semicircle has room to sweep forward. This is the scene's rest pose too —
+// the retraction is a starting position, not part of the animation.
+function overBase(rig: ArmRig, out: Vector3): Vector3 {
+  neutralWrist(rig, out);
+  out.z -= (rig.upper + rig.fore) * OVER_START_BACK;
+  return out;
+}
+
+function driveArmOverRest(rig: ArmRig) {
+  overBase(rig, _target);
+  solveArmTwoBone(rig.chain, _target, rig.upper, rig.fore);
+}
+
+function driveArmOver(rig: ArmRig, angle: number, t: number, down: boolean, hold?: Quaternion) {
+  const { chain, upper, fore } = rig;
+  overBase(rig, _base);
+  const rad = (angle * Math.PI) / 180;
+  const reversed = Math.sin(rad) < 0;
+  const c = Math.cos(rad);
+  const lean = c < -0.01 ? 1 : c > 0.01 ? -1 : 0; // +1 = signer-left (+X)
+  const sx = lean * Math.sin((OVER_LEAN_DEG * Math.PI) / 180);
+  _dir.set(sx, 0, Math.sqrt(Math.max(0, 1 - sx * sx)));
+  const r = ((upper + fore) * OVER_REACH) / 2;
+  const vy = down ? -1 : 1; // arc dips under (Back/Forward-Under) vs over
+
+  if (t < GESTURE_OUT) {
+    overArcPoint(_base, _dir, r, reversed ? 1 : 0, vy, _dest);
+    _target.lerpVectors(_base, _dest, smoothstep(t / GESTURE_OUT));
+  } else if (t < GESTURE_OUT + GESTURE_HOLD) {
+    const k = smoothstep((t - GESTURE_OUT) / GESTURE_HOLD);
+    overArcPoint(_base, _dir, r, reversed ? 1 - k : k, vy, _target);
+  } else if (t < GESTURE_TOTAL) {
+    overArcPoint(_base, _dir, r, reversed ? 0 : 1, vy, _dest);
+    _target.lerpVectors(_dest, _base, smoothstep((t - GESTURE_OUT - GESTURE_HOLD) / GESTURE_BACK));
+  } else {
+    _target.copy(_base);
+  }
+  solveArmTwoBone(chain, _target, upper, fore);
+  if (hold) setWorldQuaternion(chain.hand, hold);
+}
+
 function Avatar({
   onMeasure,
   arm,
@@ -338,7 +439,7 @@ function Avatar({
   side?: Side;
   plane?: Plane;
   circle?: boolean;
-  motion?: "reach" | "curve";
+  motion?: "reach" | "curve" | "over" | "under";
 }) {
   const { scene } = useGLTF(AVATAR_URL);
   const { animations } = useGLTF(IDLE_URL);
@@ -481,11 +582,17 @@ function Avatar({
 
     const hands: Hand[] = side === "both" ? ["right", "left"] : [side];
     for (const h of hands) {
-      if (motion === "curve") {
+      const isOverUnder = motion === "over" || motion === "under";
+      if (motion === "curve" || isOverUnder) {
         if (p) {
-          driveArmCurve(rigs.current[h], p.angle, now - p.start, restHandQuat.current[h]);
+          if (motion === "curve") {
+            driveArmCurve(rigs.current[h], p.angle, now - p.start, restHandQuat.current[h]);
+          } else {
+            driveArmOver(rigs.current[h], p.angle, now - p.start, motion === "under", restHandQuat.current[h]);
+          }
         } else {
-          driveArm(rigs.current[h], plane, null, 0);
+          if (isOverUnder) driveArmOverRest(rigs.current[h]);
+          else driveArm(rigs.current[h], plane, null, 0);
           rigs.current[h].chain.hand.getWorldQuaternion(restHandQuat.current[h]);
         }
       } else {
@@ -721,6 +828,8 @@ function CameraRig({
       c.setLookAt(0, targetY, 3, 0, targetY, 0, !first);
     } else if (view === "back") {
       c.setLookAt(0, targetY, -3, 0, targetY, 0, !first);
+    } else if (view === "side") {
+      c.setLookAt(-3, targetY, 0, 0, targetY, 0, !first);
     } else {
       c.setLookAt(...VIEW_34, 0, targetY, 0, !first);
     }
@@ -752,7 +861,7 @@ function SignScene({
   plane?: Plane;
   frame?: "red" | "green";
   circle?: boolean;
-  motion?: "reach" | "curve";
+  motion?: "reach" | "curve" | "over" | "under";
   overlay?: ReactNode;
 }) {
   const [measure, setMeasure] = useState<Measure | null>(null);
@@ -993,6 +1102,25 @@ function ViewToggle({
   );
 }
 
+function OverUnderToggle({
+  mode,
+  onChange,
+}: {
+  mode: "over" | "under";
+  onChange: (mode: "over" | "under") => void;
+}) {
+  return (
+    <div className="scene3d__toggle scene3d__toggle--left" data-no-print>
+      <button type="button" className={mode === "over" ? "is-on" : undefined} onClick={() => onChange("over")}>
+        Over
+      </button>
+      <button type="button" className={mode === "under" ? "is-on" : undefined} onClick={() => onChange("under")}>
+        Under
+      </button>
+    </div>
+  );
+}
+
 function HandToggle({ side, onChange }: { side: Side; onChange: (side: Side) => void }) {
   return (
     <div className="scene3d__toggle scene3d__toggle--right" data-no-print>
@@ -1093,6 +1221,35 @@ export function WallPlaneCurves3D() {
           <ViewToggle view={view} onChange={setView} />
           <HandToggle side={side} onChange={setSide} />
           <RoseOverlay items={WALL_CURVE_ROSE} active={active} side={side} onSelect={trigger} />
+        </>
+      }
+    />
+  );
+}
+
+export function ForwardBackOverCurves3D() {
+  const { gesture, active, side, trigger } = useArmGesture();
+  const [mode, setMode] = useState<"over" | "under">("over");
+
+  return (
+    <SignScene
+      layer="none"
+      view="side"
+      square
+      frame="green"
+      plane="floor"
+      motion={mode}
+      arm={{ gesture }}
+      side={side}
+      overlay={
+        <>
+          <OverUnderToggle mode={mode} onChange={setMode} />
+          <RoseOverlay
+            items={mode === "over" ? OVER_ROSE : UNDER_ROSE}
+            active={active}
+            side={side}
+            onSelect={trigger}
+          />
         </>
       }
     />

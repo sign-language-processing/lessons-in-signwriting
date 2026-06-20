@@ -1,5 +1,5 @@
+import { SgnwSymbol } from "../components/Sgnw";
 import { SignFigure } from "../components/SignFigure";
-import { asset } from "../lib/asset";
 
 type Item = { symbol: string; label: string };
 
@@ -11,7 +11,7 @@ function SymbolList({ heading, sub, items }: { heading: string; sub: string; ite
       <ol className="ch9-list">
         {items.map((item) => (
           <li className="ch9-item" key={item.label}>
-            <img className="ch9-item__symbol" src={asset(item.symbol)} alt="" />
+            <SgnwSymbol symbol={item.symbol} className="ch9-item__symbol" />
             <span className="ch9-item__label">{item.label}</span>
           </li>
         ))}
@@ -20,18 +20,14 @@ function SymbolList({ heading, sub, items }: { heading: string; sub: string; ite
   );
 }
 
-function grid(prefix: string, count: number): string[] {
-  return Array.from({ length: count }, (_, i) => `/figures/ch9/${prefix}-${i + 1}.png`);
-}
-
-const armSingle = grid("arm-single", 8);
-const armDouble = grid("arm-double", 8);
-const circleSingle = grid("circle-single", 8);
-const circleDouble = grid("circle-double", 8);
-const wristSideSingle = grid("wrist-side-single", 8);
-const wristSideDouble = grid("wrist-side-double", 8);
-const wristFbSingle = grid("wrist-fb-single", 6);
-const wristFbDouble = grid("wrist-fb-double", 6);
+const armSingle = ["񋔩", "񋔪", "񋔫", "񋔬", "񋔭", "񋔮", "񋔯", "񋔰"];
+const armDouble = ["񋗩", "񋗪", "񋗫", "񋗬", "񋗭", "񋗮", "񋗯", "񋗰"];
+const circleSingle = ["񋛑", "񋛒", "񋛓", "񋛔", "񋛕", "񋛖", "񋛗", "񋛘"];
+const circleDouble = ["񋟱", "񋟲", "񋟳", "񋟴", "񋟵", "񋟶", "񋟷", "񋟸"];
+const wristSideSingle = ["񋣩", "񋣪", "񋣫", "񋣬", "񋣭", "񋣮", "񋣯", "񋣰"];
+const wristSideDouble = ["񋥉", "񋥊", "񋥋", "񋥌", "񋥍", "񋥎", "񋥏", "񋥐"];
+const wristFbSingle = ["񋦡", "񋦢", "񋦣", "񋦤", "񋦥", "񋦦"];
+const wristFbDouble = ["񋨁", "񋨂", "񋨃", "񋨄", "񋨅", "񋨆"];
 
 const ARM_LABELS = [
   "Starts High",
@@ -120,9 +116,10 @@ export function Ch9CircularMovement() {
         />
       </div>
       <div className="examples-row">
-        <SignFigure slug="ch9-ideas" />
-        <SignFigure slug="ch9-international" />
-        <SignFigure slug="ch9-inferior" />
+        <SignFigure slug="ch9-travel" />
+        <SignFigure slug="ch9-circle" />
+        <SignFigure slug="ch9-area" />
+        <SignFigure slug="ch9-always" />
       </div>
 
       <h2>Wrist Circles</h2>
@@ -157,23 +154,11 @@ export function Ch9CircularMovement() {
         />
       </div>
       <div className="examples-row">
-        <SignFigure slug="ch9-who" />
-        <SignFigure slug="ch9-hearing-person" />
-        <SignFigure slug="ch9-beautiful" />
-      </div>
-
-      <h2>Arm &amp; Wrist Circles</h2>
-      <div className="examples-row">
-        <SignFigure slug="ch9-festival" />
-        <SignFigure slug="ch9-imagine" />
-        <SignFigure slug="ch9-aw-beautiful" />
-        <SignFigure slug="ch9-hot" />
-        <SignFigure slug="ch9-establish" />
-        <SignFigure slug="ch9-same-continuously" />
-        <SignFigure slug="ch9-use" />
-        <SignFigure slug="ch9-worried" />
-        <SignFigure slug="ch9-who-left" />
-        <SignFigure slug="ch9-who-right" />
+        <SignFigure slug="ch9-only" />
+        <SignFigure slug="ch9-look" />
+        <SignFigure slug="ch9-character" />
+        <SignFigure slug="ch9-government" />
+        <SignFigure slug="ch9-gymnastics" />
       </div>
     </>
   );

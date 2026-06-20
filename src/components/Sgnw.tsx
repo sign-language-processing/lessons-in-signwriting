@@ -89,7 +89,11 @@ export function SgnwSymbol({
     ...(handImage
       ? { color: "darkblue" }
       : example
-        ? { color: "darkgreen" }
+        ? {
+            // Exact symbol match → full green; looser (base/fill/rotation-group)
+            // match → a muted green partway to black.
+            color: example.exact ? "darkgreen" : "rgb(34 77 34)",
+          }
         : {}),
   };
 

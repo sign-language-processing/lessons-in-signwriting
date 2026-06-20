@@ -188,8 +188,10 @@ Requires `gsutil` and `ffmpeg` on PATH.
 
 **Per-symbol examples.** `bun scripts/build_symbol_examples.mjs` scans the index
 and writes `src/content/symbol-examples.generated.json` — a lookup from a symbol
-(at full `SbbbFR`, `SbbbF`, or `Sbbb` granularity) to an example sign's signbox
-FSW. `lib/symbolExamples.ts` reads it so `<SgnwSymbol>` can show a green
+(at full `SbbbFR`, `SbbbF`, or `Sbbb` granularity; the Forward/Back curve arrows
+`S2b7`–`S2d4` use a rotation-group key `Sbbb.A`/`Sbbb.B` instead of the
+rotation-blind base, so an example never crosses facing groups) to an example
+sign's signbox FSW. `lib/symbolExamples.ts` reads it so `<SgnwSymbol>` can show a green
 dictionary example for non-hand symbols. Symbols absent from the dataset (many
 complex movement arrows, e.g. Wall Plane Corner) have no example and stay plain.
 
