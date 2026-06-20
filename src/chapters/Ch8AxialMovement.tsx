@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Trans, useTranslation } from "react-i18next";
 import { Col, Row } from "../components/Layout";
 import { SgnwSymbol } from "../components/Sgnw";
 import { SignFigure } from "../components/SignFigure";
@@ -38,120 +39,77 @@ function SymbolRose({
   );
 }
 
+const GRID = ["񊤡", "񊤦", "񊻁", "񊻆"];
+const ROT_GROUPS: Record<string, string[]> = {
+  sideOver: ["񉳁", "񉴡", "񉶁", "񉳃", "񉴣", "񉶃"],
+  sideUnder: ["񉳅", "񉴥", "񉶅", "񉳇", "񉴧", "񉶇"],
+  fwOver: ["񊤡", "񊦁", "񊧡", "񊤦", "񊦆", "񊧦"],
+  fwUnder: ["񊻁", "񊼡", "񊾁", "񊻆", "񊼦", "񊾆"],
+  fwSide: ["񋎡", "񋐁", "񋑡", "񋎥", "񋐅", "񋑥"],
+  sideFw: ["񋎧", "񋐇", "񋑧", "񋎫", "񋐋", "񋑫"],
+  travelWall: ["񉆁", "񉇡", "񉉁"],
+  travelFloor: ["񉁡", "񉃁", "񉄡"],
+};
+
 export function Ch8AxialMovement() {
+  const { t } = useTranslation();
+  const types = t("ch8.types", { returnObjects: true }) as string[];
+  const gridCaps = t("ch8.gridCaptions", { returnObjects: true }) as string[];
+
+  const RotList = ({ group }: { group: keyof typeof ROT_GROUPS }) => {
+    const names = t(`ch8.${group}Items`, { returnObjects: true }) as string[];
+    return (
+      <ol className="curve-list">
+        {ROT_GROUPS[group]?.map((symbol, i) => (
+          <li key={symbol}>
+            <SgnwSymbol symbol={symbol} className="curve-list__symbol" />
+            <span>{names[i]}</span>
+          </li>
+        ))}
+      </ol>
+    );
+  };
+
   return (
     <>
-      <h2 id="chapter-8">Chapter 8 — Axial Movement</h2>
-      <p>There are two types of Axial Movement:</p>
+      <h2 id="chapter-8">
+        {t("common.chapterHeading", { number: 8, title: t("toc.chapter-8") })}
+      </h2>
+      <p>{t("ch8.intro")}</p>
       <ol>
-        <li>Rotation Movement of the Forearm</li>
-        <li>Flexing Movement of the Wrist</li>
+        <li>{types[0]}</li>
+        <li>{types[1]}</li>
       </ol>
 
-      <h2>Rotation</h2>
+      <h2>{t("ch8.rotationHeading")}</h2>
+      <p>{t("ch8.rot1")}</p>
+      <p>{t("ch8.rot2")}</p>
+      <h3>{t("ch8.foreUpHeading")}</h3>
       <p>
-        SignWriting includes symbols which show rotation movements made with
-        your forearm. The forearm does not travel. It stays in one place and
-        rotates.
-      </p>
-      <p>
-        Rotation Symbols place a curved arrow on an "axis". The "axis-line"
-        represents the forearm. The rotation revolves around this axis.
-      </p>
-      <h3>Forearm points upward, rotates</h3>
-      <p>
-        A double-lined <strong>axis-line</strong> represents an axis that is
-        parallel with the wall. The forearm is up and the rotation revolves
-        around this <strong>up-down axis</strong>:
+        <Trans i18nKey="ch8.foreUpIntro" />
       </p>
       <SymbolRose
-        top={{
-          symbol: "񋎡",
-          label: (
-            <>
-              <strong>Baby finger</strong> leads — forward, then side.
-            </>
-          ),
-        }}
-        bottom={{
-          symbol: "񋎥",
-          label: (
-            <>
-              <strong>Thumb</strong> leads — back toward the chest, then side.
-            </>
-          ),
-        }}
-        right={{
-          symbol: "񋎧",
-          label: (
-            <>
-              <strong>Baby finger</strong> leads — side, forward, then side
-              again.
-            </>
-          ),
-        }}
-        left={{
-          symbol: "񋎣",
-          label: (
-            <>
-              <strong>Thumb</strong> leads — side, back, then side again.
-            </>
-          ),
-        }}
+        top={{ symbol: "񋎡", label: <Trans i18nKey="ch8.rose1.top" /> }}
+        bottom={{ symbol: "񋎥", label: <Trans i18nKey="ch8.rose1.bottom" /> }}
+        right={{ symbol: "񋎧", label: <Trans i18nKey="ch8.rose1.right" /> }}
+        left={{ symbol: "񋎣", label: <Trans i18nKey="ch8.rose1.left" /> }}
       />
       <p>
-        <em>
-          Note: The top and bottom movements are technically the same. The
-          difference is the <strong>feeling of the baby finger</strong> or the{" "}
-          <strong>feeling of the thumb</strong> leading the rotation — some signs{" "}
-          <strong>push</strong> and some signs <strong>pull</strong>.
-        </em>
+        <Trans i18nKey="ch8.rose1Note" />
       </p>
 
-      <h3>Forearm points forward, rotates</h3>
-      <p>
-        A single-lined "axis-line" represents an axis parallel with the floor.
-        When the forearm is pointing forward, parallel with the floor, the
-        "axis-line" is a single line pointing forward:
-      </p>
+      <h3>{t("ch8.foreForwardHeading")}</h3>
+      <p>{t("ch8.foreForwardIntro")}</p>
       <SymbolRose
-        top={{
-          symbol: "񉳉",
-          label: (
-            <>
-              <strong>Thumb</strong> leads — up, then side.
-            </>
-          ),
-        }}
-        bottom={{
-          symbol: "񉳍",
-          label: (
-            <>
-              <strong>Baby finger</strong> leads — down, then side.
-            </>
-          ),
-        }}
-        right={{
-          symbol: "񉳋",
-          label: (
-            <>
-              <strong>Baby finger</strong> leads — side, down, then side again.
-            </>
-          ),
-        }}
-        left={{
-          symbol: "񉳏",
-          label: (
-            <>
-              <strong>Thumb</strong> leads — side, up, then side again.
-            </>
-          ),
-        }}
+        top={{ symbol: "񉳉", label: <Trans i18nKey="ch8.rose2.top" /> }}
+        bottom={{ symbol: "񉳍", label: <Trans i18nKey="ch8.rose2.bottom" /> }}
+        right={{ symbol: "񉳋", label: <Trans i18nKey="ch8.rose2.right" /> }}
+        left={{ symbol: "񉳏", label: <Trans i18nKey="ch8.rose2.left" /> }}
       />
 
       <Row stretch>
         <Col>
-          <h3>Rotation, Forearm Up — Parallel with Front Wall</h3>
+          <h3>{t("ch8.exUpHeading")}</h3>
           <div className="examples-row">
             <SignFigure slug="ch8-class" />
             <SignFigure slug="ch8-open" />
@@ -159,7 +117,7 @@ export function Ch8AxialMovement() {
           </div>
         </Col>
         <Col>
-          <h3>Rotation, Forearm Forward — Parallel with Floor</h3>
+          <h3>{t("ch8.exForwardHeading")}</h3>
           <div className="examples-row">
             <SignFigure slug="ch8-happen" />
             <SignFigure slug="ch8-finish" />
@@ -168,31 +126,18 @@ export function Ch8AxialMovement() {
         </Col>
       </Row>
 
-      <h3>Forearm points sideways, rotates</h3>
-      <p>
-        When the forearm is parallel with the floor, but pointing side, the
-        "axis-line" is a single horizontal line pointing side.
-      </p>
+      <h3>{t("ch8.foreSideHeading")}</h3>
+      <p>{t("ch8.foreSideIntro")}</p>
       <div className="symbol-grid">
-        <figure className="symbol-grid__cell">
-          <SgnwSymbol symbol="񊤡" size={84} />
-          <figcaption>Forward, up, and over.</figcaption>
-        </figure>
-        <figure className="symbol-grid__cell">
-          <SgnwSymbol symbol="񊤦" size={84} />
-          <figcaption>Back, up, and over.</figcaption>
-        </figure>
-        <figure className="symbol-grid__cell">
-          <SgnwSymbol symbol="񊻁" size={84} />
-          <figcaption>Forward, down, and under.</figcaption>
-        </figure>
-        <figure className="symbol-grid__cell">
-          <SgnwSymbol symbol="񊻆" size={84} />
-          <figcaption>Back, down, and under.</figcaption>
-        </figure>
+        {GRID.map((symbol, i) => (
+          <figure className="symbol-grid__cell" key={symbol}>
+            <SgnwSymbol symbol={symbol} size={84} />
+            <figcaption>{gridCaps[i]}</figcaption>
+          </figure>
+        ))}
       </div>
 
-      <h3>Rotation, Forearm Side — Parallel with Floor</h3>
+      <h3>{t("ch8.exSideHeading")}</h3>
       <div className="examples-row">
         <SignFigure slug="ch8-third" />
         <SignFigure slug="ch8-apple" />
@@ -201,62 +146,12 @@ export function Ch8AxialMovement() {
 
       <Row stretch>
         <Col>
-          <h3>Side-Over &amp; Side-Down-Side Rotations</h3>
-          <ol className="curve-list">
-            <li>
-              <SgnwSymbol symbol="񉳁" className="curve-list__symbol" />
-              <span>Side-Over — Single Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񉴡" className="curve-list__symbol" />
-              <span>Side-Over — Double Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񉶁" className="curve-list__symbol" />
-              <span>Side-Over — Alternating Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񉳃" className="curve-list__symbol" />
-              <span>Side-Down-Side — Single Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񉴣" className="curve-list__symbol" />
-              <span>Side-Down-Side — Double Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񉶃" className="curve-list__symbol" />
-              <span>Side-Down-Side — Alternating Rotation</span>
-            </li>
-          </ol>
+          <h3>{t("ch8.sideOverHeading")}</h3>
+          <RotList group="sideOver" />
         </Col>
         <Col>
-          <h3>Side-Under &amp; Side-Up-Side Rotations</h3>
-          <ol className="curve-list">
-            <li>
-              <SgnwSymbol symbol="񉳅" className="curve-list__symbol" />
-              <span>Side-Under — Single Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񉴥" className="curve-list__symbol" />
-              <span>Side-Under — Double Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񉶅" className="curve-list__symbol" />
-              <span>Side-Under — Alternating Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񉳇" className="curve-list__symbol" />
-              <span>Side-Up-Side — Single Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񉴧" className="curve-list__symbol" />
-              <span>Side-Up-Side — Double Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񉶇" className="curve-list__symbol" />
-              <span>Side-Up-Side — Alternating Rotation</span>
-            </li>
-          </ol>
+          <h3>{t("ch8.sideUnderHeading")}</h3>
+          <RotList group="sideUnder" />
         </Col>
       </Row>
       <div className="examples-row">
@@ -270,62 +165,12 @@ export function Ch8AxialMovement() {
 
       <Row stretch>
         <Col>
-          <h3>Forward-Over &amp; Back-Over Rotations</h3>
-          <ol className="curve-list">
-            <li>
-              <SgnwSymbol symbol="񊤡" className="curve-list__symbol" />
-              <span>Forward-Over — Single Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񊦁" className="curve-list__symbol" />
-              <span>Forward-Over — Double Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񊧡" className="curve-list__symbol" />
-              <span>Forward-Over — Alternating Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񊤦" className="curve-list__symbol" />
-              <span>Back-Over — Single Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񊦆" className="curve-list__symbol" />
-              <span>Back-Over — Double Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񊧦" className="curve-list__symbol" />
-              <span>Back-Over — Alternating Rotation</span>
-            </li>
-          </ol>
+          <h3>{t("ch8.fwOverHeading")}</h3>
+          <RotList group="fwOver" />
         </Col>
         <Col>
-          <h3>Forward-Under &amp; Back-Under Rotations</h3>
-          <ol className="curve-list">
-            <li>
-              <SgnwSymbol symbol="񊻁" className="curve-list__symbol" />
-              <span>Forward-Under — Single Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񊼡" className="curve-list__symbol" />
-              <span>Forward-Under — Double Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񊾁" className="curve-list__symbol" />
-              <span>Forward-Under — Alternating Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񊻆" className="curve-list__symbol" />
-              <span>Back-Under — Single Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񊼦" className="curve-list__symbol" />
-              <span>Back-Under — Double Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񊾆" className="curve-list__symbol" />
-              <span>Back-Under — Alternating Rotation</span>
-            </li>
-          </ol>
+          <h3>{t("ch8.fwUnderHeading")}</h3>
+          <RotList group="fwUnder" />
         </Col>
       </Row>
       <div className="examples-row">
@@ -339,62 +184,12 @@ export function Ch8AxialMovement() {
 
       <Row stretch>
         <Col>
-          <h3>Forward-Side &amp; Back-Side Rotations</h3>
-          <ol className="curve-list">
-            <li>
-              <SgnwSymbol symbol="񋎡" className="curve-list__symbol" />
-              <span>Forward-Side — Single Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񋐁" className="curve-list__symbol" />
-              <span>Forward-Side — Double Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񋑡" className="curve-list__symbol" />
-              <span>Forward-Side — Alternating Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񋎥" className="curve-list__symbol" />
-              <span>Back-Side — Single Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񋐅" className="curve-list__symbol" />
-              <span>Back-Side — Double Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񋑥" className="curve-list__symbol" />
-              <span>Back-Side — Alternating Rotation</span>
-            </li>
-          </ol>
+          <h3>{t("ch8.fwSideHeading")}</h3>
+          <RotList group="fwSide" />
         </Col>
         <Col>
-          <h3>Side-Forward-Side &amp; Side-Back-Side Rotations</h3>
-          <ol className="curve-list">
-            <li>
-              <SgnwSymbol symbol="񋎧" className="curve-list__symbol" />
-              <span>Side-Forward-Side — Single Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񋐇" className="curve-list__symbol" />
-              <span>Side-Forward-Side — Double Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񋑧" className="curve-list__symbol" />
-              <span>Side-Forward-Side — Alternating Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񋎫" className="curve-list__symbol" />
-              <span>Side-Back-Side — Single Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񋐋" className="curve-list__symbol" />
-              <span>Side-Back-Side — Double Rotation</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񋑫" className="curve-list__symbol" />
-              <span>Side-Back-Side — Alternating Rotation</span>
-            </li>
-          </ol>
+          <h3>{t("ch8.sideFwHeading")}</h3>
+          <RotList group="sideFw" />
         </Col>
       </Row>
       <div className="examples-row">
@@ -406,57 +201,21 @@ export function Ch8AxialMovement() {
         <SignFigure slug="ch8-green" />
       </div>
 
-      <h2>Traveling Rotation</h2>
-      <p>
-        A few movement symbols combine "traveling" movement with an added
-        rotation. The forearm rotates as the arm moves in a specific direction.
-        The rotation symbol is placed on the stem line of the arrow.
-      </p>
+      <h2>{t("ch8.travelHeading")}</h2>
+      <p>{t("ch8.travelIntro")}</p>
       <Row stretch>
         <Col>
-          <ol className="curve-list">
-            <li>
-              <SgnwSymbol symbol="񉆁" className="curve-list__symbol" />
-              <span>Wall-Plane-Twist</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񉇡" className="curve-list__symbol" />
-              <span>Wall-Plane-Twist-Twist</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񉉁" className="curve-list__symbol" />
-              <span>Wall-Plane-Twist-Shake</span>
-            </li>
-          </ol>
+          <RotList group="travelWall" />
         </Col>
         <Col>
-          <ol className="curve-list">
-            <li>
-              <SgnwSymbol symbol="񉁡" className="curve-list__symbol" />
-              <span>Floor-Plane-Twist</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񉃁" className="curve-list__symbol" />
-              <span>Floor-Plane-Twist-Twist</span>
-            </li>
-            <li>
-              <SgnwSymbol symbol="񉄡" className="curve-list__symbol" />
-              <span>Floor-Plane-Twist-Shake</span>
-            </li>
-          </ol>
+          <RotList group="travelFloor" />
         </Col>
       </Row>
 
-      <h2>Shaking Rotation</h2>
+      <h2>{t("ch8.shakeHeading")}</h2>
+      <p>{t("ch8.shakeIntro")}</p>
       <p>
-        Shaking Rotation does not define how many rotations you make. Instead,
-        it is a fast, shaking motion. It can be written with or without an
-        arrowhead. The dark and light arrowheads are needed at times, to show
-        which arm is doing the shaking.
-      </p>
-      <p>
-        <strong>Shaking Movement, Forearm Up or Down</strong> — Parallel with
-        the Wall Plane
+        <Trans i18nKey="ch8.shakeWallLabel" />
       </p>
       <div className="examples-row">
         <SgnwSymbol symbol="񋓱" size={72} />
@@ -465,8 +224,7 @@ export function Ch8AxialMovement() {
         <SgnwSymbol symbol="񋓡" size={72} />
       </div>
       <p>
-        <strong>Shaking Movement, Forearm Forward</strong> — Parallel with the
-        Floor Plane
+        <Trans i18nKey="ch8.shakeFloorLabel" />
       </p>
       <div className="examples-row">
         <SgnwSymbol symbol="񉸑" size={72} />
@@ -475,23 +233,15 @@ export function Ch8AxialMovement() {
         <SgnwSymbol symbol="񉸁" size={72} />
       </div>
 
-      <h2>Wrist-Flexing Movement</h2>
-      <p>
-        The wrist remains stable while the hand moves in different directions.
-        This flexing motion is written with a horizontal line cutting the
-        wrist. The horizontal line represents the axis of motion. Small arrows
-        point in the direction of the flexing motion. The arrows represent the
-        direction of the hand as it moves.
-      </p>
+      <h2>{t("ch8.wristHeading")}</h2>
+      <p>{t("ch8.wristIntro")}</p>
       <Row>
         <Col>
           <SignFigure slug="ch8-yes-yes" />
         </Col>
         <Col>
           <p>
-            <strong>ASL Sign For "Yes-Yes"</strong>
-            <br />
-            Wrist Flexing Down Twice
+            <Trans i18nKey="ch8.yesyes" />
           </p>
         </Col>
       </Row>
@@ -501,9 +251,7 @@ export function Ch8AxialMovement() {
         </Col>
         <Col>
           <p>
-            <strong>ASL Sign For "Flag"</strong>
-            <br />
-            Wrist Flexing Forward and Back Towards the Chest
+            <Trans i18nKey="ch8.flag" />
           </p>
         </Col>
       </Row>

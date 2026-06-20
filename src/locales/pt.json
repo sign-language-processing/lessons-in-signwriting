@@ -490,5 +490,117 @@
       "Lado-Trás-Lado Serpenteado"
     ],
     "exampleHeading": "Sinais de Exemplo"
+  },
+  "ch8": {
+    "intro": "Há dois tipos de Movimento Axial:",
+    "types": [
+      "Movimento de Rotação do Antebraço",
+      "Movimento de Flexão do Pulso"
+    ],
+    "rotationHeading": "Rotação",
+    "rot1": "O SignWriting inclui símbolos que mostram movimentos de rotação feitos com o antebraço. O antebraço não se desloca. Ele fica em um lugar e gira.",
+    "rot2": "Os Símbolos de Rotação colocam uma seta curva sobre um \"eixo\". A \"linha do eixo\" representa o antebraço. A rotação gira em torno desse eixo.",
+    "foreUpHeading": "Antebraço aponta para cima, gira",
+    "foreUpIntro": "Uma <strong>linha do eixo</strong> de traço duplo representa um eixo paralelo à parede. O antebraço está para cima e a rotação gira em torno deste <strong>eixo cima-baixo</strong>:",
+    "rose1": {
+      "top": "O <strong>mindinho</strong> lidera — para frente, depois para o lado.",
+      "bottom": "O <strong>polegar</strong> lidera — para trás em direção ao peito, depois para o lado.",
+      "right": "O <strong>mindinho</strong> lidera — para o lado, para frente, depois para o lado de novo.",
+      "left": "O <strong>polegar</strong> lidera — para o lado, para trás, depois para o lado de novo."
+    },
+    "rose1Note": "<em>Observação: os movimentos de cima e de baixo são tecnicamente os mesmos. A diferença é a <strong>sensação do mindinho</strong> ou a <strong>sensação do polegar</strong> conduzindo a rotação — alguns sinais <strong>empurram</strong> e alguns sinais <strong>puxam</strong>.</em>",
+    "foreForwardHeading": "Antebraço aponta para frente, gira",
+    "foreForwardIntro": "Uma \"linha do eixo\" de traço simples representa um eixo paralelo ao chão. Quando o antebraço aponta para frente, paralelo ao chão, a \"linha do eixo\" é uma linha simples apontando para frente:",
+    "rose2": {
+      "top": "O <strong>polegar</strong> lidera — para cima, depois para o lado.",
+      "bottom": "O <strong>mindinho</strong> lidera — para baixo, depois para o lado.",
+      "right": "O <strong>mindinho</strong> lidera — para o lado, para baixo, depois para o lado de novo.",
+      "left": "O <strong>polegar</strong> lidera — para o lado, para cima, depois para o lado de novo."
+    },
+    "exUpHeading": "Rotação, Antebraço para Cima — Paralelo à Parede Frontal",
+    "exForwardHeading": "Rotação, Antebraço para Frente — Paralelo ao Chão",
+    "foreSideHeading": "Antebraço aponta para o lado, gira",
+    "foreSideIntro": "Quando o antebraço está paralelo ao chão, mas apontando para o lado, a \"linha do eixo\" é uma linha horizontal simples apontando para o lado.",
+    "gridCaptions": [
+      "Para frente, para cima e por cima.",
+      "Para trás, para cima e por cima.",
+      "Para frente, para baixo e por baixo.",
+      "Para trás, para baixo e por baixo."
+    ],
+    "exSideHeading": "Rotação, Antebraço para o Lado — Paralelo ao Chão",
+    "sideOverHeading": "Rotações Lado-Por Cima e Lado-Baixo-Lado",
+    "sideUnderHeading": "Rotações Lado-Por Baixo e Lado-Cima-Lado",
+    "fwOverHeading": "Rotações Frente-Por Cima e Trás-Por Cima",
+    "fwUnderHeading": "Rotações Frente-Por Baixo e Trás-Por Baixo",
+    "fwSideHeading": "Rotações Frente-Lado e Trás-Lado",
+    "sideFwHeading": "Rotações Lado-Frente-Lado e Lado-Trás-Lado",
+    "travelHeading": "Rotação com Deslocamento",
+    "travelIntro": "Alguns símbolos de movimento combinam o movimento de \"deslocamento\" com uma rotação adicional. O antebraço gira enquanto o braço se move em uma direção específica. O símbolo de rotação é colocado sobre a linha da haste da seta.",
+    "travelWallItems": [
+      "Torção no Plano da Parede",
+      "Torção Dupla no Plano da Parede",
+      "Torção com Tremor no Plano da Parede"
+    ],
+    "travelFloorItems": [
+      "Torção no Plano do Chão",
+      "Torção Dupla no Plano do Chão",
+      "Torção com Tremor no Plano do Chão"
+    ],
+    "shakeHeading": "Rotação com Tremor",
+    "shakeIntro": "A Rotação com Tremor não define quantas rotações você faz. Em vez disso, é um movimento rápido e trêmulo. Pode ser escrita com ou sem ponta de seta. As pontas de seta escura e clara são necessárias às vezes, para mostrar qual braço está fazendo o tremor.",
+    "shakeWallLabel": "<strong>Movimento com Tremor, Antebraço para Cima ou para Baixo</strong> — Paralelo ao Plano da Parede",
+    "shakeFloorLabel": "<strong>Movimento com Tremor, Antebraço para Frente</strong> — Paralelo ao Plano do Chão",
+    "wristHeading": "Movimento de Flexão do Pulso",
+    "wristIntro": "O pulso permanece estável enquanto a mão se move em diferentes direções. Esse movimento de flexão é escrito com uma linha horizontal cortando o pulso. A linha horizontal representa o eixo do movimento. Pequenas setas apontam na direção do movimento de flexão. As setas representam a direção da mão conforme ela se move.",
+    "yesyes": "<strong>Sinal em ASL para \"Sim-Sim\"</strong><br />Pulso flexionando para baixo duas vezes",
+    "flag": "<strong>Sinal em ASL para \"Bandeira\"</strong><br />Pulso flexionando para frente e para trás em direção ao peito",
+    "sideOverItems": [
+      "Lado-Por Cima — Rotação Simples",
+      "Lado-Por Cima — Rotação Dupla",
+      "Lado-Por Cima — Rotação Alternada",
+      "Lado-Baixo-Lado — Rotação Simples",
+      "Lado-Baixo-Lado — Rotação Dupla",
+      "Lado-Baixo-Lado — Rotação Alternada"
+    ],
+    "sideUnderItems": [
+      "Lado-Por Baixo — Rotação Simples",
+      "Lado-Por Baixo — Rotação Dupla",
+      "Lado-Por Baixo — Rotação Alternada",
+      "Lado-Cima-Lado — Rotação Simples",
+      "Lado-Cima-Lado — Rotação Dupla",
+      "Lado-Cima-Lado — Rotação Alternada"
+    ],
+    "fwOverItems": [
+      "Frente-Por Cima — Rotação Simples",
+      "Frente-Por Cima — Rotação Dupla",
+      "Frente-Por Cima — Rotação Alternada",
+      "Trás-Por Cima — Rotação Simples",
+      "Trás-Por Cima — Rotação Dupla",
+      "Trás-Por Cima — Rotação Alternada"
+    ],
+    "fwUnderItems": [
+      "Frente-Por Baixo — Rotação Simples",
+      "Frente-Por Baixo — Rotação Dupla",
+      "Frente-Por Baixo — Rotação Alternada",
+      "Trás-Por Baixo — Rotação Simples",
+      "Trás-Por Baixo — Rotação Dupla",
+      "Trás-Por Baixo — Rotação Alternada"
+    ],
+    "fwSideItems": [
+      "Frente-Lado — Rotação Simples",
+      "Frente-Lado — Rotação Dupla",
+      "Frente-Lado — Rotação Alternada",
+      "Trás-Lado — Rotação Simples",
+      "Trás-Lado — Rotação Dupla",
+      "Trás-Lado — Rotação Alternada"
+    ],
+    "sideFwItems": [
+      "Lado-Frente-Lado — Rotação Simples",
+      "Lado-Frente-Lado — Rotação Dupla",
+      "Lado-Frente-Lado — Rotação Alternada",
+      "Lado-Trás-Lado — Rotação Simples",
+      "Lado-Trás-Lado — Rotação Dupla",
+      "Lado-Trás-Lado — Rotação Alternada"
+    ]
   }
 }

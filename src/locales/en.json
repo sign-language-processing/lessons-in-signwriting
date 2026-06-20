@@ -490,5 +490,117 @@
       "Side-Back-Side Snake"
     ],
     "exampleHeading": "Example Signs"
+  },
+  "ch8": {
+    "intro": "There are two types of Axial Movement:",
+    "types": [
+      "Rotation Movement of the Forearm",
+      "Flexing Movement of the Wrist"
+    ],
+    "rotationHeading": "Rotation",
+    "rot1": "SignWriting includes symbols which show rotation movements made with your forearm. The forearm does not travel. It stays in one place and rotates.",
+    "rot2": "Rotation Symbols place a curved arrow on an \"axis\". The \"axis-line\" represents the forearm. The rotation revolves around this axis.",
+    "foreUpHeading": "Forearm points upward, rotates",
+    "foreUpIntro": "A double-lined <strong>axis-line</strong> represents an axis that is parallel with the wall. The forearm is up and the rotation revolves around this <strong>up-down axis</strong>:",
+    "rose1": {
+      "top": "<strong>Baby finger</strong> leads — forward, then side.",
+      "bottom": "<strong>Thumb</strong> leads — back toward the chest, then side.",
+      "right": "<strong>Baby finger</strong> leads — side, forward, then side again.",
+      "left": "<strong>Thumb</strong> leads — side, back, then side again."
+    },
+    "rose1Note": "<em>Note: The top and bottom movements are technically the same. The difference is the <strong>feeling of the baby finger</strong> or the <strong>feeling of the thumb</strong> leading the rotation — some signs <strong>push</strong> and some signs <strong>pull</strong>.</em>",
+    "foreForwardHeading": "Forearm points forward, rotates",
+    "foreForwardIntro": "A single-lined \"axis-line\" represents an axis parallel with the floor. When the forearm is pointing forward, parallel with the floor, the \"axis-line\" is a single line pointing forward:",
+    "rose2": {
+      "top": "<strong>Thumb</strong> leads — up, then side.",
+      "bottom": "<strong>Baby finger</strong> leads — down, then side.",
+      "right": "<strong>Baby finger</strong> leads — side, down, then side again.",
+      "left": "<strong>Thumb</strong> leads — side, up, then side again."
+    },
+    "exUpHeading": "Rotation, Forearm Up — Parallel with Front Wall",
+    "exForwardHeading": "Rotation, Forearm Forward — Parallel with Floor",
+    "foreSideHeading": "Forearm points sideways, rotates",
+    "foreSideIntro": "When the forearm is parallel with the floor, but pointing side, the \"axis-line\" is a single horizontal line pointing side.",
+    "gridCaptions": [
+      "Forward, up, and over.",
+      "Back, up, and over.",
+      "Forward, down, and under.",
+      "Back, down, and under."
+    ],
+    "exSideHeading": "Rotation, Forearm Side — Parallel with Floor",
+    "sideOverHeading": "Side-Over & Side-Down-Side Rotations",
+    "sideUnderHeading": "Side-Under & Side-Up-Side Rotations",
+    "fwOverHeading": "Forward-Over & Back-Over Rotations",
+    "fwUnderHeading": "Forward-Under & Back-Under Rotations",
+    "fwSideHeading": "Forward-Side & Back-Side Rotations",
+    "sideFwHeading": "Side-Forward-Side & Side-Back-Side Rotations",
+    "travelHeading": "Traveling Rotation",
+    "travelIntro": "A few movement symbols combine \"traveling\" movement with an added rotation. The forearm rotates as the arm moves in a specific direction. The rotation symbol is placed on the stem line of the arrow.",
+    "travelWallItems": [
+      "Wall-Plane-Twist",
+      "Wall-Plane-Twist-Twist",
+      "Wall-Plane-Twist-Shake"
+    ],
+    "travelFloorItems": [
+      "Floor-Plane-Twist",
+      "Floor-Plane-Twist-Twist",
+      "Floor-Plane-Twist-Shake"
+    ],
+    "shakeHeading": "Shaking Rotation",
+    "shakeIntro": "Shaking Rotation does not define how many rotations you make. Instead, it is a fast, shaking motion. It can be written with or without an arrowhead. The dark and light arrowheads are needed at times, to show which arm is doing the shaking.",
+    "shakeWallLabel": "<strong>Shaking Movement, Forearm Up or Down</strong> — Parallel with the Wall Plane",
+    "shakeFloorLabel": "<strong>Shaking Movement, Forearm Forward</strong> — Parallel with the Floor Plane",
+    "wristHeading": "Wrist-Flexing Movement",
+    "wristIntro": "The wrist remains stable while the hand moves in different directions. This flexing motion is written with a horizontal line cutting the wrist. The horizontal line represents the axis of motion. Small arrows point in the direction of the flexing motion. The arrows represent the direction of the hand as it moves.",
+    "yesyes": "<strong>ASL Sign For \"Yes-Yes\"</strong><br />Wrist Flexing Down Twice",
+    "flag": "<strong>ASL Sign For \"Flag\"</strong><br />Wrist Flexing Forward and Back Towards the Chest",
+    "sideOverItems": [
+      "Side-Over — Single Rotation",
+      "Side-Over — Double Rotation",
+      "Side-Over — Alternating Rotation",
+      "Side-Down-Side — Single Rotation",
+      "Side-Down-Side — Double Rotation",
+      "Side-Down-Side — Alternating Rotation"
+    ],
+    "sideUnderItems": [
+      "Side-Under — Single Rotation",
+      "Side-Under — Double Rotation",
+      "Side-Under — Alternating Rotation",
+      "Side-Up-Side — Single Rotation",
+      "Side-Up-Side — Double Rotation",
+      "Side-Up-Side — Alternating Rotation"
+    ],
+    "fwOverItems": [
+      "Forward-Over — Single Rotation",
+      "Forward-Over — Double Rotation",
+      "Forward-Over — Alternating Rotation",
+      "Back-Over — Single Rotation",
+      "Back-Over — Double Rotation",
+      "Back-Over — Alternating Rotation"
+    ],
+    "fwUnderItems": [
+      "Forward-Under — Single Rotation",
+      "Forward-Under — Double Rotation",
+      "Forward-Under — Alternating Rotation",
+      "Back-Under — Single Rotation",
+      "Back-Under — Double Rotation",
+      "Back-Under — Alternating Rotation"
+    ],
+    "fwSideItems": [
+      "Forward-Side — Single Rotation",
+      "Forward-Side — Double Rotation",
+      "Forward-Side — Alternating Rotation",
+      "Back-Side — Single Rotation",
+      "Back-Side — Double Rotation",
+      "Back-Side — Alternating Rotation"
+    ],
+    "sideFwItems": [
+      "Side-Forward-Side — Single Rotation",
+      "Side-Forward-Side — Double Rotation",
+      "Side-Forward-Side — Alternating Rotation",
+      "Side-Back-Side — Single Rotation",
+      "Side-Back-Side — Double Rotation",
+      "Side-Back-Side — Alternating Rotation"
+    ]
   }
 }

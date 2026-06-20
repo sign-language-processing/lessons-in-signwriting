@@ -490,5 +490,117 @@
       "Lado-Atrás-Lado Serpenteante"
     ],
     "exampleHeading": "Signos de Ejemplo"
+  },
+  "ch8": {
+    "intro": "Hay dos tipos de Movimiento Axial:",
+    "types": [
+      "Movimiento de Rotación del Antebrazo",
+      "Movimiento de Flexión de la Muñeca"
+    ],
+    "rotationHeading": "Rotación",
+    "rot1": "El SignWriting incluye símbolos que muestran movimientos de rotación hechos con el antebrazo. El antebrazo no se desplaza. Permanece en un lugar y gira.",
+    "rot2": "Los Símbolos de Rotación colocan una flecha curva sobre un \"eje\". La \"línea del eje\" representa el antebrazo. La rotación gira en torno a este eje.",
+    "foreUpHeading": "El antebrazo apunta hacia arriba, gira",
+    "foreUpIntro": "Una <strong>línea del eje</strong> de doble trazo representa un eje paralelo a la pared. El antebrazo está hacia arriba y la rotación gira en torno a este <strong>eje arriba-abajo</strong>:",
+    "rose1": {
+      "top": "El <strong>meñique</strong> guía — hacia adelante, luego hacia el lado.",
+      "bottom": "El <strong>pulgar</strong> guía — hacia atrás hacia el pecho, luego hacia el lado.",
+      "right": "El <strong>meñique</strong> guía — hacia el lado, hacia adelante, luego hacia el lado otra vez.",
+      "left": "El <strong>pulgar</strong> guía — hacia el lado, hacia atrás, luego hacia el lado otra vez."
+    },
+    "rose1Note": "<em>Nota: los movimientos de arriba y de abajo son técnicamente los mismos. La diferencia es la <strong>sensación del meñique</strong> o la <strong>sensación del pulgar</strong> guiando la rotación — algunos signos <strong>empujan</strong> y algunos signos <strong>tiran</strong>.</em>",
+    "foreForwardHeading": "El antebrazo apunta hacia adelante, gira",
+    "foreForwardIntro": "Una \"línea del eje\" de trazo simple representa un eje paralelo al suelo. Cuando el antebrazo apunta hacia adelante, paralelo al suelo, la \"línea del eje\" es una línea simple que apunta hacia adelante:",
+    "rose2": {
+      "top": "El <strong>pulgar</strong> guía — hacia arriba, luego hacia el lado.",
+      "bottom": "El <strong>meñique</strong> guía — hacia abajo, luego hacia el lado.",
+      "right": "El <strong>meñique</strong> guía — hacia el lado, hacia abajo, luego hacia el lado otra vez.",
+      "left": "El <strong>pulgar</strong> guía — hacia el lado, hacia arriba, luego hacia el lado otra vez."
+    },
+    "exUpHeading": "Rotación, Antebrazo hacia Arriba — Paralelo a la Pared Frontal",
+    "exForwardHeading": "Rotación, Antebrazo hacia Adelante — Paralelo al Suelo",
+    "foreSideHeading": "El antebrazo apunta hacia el lado, gira",
+    "foreSideIntro": "Cuando el antebrazo está paralelo al suelo, pero apuntando hacia el lado, la \"línea del eje\" es una línea horizontal simple que apunta hacia el lado.",
+    "gridCaptions": [
+      "Hacia adelante, arriba y por encima.",
+      "Hacia atrás, arriba y por encima.",
+      "Hacia adelante, abajo y por debajo.",
+      "Hacia atrás, abajo y por debajo."
+    ],
+    "exSideHeading": "Rotación, Antebrazo hacia el Lado — Paralelo al Suelo",
+    "sideOverHeading": "Rotaciones Lado-Por Encima y Lado-Abajo-Lado",
+    "sideUnderHeading": "Rotaciones Lado-Por Debajo y Lado-Arriba-Lado",
+    "fwOverHeading": "Rotaciones Adelante-Por Encima y Atrás-Por Encima",
+    "fwUnderHeading": "Rotaciones Adelante-Por Debajo y Atrás-Por Debajo",
+    "fwSideHeading": "Rotaciones Adelante-Lado y Atrás-Lado",
+    "sideFwHeading": "Rotaciones Lado-Adelante-Lado y Lado-Atrás-Lado",
+    "travelHeading": "Rotación con Desplazamiento",
+    "travelIntro": "Algunos símbolos de movimiento combinan el movimiento de \"desplazamiento\" con una rotación adicional. El antebrazo gira mientras el brazo se mueve en una dirección específica. El símbolo de rotación se coloca sobre la línea del tallo de la flecha.",
+    "travelWallItems": [
+      "Torsión en el Plano de la Pared",
+      "Torsión Doble en el Plano de la Pared",
+      "Torsión con Sacudida en el Plano de la Pared"
+    ],
+    "travelFloorItems": [
+      "Torsión en el Plano del Suelo",
+      "Torsión Doble en el Plano del Suelo",
+      "Torsión con Sacudida en el Plano del Suelo"
+    ],
+    "shakeHeading": "Rotación con Sacudida",
+    "shakeIntro": "La Rotación con Sacudida no define cuántas rotaciones haces. En cambio, es un movimiento rápido y tembloroso. Puede escribirse con o sin punta de flecha. Las puntas de flecha oscura y clara son necesarias a veces, para mostrar qué brazo está haciendo la sacudida.",
+    "shakeWallLabel": "<strong>Movimiento con Sacudida, Antebrazo hacia Arriba o hacia Abajo</strong> — Paralelo al Plano de la Pared",
+    "shakeFloorLabel": "<strong>Movimiento con Sacudida, Antebrazo hacia Adelante</strong> — Paralelo al Plano del Suelo",
+    "wristHeading": "Movimiento de Flexión de la Muñeca",
+    "wristIntro": "La muñeca permanece estable mientras la mano se mueve en diferentes direcciones. Este movimiento de flexión se escribe con una línea horizontal que corta la muñeca. La línea horizontal representa el eje del movimiento. Pequeñas flechas apuntan en la dirección del movimiento de flexión. Las flechas representan la dirección de la mano a medida que se mueve.",
+    "yesyes": "<strong>Signo en ASL para \"Sí-Sí\"</strong><br />Muñeca flexionando hacia abajo dos veces",
+    "flag": "<strong>Signo en ASL para \"Bandera\"</strong><br />Muñeca flexionando hacia adelante y hacia atrás hacia el pecho",
+    "sideOverItems": [
+      "Lado-Por Encima — Rotación Simple",
+      "Lado-Por Encima — Rotación Doble",
+      "Lado-Por Encima — Rotación Alterna",
+      "Lado-Abajo-Lado — Rotación Simple",
+      "Lado-Abajo-Lado — Rotación Doble",
+      "Lado-Abajo-Lado — Rotación Alterna"
+    ],
+    "sideUnderItems": [
+      "Lado-Por Debajo — Rotación Simple",
+      "Lado-Por Debajo — Rotación Doble",
+      "Lado-Por Debajo — Rotación Alterna",
+      "Lado-Arriba-Lado — Rotación Simple",
+      "Lado-Arriba-Lado — Rotación Doble",
+      "Lado-Arriba-Lado — Rotación Alterna"
+    ],
+    "fwOverItems": [
+      "Adelante-Por Encima — Rotación Simple",
+      "Adelante-Por Encima — Rotación Doble",
+      "Adelante-Por Encima — Rotación Alterna",
+      "Atrás-Por Encima — Rotación Simple",
+      "Atrás-Por Encima — Rotación Doble",
+      "Atrás-Por Encima — Rotación Alterna"
+    ],
+    "fwUnderItems": [
+      "Adelante-Por Debajo — Rotación Simple",
+      "Adelante-Por Debajo — Rotación Doble",
+      "Adelante-Por Debajo — Rotación Alterna",
+      "Atrás-Por Debajo — Rotación Simple",
+      "Atrás-Por Debajo — Rotación Doble",
+      "Atrás-Por Debajo — Rotación Alterna"
+    ],
+    "fwSideItems": [
+      "Adelante-Lado — Rotación Simple",
+      "Adelante-Lado — Rotación Doble",
+      "Adelante-Lado — Rotación Alterna",
+      "Atrás-Lado — Rotación Simple",
+      "Atrás-Lado — Rotación Doble",
+      "Atrás-Lado — Rotación Alterna"
+    ],
+    "sideFwItems": [
+      "Lado-Adelante-Lado — Rotación Simple",
+      "Lado-Adelante-Lado — Rotación Doble",
+      "Lado-Adelante-Lado — Rotación Alterna",
+      "Lado-Atrás-Lado — Rotación Simple",
+      "Lado-Atrás-Lado — Rotación Doble",
+      "Lado-Atrás-Lado — Rotación Alterna"
+    ]
   }
 }
