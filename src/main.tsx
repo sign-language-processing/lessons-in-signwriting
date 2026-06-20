@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles.css";
+import "./i18n";
 import { App } from "./App";
 import { asset } from "./lib/asset";
 import { AUTHORING } from "./lib/devMode";

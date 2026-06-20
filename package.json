@@ -13,9 +13,12 @@
     "@react-three/fiber": "^9.6.1",
     "@sutton-signwriting/core": "^2.0.1",
     "@sutton-signwriting/sgnw-components": "^1.1.0",
+    "i18next": "^26.3.1",
+    "i18next-browser-languagedetector": "^8.2.1",
     "pdfjs-dist": "^5.7.284",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-i18next": "^17.0.8",
     "three": "^0.184.0"
   },
   "devDependencies": {

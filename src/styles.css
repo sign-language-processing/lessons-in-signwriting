@@ -1977,3 +1977,32 @@ button.face-tile:focus-visible {
     color: #000;
   }
 }
+
+/* Language selector in the table of contents */
+.lang-select {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-block-start: 1.25rem;
+  font-size: 0.85rem;
+}
+.lang-select__label {
+  font-weight: 700;
+  color: #334155;
+}
+.lang-select__menu {
+  padding: 0.45rem 0.6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #f8fafc;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Note marking translated direct quotes (their original language) */
+.original-note {
+  font-style: italic;
+  color: #64748b;
+  font-size: 0.9em;
+  margin-block: 0 0.5em;
+}
