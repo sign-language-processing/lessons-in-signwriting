@@ -856,5 +856,147 @@
     "exception": "<strong><u>EXCEÇÃO</u></strong>: Ocasionalmente as setas podem colidir com outros símbolos, como o Círculo Facial ou a Linha dos Ombros. Quando isso acontece, não há escolha a não ser colocar a Seta de Movimento um pouco para o lado para evitar a colisão. Isso acontece principalmente ao contatar o Rosto.",
     "exceptionExamples": "Três sinais em ASL que são exceções:",
     "exceptionWithout": "Se o Círculo Facial não estivesse ali, estes sinais seriam escritos assim:"
+  },
+  "ch4": {
+    "contactAria": "Símbolo de contato",
+    "contacts": [
+      {
+        "name": "Toque",
+        "sections": [
+          {
+            "paragraphs": [
+              "O Contato de Toque é escrito com um asterisco.",
+              "O toque é definido como a mão tocando suavemente outra parte do corpo."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Agarre",
+        "sections": [
+          {
+            "paragraphs": [
+              "O Contato de Agarre é escrito com duas linhas cruzadas.",
+              "O agarre é definido como a mão agarrando ou beliscando uma parte do corpo ou um objeto, como uma roupa."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Entre",
+        "sections": [
+          {
+            "paragraphs": [
+              "O Contato Entre é escrito com um Símbolo de Contato entre duas linhas.",
+              "Entre é definido como o contato entre dois dedos ou outras partes do corpo."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Golpe",
+        "sections": [
+          {
+            "paragraphs": [
+              "O Contato de Golpe é escrito com duas linhas cruzando duas linhas.",
+              "O golpe é definido como a mão tocando uma superfície com força."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Roçar",
+        "sections": [
+          {
+            "paragraphs": [
+              "O Contato de Roçar é escrito com um círculo com um ponto escuro no centro.",
+              "Roçar é definido como um movimento que primeiro toca e depois sai DA superfície."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Esfregar",
+        "sections": [
+          {
+            "title": "Esfrega Circular",
+            "paragraphs": [
+              "O Contato de Esfrega Circular é escrito com uma espiral.",
+              "Esfregar é definido como um contato que se move, mas permanece NA superfície."
+            ]
+          },
+          {
+            "title": "Esfrega Reta",
+            "paragraphs": [
+              "O Contato de Esfrega Reta é escrito com o mesmo símbolo de espiral, mas a espiral é conectada a uma seta reta.",
+              "Quando o símbolo de Contato de Esfrega é conectado a uma seta, ele esfrega em linha reta (não em círculo). Permanece NA superfície, mas se move na direção da seta."
+            ]
+          },
+          {
+            "paragraphs": []
+          }
+        ]
+      }
+    ]
+  },
+  "ch5": {
+    "intro": "Há dois tipos principais:",
+    "middleJointDesc": "<strong>Articulação do Meio — Apertar e Estalar:</strong> movimentos dos dedos escritos com pequenos pontos.",
+    "knuckleJointDesc": "<strong>Articulação do Nó dos Dedos — Dobradiça e Trinado:</strong> movimentos dos dedos escritos com pequenas setas.",
+    "seqHeading": "Movimento Sequencial dos Dedos",
+    "seqIntro": "Abertura e fechamento específicos, dedo por dedo.",
+    "nameSignCaption": "um sinal-nome",
+    "nameSignBody": "Basta seguir as setas. O movimento começa na haste da seta e segue em direção às pontas. Assim, neste sinal, o dedo mindinho dobra primeiro, terminando nas configurações de mão em A na lateral da cabeça.",
+    "closesHeading": "Movimento Sequencial dos Dedos que Fecha",
+    "fromMiddleJoint": "A Partir da Articulação do Meio",
+    "closes1": "…fechamento muito específico, dedo por dedo, dos dedos…",
+    "closes2": "Detalhes exatos de qual dedo fecha primeiro, segundo e terceiro.",
+    "fewCaption": "<strong>POUCOS</strong><br />na Língua de Sinais Americana",
+    "fewBody": "(uma de várias maneiras de escrever este sinal)",
+    "opensHeading": "Movimento Sequencial dos Dedos que Abre",
+    "opens1": "…abertura muito específica, dedo por dedo, dos dedos…",
+    "opens2": "Detalhes exatos de qual dedo abre primeiro, segundo e terceiro.",
+    "opens3": "No exemplo à esquerda, o sinal de POUCOS abre o dedo indicador primeiro, depois o dedo médio, o dedo anelar e o dedo mindinho.",
+    "fingerAria": "Movimento dos dedos",
+    "fingers": [
+      {
+        "name": "Apertar, a Articulação do Meio Fecha",
+        "paragraphs": [
+          "Quando a articulação do meio do dedo aperta com força (dobra para baixo ou para dentro), esse movimento de fechamento do dedo é escrito com um ponto escuro.",
+          "O ponto é colocado perto da articulação do dedo que faz o aperto. Dois pontos representam dois apertos."
+        ]
+      },
+      {
+        "name": "Estalar, a Articulação do Meio Abre",
+        "paragraphs": [
+          "Quando a articulação do meio do dedo estala aberta (passa de dobrada a reta), esse movimento de abertura em estalo é escrito com um ponto vazado.",
+          "O ponto é colocado perto do dedo que estala. Dois pontos representam dois estalos."
+        ]
+      },
+      {
+        "name": "Dobradiça, o Nó dos Dedos Fecha",
+        "paragraphs": [
+          "A articulação do meio do dedo trava, enquanto o nó dos dedos dobra para baixo, como a dobradiça de uma porta. Esse movimento de fechamento do nó dos dedos é escrito com uma pequena seta apontando para baixo. A seta empurra os dedos para baixo. Duas setas significam 2 dobradiças."
+        ]
+      },
+      {
+        "name": "Dobradiça, o Nó dos Dedos Abre",
+        "paragraphs": [
+          "A articulação do meio do dedo trava, enquanto o nó dos dedos dobra para cima, como a dobradiça de uma porta. Esse movimento de abertura do nó dos dedos é escrito com uma pequena seta apontando para cima. A seta puxa os dedos para cima. Duas setas significam 2 dobradiças para cima."
+        ]
+      },
+      {
+        "name": "Dobradiça, os Nós dos Dedos Abrem e Fecham Juntos",
+        "paragraphs": [
+          "Os dedos se movem juntos na mesma direção, como uma unidade. Os nós dos dedos abrem e fecham (dobram para cima e para baixo) juntos. Esse movimento de abrir-fechar do nó dos dedos é escrito com uma fileira de pequenas setas conectadas apontando para cima e para baixo."
+        ]
+      },
+      {
+        "name": "Trinado, os Nós dos Dedos Abrem e Fecham Alternadamente",
+        "paragraphs": [
+          "Os dedos não se movem juntos como uma unidade. Em vez disso, eles dobram em direções opostas. Um se move para cima, enquanto o outro se move para baixo. Esse Movimento Alternado dos Dedos, também chamado de Trinado dos Dedos, é escrito com duas fileiras de pequenas setas apontando para cima e para baixo."
+        ]
+      }
+    ]
   }
 }

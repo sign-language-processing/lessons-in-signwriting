@@ -856,5 +856,147 @@
     "exception": "<strong><u>EXCEPCIÓN</u></strong>: Ocasionalmente las flechas pueden chocar con otros símbolos, como el Círculo Facial o la Línea de los Hombros. Cuando esto ocurre, no hay más opción que colocar la Flecha de Movimiento un poco hacia el lado para evitar la colisión. Esto ocurre sobre todo al contactar el Rostro.",
     "exceptionExamples": "Tres signos en ASL que son excepciones:",
     "exceptionWithout": "Si el Círculo Facial no hubiera estado ahí, estos signos se escribirían así:"
+  },
+  "ch4": {
+    "contactAria": "Símbolo de contacto",
+    "contacts": [
+      {
+        "name": "Toque",
+        "sections": [
+          {
+            "paragraphs": [
+              "El Contacto de Toque se escribe con un asterisco.",
+              "El toque se define como la mano tocando suavemente otra parte del cuerpo."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Agarre",
+        "sections": [
+          {
+            "paragraphs": [
+              "El Contacto de Agarre se escribe con dos líneas cruzadas.",
+              "El agarre se define como la mano agarrando o pellizcando una parte del cuerpo o un objeto, como la ropa."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Entre",
+        "sections": [
+          {
+            "paragraphs": [
+              "El Contacto Entre se escribe con un Símbolo de Contacto entre dos líneas.",
+              "Entre se define como el contacto entre dos dedos u otras partes del cuerpo."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Golpe",
+        "sections": [
+          {
+            "paragraphs": [
+              "El Contacto de Golpe se escribe con dos líneas que cruzan dos líneas.",
+              "El golpe se define como la mano tocando una superficie con fuerza."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Roce",
+        "sections": [
+          {
+            "paragraphs": [
+              "El Contacto de Roce se escribe con un círculo con un punto oscuro en el centro.",
+              "El roce se define como un movimiento que primero toca y luego sale DE la superficie."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Frote",
+        "sections": [
+          {
+            "title": "Frote Circular",
+            "paragraphs": [
+              "El Contacto de Frote Circular se escribe con una espiral.",
+              "El frote se define como un contacto que se mueve, pero permanece EN la superficie."
+            ]
+          },
+          {
+            "title": "Frote Recto",
+            "paragraphs": [
+              "El Contacto de Frote Recto se escribe con el mismo símbolo de espiral, pero la espiral se conecta con una flecha recta.",
+              "Cuando el símbolo de Contacto de Frote se conecta con una flecha, frota en línea recta (no en círculo). Permanece EN la superficie pero se mueve en la dirección de la flecha."
+            ]
+          },
+          {
+            "paragraphs": []
+          }
+        ]
+      }
+    ]
+  },
+  "ch5": {
+    "intro": "Hay dos tipos principales:",
+    "middleJointDesc": "<strong>Articulación Media — Apretar y Chasquear:</strong> movimientos de los dedos escritos con pequeños puntos.",
+    "knuckleJointDesc": "<strong>Nudillo — Bisagra y Trino:</strong> movimientos de los dedos escritos con pequeñas flechas.",
+    "seqHeading": "Movimiento Secuencial de los Dedos",
+    "seqIntro": "Apertura y cierre específicos, dedo por dedo.",
+    "nameSignCaption": "un signo-nombre",
+    "nameSignBody": "Solo sigue las flechas. El movimiento comienza en el tallo de la flecha y avanza hacia las puntas. Así, en este signo, el dedo meñique se dobla primero, terminando en las configuraciones de mano en A al lado de la cabeza.",
+    "closesHeading": "Movimiento Secuencial de los Dedos que Cierra",
+    "fromMiddleJoint": "Desde la Articulación Media",
+    "closes1": "…cierre muy específico, dedo por dedo, de los dedos…",
+    "closes2": "Detalles exactos de qué dedo cierra primero, segundo y tercero.",
+    "fewCaption": "<strong>POCOS</strong><br />en la Lengua de Señas Americana",
+    "fewBody": "(una de varias maneras de escribir este signo)",
+    "opensHeading": "Movimiento Secuencial de los Dedos que Abre",
+    "opens1": "…apertura muy específica, dedo por dedo, de los dedos…",
+    "opens2": "Detalles exactos de qué dedo abre primero, segundo y tercero.",
+    "opens3": "En el ejemplo de la izquierda, el signo de POCOS abre el dedo índice primero, luego el dedo medio, el dedo anular y el dedo meñique.",
+    "fingerAria": "Movimiento de los dedos",
+    "fingers": [
+      {
+        "name": "Apretar, la Articulación Media Cierra",
+        "paragraphs": [
+          "Cuando la articulación media del dedo aprieta con fuerza (se dobla hacia abajo o hacia adentro), este movimiento de cierre del dedo se escribe con un punto oscuro.",
+          "El punto se coloca cerca de la articulación del dedo que hace el apretón. Dos puntos representan dos apretones."
+        ]
+      },
+      {
+        "name": "Chasquear, la Articulación Media Abre",
+        "paragraphs": [
+          "Cuando la articulación media del dedo se abre de golpe (pasa de doblada a recta), este movimiento de apertura en chasquido se escribe con un punto hueco.",
+          "El punto se coloca cerca del dedo que chasquea. Dos puntos representan dos chasquidos."
+        ]
+      },
+      {
+        "name": "Bisagra, el Nudillo Cierra",
+        "paragraphs": [
+          "La articulación media del dedo se bloquea, mientras el nudillo se dobla hacia abajo, como la bisagra de una puerta. Este movimiento de cierre del nudillo se escribe con una pequeña flecha que apunta hacia abajo. La flecha empuja los dedos hacia abajo. Dos flechas significan 2 bisagras."
+        ]
+      },
+      {
+        "name": "Bisagra, el Nudillo Abre",
+        "paragraphs": [
+          "La articulación media del dedo se bloquea, mientras el nudillo se dobla hacia arriba, como la bisagra de una puerta. Este movimiento de apertura del nudillo se escribe con una pequeña flecha que apunta hacia arriba. La flecha tira de los dedos hacia arriba. Dos flechas significan 2 bisagras hacia arriba."
+        ]
+      },
+      {
+        "name": "Bisagra, los Nudillos Abren y Cierran Juntos",
+        "paragraphs": [
+          "Los dedos se mueven juntos en la misma dirección, como una unidad. Los nudillos de los dedos abren y cierran (se doblan hacia arriba y hacia abajo) juntos. Este movimiento de abrir-cerrar del nudillo se escribe con una fila de pequeñas flechas conectadas que apuntan hacia arriba y hacia abajo."
+        ]
+      },
+      {
+        "name": "Trino, los Nudillos Abren y Cierran Alternadamente",
+        "paragraphs": [
+          "Los dedos no se mueven juntos como una unidad. En cambio, se doblan en direcciones opuestas. Uno se mueve hacia arriba, mientras el otro se mueve hacia abajo. Este Movimiento Alterno de los Dedos, también llamado Trinos de los Dedos, se escribe con dos filas de pequeñas flechas que apuntan hacia arriba y hacia abajo."
+        ]
+      }
+    ]
   }
 }
