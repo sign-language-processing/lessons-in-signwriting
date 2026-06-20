@@ -1,3 +1,4 @@
+import { Trans, useTranslation } from "react-i18next";
 import { Figure } from "../components/Figure";
 import { Col, Row } from "../components/Layout";
 import { SgnwSign, SgnwSymbol } from "../components/Sgnw";
@@ -48,11 +49,6 @@ const ART = asset("/docling-out/sw0116-Lessons-SignWriting_artifacts");
 
 /** Head drawing with the asymmetric face overlaid in the empty top corner. */
 function FaceOverHead({ mirror }: { mirror: boolean }) {
-  // The head drawing has whitespace at its top-left (where the wraparound
-  // hand leaves room). The wrapping figure is sized to 80% and pushed to
-  // one side via margin: auto. For the right-side variant we flip the whole
-  // stack horizontally, which moves the face from top-left to top-right and
-  // also flips the head so the hand reaches around the other side.
   return (
     <figure
       style={{
@@ -96,57 +92,43 @@ function FaceOverHead({ mirror }: { mirror: boolean }) {
 }
 
 export function Ch2Viewpoints() {
+  const { t } = useTranslation();
   return (
     <>
-      <h2 id="chapter-2">Chapter 2 — Viewpoints</h2>
+      <h2 id="chapter-2">
+        {t("common.chapterHeading", { number: 2, title: t("toc.chapter-2") })}
+      </h2>
       <YouTubeVideo
         videoId="0WdqJF_5iBk"
-        title="Video 1 — Introduction to SignWriting"
+        title={t("ch2.videoTitle")}
         credits={VIDEO_CREDITS}
         transcript={TRANSCRIPT_1}
       />
       <p>
-        SignWriting can be written from either the Receptive or the Expressive
-        viewpoints. This book teaches reading and writing signs from the
-        Expressive Viewpoint. The Expressive Viewpoint is now the standard in
-        SignWriting publications. The Receptive Viewpoint is used occasionally
-        when transcribing signs from videotape, or when recording foreign signs
-        in shorthand. For more information on using the Receptive Viewpoint,
-        refer to <a href="#chapter-15">Chapter 15</a>.
+        <Trans
+          i18nKey="ch2.intro"
+          components={{ ch15: <a href="#chapter-15" /> }}
+        />
       </p>
 
       <Row stretch>
         <Col>
-          <h2>Expressive Viewpoint</h2>
-          <p>
-            When you are signing to someone else, you see signs from your own
-            point of view. This is called the Expressive Viewpoint.
-          </p>
+          <h2>{t("ch2.expressiveHeading")}</h2>
+          <p>{t("ch2.expressiveIntro")}</p>
           <Figure src={IMG.expressive} style={{ marginTop: "auto" }} />
         </Col>
         <Col>
-          <h2>Receptive Viewpoint</h2>
-          <p>
-            When someone is facing you, signing to you, you view the signs as an
-            observer. The signer's right side is your left side. This is called
-            the Receptive Viewpoint.
-          </p>
+          <h2>{t("ch2.receptiveHeading")}</h2>
+          <p>{t("ch2.receptiveIntro")}</p>
           <Figure src={IMG.receptive} style={{ marginTop: "auto" }} />
         </Col>
       </Row>
 
-      <h2>The Expressive Viewpoint</h2>
-      <p>
-        Read and write signs as if you are looking at your own hands, from your
-        own perspective.
-      </p>
+      <h2>{t("ch2.expressiveMainHeading")}</h2>
+      <p>{t("ch2.expressiveMainIntro")}</p>
 
-      <h2>Palm of Hand</h2>
-      <p>
-        When you see the palm of your hand, while you are signing, the symbol
-        for the hand will be white, or hollow. The palm of the hand is always
-        written with a white, hollow symbol.
-      </p>
+      <h2>{t("ch2.palmHeading")}</h2>
+      <p>{t("ch2.palmIntro")}</p>
 
       <Row>
         <Figure
@@ -160,15 +142,9 @@ export function Ch2Viewpoints() {
 
       <Row stretch>
         <Col>
-          <h2>Side of Hand</h2>
-          <p>
-            When you see the side of your hand while you are signing, the symbol
-            for the hand will be half black and half white.
-          </p>
-          <p>
-            The white part of the symbol shows where the palm of the hand faces.
-            The dark part represents the back of the hand.
-          </p>
+          <h2>{t("ch2.sideHeading")}</h2>
+          <p>{t("ch2.side1")}</p>
+          <p>{t("ch2.side2")}</p>
           <Figure
             src={IMG.sideHand}
             style={{ marginTop: "auto" }}
@@ -178,15 +154,9 @@ export function Ch2Viewpoints() {
           />
         </Col>
         <Col>
-          <h2>Back of Hand</h2>
-          <p>
-            When you see the back of your hand while you are signing, the symbol
-            will be black, or filled-in.
-          </p>
-          <p>
-            The back of the hand is always written with a black, filled-in
-            symbol.
-          </p>
+          <h2>{t("ch2.backHeading")}</h2>
+          <p>{t("ch2.back1")}</p>
+          <p>{t("ch2.back2")}</p>
           <Figure
             src={IMG.backHand}
             style={{ marginTop: "auto" }}
@@ -197,15 +167,11 @@ export function Ch2Viewpoints() {
         </Col>
       </Row>
 
-      <h2>Sides of the Head</h2>
-      <p>
-        The head is written with a circle, viewed from the back. The symbol for
-        the hand is placed on the side of the head it is near. In ASL, this sign
-        means "know". An asterisk means touch.
-      </p>
+      <h2>{t("ch2.sidesHeadHeading")}</h2>
+      <p>{t("ch2.sidesHeadIntro")}</p>
       <Row>
         <Col>
-          <h3>Left Side of Head</h3>
+          <h3>{t("ch2.leftSideHead")}</h3>
           <SgnwSign
             sign={KNOW_LEFT_SIGN}
             video="/videos/know/know.mp4"
@@ -214,21 +180,19 @@ export function Ch2Viewpoints() {
           <Figure src={IMG.headDrawingLeft} />
         </Col>
         <Col>
-          <h3>Right Side of Head</h3>
+          <h3>{t("ch2.rightSideHead")}</h3>
           <SgnwSign sign={KNOW_RIGHT_SIGN} video="/videos/know/know.mp4" />
           <Figure src={IMG.headDrawingRight} />
         </Col>
       </Row>
 
-      <h2>Sides of the Face</h2>
+      <h2>{t("ch2.sidesFaceHeading")}</h2>
       <p>
-        Pretend you can see through the back of the head. You are reading and
-        writing how your face <strong>feels</strong> when you sign. In ASL,
-        this sign also means "know". Two asterisks mean touching two times.
+        <Trans i18nKey="ch2.sidesFaceIntro" />
       </p>
       <Row>
         <Col>
-          <h3>Left Side of Face</h3>
+          <h3>{t("ch2.leftSideFace")}</h3>
           <SgnwSign sign={FEEL_LEFT_SIGN} />
           <FaceOverHead mirror={false} />
           <Figure
@@ -237,7 +201,7 @@ export function Ch2Viewpoints() {
           />
         </Col>
         <Col>
-          <h3>Right Side of Face</h3>
+          <h3>{t("ch2.rightSideFace")}</h3>
           <SgnwSign sign={FEEL_RIGHT_SIGN} />
           <FaceOverHead mirror={true} />
           <Figure src={IMG.facePersonRight} />

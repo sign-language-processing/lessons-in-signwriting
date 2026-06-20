@@ -15,7 +15,10 @@
     ],
     "directionN": "Dirección {{n}}",
     "rotatedHint": "El mismo símbolo girado a cada posición.",
-    "close": "Cerrar"
+    "close": "Cerrar",
+    "credits": "Créditos",
+    "transcript": "Transcripción",
+    "transcriptOriginal": "Esta es una transcripción del vídeo original en inglés."
   },
   "toc": {
     "chapter-1": "Introducción",
@@ -783,5 +786,31 @@
         "desc": "Recto con Rotación"
       }
     ]
+  },
+  "ch2": {
+    "videoTitle": "Vídeo 1 — Introducción a SignWriting",
+    "intro": "El SignWriting puede escribirse desde el punto de vista Receptivo o el Expresivo. Este libro enseña a leer y escribir signos desde el Punto de Vista Expresivo. El Punto de Vista Expresivo es hoy el estándar en las publicaciones de SignWriting. El Punto de Vista Receptivo se usa ocasionalmente al transcribir signos desde una grabación de vídeo, o al registrar signos extranjeros de forma abreviada. Para más información sobre el uso del Punto de Vista Receptivo, consulta el <ch15>Capítulo 15</ch15>.",
+    "expressiveHeading": "Punto de Vista Expresivo",
+    "expressiveIntro": "Cuando le señas a otra persona, ves los signos desde tu propio punto de vista. Esto se llama el Punto de Vista Expresivo.",
+    "receptiveHeading": "Punto de Vista Receptivo",
+    "receptiveIntro": "Cuando alguien está frente a ti, señándote, ves los signos como un observador. El lado derecho del señante es tu lado izquierdo. Esto se llama el Punto de Vista Receptivo.",
+    "expressiveMainHeading": "El Punto de Vista Expresivo",
+    "expressiveMainIntro": "Lee y escribe los signos como si estuvieras mirando tus propias manos, desde tu propia perspectiva.",
+    "palmHeading": "Palma de la Mano",
+    "palmIntro": "Cuando ves la palma de tu mano mientras señas, el símbolo de la mano será blanco, o hueco. La palma de la mano siempre se escribe con un símbolo blanco y hueco.",
+    "sideHeading": "Lado de la Mano",
+    "side1": "Cuando ves el lado de tu mano mientras señas, el símbolo de la mano será mitad negro y mitad blanco.",
+    "side2": "La parte blanca del símbolo muestra hacia dónde mira la palma de la mano. La parte oscura representa el dorso de la mano.",
+    "backHeading": "Dorso de la Mano",
+    "back1": "Cuando ves el dorso de tu mano mientras señas, el símbolo será negro, o relleno.",
+    "back2": "El dorso de la mano siempre se escribe con un símbolo negro y relleno.",
+    "sidesHeadHeading": "Lados de la Cabeza",
+    "sidesHeadIntro": "La cabeza se escribe con un círculo, visto desde atrás. El símbolo de la mano se coloca en el lado de la cabeza al que está cerca. En ASL, este signo significa \"saber\". Un asterisco significa tocar.",
+    "leftSideHead": "Lado Izquierdo de la Cabeza",
+    "rightSideHead": "Lado Derecho de la Cabeza",
+    "sidesFaceHeading": "Lados del Rostro",
+    "sidesFaceIntro": "Imagina que puedes ver a través de la parte de atrás de la cabeza. Estás leyendo y escribiendo cómo <strong>siente</strong> tu rostro cuando señas. En ASL, este signo también significa \"saber\". Dos asteriscos significan tocar dos veces.",
+    "leftSideFace": "Lado Izquierdo del Rostro",
+    "rightSideFace": "Lado Derecho del Rostro"
   }
 }

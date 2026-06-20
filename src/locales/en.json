@@ -15,7 +15,10 @@
     ],
     "directionN": "Direction {{n}}",
     "rotatedHint": "The same symbol rotated to each position.",
-    "close": "Close"
+    "close": "Close",
+    "credits": "Credits",
+    "transcript": "Transcript",
+    "transcriptOriginal": "This is a transcript of the original English-language video."
   },
   "toc": {
     "chapter-1": "Introduction",
@@ -783,5 +786,31 @@
         "desc": "Straight with Rotation"
       }
     ]
+  },
+  "ch2": {
+    "videoTitle": "Video 1 — Introduction to SignWriting",
+    "intro": "SignWriting can be written from either the Receptive or the Expressive viewpoints. This book teaches reading and writing signs from the Expressive Viewpoint. The Expressive Viewpoint is now the standard in SignWriting publications. The Receptive Viewpoint is used occasionally when transcribing signs from videotape, or when recording foreign signs in shorthand. For more information on using the Receptive Viewpoint, refer to <ch15>Chapter 15</ch15>.",
+    "expressiveHeading": "Expressive Viewpoint",
+    "expressiveIntro": "When you are signing to someone else, you see signs from your own point of view. This is called the Expressive Viewpoint.",
+    "receptiveHeading": "Receptive Viewpoint",
+    "receptiveIntro": "When someone is facing you, signing to you, you view the signs as an observer. The signer's right side is your left side. This is called the Receptive Viewpoint.",
+    "expressiveMainHeading": "The Expressive Viewpoint",
+    "expressiveMainIntro": "Read and write signs as if you are looking at your own hands, from your own perspective.",
+    "palmHeading": "Palm of Hand",
+    "palmIntro": "When you see the palm of your hand, while you are signing, the symbol for the hand will be white, or hollow. The palm of the hand is always written with a white, hollow symbol.",
+    "sideHeading": "Side of Hand",
+    "side1": "When you see the side of your hand while you are signing, the symbol for the hand will be half black and half white.",
+    "side2": "The white part of the symbol shows where the palm of the hand faces. The dark part represents the back of the hand.",
+    "backHeading": "Back of Hand",
+    "back1": "When you see the back of your hand while you are signing, the symbol will be black, or filled-in.",
+    "back2": "The back of the hand is always written with a black, filled-in symbol.",
+    "sidesHeadHeading": "Sides of the Head",
+    "sidesHeadIntro": "The head is written with a circle, viewed from the back. The symbol for the hand is placed on the side of the head it is near. In ASL, this sign means \"know\". An asterisk means touch.",
+    "leftSideHead": "Left Side of Head",
+    "rightSideHead": "Right Side of Head",
+    "sidesFaceHeading": "Sides of the Face",
+    "sidesFaceIntro": "Pretend you can see through the back of the head. You are reading and writing how your face <strong>feels</strong> when you sign. In ASL, this sign also means \"know\". Two asterisks mean touching two times.",
+    "leftSideFace": "Left Side of Face",
+    "rightSideFace": "Right Side of Face"
   }
 }

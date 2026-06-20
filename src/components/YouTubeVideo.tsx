@@ -5,6 +5,7 @@ import {
   type CSSProperties,
   type ReactNode,
 } from "react";
+import { useTranslation } from "react-i18next";
 
 export type YouTubeVideoProps = {
   videoId: string;
@@ -25,6 +26,7 @@ export function YouTubeVideo({
   className,
   style,
 }: YouTubeVideoProps) {
+  const { t, i18n } = useTranslation();
   const [open, setOpen] = useState<OpenSection>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
 
@@ -57,8 +59,11 @@ export function YouTubeVideo({
     return () => dlg.removeEventListener("click", handler);
   }, []);
 
-  const dialogTitle = open === "credits" ? "Credits" : "Transcript";
+  const dialogTitle =
+    open === "credits" ? t("common.credits") : t("common.transcript");
   const dialogBody = open === "credits" ? credits : transcript;
+  const showOriginalNote =
+    open === "transcript" && i18n.resolvedLanguage !== "en";
 
   return (
     <figure className={className} style={{ margin: "1.5em 0", ...style }}>
@@ -103,7 +108,7 @@ export function YouTubeVideo({
             onClick={() => setOpen("credits")}
             style={buttonStyle}
           >
-            Credits
+            {t("common.credits")}
           </button>
         )}
         {transcript && (
@@ -112,7 +117,7 @@ export function YouTubeVideo({
             onClick={() => setOpen("transcript")}
             style={buttonStyle}
           >
-            Transcript
+            {t("common.transcript")}
           </button>
         )}
       </figcaption>
@@ -134,7 +139,7 @@ export function YouTubeVideo({
           <form method="dialog" style={{ margin: 0 }}>
             <button
               type="submit"
-              aria-label="Close"
+              aria-label={t("common.close")}
               style={{
                 position: "absolute",
                 top: "0.5rem",
@@ -157,6 +162,9 @@ export function YouTubeVideo({
             {title} — {dialogTitle}
           </h2>
           <div style={{ maxBlockSize: "70vh", overflowY: "auto" }}>
+            {showOriginalNote && (
+              <p className="original-note">{t("common.transcriptOriginal")}</p>
+            )}
             {dialogBody}
           </div>
         </div>
