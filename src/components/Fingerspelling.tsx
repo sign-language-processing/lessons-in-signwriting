@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import fingerspelling from "../content/fingerspelling.generated.json";
 import signVideos from "../content/fingerspelling-videos.generated.json";
 import { SgnwSign, SgnwSymbol } from "./Sgnw";
@@ -54,6 +55,7 @@ function Alphabet({ language }: { language: Language }) {
 }
 
 export function Fingerspelling() {
+  const { t } = useTranslation();
   const [code, setCode] = useState(DEFAULT_CODE);
   const language = useMemo(
     () =>
@@ -70,7 +72,9 @@ export function Fingerspelling() {
     <>
       <div className="fingerspelling screen-only">
         <div className="fingerspelling__controls" data-no-print>
-          <label htmlFor="fingerspelling-language">Language:</label>
+          <label htmlFor="fingerspelling-language">
+            {t("common.language")}:
+          </label>
           <select
             id="fingerspelling-language"
             value={language.code}

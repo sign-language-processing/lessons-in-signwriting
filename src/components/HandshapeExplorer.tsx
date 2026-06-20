@@ -1,4 +1,5 @@
 import { Fragment, useState, type CSSProperties } from "react";
+import { useTranslation } from "react-i18next";
 import { asset } from "../lib/asset";
 import { fillVariants, symbolToKey } from "../lib/handImage";
 import { SgnwSymbol } from "./Sgnw";
@@ -101,10 +102,14 @@ const SHAPES: Shape[] = [
 
 type Plane = "wall" | "floor";
 
-const PLANE_LABEL: Record<Plane, string> = {
-  wall: "Wall Plane",
-  floor: "Floor Plane",
-};
+const SHAPE_NAME_KEYS = [
+  "indexHand",
+  "closedFist",
+  "dHand",
+  "openFist",
+  "fiveHand",
+  "flatHand",
+];
 
 function ShapePanel({ shape, plane }: { shape: Shape; plane: Plane }) {
   const key = symbolToKey(shape.symbol);
@@ -137,9 +142,13 @@ function ShapePanel({ shape, plane }: { shape: Shape; plane: Plane }) {
 }
 
 export function HandshapeExplorer() {
+  const { t } = useTranslation();
   const [shapeIdx, setShapeIdx] = useState(0);
   const [plane, setPlane] = useState<Plane>("wall");
   const shape = SHAPES[shapeIdx]!;
+  const shapeName = (i: number) => t(`ui.shapeNames.${SHAPE_NAME_KEYS[i]}`);
+  const planeLabel = (p: Plane) =>
+    t(p === "wall" ? "ui.wallPlane" : "ui.floorPlane");
 
   return (
     <section
@@ -161,7 +170,7 @@ export function HandshapeExplorer() {
           marginBlockEnd: "1em",
         }}
       >
-        <div role="tablist" aria-label="Handshape" style={tabBarStyle}>
+        <div role="tablist" aria-label={t("ui.handshapeAria")} style={tabBarStyle}>
           {SHAPES.map((s, i) => (
             <button
               key={s.name}
@@ -175,11 +184,11 @@ export function HandshapeExplorer() {
                 symbol={s.symbol}
                 style={{ fontSize: 22 }}
               ></sgnw-symbol>
-              <span style={{ marginInlineStart: 6 }}>{s.name}</span>
+              <span style={{ marginInlineStart: 6 }}>{shapeName(i)}</span>
             </button>
           ))}
         </div>
-        <div role="tablist" aria-label="Plane" style={tabBarStyle}>
+        <div role="tablist" aria-label={t("ui.planeAria")} style={tabBarStyle}>
           {(["wall", "floor"] as Plane[]).map((p) => (
             <button
               key={p}
@@ -189,7 +198,7 @@ export function HandshapeExplorer() {
               onClick={() => setPlane(p)}
               style={tabStyle(plane === p)}
             >
-              {PLANE_LABEL[p]}
+              {planeLabel(p)}
             </button>
           ))}
         </div>
@@ -200,14 +209,14 @@ export function HandshapeExplorer() {
       </div>
 
       <div className="print-only">
-        {SHAPES.map((s) =>
+        {SHAPES.map((s, i) =>
           (["wall", "floor"] as Plane[]).map((p) => (
             <div
               key={`${s.name}-${p}`}
               style={{ marginBlockEnd: "1.5em", breakInside: "avoid" }}
             >
               <h3 style={{ marginBlockEnd: "0.5em" }}>
-                {s.name} — {PLANE_LABEL[p]}
+                {shapeName(i)} — {planeLabel(p)}
               </h3>
               <ShapePanel shape={s} plane={p} />
             </div>

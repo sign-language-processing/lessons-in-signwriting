@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Trans, useTranslation } from "react-i18next";
 import { asset } from "../lib/asset";
 import { baseSymbolName } from "../lib/baseSymbolNames";
 import {
@@ -29,6 +30,7 @@ export function HandOrientationPractice({
   openBase,
   onClose,
 }: HandOrientationPracticeProps) {
+  const { t } = useTranslation();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [round, setRound] = useState<Round | null>(null);
   const [selected, setSelected] = useState<Selection | null>(null);
@@ -116,14 +118,18 @@ export function HandOrientationPractice({
     >
       <div className="practice-body">
         <form method="dialog" className="practice-close-form">
-          <button type="submit" aria-label="Close" className="practice-close">
+          <button
+            type="submit"
+            aria-label={t("common.close")}
+            className="practice-close"
+          >
             ×
           </button>
         </form>
 
-        <h2 id="practice-title">Hand Orientation Practice</h2>
+        <h2 id="practice-title">{t("ui.handOrientTitle")}</h2>
         <p className="practice-prompt">
-          Match each <strong>{name}</strong> symbol to its photo.
+          <Trans i18nKey="ui.matchPrompt" values={{ name }} />
         </p>
 
         <div className="practice-board" aria-hidden={solved}>
@@ -167,12 +173,12 @@ export function HandOrientationPractice({
       {solved && (
         <div className="practice-result" role="status">
           <p className="practice-result__title">
-            {mistakes === 0 ? "Perfect! 🎉" : "Solved! ✅"}
+            {mistakes === 0 ? t("ui.perfect") : t("ui.solved")}
           </p>
           <p className="practice-result__detail">
             {mistakes === 0
-              ? "No mistakes."
-              : `${mistakes} mistake${mistakes === 1 ? "" : "s"}.`}
+              ? t("ui.noMistakes")
+              : t("ui.mistakes", { count: mistakes })}
           </p>
         </div>
       )}
@@ -183,7 +189,7 @@ export function HandOrientationPractice({
             className="practice-next"
             onClick={() => start(randomPracticeBase(round.base))}
           >
-            {solved ? "Next handshape →" : "Skip →"}
+            {solved ? t("ui.nextHandshape") : t("ui.skip")}
           </button>
         </div>
       </div>

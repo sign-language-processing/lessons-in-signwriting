@@ -1,4 +1,5 @@
 import { useState, type CSSProperties } from "react";
+import { useTranslation } from "react-i18next";
 import { HAND_GROUPS, type HandExample, type HandGroup } from "../lib/handGroups";
 import { asset } from "../lib/asset";
 import { SgnwSign, SgnwSymbol } from "./Sgnw";
@@ -27,10 +28,11 @@ function ExampleCell({ example }: { example: HandExample }) {
 }
 
 function GroupPanel({ group }: { group: HandGroup }) {
+  const { t } = useTranslation();
   return (
     <>
       <h3 style={{ marginBlockStart: 0 }}>
-        Group {group.number} — {group.name}
+        {t("ui.group", { n: group.number })} — {group.name}
       </h3>
       <ul className="hand-groups-bases">
         {group.bases.map((b) => (
@@ -42,7 +44,7 @@ function GroupPanel({ group }: { group: HandGroup }) {
       </ul>
       {group.examples.length > 0 && (
         <>
-          <h4 style={{ marginBlockStart: "1.5em" }}>Examples</h4>
+          <h4 style={{ marginBlockStart: "1.5em" }}>{t("ui.examples")}</h4>
           <ul className="hand-groups-examples">
             {group.examples.map((ex, i) => (
               <ExampleCell key={`${ex.word}-${i}`} example={ex} />
@@ -55,13 +57,14 @@ function GroupPanel({ group }: { group: HandGroup }) {
 }
 
 export function HandGroupsExplorer() {
+  const { t } = useTranslation();
   const [selected, setSelected] = useState(0);
   const group = HAND_GROUPS[selected]!;
 
   return (
     <>
       <section className="hand-groups-explorer screen-only">
-        <nav aria-label="Hand groups" className="hand-groups-menu">
+        <nav aria-label={t("ui.handGroupsAria")} className="hand-groups-menu">
           {HAND_GROUPS.map((g, i) => (
             <button
               key={g.number}
@@ -72,7 +75,7 @@ export function HandGroupsExplorer() {
             >
               <SgnwSymbol symbol={g.symbol} size={28} />
               <span className="hand-groups-menu__label">
-                <strong>Group {g.number}</strong>
+                <strong>{t("ui.group", { n: g.number })}</strong>
                 <span>{g.name}</span>
               </span>
             </button>
@@ -90,7 +93,7 @@ export function HandGroupsExplorer() {
             <li key={g.number}>
               <SgnwSymbol symbol={g.symbol} />
               <span>
-                <strong>Group {g.number}:</strong> {g.name}
+                <strong>{t("ui.group", { n: g.number })}:</strong> {g.name}
               </span>
             </li>
           ))}

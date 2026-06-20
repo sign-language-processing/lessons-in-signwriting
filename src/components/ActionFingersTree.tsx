@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Trans } from "react-i18next";
 import { SgnwSymbol } from "./Sgnw";
 
 // A skeletal tree (no leaves) drawn as strokes. Each branch is revealed by
@@ -138,10 +139,10 @@ export function ActionFingersTree() {
       </div>
       <div className="action-tree__text">
         <p>
-          <strong>Action Fingers</strong> are like branches on a tree.
+          <Trans i18nKey="ui.actionTree1" />
         </p>
         <p>
-          <strong>Rootshape</strong> provides the foundation to the symbol.
+          <Trans i18nKey="ui.actionTree2" />
         </p>
       </div>
     </div>
