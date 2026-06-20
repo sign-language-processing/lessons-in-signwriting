@@ -367,5 +367,128 @@
     "u4": "Quando o SignWriting é escrito verticalmente, a Linha de Conexão de Unidade é escrita ao lado da coluna vertical, como mostrado aqui. A Linha de Unidade é cinza ou mais clara que os sinais.",
     "u5": "Na Espanha, a Linha de Conexão de Unidade é usada na literatura horizontal de SignWriting. Ao escrever horizontalmente, a Linha de Conexão de Unidade é escrita abaixo ou acima da escrita.",
     "u6": "Na Escrita de Dança de Sutton (Sutton DanceWriting), a Linha de Conexão de Unidade é usada com frequência para mostrar a influência de um símbolo de movimento sobre um grupo de outros símbolos. No SignWriting, ela raramente é usada no dia a dia."
+  },
+  "ch9": {
+    "armHeading": "Círculos de Braço",
+    "armIntro": "Os círculos de braço paralelos ao Plano da Parede são círculos de haste dupla. As setas marcam exatamente onde o movimento circular começa. Ao ler os Símbolos de Círculo, coloque a mão onde as setas estão no círculo e, em seguida, mova-se na direção das setas.",
+    "wristHeading": "Círculos de Pulso",
+    "wristIntro": "Os círculos de pulso são escritos com linhas contínuas. As setas são colocadas fora do círculo. Ao ler os Símbolos de Círculo de Pulso, coloque a mão na seta e, em seguida, mova-se naquela direção.",
+    "startLabels": [
+      "Começa no Alto",
+      "Começa na Diagonal Superior Direita",
+      "Começa no Lado Direito",
+      "Começa na Diagonal Inferior Direita",
+      "Começa Embaixo",
+      "Começa na Diagonal Inferior Esquerda",
+      "Começa no Lado Esquerdo",
+      "Começa na Diagonal Superior Esquerda"
+    ],
+    "fbLabels": [
+      "Paralelo à Parede Lateral",
+      "Diagonal Superior Esquerda",
+      "Paralelo ao Chão",
+      "Diagonal Inferior Esquerda",
+      "Paralelo à Parede Lateral",
+      "Diagonal Inferior Direita",
+      "Paralelo ao Chão",
+      "Diagonal Superior Direita"
+    ],
+    "wristFbLabels": [
+      "Paralelo à Parede Lateral",
+      "Paralelo à Parede Lateral",
+      "Paralelo à Parede Lateral",
+      "Paralelo à Parede Lateral",
+      "Paralelo ao Chão",
+      "Paralelo ao Chão"
+    ],
+    "oneCircle": "Um Círculo",
+    "twoCircles": "Dois Círculos",
+    "fbCircle": "Círculo Frente-Trás",
+    "singleArm": "Círculos de Braço Simples",
+    "doubleArm": "Círculos de Braço Duplos",
+    "singleFb": "Círculos Simples Frente-Trás",
+    "doubleFb": "Círculos Duplos Frente-Trás",
+    "singleWristSide": "Círculos de Pulso Simples Lado a Lado",
+    "doubleWristSide": "Círculos de Pulso Duplos Lado a Lado",
+    "singleWristFb": "Círculos de Pulso Simples Frente-Trás",
+    "doubleWristFb": "Círculos de Pulso Duplos Frente-Trás",
+    "subWall": "Lado a Lado · Paralelo ao Plano da Parede",
+    "subFloor": "Planos Sagital e do Chão",
+    "subWallPlane": "Paralelo ao Plano da Parede"
+  },
+  "ch7": {
+    "wallHeading": "Movimento Curvo no Plano da Parede",
+    "wallIntro": "O movimento Cima-Baixo é paralelo à parede frontal. Ele é escrito com setas de <strong>haste dupla</strong>:",
+    "wallCurves": [
+      "1. Curva Cima-Lado",
+      "2. Curva Cima-Cima",
+      "3. Curva Cima-Baixo-Cima",
+      "4. Curva Cima-Laço-Cima"
+    ],
+    "upDownArrowsHeading": "Setas Curvas Cima-Baixo",
+    "upDownArrowsIntro": "As curvas são paralelas à parede.",
+    "floorHeading": "Movimento Curvo no Plano do Chão",
+    "floorIntro": "O movimento Frente-Trás é paralelo ao chão. Ele é escrito com setas de <strong>haste simples</strong>. A parte mais fina da seta significa <strong>longe</strong> do corpo; a parte grossa e escura significa <strong>perto</strong> do corpo — como olhar por uma estrada, o que está perto é mais largo e mais escuro.",
+    "fwOverHeading": "Frente-Por Cima ou Trás-Por Cima",
+    "fwUnderHeading": "Frente-Por Baixo ou Trás-Por Baixo",
+    "fwSideHeading": "Frente-Lado ou Trás-Lado",
+    "sideHeading": "Lado-Frente-Lado ou Lado-Trás-Lado",
+    "forwardOver": "Frente-Por Cima",
+    "backOver": "Trás-Por Cima",
+    "forwardUnder": "Frente-Por Baixo",
+    "backUnder": "Trás-Por Baixo",
+    "forwardSide": "Frente-Lado",
+    "backSide": "Trás-Lado",
+    "sideForwardSide": "Lado-Frente-Lado",
+    "sideBackSide": "Lado-Trás-Lado",
+    "forwardOverItems": [
+      "Frente-Por Cima",
+      "Frente-Por Cima-Por Cima",
+      "Frente-Laço-Por Cima",
+      "Frente-Por Cima-Por Baixo"
+    ],
+    "backOverItems": [
+      "Trás-Por Cima",
+      "Trás-Por Cima-Por Cima",
+      "Trás-Laço-Por Cima",
+      "Trás-Por Baixo-Por Cima"
+    ],
+    "forwardUnderItems": [
+      "Frente-Por Baixo",
+      "Frente-Por Baixo-Por Baixo",
+      "Frente-Laço-Por Baixo",
+      "Frente-Por Baixo-Por Cima"
+    ],
+    "backUnderItems": [
+      "Trás-Por Baixo",
+      "Trás-Por Baixo-Por Baixo",
+      "Trás-Laço-Por Baixo",
+      "Trás-Por Cima-Por Baixo"
+    ],
+    "forwardSideItems": [
+      "Frente-Lado",
+      "Frente-Lado-Lado",
+      "Frente-Laço-Lado",
+      "Frente-Lado-Trás-Lado"
+    ],
+    "backSideItems": [
+      "Trás-Lado",
+      "Trás-Lado-Lado",
+      "Trás-Laço-Lado",
+      "Trás-Lado-Frente-Lado"
+    ],
+    "sideForwardSideItems": [
+      "Lado-Frente-Lado",
+      "Lado-Frente-Lado Duas Vezes",
+      "Lado-Frente-Lado em Laço",
+      "Lado-Frente-Lado Serpenteado"
+    ],
+    "sideBackSideItems": [
+      "Lado-Trás-Lado",
+      "Lado-Trás-Lado Duas Vezes",
+      "Lado-Trás-Lado em Laço",
+      "Lado-Trás-Lado Serpenteado"
+    ],
+    "exampleHeading": "Sinais de Exemplo"
   }
 }

@@ -367,5 +367,128 @@
     "u4": "When SignWriting is written vertically, the Unit-Connecting Line is written to the side of the vertical column, as shown here. The Unit Line is grey or lighter than the signs.",
     "u5": "In Spain, the Unit-Connecting Line is used for horizontal SignWriting literature. When writing horizontally, the Unit-Connecting Line is written under or over the writing.",
     "u6": "In Sutton DanceWriting, the Unit-Connecting Line is used often to show the influence of one movement symbol on a group of other symbols. In SignWriting, it is rarely used for everyday use."
+  },
+  "ch9": {
+    "armHeading": "Arm Circles",
+    "armIntro": "Arm circles parallel to the Wall Plane are double-stemmed circles. Arrows mark exactly where the circular movement starts. When reading Circle Symbols, place your hand where the arrows are located on the circle, and then move in the direction of the arrows.",
+    "wristHeading": "Wrist Circles",
+    "wristIntro": "Wrist circles are written with solid lines. Arrows are placed outside the circle. When reading Wrist Circle Symbols, place your hand at the arrow, and then move in that direction.",
+    "startLabels": [
+      "Starts High",
+      "Starts High-Diagonal-Right",
+      "Starts Right Side",
+      "Starts Low-Diagonal-Right",
+      "Starts Low",
+      "Starts Low-Diagonal-Left",
+      "Starts Left Side",
+      "Starts High-Diagonal-Left"
+    ],
+    "fbLabels": [
+      "Parallel with Side Wall",
+      "Left High Diagonal",
+      "Parallel with Floor",
+      "Left Low Diagonal",
+      "Parallel with Side Wall",
+      "Right Low Diagonal",
+      "Parallel with Floor",
+      "Right High Diagonal"
+    ],
+    "wristFbLabels": [
+      "Parallel with Side Wall",
+      "Parallel with Side Wall",
+      "Parallel with Side Wall",
+      "Parallel with Side Wall",
+      "Parallel with Floor",
+      "Parallel with Floor"
+    ],
+    "oneCircle": "One Circle",
+    "twoCircles": "Two Circles",
+    "fbCircle": "Forward-Back Circle",
+    "singleArm": "Single Arm Circles",
+    "doubleArm": "Double Arm Circles",
+    "singleFb": "Single Circles Forward-Back",
+    "doubleFb": "Double Circles Forward-Back",
+    "singleWristSide": "Single Wrist Circles Side-To-Side",
+    "doubleWristSide": "Double Wrist Circles Side-To-Side",
+    "singleWristFb": "Single Wrist Circles Forward-Back",
+    "doubleWristFb": "Double Wrist Circles Forward-Back",
+    "subWall": "Side-To-Side · Parallel Wall Plane",
+    "subFloor": "Sagittal & Floor Planes",
+    "subWallPlane": "Parallel Wall Plane"
+  },
+  "ch7": {
+    "wallHeading": "Wall Plane Curved Movement",
+    "wallIntro": "Up-Down movement is parallel with the front wall. It is written with <strong>double-stemmed</strong> arrows:",
+    "wallCurves": [
+      "1. Curve Up-Side",
+      "2. Curve Up-Up",
+      "3. Curve Up-Down-Up",
+      "4. Curve Up-Loop-Up"
+    ],
+    "upDownArrowsHeading": "Up-Down Curved Arrows",
+    "upDownArrowsIntro": "The curves are parallel with the wall.",
+    "floorHeading": "Floor Plane Curved Movement",
+    "floorIntro": "Forward-Back movement is parallel with the floor. It is written with <strong>single-stemmed</strong> arrows. The thinner section of the arrow means <strong>far</strong> from the body; the thick, dark section means <strong>close</strong> to the body — like looking down a road, close is wider and darker.",
+    "fwOverHeading": "Forward-Over or Back-Over",
+    "fwUnderHeading": "Forward-Under or Back-Under",
+    "fwSideHeading": "Forward-Side or Back-Side",
+    "sideHeading": "Side-Forward-Side or Side-Back-Side",
+    "forwardOver": "Forward-Over",
+    "backOver": "Back-Over",
+    "forwardUnder": "Forward-Under",
+    "backUnder": "Back-Under",
+    "forwardSide": "Forward-Side",
+    "backSide": "Back-Side",
+    "sideForwardSide": "Side-Forward-Side",
+    "sideBackSide": "Side-Back-Side",
+    "forwardOverItems": [
+      "Forward-Over",
+      "Forward-Over-Over",
+      "Forward-Loop-Over",
+      "Forward-Over-Under"
+    ],
+    "backOverItems": [
+      "Back-Over",
+      "Back-Over-Over",
+      "Back-Loop-Over",
+      "Back-Under-Over"
+    ],
+    "forwardUnderItems": [
+      "Forward-Under",
+      "Forward-Under-Under",
+      "Forward-Loop-Under",
+      "Forward-Under-Over"
+    ],
+    "backUnderItems": [
+      "Back-Under",
+      "Back-Under-Under",
+      "Back-Loop-Under",
+      "Back-Over-Under"
+    ],
+    "forwardSideItems": [
+      "Forward-Side",
+      "Forward-Side-Side",
+      "Forward-Loop-Side",
+      "Forward-Side-Back-Side"
+    ],
+    "backSideItems": [
+      "Back-Side",
+      "Back-Side-Side",
+      "Back-Loop-Side",
+      "Back-Side-Forward-Side"
+    ],
+    "sideForwardSideItems": [
+      "Side-Forward-Side",
+      "Side-Forward-Side Twice",
+      "Side-Forward-Side Loop",
+      "Side-Forward-Side Snake"
+    ],
+    "sideBackSideItems": [
+      "Side-Back-Side",
+      "Side-Back-Side Twice",
+      "Side-Back-Side Loop",
+      "Side-Back-Side Snake"
+    ],
+    "exampleHeading": "Example Signs"
   }
 }

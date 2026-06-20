@@ -1,3 +1,4 @@
+import { Trans, useTranslation } from "react-i18next";
 import { Figure } from "../components/Figure";
 import { Col, Row } from "../components/Layout";
 import { SgnwSymbol } from "../components/Sgnw";
@@ -17,76 +18,17 @@ function SymbolFigure({ symbol, caption }: { symbol: string; caption: string }) 
   );
 }
 
-type CurveItem = { symbol: string; name: string };
-
-const FORWARD_OVER: CurveItem[] = [
-  { symbol: "񊒡", name: "Forward-Over" },
-  { symbol: "񊕡", name: "Forward-Over-Over" },
-  { symbol: "񊛡", name: "Forward-Loop-Over" },
-  { symbol: "񊡡", name: "Forward-Over-Under" },
-];
-
-const BACK_OVER: CurveItem[] = [
-  { symbol: "񊒦", name: "Back-Over" },
-  { symbol: "񊕦", name: "Back-Over-Over" },
-  { symbol: "񊛦", name: "Back-Loop-Over" },
-  { symbol: "񊡦", name: "Back-Under-Over" },
-];
-
-const FORWARD_UNDER: CurveItem[] = [
-  { symbol: "񊩁", name: "Forward-Under" },
-  { symbol: "񊬁", name: "Forward-Under-Under" },
-  { symbol: "񊲁", name: "Forward-Loop-Under" },
-  { symbol: "񊸁", name: "Forward-Under-Over" },
-];
-
-const BACK_UNDER: CurveItem[] = [
-  { symbol: "񊩆", name: "Back-Under" },
-  { symbol: "񊬆", name: "Back-Under-Under" },
-  { symbol: "񊲆", name: "Back-Loop-Under" },
-  { symbol: "񊸆", name: "Back-Over-Under" },
-];
-
-const FORWARD_SIDE: CurveItem[] = [
-  { symbol: "񊿡", name: "Forward-Side" },
-  { symbol: "񋇁", name: "Forward-Side-Side" },
-  { symbol: "񋈡", name: "Forward-Loop-Side" },
-  { symbol: "񋋡", name: "Forward-Side-Back-Side" },
-];
-
-const BACK_SIDE: CurveItem[] = [
-  { symbol: "񊿥", name: "Back-Side" },
-  { symbol: "񋇅", name: "Back-Side-Side" },
-  { symbol: "񋈥", name: "Back-Loop-Side" },
-  { symbol: "񋋥", name: "Back-Side-Forward-Side" },
-];
-
-const SIDE_FORWARD_SIDE: CurveItem[] = [
-  { symbol: "񊿧", name: "Side-Forward-Side" },
-  { symbol: "񋇇", name: "Side-Forward-Side Twice" },
-  { symbol: "񋈧", name: "Side-Forward-Side Loop" },
-  { symbol: "񋋧", name: "Side-Forward-Side Snake" },
-];
-
-const SIDE_BACK_SIDE: CurveItem[] = [
-  { symbol: "񊿫", name: "Side-Back-Side" },
-  { symbol: "񋇋", name: "Side-Back-Side Twice" },
-  { symbol: "񋈫", name: "Side-Back-Side Loop" },
-  { symbol: "񋋫", name: "Side-Back-Side Snake" },
-];
-
-function CurveList({ items }: { items: CurveItem[] }) {
-  return (
-    <ol className="curve-list">
-      {items.map(({ symbol, name }) => (
-        <li key={name}>
-          <SgnwSymbol symbol={symbol} className="curve-list__symbol" />
-          <span>{name}</span>
-        </li>
-      ))}
-    </ol>
-  );
-}
+const WALL_CURVES = ["񉌋", "񉛋", "񉥧", "񉟫"];
+const GROUPS: Record<string, string[]> = {
+  forwardOver: ["񊒡", "񊕡", "񊛡", "񊡡"],
+  backOver: ["񊒦", "񊕦", "񊛦", "񊡦"],
+  forwardUnder: ["񊩁", "񊬁", "񊲁", "񊸁"],
+  backUnder: ["񊩆", "񊬆", "񊲆", "񊸆"],
+  forwardSide: ["񊿡", "񋇁", "񋈡", "񋋡"],
+  backSide: ["񊿥", "񋇅", "񋈥", "񋋥"],
+  sideForwardSide: ["񊿧", "񋇇", "񋈧", "񋋧"],
+  sideBackSide: ["񊿫", "񋇋", "񋈫", "񋋫"],
+};
 
 const IMG = {
   coverPhoto1:
@@ -96,9 +38,28 @@ const IMG = {
 };
 
 export function Ch7CurvedMovement() {
+  const { t } = useTranslation();
+  const wallCaptions = t("ch7.wallCurves", { returnObjects: true }) as string[];
+
+  const CurveList = ({ group }: { group: keyof typeof GROUPS }) => {
+    const names = t(`ch7.${group}Items`, { returnObjects: true }) as string[];
+    return (
+      <ol className="curve-list">
+        {GROUPS[group]?.map((symbol, i) => (
+          <li key={symbol}>
+            <SgnwSymbol symbol={symbol} className="curve-list__symbol" />
+            <span>{names[i]}</span>
+          </li>
+        ))}
+      </ol>
+    );
+  };
+
   return (
     <>
-      <h2 id="chapter-7">Chapter 7 — Curved Movement</h2>
+      <h2 id="chapter-7">
+        {t("common.chapterHeading", { number: 7, title: t("toc.chapter-7") })}
+      </h2>
 
       <Row>
         <Col>
@@ -109,90 +70,85 @@ export function Ch7CurvedMovement() {
         </Col>
       </Row>
 
-      <h2>Wall Plane Curved Movement</h2>
+      <h2>{t("ch7.wallHeading")}</h2>
       <p>
-        Up-Down movement is parallel with the front wall. It is written with{" "}
-        <strong>double-stemmed</strong> arrows:
+        <Trans i18nKey="ch7.wallIntro" />
       </p>
       <Row stretch>
         <Col>
-          <SymbolFigure symbol="񉌋" caption="1. Curve Up-Side" />
-          <SymbolFigure symbol="񉛋" caption="2. Curve Up-Up" />
+          <SymbolFigure symbol={WALL_CURVES[0]!} caption={wallCaptions[0]!} />
+          <SymbolFigure symbol={WALL_CURVES[1]!} caption={wallCaptions[1]!} />
         </Col>
         <Col>
-          <SymbolFigure symbol="񉥧" caption="3. Curve Up-Down-Up" />
-          <SymbolFigure symbol="񉟫" caption="4. Curve Up-Loop-Up" />
+          <SymbolFigure symbol={WALL_CURVES[2]!} caption={wallCaptions[2]!} />
+          <SymbolFigure symbol={WALL_CURVES[3]!} caption={wallCaptions[3]!} />
         </Col>
       </Row>
       <WallPlaneCurves3D />
 
-      <h2>Up-Down Curved Arrows</h2>
-      <p>The curves are parallel with the wall.</p>
+      <h2>{t("ch7.upDownArrowsHeading")}</h2>
+      <p>{t("ch7.upDownArrowsIntro")}</p>
       <div className="examples-row">
         <SignFigure slug="ch7-shape" />
         <SignFigure slug="ch7-spaghetti" />
       </div>
 
-      <h2>Floor Plane Curved Movement</h2>
+      <h2>{t("ch7.floorHeading")}</h2>
       <p>
-        Forward-Back movement is parallel with the floor. It is written with{" "}
-        <strong>single-stemmed</strong> arrows. The thinner section of the arrow
-        means <strong>far</strong> from the body; the thick, dark section means{" "}
-        <strong>close</strong> to the body — like looking down a road, close is
-        wider and darker.
+        <Trans i18nKey="ch7.floorIntro" />
       </p>
 
-      <h3>Forward-Over or Back-Over</h3>
+      <h3>{t("ch7.fwOverHeading")}</h3>
       <Row stretch>
         <Col>
-          <h4>Forward-Over</h4>
-          <CurveList items={FORWARD_OVER} />
+          <h4>{t("ch7.forwardOver")}</h4>
+          <CurveList group="forwardOver" />
         </Col>
         <Col className="col--divided">
-          <h4>Back-Over</h4>
-          <CurveList items={BACK_OVER} />
+          <h4>{t("ch7.backOver")}</h4>
+          <CurveList group="backOver" />
         </Col>
       </Row>
 
-      <h3>Forward-Under or Back-Under</h3>
+      <h3>{t("ch7.fwUnderHeading")}</h3>
       <Row stretch>
         <Col>
-          <h4>Forward-Under</h4>
-          <CurveList items={FORWARD_UNDER} />
+          <h4>{t("ch7.forwardUnder")}</h4>
+          <CurveList group="forwardUnder" />
         </Col>
         <Col className="col--divided">
-          <h4>Back-Under</h4>
-          <CurveList items={BACK_UNDER} />
+          <h4>{t("ch7.backUnder")}</h4>
+          <CurveList group="backUnder" />
         </Col>
       </Row>
 
       <ForwardBackOverCurves3D />
 
-      <h3>Forward-Side or Back-Side</h3>
+      <h3>{t("ch7.fwSideHeading")}</h3>
       <Row stretch>
         <Col>
-          <h4>Forward-Side</h4>
-          <CurveList items={FORWARD_SIDE} />
+          <h4>{t("ch7.forwardSide")}</h4>
+          <CurveList group="forwardSide" />
         </Col>
         <Col className="col--divided">
-          <h4>Back-Side</h4>
-          <CurveList items={BACK_SIDE} />
+          <h4>{t("ch7.backSide")}</h4>
+          <CurveList group="backSide" />
         </Col>
       </Row>
 
-      <h3>Side-Forward-Side or Side-Back-Side</h3>
+      <h3>{t("ch7.sideHeading")}</h3>
       <Row stretch>
         <Col>
-          <h4>Side-Forward-Side</h4>
-          <CurveList items={SIDE_FORWARD_SIDE} />
+          <h4>{t("ch7.sideForwardSide")}</h4>
+          <CurveList group="sideForwardSide" />
         </Col>
         <Col className="col--divided">
-          <h4>Side-Back-Side</h4>
-          <CurveList items={SIDE_BACK_SIDE} />
+          <h4>{t("ch7.sideBackSide")}</h4>
+          <CurveList group="sideBackSide" />
         </Col>
       </Row>
 
-      <h2>Example Signs</h2>
+      <h2>{t("ch7.exampleHeading")}</h2>
       <div className="examples-row">
         <SignFigure slug="ch7-across" />
         <SignFigure slug="ch7-grandmother" />

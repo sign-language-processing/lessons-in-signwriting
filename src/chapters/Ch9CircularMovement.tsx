@@ -1,9 +1,18 @@
+import { useTranslation } from "react-i18next";
 import { SgnwSymbol } from "../components/Sgnw";
 import { SignFigure } from "../components/SignFigure";
 
 type Item = { symbol: string; label: string };
 
-function SymbolList({ heading, sub, items }: { heading: string; sub: string; items: Item[] }) {
+function SymbolList({
+  heading,
+  sub,
+  items,
+}: {
+  heading: string;
+  sub: string;
+  items: Item[];
+}) {
   return (
     <div className="ch9-col">
       <h3 className="ch9-col__head">{heading}</h3>
@@ -29,90 +38,51 @@ const wristSideDouble = ["񋥉", "񋥊", "񋥋", "񋥌", "񋥍", "񋥎", "񋥏",
 const wristFbSingle = ["񋦡", "񋦢", "񋦣", "񋦤", "񋦥", "񋦦"];
 const wristFbDouble = ["񋨁", "񋨂", "񋨃", "񋨄", "񋨅", "񋨆"];
 
-const ARM_LABELS = [
-  "Starts High",
-  "Starts High-Diagonal-Right",
-  "Starts Right Side",
-  "Starts Low-Diagonal-Right",
-  "Starts Low",
-  "Starts Low-Diagonal-Left",
-  "Starts Left Side",
-  "Starts High-Diagonal-Left",
-];
-
-const FB_LABELS = [
-  "Parallel with Side Wall",
-  "Left High Diagonal",
-  "Parallel with Floor",
-  "Left Low Diagonal",
-  "Parallel with Side Wall",
-  "Right Low Diagonal",
-  "Parallel with Floor",
-  "Right High Diagonal",
-];
-
-const WRIST_SIDE_LABELS = [
-  "Starts High",
-  "Starts High-Diagonal-Right",
-  "Starts Right Side",
-  "Starts Low-Diagonal-Right",
-  "Starts Low",
-  "Starts Low-Diagonal-Left",
-  "Starts Left Side",
-  "Starts High-Diagonal-Left",
-];
-
-const WRIST_FB_LABELS = [
-  "Parallel with Side Wall",
-  "Parallel with Side Wall",
-  "Parallel with Side Wall",
-  "Parallel with Side Wall",
-  "Parallel with Floor",
-  "Parallel with Floor",
-];
-
-function items(symbols: string[], labels: string[], lead: string): Item[] {
-  return symbols.map((symbol, i) => ({
-    symbol,
-    label: `${i + 1}. ${lead} ${labels[i]}`,
-  }));
-}
-
 export function Ch9CircularMovement() {
+  const { t } = useTranslation();
+  const startLabels = t("ch9.startLabels", { returnObjects: true }) as string[];
+  const fbLabels = t("ch9.fbLabels", { returnObjects: true }) as string[];
+  const wristFbLabels = t("ch9.wristFbLabels", {
+    returnObjects: true,
+  }) as string[];
+
+  const items = (symbols: string[], labels: string[], lead: string): Item[] =>
+    symbols.map((symbol, i) => ({
+      symbol,
+      label: `${i + 1}. ${lead} ${labels[i]}`,
+    }));
+
   return (
     <>
-      <h2 id="chapter-9">Chapter 9 — Circular Movement</h2>
+      <h2 id="chapter-9">
+        {t("common.chapterHeading", { number: 9, title: t("toc.chapter-9") })}
+      </h2>
 
-      <h2>Arm Circles</h2>
-      <p>
-        Arm circles parallel to the Wall Plane are double-stemmed circles.
-        Arrows mark exactly where the circular movement starts. When reading
-        Circle Symbols, place your hand where the arrows are located on the
-        circle, and then move in the direction of the arrows.
-      </p>
+      <h2>{t("ch9.armHeading")}</h2>
+      <p>{t("ch9.armIntro")}</p>
       <div className="ch9-cols">
         <SymbolList
-          heading="Single Arm Circles"
-          sub="Side-To-Side · Parallel Wall Plane"
-          items={items(armSingle, ARM_LABELS, "One Circle")}
+          heading={t("ch9.singleArm")}
+          sub={t("ch9.subWall")}
+          items={items(armSingle, startLabels, t("ch9.oneCircle"))}
         />
         <SymbolList
-          heading="Double Arm Circles"
-          sub="Side-To-Side · Parallel Wall Plane"
-          items={items(armDouble, ARM_LABELS, "Two Circles")}
+          heading={t("ch9.doubleArm")}
+          sub={t("ch9.subWall")}
+          items={items(armDouble, startLabels, t("ch9.twoCircles"))}
         />
       </div>
 
       <div className="ch9-cols">
         <SymbolList
-          heading="Single Circles Forward-Back"
-          sub="Sagittal & Floor Planes"
-          items={items(circleSingle, FB_LABELS, "Forward-Back Circle")}
+          heading={t("ch9.singleFb")}
+          sub={t("ch9.subFloor")}
+          items={items(circleSingle, fbLabels, t("ch9.fbCircle"))}
         />
         <SymbolList
-          heading="Double Circles Forward-Back"
-          sub="Sagittal & Floor Planes"
-          items={items(circleDouble, FB_LABELS, "Forward-Back Circle")}
+          heading={t("ch9.doubleFb")}
+          sub={t("ch9.subFloor")}
+          items={items(circleDouble, fbLabels, t("ch9.fbCircle"))}
         />
       </div>
       <div className="examples-row">
@@ -122,35 +92,31 @@ export function Ch9CircularMovement() {
         <SignFigure slug="ch9-always" />
       </div>
 
-      <h2>Wrist Circles</h2>
-      <p>
-        Wrist circles are written with solid lines. Arrows are placed outside
-        the circle. When reading Wrist Circle Symbols, place your hand at the
-        arrow, and then move in that direction.
-      </p>
+      <h2>{t("ch9.wristHeading")}</h2>
+      <p>{t("ch9.wristIntro")}</p>
       <div className="ch9-cols">
         <SymbolList
-          heading="Single Wrist Circles Side-To-Side"
-          sub="Parallel Wall Plane"
-          items={items(wristSideSingle, WRIST_SIDE_LABELS, "One Circle")}
+          heading={t("ch9.singleWristSide")}
+          sub={t("ch9.subWallPlane")}
+          items={items(wristSideSingle, startLabels, t("ch9.oneCircle"))}
         />
         <SymbolList
-          heading="Double Wrist Circles Side-To-Side"
-          sub="Parallel Wall Plane"
-          items={items(wristSideDouble, WRIST_SIDE_LABELS, "Two Circles")}
+          heading={t("ch9.doubleWristSide")}
+          sub={t("ch9.subWallPlane")}
+          items={items(wristSideDouble, startLabels, t("ch9.twoCircles"))}
         />
       </div>
 
       <div className="ch9-cols">
         <SymbolList
-          heading="Single Wrist Circles Forward-Back"
-          sub="Sagittal & Floor Planes"
-          items={items(wristFbSingle, WRIST_FB_LABELS, "Forward-Back Circle")}
+          heading={t("ch9.singleWristFb")}
+          sub={t("ch9.subFloor")}
+          items={items(wristFbSingle, wristFbLabels, t("ch9.fbCircle"))}
         />
         <SymbolList
-          heading="Double Wrist Circles Forward-Back"
-          sub="Sagittal & Floor Planes"
-          items={items(wristFbDouble, WRIST_FB_LABELS, "Forward-Back Circle")}
+          heading={t("ch9.doubleWristFb")}
+          sub={t("ch9.subFloor")}
+          items={items(wristFbDouble, wristFbLabels, t("ch9.fbCircle"))}
         />
       </div>
       <div className="examples-row">
