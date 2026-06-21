@@ -50,6 +50,13 @@ export function Ch14Punctuation() {
   return (
     <>
       <h2 id="chapter-14">Chapter 14 — Punctuation</h2>
+      <p>
+        Sign languages punctuate too — not with marks in the air, but with
+        pauses, a shift of the gaze, a change in facial expression or posture
+        that close one thought and open the next. Written punctuation records
+        those breaks, so a reader can feel the rhythm and the boundaries of each
+        sentence. It is a compass for the reader, not a decoration.
+      </p>
 
       <dl className="punct-list">
         {PUNCTUATION.map((entry) => (
@@ -119,6 +126,21 @@ export function Ch14Punctuation() {
         src="/figures/ch14/ch14-goldilocks.png"
         caption="English Translation: Baby Bear asks “Who are you?” Goldilocks saw the bears, became frightened, shot out of the house, and ran all the way home."
       />
+
+      <h2>Going Further</h2>
+      <p>
+        Beyond sentence punctuation, SignWriting has <strong>prosodic
+        brackets</strong> — symbols that mark non-manual signals spreading
+        across a whole phrase or clause. For these, see{" "}
+        <a
+          href="https://www.signwriting.org/archive/docs13/sw1283_A_GRAMMAR_OF_SIGNWRITING_by_Stuart_Thiessen.pdf"
+          target="_blank"
+          rel="noreferrer"
+        >
+          A Grammar of SignWriting
+        </a>{" "}
+        by Stuart Thiessen, pages 174–176.
+      </p>
     </>
   );
 }

@@ -24,6 +24,13 @@ export function Ch12Body() {
   return (
     <>
       <h2 id="chapter-12">Chapter 12 — The Body</h2>
+      <p>
+        Like the head, the body follows the rule of <strong>economy</strong>:
+        write only what a sign needs. The shoulder line, torso, and the parts
+        below are drawn only when they carry the sign — otherwise the sign
+        stays in the neutral space in front of the chest (see{" "}
+        <a href="#chapter-2">Chapter 2</a>).
+      </p>
 
       <div className="face-neutral">
         <SgnwSymbol symbol={SHOULDER_LINE} size={96} />
