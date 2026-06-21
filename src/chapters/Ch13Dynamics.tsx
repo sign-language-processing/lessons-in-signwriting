@@ -1,4 +1,3 @@
-import { Trans, useTranslation } from "react-i18next";
 import { Figure } from "../components/Figure";
 import { SignFigure } from "../components/SignFigure";
 import { Row } from "../components/Layout";
@@ -6,81 +5,140 @@ import { asset } from "../lib/asset";
 
 const FIG = asset("/figures/ch13");
 
-const CAT_SLUGS = ["movement", "handshape", "facial", "punctuation", "unit"];
-const MOVE_SLUGS = [
-  "simultaneous",
-  "alternating",
-  "uneven",
-  "slow",
-  "smooth",
-  "fast",
-  "fast-emphasis",
-  "tense",
-  "tense-emphasis",
-  "relaxed",
-  "relaxed-emphasis",
+const MOVEMENT_SYMBOLS = [
+  {
+    slug: "simultaneous",
+    title: "Simultaneous Line",
+    body: "Both hands move at the same time.",
+  },
+  {
+    slug: "alternating",
+    title: "Alternating Lines",
+    body: "The right hand moves in one direction, while the left moves simultaneously in the opposite direction.",
+  },
+  {
+    slug: "uneven",
+    title: "Un-Even Alternating — One Moves While The Other One Is Still",
+    body: "The right hand moves while the left remains still. Then the left moves while the right remains still.",
+  },
+  { slug: "slow", title: "Slow Movement" },
+  { slug: "smooth", title: "Smooth Movement" },
+  { slug: "fast", title: "Fast Movement" },
+  { slug: "fast-emphasis", title: "Fast Movement with Emphasis" },
+  { slug: "tense", title: "Tense Movement" },
+  { slug: "tense-emphasis", title: "Tense Movement with Emphasis" },
+  { slug: "relaxed", title: "Relaxed Movement" },
+  { slug: "relaxed-emphasis", title: "Relaxed Movement with Emphasis" },
 ];
-const BED_SLUGS = ["ch13-bed-left", "ch13-bed-center", "ch13-bed-right"];
+
+const BED_PLACEMENTS = [
+  {
+    slug: "ch13-bed-left",
+    body: "This bed is placed to the left side. It is established in the left space, to the left of the facial expression. The lips tense as the classifier is placed in space.",
+  },
+  {
+    slug: "ch13-bed-center",
+    body: "This bed is placed in the center. It is established in the center space, directly under the facial expression. The lips tense as the classifier is placed in space.",
+  },
+  {
+    slug: "ch13-bed-right",
+    body: "This bed is placed to the right side. It is established in the right space, to the right of the facial expression. The lips tense as the classifier is placed in space.",
+  },
+];
 
 export function Ch13Dynamics() {
-  const { t } = useTranslation();
-  const moves = t("ch13.movement", { returnObjects: true }) as {
-    title: string;
-    body?: string;
-  }[];
-  const beds = t("ch13.bedPlacements", { returnObjects: true }) as string[];
-
   return (
     <>
-      <h2 id="chapter-13">
-        {t("common.chapterHeading", { number: 13, title: t("toc.chapter-13") })}
-      </h2>
+      <h2 id="chapter-13">Chapter 13 — Dynamics</h2>
       <Figure
         src={`${FIG}/ch13-classroom-photo.png`}
-        caption={t("ch13.caption")}
+        caption="Dynamics symbols mark the speed, timing and quality of movement, handshapes, faces and whole phrases."
       />
 
-      <h2>{t("ch13.dynSymbolsHeading")}</h2>
+      <h2>Dynamics Symbols</h2>
       <ol className="dyn-categories">
-        {CAT_SLUGS.map((slug, i) => (
-          <li key={slug}>
-            <p>
-              <Trans i18nKey={`ch13.categories.${i}`} />
-            </p>
-            <Figure src={`${FIG}/ch13-cat-${slug}.png`} />
-          </li>
-        ))}
+        <li>
+          <p>
+            <strong>Movement Dynamics</strong> are small symbols placed near
+            movement arrows. They indicate movement that is fast, slow, smooth,
+            tense, relaxed, simultaneous, alternating, and uneven-alternating.
+          </p>
+          <Figure src={`${FIG}/ch13-cat-movement.png`} />
+        </li>
+        <li>
+          <p>
+            <strong>Handshape Dynamics</strong> mark <strong>classifiers</strong>.
+            They mark a hand that is held in one place for a long time.
+          </p>
+          <Figure src={`${FIG}/ch13-cat-handshape.png`} />
+        </li>
+        <li>
+          <p>
+            <strong>Facial Dynamics</strong> show tense or relaxed facial
+            muscles. The Tense Symbol is used for lips that press together, for
+            raised cheeks, and for squeezed eyes.
+          </p>
+          <Figure src={`${FIG}/ch13-cat-facial.png`} />
+        </li>
+        <li>
+          <p>
+            <strong>Punctuation Dynamics</strong> show the speed, timing and
+            quality of entire phrases and sentences.
+          </p>
+          <Figure src={`${FIG}/ch13-cat-punctuation.png`} />
+        </li>
+        <li>
+          <p>
+            <strong>Unit Dynamics</strong> marks the influence of one symbol on
+            a whole group of signs. The Unit-Connecting Line is used to show one
+            facial expression influencing several signs.
+          </p>
+          <Figure src={`${FIG}/ch13-cat-unit.png`} />
+        </li>
       </ol>
 
-      <h2>{t("ch13.movementHeading")}</h2>
+      <h2>Movement Dynamics</h2>
       <dl className="dyn-list">
-        {MOVE_SLUGS.map((slug, i) => (
-          <div className="dyn-list__row" key={slug}>
+        {MOVEMENT_SYMBOLS.map((symbol) => (
+          <div className="dyn-list__row" key={symbol.slug}>
             <img
               className="dyn-list__symbol"
-              src={`${FIG}/ch13-move-${slug}.png`}
+              src={`${FIG}/ch13-move-${symbol.slug}.png`}
               alt=""
             />
             <div className="dyn-list__text">
-              <dt>{moves[i]?.title}</dt>
-              {moves[i]?.body && <dd>{moves[i]?.body}</dd>}
+              <dt>{symbol.title}</dt>
+              {symbol.body && <dd>{symbol.body}</dd>}
             </div>
           </div>
         ))}
       </dl>
 
-      <h2>{t("ch13.classifiersHeading")}</h2>
+      <h2>Handshape Dynamics — Writing Classifiers</h2>
       <Row>
         <div style={{ flex: 2, textAlign: "left" }}>
           <p>
-            <Trans i18nKey="ch13.cl1" />
-          </p>
-          <p>{t("ch13.cl2")}</p>
-          <p>
-            <Trans i18nKey="ch13.cl3" />
+            <strong>Classifiers</strong> are written with the handshape, plus a{" "}
+            <strong>Classifier Marker</strong>. The Classifier Marker is a
+            Tension Symbol. It is placed under the handshape.
           </p>
           <p>
-            <Trans i18nKey="ch13.cl4" />
+            In this sentence, Goldilocks sees a bowl of porridge. The bowl is
+            established in space by a feeling of tension, a little like the
+            feeling of placing something on a table. It anchors the visual
+            picture of a bowl in space. The Tension Symbol marks that feeling.
+            It is always placed under the handshapes.
+          </p>
+          <p>
+            Once the classifier is established, one hand continues to mark the
+            classifier, held in the same position, while the other hand does
+            other signs. The Tension Symbol remains under the hand that{" "}
+            <strong>marks the classifier</strong>.
+          </p>
+          <p>
+            Goldilocks is discussing the porridge. She is saying that she sees
+            the bowl, and then eats the porridge from it. But the porridge is
+            too <strong>hot</strong>!!
           </p>
         </div>
         <div>
@@ -88,35 +146,66 @@ export function Ch13Dynamics() {
         </div>
       </Row>
 
-      <h2>{t("ch13.facialHeading")}</h2>
+      <h2>Facial Dynamics Related To Handshape Dynamics</h2>
       <p>
-        <Trans i18nKey="ch13.fac1" />
+        <strong>Facial expressions</strong> are essential to writing Sign
+        Language stories and literature. They mark grammar and emphasis. The
+        Tense Lips symbol shows the dynamics of the lips tensing as the hand is
+        established in space by a classifier. Tension on the lips and near the
+        hands are oftentimes written together.
       </p>
       <p>
-        <Trans i18nKey="ch13.fac2" />
+        <strong>Below:</strong> The Classifier for "bed" in American Sign
+        Language is written with a Tension Symbol under the handshape to mark
+        the classifier. At the same time, the lips also tense, giving the
+        feeling of "anchoring the classifier" in space.
       </p>
       <Row>
-        {BED_SLUGS.map((slug, i) => (
-          <div key={slug}>
-            <Figure src={`${FIG}/${slug}.png`} />
-            <p>{beds[i]}</p>
+        {BED_PLACEMENTS.map((placement) => (
+          <div key={placement.slug}>
+            <Figure src={`${FIG}/${placement.slug}.png`} />
+            <p>{placement.body}</p>
           </div>
         ))}
       </Row>
-      <p>{t("ch13.bedComplete")}</p>
+      <p>
+        The "bed" classifier on its own is a complete sign in American Sign
+        Language:
+      </p>
       <div className="examples-row">
         <SignFigure slug="ch13-bed" />
       </div>
 
-      <h2>{t("ch13.unitHeading")}</h2>
+      <h2>Unit Dynamics — Unit-Connecting Lines</h2>
       <Row>
         <div style={{ flex: 2 }}>
-          <p>{t("ch13.u1")}</p>
-          <p>{t("ch13.u2")}</p>
-          <p>{t("ch13.u3")}</p>
-          <p>{t("ch13.u4")}</p>
-          <p>{t("ch13.u5")}</p>
-          <p>{t("ch13.u6")}</p>
+          <p>Influence is written with a Unit-Connecting Line.</p>
+          <p>
+            The Unit-Connecting Line is useful for Sign Language researchers. It
+            is used to show the influence of one facial expression on a group of
+            signs.
+          </p>
+          <p>
+            When one symbol influences a group of symbols or signs, the symbol
+            that is influencing the group is written first. Then a line is
+            written, like a bracket, connecting the symbol with the group it
+            influences.
+          </p>
+          <p>
+            When SignWriting is written vertically, the Unit-Connecting Line is
+            written to the side of the vertical column, as shown here. The Unit
+            Line is grey or lighter than the signs.
+          </p>
+          <p>
+            In Spain, the Unit-Connecting Line is used for horizontal
+            SignWriting literature. When writing horizontally, the
+            Unit-Connecting Line is written under or over the writing.
+          </p>
+          <p>
+            In Sutton DanceWriting, the Unit-Connecting Line is used often to
+            show the influence of one movement symbol on a group of other
+            symbols. In SignWriting, it is rarely used for everyday use.
+          </p>
         </div>
         <div>
           <Figure src={`${FIG}/ch13-unit-column.png`} />

@@ -1,5 +1,4 @@
 import { Fragment, useState } from "react";
-import { Trans, useTranslation } from "react-i18next";
 import { Figure } from "../components/Figure";
 import { Grid, Row } from "../components/Layout";
 import { SgnwSign } from "../components/Sgnw";
@@ -7,16 +6,6 @@ import { SignFigure } from "../components/SignFigure";
 import { asset } from "../lib/asset";
 
 const D = "/figures/ch15";
-
-const TRANS_COMPONENTS = {
-  term: <span className="em-term" />,
-  u: <u />,
-};
-
-/** A paragraph/caption with inline <strong>/<term>/<u> markup from a key. */
-function T({ k }: { k: string }) {
-  return <Trans i18nKey={k} components={TRANS_COMPONENTS} />;
-}
 
 type Spoke = { symbol: string; angle: number };
 
@@ -86,7 +75,6 @@ const COMBINED: Record<string, string> = {
 };
 
 function MovementWheel({ spokes }: { spokes: Spoke[] }) {
-  const { t } = useTranslation();
   const [hovered, setHovered] = useState<string | null>(null);
   const radius = 120;
   return (
@@ -94,7 +82,7 @@ function MovementWheel({ spokes }: { spokes: Spoke[] }) {
       <img
         className="movement-wheel__center"
         src={asset(`${D}/ch15-step-contact-right.png`)}
-        alt={t("ch15.positionOfContact")}
+        alt="Position of Contact"
       />
       {spokes.map(({ symbol, angle }) => {
         const rad = (angle * Math.PI) / 180;
@@ -132,6 +120,10 @@ function MovementWheel({ spokes }: { spokes: Spoke[] }) {
   );
 }
 
+function Em({ children }: { children: string }) {
+  return <span className="em-term">{children}</span>;
+}
+
 function RotationRose({
   center,
   top,
@@ -157,24 +149,36 @@ function RotationRose({
 }
 
 export function Ch15WritingSigns() {
-  const { t } = useTranslation();
   return (
     <>
-      <h2 id="chapter-15">
-        {t("common.chapterHeading", { number: 15, title: t("toc.chapter-15") })}
-      </h2>
+      <h2 id="chapter-15">Chapter 15 — Writing Signs</h2>
 
-      <h3>{t("ch15.posContactHeading")}</h3>
-      <p>{t("ch15.pc1")}</p>
-      <p>{t("ch15.pc2")}</p>
-      <p>{t("ch15.pc3")}</p>
+      <h3>Position of Contact</h3>
+      <p>
+        When starting to write a sign, ask yourself: "Is there a Position of
+        Contact in this sign?". Are the hands contacting each other? Are the
+        hands contacting the Face or Body? Write that Position of Contact
+        first, which becomes the "Center of the Sign".
+      </p>
+      <p>
+        When writing the Position of Contact, try to place the two contacting
+        symbols as close to each other as possible. Try to make it look like it
+        does in real life. There should be very little space between the two
+        contacting symbols.
+      </p>
+      <p>
+        SignSpellings revolve around the Position of Contact like a small
+        universe. The Position of Contact is the Center of the Sign, and the
+        Movement and Contact Symbols relate to that center.
+      </p>
       <Row stretch>
         <figure className="compare">
           <span className="compare__sign">
             <SgnwSign sign="𝠃𝤬𝤰񀀉𝣻𝣳񀀡𝤂𝣼񈙂𝤖𝤚񈙖𝣟𝣝" />
           </span>
           <figcaption>
-            <T k="ch15.correctCaption" />
+            <strong>Correct</strong> — Position of Contact is the Center of the
+            Sign.
           </figcaption>
         </figure>
         <figure className="compare">
@@ -182,19 +186,45 @@ export function Ch15WritingSigns() {
             <SgnwSign sign="𝠃𝤶𝤴񀀉𝣗𝣍񀀡𝤧𝤖񈙂𝤌𝤋񈙖𝣫𝣫񆇡𝤁𝤀" />
           </span>
           <figcaption>
-            <T k="ch15.incorrectCaption" />
+            <strong>Incorrect</strong> — Sign is too spread out and the focus is
+            missing.
           </figcaption>
         </figure>
       </Row>
-      <p>{t("ch15.pc4")}</p>
-      <p>{t("ch15.pc5")}</p>
-      <p>{t("ch15.pc6")}</p>
-      <p>{t("ch15.pc7")}</p>
-      <p>{t("ch15.pc8")}</p>
-      <p>{t("ch15.pc9")}</p>
+      <p>
+        The Position of Contact is important because it holds the meaning in a
+        sign. The eye focuses on the Position of Contact when reading. The
+        Position of Contact is like a unit.
+      </p>
+      <p>
+        Writing the Position of Contact also creates smaller signs in width and
+        height, which makes writing in vertical columns more centered and
+        compact, making the columns themselves less wide.
+      </p>
+      <p>
+        Writing the Position of Contact gives a visual picture of the sign.
+        Since you can see the two hands are touching by their close placement,
+        the single Touch Contact Star is rarely necessary. It is not wrong to
+        write the single Touch Contact Star, but it is not necessary either.
+        This simplifies the writing of signs.
+      </p>
+      <p>
+        Double Touch Contact Stars are written no matter what, because Double
+        Touch, or Touch-Touch, is a movement, not a position. It is only single
+        Touch Contact Stars that can be eliminated.
+      </p>
+
+      <p>
+        The two contacting symbols, such as the Hands and Face, are written
+        close to each other. Then Movement Symbols are placed nearby.
+      </p>
+      <p>
+        Sometimes the entire sign is nothing but the Position of Contact, with
+        no other symbols needed.
+      </p>
       <div className="correct-grid">
-        <div className="correct-grid__head">{t("ch15.gridCorrect")}</div>
-        <div className="correct-grid__head">{t("ch15.gridNotCorrect")}</div>
+        <div className="correct-grid__head">Correct</div>
+        <div className="correct-grid__head">Not Correct</div>
         {[1, 2, 3, 4, 5].map((n) => (
           <Fragment key={n}>
             <div className="correct-grid__cell">
@@ -207,16 +237,22 @@ export function Ch15WritingSigns() {
         ))}
       </div>
 
-      <h2>{t("ch15.centerHeading")}</h2>
-      <p>{t("ch15.center1")}</p>
-      <p>{t("ch15.center2")}</p>
+      <h2>Every Sign Has a Center</h2>
+      <p>
+        Every sign has a Center, like a little universe (the Sun is the center
+        and the planets rotate around it). The Center of the Sign gives the
+        sign focus for the reader. It is an Anchor, that grabs your attention.
+      </p>
+
+      <p>The Position of Contact is usually the Center of the Sign:</p>
       <Row stretch>
         <figure className="compare">
           <span className="compare__sign">
             <SgnwSign sign="𝠃𝤬𝤰񀀉𝣻𝣳񀀡𝤂𝣼񈙂𝤖𝤚񈙖𝣟𝣝" />
           </span>
           <figcaption>
-            <T k="ch15.meetCaption" />
+            <strong>MEET (ASL)</strong> — Position of Contact is the Center of
+            this Sign.
           </figcaption>
         </figure>
         <figure className="compare">
@@ -224,13 +260,15 @@ export function Ch15WritingSigns() {
             <SgnwSign sign="𝠀񀕁񌞑񀀇񆇡񈗡𝠃𝤥𝤣񋾡𝣴𝣵񀕁𝤐𝤅񈗡𝤗𝣲" video="/videos/whatsthatsign/M531x529S2ff00482x483S10e00510x499S26500517x480.mp4" />
           </span>
           <figcaption>
-            <T k="ch15.seeCaption" />
+            <strong>SEE (ASL)</strong> — Position of Contact is the Center of
+            this Sign.
           </figcaption>
         </figure>
       </Row>
 
       <p>
-        <T k="ch15.noContactIntro" />
+        If there is <Em>no</Em> contact, then the Beginning Position is the
+        Center:
       </p>
       <Row stretch>
         <figure className="compare">
@@ -238,7 +276,8 @@ export function Ch15WritingSigns() {
             <SgnwSign sign="𝠀񁦡񋽁񁦩񋽁񏀇񆿅񆿕𝠃𝤪𝤟񁦡𝤔𝣭񁦩𝣣𝣭񆿅𝤖𝤐񆿕𝣩𝤐" video="/videos/whatsthatsign/M536x525S14420514x475S14428465x475S22a04516x510S22a14471x510.mp4" />
           </span>
           <figcaption>
-            <T k="ch15.curtainsCaption" />
+            <strong>CURTAINS (ASL)</strong> — Beginning Handshapes are the
+            Center of this Sign.
           </figcaption>
         </figure>
         <figure className="compare">
@@ -246,33 +285,44 @@ export function Ch15WritingSigns() {
             <SgnwSign sign="𝠀񀁁񋽁񀀇񈗡񌏁𝠃𝤘𝥎񀁁𝣿𝤰񈗡𝣿𝤠񌏁𝣴𝣵" video="/videos/whatsthatsign/M518x572S10040493x542S26500493x526S30a00482x483.mp4" />
           </span>
           <figcaption>
-            <T k="ch15.youCaption" />
+            <strong>YOU (ASL)</strong> — Beginning Handshape is the Center of
+            this Sign.
           </figcaption>
         </figure>
       </Row>
 
 
-      <h2>{t("ch15.arrowHeading")}</h2>
-      <p>{t("ch15.arrow1")}</p>
+      <h2>Arrow Positions</h2>
+      <p>
+        The Position of Contact is written first. It is the Center of the sign.
+      </p>
       <Row style={{ alignItems: "center" }}>
         <SgnwSign sign="𝠃𝤓𝤓񂇸𝣼𝣼񆄩𝣺𝣹" />
         <Figure
           src={`${D}/ch15-step-contact-right.png`}
-          alt={t("ch15.positionOfContact")}
+          alt="The line drawing of the Position of Contact"
         />
       </Row>
       <p>
-        <T k="ch15.arrow2" />
+        There are 8 possible placements of Movement Symbols around the Center.
+        Each arrow <Em>pulls</Em> or <Em>drags</Em> the hands in its
+        direction, and keeps the same spatial relationship to the Center as it
+        has on the Wheel.
       </p>
 
       <div className="write-guide">
         <div className="write-guide__text">
-          <h3>{t("ch15.wallGuideHeading")}</h3>
+          <h3>Wall Plane — Up, Down &amp; Side</h3>
           <p>
-            <T k="ch15.wallGuide1" />
+            Straight movement parallel with the front wall is written with{" "}
+            <strong>double-stemmed</strong> arrows.
           </p>
           <p>
-            <T k="ch15.wallGuide2" />
+            <strong>Hover each arrow</strong> on the wheel to see the sign it
+            writes. The arrow stays where it sits on the wheel: the <Em>up</Em>{" "}
+            arrow is placed <Em>above</Em> the Center, the <Em>down</Em> arrow{" "}
+            <Em>below</Em>, the <Em>side</Em> arrows to the left or right, and the
+            diagonals above- or below-and-to-the-side.
           </p>
         </div>
         <aside className="write-guide__sticky">
@@ -282,12 +332,17 @@ export function Ch15WritingSigns() {
 
       <div className="write-guide">
         <div className="write-guide__text">
-          <h3>{t("ch15.floorGuideHeading")}</h3>
+          <h3>Floor Plane — Forward &amp; Back</h3>
           <p>
-            <T k="ch15.floorGuide1" />
+            Straight movement parallel with the floor is written with{" "}
+            <strong>single-stemmed</strong> arrows.
           </p>
           <p>
-            <T k="ch15.floorGuide2" />
+            <strong>Hover each arrow</strong> to see the sign it writes. The{" "}
+            <Em>forward</Em> arrow is placed <Em>above</Em> the Center (the
+            movement travels away from your chest), the <Em>back</Em> arrow{" "}
+            <Em>below</Em> (toward your chest), and the diagonals above- or
+            below-and-to-the-side.
           </p>
         </div>
         <aside className="write-guide__sticky">
@@ -297,12 +352,17 @@ export function Ch15WritingSigns() {
 
       <div className="write-guide">
         <div className="write-guide__text">
-          <h3>{t("ch15.curveGuideHeading")}</h3>
+          <h3>Curved Movement</h3>
           <p>
-            <T k="ch15.curveGuide1" />
+            If the movement is <Em>curved</Em>, choose the curve arrow you need.
+            Like the
+            straight arrows, each curve keeps the same spatial relationship to
+            the Center as it has on the Wheel.
           </p>
           <p>
-            <T k="ch15.curveGuide2" />
+            <strong>Hover each arrow</strong> to see the sign it writes — a curve
+            above the Center curves over the top, a curve below curves under, and
+            so on around the wheel.
           </p>
         </div>
         <aside className="write-guide__sticky">
@@ -312,33 +372,46 @@ export function Ch15WritingSigns() {
       <div className="examples-row">
         <figure>
           <SgnwSign sign="𝠃𝤚𝤙񂇸𝣵𝤂񆄩𝣳𝣿񋀉𝤄𝣴" />
-          <figcaption>{t("ch15.helpCaption")}</figcaption>
+          <figcaption>Help all of you</figcaption>
         </figure>
       </div>
 
       <p>
-        <T k="ch15.rotationIntro" />
+        If the movement is a <Em>rotation arrow</Em>, choose the{" "}
+        <Em>rotation arrow</Em> needed. Keep the <Em>rotation arrow</Em> in the
+        same spatial-relationship to the <Em>center</Em> as it was when all the
+        other arrows were in the Wheel.
       </p>
       <Row>
         <RotationRose center="񀀁" top="񋎩" right="񋎫" bottom="񋎭" left="񋎯" />
         <RotationRose center="񀀱" top="񉳁" right="񉳇" bottom="񉳅" left="񉳃" />
       </Row>
-      <p>{t("ch15.rotationPlacement")}</p>
+      <p>
+        If the curve of the Rotation Arrow is curved down, it is usually placed
+        under the hands. If the curve of the Rotation Arrow is curved up, then
+        it is usually placed above the hands.
+      </p>
       <Figure
         src={`${D}/ch15-rotation-placement.png`}
-        alt={t("ch15.rotationPlacementAlt")}
+        alt="Rotation arrows placed above or below the hands depending on their curve"
       />
 
       <p>
-        <T k="ch15.exception" />
+        <strong>
+          <u>EXCEPTION</u>
+        </strong>
+        : Occasionally arrows can collide with other symbols, such as
+        the Facial Circle or the Shoulder Line. When this happens there is no
+        choice but to place the Movement Arrow a little to the side to avoid the
+        collision. This happens mostly when contacting the Face.
       </p>
-      <p>{t("ch15.exceptionExamples")}</p>
+      <p>Three ASL Signs that are exceptions:</p>
       <Grid columns="repeat(3, 1fr)">
         <SignFigure slug="ch15-really" />
         <SignFigure slug="ch15-not" />
         <SignFigure slug="ch15-good" />
       </Grid>
-      <p>{t("ch15.exceptionWithout")}</p>
+      <p>If the Facial Circle had not been there, these signs would be written like this:</p>
       <Grid columns="repeat(3, 1fr)">
         <SgnwSign sign="𝠃𝤎𝤛񀀑𝣿𝣽񈗡𝤀𝣱" />
         <SgnwSign sign="𝠃𝤎𝤥񅰡𝣿𝤍񆕁𝤁𝣻񈗡𝤀𝣨" />

@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { asset } from "../lib/asset";
 import { baseSymbolName } from "../lib/baseSymbolNames";
 import { handImageForKey, symbolToKey } from "../lib/handImage";
@@ -29,7 +28,6 @@ function buildRound(symbol: string): Round {
 }
 
 export function RootShapePractice() {
-  const { t } = useTranslation();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [round, setRound] = useState<Round | null>(null);
   const [chosen, setChosen] = useState<string | null>(null);
@@ -72,9 +70,11 @@ export function RootShapePractice() {
           className="practice-launch__button"
           onClick={open}
         >
-          🌱 {t("ui.rootPracticeTitle")}
+          🌱 Rootshape Practice
         </button>
-        <p className="practice-launch__hint">{t("ui.rootPracticeHint")}</p>
+        <p className="practice-launch__hint">
+          See a hand and name the rootshape it grows from.
+        </p>
       </div>
 
       <dialog
@@ -86,22 +86,14 @@ export function RootShapePractice() {
         {round && (
           <div className="practice-body">
             <form method="dialog" className="practice-close-form">
-              <button
-                type="submit"
-                aria-label={t("common.close")}
-                className="practice-close"
-              >
+              <button type="submit" aria-label="Close" className="practice-close">
                 ×
               </button>
             </form>
 
-            <h2 id="rootshape-practice-title">{t("ui.rootPracticeTitle")}</h2>
+            <h2 id="rootshape-practice-title">Rootshape Practice</h2>
 
-            <div
-              className="rootshape-difficulty"
-              role="group"
-              aria-label={t("ui.difficulty")}
-            >
+            <div className="rootshape-difficulty" role="group" aria-label="Difficulty">
               {(["easy", "hard"] as const).map((level) => (
                 <button
                   type="button"
@@ -110,12 +102,14 @@ export function RootShapePractice() {
                   aria-pressed={difficulty === level}
                   onClick={() => setDifficulty(level)}
                 >
-                  {level === "easy" ? t("ui.easy") : t("ui.hard")}
+                  {level === "easy" ? "Easy" : "Hard"}
                 </button>
               ))}
             </div>
 
-            <p className="practice-prompt">{t("ui.rootPrompt")}</p>
+            <p className="practice-prompt">
+              Which rootshape is this handshape based on?
+            </p>
 
             <div className="rootshape-stimulus">
               {difficulty === "easy" && (
@@ -148,13 +142,10 @@ export function RootShapePractice() {
             {answered && (
               <div className="practice-result" role="status">
                 <p className="practice-result__title">
-                  {correct ? t("ui.correct") : t("ui.notQuite")}
+                  {correct ? "Correct! 🎉" : "Not quite"}
                 </p>
                 <p className="practice-result__detail">
-                  {t("ui.rootResult", {
-                    name: round.name,
-                    answer: round.answer,
-                  })}
+                  {round.name} is the {round.answer} rootshape.
                 </p>
               </div>
             )}
@@ -165,7 +156,7 @@ export function RootShapePractice() {
                 className="practice-next"
                 onClick={() => start(randomPracticeSymbol(round.symbol))}
               >
-                {answered ? t("ui.nextHand") : t("ui.skip")}
+                {answered ? "Next hand →" : "Skip →"}
               </button>
             </div>
           </div>

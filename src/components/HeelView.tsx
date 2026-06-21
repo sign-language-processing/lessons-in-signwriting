@@ -1,5 +1,4 @@
 import { Fragment } from "react";
-import { useTranslation } from "react-i18next";
 import { asset } from "../lib/asset";
 import { handImageForRotation } from "../lib/handImage";
 import { SgnwSymbol } from "./Sgnw";
@@ -46,20 +45,19 @@ function Sym({
  * shares the same photo / Wrist-View / Top-View columns.
  */
 export function HeelViewTable({ rows }: { rows: HeelRow[] }) {
-  const { t } = useTranslation();
   return (
     <div className="heel-table">
       <span className="heel-table__head" />
-      <span className="heel-table__head">{t("ui.heelWrist")}</span>
-      <span className="heel-table__head">{t("ui.topView")}</span>
+      <span className="heel-table__head">Heel of Hand · Wrist View</span>
+      <span className="heel-table__head">Top View</span>
       {rows.map((r) => (
         <Fragment key={r.photo}>
           <div className="heel-table__photos">
             <img src={`${BASE}/${r.photo}`} alt="" />
             {r.altPhoto ? <img src={`${BASE}/${r.altPhoto}`} alt="" /> : null}
           </div>
-          <Sym value={r.symbolL} alt={t("ui.heelWrist")} rotationView />
-          <Sym value={r.symbolR} alt={t("ui.topView")} />
+          <Sym value={r.symbolL} alt="Heel of Hand Wrist View symbol" rotationView />
+          <Sym value={r.symbolR} alt="Top View symbol" />
         </Fragment>
       ))}
     </div>

@@ -1,4 +1,3 @@
-import { Trans, useTranslation } from "react-i18next";
 import { SgnwSign } from "../components/Sgnw";
 import { asset } from "../lib/asset";
 
@@ -16,33 +15,40 @@ const LUCINDA_SIGN = "𝠀񂣱񆉁񌏁񍝁𝠃𝤡𝤷񌏁𝣴𝣴񍝁𝣴𝣴�
 const KEVIN_SIGN = "𝠃𝤝𝥈񁠨𝣲𝤡񈩣𝤎𝤠񌏁𝣴𝣵񍝁𝣴𝣵";
 const ART = asset("/docling-out/sw0116-Lessons-SignWriting_artifacts");
 
-const CC_BY = "https://creativecommons.org/licenses/by/3.0/";
-
 export function Ch1Introduction() {
-  const { t } = useTranslation();
   return (
     <>
-      <h1>{t("ch1.title")}</h1>
-      <h2 id="chapter-1">
-        {t("common.chapterHeading", { number: 1, title: t("toc.chapter-1") })}
-      </h2>
+      <h1>Lessons in SignWriting — Interactive Edition</h1>
+      <h2 id="chapter-1">Chapter 1 — Introduction</h2>
 
       <p>
-        <Trans i18nKey="ch1.editions" />
+        First Edition published in 1990 Second Edition published in 1995 Third
+        Edition published in 2002 Fourth Edition published in 2014{" "}
+        <strong>Interactive Edition 2026</strong>
       </p>
       <p>
-        <Trans
-          i18nKey="ch1.copyright"
-          components={{ license: <a href={CC_BY} /> }}
-        />
+        Original content © 1990–2014 Valerie Sutton &amp; the Center for Sutton
+        Movement Writing, Inc., licensed under{" "}
+        <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+        Interactive edition © 2026 Nagish Inc., also licensed under{" "}
+        <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
       </p>
-      <p>{t("ch1.invention")}</p>
-      <p>{t("ch1.credits1")}</p>
-      <p>{t("ch1.credits2")}</p>
-      <p>{t("ch1.credits3")}</p>
+      <p>The SignWriting System was first invented by Valerie Sutton in 1974.</p>
+      <p>
+        Cartoons by Frank Allen Paul Illustrations by Ida Candelaria &amp; Jayne
+        Gunderson Photos of Hands &amp; Body Diagrams by Adam Frost
+      </p>
+      <p>
+        Photos of Kevin Clark &amp; Lucinda O'Grady are captured from the
+        Lessons In SignWriting Video Series DVD
+      </p>
+      <p>SignWriting web components by Stephen E. Slevinski, Jr</p>
 
-      <h3>{t("ch1.contributorsHeading")}</h3>
-      <p>{t("ch1.contributorsIntro")}</p>
+      <h3>Contributors</h3>
+      <p>
+        With contributions and photos from members of the Deaf Action Committee
+        for SignWriting (the DAC) including…
+      </p>
       <div className="contributors-grid">
         <figure className="contributor-portrait">
           <img src={`${ART}/${VALERIE_IMG}`} alt="Valerie Sutton" />
@@ -66,13 +72,33 @@ export function Ch1Introduction() {
         </figure>
       </div>
 
-      <h3>{t("ch1.deafPerspectiveHeading")}</h3>
-      {t("ch1.testimonialOriginal") && (
-        <p className="original-note">{t("ch1.testimonialOriginal")}</p>
-      )}
+      <h3>A Deaf Perspective</h3>
       <div className="contributor">
-        <p>{t("ch1.testimonial")}</p>
-        <p>{t("ch1.testimonialAttribution")}</p>
+        <p>
+          I am writing to tell you how strongly I feel about SignWriting and how
+          much it can benefit Deaf people. I was born Deaf to a Deaf family and
+          I am a native American Sign Language (ASL) user. I have been working
+          with SignWriting since 1982. I was the first Deaf person to write
+          articles in ASL, in SignWriting, for the SignWriter Newspaper. Later,
+          Valerie Sutton and I established the Deaf Action Committee for
+          SignWriting (the DAC) in 1988. I think it is very important to spread
+          the word about SignWriting. ASL is a language in its own right, yet
+          until the development of SignWriting, it was a language without a
+          written form. When I found out about SignWriting I was thrilled to
+          think that at last we would have a way to write our language. Deaf
+          Americans are one of the very few linguistic minorities that are
+          unable to get books teaching English in their native language. I feel
+          that we can use SignWriting in order to learn English. Deaf people
+          will benefit greatly from books explaining English grammar and idioms
+          in written ASL. We can also use it to write down and preserve our
+          stories, poetry and plays. As you know, there are many Deaf
+          playwrights and poets, and up until now, they have not had a way to
+          write the ASL in their literature. No matter what the project,
+          SignWriting encourages us to read and write and I feel that is
+          important. All of us hope that you will enjoy learning SignWriting.
+          Your interest and support is a great help to our Deaf community.
+        </p>
+        <p>— Lucinda O'Grady Batch</p>
       </div>
     </>
   );

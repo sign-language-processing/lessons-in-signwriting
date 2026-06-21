@@ -1,4 +1,3 @@
-import { Trans, useTranslation } from "react-i18next";
 import { ActionFingersTree } from "../components/ActionFingersTree";
 import { Figure } from "../components/Figure";
 import { FingerDirectionGrid } from "../components/FingerDirectionGrid";
@@ -20,21 +19,15 @@ const ART = asset("/docling-out/sw0116-Lessons-SignWriting_artifacts");
 const CAT_IN_HAT_VP =
   "𝠃𝥩𝤘񆿄𝤪𝣙񌏁𝣴𝣵񃇲𝤮𝣃񀂁𝥊𝢤񁻒𝤒𝣙񋦦𝥕𝢝 𝠃𝤢𝥉񌖡𝣴𝣴񂱑𝤒𝤹񂱙𝣬𝤹񈙁𝤒𝤗񈙑𝣬𝤗񎁑𝣴𝣴 񏌁𝣢𝤂 𝠃𝥞𝤗񌕁𝣴𝣴񁻒𝤖𝣣񃇲𝥃𝢿񇀨𝤫𝣕 𝠃𝤼𝤳񌕁𝣴𝣴񁶑𝤢𝣽񁶙𝣐𝣼񇆥𝤢𝤥񇆵𝣏𝤥 𝠃𝤶𝥑񌕁𝣴𝣴񎁑𝣴𝣴񁻱𝤞𝤂񁻹𝣗𝤂񃈗𝤡𝤸񃈟𝣚𝤸񇆥𝤝𝤦񇆵𝣑𝤧 𝠃𝤣𝥢񀁒𝤅𝤬񀁚𝣨𝤻񆕁𝤁𝥄񆿅𝤁𝥓񌕁𝣴𝣴񎁑𝣴𝣴 𝠃𝤲𝥢񎁑𝣴𝣴񌕁𝣴𝣴񃨁𝤐𝤟񃨉𝣤𝤟񉴽𝣟𝤺񉴥𝤛𝤺 񏊡𝣡𝤂 𝠃𝤻𝥆񌏁𝣴𝣴񍘡𝣴𝣴񎂡𝣴𝣴񁳀𝣑𝤗񆿕𝣠𝤷񎥁𝣯𝤓񆿅𝤠𝤵񁲸𝤠𝤗 𝠃𝤞𝥘񀠺𝣯𝤿񎁁𝣴𝣴񆿅𝤇𝤩񀠲𝤃𝤽񌓡𝣴𝣴 𝠃𝤲𝥘񎁁𝣴𝣴񌓡𝣴𝣴񂤩𝣹𝥄񃈳𝤅𝤩񆊱𝤐𝥁 𝠃𝤯𝥘񂇒𝤇𝤤񂇚𝣯𝤤񌓡𝣴𝣴񇕥𝤛𝤹񇕽𝣠𝤺 񏊡𝣡𝤂 𝠃𝤾𝥓񌖡𝣴𝣴񍪡𝣴𝣴񎲬𝤕𝤼񂇸𝤧𝤫񎴇𝣗𝥌񂈗𝣺𝥇񉖣𝣩𝤟 𝠃𝤤𝥐񌕁𝣴𝣴񍤡𝣴𝣴񆄱𝤕𝤢񆄹𝣩𝤢񈟃𝤖𝤵񈟗𝣫𝤴 𝠃𝤶𝥑񌕁𝣴𝣴񍤡𝣴𝣴񁻱𝤞𝤂񁻹𝣗𝤂񃈗𝤡𝤸񃈟𝣚𝤸񇆥𝤝𝤦񇆵𝣑𝤧 񏌁𝣢𝤂";
 
-function CatInHatCredits() {
-  return (
-    <p>
-      <Trans
-        i18nKey="ch3.catInHatCredits"
-        components={{
-          em: <em />,
-          sp: (
-            <a href="http://www.signbank.org/SignPuddle1.6/canvas.php?ui=1&amp;sgn=5&amp;sid=144" />
-          ),
-        }}
-      />
-    </p>
-  );
-}
+const CAT_IN_HAT_CREDITS = (
+  <p>
+    <em>The Cat in the Hat</em> in ASL, page 1. SignWriting transcription from{" "}
+    <a href="http://www.signbank.org/SignPuddle1.6/canvas.php?ui=1&amp;sgn=5&amp;sid=144">
+      SignPuddle
+    </a>
+    .
+  </p>
+);
 
 type ThumbRow = {
   hand: string;
@@ -49,14 +42,13 @@ const THUMB_ROWS: ThumbRow[] = [
 ];
 
 function ThumbWritingTable() {
-  const { t } = useTranslation();
   return (
     <table className="thumb-writing-table">
       <thead>
         <tr>
-          <th>{t("ch3.thumbDot")}</th>
-          <th>{t("ch3.thumbHand")}</th>
-          <th>{t("ch3.thumbLine")}</th>
+          <th>Dot (Official)</th>
+          <th>Hand</th>
+          <th>Line</th>
         </tr>
       </thead>
       <tbody>
@@ -332,25 +324,25 @@ const IMG = {
 };
 
 export function Ch3Hands() {
-  const { t } = useTranslation();
   const practice = usePractice();
   return (
     <>
-      <h2 id="chapter-3">
-        {t("common.chapterHeading", { number: 3, title: t("toc.chapter-3") })}
-      </h2>
+      <h2 id="chapter-3">Chapter 3 — Hands</h2>
       <YouTubeVideo
         videoId="ttkMauu_I60"
-        title={t("ch3.videoTitle")}
+        title="Video 2 — SignWriting Basics"
         credits={VIDEO_CREDITS}
         transcript={TRANSCRIPT_2}
       />
-      <h2>{t("ch3.basicHeading")}</h2>
+      <h2>3 Basic Handshapes</h2>
 
       <Grid columns="2fr 1fr 1fr" gap="0" justify="stretch">
         <div>
-          <h2>{t("ch3.closedFist")}</h2>
-          <p>{t("ch3.closedFistDesc")}</p>
+          <h2>Closed Fist</h2>
+          <p>
+            When the fingertips touch the palm of the hand, it is called a
+            Closed Fist. A Closed Fist is written with a square.
+          </p>
         </div>
         <figure style={{ margin: 0 }}>
           <SgnwSymbol symbol="񆄡" />
@@ -362,8 +354,11 @@ export function Ch3Hands() {
         />
 
         <div>
-          <h2>{t("ch3.openFist")}</h2>
-          <p>{t("ch3.openFistDesc")}</p>
+          <h2>Open Fist</h2>
+          <p>
+            When the fingertips touch each other, it is called an Open Fist. An
+            Open Fist is written with a circle.
+          </p>
         </div>
         <figure style={{ margin: 0 }}>
           <SgnwSymbol symbol="񂱁" />
@@ -375,8 +370,12 @@ export function Ch3Hands() {
         />
 
         <div>
-          <h2>{t("ch3.flatHand")}</h2>
-          <p>{t("ch3.flatHandDesc")}</p>
+          <h2>Flat Hand</h2>
+          <p>
+            When the fingers stretch straight up, and touch each other, it is
+            called a Flat Hand. A Flat Hand is written with a rectangle, with a
+            tip for the fingertips.
+          </p>
         </div>
         <figure style={{ margin: 0 }}>
           <SgnwSymbol symbol="񂇁" />
@@ -388,12 +387,15 @@ export function Ch3Hands() {
         />
       </Grid>
 
-      <h2>{t("ch3.usageHeading")}</h2>
+      <h2>Usage in ASL</h2>
 
       <Grid columns="1fr 1fr" gap="1.5em" align="center">
         <div>
-          <h3>{t("ch3.closedFist")}</h3>
-          <p>{t("ch3.usageClosed")}</p>
+          <h3>Closed Fist</h3>
+          <p>
+            Both the letter S and the number 1 in ASL are written with a square
+            for the Closed Fist, since the fingertips touch the palm.
+          </p>
         </div>
         <Grid columns="1fr 1fr" gap="0.5em" align="end">
           <SgnwSymbol symbol="񆄡" />
@@ -413,8 +415,11 @@ export function Ch3Hands() {
 
       <Grid columns="1fr 1fr" gap="1.5em" align="center">
         <div>
-          <h3>{t("ch3.openFist")}</h3>
-          <p>{t("ch3.usageOpen")}</p>
+          <h3>Open Fist</h3>
+          <p>
+            Both the letter O and the letter D in ASL are written with a circle
+            for the Open Fist, since the fingertips touch each other.
+          </p>
         </div>
         <Grid columns="1fr 1fr" gap="0.5em" align="end">
           <SgnwSymbol symbol="񂱁" />
@@ -432,153 +437,211 @@ export function Ch3Hands() {
         </Grid>
       </Grid>
 
-      <h2>{t("ch3.rootshapesHeading")}</h2>
-      <p>{t("ch3.rootshapesIntro")}</p>
+      <h2>Rootshapes</h2>
+      <p>
+        Like roots to a tree, Rootshapes provide the foundation for all hand
+        symbols. Rootshapes are determined by the shape of the LOWEST finger in
+        the handshape. For example, a square for a TIGHT Fist must have at
+        least one finger touching the palm of the hand. A circle for an OPEN
+        fist, has at least one finger close to the palm of the hand, but not
+        touching the palm of the hand.
+      </p>
       <Grid columns="auto 1fr" gap="0.75em 1em" align="center" justify="start">
         <SgnwSymbol symbol="񆄡" style={{ justifySelf: "center" }} />
         <p style={{ margin: 0 }}>
-          <Trans i18nKey="ch3.rsTight" />
+          <strong>Tight Fist</strong> — at least 1 finger touches palm
         </p>
 
         <SgnwSymbol symbol="񂱁" style={{ justifySelf: "center" }} />
         <p style={{ margin: 0 }}>
-          <Trans i18nKey="ch3.rsCircle" />
+          <strong>Circle</strong> — at least 1 fingertip touches thumbtip in a
+          curve, or at least 1 curved finger is close to palm of hand
         </p>
 
         <SgnwSymbol symbol="񂲡" style={{ justifySelf: "center" }} />
         <p style={{ margin: 0 }}>
-          <Trans i18nKey="ch3.rsOval" />
+          <strong>Oval</strong> — fingertip and thumbtip touch in a longer,
+          narrower closed curve than the Circle
         </p>
 
         <SgnwSymbol symbol="񂯡" style={{ justifySelf: "center" }} />
         <p style={{ margin: 0 }}>
-          <Trans i18nKey="ch3.rsCurlicue" />
+          <strong>Curlicue</strong> — the fingers curl inward toward the palm in
+          a tight spiral
         </p>
 
         <SgnwSymbol symbol="񂣡" style={{ justifySelf: "center" }} />
         <p style={{ margin: 0 }}>
-          <Trans i18nKey="ch3.rsCup" />
+          <strong>Cup</strong> — at least 1 finger is curved at the Middle
+          Joint &amp; Tip Joint. There is NO bend or curve at the Knuckle
+          Joint.
         </p>
 
         <SgnwSymbol symbol="񂻡" style={{ justifySelf: "center" }} />
         <p style={{ margin: 0 }}>
-          <Trans i18nKey="ch3.rsHinge" />
+          <strong>Hinge</strong> — at least 1 finger bends at the Knuckle
+          Joint, while the Middle Joint and Tip Joint lock completely
+          straight.
         </p>
 
         <SgnwSymbol symbol="񃇡" style={{ justifySelf: "center" }} />
         <p style={{ margin: 0 }}>
-          <Trans i18nKey="ch3.rsAngle" />
+          <strong>Angle</strong> — the Hinge, with fingertips and thumb tip
+          touching
         </p>
 
         <SgnwSymbol symbol="񁪡" style={{ justifySelf: "center" }} />
         <p style={{ margin: 0 }}>
-          <Trans i18nKey="ch3.rsFlatThumb" />
+          <strong>Flat Thumb Across</strong> — thumb across palm, four fingers
+          straight up with no bends
         </p>
 
         <SgnwSymbol symbol="񂇁" style={{ justifySelf: "center" }} />
         <p style={{ margin: 0 }}>
-          <Trans i18nKey="ch3.rsFlat" />
+          <strong>Flat</strong> — five fingers straight up with no bends
         </p>
 
         <SgnwSymbol symbol="񂊑" style={{ justifySelf: "center" }} />
         <p style={{ margin: 0 }}>
-          <Trans i18nKey="ch3.rsFlatHeel" />
+          <strong>Flat Heel</strong> — the Flat hand seen from the heel, written
+          from the Wrist (heel-of-hand) View
         </p>
       </Grid>
 
       <RootShapePractice />
 
-      <h2>{t("ch3.actionFingersHeading")}</h2>
-      <p>{t("ch3.actionFingersIntro")}</p>
+      <h2>Action Fingers</h2>
+      <p>
+        Once the Rootshape is established, the lines for the fingers are
+        attached. The finger lines are called Action Fingers. They extend from
+        the root of the hand like branches on a tree. Action Fingers are more
+        important than the Rootshape, because they are looked at first, just as
+        observers look at the branches of a tree first. Readers focus on Action
+        Fingers first, since they give meaning to the handshape.
+      </p>
       <ActionFingersTree />
 
-      <h2>{t("ch3.addingHeading")}</h2>
-      <p>{t("ch3.addingIntro")}</p>
+      <h2>Adding Fingers</h2>
+      <p>
+        Start from the rootshape — a square for the Closed Fist, a circle for
+        the Open Fist, a rectangle with a tip for the Flat Hand — and add one
+        line for every finger that sticks up. One finger adds one line, two
+        fingers add two lines, all five spread fingers add five lines.
+      </p>
       <Grid columns="1fr 1fr 1fr" gap="1em" align="end">
-        <strong>{t("ch3.colRootshape")}</strong>
-        <strong>{t("ch3.col1Finger")}</strong>
-        <strong>{t("ch3.colMoreFingers")}</strong>
+        <strong>Rootshape</strong>
+        <strong>1 Finger Up</strong>
+        <strong>More Fingers Up</strong>
 
-        <SymbolCell symbol="񆄡" caption={t("ch3.closedFist")} />
-        <SymbolCell symbol="񀀁" caption={t("ch3.cap1Closed")} />
-        <SymbolCell symbol="񀕁" caption={t("ch3.cap2Closed")} />
+        <SymbolCell symbol="񆄡" caption="Closed Fist" />
+        <SymbolCell symbol="񀀁" caption="1 finger up — Closed Fist" />
+        <SymbolCell symbol="񀕁" caption="2 fingers up — Closed Fist" />
 
-        <SymbolCell symbol="񂱁" caption={t("ch3.openFist")} />
-        <SymbolCell symbol="񀁡" caption={t("ch3.cap1Open")} />
-        <SymbolCell symbol="񀖡" caption={t("ch3.cap2Open")} />
+        <SymbolCell symbol="񂱁" caption="Open Fist" />
+        <SymbolCell symbol="񀁡" caption="1 finger up — Open Fist" />
+        <SymbolCell symbol="񀖡" caption="2 fingers up — Open Fist" />
 
-        <SymbolCell symbol="񂇁" caption={t("ch3.flatHand")} />
-        <SymbolCell symbol="񂋡" caption={t("ch3.capThumbFlat")} />
-        <SymbolCell symbol="񁲁" caption={t("ch3.cap5Flat")} />
+        <SymbolCell symbol="񂇁" caption="Flat Hand" />
+        <SymbolCell symbol="񂋡" caption="Thumb out — Flat Hand" />
+        <SymbolCell symbol="񁲁" caption="5 fingers spread — Flat Hand" />
       </Grid>
 
-      <h2>{t("ch3.expFrontHeading")}</h2>
-      <p>{t("ch3.expFrontIntro")}</p>
+      <h2>Expressive Front View</h2>
+      <p>
+        Signs are written from the signer's expressive viewpoint. Imagine
+        standing BEHIND the signer, copying what the signer does and feels.
+      </p>
       <Grid columns="1fr 2fr" gap="1.5em" align="center">
         <Figure src={IMG.expFront1} style={{ margin: 0 }} />
         <div>
           <h3 style={{ marginTop: 0 }}>
-            <SgnwSymbol symbol="񂇁" /> {t("ch3.palmOfHand")}
+            <SgnwSymbol symbol="񂇁" /> Palm of Hand
           </h3>
-          <p>{t("ch3.frontPalm1")}</p>
+          <p>The palm of the hand is written with a white or hollow symbol.</p>
           <p>
-            <Trans i18nKey="ch3.frontPalm2" />
+            <strong>Front View — Parallel with Wall Plane:</strong> the hand is
+            parallel to the Front Wall. The white symbol shows that the palm
+            faces towards your body, towards the reader.
           </p>
         </div>
 
         <Figure src={IMG.expFront2} style={{ margin: 0 }} />
         <div>
           <h3 style={{ marginTop: 0 }}>
-            <SgnwSymbol symbol="񂇑" /> {t("ch3.sideOfHand")}
+            <SgnwSymbol symbol="񂇑" /> Side of Hand
           </h3>
-          <p>{t("ch3.frontSide1")}</p>
           <p>
-            <Trans i18nKey="ch3.frontSide2" />
+            The side of the hand is written with a symbol that is half-white
+            and half-dark. The half-white section shows the direction of the
+            palm. The half-dark section represents the back of the hand.
+          </p>
+          <p>
+            <strong>Front View — Parallel with Wall Plane:</strong> the hand is
+            parallel to the Front Wall. The thumb of the hand faces towards
+            your body.
           </p>
         </div>
 
         <Figure src={IMG.expFront3} style={{ margin: 0 }} />
         <div>
           <h3 style={{ marginTop: 0 }}>
-            <SgnwSymbol symbol="񂇡" /> {t("ch3.backOfHand")}
+            <SgnwSymbol symbol="񂇡" /> Back of Hand
           </h3>
-          <p>{t("ch3.frontBack1")}</p>
           <p>
-            <Trans i18nKey="ch3.frontBack2" />
+            The back of the hand is written with a black or filled-in symbol.
+          </p>
+          <p>
+            <strong>Front View — Parallel with Wall Plane:</strong> the hand is
+            parallel to the Front Wall. The black symbol shows that the back of
+            the hand faces towards your body.
           </p>
         </div>
       </Grid>
 
-      <h2>{t("ch3.expTopHeading")}</h2>
-      <p>{t("ch3.expTopIntro")}</p>
+      <h2>Expressive Top View</h2>
+      <p>
+        Signs are written from the signer's expressive viewpoint. Imagine
+        looking down on the position of the signer, from a bird's eye view.
+      </p>
       <Grid columns="1fr 2fr" gap="1.5em" align="center">
         <Figure src={IMG.expTop1} style={{ margin: 0 }} />
         <div>
           <h3 style={{ marginTop: 0 }}>
-            <SgnwSymbol symbol="񂇱" /> {t("ch3.palmOfHand")}
+            <SgnwSymbol symbol="񂇱" /> Palm of Hand
           </h3>
           <p>
-            <Trans i18nKey="ch3.topPalm" />
+            <strong>Top View — Parallel with Floor Plane:</strong> the hand is
+            parallel to the floor. You are looking down at your palm from
+            overhead. The white symbol has a space at the knuckle joint
+            representing the Horizon Line. A hand symbol with the Horizon Line
+            crossing over the knuckles means the hand is "parallel with the
+            floor" read from the Top View.
           </p>
         </div>
 
         <Figure src={IMG.expTop2} style={{ margin: 0 }} />
         <div>
           <h3 style={{ marginTop: 0 }}>
-            <SgnwSymbol symbol="񂈁" /> {t("ch3.sideOfHand")}
+            <SgnwSymbol symbol="񂈁" /> Side of Hand
           </h3>
           <p>
-            <Trans i18nKey="ch3.topSide" />
+            <strong>Top View — Parallel with Floor Plane:</strong> the hand is
+            parallel to the floor. You are looking down at the side of your
+            hand (your thumb) from overhead. The hand symbol has a space at the
+            knuckle joint representing the Horizon Line.
           </p>
         </div>
 
         <Figure src={IMG.expTop3} style={{ margin: 0 }} />
         <div>
           <h3 style={{ marginTop: 0 }}>
-            <SgnwSymbol symbol="񂈑" /> {t("ch3.backOfHand")}
+            <SgnwSymbol symbol="񂈑" /> Back of Hand
           </h3>
           <p>
-            <Trans i18nKey="ch3.topBack" />
+            <strong>Top View — Parallel with Floor Plane:</strong> the hand is
+            parallel to the floor. You are looking down at the back of your
+            hand from overhead. The hand symbol has a space at the knuckle
+            joint, representing the Horizon Line.
           </p>
         </div>
       </Grid>
@@ -589,66 +652,129 @@ export function Ch3Hands() {
           className="practice-launch__button"
           onClick={() => practice.open()}
         >
-          🤚 {t("ch3.practiceButton")}
+          🤚 Hand Orientation Practice
         </button>
-        <p className="practice-launch__hint">{t("ch3.practiceHint")}</p>
+        <p className="practice-launch__hint">
+          Match each handshape symbol to the photo of the hand it represents.
+        </p>
       </div>
 
-      <h2>{t("ch3.centerHeading")}</h2>
-      <p>{t("ch3.centerIntro")}</p>
+      <h2>Hands Relate to Center</h2>
+      <p>
+        In the International SignWriting Alphabet, all hand symbols are
+        designed to relate to the Center of the Body. Imagine a Center Line
+        going down the center of your body. The Majority of Action Fingers are
+        directed towards the center. Left hands are written to the left of the
+        Center Line. Right hands are written to the right of the Center Line.
+      </p>
       <Figure src={IMG.center} />
 
-      <h2>{t("ch3.wallPlaneHeading")}</h2>
-      <p>{t("ch3.wallPlaneIntro")}</p>
+      <h2>The Wall Plane</h2>
+      <p>
+        Hand symbols parallel to the Front Wall look the same whether they are
+        far from the chest, close to or touching the chest, or behind the body.
+        You can FEEL the position of the palm facing. It remains the same
+        symbol no matter how close or far it is.
+      </p>
       <Figure src={IMG.wallPlane} />
 
-      <h2>{t("ch3.floorPlaneHeading")}</h2>
-      <p>{t("ch3.floorPlaneIntro")}</p>
+      <h2>The Floor Plane</h2>
+      <p>
+        Hand symbols parallel to the Floor look the same whether they are high
+        above the head, in the middle in front of your chest, or low at hip
+        level. You can FEEL the position of the palm facing. It remains the
+        same symbol no matter how high or low it is.
+      </p>
       <Figure src={IMG.floorPlane} />
 
-      <h2>{t("ch3.sidePointHeading")}</h2>
-      <p>{t("ch3.sidePointIntro")}</p>
+      <h2>Hands Pointing to the Side</h2>
+      <p>
+        Hand symbols with the fingers pointing to the side can be written from
+        the Front View, parallel to the Front Wall Plane, or from the Top View,
+        parallel to the Floor Plane. Both symbols are correct, since
+        side-to-side can be seen from the Front View or the Top View. Choose to
+        write the simpler symbols seen from the Front View, parallel to the
+        Front Wall, since they are less complicated for quick reading:
+      </p>
       <Grid columns="1fr 2fr" gap="1.5em" align="center">
         <Figure src={IMG.side1} style={{ margin: 0 }} />
         <div>
-          <h3 style={{ marginTop: 0 }}>{t("ch3.chooseFrontHeading")}</h3>
-          <p>{t("ch3.chooseFront1")}</p>
+          <h3 style={{ marginTop: 0 }}>Choose the Front View</h3>
           <p>
-            <Trans i18nKey="ch3.chooseFront2" />
+            The Front View writes the palm of the hand with a white or hollow
+            symbol.
+          </p>
+          <p>
+            <strong>Front View Is Easier to Read:</strong> when the fingers
+            point to the side wall, it is best to write the symbol parallel to
+            the Front Wall because the symbol is easier to read.
           </p>
         </div>
 
         <Figure src={IMG.side2} style={{ margin: 0 }} />
         <div>
-          <h3 style={{ marginTop: 0 }}>{t("ch3.topCorrectHeading")}</h3>
-          <p>{t("ch3.topCorrect1")}</p>
+          <h3 style={{ marginTop: 0 }}>Top View Is Correct but…</h3>
           <p>
-            <Trans i18nKey="ch3.topCorrect2" />
+            The Top View of the hand is written with a half-white half-dark
+            symbol with the Horizon Line across the knuckles.
+          </p>
+          <p>
+            <strong>Top View Is Harder to Read:</strong> when the fingers point
+            to the side wall, it is correct to write the symbol parallel to the
+            Floor, but it is harder to read and therefore not recommended.
           </p>
         </div>
       </Grid>
 
-      <h2>{t("ch3.palmFacingHeading")}</h2>
-      <p>{t("ch3.palmFacingIntro")}</p>
+      <h2>Palm Facing: Examples</h2>
+      <p>
+        Pick a handshape and a plane (parallel with the front wall, or
+        parallel with the floor) to see the three palm-facing variants — palm,
+        side, and back — alongside the matching hand photos.
+      </p>
       <HandshapeExplorer />
 
-      <h2>{t("ch3.tenGroupsHeading")}</h2>
-      <p>{t("ch3.tenGroupsIntro")}</p>
+      <h2>10 Groups of Hands</h2>
+      <p>
+        There are ten groups of hand symbols in the International SignWriting
+        Alphabet. The hands are grouped according to which fingers are used.
+        These ten groups are the beginning of the Sign Symbol Sequence, the
+        order of symbols used to look up signs in SignWriting dictionaries by
+        Sign-Symbols. Handshapes used in all signed languages are included. All
+        ten groups are listed on the following pages. An easy way to remember
+        these groups is to count from one to ten in American Sign Language
+        (ASL).
+      </p>
       <HandGroupsExplorer />
 
       <details className="info-box">
-        <summary>{t("ch3.thumbSummary")}</summary>
-        <p>{t("ch3.thumbIntro")}</p>
+        <summary>Two Ways to Write Thumb Towards Reader</summary>
+        <p>
+          The side view of the Thumb Hand can be written in two ways. The dot
+          for the thumb projecting directly toward the reader is the official
+          symbol of the ISWA 2010. But some writers choose to write a line for
+          the thumb to the side, rather than the dot. The line for the thumb
+          is always placed on the dark side of the symbol. Both methods mean
+          the same thing and are correct.
+        </p>
         <ThumbWritingTable />
       </details>
-      <h2>{t("ch3.fingerspellingHeading")}</h2>
-      <p>{t("ch3.fingerspellingIntro")}</p>
+      <h2>Fingerspelling</h2>
+      <p>
+        Hand shapes, often by themselves, are used to represent letters in many
+        sign languages, allowing signers to assemble words letter by letter.
+      </p>
       <Fingerspelling />
 
-      <h2>{t("ch3.heelFlatHeading")}</h2>
-      <p>{t("ch3.heelFlatIntro")}</p>
+      <h2>Heel of Hand or Top View?</h2>
       <p>
-        <Trans i18nKey="ch3.heelTwoWays" />
+        Flat hands with the fingers pointing straight forward, with the arm
+        parallel to the Floor Plane, can be written from a special viewpoint
+        called the Heel of Hand "Wrist View", or from the traditional Top View.
+      </p>
+      <p>
+        <strong>Two Ways to Write The Same Handshape</strong> — use either
+        symbol.
       </p>
       <HeelViewTable
         rows={[
@@ -677,8 +803,12 @@ export function Ch3Hands() {
         ]}
       />
 
-      <h2>{t("ch3.heelFistHeading")}</h2>
-      <p>{t("ch3.heelFistIntro")}</p>
+      <h2>Heel of Hand or Top View?</h2>
+      <p>
+        Fists with the knuckles directed straight forward, with the arm
+        parallel to the Floor Plane, can be written from a special viewpoint
+        called the Heel of Hand "Wrist View", or from the traditional Top View.
+      </p>
       <HeelViewTable
         rows={[
           { photo: "person-179.png", symbolL: "񆆕", symbolR: "񆅱" },
@@ -686,54 +816,73 @@ export function Ch3Hands() {
         ]}
       />
 
-      <h2>{t("ch3.fingerDirHeading")}</h2>
-      <p>{t("ch3.fingerDirIntro")}</p>
+      <h2>Finger Direction Is Meaningful</h2>
+      <p>
+        Two ways to write the same position: the Top View of the Back of the
+        Hand can be written at a slant. Some writers feel this looks more like
+        real life, because the fingers are directed down. Both angles are
+        correct.
+      </p>
       <FingerDirectionGrid />
 
-      <h2>{t("ch3.toFaceHeading")}</h2>
-      <p>{t("ch3.toFaceIntro")}</p>
+      <h2>Action Fingers Directed Towards The Face</h2>
       <p>
-        <Trans i18nKey="ch3.toFaceBold" />
+        Finger direction relates to the Center of the Body. Action Fingers that
+        bend at the knuckle joint in Angle, Hinge, Cup or Curve hand positions
+        direct the fingers into the Center of the Body. The white palm shows
+        the palm is facing the body, with a slight hint that the palm is
+        slightly turned toward the Center too.
+      </p>
+      <p>
+        <strong>Fingers Are Directed Toward the Center</strong> — when the palm
+        is facing the body.
       </p>
       <Figure src={IMG.toFace1} />
-      <p>{t("ch3.someExamples")}</p>
+      <p>Some ASL signs as examples:</p>
       <HandshapeExamples set="toFace" />
 
-      <h2>{t("ch3.toUpHeading")}</h2>
-      <h3>{t("ch3.angleHeading")}</h3>
-      <p>{t("ch3.angleIntro1")}</p>
-      <p>{t("ch3.angleIntro2")}</p>
+      <h2>Action Fingers Directed Up</h2>
+      <h3>Angle Hand Symbols</h3>
+      <p>Point the tip of the angled fingers in meaningful directions.</p>
+      <p>
+        When writing Angle Hands, write the direction of the fingers based on
+        what "feels correct" for the meaning of the sign. Then look at your
+        palm. Where is the palm facing? If the palm is facing the ceiling, then
+        it is parallel to the floor. It will be white with a space at the
+        knuckle joint.
+      </p>
       <Figure src={IMG.toUp1} />
       <div className="catinhat">
         <YouTubeVideo
           videoId="HK8Xb6vmjBA"
-          title={t("ch3.catInHatTitle")}
-          credits={<CatInHatCredits />}
+          title="The Cat in the Hat in ASL — page 1"
+          credits={CAT_IN_HAT_CREDITS}
         />
         <div className="catinhat__vp">
           <sgnw-vp vp={CAT_IN_HAT_VP} colorize="true"></sgnw-vp>
         </div>
       </div>
-      <p>{t("ch3.someExamples")}</p>
+      <p>Some ASL signs as examples:</p>
       <HandshapeExamples set="toUp" />
 
-      <h2>{t("ch3.toOutHeading")}</h2>
-      <p>{t("ch3.toOutIntro")}</p>
+      <h2>Action Fingers Directed Out (Away From The Body)</h2>
+      <p>
+        This is very rare. If the majority of Action Fingers are directed to
+        the outside, away from the Center of the Body, as in the sign for FAIRY
+        GODMOTHER in ASL, then it is written pointing out.
+      </p>
       <figure style={{ textAlign: "center" }}>
         <SgnwSign sign="𝠃𝥮𝤣񌏁𝣳𝣵񍝁𝣳𝣵񎣡𝣱𝤟񃀒𝤗𝤉񃀚𝣛𝤉񈗧𝤶𝤎񈗳𝣅𝤏񃀑𝢤𝤎񃀙𝥌𝤎񆲅𝥘𝤄񆲅𝢝𝤃" />
         <figcaption>
-          <Trans
-            i18nKey="ch3.fairyGodmother"
-            components={{
-              sw: (
-                <a
-                  href="https://signwriting.org/library/children/cinderella/cind10.html"
-                  target="_blank"
-                  rel="noreferrer"
-                />
-              ),
-            }}
-          />
+          Action fingers directed to the outside in the sign for "Fairy
+          Godmother" —{" "}
+          <a
+            href="https://signwriting.org/library/children/cinderella/cind10.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            signwriting.org
+          </a>
         </figcaption>
       </figure>
     </>

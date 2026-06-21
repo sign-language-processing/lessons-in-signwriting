@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { useTranslation } from "react-i18next";
 import { asset } from "../lib/asset";
 import {
   fillVariants,
@@ -17,9 +16,16 @@ export type SymbolDialogProps = {
   onClose: () => void;
 };
 
+const FILL_LABELS = [
+  "Fill 1 — outline",
+  "Fill 2 — half-white",
+  "Fill 3 — black",
+  "Fill 4",
+  "Fill 5",
+  "Fill 6",
+];
+
 export function SymbolDialog({ openKey, onClose }: SymbolDialogProps) {
-  const { t } = useTranslation();
-  const fillLabels = t("ui.fillLabels", { returnObjects: true }) as string[];
   const dialogRef = useRef<HTMLDialogElement>(null);
   const practice = usePractice();
 
@@ -79,7 +85,7 @@ export function SymbolDialog({ openKey, onClose }: SymbolDialogProps) {
         <form method="dialog" style={{ margin: 0 }}>
           <button
             type="submit"
-            aria-label={t("common.close")}
+            aria-label="Close"
             style={{
               position: "absolute",
               top: "0.5rem",
@@ -108,7 +114,7 @@ export function SymbolDialog({ openKey, onClose }: SymbolDialogProps) {
           }}
         >
           <h2 id="symbol-dialog-title" style={{ margin: 0 }}>
-            {t("ui.symbolVariants")}
+            Symbol variants
           </h2>
           {openKey && isPracticeBase(openKey.slice(1, 4)) && (
             <button
@@ -120,7 +126,7 @@ export function SymbolDialog({ openKey, onClose }: SymbolDialogProps) {
                 practice.open(base);
               }}
             >
-              🤚 {t("ui.practiceThis")}
+              🤚 Practice this handshape
             </button>
           )}
         </div>
@@ -136,13 +142,13 @@ export function SymbolDialog({ openKey, onClose }: SymbolDialogProps) {
             }}
           >
             <span>
-              {t("ui.baseLabel")}: <code>{openKey.slice(0, 4)}</code> ·{" "}
-              {t("ui.fillVariants", { count: variants.length })}{" "}
+              Base: <code>{openKey.slice(0, 4)}</code> · {variants.length} fill
+              variant{variants.length === 1 ? "" : "s"} at rotation{" "}
               <code>{openKey[5]}</code>
             </span>
             {root && (
               <>
-                <span>· {t("ui.rootshapeLabel")}:</span>
+                <span>· Rootshape:</span>
                 <sgnw-symbol
                   symbol={root.swu}
                   style={{ fontSize: 32 }}
@@ -189,12 +195,12 @@ export function SymbolDialog({ openKey, onClose }: SymbolDialogProps) {
                 {img ? (
                   <img
                     src={asset(img)}
-                    alt={fillLabels[Number(key[4])]}
+                    alt={FILL_LABELS[Number(key[4])]}
                     style={{ maxHeight: 100, maxWidth: "100%", width: "auto", height: "auto" }}
                   />
                 ) : (
                   <div style={{ color: "#aaa", fontSize: "0.85em", height: 100 }}>
-                    {t("ui.noPhoto")}
+                    (no photo)
                   </div>
                 )}
                 <code style={{ fontSize: "0.85em", color: "#666" }}>{key}</code>

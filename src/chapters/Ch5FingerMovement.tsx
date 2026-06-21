@@ -1,4 +1,3 @@
-import { Trans, useTranslation } from "react-i18next";
 import { Figure } from "../components/Figure";
 import { FingerExplorer } from "../components/FingerExplorer";
 import { Col, Row } from "../components/Layout";
@@ -12,61 +11,67 @@ const IMG = {
 };
 
 export function Ch5FingerMovement() {
-  const { t } = useTranslation();
   return (
     <>
-      <h2 id="chapter-5">
-        {t("common.chapterHeading", { number: 5, title: t("toc.chapter-5") })}
-      </h2>
-      <p>{t("ch5.intro")}</p>
+      <h2 id="chapter-5">Chapter 5 — Finger Movement</h2>
+      <p>There are two main types:</p>
       <Row>
         <Col>
           <Figure src={IMG.middleJointIntro} />
           <p>
-            <Trans i18nKey="ch5.middleJointDesc" />
+            <strong>Middle Joint — Squeeze &amp; Flick:</strong> Finger movements
+            written with small dots.
           </p>
         </Col>
         <Col>
           <Figure src={IMG.knuckleJointIntro} />
           <p>
-            <Trans i18nKey="ch5.knuckleJointDesc" />
+            <strong>Knuckle Joint — Hinge &amp; Trill:</strong> Finger movements
+            written with small arrows.
           </p>
         </Col>
       </Row>
 
       <FingerExplorer />
 
-      <h2>{t("ch5.seqHeading")}</h2>
-      <p>{t("ch5.seqIntro")}</p>
+      <h2>Sequential Finger Movement</h2>
+      <p>Specific finger-by-finger opening and closing.</p>
       <div className="seq-grid">
         <figure className="seq-cell">
-          <img
-            src={asset("/figures/finger/seq-name-sign.png")}
-            alt={t("ch5.nameSignCaption")}
-          />
-          <figcaption>{t("ch5.nameSignCaption")}</figcaption>
-          <p>{t("ch5.nameSignBody")}</p>
+          <img src={asset("/figures/finger/seq-name-sign.png")} alt="a name sign" />
+          <figcaption>a name sign</figcaption>
+          <p>
+            Just follow the arrows. The movement starts at the stem of the
+            arrow, and moves toward the arrowheads. So in this sign, the baby
+            finger bends first, finishing in the A handshapes at the side of the
+            head.
+          </p>
         </figure>
         <div className="seq-cell">
           <img src={asset("/figures/finger/seq-closes.png")} alt="" />
-          <h3>{t("ch5.closesHeading")}</h3>
-          <p className="seq-sub">{t("ch5.fromMiddleJoint")}</p>
-          <p>{t("ch5.closes1")}</p>
-          <p>{t("ch5.closes2")}</p>
+          <h3>Sequential Finger Movement That Closes</h3>
+          <p className="seq-sub">From The Middle Joint</p>
+          <p>…very specific finger-by-finger closing of the fingers…</p>
+          <p>Exact details of which finger closes first, second and third.</p>
         </div>
         <figure className="seq-cell">
           <img src={asset("/figures/finger/seq-few.png")} alt="FEW" />
           <figcaption>
-            <Trans i18nKey="ch5.fewCaption" />
+            <strong>FEW</strong>
+            <br />
+            in American Sign Language
           </figcaption>
-          <p>{t("ch5.fewBody")}</p>
+          <p>(one of several ways to write this sign)</p>
         </figure>
         <div className="seq-cell">
-          <h3>{t("ch5.opensHeading")}</h3>
-          <p className="seq-sub">{t("ch5.fromMiddleJoint")}</p>
-          <p>{t("ch5.opens1")}</p>
-          <p>{t("ch5.opens2")}</p>
-          <p>{t("ch5.opens3")}</p>
+          <h3>Sequential Finger Movement That Opens</h3>
+          <p className="seq-sub">From The Middle Joint</p>
+          <p>…very specific finger-by-finger opening of the fingers…</p>
+          <p>Exact details of which finger opens first, second and third.</p>
+          <p>
+            In the example to the left, the sign for FEW opens the index finger
+            first, then the middle finger, ring finger and baby finger.
+          </p>
         </div>
       </div>
     </>

@@ -1,116 +1,139 @@
 import { key2swu } from "@sutton-signwriting/core/convert";
-import { Trans, useTranslation } from "react-i18next";
 import { SgnwSign, SgnwSymbol } from "../components/Sgnw";
 import { move, rot, RotationGrid, type RotSet } from "../components/RotationTiles";
 
 const sym = (spec: string): string => key2swu(`S${spec}00`);
 
-const VIEWPOINT_SPECS = [
-  "2ff00",
-  "2ff02",
-  "2ff33",
-  "2ff31",
-  "2ff20",
-  "2ff21",
-  "2ff23",
+type Tile = { spec: string; name: string };
+
+const VIEWPOINTS: Tile[] = [
+  { spec: "2ff00", name: "Front View" },
+  { spec: "2ff02", name: "Back View" },
+  { spec: "2ff33", name: "Side View, facing right" },
+  { spec: "2ff31", name: "Side View, facing left" },
+  { spec: "2ff20", name: "Top View, facing front" },
+  { spec: "2ff21", name: "Top View, facing diagonal" },
+  { spec: "2ff23", name: "Top View, facing diagonal" },
 ];
 
 // Contact Center: the Touch star (S205) centered on each viewpoint (composed
 // with signwriting canonicalize so the star sits at the head's center).
-const CONTACT_SIGNS = [
-  "𝠃𝤘𝤘񋾡𝣴𝣴񆇡𝤁𝤁",
-  "𝠃𝤜𝤙񋾣𝣰𝣴񆇡𝤁𝤁",
-  "𝠃𝤜𝤙񋿔𝣱𝣴񆇡𝤁𝤁",
-  "𝠃𝤜𝤙񋿒𝣱𝣴񆇡𝤁𝤁",
-  "𝠃𝤞𝤙񋿁𝣮𝣴񆇡𝤁𝤁",
-  "𝠃𝤛𝤛񋿂𝣱𝣱񆇡𝤁𝤁",
-  "𝠃𝤛𝤛񋿄𝣱𝣱񆇡𝤁𝤁",
+const CONTACT: Tile[] = [
+  { spec: "𝠃𝤘𝤘񋾡𝣴𝣴񆇡𝤁𝤁", name: "Front of Face" },
+  { spec: "𝠃𝤜𝤙񋾣𝣰𝣴񆇡𝤁𝤁", name: "Back of Head" },
+  { spec: "𝠃𝤜𝤙񋿔𝣱𝣴񆇡𝤁𝤁", name: "Side of Head, right" },
+  { spec: "𝠃𝤜𝤙񋿒𝣱𝣴񆇡𝤁𝤁", name: "Side of Head, left" },
+  { spec: "𝠃𝤞𝤙񋿁𝣮𝣴񆇡𝤁𝤁", name: "Top of Head, front" },
+  { spec: "𝠃𝤛𝤛񋿂𝣱𝣱񆇡𝤁𝤁", name: "Top of Head, diagonal" },
+  { spec: "𝠃𝤛𝤛񋿄𝣱𝣱񆇡𝤁𝤁", name: "Top of Head, diagonal" },
+];
+
+// Rim of Head & Face — the rim (S300 front, S384 fills for the other views)
+// rotated around the head.
+const RIM: RotSet[] = [
+  rot("3000", "Rim of the Face", 8),
+  rot("3843", "Rim of the Back of the Head", 8),
+  rot("3841", "Rim of the Top of the Head", 8),
+  rot("3844", "Rim of the Side of the Head", 8),
+];
+const RELATING: RotSet[] = [rot("3840", "Relating to the Head", 8)];
+
+const HEAD_DIRECTION: RotSet[] = [
+  move("301", "Straight, Wall Plane", 8),
+  move("303", "Straight, Floor Plane", 8),
+];
+const FACE_DIRECTION: RotSet[] = [
+  move("302", "Tilts, Wall Plane", 8),
+  move("304", "Curves, Wall Plane", 4),
+  move("305", "Curves, Floor Plane", 4),
+  move("306", "Circles", 4),
+];
+const FACE_LINES: RotSet[] = [
+  rot("3080", "Up or Down", 8, "Face Direction — Up or Down"),
+  rot("3090", "Nose Tilt", 8, "Face Direction — Nose Tilt"),
 ];
 
 export function Ch11Head() {
-  const { t } = useTranslation();
-  const vpNames = t("ch11.viewpoints", { returnObjects: true }) as string[];
-  const contactNames = t("ch11.contact", { returnObjects: true }) as string[];
-
-  const rim: RotSet[] = [
-    rot("3000", t("ch11.rimFace"), 8),
-    rot("3843", t("ch11.rimBack"), 8),
-    rot("3841", t("ch11.rimTop"), 8),
-    rot("3844", t("ch11.rimSide"), 8),
-  ];
-  const relating: RotSet[] = [rot("3840", t("ch11.relating"), 8)];
-  const headDirection: RotSet[] = [
-    move("301", t("ch11.straightWall"), 8),
-    move("303", t("ch11.straightFloor"), 8),
-  ];
-  const faceDirection: RotSet[] = [
-    move("302", t("ch11.tiltsWall"), 8),
-    move("304", t("ch11.curvesWall"), 4),
-    move("305", t("ch11.curvesFloor"), 4),
-    move("306", t("ch11.circles"), 4),
-  ];
-  const faceLines: RotSet[] = [
-    rot("3080", t("ch11.upDown"), 8, t("ch11.upDownTitle")),
-    rot("3090", t("ch11.noseTilt"), 8, t("ch11.noseTiltTitle")),
-  ];
-
   return (
     <>
-      <h2 id="chapter-11">
-        {t("common.chapterHeading", { number: 11, title: t("toc.chapter-11") })}
-      </h2>
+      <h2 id="chapter-11">Chapter 11 — Head</h2>
 
-      <h2>{t("ch11.headHeading")}</h2>
+      <h2>The Head</h2>
       <p>
-        <Trans i18nKey="ch11.headIntro" />
+        The Head is written as a circle, read from different{" "}
+        <strong>viewpoints</strong> — front, back, side or top — shown by small
+        marks on the rim: a nose triangle for a side view, a bar or diamond for
+        a top view, a double arc for the back.
       </p>
       <div className="face-grid">
-        {VIEWPOINT_SPECS.map((spec, i) => (
-          <figure key={spec} className="face-tile">
-            <SgnwSymbol symbol={sym(spec)} />
-            <figcaption className="face-tile__name">{vpNames[i]}</figcaption>
+        {VIEWPOINTS.map((v) => (
+          <figure key={v.spec} className="face-tile">
+            <SgnwSymbol symbol={sym(v.spec)} />
+            <figcaption className="face-tile__name">{v.name}</figcaption>
           </figure>
         ))}
       </div>
 
-      <h3>{t("ch11.contactHeading")}</h3>
+      <h3>Contact Center</h3>
       <p>
-        <Trans i18nKey="ch11.contactIntro" />
+        A <strong>Contact Center</strong> star marks the spot where contact is
+        made. It sits in the middle of any viewpoint.
       </p>
       <div className="face-grid">
-        {CONTACT_SIGNS.map((sign, i) => (
-          <figure key={sign} className="face-tile">
-            <SgnwSign sign={sign} />
-            <figcaption className="face-tile__name">{contactNames[i]}</figcaption>
+        {CONTACT.map((c) => (
+          <figure key={c.name + c.spec} className="face-tile">
+            <SgnwSign sign={c.spec} />
+            <figcaption className="face-tile__name">{c.name}</figcaption>
           </figure>
         ))}
       </div>
 
-      <h2>{t("ch11.rimHeading")}</h2>
-      <p>{t("ch11.rimIntro")}</p>
-      <RotationGrid sets={rim} />
-
-      <h3>{t("ch11.relatingHeading")}</h3>
+      <h2>Rim of Head &amp; Face</h2>
       <p>
-        <Trans i18nKey="ch11.relatingIntro" />
+        The Rim marks a place on the edge of the head. Each rim symbol rotates
+        to eight positions around the circle, naming a spot on the face, the
+        back, the top or the side of the head. Click a symbol to see every
+        position.
       </p>
-      <RotationGrid sets={relating} />
+      <RotationGrid sets={RIM} />
 
-      <h2>{t("ch11.movementHeading")}</h2>
-      <p>{t("ch11.movementIntro")}</p>
+      <h3>Relating to the Head</h3>
+      <p>
+        A rim symbol written beside a sign means the hand is{" "}
+        <strong>relating to</strong> that part of the head.
+      </p>
+      <RotationGrid sets={RELATING} />
 
-      <h3>{t("ch11.headDirectionHeading")}</h3>
-      <p>{t("ch11.headDirectionIntro")}</p>
-      <RotationGrid sets={headDirection} />
+      <h2>Head Movement</h2>
+      <p>
+        Click a movement symbol to see it rotated into every direction. Extra
+        arrowheads on the symbol show the movement repeating or going back and
+        forth.
+      </p>
 
-      <h3>{t("ch11.faceDirectionHeading")}</h3>
-      <p>{t("ch11.faceDirectionIntro")}</p>
-      <RotationGrid sets={faceDirection} />
+      <h3>Head-Direction Movement</h3>
+      <p>
+        The entire head travels in the direction of the arrows. The nose remains
+        straight and the neck does not bend.
+      </p>
+      <RotationGrid sets={HEAD_DIRECTION} />
 
-      <h2>{t("ch11.positionsHeading")}</h2>
-      <h3>{t("ch11.faceLinesHeading")}</h3>
-      <p>{t("ch11.faceLinesIntro")}</p>
-      <RotationGrid sets={faceLines} />
+      <h3>Face-Direction Movement</h3>
+      <p>
+        The nose moves in the direction of the arrows. The neck bends and
+        stretches as the nose moves.
+      </p>
+      <RotationGrid sets={FACE_DIRECTION} />
+
+      <h2>Head Positions</h2>
+      <h3>Face Direction Lines</h3>
+      <p>
+        This is not movement — it is a stable position. The horizontal bar is
+        the shoulders; the stem marks the direction the nose and face point,
+        relating to the shoulders. One symbol writes the nose pointing up or
+        down; the other adds a head tilt. Click to see every position.
+      </p>
+      <RotationGrid sets={FACE_LINES} />
     </>
   );
 }
