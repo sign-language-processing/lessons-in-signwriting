@@ -552,6 +552,16 @@ export function Ch3Hands() {
         <SymbolCell symbol="񁲁" caption="5 fingers spread — Flat Hand" />
       </Grid>
 
+      <h2>Choosing a Hand Symbol</h2>
+      <p>
+        Write the simplest hand symbol a reader will read correctly — no more
+        detail than the sign needs. Beginners tend to draw every nuance;
+        experienced writers leave out detail that a reader's knowledge of the
+        language already supplies. A symbol does not have to be phonetically
+        perfect, only clear: if readers will produce the right handshape, the
+        simpler symbol is the better choice.
+      </p>
+
       <h2>Expressive Front View</h2>
       <p>
         Signs are written from the signer's expressive viewpoint. Imagine

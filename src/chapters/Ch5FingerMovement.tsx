@@ -36,6 +36,11 @@ export function Ch5FingerMovement() {
 
       <h2>Sequential Finger Movement</h2>
       <p>Specific finger-by-finger opening and closing.</p>
+      <p>
+        When a handshape changes during a sign and one configuration matters
+        more than the other, write the more important one — usually the
+        starting handshape.
+      </p>
       <div className="seq-grid">
         <figure className="seq-cell">
           <img src={asset("/figures/finger/seq-name-sign.png")} alt="a name sign" />

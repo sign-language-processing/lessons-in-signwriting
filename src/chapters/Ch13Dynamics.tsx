@@ -183,6 +183,15 @@ export function Ch13Dynamics() {
       <div className="examples-row">
         <SignFigure slug="ch13-bed" />
       </div>
+      <p>
+        The Tension Symbol does more than one job, so read it in context. It can
+        mark a <strong>tense movement</strong>, it can mark a{" "}
+        <strong>classifier</strong>, and it can mark a hand{" "}
+        <strong>held still in space</strong> — a "buoy" that keeps a person,
+        place, or thing on stage as a landmark while the other hand keeps
+        signing. Reading the held hand tells you that referent is still in the
+        scene, which is what lets longer passages stay clear.
+      </p>
 
       <h2>Unit Dynamics — Unit-Connecting Lines</h2>
       <Row>

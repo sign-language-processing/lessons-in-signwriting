@@ -13,6 +13,20 @@ export function Ch4Contact() {
         <a href="#chapter-15">Chapter 15</a>.
       </p>
       <ContactExplorer />
+      <p>
+        Beyond the <em>type</em> of contact, SignWriting also has{" "}
+        <strong>surface symbols</strong> that clarify <em>which</em> surfaces
+        meet — useful when the usual writing would leave it ambiguous how two
+        parts touch. They are specialized; for the full set, see{" "}
+        <a
+          href="https://www.signwriting.org/archive/docs13/sw1283_A_GRAMMAR_OF_SIGNWRITING_by_Stuart_Thiessen.pdf"
+          target="_blank"
+          rel="noreferrer"
+        >
+          A Grammar of SignWriting
+        </a>{" "}
+        by Stuart Thiessen, pages 119–121.
+      </p>
     </>
   );
 }
