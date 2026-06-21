@@ -113,6 +113,14 @@ export function Ch13Dynamics() {
           </div>
         ))}
       </dl>
+      <p>
+        A note on modern usage: the <strong>Simultaneous</strong> and{" "}
+        <strong>Alternating</strong> lines are written less and less today.
+        Most two-handed signs are already simultaneous, and alternation is
+        usually clear from two arrows pointing in opposite directions with the
+        hands offset slightly in height — so the line is often left out. Keep it
+        when it removes ambiguity, or for emphasis on straight movements.
+      </p>
 
       <h2>Handshape Dynamics — Writing Classifiers</h2>
       <Row>

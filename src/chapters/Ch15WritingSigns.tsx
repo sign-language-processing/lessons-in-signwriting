@@ -152,6 +152,13 @@ export function Ch15WritingSigns() {
   return (
     <>
       <h2 id="chapter-15">Chapter 15 — Writing Signs</h2>
+      <p>
+        One principle guides almost every rule in this chapter:{" "}
+        <strong>economy</strong> — write only what a reader needs to understand
+        the sign, and no more. Most rules below are not really rules to
+        memorize; because the writing is iconic, they fall into place as you
+        write.
+      </p>
 
       <h3>Position of Contact</h3>
       <p>
@@ -417,6 +424,40 @@ export function Ch15WritingSigns() {
         <SgnwSign sign="𝠃𝤎𝤥񅰡𝣿𝤍񆕁𝤁𝣻񈗡𝤀𝣨" />
         <SgnwSign sign="𝠃𝤒𝤛񂇂𝣻𝤄񈗡𝣾𝣱" />
       </Grid>
+
+      <h2>On the Page</h2>
+      <p>
+        Signs are written in <strong>vertical columns</strong> — top to bottom,
+        with the columns running left to right across the page. This is the
+        modern convention: Deaf writers found vertical writing more natural than
+        horizontal, since it mirrors how the eyes take in signing. A sentence is
+        a column of sign boxes ending in a punctuation box.
+      </p>
+      <p>
+        Each box sits on a <strong>midline</strong> — the body's vertical line
+        of symmetry. To find where a sign sits on it: center a head or torso
+        symbol on the midline if the sign has one; otherwise center the Position
+        of Contact; otherwise center the whole cluster of symbols. A sign can
+        also be shifted off the midline, into a side <Em>lane</Em>, to place
+        things side by side in space — for comparisons, or to show the body
+        shifting between characters.
+      </p>
+
+      <h2>Going Further</h2>
+      <p>
+        This book covers everyday reading and writing. For the fuller, formal
+        system — locating signs precisely on the body by height, depth, and
+        width, and the SignSpelling notation used to order signs in dictionaries
+        — see{" "}
+        <a
+          href="https://www.signwriting.org/archive/docs13/sw1283_A_GRAMMAR_OF_SIGNWRITING_by_Stuart_Thiessen.pdf"
+          target="_blank"
+          rel="noreferrer"
+        >
+          A Grammar of SignWriting
+        </a>{" "}
+        by Stuart Thiessen, pages 177–185.
+      </p>
     </>
   );
 }

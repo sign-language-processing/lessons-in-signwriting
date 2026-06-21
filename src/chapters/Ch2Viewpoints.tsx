@@ -105,31 +105,60 @@ export function Ch2Viewpoints() {
         credits={VIDEO_CREDITS}
         transcript={TRANSCRIPT_1}
       />
+
+      <h2>The Parts of a Sign</h2>
       <p>
-        SignWriting can be written from either the Receptive or the Expressive
-        viewpoints. This book teaches reading and writing signs from the
-        Expressive Viewpoint. The Expressive Viewpoint is now the standard in
-        SignWriting publications. The Receptive Viewpoint is used occasionally
-        when transcribing signs from videotape, or when recording foreign signs
-        in shorthand. For more information on using the Receptive Viewpoint,
-        refer to <a href="#chapter-15">Chapter 15</a>.
+        Every sign is built from a few parts working at once: the{" "}
+        <strong>handshape</strong>, the <strong>orientation</strong> of the
+        palm, the <strong>location</strong> where the sign is made, the{" "}
+        <strong>movement</strong>, and the <strong>facial expressions</strong>{" "}
+        and other non-manual signals of the face, head, and body.
+      </p>
+      <p>
+        SignWriting can record all of them — not just the hands, but the
+        non-manual signals too, down to breathing when it matters. That is what
+        sets it apart from systems that only describe the hands. The chapters
+        ahead take these one at a time: the <a href="#chapter-3">hands</a>,{" "}
+        <a href="#chapter-4">contact</a>, <a href="#chapter-6">movement</a>, and
+        the <a href="#chapter-10">face</a>, <a href="#chapter-11">head</a>, and{" "}
+        <a href="#chapter-12">body</a>. We begin with the viewpoint.
+      </p>
+
+      <h2>Viewpoint</h2>
+      <p>
+        Because SignWriting mirrors the body, the first choice in writing any
+        sign is the <strong>viewpoint</strong> — whose perspective you take.
+        There are two: the Expressive and the Receptive. This book teaches
+        reading and writing from the Expressive Viewpoint, the standard in
+        SignWriting publications today. The Receptive Viewpoint is used only
+        occasionally — when transcribing signs from video, or recording foreign
+        signs in shorthand; for more on it, see{" "}
+        <a href="#chapter-15">Chapter 15</a>.
       </p>
 
       <Row stretch>
         <Col>
-          <h2>Expressive Viewpoint</h2>
+          <h3>Expressive Viewpoint</h3>
           <p>
             When you are signing to someone else, you see signs from your own
             point of view. This is called the Expressive Viewpoint.
           </p>
+          <p>
+            SignWriting adopted this viewpoint in 1984, when Deaf writers asked
+            to record signs the way they see them as they sign. It has been the
+            standard ever since.
+          </p>
           <Figure src={IMG.expressive} style={{ marginTop: "auto" }} />
         </Col>
         <Col>
-          <h2>Receptive Viewpoint</h2>
+          <h3>Receptive Viewpoint</h3>
           <p>
             When someone is facing you, signing to you, you view the signs as an
             observer. The signer's right side is your left side. This is called
             the Receptive Viewpoint.
+          </p>
+          <p>
+            This was SignWriting's original standard, used from 1974 until 1984.
           </p>
           <Figure src={IMG.receptive} style={{ marginTop: "auto" }} />
         </Col>
@@ -141,7 +170,27 @@ export function Ch2Viewpoints() {
         own perspective.
       </p>
 
-      <h2>Palm of Hand</h2>
+      <h3>Neutral Space</h3>
+      <p>
+        By default, a sign is written in <strong>neutral space</strong> — the
+        area just in front of your chest. The head, torso, arms, and neck are
+        drawn only when a sign actually needs them. That is why most signs are
+        written as hands alone, and a head appears only when the sign is made on
+        or near the face, as in the examples further down this chapter.
+      </p>
+
+      <h3>Dominant Hand</h3>
+      <p>
+        Most signs have a <strong>dominant hand</strong> — the one doing more of
+        the work (the right hand for right-handed signers, the left for
+        left-handed signers). Like most SignWriting books, this book writes every
+        sign from the right-handed perspective. Left-handed signers can simply
+        mirror it, and in practice readers read signs in their own handedness —
+        just as you understand both right- and left-handed signers in
+        conversation.
+      </p>
+
+      <h3>Palm of Hand</h3>
       <p>
         When you see the palm of your hand, while you are signing, the symbol
         for the hand will be white, or hollow. The palm of the hand is always
@@ -160,7 +209,7 @@ export function Ch2Viewpoints() {
 
       <Row stretch>
         <Col>
-          <h2>Side of Hand</h2>
+          <h3>Side of Hand</h3>
           <p>
             When you see the side of your hand while you are signing, the symbol
             for the hand will be half black and half white.
@@ -178,7 +227,7 @@ export function Ch2Viewpoints() {
           />
         </Col>
         <Col>
-          <h2>Back of Hand</h2>
+          <h3>Back of Hand</h3>
           <p>
             When you see the back of your hand while you are signing, the symbol
             will be black, or filled-in.

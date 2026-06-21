@@ -335,6 +335,12 @@ export function Ch3Hands() {
         transcript={TRANSCRIPT_2}
       />
       <h2>3 Basic Handshapes</h2>
+      <p>
+        Hand symbols are <strong>iconic</strong> — the symbol looks like what
+        the hand is doing. That is the key to learning them: instead of
+        memorizing hundreds of shapes, you draw what you see. It starts with
+        three basic shapes.
+      </p>
 
       <Grid columns="2fr 1fr 1fr" gap="0" justify="stretch">
         <div>
@@ -551,6 +557,12 @@ export function Ch3Hands() {
         Signs are written from the signer's expressive viewpoint. Imagine
         standing BEHIND the signer, copying what the signer does and feels.
       </p>
+      <p>
+        The palm-facing rule from Chapter 2 — white palm, half-white side,
+        black back — is <strong>one rule that holds for every handshape</strong>.
+        You never memorize it per hand: just ask what you see, and color the
+        symbol to match.
+      </p>
       <Grid columns="1fr 2fr" gap="1.5em" align="center">
         <Figure src={IMG.expFront1} style={{ margin: 0 }} />
         <div>
@@ -744,6 +756,12 @@ export function Ch3Hands() {
         ten groups are listed on the following pages. An easy way to remember
         these groups is to count from one to ten in American Sign Language
         (ASL).
+      </p>
+      <p>
+        Don't try to memorize them all. Browse the groups to get familiar with
+        them — because the symbols are iconic, you can read and write any
+        handshape from its rootshape, its action fingers, and what you see of
+        the palm.
       </p>
       <HandGroupsExplorer />
 

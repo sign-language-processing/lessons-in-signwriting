@@ -266,9 +266,18 @@ export function Ch10Face() {
       <h2 id="chapter-10">Chapter 10 — Facial Expressions</h2>
       <p>
         Facial expressions are written inside the <strong>Facial Circle</strong>
-        . Each feature — the forehead, eyebrows, eyes, eyegaze, ears, cheeks,
-        nose, breathing, mouth, tongue, teeth and chin — has its own group of
-        symbols placed where it sits on the face.
+        . The circle is the only standalone symbol here; every feature is a
+        small mark <strong>added to it, where that feature sits on a real
+        face</strong> — the forehead, eyebrows, and eyes near the top; the nose,
+        cheeks, and ears across the middle; the mouth, tongue, teeth, and chin
+        at the bottom. Each feature has its own group, below.
+      </p>
+      <p>
+        In sign languages these are not decoration — they are{" "}
+        <strong>grammar</strong>. A facial expression can mark a question, a
+        negation, or change the meaning of a sign entirely. So write a facial
+        expression when it carries meaning, not to capture someone's personal
+        signing style — unless you are transcribing a video word-for-word.
       </p>
 
       <div className="face-neutral">

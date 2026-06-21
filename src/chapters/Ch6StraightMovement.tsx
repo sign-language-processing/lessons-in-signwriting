@@ -304,6 +304,15 @@ export function Ch6StraightMovement() {
           </div>
         ))}
       </div>
+
+      <h2>Building Longer Paths</h2>
+      <p>
+        These straight arrows are the building blocks. Once you know the shape
+        of each one and the movement it stands for, you can join them into
+        longer, more complex paths — which is exactly how movement is written
+        for classifiers and the curved and circular movements in the chapters
+        ahead. Learn the basic arrows well, and the rest are combinations.
+      </p>
     </>
   );
 }
