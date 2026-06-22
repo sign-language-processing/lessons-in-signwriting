@@ -62,7 +62,13 @@ const NAMES = readBaseNames();
 const BASE_TO_GROUP = readGroupBases();
 
 const isHand = (b) => b >= "100" && b <= "204";
+
+// Movement-path arrows only (the "movement" class in src/lib/writingPractice.ts).
+// The range guard matters: many hand names contain "Circle" ("Index on Circle"),
+// which would otherwise be classified as a circular *movement* with no arrow.
+const isMovement = (b) => b >= "221" && b < "2ff";
 const planeOf = (b) => {
+  if (!isMovement(b)) return null;
   const n = NAMES[b];
   if (!n) return null;
   if (n.includes("Wall Plane")) return "Wall Plane";
@@ -70,6 +76,7 @@ const planeOf = (b) => {
   return null;
 };
 const familyOf = (b) => {
+  if (!isMovement(b)) return null;
   const n = NAMES[b];
   if (!n) return null;
   if (n.includes("Curve")) return "Curve";
@@ -114,7 +121,9 @@ for (const row of index) {
   if (!localClips.has(box)) continue;
   kept++;
   readingSet.add(box);
-  const bases = basesIn(fsw);
+  // Classify on the signbox (what we render and quiz on), not the full FSW —
+  // the leading A-prefix can list symbols that aren't placed in the box.
+  const bases = basesIn(box);
   add("contact", uniqueMember(bases, (b) => CONTACT_OF[b] ?? null), box);
   add("handshape-group",
     uniqueMember(bases, (b) => (isHand(b) ? GROUP_NAMES[BASE_TO_GROUP[b]] : null)), box);
