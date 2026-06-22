@@ -1474,6 +1474,12 @@ fsw-symbol {
   background: #245bc0;
 }
 
+.practice-launch__button:disabled {
+  background: #b8c0cc;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
 .practice-launch__hint {
   margin: 0.75em 0 0;
   color: #666;
@@ -1483,11 +1489,35 @@ fsw-symbol {
 .practice-dialog {
   box-sizing: border-box;
   padding: 0;
-  border: none;
+  border: 3px solid transparent;
   border-radius: 16px;
   inline-size: min(560px, 95vw);
   max-block-size: 90vh;
   overflow-y: auto;
+  transition: border-color 0.15s ease;
+}
+
+.practice-dialog.is-correct {
+  border-color: #2f9e57;
+}
+
+.practice-dialog.is-wrong {
+  border-color: #e0584f;
+}
+
+.quiz-feedback {
+  min-height: 2.8em;
+  margin: 0 0 1rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.quiz-feedback.is-correct {
+  color: #2f9e57;
+}
+
+.quiz-feedback.is-wrong {
+  color: #e0584f;
 }
 
 .practice-dialog::backdrop {
@@ -1525,6 +1555,120 @@ fsw-symbol {
   cursor: pointer;
   font-size: 1.2rem;
   line-height: 1;
+}
+
+.practice-history {
+  position: absolute;
+  top: 0.75rem;
+  right: 3rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.history-dialog {
+  inline-size: min(620px, 96vw);
+}
+
+.history-legend {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.history-legend__tried::before,
+.history-legend__correct::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 3px;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+}
+
+.history-legend__tried::before {
+  background: #2f6fe0;
+}
+
+.history-legend__correct::before {
+  background: #2f9e57;
+}
+
+.history-chart {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.history-axis {
+  font-size: 11px;
+  fill: #888;
+}
+
+.history-table-wrap {
+  max-height: 40vh;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.history-table th,
+.history-table td {
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.history-table thead th {
+  position: sticky;
+  top: 0;
+  background: #f7f9fc;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.history-table tr.is-correct {
+  background: #effaf1;
+}
+
+.history-table tr.is-wrong {
+  background: #fdeceb;
+}
+
+.history-when {
+  white-space: nowrap;
+  color: #666;
+  font-size: 0.8rem;
+}
+
+.history-cell-empty {
+  color: #aaa;
+}
+
+.history-video,
+.history-img {
+  display: block;
+  width: 96px;
+  height: auto;
+  border-radius: 6px;
+}
+
+.history-video {
+  cursor: pointer;
 }
 
 .practice-board {
@@ -1693,10 +1837,182 @@ fsw-symbol {
   max-width: 100%;
 }
 
+.quiz-watch {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.quiz-video {
+  display: block;
+  flex: 0 1 280px;
+  width: 280px;
+  min-width: 0;
+  max-width: 100%;
+  aspect-ratio: 1;
+  margin: 0 auto 1.25rem;
+  border-radius: 12px;
+  background: #000;
+  object-fit: cover;
+}
+
+.quiz-watch .quiz-video {
+  margin: 0;
+}
+
+.reading-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+}
+
+.writing-dialog {
+  inline-size: min(1280px, 98vw);
+  block-size: 92vh;
+  max-block-size: 92vh;
+  overflow: hidden;
+}
+
+.writing-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  height: 100%;
+}
+
+.writing-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.writing-panel .quiz-video {
+  margin: 0;
+}
+
+.writing-modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.writing-modes button {
+  border: 1px solid #cbd5e1;
+  background: white;
+  padding: 0.35em 0.9em;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+}
+
+.writing-modes button.is-active {
+  background: #2f6fe0;
+  border-color: #2f6fe0;
+  color: white;
+}
+
+.writing-label {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.writing-answer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.writing-frame {
+  border-left: 1px solid #e2e2e2;
+  background: white;
+}
+
+.writing-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 820px) {
+  .writing-dialog {
+    inline-size: 100vw;
+    block-size: 100dvh;
+    max-block-size: 100dvh;
+  }
+
+  .writing-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .writing-panel {
+    overflow-y: visible;
+  }
+
+  .writing-frame {
+    border-left: none;
+    border-top: 1px solid #e2e2e2;
+  }
+}
+
+.reading-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  padding: 0.5rem;
+  border: 2px solid #dcdfe5;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  transition:
+    border-color 0.12s ease,
+    background 0.12s ease;
+}
+
+.reading-tile:hover:not(:disabled) {
+  border-color: #b8c0cc;
+}
+
+.reading-tile.is-correct {
+  border-color: #2f9e57;
+  background: #effaf1;
+}
+
+.reading-tile.is-wrong {
+  border-color: #e0584f;
+  background: #fdeceb;
+  animation: practice-shake 0.4s;
+}
+
+.quiz-sign-slot {
+  flex: 0 0 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+}
+
 .rootshape-options {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.6rem;
+}
+
+/* Read a 10-item ordered set down each column (1–5 left, 6–10 right). */
+.rootshape-options--column {
+  grid-template-rows: repeat(5, auto);
+  grid-auto-flow: column;
 }
 
 .rootshape-option {
@@ -1740,6 +2056,11 @@ fsw-symbol {
 @media (max-width: 640px) {
   .rootshape-options {
     grid-template-columns: 1fr;
+  }
+
+  .rootshape-options--column {
+    grid-auto-flow: row;
+    grid-template-rows: none;
   }
 
   .rootshape-stimulus img {

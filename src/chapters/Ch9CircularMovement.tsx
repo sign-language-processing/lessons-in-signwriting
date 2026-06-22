@@ -1,5 +1,7 @@
 import { SgnwSymbol } from "../components/Sgnw";
 import { SignFigure } from "../components/SignFigure";
+import { WatchAndName } from "../components/WatchAndName";
+import { MOVEMENT_FAMILY_GAME } from "../lib/watchGames";
 
 type Item = { symbol: string; label: string };
 
@@ -160,6 +162,7 @@ export function Ch9CircularMovement() {
         <SignFigure slug="ch9-government" />
         <SignFigure slug="ch9-gymnastics" />
       </div>
+      <WatchAndName game={MOVEMENT_FAMILY_GAME} />
     </>
   );
 }

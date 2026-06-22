@@ -1,4 +1,6 @@
 import { ContactExplorer } from "../components/ContactExplorer";
+import { WatchAndName } from "../components/WatchAndName";
+import { CONTACT_GAME } from "../lib/watchGames";
 
 export function Ch4Contact() {
   return (
@@ -27,6 +29,7 @@ export function Ch4Contact() {
         </a>{" "}
         by Stuart Thiessen, pages 119–121.
       </p>
+      <WatchAndName game={CONTACT_GAME} />
     </>
   );
 }

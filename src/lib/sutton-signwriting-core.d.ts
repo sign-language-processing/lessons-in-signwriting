@@ -10,6 +10,8 @@ declare module "@sutton-signwriting/core" {
     id2key: (id: number) => string;
     key2symid: (key: string) => string;
     symid2key: (symid: string) => string;
+    fsw2swu: (fsw: string) => string;
+    swu2fsw: (swu: string) => string;
     symidArr: readonly string[];
   };
 }

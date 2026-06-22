@@ -1,12 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { asset } from "../lib/asset";
 import { baseSymbolName } from "../lib/baseSymbolNames";
+import { PracticeHistory } from "./GameHistory";
+import { DialogCloseButton } from "./PracticeChrome";
+import { recordAttempt } from "../lib/gameStats";
 import {
   practicePairs,
   randomPracticeBase,
   shuffle,
   type PracticePair,
 } from "../lib/practiceHands";
+
+const GAME_ID = "hand-orientation";
 
 export type HandOrientationPracticeProps = {
   /** Base (3-hex) to seed the first round, or null when the dialog is closed. */
@@ -36,6 +41,7 @@ export function HandOrientationPractice({
   const [wrong, setWrong] = useState<Selection[] | null>(null);
   const [mistakes, setMistakes] = useState(0);
   const wrongTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const recordedRef = useRef(false);
 
   function start(base: string) {
     if (wrongTimer.current) clearTimeout(wrongTimer.current);
@@ -44,6 +50,7 @@ export function HandOrientationPractice({
     setMatched(new Set());
     setWrong(null);
     setMistakes(0);
+    recordedRef.current = false;
   }
 
   useEffect(() => {
@@ -63,6 +70,18 @@ export function HandOrientationPractice({
     },
     [],
   );
+
+  useEffect(() => {
+    if (!round || recordedRef.current) return;
+    if (matched.size !== round.pairs.length) return;
+    recordedRef.current = true;
+    recordAttempt(GAME_ID, {
+      correct: mistakes === 0,
+      question: baseSymbolName(round.base) ?? round.base,
+      chosen: `${mistakes} mistake${mistakes === 1 ? "" : "s"}`,
+      answer: "0 mistakes",
+    });
+  }, [matched, round, mistakes]);
 
   if (!round) {
     return <dialog ref={dialogRef} className="practice-dialog" onClose={onClose} />;
@@ -115,11 +134,8 @@ export function HandOrientationPractice({
       onClose={onClose}
     >
       <div className="practice-body">
-        <form method="dialog" className="practice-close-form">
-          <button type="submit" aria-label="Close" className="practice-close">
-            ×
-          </button>
-        </form>
+        <DialogCloseButton />
+        <PracticeHistory game={GAME_ID} title="Hand Orientation Practice" />
 
         <h2 id="practice-title">Hand Orientation Practice</h2>
         <p className="practice-prompt">

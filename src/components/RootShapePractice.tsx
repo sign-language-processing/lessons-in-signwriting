@@ -1,5 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { asset } from "../lib/asset";
+import { PracticeHistory } from "./GameHistory";
+import { DialogCloseButton, PracticeLaunchCard, useDialogClose } from "./PracticeChrome";
+import { recordAttempt } from "../lib/gameStats";
 import { baseSymbolName } from "../lib/baseSymbolNames";
 import { handImageForKey, symbolToKey } from "../lib/handImage";
 import {
@@ -7,6 +10,8 @@ import {
   randomPracticeSymbol,
   rootNameFor,
 } from "../lib/rootShapes";
+
+const GAME_ID = "rootshape";
 
 type Difficulty = "easy" | "hard";
 
@@ -43,16 +48,23 @@ export function RootShapePractice() {
     dialogRef.current?.showModal();
   }
 
-  useEffect(() => {
-    const dlg = dialogRef.current;
-    if (!dlg) return;
-    const onClose = () => setRound(null);
-    dlg.addEventListener("close", onClose);
-    return () => dlg.removeEventListener("close", onClose);
-  }, []);
+  useDialogClose(dialogRef, () => setRound(null));
 
   const answered = chosen !== null;
   const correct = answered && chosen === round?.answer;
+  const stateClass = answered ? (correct ? "is-correct" : "is-wrong") : "";
+
+  function choose(name: string) {
+    if (answered || !round) return;
+    setChosen(name);
+    recordAttempt(GAME_ID, {
+      correct: name === round.answer,
+      question: round.photo || round.name,
+      questionType: round.photo ? "image" : undefined,
+      chosen: name,
+      answer: round.answer,
+    });
+  }
 
   const optionClass = (name: string) => {
     const classes = ["rootshape-option"];
@@ -64,32 +76,22 @@ export function RootShapePractice() {
 
   return (
     <>
-      <div className="practice-launch" data-no-print>
-        <button
-          type="button"
-          className="practice-launch__button"
-          onClick={open}
-        >
-          🌱 Rootshape Practice
-        </button>
-        <p className="practice-launch__hint">
-          See a hand and name the rootshape it grows from.
-        </p>
-      </div>
+      <PracticeLaunchCard
+        label="🌱 Rootshape Practice"
+        hint="See a hand and name the rootshape it grows from."
+        onClick={open}
+      />
 
       <dialog
         ref={dialogRef}
         closedby="any"
-        className="practice-dialog"
+        className={`practice-dialog ${stateClass}`}
         aria-labelledby="rootshape-practice-title"
       >
         {round && (
           <div className="practice-body">
-            <form method="dialog" className="practice-close-form">
-              <button type="submit" aria-label="Close" className="practice-close">
-                ×
-              </button>
-            </form>
+            <DialogCloseButton />
+            <PracticeHistory game={GAME_ID} title="Rootshape Practice" />
 
             <h2 id="rootshape-practice-title">Rootshape Practice</h2>
 
@@ -112,7 +114,7 @@ export function RootShapePractice() {
             </p>
 
             <div className="rootshape-stimulus">
-              {difficulty === "easy" && (
+              {(difficulty === "easy" || answered) && (
                 <sgnw-symbol
                   symbol={round.symbol}
                   style={{ fontSize: 110 }}
@@ -128,7 +130,7 @@ export function RootShapePractice() {
                   key={shape.name}
                   className={optionClass(shape.name)}
                   disabled={answered}
-                  onClick={() => setChosen(shape.name)}
+                  onClick={() => choose(shape.name)}
                 >
                   <sgnw-symbol
                     symbol={shape.swu}
@@ -139,16 +141,11 @@ export function RootShapePractice() {
               ))}
             </div>
 
-            {answered && (
-              <div className="practice-result" role="status">
-                <p className="practice-result__title">
-                  {correct ? "Correct! 🎉" : "Not quite"}
-                </p>
-                <p className="practice-result__detail">
-                  {round.name} is the {round.answer} rootshape.
-                </p>
-              </div>
-            )}
+            <p className={`quiz-feedback ${stateClass}`} role="status">
+              {answered
+                ? `${correct ? "Correct!" : "Not quite —"} ${round.name} is the ${round.answer} rootshape.${correct ? " 🎉" : ""}`
+                : ""}
+            </p>
 
             <div className="practice-actions">
               <button

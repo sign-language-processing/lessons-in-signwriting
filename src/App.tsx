@@ -21,6 +21,7 @@ import { Ch12Body } from "./chapters/Ch12Body";
 import { Ch13Dynamics } from "./chapters/Ch13Dynamics";
 import { Ch14Punctuation } from "./chapters/Ch14Punctuation";
 import { Ch15WritingSigns } from "./chapters/Ch15WritingSigns";
+import { Ch16Practice } from "./chapters/Ch16Practice";
 
 export function App() {
   const pageRef = useRef<HTMLDivElement>(null);
@@ -54,6 +55,7 @@ export function App() {
           <Ch13Dynamics />
           <Ch14Punctuation />
           <Ch15WritingSigns />
+          <Ch16Practice />
         </div>
         {AUTHORING && (
           <aside className="pdf-debug" data-no-print aria-label="Source PDF (for debugging)">

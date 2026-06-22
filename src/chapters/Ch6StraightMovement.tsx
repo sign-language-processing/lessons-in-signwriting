@@ -2,6 +2,8 @@ import { Figure } from "../components/Figure";
 import { Col, Row } from "../components/Layout";
 import { SgnwSymbol } from "../components/Sgnw";
 import { SignFigure } from "../components/SignFigure";
+import { WatchAndName } from "../components/WatchAndName";
+import { MOVEMENT_PLANE_GAME } from "../lib/watchGames";
 import {
   DiagonalPlane3D,
   DiagonalPlaneDown3D,
@@ -313,6 +315,7 @@ export function Ch6StraightMovement() {
         for classifiers and the curved and circular movements in the chapters
         ahead. Learn the basic arrows well, and the rest are combinations.
       </p>
+      <WatchAndName game={MOVEMENT_PLANE_GAME} />
     </>
   );
 }

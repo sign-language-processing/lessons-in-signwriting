@@ -43,6 +43,21 @@ export function Ch1Introduction() {
         Lessons In SignWriting Video Series DVD
       </p>
       <p>SignWriting web components by Stephen E. Slevinski, Jr</p>
+      <p>
+        Sign videos are from{" "}
+        <a href="https://whatsthatsign.com/" target="_blank" rel="noreferrer">
+          whatsthatsign.com
+        </a>{" "}
+        by Adam Frost, licensed under{" "}
+        <a
+          href="https://creativecommons.org/licenses/by-sa/4.0/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          CC BY-SA 4.0
+        </a>
+        .
+      </p>
 
       <h3>Contributors</h3>
       <p>

@@ -212,6 +212,57 @@ section. They ship in release (not authoring-gated) and reuse the shared
   Across, Flat, Flat Heel). Easy mode also shows the SignWriting symbol. Samples
   **uniformly over rootshapes** (so rare ones appear as often as common ones).
 
+**Stats & history.** Every game logs each attempt to localStorage via
+`lib/gameStats.ts` (`recordAttempt(gameId, {correct, question, chosen, answer})`;
+`question`/`chosen`/`answer` holding a signbox FSW render as a sign in the
+table). A 📖 button (`PracticeHistory` from `components/GameHistory.tsx`) sits
+beside each dialog's × and opens a history dialog: a cumulative tried/correct
+SVG line chart (bucketed per-minute < 1h of data, per-hour < 1 day, else
+per-day) plus a green/red attempts table. To add stats to a new game, call
+`recordAttempt` on answer and drop `<PracticeHistory game="…" title="…" />` in
+the dialog header. Game ids in use: `watch:<config-id>`, `matching`, `writing`,
+`rootshape`, `hand-orientation`.
+
+Two reusable **engines** back the rest (one component, many configs — add a
+config, not a component). Both sample uniformly over the answer set.
+
+- **Watch & Name** — `WatchAndName` + `lib/watchGames.ts`. Plays a
+  whatsthatsign clip and asks which closed-set member the sign uses; distractors
+  are siblings. Pools are precomputed by `scripts/build_game_pools.mjs` →
+  `src/content/game-pools.generated.json` (`{ gameId: { answer: signboxFsw[] } }`):
+  it parses each sign's FSW, classifies by base symbol (contact bases, hand
+  groups via `handGroups.ts`, movement plane/family via `BASE_SYMBOL_NAMES`
+  keyword), and keeps only **unambiguous** clips (exactly one member of the set),
+  capped at 40/answer. Re-run it if the index or classification changes.
+  Configs: `CONTACT_GAME` (Ch4), `HANDSHAPE_GROUP_GAME` (Ch3),
+  `MOVEMENT_PLANE_GAME` (Ch6), `MOVEMENT_FAMILY_GAME` (Ch9).
+- **Matching Practice** — `MatchingPractice` + `lib/readingSigns.ts`, in its own
+  **Chapter 16 — Practice** (`Ch16Practice`). Plays a sign's clip and asks which
+  of four SignWriting writings records it (the correct one + 3 random signs).
+  (Ch16 also stubs a webcam-based **Reading Practice** — "coming soon", not built.)
+  Draws from `src/content/reading-signs.generated.json` (flat list of signbox
+  FSW for local clips, capped at 800, also emitted by `build_game_pools.mjs`);
+  renders each option as a live `<sgnw-sign>` via `convert.fsw2swu`. New games
+  go in Ch16.
+- **Writing Practice** — `WritingPractice` + `lib/writingPractice.ts`, in Ch16.
+  Embeds the SignWriting keyboard (remote iframe to
+  `sutton-signwriting.io/signmaker`) and asks the learner to write a part of a
+  sign: Hands / Contact / Movement / Face / Entire sign. The original sign is
+  reduced (the target symbol class blanked out) and pushed into the keyboard via
+  `postMessage({fsw})` — one persistent iframe, no reload between rounds. On the
+  keyboard's Save it posts `{signmaker:"save", fsw}` back; grading is
+  position-independent (the multiset of `Sbbbfr` identities of the target class
+  must match the original). Symbol classes by base hex live in `classOf`. If the
+  deployed keyboard ever drops that postMessage bridge, vendor
+  `sign-language-processing/signmaker` into `public/signmaker` (built with our
+  Pages base) and repoint `SIGNMAKER_URL`.
+- **Name the Symbol** — `NameTheSymbol` + `lib/nameGames.ts`. Shows a still
+  stimulus (live `<sgnw-symbol>` or a figure image) and asks its name from the
+  chapter's closed set. Reuses the `.rootshape-option(s)` MC styles. Configs
+  `DYNAMICS_GAME` and `PUNCTUATION_GAME` exist but are **currently unwired** —
+  Ch13/Ch14 aren't content-ready; re-add `<NameTheSymbol game={…} />` when they
+  are.
+
 ### Rootshape mapping
 
 `src/content/rootshapes.json` is the hand-curated source of truth: a flat

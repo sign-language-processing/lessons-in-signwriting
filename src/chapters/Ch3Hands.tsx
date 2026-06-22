@@ -9,6 +9,8 @@ import { HeelViewTable } from "../components/HeelView";
 import { Grid } from "../components/Layout";
 import { usePractice } from "../components/PracticeContext";
 import { RootShapePractice } from "../components/RootShapePractice";
+import { WatchAndName } from "../components/WatchAndName";
+import { HANDSHAPE_GROUP_GAME } from "../lib/watchGames";
 import { SgnwSign, SgnwSymbol } from "../components/Sgnw";
 import { asset } from "../lib/asset";
 import { YouTubeVideo } from "../components/YouTubeVideo";
@@ -764,6 +766,7 @@ export function Ch3Hands() {
         the palm.
       </p>
       <HandGroupsExplorer />
+      <WatchAndName game={HANDSHAPE_GROUP_GAME} />
 
       <details className="info-box">
         <summary>Two Ways to Write Thumb Towards Reader</summary>
