@@ -451,6 +451,8 @@ function Avatar({
   const rigs = useRef<Record<Hand, ArmRig> | null>(null);
   const playing = useRef<{ angle: number; id: number; start: number } | null>(null);
   const startedId = useRef<number | null>(null);
+  // One-shot: square the avatar to the camera once the idle pose has settled.
+  const alignedRef = useRef(false);
   // Wrist circles (one per hand) and the side they were last snapped to. The
   // circle anchors to the active hand's resting wrist once, then stays put.
   const circleRef = useRef<Record<Hand, Group | null>>({ right: null, left: null });
@@ -557,7 +559,39 @@ function Avatar({
   // Runs after the mixer's own useFrame (registered earlier), so the IK pose
   // wins over the idle animation for the arm while the body keeps breathing.
   useFrame((state) => {
-    if (!arm || !rigs.current) return;
+    if (!rigs.current) return;
+
+    // Square + center the avatar once the idle pose has settled: rotate about Y
+    // so the chest normal (perpendicular to the shoulder line) faces +Z, then
+    // shift in X/Z so the head sits at the origin. Done once, then the arm rig
+    // anchors are re-read in the corrected frame.
+    if (!alignedRef.current && state.clock.elapsedTime > 0.1) {
+      alignedRef.current = true;
+      const r = rigs.current.right.chain.shoulder.getWorldPosition(new Vector3());
+      const l = rigs.current.left.chain.shoulder.getWorldPosition(new Vector3());
+      const shoulder = l.sub(r);
+      shoulder.y = 0; // project onto the XZ (floor) plane
+      if (shoulder.lengthSq() > 1e-9) {
+        const normal = new Vector3().crossVectors(shoulder, _UP);
+        model.rotation.y -= Math.atan2(normal.x, normal.z);
+        model.updateMatrixWorld(true);
+      }
+      const head = findBone(model, "head");
+      if (head) {
+        const h = head.getWorldPosition(new Vector3());
+        model.position.x -= h.x;
+        model.position.z -= h.z;
+        model.updateMatrixWorld(true);
+      }
+      rigs.current.right.shoulder0.copy(
+        rigs.current.right.chain.shoulder.getWorldPosition(new Vector3()),
+      );
+      rigs.current.left.shoulder0.copy(
+        rigs.current.left.chain.shoulder.getWorldPosition(new Vector3()),
+      );
+    }
+
+    if (!arm) return;
     const now = state.clock.elapsedTime;
     const g = arm.gesture;
     // Start each gesture once. Tracking the id separately from playing.current
