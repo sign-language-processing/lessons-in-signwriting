@@ -3,7 +3,8 @@ import { Col, Row } from "../components/Layout";
 import { SgnwSymbol } from "../components/Sgnw";
 import { SignFigure } from "../components/SignFigure";
 import { WatchAndName } from "../components/WatchAndName";
-import { MOVEMENT_PLANE_GAME } from "../lib/watchGames";
+import { MatchingPractice } from "../components/MatchingPractice";
+import { MOVEMENT_PLANE_GAME, STRAIGHT_MOVEMENT_SIGNS } from "../lib/watchGames";
 import {
   DiagonalPlane3D,
   DiagonalPlaneDown3D,
@@ -316,6 +317,13 @@ export function Ch6StraightMovement() {
         ahead. Learn the basic arrows well, and the rest are combinations.
       </p>
       <WatchAndName game={MOVEMENT_PLANE_GAME} />
+      <MatchingPractice
+        pool={STRAIGHT_MOVEMENT_SIGNS}
+        gameId="movement-match"
+        title="Read the Movement"
+        label="🎬 Read the Movement"
+        hint="Watch a moving sign and pick the SignWriting that records it — arrow and all."
+      />
     </>
   );
 }

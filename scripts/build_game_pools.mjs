@@ -86,6 +86,15 @@ const familyOf = (b) => {
   return null;
 };
 
+// Finger (joint) movement, Chapter 5 — distinct from the path-movement arrows
+// above. Squeeze/Flick are the middle-joint dots; Hinge is the knuckle joint.
+const fingerMovementOf = (b) => {
+  if (b >= "216" && b <= "21a") return "Squeeze";
+  if (b >= "21b" && b <= "21f") return "Flick";
+  if (b >= "221" && b <= "227") return "Hinge";
+  return null;
+};
+
 function basesIn(fsw) {
   const out = [];
   for (const m of fsw.matchAll(/S([0-9a-f]{3})[0-9a-f]{2}/g)) out.push(m[1]);
@@ -105,6 +114,7 @@ function uniqueMember(bases, classify) {
 
 const pools = {
   contact: {}, "handshape-group": {}, "movement-plane": {}, "movement-family": {},
+  "finger-movement": {},
 };
 const add = (game, key, fsw) => {
   if (!key) return;
@@ -129,6 +139,7 @@ for (const row of index) {
     uniqueMember(bases, (b) => (isHand(b) ? GROUP_NAMES[BASE_TO_GROUP[b]] : null)), box);
   add("movement-plane", uniqueMember(bases, planeOf), box);
   add("movement-family", uniqueMember(bases, familyOf), box);
+  add("finger-movement", uniqueMember(bases, fingerMovementOf), box);
 }
 
 function shuffle(a) {

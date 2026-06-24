@@ -10,15 +10,28 @@ import {
   type ReadingRound,
 } from "../lib/readingSigns";
 
-const GAME_ID = "matching";
+export type MatchingPracticeProps = {
+  /** Sign pool to draw from. Defaults to the full reading pool (Ch16). */
+  pool?: string[];
+  gameId?: string;
+  title?: string;
+  label?: string;
+  hint?: string;
+};
 
-export function MatchingPractice() {
+export function MatchingPractice({
+  pool,
+  gameId = "matching",
+  title = "Matching Practice",
+  label = "🃏 Matching Practice",
+  hint = "Watch a sign and pick the SignWriting that records it.",
+}: MatchingPracticeProps = {}) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [round, setRound] = useState<ReadingRound | null>(null);
   const [chosen, setChosen] = useState<string | null>(null);
 
   function start(prev?: string) {
-    setRound(randomReadingRound(prev));
+    setRound(randomReadingRound(pool, prev));
     setChosen(null);
   }
 
@@ -36,12 +49,13 @@ export function MatchingPractice() {
   function choose(fsw: string) {
     if (answered || !round) return;
     setChosen(fsw);
-    recordAttempt(GAME_ID, {
+    recordAttempt(gameId, {
       correct: fsw === round.answer,
       question: round.answer,
       questionType: "video",
       chosen: fsw,
       answer: round.answer,
+      key: round.answer,
     });
   }
 
@@ -55,24 +69,20 @@ export function MatchingPractice() {
 
   return (
     <>
-      <PracticeLaunchCard
-        label="🃏 Matching Practice"
-        hint="Watch a sign and pick the SignWriting that records it."
-        onClick={open}
-      />
+      <PracticeLaunchCard label={label} hint={hint} onClick={open} />
 
       <dialog
         ref={dialogRef}
         closedby="any"
         className={`practice-dialog ${stateClass}`}
-        aria-labelledby="matching-practice-title"
+        aria-labelledby={`${gameId}-title`}
       >
         {round && (
           <div className="practice-body">
             <DialogCloseButton />
-            <PracticeHistory game={GAME_ID} title="Matching Practice" />
+            <PracticeHistory game={gameId} title={title} />
 
-            <h2 id="matching-practice-title">Matching Practice</h2>
+            <h2 id={`${gameId}-title`}>{title}</h2>
             <p className="practice-prompt">
               Which SignWriting records this sign?
             </p>

@@ -1,6 +1,8 @@
 import { Figure } from "../components/Figure";
 import { FingerExplorer } from "../components/FingerExplorer";
 import { Col, Row } from "../components/Layout";
+import { WatchAndName } from "../components/WatchAndName";
+import { FINGER_MOVEMENT_GAME } from "../lib/watchGames";
 import { asset } from "../lib/asset";
 
 const IMG = {
@@ -79,6 +81,8 @@ export function Ch5FingerMovement() {
           </p>
         </div>
       </div>
+
+      <WatchAndName game={FINGER_MOVEMENT_GAME} />
     </>
   );
 }

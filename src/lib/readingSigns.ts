@@ -17,9 +17,9 @@ export function readingSwu(fsw: string): string {
   return convert.fsw2swu(fsw);
 }
 
-export function randomReadingRound(exclude?: string): ReadingRound {
-  const pool = exclude && SIGNS.length > 1 ? SIGNS.filter((s) => s !== exclude) : SIGNS;
-  const answer = pool[Math.floor(Math.random() * pool.length)]!;
-  const distractors = shuffle(SIGNS.filter((s) => s !== answer)).slice(0, OPTIONS - 1);
+export function randomReadingRound(signs: string[] = SIGNS, exclude?: string): ReadingRound {
+  const pickFrom = exclude && signs.length > 1 ? signs.filter((s) => s !== exclude) : signs;
+  const answer = pickFrom[Math.floor(Math.random() * pickFrom.length)]!;
+  const distractors = shuffle(signs.filter((s) => s !== answer)).slice(0, OPTIONS - 1);
   return { answer, options: shuffle([answer, ...distractors]) };
 }

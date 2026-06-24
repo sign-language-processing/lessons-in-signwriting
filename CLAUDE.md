@@ -244,7 +244,8 @@ config, not a component). Both sample uniformly over the answer set.
   keyword), and keeps only **unambiguous** clips (exactly one member of the set),
   capped at 40/answer. Re-run it if the index or classification changes.
   Configs: `CONTACT_GAME` (Ch4), `HANDSHAPE_GROUP_GAME` (Ch3),
-  `MOVEMENT_PLANE_GAME` (Ch6), `MOVEMENT_FAMILY_GAME` (Ch9).
+  `MOVEMENT_PLANE_GAME` (Ch6), `MOVEMENT_FAMILY_GAME` (Ch9),
+  `FINGER_MOVEMENT_GAME` (Ch5, Squeeze/Flick/Hinge — SIGN-426).
 - **Name the Hand Group (symbol)** — `HandGroupSymbolGame` + `lib/handGroupGame.ts`,
   in Ch3 beside the video version. Shows a hand *symbol* (sampled uniformly over
   the 10 groups) and asks which group; reuses `HANDSHAPE_GROUP_GAME.answers` for
@@ -257,6 +258,8 @@ config, not a component). Both sample uniformly over the answer set.
   **Chapter 16 — Practice** (`Ch16Practice`). Plays a sign's clip and asks which
   of four SignWriting writings records it (the correct one + 3 random signs).
   (Ch16 also stubs a webcam-based **Reading Practice** — "coming soon", not built.)
+  Parameterized by props (`pool`, `gameId`, `title`, `label`, `hint`); Ch6 reuses
+  it as **Read the Movement** over `STRAIGHT_MOVEMENT_SIGNS` (SIGN-432).
   Draws from `src/content/reading-signs.generated.json` (flat list of signbox
   FSW for local clips, capped at 800, also emitted by `build_game_pools.mjs`);
   renders each option as a live `<sgnw-sign>` via `convert.fsw2swu`. New games

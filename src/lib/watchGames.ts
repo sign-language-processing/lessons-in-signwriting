@@ -83,6 +83,30 @@ export const MOVEMENT_FAMILY_GAME: WatchGame = {
   ],
 };
 
+const sym = (base: string) => convert.key2swu(`S${base}00`);
+
+export const FINGER_MOVEMENT_GAME: WatchGame = {
+  id: "finger-movement",
+  launchLabel: "🎬 Spot the Finger Movement",
+  launchHint: "Watch a sign and name the kind of finger movement it uses.",
+  title: "Spot the Finger Movement",
+  prompt: "Which kind of finger movement does this sign use?",
+  answers: [
+    { key: "Squeeze", name: "Squeeze (closes)", symbol: sym("216") },
+    { key: "Flick", name: "Flick (opens)", symbol: sym("21b") },
+    { key: "Hinge", name: "Hinge (knuckle)", symbol: sym("221") },
+  ],
+};
+
+/** Signs whose written form contains a straight Wall/Floor-plane movement arrow
+ *  (union of the movement-plane pools) — the pool for the Ch6 movement match. */
+export const STRAIGHT_MOVEMENT_SIGNS: string[] = [
+  ...new Set([
+    ...(POOLS["movement-plane"]?.["Wall Plane"] ?? []),
+    ...(POOLS["movement-plane"]?.["Floor Plane"] ?? []),
+  ]),
+];
+
 export function poolFor(game: WatchGame, key: string): string[] {
   return POOLS[game.id]?.[key] ?? [];
 }
