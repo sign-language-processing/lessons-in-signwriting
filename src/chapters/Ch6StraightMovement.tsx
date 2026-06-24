@@ -4,7 +4,8 @@ import { SgnwSymbol } from "../components/Sgnw";
 import { SignFigure } from "../components/SignFigure";
 import { WatchAndName } from "../components/WatchAndName";
 import { MatchingPractice } from "../components/MatchingPractice";
-import { MOVEMENT_PLANE_GAME, STRAIGHT_MOVEMENT_SIGNS } from "../lib/watchGames";
+import { MOVEMENT_PLANE_GAME } from "../lib/watchGames";
+import { randomMovementRound } from "../lib/movementMatch";
 import {
   DiagonalPlane3D,
   DiagonalPlaneDown3D,
@@ -318,11 +319,11 @@ export function Ch6StraightMovement() {
       </p>
       <WatchAndName game={MOVEMENT_PLANE_GAME} />
       <MatchingPractice
-        pool={STRAIGHT_MOVEMENT_SIGNS}
+        makeRound={randomMovementRound}
         gameId="movement-match"
         title="Read the Movement"
         label="🎬 Read the Movement"
-        hint="Watch a moving sign and pick the SignWriting that records it — arrow and all."
+        hint="Watch a moving sign — all four writings are the same sign, so read which way the arrow points."
       />
     </>
   );

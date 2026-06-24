@@ -258,8 +258,11 @@ config, not a component). Both sample uniformly over the answer set.
   **Chapter 16 — Practice** (`Ch16Practice`). Plays a sign's clip and asks which
   of four SignWriting writings records it (the correct one + 3 random signs).
   (Ch16 also stubs a webcam-based **Reading Practice** — "coming soon", not built.)
-  Parameterized by props (`pool`, `gameId`, `title`, `label`, `hint`); Ch6 reuses
-  it as **Read the Movement** over `STRAIGHT_MOVEMENT_SIGNS` (SIGN-432).
+  Parameterized by props (`pool`, `gameId`, `title`, `label`, `hint`, `makeRound`).
+  Ch6 reuses it as **Read the Movement** (SIGN-432) via `makeRound={randomMovementRound}`
+  (`lib/movementMatch.ts`): all four options are the *same* sign with its
+  Wall/Floor movement arrow rotated, so the learner must read the arrow's
+  direction — distinct from the random-sign Ch16 matching.
   Draws from `src/content/reading-signs.generated.json` (flat list of signbox
   FSW for local clips, capped at 800, also emitted by `build_game_pools.mjs`);
   renders each option as a live `<sgnw-sign>` via `convert.fsw2swu`. New games

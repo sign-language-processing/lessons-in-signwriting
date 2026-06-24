@@ -13,6 +13,8 @@ import {
 export type MatchingPracticeProps = {
   /** Sign pool to draw from. Defaults to the full reading pool (Ch16). */
   pool?: string[];
+  /** Custom round generator (e.g. arrow-rotation distractors); overrides `pool`. */
+  makeRound?: (prev?: string) => ReadingRound;
   gameId?: string;
   title?: string;
   label?: string;
@@ -21,6 +23,7 @@ export type MatchingPracticeProps = {
 
 export function MatchingPractice({
   pool,
+  makeRound,
   gameId = "matching",
   title = "Matching Practice",
   label = "🃏 Matching Practice",
@@ -31,7 +34,7 @@ export function MatchingPractice({
   const [chosen, setChosen] = useState<string | null>(null);
 
   function start(prev?: string) {
-    setRound(randomReadingRound(pool, prev));
+    setRound(makeRound ? makeRound(prev) : randomReadingRound(pool, prev));
     setChosen(null);
   }
 
