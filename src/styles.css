@@ -1531,6 +1531,11 @@ fsw-symbol {
   font-style: italic;
 }
 
+.fingerspell-letter {
+  font-size: 1.4em;
+  color: #2f6fe0;
+}
+
 .fingerspell-form {
   display: flex;
   gap: 0.5rem;
@@ -2052,6 +2057,10 @@ fsw-symbol {
 .rootshape-options--column {
   grid-template-rows: repeat(5, auto);
   grid-auto-flow: column;
+}
+
+.rootshape-options--three {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .rootshape-option {

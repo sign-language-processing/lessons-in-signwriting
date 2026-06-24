@@ -236,6 +236,14 @@ config, not a component). Both sample uniformly over the answer set.
   capped at 40/answer. Re-run it if the index or classification changes.
   Configs: `CONTACT_GAME` (Ch4), `HANDSHAPE_GROUP_GAME` (Ch3),
   `MOVEMENT_PLANE_GAME` (Ch6), `MOVEMENT_FAMILY_GAME` (Ch9).
+- **Name the Hand Group (symbol)** — `HandGroupSymbolGame` + `lib/handGroupGame.ts`,
+  in Ch3 beside the video version. Shows a hand *symbol* (sampled uniformly over
+  the 10 groups) and asks which group; reuses `HANDSHAPE_GROUP_GAME.answers` for
+  the option chips. Game id `handgroup-symbol`. Covers SIGN-411.
+- **Palm, Side or Back?** — `OrientationFillGame` + `lib/orientationGame.ts`, in
+  Ch2 after the palm/side/back section. Shows a hand photo; the learner picks the
+  symbol fill that matches its facing (0 = palm, 1 = side, 2 = back — universal
+  SignWriting fill semantics). Game id `orientation-fill`. Covers SIGN-405.
 - **Matching Practice** — `MatchingPractice` + `lib/readingSigns.ts`, in its own
   **Chapter 16 — Practice** (`Ch16Practice`). Plays a sign's clip and asks which
   of four SignWriting writings records it (the correct one + 3 random signs).
@@ -246,7 +254,12 @@ config, not a component). Both sample uniformly over the answer set.
   go in Ch16.
 - **Fingerspelling Practice** — `FingerspellingPractice` + `lib/fingerspellingGame.ts`,
   in Ch3 after `<Fingerspelling/>`. Shows a word fingerspelled in SignWriting and
-  the learner types it. Multi-language (a dropdown of the 14 signed languages
+  the learner types it. A sibling **Fingerspelling Letters** game
+  (`FingerspellingAlphabetGame` + `lib/fingerspellingAlphabet.ts`, game id
+  `fingerspelling-alphabet`, SIGN-413 L1) shows a letter and asks the learner to
+  pick its handshape from four options — driven by the **local**
+  `fingerspelling.generated.json` (23 alphabets), no network. The word drill is
+  multi-language (a dropdown of the 14 signed languages
   the endpoint supports — verified live; the rest return empty). Words are
   international given names (Latin-script, so they read across every alphabet
   without per-language wordlists). The fingerspelling is fetched live from

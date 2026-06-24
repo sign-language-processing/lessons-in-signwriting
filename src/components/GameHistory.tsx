@@ -14,11 +14,18 @@ const H = 200;
 const PAD = { top: 12, right: 12, bottom: 24, left: 32 };
 
 const isSign = (v: string) => /^[BLMR]\d/.test(v);
+// A single SignWriting symbol lives in Unicode plane 1 (U+40001–U+4FFFF).
+const isSymbol = (v: string) => {
+  const cp = [...v];
+  return cp.length === 1 && (cp[0]!.codePointAt(0) ?? 0) >= 0x40001;
+};
 
 function Cell({ value }: { value: string }) {
   if (!value) return <span className="history-cell-empty">—</span>;
   if (isSign(value))
     return <sgnw-sign sign={convert.fsw2swu(value)} style={{ fontSize: 36 }}></sgnw-sign>;
+  if (isSymbol(value))
+    return <sgnw-symbol symbol={value} style={{ fontSize: 36 }}></sgnw-symbol>;
   return <span>{value}</span>;
 }
 

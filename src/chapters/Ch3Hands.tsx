@@ -1,7 +1,9 @@
 import { ActionFingersTree } from "../components/ActionFingersTree";
+import { BasicHandshapesGame } from "../components/BasicHandshapesGame";
 import { Figure } from "../components/Figure";
 import { FingerDirectionGrid } from "../components/FingerDirectionGrid";
 import { Fingerspelling } from "../components/Fingerspelling";
+import { FingerspellingAlphabetGame } from "../components/FingerspellingAlphabetGame";
 import { FingerspellingPractice } from "../components/FingerspellingPractice";
 import { HandGroupsExplorer } from "../components/HandGroupsExplorer";
 import { HandshapeExamples } from "../components/HandshapeExamples";
@@ -11,6 +13,7 @@ import { Grid } from "../components/Layout";
 import { usePractice } from "../components/PracticeContext";
 import { RootShapePractice } from "../components/RootShapePractice";
 import { WatchAndName } from "../components/WatchAndName";
+import { HandGroupSymbolGame } from "../components/HandGroupSymbolGame";
 import { HANDSHAPE_GROUP_GAME } from "../lib/watchGames";
 import { SgnwSign, SgnwSymbol } from "../components/Sgnw";
 import { asset } from "../lib/asset";
@@ -395,6 +398,7 @@ export function Ch3Hands() {
           imgStyle={{ maxHeight: 100 }}
         />
       </Grid>
+      <BasicHandshapesGame />
 
       <h2>Usage in ASL</h2>
 
@@ -768,6 +772,7 @@ export function Ch3Hands() {
       </p>
       <HandGroupsExplorer />
       <WatchAndName game={HANDSHAPE_GROUP_GAME} />
+      <HandGroupSymbolGame />
 
       <details className="info-box">
         <summary>Two Ways to Write Thumb Towards Reader</summary>
@@ -787,6 +792,7 @@ export function Ch3Hands() {
         sign languages, allowing signers to assemble words letter by letter.
       </p>
       <Fingerspelling />
+      <FingerspellingAlphabetGame />
       <FingerspellingPractice />
 
       <h2>Heel of Hand or Top View?</h2>

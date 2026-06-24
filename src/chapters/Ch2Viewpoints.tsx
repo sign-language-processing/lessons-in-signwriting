@@ -1,5 +1,6 @@
 import { Figure } from "../components/Figure";
 import { Col, Row } from "../components/Layout";
+import { OrientationFillGame } from "../components/OrientationFillGame";
 import { SgnwSign, SgnwSymbol } from "../components/Sgnw";
 import { YouTubeVideo } from "../components/YouTubeVideo";
 import { TRANSCRIPT_1, VIDEO_CREDITS } from "../content/videos";
@@ -245,6 +246,8 @@ export function Ch2Viewpoints() {
           />
         </Col>
       </Row>
+
+      <OrientationFillGame />
 
       <h2>Sides of the Head</h2>
       <p>
