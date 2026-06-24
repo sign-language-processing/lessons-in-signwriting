@@ -148,6 +148,12 @@ Deferred (need data we don't have yet, not engine work):
   movement chapter once we want symbol-recall (vs. the video-recognition games
   already shipped).
 
+- **Fingerspelling Practice** (`FingerspellingPractice`, `lib/fingerspellingGame.ts`)
+  — Ch3. Read a fingerspelled name in SignWriting and type it. Dropdown of the
+  14 signed languages the endpoint supports; fingerspelling fetched live from
+  `signwriting.nagish.dev/fingerspelling`. Covers SIGN-413 (L2). Needs network;
+  lenient (accent/case-insensitive) grading.
+
 ## Build order
 
 1. **Engine 1 + Contact game (Ch4).** Proves the video→identify pattern end to

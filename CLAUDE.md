@@ -244,6 +244,15 @@ config, not a component). Both sample uniformly over the answer set.
   FSW for local clips, capped at 800, also emitted by `build_game_pools.mjs`);
   renders each option as a live `<sgnw-sign>` via `convert.fsw2swu`. New games
   go in Ch16.
+- **Fingerspelling Practice** — `FingerspellingPractice` + `lib/fingerspellingGame.ts`,
+  in Ch3 after `<Fingerspelling/>`. Shows a word fingerspelled in SignWriting and
+  the learner types it. Multi-language (a dropdown of the 14 signed languages
+  the endpoint supports — verified live; the rest return empty). Words are
+  international given names (Latin-script, so they read across every alphabet
+  without per-language wordlists). The fingerspelling is fetched live from
+  `https://signwriting.nagish.dev/fingerspelling?text=…&signed_language=…` (cached
+  in-session; degrades to a "couldn't load" skip if offline). Lenient grading
+  (case/space/accent-insensitive). Game id `fingerspelling`.
 - **Writing Practice** — `WritingPractice` + `lib/writingPractice.ts`, in Ch16.
   Embeds the SignWriting keyboard (remote iframe to
   `sutton-signwriting.io/signmaker`) and asks the learner to write a part of a

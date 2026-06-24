@@ -2,6 +2,7 @@ import { ActionFingersTree } from "../components/ActionFingersTree";
 import { Figure } from "../components/Figure";
 import { FingerDirectionGrid } from "../components/FingerDirectionGrid";
 import { Fingerspelling } from "../components/Fingerspelling";
+import { FingerspellingPractice } from "../components/FingerspellingPractice";
 import { HandGroupsExplorer } from "../components/HandGroupsExplorer";
 import { HandshapeExamples } from "../components/HandshapeExamples";
 import { HandshapeExplorer } from "../components/HandshapeExplorer";
@@ -786,6 +787,7 @@ export function Ch3Hands() {
         sign languages, allowing signers to assemble words letter by letter.
       </p>
       <Fingerspelling />
+      <FingerspellingPractice />
 
       <h2>Heel of Hand or Top View?</h2>
       <p>
