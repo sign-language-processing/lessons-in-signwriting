@@ -8,7 +8,8 @@ import {
   fetchFingerspelling,
   FS_LANGS,
   normalizeAnswer,
-  randomWord,
+  pickWord,
+  wordKey,
   type FsLang,
 } from "../lib/fingerspellingGame";
 
@@ -33,7 +34,7 @@ export function FingerspellingPractice() {
     setValue("");
     setFailed(false);
     setLoading(true);
-    const word = randomWord(prevWord);
+    const word = pickWord(forLang.signed, prevWord);
     const fsw = await fetchFingerspelling(forLang.signed, word);
     if (id !== reqId.current) return; // a newer round superseded this fetch
     setLoading(false);
@@ -69,6 +70,7 @@ export function FingerspellingPractice() {
       question: round.fsw,
       chosen: value.trim(),
       answer: round.word,
+      key: wordKey(lang.signed, round.word),
     });
   }
 

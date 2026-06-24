@@ -38,6 +38,7 @@ export function HandGroupSymbolGame() {
       question: round.symbol,
       chosen: nameOf(key),
       answer: nameOf(round.answerKey),
+      key: round.answerKey,
     });
   }
 

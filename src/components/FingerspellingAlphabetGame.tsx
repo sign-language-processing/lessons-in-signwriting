@@ -5,6 +5,7 @@ import { DialogCloseButton, PracticeLaunchCard, useDialogClose } from "./Practic
 import { recordAttempt } from "../lib/gameStats";
 import {
   ALPHABET_LANGS,
+  letterKey,
   randomLetterRound,
   type LetterOption,
   type LetterRound,
@@ -47,6 +48,7 @@ export function FingerspellingAlphabetGame() {
       question: round.letter.toUpperCase(),
       chosen: option.fsw,
       answer: round.options.find((o) => o.letter === round.letter)?.fsw ?? "",
+      key: letterKey(code, round.letter),
     });
   }
 

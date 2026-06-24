@@ -1,4 +1,5 @@
 import { convert } from "@sutton-signwriting/core";
+import { pickWeighted } from "./gameStats";
 import rootOf from "../content/rootshapes.json";
 
 export type RootShape = { name: string; swu: string };
@@ -55,10 +56,10 @@ for (const [symbol, root] of Object.entries(ROOT_OF)) {
  * rootshape, then a random handshape within it.
  */
 export function randomPracticeSymbol(exclude?: string): string {
-  const roots = ROOT_SHAPES.map((r) => r.swu).filter(
-    (swu) => (SYMBOLS_BY_ROOT[swu]?.length ?? 0) > 0,
-  );
-  const root = roots[Math.floor(Math.random() * roots.length)]!;
+  const roots = ROOT_SHAPES.filter((r) => (SYMBOLS_BY_ROOT[r.swu]?.length ?? 0) > 0);
+  // Spaced repetition is keyed by rootshape name (what the game records).
+  const name = pickWeighted("rootshape", roots.map((r) => r.name));
+  const root = (roots.find((r) => r.name === name) ?? roots[0]!).swu;
   let pool = SYMBOLS_BY_ROOT[root]!;
   if (exclude && pool.length > 1) pool = pool.filter((s) => s !== exclude);
   return pool[Math.floor(Math.random() * pool.length)]!;

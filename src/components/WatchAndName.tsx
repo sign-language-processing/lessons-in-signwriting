@@ -46,6 +46,7 @@ export function WatchAndName({ game }: { game: WatchGame }) {
       questionType: "video",
       chosen: nameOf(key),
       answer: nameOf(round.answerKey),
+      key: round.answerKey,
     });
   }
 

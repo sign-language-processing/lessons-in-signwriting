@@ -1,6 +1,7 @@
 import { convert } from "@sutton-signwriting/core";
 import { handImageForKey } from "./handImage";
 import { PRACTICE_BASES } from "./practiceHands";
+import { pickWeighted } from "./gameStats";
 
 // SignWriting fill encodes palm facing: 0 = palm (white/hollow), 1 = side
 // (half), 2 = back (filled). The book teaches exactly this trichotomy in Ch2.
@@ -26,7 +27,9 @@ const BASES = PRACTICE_BASES.filter((b) =>
 export function randomOrientationRound(prevBase?: string): OrientationRound {
   let pool = prevBase && BASES.length > 1 ? BASES.filter((b) => b !== prevBase) : BASES;
   const base = pool[Math.floor(Math.random() * pool.length)]!;
-  const fill = Math.floor(Math.random() * ORIENTATIONS.length);
+  // Spaced repetition over the three facings (keyed by their name).
+  const chosenName = pickWeighted("orientation-fill", ORIENTATIONS.map((o) => o.name));
+  const fill = ORIENTATIONS.find((o) => o.name === chosenName)!.fill;
   const options = ORIENTATIONS.map((o) => ({
     fill: o.fill,
     name: o.name,

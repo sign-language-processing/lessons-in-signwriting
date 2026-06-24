@@ -212,8 +212,17 @@ section. They ship in release (not authoring-gated) and reuse the shared
   Across, Flat, Flat Heel). Easy mode also shows the SignWriting symbol. Samples
   **uniformly over rootshapes** (so rare ones appear as often as common ones).
 
+**Spaced repetition.** `gameStats.pickWeighted(gameId, keys)` chooses the next
+item biased by past results: unseen items rank high, a recent miss ranks high, a
+correct streak (mastery) ranks low, and weight grows with time since last seen
+so items resurface. Games pass their candidate `key`s and record the same `key`
+on each attempt (`recordAttempt(..., {key})`). Wired into all recognition
+samplers: the four watch games, hand-group symbol, rootshape, orientation, and
+fingerspelling letters/words. Matching/reading/writing stay uniform (item sets
+too large or trivial for SRS to matter).
+
 **Stats & history.** Every game logs each attempt to localStorage via
-`lib/gameStats.ts` (`recordAttempt(gameId, {correct, question, chosen, answer})`;
+`lib/gameStats.ts` (`recordAttempt(gameId, {correct, question, chosen, answer, key?})`;
 `question`/`chosen`/`answer` holding a signbox FSW render as a sign in the
 table). A 📖 button (`PracticeHistory` from `components/GameHistory.tsx`) sits
 beside each dialog's × and opens a history dialog: a cumulative tried/correct

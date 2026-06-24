@@ -39,6 +39,7 @@ export function OrientationFillGame() {
       questionType: "image",
       chosen: nameOf(fill),
       answer: nameOf(round.fill),
+      key: nameOf(round.fill),
     });
   }
 

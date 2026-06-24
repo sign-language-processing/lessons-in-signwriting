@@ -7,6 +7,8 @@
 // GET https://signwriting.nagish.dev/fingerspelling?text=<word>&signed_language=<code>
 // → { fsw }. Results are cached in memory for the session.
 
+import { pickWeighted } from "./gameStats";
+
 const API = "https://signwriting.nagish.dev/fingerspelling";
 
 export type FsLang = { signed: string; name: string };
@@ -56,9 +58,13 @@ export async function fetchFingerspelling(signed: string, word: string): Promise
   }
 }
 
-export function randomWord(exclude?: string): string {
+// SRS key is per (language, word). Picks the next word biased by past results.
+export const wordKey = (signed: string, word: string) => `${signed}|${word}`;
+
+export function pickWord(signed: string, exclude?: string): string {
   const pool = exclude && WORDS.length > 1 ? WORDS.filter((w) => w !== exclude) : WORDS;
-  return pool[Math.floor(Math.random() * pool.length)]!;
+  const chosen = pickWeighted("fingerspelling", pool.map((w) => wordKey(signed, w)));
+  return pool.find((w) => wordKey(signed, w) === chosen) ?? pool[0]!;
 }
 
 /** Compare answers leniently: case-, space-, and accent-insensitive. */

@@ -13,6 +13,8 @@ export type Attempt = {
   questionType?: "video" | "image";
   chosen: string;
   answer: string;
+  /** Stable id of the item being tested, for spaced repetition. */
+  key?: string;
 };
 
 const key = (game: string) => `lis-game-stats:${game}`;
@@ -42,6 +44,45 @@ export function clearAttempts(game: string): void {
   } catch {
     /* ignore */
   }
+}
+
+// Spaced repetition: weight an item for the next draw. Unseen items rank high;
+// a recent miss ranks high; a long correct streak (mastery) ranks low; and the
+// weight grows with time since last seen, so items resurface for review.
+function srsWeight(history: Attempt[], now: number): number {
+  if (history.length === 0) return 6;
+  const last = history[history.length - 1]!;
+  let streak = 0;
+  for (let i = history.length - 1; i >= 0 && history[i]!.correct; i--) streak++;
+  const base = last.correct ? 1 : 4;
+  const ageBoost = Math.min((now - last.ts) / MINUTE / 5, 3);
+  const mastery = streak >= 3 ? 0.4 : streak === 2 ? 0.7 : 1;
+  return Math.max(0.25, (base + ageBoost) * mastery);
+}
+
+/**
+ * Pick the next item id for a game, biased by spaced-repetition weight over the
+ * recorded attempt history (grouped by `key`). Falls back to uniform when there
+ * is no history. Games should record the same `key` they pass here.
+ */
+export function pickWeighted(game: string, keys: string[]): string {
+  if (keys.length <= 1) return keys[0]!;
+  const byKey = new Map<string, Attempt[]>();
+  for (const a of getAttempts(game)) {
+    if (a.key == null) continue;
+    const arr = byKey.get(a.key);
+    if (arr) arr.push(a);
+    else byKey.set(a.key, [a]);
+  }
+  const now = Date.now();
+  const weights = keys.map((k) => srsWeight(byKey.get(k) ?? [], now));
+  const total = weights.reduce((sum, w) => sum + w, 0);
+  let r = Math.random() * total;
+  for (let i = 0; i < keys.length; i++) {
+    r -= weights[i]!;
+    if (r <= 0) return keys[i]!;
+  }
+  return keys[keys.length - 1]!;
 }
 
 const MINUTE = 60_000;

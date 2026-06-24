@@ -63,6 +63,7 @@ export function RootShapePractice() {
       questionType: round.photo ? "image" : undefined,
       chosen: name,
       answer: round.answer,
+      key: round.answer,
     });
   }
 

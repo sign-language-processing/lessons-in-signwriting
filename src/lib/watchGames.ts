@@ -1,4 +1,5 @@
 import { convert } from "@sutton-signwriting/core";
+import { pickWeighted } from "./gameStats";
 import poolsJson from "../content/game-pools.generated.json";
 
 export type WatchAnswer = { key: string; name: string; symbol?: string };
@@ -93,7 +94,7 @@ export function answersWithClips(game: WatchGame): WatchAnswer[] {
 export function randomAnswerKey(game: WatchGame, exclude?: string): string {
   let keys = answersWithClips(game).map((a) => a.key);
   if (exclude && keys.length > 1) keys = keys.filter((k) => k !== exclude);
-  return keys[Math.floor(Math.random() * keys.length)]!;
+  return pickWeighted(`watch:${game.id}`, keys);
 }
 
 export function randomClip(game: WatchGame, key: string, exclude?: string): string {
