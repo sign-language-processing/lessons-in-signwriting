@@ -136,7 +136,7 @@ function findBone(root: Object3D, key: string): Object3D | undefined {
 type ArmChain = { shoulder: Object3D; elbow: Object3D; hand: Object3D };
 type ArmRig = { chain: ArmChain; shoulder0: Vector3; upper: number; fore: number };
 type Hand = "right" | "left";
-type Side = Hand | "both";
+type Side = Hand;
 
 // Reusable scratch objects so the per-frame IK solver never allocates.
 const _S = new Vector3();
@@ -614,7 +614,7 @@ function Avatar({
     }
     const angle = p ? p.angle : null;
 
-    const hands: Hand[] = side === "both" ? ["right", "left"] : [side];
+    const hands: Hand[] = [side];
     for (const h of hands) {
       const isOverUnder = motion === "over" || motion === "under";
       if (motion === "curve" || isOverUnder) {
@@ -1048,11 +1048,10 @@ const ROSE_RADIUS_FACTOR = 0.3;
 const ROSE_RADIUS_FALLBACK_PX = 225;
 
 // Arrowhead variants are laid out by hand: right-hand is the base glyph, the
-// left-hand one sits 0x10 above it, and the both-hands one 0x20 above.
+// left-hand one sits 0x10 above it.
 function handSymbol(symbol: string, side: Side): string {
   const cp = symbol.codePointAt(0) ?? 0;
   if (side === "left") return String.fromCodePoint(cp + 0x10);
-  if (side === "both") return String.fromCodePoint(cp + 0x20);
   return symbol;
 }
 
@@ -1171,13 +1170,6 @@ function HandToggle({ side, onChange }: { side: Side; onChange: (side: Side) => 
         onClick={() => onChange("left")}
       >
         Left
-      </button>
-      <button
-        type="button"
-        className={side === "both" ? "is-on" : undefined}
-        onClick={() => onChange("both")}
-      >
-        Both
       </button>
     </div>
   );
