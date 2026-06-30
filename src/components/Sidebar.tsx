@@ -1,4 +1,5 @@
 import { CHAPTERS } from "../chapters/registry";
+import { GoogleTranslate } from "./GoogleTranslate";
 
 export function Sidebar() {
   return (
@@ -11,6 +12,7 @@ export function Sidebar() {
           </li>
         ))}
       </ol>
+      <GoogleTranslate />
     </nav>
   );
 }

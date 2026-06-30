@@ -48,6 +48,37 @@ body {
 .toc-sidebar ol.toc li {
   margin-block: 0.25em;
 }
+
+.toc-translate {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+.toc-translate__label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #888;
+  margin-bottom: 0.4rem;
+}
+.toc-translate .goog-te-combo {
+  max-width: 100%;
+  padding: 0.35em 0.5em;
+  font: inherit;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: white;
+}
+
+/* Google Translate injects a top banner iframe that shifts the page; hide just
+   that frame (not the widget's own dropdown, which also carries .skiptranslate). */
+.goog-te-banner-frame,
+iframe.skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+}
 .pdf-debug {
   position: sticky;
   inset-block-start: 2rem;
