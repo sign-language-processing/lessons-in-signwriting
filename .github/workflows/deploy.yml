@@ -24,7 +24,8 @@ jobs:
       - name: Build
         run: bun run build
         env:
-          VITE_BASE: /lessons-in-signwriting/
+          # Served behind the rylo.com reverse proxy at /sign/research/lessons-in-signwriting/
+          VITE_BASE: /sign/research/lessons-in-signwriting/
       - uses: actions/configure-pages@v5
         with:
           enablement: true
