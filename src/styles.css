@@ -2377,3 +2377,70 @@ button.face-tile:focus-visible {
     color: #000;
   }
 }
+
+.speechwriting-try {
+  margin: 1rem 0;
+}
+.speechwriting-try form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+.speechwriting-try input,
+.speechwriting-try select,
+.speechwriting-try button {
+  font: inherit;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #fff;
+}
+.speechwriting-try button {
+  background: #f8fafc;
+  cursor: pointer;
+}
+.speechwriting-out {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  min-height: 4rem;
+  margin-top: 0.75rem;
+}
+.speechwriting-out__pending {
+  color: #64748b;
+  font-style: italic;
+}
+.speechwriting-ipa {
+  font-size: 1.1rem;
+  color: #334155;
+}
+.speechwriting-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.speechwriting-examples figure {
+  margin: 0;
+}
+.speechwriting-examples figcaption {
+  font-size: 0.9rem;
+  color: #475569;
+}
+.speechwriting-table-wrap {
+  overflow-x: auto;
+}
+.speechwriting-table td:first-child {
+  white-space: nowrap;
+}
+.speechwriting-instruction {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+.speechwriting-source {
+  font-size: 0.85rem;
+  color: #475569;
+}

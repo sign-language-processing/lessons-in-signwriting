@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { key2swu } from "@sutton-signwriting/core/convert";
 import { SgnwSymbol } from "../components/Sgnw";
+import { SpeechWriting } from "../components/SpeechWriting";
 import { useModalDialog } from "../components/useModalDialog";
 import { BASE_SYMBOL_NAMES } from "../lib/baseSymbolNames";
 
@@ -316,6 +317,8 @@ export function Ch10Face() {
           </div>
         </section>
       ))}
+
+      <SpeechWriting />
 
       {open && open.axis && (
         <VariantDialog
